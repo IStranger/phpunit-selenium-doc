@@ -62,6 +62,7 @@ class Method extends Base
      *
      * @param \SimpleXMLElement $dt XML node, which contain determination
      * @param \SimpleXMLElement $dd XML node, which contain description
+     *
      * @return $this
      */
     function loadFromXML(\SimpleXMLElement $dt, \SimpleXMLElement $dd)

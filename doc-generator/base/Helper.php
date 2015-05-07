@@ -11,6 +11,7 @@ abstract class Helper
      * Strip excess space symbols (spaces, EoL symbols etc.)
      *
      * @param string $sourceText
+     *
      * @return string
      */
     static function plainText($sourceText)

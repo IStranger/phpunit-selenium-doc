@@ -123,6 +123,7 @@ trait SeleniumTestCaseDoc
      *
      * @param string $url   the URL to open;
      *                      may be relative or absolute
+     *
      * @return void
      */
     public function open($url)
@@ -137,6 +138,7 @@ trait SeleniumTestCaseDoc
      * @param string           $locator  an element locator
      *                                   (see "Element Locators" in {@link SeleniumTestCaseDoc} )
      * @param string|int|float $value    the value to type
+     *
      * @return void
      * @see typeAndWait
      */
@@ -166,6 +168,7 @@ trait SeleniumTestCaseDoc
      * @param string $selectLocator   an element locator identifying a drop-down menu
      *                                (see "Element Locators" in {@link SeleniumTestCaseDoc} )
      * @param string $optionLocator   an option locator (a label by default)
+     *
      * @return void
      * @see selectAndWait
      */
@@ -180,6 +183,7 @@ trait SeleniumTestCaseDoc
      *
      * @param string $locator   an element locator
      *                          (see "Element Locators" in {@link SeleniumTestCaseDoc} )
+     *
      * @return void
      * @see clickAndWait
      */
@@ -198,6 +202,7 @@ trait SeleniumTestCaseDoc
      *                              The order of options are irrelevant, the unit of the value of 'max_age' is second.
      *                              Note that specifying a domain that isn't a subset of the current domain will
      *                              usually fail.
+     *
      * @return void
      */
     public function createCookie($nameValuePair, $optionsString)
@@ -212,6 +217,7 @@ trait SeleniumTestCaseDoc
      *
      * @param string $pattern  a pattern to match with the text of the page
      *                         (see "String-match Patterns" in {@link SeleniumTestCaseDoc} )
+     *
      * @return void
      * @see assertTextNotPresent
      * @see waitForTextPresent
@@ -227,6 +233,7 @@ trait SeleniumTestCaseDoc
      *
      * @param string $locator   an element locator
      *                          (see "Element Locators" in {@link SeleniumTestCaseDoc} )
+     *
      * @return void
      * @see assertElementNotPresent
      * @see waitForElementPresent
@@ -244,6 +251,7 @@ trait SeleniumTestCaseDoc
      * See {@link assertElementPresent}
      *
      * @param string $locator
+     *
      * @return void
      */
     public function assertElementNotPresent($locator)
@@ -255,6 +263,7 @@ trait SeleniumTestCaseDoc
      * See {@link assertTextPresent}
      *
      * @param string $pattern
+     *
      * @return void
      */
     public function assertTextNotPresent($pattern)
@@ -270,6 +279,7 @@ trait SeleniumTestCaseDoc
      *
      * @param string           $locator
      * @param string|int|float $value
+     *
      * @return void
      */
     public function typeAndWait($locator, $value)
@@ -282,6 +292,7 @@ trait SeleniumTestCaseDoc
      *
      * @param string $selectLocator
      * @param string $optionLocator
+     *
      * @return void
      */
     public function selectAndWait($selectLocator, $optionLocator)
@@ -293,6 +304,7 @@ trait SeleniumTestCaseDoc
      * Waits for a new page to load. See detail {@link click}
      *
      * @param string $locator
+     *
      * @return void
      */
     public function clickAndWait($locator)
@@ -306,6 +318,7 @@ trait SeleniumTestCaseDoc
      * @param string $currentMethodName  Name of current method (from current called object),
      *                                   see {@link __METHOD__} constant
      * @param array  $args
+     *
      * @return mixed
      */
     private function _callParentMethod($currentMethodName, $args)

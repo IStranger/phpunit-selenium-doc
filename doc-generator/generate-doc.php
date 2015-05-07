@@ -18,6 +18,7 @@ define('SELENIUM_DOC_REFERENCE', 'selenium-core-reference-1.0.1.html');
  * Makes easy xml object from specified html page
  *
  * @param string $html
+ *
  * @return SimpleXMLElement XML object with key nodes for easy parsing (see "actions" and "accessors" nodes)
  */
 function html2xml($html)

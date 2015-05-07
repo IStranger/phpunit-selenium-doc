@@ -44,6 +44,7 @@ class Argument extends Base
 
     /**
      * @param Method $method Set specified as "related method" for this argument
+     *
      * @return $this
      */
     function setMethod(Method $method)
@@ -69,6 +70,7 @@ class Argument extends Base
      * </code></pre>
      *
      * @param \SimpleXMLElement $li XML node, which contain list item with detail description of argument
+     *
      * @return $this
      */
     function loadFromXML(\SimpleXMLElement $li)
