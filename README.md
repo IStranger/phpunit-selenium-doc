@@ -6,7 +6,7 @@ SeleniumTestCaseDoc overrides documentation of PHPUnit_Extensions_SeleniumTestCa
 (according official description of selenium commands). 
 The implementation of there overridden methods is unchanged.
 
-# Installation (via composer)
+# Installation
 
 Class SeleniumTestCaseDoc is [trait](http://php.net/manual/en/language.oop5.traits.php), which can be mixed to any class 
 (extended from PHPUnit_Extensions_SeleniumTestCase).
