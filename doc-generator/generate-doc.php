@@ -5,6 +5,7 @@
  * @see https://php.net/manual/en/simplexml.examples-basic.php
  * @see http://www.w3schools.com/XPath/
  * @see http://release.seleniumhq.org/selenium-core/1.0.1/reference.html
+ * @see https://phpunit.de/manual/current/en/phpunit-book.html#selenium.seleniumtestcase.tables.template-methods
  */
 
 require_once 'base/class_loader.php';
@@ -32,7 +33,7 @@ function html2xml($html)
     preg_match('/<h2>Selenium Accessors<\/h2>\s*(<dl>[\s\S]+<\/dl>)\s*<h2>/', $html, $matches);
     $htmlAccessors = $matches[1];
 
-    //  Make XML (for easy parsing)
+    // Make XML (for easy parsing)
     $xmlStr = <<<XML
 <?xml version='1.0' standalone='yes'?>
 <doc>
@@ -49,14 +50,29 @@ XML;
     return simplexml_load_string($xmlStr);
 }
 
+
+// Parsing of official documentation
 $xmlPage = html2xml(file_get_contents(SELENIUM_DOC_REFERENCE));
 
-// Action methods
-$methods = [];
+// Parsing of Action methods
+$methodsAction = [];
 $xmlActionsDT = $xmlPage->xpath('//actions/descendant::a[@name]/ancestor::dt');
 foreach ($xmlActionsDT as $xmlActionDT) {
     $xmlActionDD = $xmlActionDT->xpath('following-sibling::dd[1]')[0];
-    $methods[] = Method::modelNew()->loadFromXML($xmlActionDT, $xmlActionDD);
+    $method = Method::modelNew()->loadFromXML($xmlActionDT, $xmlActionDD);
+    $method->type = Method::TYPE_ACTION;
+    $methodsAction[$method->getBaseName()] = $method;
 }
 
-var_export($methods);
+// Parsing of Accessor methods
+$methodsAccessor = [];
+$xmlActionsDT = $xmlPage->xpath('//accessors/descendant::a[@name]/ancestor::dt');
+foreach ($xmlActionsDT as $xmlActionDT) {
+    $xmlActionDD = $xmlActionDT->xpath('following-sibling::dd[1]')[0];
+    $method = Method::modelNew()->loadFromXML($xmlActionDT, $xmlActionDD);
+    $method->type = Method::TYPE_ACCESSOR;
+    $methodsAccessor[$method->getBaseName()] = $method;
+}
+
+var_export($methodsAction);
+var_export($methodsAccessor);

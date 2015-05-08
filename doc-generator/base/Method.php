@@ -8,9 +8,63 @@ namespace phpdocSeleniumGenerator;
 class Method extends Base
 {
     /**
+     * Actions are commands that generally manipulate the state of the application.
+     * They do things like "click this link" and "select that option".
+     * If an Action fails, or has an error, the execution of the current test is stopped.
+     *
+     * Many Actions can be called with the "AndWait" suffix, e.g. "clickAndWait". This suffix tells Selenium that the
+     * action will cause the browser to make a call to the server, and that Selenium should wait for a new page to
+     * load.
+     *
+     * @see Method::TYPE_ACCESSOR
+     * @see Method::TYPE_ASSERTION
+     */
+    const TYPE_ACTION = 'action';
+
+    /**
+     * Accessors examine the state of the application and store the results in variables, e.g. "storeTitle",
+     * "getElementWidth" or "isTextPresent". They are also used to automatically generate Assertions.
+     *
+     * @see Method::TYPE_ACTION
+     * @see Method::TYPE_ASSERTIONsdfsd
+     */
+    const TYPE_ACCESSOR = 'accessor';
+
+    /**
+     * Assertions are like Accessors (see {@link Method::TYPE_ACCESSOR}), but they verify that the state of the
+     * application conforms to what is expected. Examples include "make sure the page title is X" and "verify that this
+     * checkbox is checked".
+     *
+     * All Selenium Assertions can be used in 3 modes: "assert", "verify", and "waitFor". For example, you can
+     * "assertText", "verifyText" and "waitForText". When an "assert" fails, the test is aborted. When a "verify"
+     * fails, the test will continue execution, logging the failure. This allows a single "assert" to ensure that the
+     * application is on the correct page, followed by a bunch of "verify" assertions to test form field values,
+     * labels, etc.
+     *
+     * "waitFor" commands wait for some condition to become true (which can be useful for testing Ajax applications).
+     * They will succeed immediately if the condition is already true. However, they will fail and halt the test if the
+     * condition does not become true within the current timeout setting (see the setTimeout action below).
+     *
+     * <b>Note:</b> all assertions automatically generated from related accessor
+     *
+     * @see Method::TYPE_ACTION
+     * @see Method::TYPE_ACCESSOR
+     */
+    const TYPE_ASSERTION = 'assertion';
+
+    /**
      * @var string Name of method
      */
     public $name;
+
+    /**
+     * @var string Type of method (related command)
+     *
+     * @see Method::TYPE_ACTION
+     * @see Method::TYPE_ACCESSOR
+     * @see Method::TYPE_ASSERTION
+     */
+    public $type;
 
     /**
      * @var Argument[] List of method arguments
@@ -21,6 +75,23 @@ class Method extends Base
      * @var string Description of method
      */
     public $description;
+
+    /**
+     * @return string Base name of method. <br/>
+     *                Accessors: without prefixes: store*, get*, is* <br/>
+     *                Assetation: without prefixes ... <br/>
+     */
+    function getBaseName()
+    {
+        switch ($this->type) {
+            case static::TYPE_ACTION:
+                return Helper::cutPostfix(['AndWait'], $this->name);
+            case static::TYPE_ACCESSOR:
+                return Helper::cutPrefix(['store', 'get', 'is'], $this->name);
+            case static::TYPE_ASSERTION:
+                return Helper::cutPrefix(['assert', 'verify', 'waitFor'], $this->name);
+        }
+    }
 
     /**
      * Load data about method from specified XML nodes.
@@ -78,7 +149,7 @@ class Method extends Base
         $this->description = $matches['description'];
 
         // arguments
-        $xmlArguments = $dd->xpath("p[text()='Arguments:']/following-sibling::ul/li");
+        $xmlArguments = $dd->xpath("p[text()='Arguments:']/following-sibling::ul[1]/li");
         foreach ($xmlArguments as $xmlArgument) {
             $this->arguments[] = Argument::modelNew()
                 ->setMethod($this)
