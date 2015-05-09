@@ -21,13 +21,9 @@ class Parser
      */
     private $_xmlPage;
     /**
-     * @var Method[]
+     * @var Method[] "Cache" for parsed methods
      */
-    private $_actionMethods;
-    /**
-     * @var Method[]
-     */
-    private $_accessorMethods;
+    private $_parsedMethods;
 
     /**
      * Selenium commands, which ignored at parsing
@@ -46,22 +42,52 @@ class Parser
     function __construct($html)
     {
         $this->_xmlPage = $this->_html2xml($html);
+        $this->_runParsing();
     }
 
-    function getActionMethods()
+    /**
+     * Returns parsed methods (if necessary runs parsing)
+     *
+     * @return Method[]     Array of methods, indexed by basename (lower case)
+     * @throws \Exception
+     */
+    function getParsedMethods()
     {
-        if ($this->_actionMethods === null) {
-            $this->_actionMethods = $this->_parseActions();
+        if ($this->_parsedMethods === null) {
+            $this->_runParsing();
         }
-        return $this->_actionMethods;
+        return $this->_parsedMethods;
     }
 
-    function getAccessorMethods()
+    /**
+     * Returns parsed method by basename
+     *
+     * @param string $methodBaseName basename of method (case insensitive)
+     *
+     * @return Method|null  Found model of method. If not found, returns =null.
+     */
+    function getMethodByBaseName($methodBaseName)
     {
-        if ($this->_accessorMethods === null) {
-            $this->_accessorMethods = $this->_parseAccessors();
+        return Helper::value($this->getParsedMethods(), strtolower($methodBaseName));
+    }
+
+    /**
+     * Runs parsing of methods and save result to "local cache"
+     *
+     * @throws \Exception   If duplicate base names of methods
+     * @see _parsedMethods
+     */
+    private function _runParsing()
+    {
+        $actions = $this->_parseActions();
+        $accessors = $this->_parseAccessors();
+        $duplicateNames = array_intersect_key($actions, $accessors);
+
+        if (empty($duplicateNames)) {
+            $this->_parsedMethods = $actions + $accessors;
+        } else {
+            throw new \Exception('Duplicate base names for parsed methods: ' . join(',', $duplicateNames));
         }
-        return $this->_accessorMethods;
     }
 
     /**
@@ -71,14 +97,14 @@ class Parser
     private function _parseActions()
     {
         $methods = [];
-        $xmlActionsDT = $this->_xmlPage->xpath('//actions/descendant::a[@name]/ancestor::dt');
+        $xmlActionsDT = $this->_xmlPage->xpath('//' . Method::TYPE_ACTION . '/descendant::a[@name]/ancestor::dt');
         foreach ($xmlActionsDT as $xmlActionDT) {
             $xmlActionDD = $xmlActionDT->xpath('following-sibling::dd[1]')[0];
             $method = Method::createNew()->loadFromXML($xmlActionDT, $xmlActionDD);
 
             if (!in_array($method->name, $this->exclusionCommands)) {
                 $method->type = Method::TYPE_ACTION;
-                $methods[$method->getBaseName()] = $method;
+                $methods[$method->getBaseName(true)] = $method;
             }
         }
         return $methods;
@@ -91,18 +117,19 @@ class Parser
     private function _parseAccessors()
     {
         $methods = [];
-        $xmlActionsDT = $this->_xmlPage->xpath('//accessors/descendant::a[@name]/ancestor::dt');
+        $xmlActionsDT = $this->_xmlPage->xpath('//' . Method::TYPE_ACCESSOR . '/descendant::a[@name]/ancestor::dt');
         foreach ($xmlActionsDT as $xmlActionDT) {
             $xmlActionDD = $xmlActionDT->xpath('following-sibling::dd[1]')[0];
             $method = Method::createNew()->loadFromXML($xmlActionDT, $xmlActionDD);
 
             if (!in_array($method->name, $this->exclusionCommands)) {
                 $method->type = Method::TYPE_ACCESSOR;
-                $methods[$method->getBaseName()] = $method;
+                $methods[$method->getBaseName(true)] = $method;
             }
         }
         return $methods;
     }
+
 
     /**
      * Makes easy xml object from specified html page
@@ -123,15 +150,17 @@ class Parser
         $htmlAccessors = $matches[1];
 
         // Make XML (for easy parsing)
+        $actionsNodeName = Method::TYPE_ACTION;
+        $accessorsNodeName = Method::TYPE_ACCESSOR;
         $xmlStr = <<<XML
 <?xml version='1.0' standalone='yes'?>
 <doc>
-    <actions>
+    <$actionsNodeName>
         $htmlActions
-    </actions>
-    <accessors>
+    </$actionsNodeName>
+    <$accessorsNodeName>
         $htmlAccessors
-    </accessors>
+    </$accessorsNodeName>
 </doc>
 XML;
         $xmlStr = str_replace('<br>', '', $xmlStr); // delete incorrect xml tags

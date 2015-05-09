@@ -86,28 +86,36 @@ class Method extends Base
     public $returnValue;
 
     /**
+     * @param bool $lowerCase If =true, returned in lower case
+     *
      * @return string Base name of method. <br/>
+     *                Actions: without postfixes: *AndWait <br/>
      *                Accessors: without prefixes: store*, get*, is* <br/>
-     *                Assetation: without prefixes ... <br/>
+     *                Assertion: without prefixes: assert*, verify*, waitFor* <br/>
      * @throws \Exception   If not assigned
      *                      {@link type} of method
      */
-    function getBaseName()
+    function getBaseName($lowerCase = false)
     {
+        $baseName = null;
         switch ($this->type) {
             case static::TYPE_ACTION:
-                return Helper::cutPostfix(['AndWait'], $this->name);
+                $baseName = Helper::cutPostfix(['AndWait'], $this->name);
+                break;
 
             case static::TYPE_ACCESSOR:
-                return Helper::cutPrefix(['store', 'get', 'is'], $this->name);
+                $baseName = Helper::cutPrefix(['store', 'get', 'is'], $this->name);
+                break;
 
             case static::TYPE_ASSERTION:
                 $name = str_replace('Not', '', $this->name);
-                return Helper::cutPrefix(['assert', 'verify', 'waitFor'], $name);
+                $baseName = Helper::cutPrefix(['assert', 'verify', 'waitFor'], $name);
+                break;
 
             default:
                 $this::throwException('Cannot determine base name without assigned type of method');
         }
+        return $lowerCase ? strtolower($baseName) : $baseName;
     }
 
     /**
