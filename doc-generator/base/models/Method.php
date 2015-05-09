@@ -194,6 +194,7 @@ class Method extends Base
     static function determineTypeByName($methodFullName)
     {
         $name2type = [
+            // 'store' => static::TYPE_ACTION,      // 'store' - is not detected as prefix store*, see Helper::hasPrefix
             'waitForCondition'   => static::TYPE_ACTION,
             'waitForFrameToLoad' => static::TYPE_ACTION,
             'waitForPageToLoad'  => static::TYPE_ACTION,

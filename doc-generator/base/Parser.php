@@ -79,8 +79,8 @@ class Parser
      */
     private function _runParsing()
     {
-        $actions = $this->_parseActions();
-        $accessors = $this->_parseAccessors();
+        $actions = $this->_parseByMethodType(Method::TYPE_ACTION);
+        $accessors = $this->_parseByMethodType(Method::TYPE_ACCESSOR);
         $duplicateNames = array_intersect_key($actions, $accessors);
 
         if (empty($duplicateNames)) {
@@ -91,45 +91,28 @@ class Parser
     }
 
     /**
-     * Parsing of Action methods (commands) from documentation
+     * Parsing of methods (commands) from documentation
+     *
+     * @param string $methodType Type of method,
+     *                           see {@link Method::type}
+     *
      * @return Method[]
      */
-    private function _parseActions()
+    private function _parseByMethodType($methodType)
     {
         $methods = [];
-        $xmlActionsDT = $this->_xmlPage->xpath('//' . Method::TYPE_ACTION . '/descendant::a[@name]/ancestor::dt');
-        foreach ($xmlActionsDT as $xmlActionDT) {
-            $xmlActionDD = $xmlActionDT->xpath('following-sibling::dd[1]')[0];
-            $method = Method::createNew()->loadFromXML($xmlActionDT, $xmlActionDD);
+        $xmlDtNodes = $this->_xmlPage->xpath('//' . $methodType . '/descendant::a[@name]/ancestor::dt');
+        foreach ($xmlDtNodes as $xmlDT) {
+            $xmlDD = $xmlDT->xpath('following-sibling::dd[1]')[0];
+            $method = Method::createNew()->loadFromXML($xmlDT, $xmlDD);
 
             if (!in_array($method->name, $this->exclusionCommands)) {
-                $method->type = Method::TYPE_ACTION;
+                $method->type = $methodType;
                 $methods[$method->getBaseName(true)] = $method;
             }
         }
         return $methods;
     }
-
-    /**
-     * Parsing of Accessor methods (commands) from documentation
-     * @return Method[]
-     */
-    private function _parseAccessors()
-    {
-        $methods = [];
-        $xmlActionsDT = $this->_xmlPage->xpath('//' . Method::TYPE_ACCESSOR . '/descendant::a[@name]/ancestor::dt');
-        foreach ($xmlActionsDT as $xmlActionDT) {
-            $xmlActionDD = $xmlActionDT->xpath('following-sibling::dd[1]')[0];
-            $method = Method::createNew()->loadFromXML($xmlActionDT, $xmlActionDD);
-
-            if (!in_array($method->name, $this->exclusionCommands)) {
-                $method->type = Method::TYPE_ACCESSOR;
-                $methods[$method->getBaseName(true)] = $method;
-            }
-        }
-        return $methods;
-    }
-
 
     /**
      * Makes easy xml object from specified html page

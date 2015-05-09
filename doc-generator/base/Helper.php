@@ -40,54 +40,50 @@ abstract class Helper
 
     /**
      * Evaluates the value of the specified attribute for the given object or array.
-     * The attribute name can be given in a path syntax. For example, if the attribute
-     * is "author.firstName", this method will return the value of "$object->author->firstName"
-     * or "$array['author']['firstName']".
+     *
      * A default value (passed as the last parameter) will be returned if the attribute does
      * not exist or is broken in the middle (e.g. $object->author is null).
      *
-     * Anonymous function could also be used for attribute calculation as follows:
-     * <code>
-     * $taskClosedSecondsAgo = self::value($closedTask,function($model) {
-     *    return time() - $model->closed_at;
-     * });
-     * </code>
-     * Your anonymous function should receive one argument, which is the object, the current
-     * value is calculated from.
+     * @param mixed $objectOrArray This can be either an object or an array.
+     * @param mixed $attribute     the attribute name (property name for objects, key name - for arrays).
+     * @param mixed $defaultValue  the default value to return when the attribute does not exist.
      *
-     * @param mixed $object       This can be either an object or an array.
-     * @param mixed $attribute    the attribute name (use dot to concatenate multiple attributes)
-     *                            or anonymous function (PHP 5.3+). Remember that functions created by "create_function"
-     *                            are not supported by this method. Also note that numeric value is meaningless when
-     *                            first parameter is object typed.
-     * @param mixed $defaultValue the default value to return when the attribute does not exist.
      * @return mixed the attribute value.
      */
-    public static function value($object, $attribute, $defaultValue = null)
+    public static function value($objectOrArray, $attribute, $defaultValue = null)
     {
-        if (is_scalar($attribute)) {
-            foreach (explode('.', $attribute) as $name) {
-                if (isset($object->$name)) {
-                    $object = $object->$name;
-                } elseif (isset($object[$name])) { //A::isArrayable($object) AND
-                    $object = $object[$name];
-                } else {
-                    return $defaultValue;
-                }
-            }
-            return $object;
-        } elseif (is_callable($attribute)) {
-            if ($attribute instanceof \Closure) {
-                $attribute = \Closure::bind($attribute, $object);
-            }
-            return call_user_func($attribute, $object);
+        if (isset($objectOrArray->$attribute)) {
+            return $objectOrArray->$attribute;
+        } elseif (isset($objectOrArray[$attribute])) {
+            return $objectOrArray[$attribute];
         } else {
-            return null;
+            return $defaultValue;
         }
     }
 
     /**
-     * Returns =true, if specified string has specified prefix, else =false
+     * Filters items by given keys.
+     *
+     * @param array $array   source assoc array
+     * @param array $keysInc keys of items, that should be included
+     * @param array $keysExc keys of items, that should be excluded
+     *
+     * @return array|mixed|null    filtered array
+     */
+    public static function filterByKeys($array, array $keysInc = null, array $keysExc = null)
+    {
+        if ($keysInc !== null) {
+            $array = array_intersect_key($array, array_flip($keysInc));
+        }
+        if ($keysExc) {
+            $array = array_diff_key($array, array_flip($keysExc));
+        }
+        return $array;
+    }
+
+    /**
+     * Returns =true, if specified string has specified prefix, else =false.
+     * If prefix equal source string, then method returns =false (is not a prefix).
      *
      * @param string $prefix Prefix
      * @param string $str    Source string to check
@@ -96,11 +92,12 @@ abstract class Helper
      */
     static function hasPrefix($prefix, $str)
     {
-        return (substr($str, 0, strlen($prefix)) === $prefix);
+        return (substr($str, 0, strlen($prefix)) === $prefix) && (strlen($str) !== strlen($prefix));
     }
 
     /**
-     * Returns =true, if specified string has specified postfix, else =false
+     * Returns =true, if specified string has specified postfix, else =false.
+     * If postfix equal source string, then method returns =false (is not a postfix).
      *
      * @param string $postfix Postfix
      * @param string $str     Source string to check
@@ -109,7 +106,7 @@ abstract class Helper
      */
     static function hasPostfix($postfix, $str)
     {
-        return (substr($str, -strlen($postfix)) === $postfix);
+        return (substr($str, -strlen($postfix)) === $postfix) && (strlen($str) !== strlen($postfix));
     }
 
     /**
