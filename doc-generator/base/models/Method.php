@@ -57,6 +57,55 @@ class Method extends Base
     const TYPE_ASSERTION = 'assertion';
 
     /**
+     * @var array   Possible values of
+     *              {@link type} (array keys) and labels (array values)
+     */
+    static $typesAll = [
+        self::TYPE_ACTION    => 'Action',
+        self::TYPE_ACCESSOR  => 'Accessor',
+        self::TYPE_ASSERTION => 'Assertion',
+    ];
+
+    const SUBTYPE_BASE         = 'action';
+    const SUBTYPE_AND_WAIT     = 'actionAndWait';
+    const SUBTYPE_STORE        = 'storeAccessor';
+    const SUBTYPE_GET          = 'getAccessor';
+    const SUBTYPE_IS           = 'isAccessor';
+    const SUBTYPE_VERIFY       = 'verifyAssertion';
+    const SUBTYPE_VERIFY_NOT   = 'verifyNotAssertion';
+    const SUBTYPE_ASSERT       = 'assertAssertion';
+    const SUBTYPE_ASSERT_NOT   = 'assertNotAssertion';
+    const SUBTYPE_WAIT_FOR     = 'waitForAssertion';
+    const SUBTYPE_WAIT_FOR_NOT = 'waitForNotAssertion';
+
+    /**
+     * @var array   Possible values of
+     *              {@link subtype} (array keys) and labels (array values), indexed by {@link type}
+     */
+    static $subtypesAll = [
+
+        self::TYPE_ACTION    => [
+            self::SUBTYPE_BASE     => '',
+            self::SUBTYPE_AND_WAIT => 'AndWait',
+        ],
+
+        self::TYPE_ACCESSOR  => [
+            self::SUBTYPE_STORE => 'store',
+            self::SUBTYPE_GET   => 'get',
+            self::SUBTYPE_IS    => 'is',
+        ],
+
+        self::TYPE_ASSERTION => [
+            self::SUBTYPE_VERIFY       => 'verify',
+            self::SUBTYPE_VERIFY_NOT   => 'verifyNot',
+            self::SUBTYPE_ASSERT       => 'assert',
+            self::SUBTYPE_ASSERT_NOT   => 'assertNot',
+            self::SUBTYPE_WAIT_FOR     => 'waitFor',
+            self::SUBTYPE_WAIT_FOR_NOT => 'waitForNot',
+        ],
+    ];
+
+    /**
      * @var string Name of method
      */
     public $name;
@@ -64,11 +113,30 @@ class Method extends Base
     /**
      * @var string Type of method (related command)
      *
+     * @see typesAll
      * @see Method::TYPE_ACTION
      * @see Method::TYPE_ACCESSOR
      * @see Method::TYPE_ASSERTION
      */
     public $type;
+
+    /**
+     * @var string Subtype of method (related command)
+     *
+     * @see subtypesAll
+     * @see Method::SUBTYPE_BASE
+     * @see Method::SUBTYPE_AND_WAIT
+     * @see Method::SUBTYPE_STORE
+     * @see Method::SUBTYPE_GET
+     * @see Method::SUBTYPE_IS
+     * @see Method::SUBTYPE_VERIFY
+     * @see Method::SUBTYPE_VERIFY_NOT
+     * @see Method::SUBTYPE_ASSERT
+     * @see Method::SUBTYPE_ASSERT_NOT
+     * @see Method::SUBTYPE_WAIT_FOR
+     * @see Method::SUBTYPE_WAIT_FOR_NOT
+     */
+    public $subtype;
 
     /**
      * @var Argument[] List of method arguments
@@ -184,12 +252,12 @@ class Method extends Base
     }
 
     /**
-     * Determines type of method by name
+     * Determines {@link type} of method by name
      *
      * @param string $methodFullName Name of method
      *
      * @return string Type of method (related command),
-     *                see {@link type}
+     *                possible values see {@link typesAll}
      */
     static function determineTypeByName($methodFullName)
     {
@@ -223,5 +291,64 @@ class Method extends Base
         }
 
         return static::TYPE_ACTION; // by default commands without specified prefixes is Actions
+    }
+
+    /**
+     * Determines {@link subtype} of method by name
+     *
+     * @param string $methodFullName Name of method
+     *
+     * @return string Subtype of method (related command),
+     *                possible values see {@link subtypesAll}
+     */
+    static function determineSubtypeByName($methodFullName)
+    {
+        $resultSubtype = null;
+        switch (static::determineTypeByName($methodFullName)) {
+            case self::TYPE_ACTION:
+                $resultSubtype = Helper::hasPostfix('AndWait', $methodFullName)
+                    ? static::SUBTYPE_AND_WAIT
+                    : static::SUBTYPE_BASE;
+                break;
+
+            case self::TYPE_ACCESSOR:
+                $prefix2subtype = [
+                    'store' => static::SUBTYPE_STORE,
+                    'get'   => static::SUBTYPE_GET,
+                    'is'    => static::SUBTYPE_IS,
+                ];
+                foreach ($prefix2subtype as $prefix => $subtype) { // determine by prefix
+                    if (Helper::hasPrefix($prefix, $methodFullName)) {
+                        $resultSubtype = $subtype;
+                    }
+                }
+                break;
+
+            case self::TYPE_ASSERTION:
+                $hasNot = strpos($methodFullName, 'Not') !== false;
+                $prefix2subtype = $hasNot
+                    ? [
+                        'assert'  => static::SUBTYPE_ASSERT_NOT,
+                        'verify'  => static::SUBTYPE_VERIFY_NOT,
+                        'waitFor' => static::SUBTYPE_WAIT_FOR_NOT
+                    ]
+                    : [
+                        'assert'  => static::SUBTYPE_ASSERT,
+                        'verify'  => static::SUBTYPE_VERIFY,
+                        'waitFor' => static::SUBTYPE_WAIT_FOR
+                    ];
+                foreach ($prefix2subtype as $prefix => $subtype) { // determine by prefix
+                    if (Helper::hasPrefix($prefix, $methodFullName)) {
+                        $resultSubtype = $subtype;
+                    }
+                }
+                break;
+        }
+
+        if (!$resultSubtype) {
+            static::throwException('Cannot evaluate subtype for method: ' . $methodFullName);
+        }
+
+        return $resultSubtype; // by default commands without specified prefixes is Actions
     }
 }

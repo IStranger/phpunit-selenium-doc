@@ -34,20 +34,21 @@ foreach ($driver->getAvailableSeleniumCommands() as $methodFullName => $returnTy
     $method = models\Method::createNew();
     $method->name = $methodFullName;
     $method->type = models\Method::determineTypeByName($methodFullName);
+    $method->subtype = models\Method::determineSubtypeByName($methodFullName);
     $method->returnValue = models\ReturnValue::createNew();
     $method->returnValue->type = $returnType;
 
     // Search of description in parsed docs
     if ($findMethod = $parser->getMethodByBaseName($method->getBaseName(true))) {
         // todo implement
-    }else{
-        $notFounded[$method->getBaseName()][] = $method->name; // todo debug
+    } else {
+        $notFounded[$method->getBaseName()][] = $method->name; // todo for this commands need manual description
     }
 
     $methods[] = $method;
 }
 
-// var_export($methods);
+var_export($methods);
 
-//var_export(array_keys($notFounded));
+//var_export(array_keys($notFounded)); // todo debug
 //var_export($notFounded);
