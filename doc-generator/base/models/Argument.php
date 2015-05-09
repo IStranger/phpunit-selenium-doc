@@ -3,55 +3,27 @@
  * This class contain description of single argument of selenium method
  */
 
-namespace phpdocSeleniumGenerator;
+namespace phpdocSeleniumGenerator\models;
 
-class Argument extends Base
+use phpdocSeleniumGenerator\Helper;
+
+
+class Argument extends MethodComponent
 {
-    private $_method;
-
     /**
      * @var string Name of argument
      */
     public $name;
 
     /**
-     * @var string Type of arguments (php variable type)
+     * @var string Type of argument (php variable type)
      */
     public $type;
 
     /**
-     * @var string Description of method
+     * @var string Description of argument
      */
     public $description;
-
-    /**
-     * @param Method $method Related method for this argument
-     */
-    function __construct(Method $method = null)
-    {
-        if ($method) {
-            $this->setMethod($method);
-        }
-    }
-
-    /**
-     * @return Method Related method for this argument
-     */
-    function getMethod()
-    {
-        return $this->_method;
-    }
-
-    /**
-     * @param Method $method Set specified as "related method" for this argument
-     *
-     * @return $this
-     */
-    function setMethod(Method $method)
-    {
-        $this->_method = $method;
-        return $this;
-    }
 
     /**
      * Load data about argument from specified XML node.

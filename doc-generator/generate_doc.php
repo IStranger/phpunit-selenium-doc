@@ -13,7 +13,7 @@
  */
 
 require_once 'base/class_loader.php';
-use \phpdocSeleniumGenerator\Method;
+use \phpdocSeleniumGenerator\models;
 use \phpdocSeleniumGenerator\phpunitSeleniumDriver;
 use \phpdocSeleniumGenerator\Parser;
 
@@ -21,30 +21,22 @@ use \phpdocSeleniumGenerator\Parser;
 define('SELENIUM_DOC_REFERENCE', 'source-doc/selenium-core-reference-1.0.1.html');
 
 
-// --------------------------------------
 // Parsing of official documentation
 $parser = new Parser(file_get_contents(SELENIUM_DOC_REFERENCE));
 
-//var_export($parser->getActionMethods());
-//var_export($parser->getAccessorMethods());
-
-
-// --------------------------------------
-// Getting available selenium commands (methods of phpunit-selenium-driver)
-
+// Search description for available selenium commands (methods of phpunit-selenium-driver)
 $driver = new phpunitSeleniumDriver();
 $methods = [];
 foreach ($driver->getAvailableSeleniumCommands() as $methodFullName => $returnType) {
-    $method = Method::createNew();
+    $method = models\Method::createNew();
     $method->name = $methodFullName;
-    $method->type = Method::determineTypeByName($methodFullName);
-    // todo add saving of returnType
+    $method->type = models\Method::determineTypeByName($methodFullName);
+    $method->returnValue = models\ReturnValue::createNew();
+    $method->returnValue->type = $returnType;
+
+    // todo implement find of description of each method (from parser)
 
     $methods[] = $method;
 }
 
-// var_export(phpunitSeleniumDriver::createNew()->getAvailableSeleniumCommands());
 var_export($methods);
-
-
-

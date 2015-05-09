@@ -11,6 +11,9 @@
 
 namespace phpdocSeleniumGenerator;
 
+use phpdocSeleniumGenerator\models\Method;
+
+
 class Parser
 {
     /**

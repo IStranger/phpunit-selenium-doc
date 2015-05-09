@@ -3,7 +3,8 @@
  * Base class for phpdoc generator
  */
 
-namespace phpdocSeleniumGenerator;
+namespace phpdocSeleniumGenerator\models;
+
 
 class Base
 {

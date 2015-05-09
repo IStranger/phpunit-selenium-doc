@@ -4,10 +4,13 @@
  */
 namespace phpdocSeleniumGenerator;
 
+
 require_once 'Helper.php';
-require_once 'Base.php';
-require_once 'Argument.php';
-require_once 'Method.php';
+require_once 'models/Base.php';
+require_once 'models/MethodComponent.php';
+require_once 'models/Argument.php';
+require_once 'models/ReturnValue.php';
+require_once 'models/Method.php';
 require_once 'Parser.php';
 
 require_once 'Driver.php'; // phpunit-selenium driver (from https://github.com/giorgiosironi/phpunit-selenium)

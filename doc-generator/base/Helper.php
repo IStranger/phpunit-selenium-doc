@@ -5,6 +5,7 @@
 
 namespace phpdocSeleniumGenerator;
 
+
 abstract class Helper
 {
     /**

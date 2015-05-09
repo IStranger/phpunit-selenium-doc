@@ -3,7 +3,9 @@
  * This class contain full description of selenium method (target, arguments list, return value etc.)
  */
 
-namespace phpdocSeleniumGenerator;
+namespace phpdocSeleniumGenerator\models;
+
+use phpdocSeleniumGenerator\Helper;
 
 class Method extends Base
 {
@@ -79,6 +81,11 @@ class Method extends Base
     public $description;
 
     /**
+     * @var ReturnValue Return value of method
+     */
+    public $returnValue;
+
+    /**
      * @return string Base name of method. <br/>
      *                Accessors: without prefixes: store*, get*, is* <br/>
      *                Assetation: without prefixes ... <br/>
@@ -97,7 +104,7 @@ class Method extends Base
             case static::TYPE_ASSERTION:
                 $name = str_replace('Not', '', $this->name);
                 return Helper::cutPrefix(['assert', 'verify', 'waitFor'], $name);
-            
+
             default:
                 $this::throwException('Cannot determine base name without assigned type of method');
         }
