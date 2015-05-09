@@ -23,4 +23,17 @@ class Base
         $className = static::className();
         return new $className();
     }
+
+    /**
+     * Throws exception with specified message
+     *
+     * @param string $msg Exception message
+     *
+     * @throws \Exception
+     */
+    protected function throwException($msg)
+    {
+        $msg = 'Class "' . static::className() . '" ::> ' . $msg;
+        throw new \Exception($msg);
+    }
 }

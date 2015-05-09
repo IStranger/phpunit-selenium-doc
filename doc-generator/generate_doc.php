@@ -1,6 +1,10 @@
 <?php
 /**
- * This script parse official documentation html page and generate phpdoc for selenium methods
+ * This script parse official documentation html page and generate phpdoc for methods of phpunit selenium driver.
+ *
+ * Directory "source-doc" should be contain actual version of html documentation.
+ * Directory "base" should be contain actual version of PHPUnit_Extensions_SeleniumTestCase_Driver class (Driver.php)
+ * (from https://github.com/giorgiosironi/phpunit-selenium/blob/master/PHPUnit/Extensions/SeleniumTestCase/Driver.php)
  *
  * @see https://php.net/manual/en/simplexml.examples-basic.php
  * @see http://www.w3schools.com/XPath/
@@ -10,9 +14,10 @@
 
 require_once 'base/class_loader.php';
 use \phpdocSeleniumGenerator\Method;
+use \phpdocSeleniumGenerator\phpunitSeleniumDriver;
 
 // HTML documentation (local file can be changed to http://release.seleniumhq.org/selenium-core/1.0.1/reference.html)
-define('SELENIUM_DOC_REFERENCE', 'selenium-core-reference-1.0.1.html');
+define('SELENIUM_DOC_REFERENCE', 'source-doc/selenium-core-reference-1.0.1.html');
 
 
 /**
@@ -50,7 +55,7 @@ XML;
     return simplexml_load_string($xmlStr);
 }
 
-
+// --------------------------------------
 // Parsing of official documentation
 $xmlPage = html2xml(file_get_contents(SELENIUM_DOC_REFERENCE));
 
@@ -61,7 +66,7 @@ foreach ($xmlActionsDT as $xmlActionDT) {
     $xmlActionDD = $xmlActionDT->xpath('following-sibling::dd[1]')[0];
     $method = Method::modelNew()->loadFromXML($xmlActionDT, $xmlActionDD);
     $method->type = Method::TYPE_ACTION;
-    $methodsAction[$method->getBaseName()] = $method;
+    $methodsAction[$method->getBaseName()] = $method->name;
 }
 
 // Parsing of Accessor methods
@@ -70,9 +75,23 @@ $xmlActionsDT = $xmlPage->xpath('//accessors/descendant::a[@name]/ancestor::dt')
 foreach ($xmlActionsDT as $xmlActionDT) {
     $xmlActionDD = $xmlActionDT->xpath('following-sibling::dd[1]')[0];
     $method = Method::modelNew()->loadFromXML($xmlActionDT, $xmlActionDD);
-    $method->type = Method::TYPE_ACCESSOR;
-    $methodsAccessor[$method->getBaseName()] = $method;
+
+    // we exclude assert* methods from accessor list
+    if (!in_array($method->name, ['assertErrorOnNext', 'assertFailureOnNext', 'assertSelected'])) {
+        $method->type = Method::TYPE_ACCESSOR;
+        $methodsAccessor[$method->getBaseName()] = $method->name;
+    }
 }
 
-var_export($methodsAction);
-var_export($methodsAccessor);
+//var_export($methodsAction);
+//var_export($methodsAccessor);
+
+
+// --------------------------------------
+// Getting available selenium commands (methods of phpunit-selenium-driver)
+
+$driver = new phpunitSeleniumDriver();
+var_export($driver->getAvailableSeleniumCommands());
+
+
+

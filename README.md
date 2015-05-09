@@ -1,6 +1,6 @@
 # phpunit-selenium-doc
 This class provides extended documentation (phpDoc) for phpunit-selenium methods.
-Class used for easy development of tests in IDE (like phpStorm or NetBeans).
+Class used for easy development of tests in IDE (like phpStorm, NetBeans etc.).
 
 SeleniumTestCaseDoc overrides documentation of PHPUnit_Extensions_SeleniumTestCase methods 
 (according official description of selenium commands). 

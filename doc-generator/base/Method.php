@@ -80,6 +80,8 @@ class Method extends Base
      * @return string Base name of method. <br/>
      *                Accessors: without prefixes: store*, get*, is* <br/>
      *                Assetation: without prefixes ... <br/>
+     * @throws \Exception   If not assigned
+     *                      {@link type} of method
      */
     function getBaseName()
     {
@@ -89,7 +91,10 @@ class Method extends Base
             case static::TYPE_ACCESSOR:
                 return Helper::cutPrefix(['store', 'get', 'is'], $this->name);
             case static::TYPE_ASSERTION:
-                return Helper::cutPrefix(['assert', 'verify', 'waitFor'], $this->name);
+                $name = str_replace('Not', '', $this->name);
+                return Helper::cutPrefix(['assert', 'verify', 'waitFor'], $name);
+            default:
+                $this->throwException('Cannot determine base name without assigned type of method');
         }
     }
 
@@ -156,5 +161,17 @@ class Method extends Base
                 ->loadFromXML($xmlArgument);
         }
         return $this;
+    }
+
+    /**
+     * Determines type of method by name
+     *
+     * @return string Type of method (related command),
+     *                see {@link type}
+     */
+    static function determineTypeByName()
+    {
+        // todo написать --> в зависимости от наличия префикса/постфикса.
+        // Будет использоваться для определения типа исходных методов
     }
 }
