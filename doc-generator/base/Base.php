@@ -18,7 +18,7 @@ class Base
     /**
      * @return static New instance of current class
      */
-    static function modelNew()
+    static function createNew()
     {
         $className = static::className();
         return new $className();
@@ -31,7 +31,7 @@ class Base
      *
      * @throws \Exception
      */
-    protected function throwException($msg)
+    static protected function throwException($msg)
     {
         $msg = 'Class "' . static::className() . '" ::> ' . $msg;
         throw new \Exception($msg);

@@ -16,6 +16,8 @@ class Method extends Base
      * action will cause the browser to make a call to the server, and that Selenium should wait for a new page to
      * load.
      *
+     * <b>Note:</b> Not all actions can be called with the "AndWait" suffix (for example waitFor* actions)
+     *
      * @see Method::TYPE_ACCESSOR
      * @see Method::TYPE_ASSERTION
      */
@@ -88,13 +90,16 @@ class Method extends Base
         switch ($this->type) {
             case static::TYPE_ACTION:
                 return Helper::cutPostfix(['AndWait'], $this->name);
+
             case static::TYPE_ACCESSOR:
                 return Helper::cutPrefix(['store', 'get', 'is'], $this->name);
+
             case static::TYPE_ASSERTION:
                 $name = str_replace('Not', '', $this->name);
                 return Helper::cutPrefix(['assert', 'verify', 'waitFor'], $name);
+            
             default:
-                $this->throwException('Cannot determine base name without assigned type of method');
+                $this::throwException('Cannot determine base name without assigned type of method');
         }
     }
 
@@ -156,7 +161,7 @@ class Method extends Base
         // arguments
         $xmlArguments = $dd->xpath("p[text()='Arguments:']/following-sibling::ul[1]/li");
         foreach ($xmlArguments as $xmlArgument) {
-            $this->arguments[] = Argument::modelNew()
+            $this->arguments[] = Argument::createNew()
                 ->setMethod($this)
                 ->loadFromXML($xmlArgument);
         }
@@ -166,12 +171,41 @@ class Method extends Base
     /**
      * Determines type of method by name
      *
+     * @param string $methodFullName Name of method
+     *
      * @return string Type of method (related command),
      *                see {@link type}
      */
-    static function determineTypeByName()
+    static function determineTypeByName($methodFullName)
     {
-        // todo написать --> в зависимости от наличия префикса/постфикса.
-        // Будет использоваться для определения типа исходных методов
+        $name2type = [
+            'waitForCondition'   => static::TYPE_ACTION,
+            'waitForFrameToLoad' => static::TYPE_ACTION,
+            'waitForPageToLoad'  => static::TYPE_ACTION,
+            'waitForPopUp'       => static::TYPE_ACTION
+        ];
+
+        $prefix2type = [
+            'store'   => static::TYPE_ACCESSOR,
+            'get'     => static::TYPE_ACCESSOR,
+            'is'      => static::TYPE_ACCESSOR,
+            'assert'  => static::TYPE_ASSERTION,
+            'verify'  => static::TYPE_ASSERTION,
+            'waitFor' => static::TYPE_ASSERTION
+        ];
+
+        // determine by full name (exclusions)
+        if (array_key_exists($methodFullName, $name2type)) {
+            return $name2type[$methodFullName];
+        }
+
+        // determine by prefix
+        foreach ($prefix2type as $prefix => $type) {
+            if (Helper::hasPrefix($prefix, $methodFullName)) {
+                return $type;
+            }
+        }
+
+        return static::TYPE_ACTION; // by default commands without specified prefixes is Actions
     }
 }

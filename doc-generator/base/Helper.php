@@ -41,7 +41,7 @@ abstract class Helper
      * Returns =true, if specified string has specified prefix, else =false
      *
      * @param string $prefix Prefix
-     * @param string $str    Source string
+     * @param string $str    Source string to check
      *
      * @return bool          Has specified prefix
      */
@@ -54,7 +54,7 @@ abstract class Helper
      * Returns =true, if specified string has specified postfix, else =false
      *
      * @param string $postfix Postfix
-     * @param string $str     Source string
+     * @param string $str     Source string to check
      *
      * @return bool           Has specified postfix
      */
