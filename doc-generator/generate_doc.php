@@ -16,6 +16,7 @@ require_once 'base/class_loader.php';
 use \phpdocSeleniumGenerator\models;
 use \phpdocSeleniumGenerator\phpunitSeleniumDriver;
 use \phpdocSeleniumGenerator\Parser;
+use \phpdocSeleniumGenerator\code_generator\CodeGenerator;
 
 
 // HTML documentation (local file can be changed to http://release.seleniumhq.org/selenium-core/1.0.1/reference.html)
@@ -42,8 +43,9 @@ foreach ($driver->getAvailableSeleniumCommands() as $methodFullName => $returnTy
     if ($findMethod = $parser->getMethodByBaseName($method->getBaseName(true))) {
         $documentedMethod = $findMethod->createNewMethodWithName($method->name); // convert to target method
         $documentedMethod->returnValue->type = $returnType;  // selenium documentation has no info about php variable type
+
+        $methods[] = $documentedMethod;
     } else {
-        $documentedMethod = null;
         $notFounded[$method->getBaseName()][] = $method->name;
         /*
          * // todo for this commands need manual description
@@ -133,11 +135,15 @@ foreach ($driver->getAvailableSeleniumCommands() as $methodFullName => $returnTy
         )
         */
     }
-
-    $methods[] = $documentedMethod;
 }
 
-var_export($methods);
+$generator = new CodeGenerator();
+if (!file_put_contents('SeleniumTestCaseDoc.generated.php', $generator->generate($methods))) {
+    throw new Exception('Error at file write');
+}
 
-//var_export(array_keys($notFounded)); // todo debug
-//var_export($notFounded);
+
+// var_export($methods);
+// var_export($driver->getAvailableSeleniumCommands());
+// var_export(array_keys($notFounded)); // todo debug
+// var_export($notFounded);

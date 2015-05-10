@@ -31,6 +31,10 @@ class phpunitSeleniumDriver extends \PHPUnit_Extensions_SeleniumTestCase_Driver
         'verifySpeedAndWait',
         'waitForNotSpeedAndWait',
         'waitForSpeedAndWait',
+
+        // cannot use reserved keywords as function or method names: http://php.net/manual/en/reserved.keywords.php
+        'echo',
+        'break',
     ];
 
     /**

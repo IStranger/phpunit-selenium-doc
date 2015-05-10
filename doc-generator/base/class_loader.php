@@ -12,6 +12,7 @@ require_once 'models/Argument.php';
 require_once 'models/ReturnValue.php';
 require_once 'models/Method.php';
 require_once 'Parser.php';
+require_once 'code_generator/CodeGenerator.php';
 
 require_once 'Driver.php'; // phpunit-selenium driver (from https://github.com/giorgiosironi/phpunit-selenium)
 require_once 'phpunitSeleniumDriver.php';

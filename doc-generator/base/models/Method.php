@@ -144,7 +144,7 @@ class Method extends Base
     public $subtype;
 
     /**
-     * @var Argument[] List of method arguments
+     * @var array|Argument[] Array of method arguments, indexed by their names
      */
     public $arguments = [];
 
@@ -425,7 +425,7 @@ class Method extends Base
                     return $method;
 
                 case self::SUBTYPE_AND_WAIT:                // Action --> Action
-                    $method->description .= PHP_EOL . ' <b>Note:</b> After execution of this action, ' .
+                    $method->description .= PHP_EOL . PHP_EOL . ' <b>Note:</b> After execution of this action, ' .
                         'Selenium wait for a new page to load (see {@link waitForPageToLoad})';
                     return $method;
 
@@ -458,7 +458,7 @@ class Method extends Base
                     $method->description =
                         "Assertion, automatically generated from accessor {@link {$this->name}}: " .
                         PHP_EOL . PHP_EOL . $method->description .
-                        '<b>Note:</b> If assertion will fail the test, it will abort the current test case (in contrast to the verify*).'; // todo add related verify* link
+                        PHP_EOL . PHP_EOL . '<b>Note:</b> If assertion will fail the test, it will abort the current test case (in contrast to the verify*).'; // todo add related verify* link
                     return $method;
 
                 case self::SUBTYPE_VERIFY:                  // Accessor --> Assertion
@@ -467,7 +467,7 @@ class Method extends Base
                     $method->description =
                         "Assertion, automatically generated from accessor {@link {$this->name}}: " .
                         PHP_EOL . PHP_EOL . $method->description .
-                        '<b>Note:</b> If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).'; // todo add related assert* link
+                        PHP_EOL . PHP_EOL . '<b>Note:</b> If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).'; // todo add related assert* link
                     return $method;
 
                 case self::SUBTYPE_WAIT_FOR:                  // Accessor --> Assertion
@@ -477,7 +477,7 @@ class Method extends Base
                         "Assertion, automatically generated from accessor {@link {$this->name}}. " .
                         "This command wait for some condition to become true: " .
                         PHP_EOL . PHP_EOL . $method->description .
-                        '<b>Note:</b> This command will succeed immediately if the condition is already true.';
+                        PHP_EOL . PHP_EOL . '<b>Note:</b> This command will succeed immediately if the condition is already true.';
                     return $method;
 
                 default:
