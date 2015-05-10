@@ -40,12 +40,101 @@ foreach ($driver->getAvailableSeleniumCommands() as $methodFullName => $returnTy
 
     // Search of description in parsed docs
     if ($findMethod = $parser->getMethodByBaseName($method->getBaseName(true))) {
-        // todo implement
+        $documentedMethod = $findMethod->createNewMethodWithName($method->name); // convert to target method
+        $documentedMethod->returnValue->type = $returnType;  // selenium documentation has no info about php variable type
     } else {
-        $notFounded[$method->getBaseName()][] = $method->name; // todo for this commands need manual description
+        $documentedMethod = null;
+        $notFounded[$method->getBaseName()][] = $method->name;
+        /*
+         * // todo for this commands need manual description
+        array (
+          0 => 'CssCount',
+          1 => 'LogMessages',
+          2 => 'attachFile',
+          3 => 'captureEntirePageScreenshotToString',
+          4 => 'captureScreenshot',
+          5 => 'captureScreenshotToString',
+          6 => 'keyDownNative',
+          7 => 'keyPressNative',
+          8 => 'keyUpNative',
+          9 => 'retrieveLastRemoteControlLogs',
+          10 => 'setContext',
+          11 => 'shutDownSeleniumServer',
+        )
+        array (
+          'CssCount' =>
+          array (
+            0 => 'assertCssCount',
+            1 => 'assertNotCssCount',
+            2 => 'getCssCount',
+            3 => 'storeCssCount',
+            4 => 'verifyCssCount',
+            5 => 'verifyNotCssCount',
+            6 => 'waitForCssCount',
+            7 => 'waitForNotCssCount',
+          ),
+          'LogMessages' =>
+          array (
+            0 => 'assertLogMessages',
+            1 => 'assertNotLogMessages',
+            2 => 'getLogMessages',
+            3 => 'storeLogMessages',
+            4 => 'verifyLogMessages',
+            5 => 'verifyNotLogMessages',
+            6 => 'waitForLogMessages',
+            7 => 'waitForNotLogMessages',
+          ),
+          'attachFile' =>
+          array (
+            0 => 'attachFile',
+          ),
+          'captureEntirePageScreenshotToString' =>
+          array (
+            0 => 'captureEntirePageScreenshotToString',
+            1 => 'captureEntirePageScreenshotToStringAndWait',
+          ),
+          'captureScreenshot' =>
+          array (
+            0 => 'captureScreenshot',
+            1 => 'captureScreenshotAndWait',
+          ),
+          'captureScreenshotToString' =>
+          array (
+            0 => 'captureScreenshotToString',
+            1 => 'captureScreenshotToStringAndWait',
+          ),
+          'keyDownNative' =>
+          array (
+            0 => 'keyDownNative',
+            1 => 'keyDownNativeAndWait',
+          ),
+          'keyPressNative' =>
+          array (
+            0 => 'keyPressNative',
+            1 => 'keyPressNativeAndWait',
+          ),
+          'keyUpNative' =>
+          array (
+            0 => 'keyUpNative',
+            1 => 'keyUpNativeAndWait',
+          ),
+          'retrieveLastRemoteControlLogs' =>
+          array (
+            0 => 'retrieveLastRemoteControlLogs',
+          ),
+          'setContext' =>
+          array (
+            0 => 'setContext',
+          ),
+          'shutDownSeleniumServer' =>
+          array (
+            0 => 'shutDownSeleniumServer',
+          ),
+        )
+        */
     }
 
-    $methods[] = $method;
+    $methods[] = $documentedMethod;
 }
 
 var_export($methods);

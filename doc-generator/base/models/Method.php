@@ -66,11 +66,16 @@ class Method extends Base
         self::TYPE_ASSERTION => 'Assertion',
     ];
 
-    const SUBTYPE_BASE         = 'action';
-    const SUBTYPE_AND_WAIT     = 'actionAndWait';
-    const SUBTYPE_STORE        = 'storeAccessor';
-    const SUBTYPE_GET          = 'getAccessor';
-    const SUBTYPE_IS           = 'isAccessor';
+    // action subtypes:
+    const SUBTYPE_BASE     = 'action';
+    const SUBTYPE_AND_WAIT = 'actionAndWait';
+
+    // accessor subtypes:
+    const SUBTYPE_STORE = 'storeAccessor';
+    const SUBTYPE_GET   = 'getAccessor';
+    const SUBTYPE_IS    = 'isAccessor';
+
+    // assertion subtypes:
     const SUBTYPE_VERIFY       = 'verifyAssertion';
     const SUBTYPE_VERIFY_NOT   = 'verifyNotAssertion';
     const SUBTYPE_ASSERT       = 'assertAssertion';
@@ -80,28 +85,28 @@ class Method extends Base
 
     /**
      * @var array   Possible values of
-     *              {@link subtype} (array keys) and labels (array values), indexed by {@link type}
+     *              {@link subtype}, indexed by {@link type}
      */
     static $subtypesAll = [
 
         self::TYPE_ACTION    => [
-            self::SUBTYPE_BASE     => '',
-            self::SUBTYPE_AND_WAIT => 'AndWait',
+            self::SUBTYPE_BASE,
+            self::SUBTYPE_AND_WAIT,
         ],
 
         self::TYPE_ACCESSOR  => [
-            self::SUBTYPE_STORE => 'store',
-            self::SUBTYPE_GET   => 'get',
-            self::SUBTYPE_IS    => 'is',
+            self::SUBTYPE_STORE,
+            self::SUBTYPE_GET,
+            self::SUBTYPE_IS,
         ],
 
         self::TYPE_ASSERTION => [
-            self::SUBTYPE_VERIFY       => 'verify',
-            self::SUBTYPE_VERIFY_NOT   => 'verifyNot',
-            self::SUBTYPE_ASSERT       => 'assert',
-            self::SUBTYPE_ASSERT_NOT   => 'assertNot',
-            self::SUBTYPE_WAIT_FOR     => 'waitFor',
-            self::SUBTYPE_WAIT_FOR_NOT => 'waitForNot',
+            self::SUBTYPE_VERIFY,
+            self::SUBTYPE_VERIFY_NOT,
+            self::SUBTYPE_ASSERT,
+            self::SUBTYPE_ASSERT_NOT,
+            self::SUBTYPE_WAIT_FOR,
+            self::SUBTYPE_WAIT_FOR_NOT,
         ],
     ];
 
@@ -187,6 +192,38 @@ class Method extends Base
     }
 
     /**
+     * Adds specified argument model to the argument list of current method.
+     *
+     * @param Argument $argument Argument model to add
+     *
+     * @return $this
+     * @throws \Exception If current method already has the argument with the same name.
+     */
+    function addArgument(Argument $argument)
+    {
+        if (array_key_exists($argument->name, $this->arguments)) {
+            $this::throwException("Argument '{$argument->name}' cannot be added to the method '{$this->name}', " .
+                                  "because the method already has argument with the same name.");
+        } else {
+            $this->arguments[$argument->name] = $argument;
+        }
+        return $this;
+    }
+
+    /**
+     * Deletes specified argument from argument list of the current method.
+     *
+     * @param string $argumentName Name of argument to delete
+     *
+     * @return $this
+     */
+    function deleteArgumentByName($argumentName)
+    {
+        $this->arguments = Helper::filterByKeys($this->arguments, null, [$argumentName]);
+        return $this;
+    }
+
+    /**
      * Load data about method from specified XML nodes.
      *
      *
@@ -244,10 +281,16 @@ class Method extends Base
         // arguments
         $xmlArguments = $dd->xpath("p[text()='Arguments:']/following-sibling::ul[1]/li");
         foreach ($xmlArguments as $xmlArgument) {
-            $this->arguments[] = Argument::createNew()
+            $argument = Argument::createNew()
                 ->setMethod($this)
                 ->loadFromXML($xmlArgument);
+            $this->addArgument($argument);
         }
+
+        // todo add parsing of statements "Returns:" and "Related Assertions, automatically generated:"
+        $this->returnValue = ReturnValue::createNew();
+        $this->returnValue->description = 'default description';
+
         return $this;
     }
 
@@ -294,7 +337,7 @@ class Method extends Base
     }
 
     /**
-     * Determines {@link subtype} of method by name
+     * Determines {@link subtype} of method by name.
      *
      * @param string $methodFullName Name of method
      *
@@ -350,5 +393,103 @@ class Method extends Base
         }
 
         return $resultSubtype; // by default commands without specified prefixes is Actions
+    }
+
+    /**
+     * Creates new method with the specified name (converts from current method).
+     * Only {@link Method::SUBTYPE_BASE} + {@link Method::SUBTYPE_STORE} supported for current method.
+     *
+     * @param string $newMethodName Name of new method
+     *
+     * @return Method               New converted method
+     * @throws \Exception           If current method has unsupported subtype, or incorrect name for new method
+     */
+    function createNewMethodWithName($newMethodName)
+    {
+//        $isCorrect = in_array($this->subtype, [self::SUBTYPE_BASE, self::SUBTYPE_STORE]) &&
+//            in_array($newSubtype, [self::$subtypesAll[$this->type]]); // change of subtype should not change the type of method
+//
+//        if (!$isCorrect) {
+//            $this::throwException("Incorrect subtype for creating of new method: '$this->subtype'");
+//        }
+
+        $newSubtype = $this::determineSubtypeByName($newMethodName);
+        $method = $this->createClone();
+        $method->name = $newMethodName;
+
+        if ($this->subtype === self::SUBTYPE_BASE) {
+
+            // ---- Source method has Action type
+            switch ($newSubtype) {
+                case self::SUBTYPE_BASE:                    // Action --> Action
+                    return $method;
+
+                case self::SUBTYPE_AND_WAIT:                // Action --> Action
+                    $method->description .= PHP_EOL . ' <b>Note:</b> After execution of this action, ' .
+                        'Selenium wait for a new page to load (see {@link waitForPageToLoad})';
+                    return $method;
+
+                default:
+                    $this::throwException("Incorrect subtype for creating of new method: '$this->subtype'. " .
+                                          "Source method (Action) should be converted only to Action.");
+            }
+
+        } elseif ($this->subtype === self::SUBTYPE_STORE) {
+
+            // ---- Source method has Accessor type
+            switch ($newSubtype) {
+                case self::SUBTYPE_STORE:                   // Accessor --> Accessor
+                    return $method;
+
+                case self::SUBTYPE_GET:                     // Accessor --> Accessor
+                    $method->deleteArgumentByName('variableName');
+                    return $method;
+
+                case self::SUBTYPE_IS:                      // Accessor --> Accessor
+                    $method->deleteArgumentByName('variableName');
+                    $method->description = Helper::cutPrefix(['Return', 'Returns', 'Retrieves'], $method->description);
+                    $method->description = 'Returns =true, if' . $method->description;
+                    return $method;
+
+                // todo add for each method related assertion commands
+                case self::SUBTYPE_ASSERT:                  // Accessor --> Assertion
+                case self::SUBTYPE_ASSERT_NOT:
+                    $method->deleteArgumentByName('variableName');
+                    $method->description =
+                        "Assertion, automatically generated from accessor {@link {$this->name}}: " .
+                        PHP_EOL . PHP_EOL . $method->description .
+                        '<b>Note:</b> If assertion will fail the test, it will abort the current test case (in contrast to the verify*).'; // todo add related verify* link
+                    return $method;
+
+                case self::SUBTYPE_VERIFY:                  // Accessor --> Assertion
+                case self::SUBTYPE_VERIFY_NOT:
+                    $method->deleteArgumentByName('variableName');
+                    $method->description =
+                        "Assertion, automatically generated from accessor {@link {$this->name}}: " .
+                        PHP_EOL . PHP_EOL . $method->description .
+                        '<b>Note:</b> If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).'; // todo add related assert* link
+                    return $method;
+
+                case self::SUBTYPE_WAIT_FOR:                  // Accessor --> Assertion
+                case self::SUBTYPE_WAIT_FOR_NOT:
+                    $method->deleteArgumentByName('variableName');
+                    $method->description =
+                        "Assertion, automatically generated from accessor {@link {$this->name}}. " .
+                        "This command wait for some condition to become true: " .
+                        PHP_EOL . PHP_EOL . $method->description .
+                        '<b>Note:</b> This command will succeed immediately if the condition is already true.';
+                    return $method;
+
+                default:
+                    $this::throwException("Incorrect subtype for creating of new method: '{$this->subtype}'. " .
+                                          "Source method (Accessor) should be converted only to Accessor or Assertion.");
+            }
+
+        } else {
+            $this::throwException("Incorrect subtype of source method: '{$this->subtype}'. " .
+                                  "Source method support only Method::SUBTYPE_BASE and Method::SUBTYPE_STORE subtypes.");
+        }
+
+        return $method;
     }
 }

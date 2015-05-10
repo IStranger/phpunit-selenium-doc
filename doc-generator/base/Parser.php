@@ -108,6 +108,7 @@ class Parser
 
             if (!in_array($method->name, $this->exclusionCommands)) {
                 $method->type = $methodType;
+                $method->subtype = $method::determineSubtypeByName($method->name);
                 $methods[$method->getBaseName(true)] = $method;
             }
         }
