@@ -8,6 +8,9 @@ namespace phpdocSeleniumGenerator;
 
 abstract class Helper
 {
+    /** Line end symbol */
+    const EOL = "\n";
+
     /**
      * Strip excess space symbols (spaces, EoL symbols etc.)
      *
@@ -143,5 +146,21 @@ abstract class Helper
             }
         }
         return $str;
+    }
+
+    /**
+     * Replaces in the specified text all line ending symbols:
+     *   CRLF (windows "\r\n") --> LF (unix "\n"),
+     *   CR (mac "\r\n") --> LF (unix "\n")
+     *
+     * @param string $text Text to replace
+     *
+     * @return string
+     */
+    static function unifyEOL($text)
+    {
+        $text = str_replace("\r\n", self::EOL, $text);  // CRLF --> LF
+        $text = str_replace("\r", self::EOL, $text);    // CR --> LF
+        return $text;
     }
 }

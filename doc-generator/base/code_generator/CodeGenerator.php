@@ -5,6 +5,7 @@
 
 namespace phpdocSeleniumGenerator\code_generator;
 
+use phpdocSeleniumGenerator\Helper;
 use phpdocSeleniumGenerator\models\Method;
 
 class CodeGenerator
@@ -17,6 +18,8 @@ class CodeGenerator
 
     /** Prefix for each line of DocBlock of method */
     const METHOD_DOC_BLOCK_PREFIX = ' * ';
+    /** Count of space symbol, which will be put before class implementation */
+    const METHOD_LEFT_SPACE_OFFSET = 4;
     /** Useful width of DocBlock of method (symbol count) */
     const DOC_BLOCK_WIDTH = 112;
 
@@ -24,8 +27,8 @@ class CodeGenerator
     {
         $dir = __DIR__ . DIRECTORY_SEPARATOR;
         if (file_exists($dir . self::TPL_CLASS) && file_exists($dir . self::TPL_METHOD)) {
-            $this->_tplClass = file_get_contents($dir . self::TPL_CLASS);
-            $this->_tplMethod = file_get_contents($dir . self::TPL_METHOD);
+            $this->_tplClass = Helper::unifyEOL(file_get_contents($dir . self::TPL_CLASS));
+            $this->_tplMethod = Helper::unifyEOL(file_get_contents($dir . self::TPL_METHOD));
         } else {
             throw new \Exception('Not found templates for code generator');
         }
@@ -43,20 +46,27 @@ class CodeGenerator
         $code = '';
         foreach ($methods as $method) {
             $code .= strtr($this->_tplMethod, [
-                '%method.name%'                      => $method->name,
-                '%method.arguments:list%'            => $this->getArgumentListAsPhp($method),
-                '%method.description:php_doc%'       => $this->getDescriptionAsPhpDoc($method),
-                '%method.arguments:php_doc%'         => $this->getArgumentsAsPhpDoc($method),
-                '%method.returnValue:php_doc%'       => $this->getReturnValueAsPhpDoc($method),
-                '%method.derivativeMethods:php_doc%' => self::METHOD_DOC_BLOCK_PREFIX,
+                '%method.name%'           => $method->name,
+                '%method.arguments:list%' => $this->getArgumentListAsPhp($method),
+                '%method.doc_block%'      => $this->getDocBlock($method),
             ]);
         }
         $code = strtr($this->_tplClass, [
-            '%methods%' => $code,
+            '%methods%' => $this->addInLineBeginning($code, str_repeat(' ', self::METHOD_LEFT_SPACE_OFFSET)),
             '%date%'    => date('Y-m-d'),
         ]);
 
         return $code;
+    }
+
+    protected function getDocBlock(Method $method)
+    {
+        $docBlock =
+            $this->wrapAroundIfExist($this->phpDocDescription($method)) .
+            $this->wrapAroundIfExist($this->phpDocArguments($method), Helper::EOL) . // the blank lines around
+            $this->wrapAroundIfExist($this->phpDocReturnValue($method), Helper::EOL);
+
+        return $this->addInLineBeginning(trim($docBlock));
     }
 
     /**
@@ -82,7 +92,7 @@ class CodeGenerator
      *
      * @return string           Parts of DocBlock of specified method
      */
-    protected function getArgumentsAsPhpDoc(Method $method)
+    protected function phpDocArguments(Method $method)
     {
         $phpDoc = [];
 
@@ -98,11 +108,11 @@ class CodeGenerator
         $descriptionLength = self::DOC_BLOCK_WIDTH - $maxLength;
         $firstSpaces = str_repeat(' ', $maxLength);
         foreach ($method->arguments as $argument) {
-            $argDescription = wordwrap($argument->description, $descriptionLength, PHP_EOL . $firstSpaces);
-            $phpDoc[$argument->name] = str_pad($phpDoc[$argument->name], $maxLength) . $argDescription . PHP_EOL;
+            $argDescription = wordwrap($argument->description, $descriptionLength, Helper::EOL . $firstSpaces);
+            $phpDoc[$argument->name] = str_pad($phpDoc[$argument->name], $maxLength) . $argDescription;
         }
 
-        return $this->addInLineBeginning(join('', $phpDoc));
+        return join(Helper::EOL, $phpDoc);
     }
 
     /**
@@ -112,21 +122,28 @@ class CodeGenerator
      *
      * @return string       Parts of DocBlock of specified method
      */
-    protected function getDescriptionAsPhpDoc(Method $method)
+    protected function phpDocDescription(Method $method)
     {
         // need ignore of <code> blocks ...
-        return $this->addInLineBeginning(wordwrap($method->description, self::DOC_BLOCK_WIDTH, PHP_EOL));
+        return wordwrap($method->description, self::DOC_BLOCK_WIDTH, Helper::EOL);
     }
 
-    protected function getReturnValueAsPhpDoc(Method $method)
+    /**
+     * Returns description of return value of specified method for DocBlock
+     *
+     * @param Method $method
+     *
+     * @return string   Parts of DocBlock of specified method
+     */
+    protected function phpDocReturnValue(Method $method)
     {
         $phpDoc = '@return  ' . $method->returnValue->type . '  ';
         $length = strlen($phpDoc);
         $descriptionLength = self::DOC_BLOCK_WIDTH - $length;
         $firstSpaces = str_repeat(' ', $length);
-        $phpDoc = $phpDoc . wordwrap($method->returnValue->description, $descriptionLength, PHP_EOL . $firstSpaces);
+        $phpDoc = $phpDoc . wordwrap($method->returnValue->description, $descriptionLength, Helper::EOL . $firstSpaces);
 
-        return $this->addInLineBeginning($phpDoc);
+        return $phpDoc;
     }
 
     /**
@@ -139,6 +156,23 @@ class CodeGenerator
      */
     protected function addInLineBeginning($multiLineText, $addString = self::METHOD_DOC_BLOCK_PREFIX)
     {
-        return $addString . str_replace(PHP_EOL, PHP_EOL . $addString, $multiLineText);
+        return $addString . join(Helper::EOL . $addString, explode(Helper::EOL, $multiLineText));
+    }
+
+    /**
+     * Adds specified strings to the beginning and end of text, if it exist.
+     *
+     * @param string $text   Text to wrap
+     * @param string $before String to add to the beginning of the text (if it exist)
+     * @param string $after  String to add to the end of the text (if it exist)
+     *
+     * @return string
+     */
+    protected function wrapAroundIfExist($text, $before = '', $after = Helper::EOL)
+    {
+        if ($text) {
+            $text = $before . $text . $after;
+        }
+        return $text;
     }
 }
