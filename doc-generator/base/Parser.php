@@ -12,6 +12,8 @@
 namespace phpdocSeleniumGenerator;
 
 use phpdocSeleniumGenerator\models\Method;
+use phpdocSeleniumGenerator\models\Argument;
+use phpdocSeleniumGenerator\models\ReturnValue;
 
 
 class Parser
@@ -104,7 +106,7 @@ class Parser
         $xmlDtNodes = $this->_xmlPage->xpath('//' . $methodType . '/descendant::a[@name]/ancestor::dt');
         foreach ($xmlDtNodes as $xmlDT) {
             $xmlDD = $xmlDT->xpath('following-sibling::dd[1]')[0];
-            $method = Method::createNew()->loadFromXML($xmlDT, $xmlDD);
+            $method = $this->_createMethodFromXML($xmlDT, $xmlDD);
 
             if (!in_array($method->name, $this->exclusionCommands)) {
                 $method->type = $methodType;
@@ -113,6 +115,116 @@ class Parser
             }
         }
         return $methods;
+    }
+
+    /**
+     * Creates method and load data from specified XML nodes.
+     *
+     *
+     * Typical html code that described method:
+     * <pre><code>
+     *    <dt>
+     *        <strong>
+     *            <a name="addLocationStrategy"></a>
+     *            addLocationStrategy(strategyName,functionDefinition)
+     *        </strong>
+     *    </dt>
+     *
+     *    <dd>Defines a new function for Selenium to locate elements on the page.
+     *        For example, if you define the strategy "foo", and someone runs click("foo=blah"), we'll run your
+     *        function, passing you the string "blah", and click on the element that your function returns, or throw an
+     *        "Element not found" error if your function returns null.
+     *
+     *        We'll pass three arguments to your function:
+     *        <ul>
+     *            <li>locator: the string the user passed in</li>
+     *            <li>inWindow: the currently selected window</li>
+     *            <li>inDocument: the currently selected document</li>
+     *        </ul>
+     *        The function must return null if the element can't be found.
+     *
+     *        <p>Arguments:</p>
+     *        <ul>
+     *            <li>strategyName - the name of the strategy to define; this should use only letters [a-zA-Z] with no
+     *            spaces or other punctuation.
+     *            </li>
+     *            <li>functionDefinition - a string defining the body of a function in JavaScript. For example:
+     *            < code >return inDocument.getElementById(locator);< / code >
+     *            </li>
+     *        </ul>
+     *    </dd>
+     * </code></pre>
+     *
+     * @param \SimpleXMLElement $dt XML node, which contain determination
+     * @param \SimpleXMLElement $dd XML node, which contain description
+     *
+     * @return Method
+     */
+    private function _createMethodFromXML(\SimpleXMLElement $dt, \SimpleXMLElement $dd)
+    {
+        $method = Method::createNew();
+
+        // name
+        $method->name = (string)$dt->xpath('descendant::a[@name]')[0]->attributes()['name'];
+
+        // description (without arguments)
+        $text = Helper::plainText($dd->asXML());
+        preg_match('/<dd>\s*(?P<description>[\s\S]+)\s*(<p>Arguments:<\/p>)?[\s\S]*<\/dd>/', $text, $matches) &&
+        array_key_exists('description', $matches)
+        OR die('Error at parse method description: ' . $text);
+        $method->description = $matches['description'];
+
+        // arguments
+        $xmlArguments = $dd->xpath("p[text()='Arguments:']/following-sibling::ul[1]/li");
+        foreach ($xmlArguments as $xmlArgument) {
+            $argument = $this->_createArgumentFromXML($xmlArgument)
+                ->setMethod($method);
+            $method->addArgument($argument);
+        }
+
+        // todo add parsing of statements "Returns:" and "Related Assertions, automatically generated:"
+        $method->returnValue = ReturnValue::createNew();
+        $method->returnValue->description = 'default description';
+
+        return $method;
+    }
+
+    /**
+     * Creates argument and load data from specified XML node.
+     *
+     * Typical html code that described argument of method:
+     * <pre><code>
+     *      <li>strategyName - the name of the strategy to define; this should use only letters [a-zA-Z] with no
+     *      spaces or other punctuation.
+     *      </li>
+     *
+     *      // OR
+     *
+     *      <li>functionDefinition - a string defining the body of a function in JavaScript. For example:
+     *      < code >return inDocument.getElementById(locator);< / code >
+     *      </li>
+     * </code></pre>
+     *
+     * @param \SimpleXMLElement $li XML node, which contain list item with detail description of argument
+     *
+     * @return Argument
+     */
+    private function _createArgumentFromXML(\SimpleXMLElement $li)
+    {
+        $argument = Argument::createNew();
+
+        $text = Helper::plainText($li->asXML());
+        preg_match('/<li>\s*(?P<name>[a-zA-Z0-9]+)\s*-\s*(?P<description>[\s\S]+)\s*<\/li>/', $text, $matches) &&
+        array_key_exists('name', $matches) &&
+        array_key_exists('description', $matches)
+        OR die('Error at parse argument description: ' . $text);
+
+        $argument->name = $matches['name'];
+        $argument->description = $matches['description'];
+        $argument->type = 'string'; // by default we assume string variable type
+        // todo need more accurate algorithm type determination (for example, by prefix of argument name ...)
+
+        return $argument;
     }
 
     /**
