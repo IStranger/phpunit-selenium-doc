@@ -172,7 +172,7 @@ class Parser
         if (Helper::contain('Arguments:', $text)) {
             $assertion = '<p>[\s]*Arguments:';
         } elseif (Helper::contain('Returns:', $text)) {
-            $assertion = '<dl>';
+            $assertion = '<p>\s*<dl>';
         } elseif (Helper::contain('Related Assertions, automatically generated:', $text)) {
             $assertion = '<p>Related Assertions,';
         } else {

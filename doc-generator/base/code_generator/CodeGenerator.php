@@ -127,10 +127,12 @@ class CodeGenerator
     {
         // direct replaces
         $phpDoc = strtr($method->description, [
-            '@see #doSelect' => '{@link select}'    // addSelection + removeSelection
+            '@see #doSelect' => '{@link select}',    // addSelection + removeSelection
+            '<code>'         => '[<b>',              // for inline code blocks
+            '</code>'        => '</b>]',
         ]);
 
-        $phpDoc = Helper::trimMultiLine($phpDoc);
+        $phpDoc = Helper::formatAsHtml($phpDoc);
         return wordwrap($phpDoc, self::DOC_BLOCK_WIDTH, Helper::EOL);
     }
 

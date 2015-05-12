@@ -354,8 +354,8 @@ class Method extends Base
                     return $method;
 
                 case self::SUBTYPE_AND_WAIT:                // Action --> Action
-                    $method->description .= Helper::EOL . Helper::EOL . ' <b>Note:</b> After execution of this action, ' .
-                        'Selenium wait for a new page to load (see {@link waitForPageToLoad})';
+                    $method->description .= Helper::EOL . Helper::EOL . ' <p><b>Note:</b> After execution of this action, ' .
+                        'Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>';
                     return $method;
 
                 default:
@@ -387,7 +387,7 @@ class Method extends Base
                     $method->description =
                         "Assertion, automatically generated from accessor {@link {$this->name}}: " .
                         Helper::EOL . Helper::EOL . $method->description .
-                        Helper::EOL . Helper::EOL . '<b>Note:</b> If assertion will fail the test, it will abort the current test case (in contrast to the verify*).'; // todo add related verify* link
+                        Helper::EOL . Helper::EOL . '<p><b>Note:</b> If assertion will fail the test, it will abort the current test case (in contrast to the verify*).</p>'; // todo add related verify* link
                     return $method;
 
                 case self::SUBTYPE_VERIFY:                  // Accessor --> Assertion
@@ -396,7 +396,7 @@ class Method extends Base
                     $method->description =
                         "Assertion, automatically generated from accessor {@link {$this->name}}: " .
                         Helper::EOL . Helper::EOL . $method->description .
-                        Helper::EOL . Helper::EOL . '<b>Note:</b> If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).'; // todo add related assert* link
+                        Helper::EOL . Helper::EOL . '<p><b>Note:</b> If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).</p>'; // todo add related assert* link
                     return $method;
 
                 case self::SUBTYPE_WAIT_FOR:                  // Accessor --> Assertion
@@ -406,7 +406,7 @@ class Method extends Base
                         "Assertion, automatically generated from accessor {@link {$this->name}}. " .
                         "This command wait for some condition to become true: " .
                         Helper::EOL . Helper::EOL . $method->description .
-                        Helper::EOL . Helper::EOL . '<b>Note:</b> This command will succeed immediately if the condition is already true.';
+                        Helper::EOL . Helper::EOL . '<p><b>Note:</b> This command will succeed immediately if the condition is already true.</p>';
                     return $method;
 
                 default:

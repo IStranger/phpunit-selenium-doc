@@ -41,6 +41,31 @@ abstract class Helper
         ]);
     }
 
+    static function formatAsHtml($sourceXHTML)
+    {
+        $xhtml = static::plainText($sourceXHTML);
+        // split by lines
+        $xhtml = strtr($xhtml, [
+            '<p>'   => self::EOL . self::EOL . '<p>',
+            '</p>'  => '</p>' . self::EOL,
+            '<ul>'  => self::EOL . self::EOL . '<ul>',
+            '</ul>' => self::EOL . '</ul>' . self::EOL . self::EOL,
+            '<li>'  => self::EOL . '<li>',
+        ]);
+
+        // delete excess spaces
+        $xhtml = static::trimMultiLine($xhtml);
+
+        // add whitespaces before some html elements
+        $offset = str_repeat(' ', 4);
+        $xhtml = strtr($xhtml, [
+            '<li>' => $offset . '<li>',
+        ]);
+
+        // + 3x меняем на -> 2х EOL
+        return $xhtml;
+    }
+
     /**
      * Evaluates the value of the specified attribute for the given object or array.
      *
