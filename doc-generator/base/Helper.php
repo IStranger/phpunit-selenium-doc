@@ -21,9 +21,9 @@ abstract class Helper
     static function plainText($sourceText)
     {
         return strtr($sourceText, [
-            "\r"              => ' ',
-            "\n"              => ' ',
-            "\t"              => ' ',
+            "\r"              => '',
+            "\n"              => '',
+            "\t"              => '',
             '               ' => ' ',
             '              '  => ' ',
             '             '   => ' ',
@@ -146,6 +146,41 @@ abstract class Helper
             }
         }
         return $str;
+    }
+
+    /**
+     * Returns =true, if specified text has one of specified sub-strings.
+     *
+     * @param string|string[] $subStr Single sub-string, or list of sub-string
+     * @param string          $text   Text to check
+     *
+     * @return bool
+     */
+    static function contain($subStr, $text)
+    {
+        $subStr = is_array($subStr) ? $subStr : [$subStr];
+
+        $contain = false;
+        foreach ($subStr as $searchStr) {
+            $contain = $contain || (strpos($text, $searchStr) !== false);
+        }
+        return $contain;
+    }
+
+    /**
+     * Trims each line of multi line text
+     *
+     * @param string $multiLineText
+     *
+     * @return string
+     */
+    static function trimMultiLine($multiLineText)
+    {
+        $lines = [];
+        foreach (explode(Helper::EOL, $multiLineText) as $line) {
+            $lines[] = trim($line);
+        }
+        return join(Helper::EOL, $lines);
     }
 
     /**

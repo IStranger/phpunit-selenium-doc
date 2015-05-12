@@ -167,9 +167,21 @@ class Parser
         // name
         $method->name = (string)$dt->xpath('descendant::a[@name]')[0]->attributes()['name'];
 
-        // description (without arguments)
-        $text = Helper::plainText($dd->asXML());
-        preg_match('/<dd>\s*(?P<description>[\s\S]+)\s*(<p>Arguments:<\/p>)?[\s\S]*<\/dd>/', $text, $matches) &&
+        // description (without arguments, returnValue, and related commands)
+        $text = $dd->asXML();
+        if (Helper::contain('Arguments:', $text)) {
+            $assertion = '<p>[\s]*Arguments:';
+        } elseif (Helper::contain('Returns:', $text)) {
+            $assertion = '<dl>';
+        } elseif (Helper::contain('Related Assertions, automatically generated:', $text)) {
+            $assertion = '<p>Related Assertions,';
+        } else {
+            $assertion = null;
+        }
+        $regExp = $assertion
+            ? '/<dd>\s*(?P<description>[\s\S]+)(?=' . $assertion . ')/'
+            : '/<dd>\s*(?P<description>[\s\S]+)\s*<\/dd>/';
+        preg_match($regExp, $text, $matches) &&
         array_key_exists('description', $matches)
         OR die('Error at parse method description: ' . $text);
         $method->description = $matches['description'];
@@ -213,7 +225,7 @@ class Parser
     {
         $argument = Argument::createNew();
 
-        $text = Helper::plainText($li->asXML());
+        $text = $li->asXML();
         preg_match('/<li>\s*(?P<name>[a-zA-Z0-9]+)\s*-\s*(?P<description>[\s\S]+)\s*<\/li>/', $text, $matches) &&
         array_key_exists('name', $matches) &&
         array_key_exists('description', $matches)

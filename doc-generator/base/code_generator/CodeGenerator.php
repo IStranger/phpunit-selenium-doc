@@ -52,7 +52,7 @@ class CodeGenerator
             ]);
         }
         $code = strtr($this->_tplClass, [
-            '%methods%' => $this->addInLineBeginning($code, str_repeat(' ', self::METHOD_LEFT_SPACE_OFFSET)),
+            '%methods%' => $this->_addInLineBeginning($code, str_repeat(' ', self::METHOD_LEFT_SPACE_OFFSET)),
             '%date%'    => date('Y-m-d'),
         ]);
 
@@ -62,11 +62,11 @@ class CodeGenerator
     protected function getDocBlock(Method $method)
     {
         $docBlock =
-            $this->wrapAroundIfExist($this->phpDocDescription($method)) .
-            $this->wrapAroundIfExist($this->phpDocArguments($method), Helper::EOL) . // the blank lines around
-            $this->wrapAroundIfExist($this->phpDocReturnValue($method), Helper::EOL);
+            $this->_wrapAroundIfExist($this->phpDocDescription($method)) .
+            $this->_wrapAroundIfExist($this->phpDocArguments($method), Helper::EOL) . // the blank lines around
+            $this->_wrapAroundIfExist($this->phpDocReturnValue($method), Helper::EOL);
 
-        return $this->addInLineBeginning(trim($docBlock));
+        return $this->_addInLineBeginning(trim($docBlock));
     }
 
     /**
@@ -108,7 +108,8 @@ class CodeGenerator
         $descriptionLength = self::DOC_BLOCK_WIDTH - $maxLength;
         $firstSpaces = str_repeat(' ', $maxLength);
         foreach ($method->arguments as $argument) {
-            $argDescription = wordwrap($argument->description, $descriptionLength, Helper::EOL . $firstSpaces);
+            $argDescription = Helper::plainText($argument->description);
+            $argDescription = wordwrap($argDescription, $descriptionLength, Helper::EOL . $firstSpaces);
             $phpDoc[$argument->name] = str_pad($phpDoc[$argument->name], $maxLength) . $argDescription;
         }
 
@@ -124,8 +125,13 @@ class CodeGenerator
      */
     protected function phpDocDescription(Method $method)
     {
-        // need ignore of <code> blocks ...
-        return wordwrap($method->description, self::DOC_BLOCK_WIDTH, Helper::EOL);
+        // direct replaces
+        $phpDoc = strtr($method->description, [
+            '@see #doSelect' => '{@link select}'    // addSelection + removeSelection
+        ]);
+
+        $phpDoc = Helper::trimMultiLine($phpDoc);
+        return wordwrap($phpDoc, self::DOC_BLOCK_WIDTH, Helper::EOL);
     }
 
     /**
@@ -154,7 +160,7 @@ class CodeGenerator
      *
      * @return string
      */
-    protected function addInLineBeginning($multiLineText, $addString = self::METHOD_DOC_BLOCK_PREFIX)
+    private function _addInLineBeginning($multiLineText, $addString = self::METHOD_DOC_BLOCK_PREFIX)
     {
         return $addString . join(Helper::EOL . $addString, explode(Helper::EOL, $multiLineText));
     }
@@ -168,7 +174,7 @@ class CodeGenerator
      *
      * @return string
      */
-    protected function wrapAroundIfExist($text, $before = '', $after = Helper::EOL)
+    private function _wrapAroundIfExist($text, $before = '', $after = Helper::EOL)
     {
         if ($text) {
             $text = $before . $text . $after;
