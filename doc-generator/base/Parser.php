@@ -204,7 +204,7 @@ class Parser
         // Derivative methods
         $xmlRelatedAssertions = $dd->xpath("p[text()='Related Assertions, automatically generated:']/following-sibling::ul[1]/li");
         if (!empty($xmlRelatedAssertions)) {
-            echo 'Method name = ' . $method->name . PHP_EOL;
+            echo 'Method name = ' . $method->name . Helper::EOL;
             var_dump($xmlRelatedAssertions);
 
             // todo implement Derivative methods

@@ -368,6 +368,11 @@ class Method extends Base
             // ---- Source method has Accessor type
             switch ($newSubtype) {
                 case self::SUBTYPE_STORE:                   // Accessor --> Accessor
+                    $method->description .=
+                        '<h3>Stored value:</h3>' .
+                        '<p>' . $method->returnValue->description . ' (see {@link doc_Stored_Variables})</p> ';
+
+                    $method->returnValue->description = ''; // store* methods has no return value todo to check this
                     return $method;
 
                 case self::SUBTYPE_GET:                     // Accessor --> Accessor

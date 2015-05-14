@@ -47,7 +47,8 @@ abstract class Helper
         // split by lines
         $xhtml = strtr($xhtml, [
             '<p>'   => self::EOL . self::EOL . '<p>',
-            '</p>'  => '</p>' . self::EOL,
+            '<h3>'   => self::EOL . self::EOL . '<h3>',
+            '<h4>'   => self::EOL . self::EOL . '<h4>',
             '<ul>'  => self::EOL . self::EOL . '<ul>',
             '</ul>' => self::EOL . '</ul>' . self::EOL . self::EOL,
             '<li>'  => self::EOL . '<li>',
