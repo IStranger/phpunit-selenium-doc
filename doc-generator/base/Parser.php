@@ -164,10 +164,10 @@ class Parser
     {
         $method = Method::createNew();
 
-        // name
+        // Name
         $method->name = (string)$dt->xpath('descendant::a[@name]')[0]->attributes()['name'];
 
-        // description (without arguments, returnValue, and related commands)
+        // Description (without arguments, returnValue, and related commands)
         $text = $dd->asXML();
         if (Helper::contain('Arguments:', $text)) {
             $assertion = '<p>[\s]*Arguments:';
@@ -186,7 +186,7 @@ class Parser
         OR die('Error at parse method description: ' . $text);
         $method->description = $matches['description'];
 
-        // arguments
+        // Arguments
         $xmlArguments = $dd->xpath("p[text()='Arguments:']/following-sibling::ul[1]/li");
         foreach ($xmlArguments as $xmlArgument) {
             $argument = $this->_createArgumentFromXML($xmlArgument)
@@ -194,9 +194,21 @@ class Parser
             $method->addArgument($argument);
         }
 
-        // todo add parsing of statements "Returns:" and "Related Assertions, automatically generated:"
+        // Return value
+        $xmlReturnValue = $dd->xpath("descendant::dt[normalize-space(text())='Returns:']/following-sibling::dd");
         $method->returnValue = ReturnValue::createNew();
-        $method->returnValue->description = 'default description';
+        $method->returnValue->description = empty($xmlReturnValue)
+            ? ''
+            : str_replace(['<dd>', '</dd>'], '', $xmlReturnValue[0]->asXML());
+
+        // Derivative methods
+        $xmlRelatedAssertions = $dd->xpath("p[text()='Related Assertions, automatically generated:']/following-sibling::ul[1]/li");
+        if (!empty($xmlRelatedAssertions)) {
+            echo 'Method name = ' . $method->name . PHP_EOL;
+            var_dump($xmlRelatedAssertions);
+
+            // todo implement Derivative methods
+        }
 
         return $method;
     }
