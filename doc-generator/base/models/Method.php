@@ -370,7 +370,7 @@ class Method extends Base
                 case self::SUBTYPE_STORE:                   // Accessor --> Accessor
                     $method->description .=
                         '<h3>Stored value:</h3>' .
-                        '<p>' . $method->returnValue->description . ' (see {@link doc_Stored_Variables})</p> ';
+                        '<p>' . $method->returnValue->description . ' (see {@link doc_Stored_Variables})</p>';
 
                     $method->returnValue->description = ''; // store* methods has no return value todo to check this
                     return $method;
@@ -381,8 +381,6 @@ class Method extends Base
 
                 case self::SUBTYPE_IS:                      // Accessor --> Accessor
                     $method->deleteArgumentByName('variableName');
-                    $method->description = Helper::cutPrefix(['Return', 'Returns', 'Retrieves'], $method->description);
-                    $method->description = 'Returns =true, if' . $method->description;
                     return $method;
 
                 // todo add for each method related assertion commands
@@ -390,28 +388,46 @@ class Method extends Base
                 case self::SUBTYPE_ASSERT_NOT:
                     $method->deleteArgumentByName('variableName');
                     $method->description =
-                        "Assertion, automatically generated from accessor {@link {$this->name}}: " .
-                        Helper::EOL . Helper::EOL . $method->description .
-                        Helper::EOL . Helper::EOL . '<p><b>Note:</b> If assertion will fail the test, it will abort the current test case (in contrast to the verify*).</p>'; // todo add related verify* link
+                        '<b>Assertion:</b> ' .
+                        $method->description .
+                        '<h3>Value to verify:</h3> ' .
+                        '<p>' . $method->returnValue->description . '</p>' .
+                        '<h3>Notes:</h3> ' .
+                        '<p>If assertion will fail the test, it will abort the current test case (in contrast to the verify*).</p>' . // todo add related verify* link
+                        "<p>Assertion, automatically generated from accessor {@link {$this->name}} </p>";
+
+                    $method->returnValue->description = ''; // store* methods has no return value todo to check this
                     return $method;
 
                 case self::SUBTYPE_VERIFY:                  // Accessor --> Assertion
                 case self::SUBTYPE_VERIFY_NOT:
                     $method->deleteArgumentByName('variableName');
                     $method->description =
-                        "Assertion, automatically generated from accessor {@link {$this->name}}: " .
-                        Helper::EOL . Helper::EOL . $method->description .
-                        Helper::EOL . Helper::EOL . '<p><b>Note:</b> If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).</p>'; // todo add related assert* link
+                        '<b>Assertion:</b> ' .
+                        $method->description .
+                        '<h3>Value to verify:</h3> ' .
+                        '<p>' . $method->returnValue->description . '</p>' .
+                        '<h3>Notes:</h3> ' .
+                        '<p>If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).</p>' . // todo add related assert* link
+                        "<p>Assertion, automatically generated from accessor {@link {$this->name}} </p>";
+
+                    $method->returnValue->description = ''; // store* methods has no return value todo to check this
                     return $method;
 
                 case self::SUBTYPE_WAIT_FOR:                  // Accessor --> Assertion
                 case self::SUBTYPE_WAIT_FOR_NOT:
                     $method->deleteArgumentByName('variableName');
                     $method->description =
-                        "Assertion, automatically generated from accessor {@link {$this->name}}. " .
-                        "This command wait for some condition to become true: " .
-                        Helper::EOL . Helper::EOL . $method->description .
-                        Helper::EOL . Helper::EOL . '<p><b>Note:</b> This command will succeed immediately if the condition is already true.</p>';
+                        '<b>Assertion:</b> ' .
+                        $method->description .
+                        '<h3>Expected value/condition:</h3> ' .
+                        '<p>' . $method->returnValue->description . '</p>' .
+                        '<h3>Notes:</h3> ' .
+                        "<p>This command wait for some condition to become true (or returned value is equal specified value).</p>" .
+                        '<p><b>Note:</b> This command will succeed immediately if the condition is already true.</p>' .
+                        "<p>Assertion, automatically generated from accessor {@link {$this->name}} </p>";
+
+                    $method->returnValue->description = ''; // store* methods has no return value todo to check this
                     return $method;
 
                 default:
