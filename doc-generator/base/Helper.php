@@ -41,14 +41,21 @@ abstract class Helper
         ]);
     }
 
+    /**
+     * Formats specifies html for "pretty" view
+     *
+     * @param string $sourceXHTML   string to format
+     *
+     * @return string
+     */
     static function formatAsHtml($sourceXHTML)
     {
         $xhtml = static::plainText($sourceXHTML);
         // split by lines
         $xhtml = strtr($xhtml, [
             '<p>'   => self::EOL . self::EOL . '<p>',
-            '<h3>'   => self::EOL . self::EOL . '<h3>',
-            '<h4>'   => self::EOL . self::EOL . '<h4>',
+            '<h3>'  => self::EOL . self::EOL . '<h3>',
+            '<h4>'  => self::EOL . self::EOL . '<h4>',
             '<ul>'  => self::EOL . self::EOL . '<ul>',
             '</ul>' => self::EOL . '</ul>' . self::EOL . self::EOL,
             '<li>'  => self::EOL . '<li>',

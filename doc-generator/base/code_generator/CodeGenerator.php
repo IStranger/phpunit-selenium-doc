@@ -108,8 +108,9 @@ class CodeGenerator
         $descriptionLength = self::DOC_BLOCK_WIDTH - $maxLength;
         $firstSpaces = str_repeat(' ', $maxLength);
         foreach ($method->arguments as $argument) {
-            $argDescription = Helper::plainText($argument->description);
-            $argDescription = wordwrap($argDescription, $descriptionLength, Helper::EOL . $firstSpaces);
+            $argDescription = Helper::formatAsHtml($argument->description);
+            $argDescription = $this->_wordWrap($argDescription, $descriptionLength, Helper::EOL);
+            $argDescription = trim($this->_addInLineBeginning($argDescription, $firstSpaces));
             $phpDoc[$argument->name] = str_pad($phpDoc[$argument->name], $maxLength) . $argDescription;
         }
 
@@ -133,7 +134,7 @@ class CodeGenerator
         ]);
 
         $phpDoc = Helper::formatAsHtml($phpDoc);
-        return wordwrap($phpDoc, self::DOC_BLOCK_WIDTH, Helper::EOL);
+        return $this->_wordWrap($phpDoc, self::DOC_BLOCK_WIDTH, Helper::EOL);
     }
 
     /**
@@ -149,7 +150,7 @@ class CodeGenerator
         $length = strlen($phpDoc);
         $descriptionLength = self::DOC_BLOCK_WIDTH - $length;
         $firstSpaces = str_repeat(' ', $length);
-        $phpDoc = $phpDoc . wordwrap($method->returnValue->description, $descriptionLength, Helper::EOL . $firstSpaces);
+        $phpDoc = $phpDoc . $this->_wordWrap($method->returnValue->description, $descriptionLength, Helper::EOL . $firstSpaces);
 
         return $phpDoc;
     }
@@ -181,6 +182,36 @@ class CodeGenerator
         if ($text) {
             $text = $before . $text . $after;
         }
+        return $text;
+    }
+
+    /**
+     * Wraps specified text to a given number of characters (like {@link wordwrap})
+     *
+     * @param string $text  The input text.
+     * @param int    $width The column width.
+     * @param string $break The line is broken using the optional break parameter.
+     *
+     * @return string
+     */
+    private function _wordWrap($text, $width = 75, $break = Helper::EOL)
+    {
+        // don't break special words
+        $specialWordsReplaceRules = [];
+        if (preg_match_all('/\{\@link\s+.+\}/', $text, $m)) {
+            $i = 0;
+            foreach ($m[0] as $specialWord) {
+                $specialWordsReplaceRules[$specialWord] = $i . str_repeat('_', strlen($specialWord) - 1);
+                $i++;
+            }
+        }
+        $text = strtr($text, $specialWordsReplaceRules);
+
+        // word wrap
+        $text = wordwrap($text, $width, $break);
+
+        // restore of special words
+        $text = strtr($text, array_flip($specialWordsReplaceRules));
         return $text;
     }
 }
