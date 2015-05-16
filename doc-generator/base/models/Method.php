@@ -159,6 +159,12 @@ class Method extends Base
     public $returnValue;
 
     /**
+     * @var array|Method[]  Derivative methods (only for store*: automatically generated related Assertions),
+     *                      indexed by their names
+     */
+    public $derivativeMethods = [];
+
+    /**
      * @param bool $lowerCase If =true, returned in lower case
      *
      * @return string Base name of method. <br/>
@@ -220,6 +226,13 @@ class Method extends Base
     function deleteArgumentByName($argumentName)
     {
         $this->arguments = Helper::filterByKeys($this->arguments, null, [$argumentName]);
+        return $this;
+    }
+
+    function addDerivativeMethod(Method $method)
+    {
+        $this->derivativeMethods[$method->name] = $method;
+
         return $this;
     }
 
@@ -335,13 +348,6 @@ class Method extends Base
      */
     function createNewMethodWithName($newMethodName)
     {
-//        $isCorrect = in_array($this->subtype, [self::SUBTYPE_BASE, self::SUBTYPE_STORE]) &&
-//            in_array($newSubtype, [self::$subtypesAll[$this->type]]); // change of subtype should not change the type of method
-//
-//        if (!$isCorrect) {
-//            $this::throwException("Incorrect subtype for creating of new method: '$this->subtype'");
-//        }
-
         $newSubtype = $this::determineSubtypeByName($newMethodName);
         $method = $this->createClone();
         $method->name = $newMethodName;

@@ -203,11 +203,34 @@ class Parser
 
         // Derivative methods
         $xmlRelatedAssertions = $dd->xpath("p[text()='Related Assertions, automatically generated:']/following-sibling::ul[1]/li");
-        if (!empty($xmlRelatedAssertions)) {
-            // echo 'Method name = ' . $method->name . Helper::EOL;
-            // var_dump($xmlRelatedAssertions);
+        foreach ($xmlRelatedAssertions as $xmlRelatedAssertion) {
+            $method->addDerivativeMethod($this->_createDerivativeMethodFromXML($xmlRelatedAssertion));
+        }
 
-            // todo implement Derivative methods
+        return $method;
+    }
+
+    private function _createDerivativeMethodFromXML(\SimpleXMLElement $li)
+    {
+        $method = Method::createNew();
+        $text = $li->asXML();
+
+        preg_match('/(?P<name>[a-zA-Z]+)\s*\((?P<args>[a-zA-Z0-9\,\s\<\>\/\"\#\=]+)\)/', $text, $m) &&
+        array_key_exists('name', $m) &&
+        array_key_exists('args', $m)
+        OR die('Error at parse derivative method: ' . $text);
+
+        // Name
+        $method->name = $m['name'];
+
+        // Arguments
+        if ($args = trim($m['args'])) {
+            foreach (explode(',', $args) as $arg) {
+                $argument = Argument::createNew()->setMethod($method);
+                $argument->name = strip_tags($arg);
+                $argument->description = $arg;
+                $method->addArgument($argument);
+            }
         }
 
         return $method;
