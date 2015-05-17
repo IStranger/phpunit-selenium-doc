@@ -23,6 +23,12 @@ class CodeGenerator
     /** Useful width of DocBlock of method (symbol count) */
     const DOC_BLOCK_WIDTH = 112;
 
+    /** @var array Additional description for arguments, which has empty description (skipped in off documentation),
+     *              indexed by argument name */
+    public $manualArgumentDescription = [
+        'variableName' => 'the name of a variable in which the result is to be stored (see {@link doc_Stored_Variables})'
+    ];
+
     function __construct()
     {
         $dir = __DIR__ . DIRECTORY_SEPARATOR;
@@ -108,7 +114,10 @@ class CodeGenerator
         $descriptionLength = self::DOC_BLOCK_WIDTH - $maxLength;
         $firstSpaces = str_repeat(' ', $maxLength);
         foreach ($method->arguments as $argument) {
-            $argDescription = Helper::formatAsHtml($argument->description);
+            $argDescription = ($argument->description === null)
+                ? Helper::value($this->manualArgumentDescription, $argument->name, '')
+                : $argument->description;
+            $argDescription = Helper::formatAsHtml($argDescription);
             $argDescription = $this->_wordWrap($argDescription, $descriptionLength, Helper::EOL);
             $argDescription = trim($this->_addInLineBeginning($argDescription, $firstSpaces));
             $phpDoc[$argument->name] = str_pad($phpDoc[$argument->name], $maxLength) . $argDescription;
