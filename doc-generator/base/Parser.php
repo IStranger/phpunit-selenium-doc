@@ -187,11 +187,43 @@ class Parser
         $method->description = $matches['description'];
 
         // Arguments
-        $xmlArguments = $dd->xpath("p[text()='Arguments:']/following-sibling::ul[1]/li");
+
+        // arguments from determination
+        preg_match('/([a-zA-Z]+)\s*\((?P<args>[a-zA-Z0-9\,\s]+)\)/', $dt->asXML(), $m) &&
+        array_key_exists('args', $m)
+        OR die('Error at parse args from determination of method: ' . $dt->asXML());
+
+        $dtArgs = [];
+        if ($args = trim($m['args'])) {
+            foreach (explode(',', $args) as $arg) {
+                $dtArgs[] = trim($arg);
+            }
+        }
+
+        // arguments from description
+        $xmlArguments = $dd->xpath("p[normalize-space(text())='Arguments:']/following-sibling::ul[1]/li");
         foreach ($xmlArguments as $xmlArgument) {
             $argument = $this->_createArgumentFromXML($xmlArgument)
                 ->setMethod($method);
             $method->addArgument($argument);
+        }
+
+        $argsDiff = array_diff($dtArgs, array_keys($method->arguments));
+        if (!empty($argsDiff)) {
+            echo 'Warning [method = ' . $method->name . ']: not all arguments has been parsed. Problem arguments: '
+                . join(',', $argsDiff) . Helper::EOL;
+
+            if (empty($method->arguments)) { // add as arguments with empty description
+                foreach ($argsDiff as $diffArgName) {
+                    $argument = Argument::createNew()->setMethod($method);
+                    $argument->name = $diffArgName;
+                    $argument->type = 'string';
+                    $method->addArgument($argument);
+                }
+                echo '    ...added as args with empty description' . Helper::EOL;
+            } else {
+                echo '    ...cannot be added!' . Helper::EOL;
+            }
         }
 
         // Return value
@@ -202,7 +234,7 @@ class Parser
             : str_replace(['<dd>', '</dd>'], '', $xmlReturnValue[0]->asXML());
 
         // Derivative methods
-        $xmlRelatedAssertions = $dd->xpath("p[text()='Related Assertions, automatically generated:']/following-sibling::ul[1]/li");
+        $xmlRelatedAssertions = $dd->xpath("p[normalize-space(text())='Related Assertions, automatically generated:']/following-sibling::ul[1]/li");
         foreach ($xmlRelatedAssertions as $xmlRelatedAssertion) {
             $method->addDerivativeMethod($this->_createDerivativeMethodFromXML($xmlRelatedAssertion));
         }
@@ -212,7 +244,6 @@ class Parser
 
     private function _createDerivativeMethodFromXML(\SimpleXMLElement $li)
     {
-        $method = Method::createNew();
         $text = $li->asXML();
 
         preg_match('/(?P<name>[a-zA-Z]+)\s*\((?P<args>[a-zA-Z0-9\,\s\<\>\/\"\#\=]+)\)/', $text, $m) &&
@@ -221,14 +252,15 @@ class Parser
         OR die('Error at parse derivative method: ' . $text);
 
         // Name
+        $method = Method::createNew();
         $method->name = $m['name'];
 
         // Arguments
         if ($args = trim($m['args'])) {
             foreach (explode(',', $args) as $arg) {
                 $argument = Argument::createNew()->setMethod($method);
-                $argument->name = strip_tags($arg);
-                $argument->description = $arg;
+                $argument->name = trim(strip_tags($arg));
+                $argument->description = trim($arg);
                 $method->addArgument($argument);
             }
         }

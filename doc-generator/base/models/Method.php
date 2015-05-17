@@ -229,6 +229,17 @@ class Method extends Base
         return $this;
     }
 
+    /**
+     * Deletes all arguments
+     *
+     * @return $this
+     */
+    function deleteAllArguments()
+    {
+        $this->arguments = [];
+        return $this;
+    }
+
     function addDerivativeMethod(Method $method)
     {
         $this->derivativeMethods[$method->name] = $method;
@@ -393,6 +404,8 @@ class Method extends Base
                 case self::SUBTYPE_ASSERT:                  // Accessor --> Assertion
                 case self::SUBTYPE_ASSERT_NOT:
                     $method->deleteArgumentByName('variableName');
+                    // $method->deleteAllArguments();
+
                     $method->description =
                         '<b>Assertion:</b> ' .
                         $method->description .
