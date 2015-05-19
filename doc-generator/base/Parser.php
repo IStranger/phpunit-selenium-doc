@@ -217,7 +217,7 @@ class Parser
                 foreach ($argsDiff as $diffArgName) {
                     $argument = Argument::createNew()->setMethod($method);
                     $argument->name = $diffArgName;
-                    $argument->type = 'string';
+                    $argument->type = Argument::DEFAULT_TYPE;
                     $method->addArgument($argument);
                 }
                 echo '    ...added as args with empty description' . Helper::EOL;
@@ -260,7 +260,6 @@ class Parser
             foreach (explode(',', $args) as $arg) {
                 $argument = Argument::createNew()->setMethod($method);
                 $argument->name = trim(strip_tags($arg));
-                $argument->description = trim($arg);
                 $method->addArgument($argument);
             }
         }
@@ -300,7 +299,7 @@ class Parser
 
         $argument->name = $matches['name'];
         $argument->description = $matches['description'];
-        $argument->type = 'string'; // by default we assume string variable type
+        $argument->type = Argument::DEFAULT_TYPE; // by default we assume string variable type
         // todo need more accurate algorithm type determination (for example, by prefix of argument name ...)
 
         return $argument;

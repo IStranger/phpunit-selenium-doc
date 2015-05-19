@@ -217,6 +217,28 @@ class Method extends Base
     }
 
     /**
+     * Returns specified argument from argument list of the current method.
+     *
+     * @param string $argumentName   Name of argument
+     * @param bool   $throwException Throw exception or return null
+     *
+     * @return Argument|null            Argument model, or =null if not found ($throwException = false)
+     * @throws \Exception               If specified argument not found ($throwException = true)
+     */
+    function getArgumentByName($argumentName, $throwException = false)
+    {
+        if ($argument = Helper::value($this->arguments, $argumentName)) {
+            return $argument;
+        } else {
+            if ($throwException) {
+                $this::throwException('[Method = "' . $this->name . '"] Not found argument with name = ' . $argumentName);
+            } else {
+                return null;
+            }
+        }
+    }
+
+    /**
      * Deletes specified argument from argument list of the current method.
      *
      * @param string $argumentName Name of argument to delete
@@ -245,6 +267,28 @@ class Method extends Base
         $this->derivativeMethods[$method->name] = $method;
 
         return $this;
+    }
+
+    /**
+     * Returns derivative method by name
+     *
+     * @param string $fullMethodName Full name of method
+     * @param bool   $throwException Throw exception or return null
+     *
+     * @return Method|null          Method model, or =null if not found ($throwException = false)
+     * @throws \Exception           If specified method not found ($throwException = true)
+     */
+    function getDerivativeMethodByName($fullMethodName, $throwException = false)
+    {
+        if ($method = Helper::value($this->derivativeMethods, $fullMethodName)) {
+            return $method;
+        } else {
+            if ($throwException) {
+                $this::throwException('[Method = "' . $this->name . '"] Not found derivative method with name = ' . $fullMethodName);
+            } else {
+                return null;
+            }
+        }
     }
 
     /**
@@ -403,8 +447,8 @@ class Method extends Base
                 // todo add for each method related assertion commands
                 case self::SUBTYPE_ASSERT:                  // Accessor --> Assertion
                 case self::SUBTYPE_ASSERT_NOT:
-                    $method->deleteArgumentByName('variableName');
-                    // $method->deleteAllArguments();
+                    $derivativeMethod = $method->getDerivativeMethodByName($newMethodName, true);
+                    $method->_setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
 
                     $method->description =
                         '<b>Assertion:</b> ' .
@@ -420,7 +464,9 @@ class Method extends Base
 
                 case self::SUBTYPE_VERIFY:                  // Accessor --> Assertion
                 case self::SUBTYPE_VERIFY_NOT:
-                    $method->deleteArgumentByName('variableName');
+                    $derivativeMethod = $method->getDerivativeMethodByName($newMethodName, true);
+                    $method->_setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
+
                     $method->description =
                         '<b>Assertion:</b> ' .
                         $method->description .
@@ -435,7 +481,9 @@ class Method extends Base
 
                 case self::SUBTYPE_WAIT_FOR:                  // Accessor --> Assertion
                 case self::SUBTYPE_WAIT_FOR_NOT:
-                    $method->deleteArgumentByName('variableName');
+                    $derivativeMethod = $method->getDerivativeMethodByName($newMethodName, true);
+                    $method->_setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
+
                     $method->description =
                         '<b>Assertion:</b> ' .
                         $method->description .
@@ -460,5 +508,37 @@ class Method extends Base
         }
 
         return $method;
+    }
+
+    /**
+     * Sets specified argument list. Similar arguments keep old description + type.
+     *
+     * @param Argument[] $arguments New args
+     *
+     * @return $this
+     */
+    private function _setArgumentsAndKeepOldDescription(array $arguments)
+    {
+        // prepare new argument list
+        $newArgumentList = [];
+        foreach ($arguments as $arg) {
+            $cloneArg = $arg->createClone();
+            $cloneArg->type = Argument::DEFAULT_TYPE;
+
+            // copy old description
+            if ($baseArg = $this->getArgumentByName($cloneArg->name)) {
+                $cloneArg->type = $baseArg->type;
+                $cloneArg->description = $baseArg->description;
+            }
+            $newArgumentList[] = $cloneArg;
+        }
+
+        // set new argument list
+        $this->deleteAllArguments();
+        foreach ($newArgumentList as $newArg) {
+            $this->addArgument($newArg);
+        }
+
+        return $this;
     }
 }

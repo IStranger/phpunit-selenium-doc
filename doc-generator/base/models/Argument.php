@@ -10,6 +10,15 @@ use phpdocSeleniumGenerator\Helper;
 
 class Argument extends MethodComponent
 {
+
+    const TYPE_STRING = 'string';
+    const TYPE_ARRAY  = 'array';
+
+    /**
+     * Default type of argument (php variable type)
+     */
+    const DEFAULT_TYPE = self::TYPE_STRING;
+
     /**
      * @var string Name of argument
      */

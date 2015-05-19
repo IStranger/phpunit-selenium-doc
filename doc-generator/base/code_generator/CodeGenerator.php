@@ -23,10 +23,12 @@ class CodeGenerator
     /** Useful width of DocBlock of method (symbol count) */
     const DOC_BLOCK_WIDTH = 112;
 
-    /** @var array Additional description for arguments, which has empty description (skipped in off documentation),
-     *              indexed by argument name */
+    /** @var array Additional description for arguments, which has empty description, indexed by argument name.
+     * For example, description of some arguments skipped in off documentation (single variableName argument in store*,
+     * in derivative methods etc.) */
     public $manualArgumentDescription = [
-        'variableName' => 'the name of a variable in which the result is to be stored (see {@link doc_Stored_Variables})'
+        'variableName' => 'the name of a variable in which the result is to be stored (see {@link doc_Stored_Variables})', // store*
+        'pattern'      => 'the String-match Patterns (see {@link doc_String_match_Patterns})', // derivative
     ];
 
     function __construct()
@@ -117,6 +119,12 @@ class CodeGenerator
             $argDescription = ($argument->description === null)
                 ? Helper::value($this->manualArgumentDescription, $argument->name, '')
                 : $argument->description;
+
+            if (!trim($argDescription)) {
+                echo 'Warning [method = ' . $method->name . ']: argument has no description. Problem argument:'
+                    . $argument->name . Helper::EOL;
+            }
+
             $argDescription = Helper::formatAsHtml($argDescription);
             $argDescription = $this->_wordWrap($argDescription, $descriptionLength, Helper::EOL);
             $argDescription = trim($this->_addInLineBeginning($argDescription, $firstSpaces));
