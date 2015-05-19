@@ -59,6 +59,7 @@ abstract class Helper
             '<ul>'  => self::EOL . self::EOL . '<ul>',
             '</ul>' => self::EOL . '</ul>' . self::EOL . self::EOL,
             '<li>'  => self::EOL . '<li>',
+            '<br/>' => '<br/>' . self::EOL,
         ]);
 
         // delete excess spaces

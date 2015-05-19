@@ -13,23 +13,32 @@
  */
 
 require_once 'base/class_loader.php';
+
 use \phpdocSeleniumGenerator\models;
 use \phpdocSeleniumGenerator\phpunitSeleniumDriver;
 use \phpdocSeleniumGenerator\Parser;
+use \phpdocSeleniumGenerator\Helper;
 use \phpdocSeleniumGenerator\code_generator\CodeGenerator;
 
+/**
+ * @var models\Method[] $manualMethodsDescription Array of models, indexed by method name
+ */
 
 // HTML documentation (local file can be changed to http://release.seleniumhq.org/selenium-core/1.0.1/reference.html)
 define('SELENIUM_DOC_REFERENCE', 'source-doc/selenium-core-reference-1.0.1.html');
 
+// Load manual description of some methods
+$manualMethodsDescription = require_once('source-doc/manual_methods_description.php');
 
 // Parsing of official documentation
 $parser = new Parser(file_get_contents(SELENIUM_DOC_REFERENCE));
 
 
 // Search description for available selenium commands (methods of phpunit-selenium-driver)
-$driver  = new phpunitSeleniumDriver();
-$methods = [];
+$driver     = new phpunitSeleniumDriver();
+$methods    = [];
+$notFounded = [];
+
 foreach ($driver->getAvailableSeleniumCommands() as $methodFullName => $returnType) {
     // Create model of available method
     $method                    = models\Method::createNew();
@@ -39,9 +48,11 @@ foreach ($driver->getAvailableSeleniumCommands() as $methodFullName => $returnTy
     $method->returnValue       = models\ReturnValue::createNew();
     $method->returnValue->type = $returnType;
 
-    // Search of description in parsed docs
-    if ($findMethod = $parser->getMethodByBaseName($method->getBaseName(true))) {
-        $documentedMethod                    = $findMethod->createNewMethodWithName($method->name); // convert to target method
+    // Search of description in manual/parsed docs
+    if (array_key_exists($methodFullName, $manualMethodsDescription)) {
+        $methods[] = $manualMethodsDescription[$methodFullName];
+    } elseif ($foundMethod = $parser->getMethodByBaseName($method->getBaseName(true))) {
+        $documentedMethod                    = $foundMethod->createNewMethodWithName($method->name); // convert to target method
         $documentedMethod->returnValue->type = $returnType;  // selenium documentation has no info about php variable type
 
         $methods[] = $documentedMethod;
@@ -146,4 +157,7 @@ if (!file_put_contents('SeleniumTestCaseDoc.generated.php', $generator->generate
 // var_export($methods);
 // var_export($driver->getAvailableSeleniumCommands());
 // var_export(array_keys($notFounded)); // todo debug
-// var_export($notFounded);
+if (!empty($notFounded)) {
+    echo 'Not found description for methods:' . Helper::EOL;
+    var_export($notFounded);
+}
