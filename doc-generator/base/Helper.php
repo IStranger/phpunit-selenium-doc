@@ -44,7 +44,7 @@ abstract class Helper
     /**
      * Formats specifies html for "pretty" view
      *
-     * @param string $sourceXHTML   string to format
+     * @param string $sourceXHTML string to format
      *
      * @return string
      */
@@ -66,7 +66,7 @@ abstract class Helper
 
         // add whitespaces before some html elements
         $offset = str_repeat(' ', 4);
-        $xhtml = strtr($xhtml, [
+        $xhtml  = strtr($xhtml, [
             '<li>' => $offset . '<li>',
         ]);
 

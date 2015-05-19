@@ -187,7 +187,7 @@ class Method extends Base
                 break;
 
             case static::TYPE_ASSERTION:
-                $name = str_replace('Not', '', $this->name);
+                $name     = str_replace('Not', '', $this->name);
                 $baseName = Helper::cutPrefix(['assert', 'verify', 'waitFor'], $name);
                 break;
 
@@ -365,7 +365,7 @@ class Method extends Base
                 break;
 
             case self::TYPE_ASSERTION:
-                $hasNot = strpos($methodFullName, 'Not') !== false;
+                $hasNot         = strpos($methodFullName, 'Not') !== false;
                 $prefix2subtype = $hasNot
                     ? [
                         'assert'  => static::SUBTYPE_ASSERT_NOT,
@@ -403,8 +403,8 @@ class Method extends Base
      */
     function createNewMethodWithName($newMethodName)
     {
-        $newSubtype = $this::determineSubtypeByName($newMethodName);
-        $method = $this->createClone();
+        $newSubtype   = $this::determineSubtypeByName($newMethodName);
+        $method       = $this->createClone();
         $method->name = $newMethodName;
 
         if ($this->subtype === self::SUBTYPE_BASE) {
@@ -522,12 +522,12 @@ class Method extends Base
         // prepare new argument list
         $newArgumentList = [];
         foreach ($arguments as $arg) {
-            $cloneArg = $arg->createClone();
+            $cloneArg       = $arg->createClone();
             $cloneArg->type = Argument::DEFAULT_TYPE;
 
             // copy old description
             if ($baseArg = $this->getArgumentByName($cloneArg->name)) {
-                $cloneArg->type = $baseArg->type;
+                $cloneArg->type        = $baseArg->type;
                 $cloneArg->description = $baseArg->description;
             }
             $newArgumentList[] = $cloneArg;

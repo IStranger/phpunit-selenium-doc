@@ -62,7 +62,7 @@ class phpunitSeleniumDriver extends \PHPUnit_Extensions_SeleniumTestCase_Driver
      */
     private function _getBaseMethods()
     {
-        $method = new \ReflectionMethod(__CLASS__, '__call');
+        $method     = new \ReflectionMethod(__CLASS__, '__call');
         $docComment = $method->getDocComment();
 
         $methods = [];

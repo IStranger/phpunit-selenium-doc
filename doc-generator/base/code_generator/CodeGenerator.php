@@ -35,7 +35,7 @@ class CodeGenerator
     {
         $dir = __DIR__ . DIRECTORY_SEPARATOR;
         if (file_exists($dir . self::TPL_CLASS) && file_exists($dir . self::TPL_METHOD)) {
-            $this->_tplClass = Helper::unifyEOL(file_get_contents($dir . self::TPL_CLASS));
+            $this->_tplClass  = Helper::unifyEOL(file_get_contents($dir . self::TPL_CLASS));
             $this->_tplMethod = Helper::unifyEOL(file_get_contents($dir . self::TPL_METHOD));
         } else {
             throw new \Exception('Not found templates for code generator');
@@ -108,27 +108,27 @@ class CodeGenerator
         $maxLength = 0;
         foreach ($method->arguments as $argument) {
             $phpDoc[$argument->name] = '@param ' . $argument->type . '   $' . $argument->name . '  ';
-            $length = strlen($phpDoc[$argument->name]);
-            $maxLength = ($length > $maxLength) ? $length : $maxLength;
+            $length                  = strlen($phpDoc[$argument->name]);
+            $maxLength               = ($length > $maxLength) ? $length : $maxLength;
         }
 
         // add formatted description for arguments (aligned for all arguments)
         $descriptionLength = self::DOC_BLOCK_WIDTH - $maxLength;
-        $firstSpaces = str_repeat(' ', $maxLength);
+        $firstSpaces       = str_repeat(' ', $maxLength);
         foreach ($method->arguments as $argument) {
             $argDescription = ($argument->description === null)
                 ? Helper::value($this->manualArgumentDescription, $argument->name, '')
                 : $argument->description;
 
-            if (!trim($argDescription)) {
+            if (!trim($argDescription)) { // trace empty description
                 echo 'Warning [method = ' . $method->name . ']: argument has no description. Problem argument:'
                     . $argument->name . Helper::EOL;
             }
 
-            $argDescription = Helper::formatAsHtml($argDescription);
-            $argDescription = $this->_wordWrap($argDescription, $descriptionLength, Helper::EOL);
-            $argDescription = $this->_fixPhpDocLinks($argDescription);
-            $argDescription = trim($this->_addInLineBeginning($argDescription, $firstSpaces));
+            $argDescription          = Helper::formatAsHtml($argDescription);
+            $argDescription          = $this->_wordWrap($argDescription, $descriptionLength, Helper::EOL);
+            $argDescription          = $this->_fixPhpDocLinks($argDescription);
+            $argDescription          = trim($this->_addInLineBeginning($argDescription, $firstSpaces));
             $phpDoc[$argument->name] = str_pad($phpDoc[$argument->name], $maxLength) . $argDescription;
         }
 
@@ -164,13 +164,13 @@ class CodeGenerator
      */
     protected function phpDocReturnValue(Method $method)
     {
-        $phpDoc = '@return  ' . $method->returnValue->type . '  ';
-        $length = strlen($phpDoc);
-        $descriptionLength = self::DOC_BLOCK_WIDTH - $length;
+        $phpDoc      = '@return  ' . $method->returnValue->type . '  ';
+        $length      = strlen($phpDoc);
+        $descrLength = self::DOC_BLOCK_WIDTH - $length;
         $firstSpaces = str_repeat(' ', $length);
-        $phpDoc = $phpDoc . $this->_wordWrap($method->returnValue->description, $descriptionLength, Helper::EOL);
-        $phpDoc = $this->_fixPhpDocLinks($phpDoc);
-        $phpDoc = trim($this->_addInLineBeginning($phpDoc, $firstSpaces));
+        $phpDoc      = $phpDoc . $this->_wordWrap($method->returnValue->description, $descrLength, Helper::EOL);
+        $phpDoc      = $this->_fixPhpDocLinks($phpDoc);
+        $phpDoc      = trim($this->_addInLineBeginning($phpDoc, $firstSpaces));
 
         return $phpDoc;
     }
@@ -246,16 +246,16 @@ class CodeGenerator
     private function _fixPhpDocLinks($text)
     {
         if ($text) {
-            $lines = explode(Helper::EOL, $text);
+            $lines     = explode(Helper::EOL, $text);
             $firstLine = $lines[0];
 
             // find '{@link linkName}' or '(see {@link linkName})'
             if (preg_match('/(\(see\s+)?\{@link\s+\w+\}\)?/', $firstLine, $m)) {
-                $linkTag = $m[0];
+                $linkTag   = $m[0];
                 $firstLine = str_replace($linkTag, Helper::EOL . $linkTag, $firstLine); // fix: add EOL before tag
             }
             $lines[0] = $firstLine;
-            $text = join(Helper::EOL, $lines);
+            $text     = join(Helper::EOL, $lines);
         }
         return $text;
     }

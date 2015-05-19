@@ -28,20 +28,20 @@ $parser = new Parser(file_get_contents(SELENIUM_DOC_REFERENCE));
 
 
 // Search description for available selenium commands (methods of phpunit-selenium-driver)
-$driver = new phpunitSeleniumDriver();
+$driver  = new phpunitSeleniumDriver();
 $methods = [];
 foreach ($driver->getAvailableSeleniumCommands() as $methodFullName => $returnType) {
     // Create model of available method
-    $method = models\Method::createNew();
-    $method->name = $methodFullName;
-    $method->type = models\Method::determineTypeByName($methodFullName);
-    $method->subtype = models\Method::determineSubtypeByName($methodFullName);
-    $method->returnValue = models\ReturnValue::createNew();
+    $method                    = models\Method::createNew();
+    $method->name              = $methodFullName;
+    $method->type              = models\Method::determineTypeByName($methodFullName);
+    $method->subtype           = models\Method::determineSubtypeByName($methodFullName);
+    $method->returnValue       = models\ReturnValue::createNew();
     $method->returnValue->type = $returnType;
 
     // Search of description in parsed docs
     if ($findMethod = $parser->getMethodByBaseName($method->getBaseName(true))) {
-        $documentedMethod = $findMethod->createNewMethodWithName($method->name); // convert to target method
+        $documentedMethod                    = $findMethod->createNewMethodWithName($method->name); // convert to target method
         $documentedMethod->returnValue->type = $returnType;  // selenium documentation has no info about php variable type
 
         $methods[] = $documentedMethod;

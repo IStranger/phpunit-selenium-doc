@@ -5,8 +5,6 @@
 
 namespace phpdocSeleniumGenerator\models;
 
-use phpdocSeleniumGenerator\Helper;
-
 
 class Argument extends MethodComponent
 {

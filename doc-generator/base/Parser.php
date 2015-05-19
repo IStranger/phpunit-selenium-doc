@@ -81,8 +81,8 @@ class Parser
      */
     private function _runParsing()
     {
-        $actions = $this->_parseByMethodType(Method::TYPE_ACTION);
-        $accessors = $this->_parseByMethodType(Method::TYPE_ACCESSOR);
+        $actions        = $this->_parseByMethodType(Method::TYPE_ACTION);
+        $accessors      = $this->_parseByMethodType(Method::TYPE_ACCESSOR);
         $duplicateNames = array_intersect_key($actions, $accessors);
 
         if (empty($duplicateNames)) {
@@ -102,15 +102,15 @@ class Parser
      */
     private function _parseByMethodType($methodType)
     {
-        $methods = [];
+        $methods    = [];
         $xmlDtNodes = $this->_xmlPage->xpath('//' . $methodType . '/descendant::a[@name]/ancestor::dt');
         foreach ($xmlDtNodes as $xmlDT) {
-            $xmlDD = $xmlDT->xpath('following-sibling::dd[1]')[0];
+            $xmlDD  = $xmlDT->xpath('following-sibling::dd[1]')[0];
             $method = $this->_createMethodFromXML($xmlDT, $xmlDD);
 
             if (!in_array($method->name, $this->exclusionCommands)) {
-                $method->type = $methodType;
-                $method->subtype = $method::determineSubtypeByName($method->name);
+                $method->type                        = $methodType;
+                $method->subtype                     = $method::determineSubtypeByName($method->name);
                 $methods[$method->getBaseName(true)] = $method;
             }
         }
@@ -215,7 +215,7 @@ class Parser
 
             if (empty($method->arguments)) { // add as arguments with empty description
                 foreach ($argsDiff as $diffArgName) {
-                    $argument = Argument::createNew()->setMethod($method);
+                    $argument       = Argument::createNew()->setMethod($method);
                     $argument->name = $diffArgName;
                     $argument->type = Argument::DEFAULT_TYPE;
                     $method->addArgument($argument);
@@ -227,8 +227,8 @@ class Parser
         }
 
         // Return value
-        $xmlReturnValue = $dd->xpath("descendant::dt[normalize-space(text())='Returns:']/following-sibling::dd");
-        $method->returnValue = ReturnValue::createNew();
+        $xmlReturnValue                   = $dd->xpath("descendant::dt[normalize-space(text())='Returns:']/following-sibling::dd");
+        $method->returnValue              = ReturnValue::createNew();
         $method->returnValue->description = empty($xmlReturnValue)
             ? ''
             : str_replace(['<dd>', '</dd>'], '', $xmlReturnValue[0]->asXML());
@@ -252,13 +252,13 @@ class Parser
         OR die('Error at parse derivative method: ' . $text);
 
         // Name
-        $method = Method::createNew();
+        $method       = Method::createNew();
         $method->name = $m['name'];
 
         // Arguments
         if ($args = trim($m['args'])) {
             foreach (explode(',', $args) as $arg) {
-                $argument = Argument::createNew()->setMethod($method);
+                $argument       = Argument::createNew()->setMethod($method);
                 $argument->name = trim(strip_tags($arg));
                 $method->addArgument($argument);
             }
@@ -297,9 +297,9 @@ class Parser
         array_key_exists('description', $matches)
         OR die('Error at parse argument description: ' . $text);
 
-        $argument->name = $matches['name'];
+        $argument->name        = $matches['name'];
         $argument->description = $matches['description'];
-        $argument->type = Argument::DEFAULT_TYPE; // by default we assume string variable type
+        $argument->type        = Argument::DEFAULT_TYPE; // by default we assume string variable type
         // todo need more accurate algorithm type determination (for example, by prefix of argument name ...)
 
         return $argument;
@@ -324,9 +324,9 @@ class Parser
         $htmlAccessors = $matches[1];
 
         // Make XML (for easy parsing)
-        $actionsNodeName = Method::TYPE_ACTION;
+        $actionsNodeName   = Method::TYPE_ACTION;
         $accessorsNodeName = Method::TYPE_ACCESSOR;
-        $xmlStr = <<<XML
+        $xmlStr            = <<<XML
 <?xml version='1.0' standalone='yes'?>
 <doc>
     <$actionsNodeName>
@@ -337,7 +337,7 @@ class Parser
     </$accessorsNodeName>
 </doc>
 XML;
-        $xmlStr = str_replace('<br>', '', $xmlStr); // delete incorrect xml tags
+        $xmlStr            = str_replace('<br>', '', $xmlStr); // delete incorrect xml tags
 
         return simplexml_load_string($xmlStr);
     }
