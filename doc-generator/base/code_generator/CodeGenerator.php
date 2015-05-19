@@ -127,6 +127,7 @@ class CodeGenerator
 
             $argDescription = Helper::formatAsHtml($argDescription);
             $argDescription = $this->_wordWrap($argDescription, $descriptionLength, Helper::EOL);
+            $argDescription = $this->_fixPhpDocLinks($argDescription);
             $argDescription = trim($this->_addInLineBeginning($argDescription, $firstSpaces));
             $phpDoc[$argument->name] = str_pad($phpDoc[$argument->name], $maxLength) . $argDescription;
         }
@@ -167,7 +168,9 @@ class CodeGenerator
         $length = strlen($phpDoc);
         $descriptionLength = self::DOC_BLOCK_WIDTH - $length;
         $firstSpaces = str_repeat(' ', $length);
-        $phpDoc = $phpDoc . $this->_wordWrap($method->returnValue->description, $descriptionLength, Helper::EOL . $firstSpaces);
+        $phpDoc = $phpDoc . $this->_wordWrap($method->returnValue->description, $descriptionLength, Helper::EOL);
+        $phpDoc = $this->_fixPhpDocLinks($phpDoc);
+        $phpDoc = trim($this->_addInLineBeginning($phpDoc, $firstSpaces));
 
         return $phpDoc;
     }
@@ -229,6 +232,31 @@ class CodeGenerator
 
         // restore of special words
         $text = strtr($text, array_flip($specialWordsReplaceRules));
+        return $text;
+    }
+
+    /**
+     * Fixes {@.link linkName} tags (phpDoc): This tag can not be clicked when located in the first line
+     * (only for @.param, @.var, @.return, @.property)
+     *
+     * @param string $text
+     *
+     * @return string
+     */
+    private function _fixPhpDocLinks($text)
+    {
+        if ($text) {
+            $lines = explode(Helper::EOL, $text);
+            $firstLine = $lines[0];
+
+            // find '{@link linkName}' or '(see {@link linkName})'
+            if (preg_match('/(\(see\s+)?\{@link\s+\w+\}\)?/', $firstLine, $m)) {
+                $linkTag = $m[0];
+                $firstLine = str_replace($linkTag, Helper::EOL . $linkTag, $firstLine); // fix: add EOL before tag
+            }
+            $lines[0] = $firstLine;
+            $text = join(Helper::EOL, $lines);
+        }
         return $text;
     }
 }
