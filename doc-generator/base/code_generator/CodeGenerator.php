@@ -112,6 +112,13 @@ class CodeGenerator
             $maxLength               = ($length > $maxLength) ? $length : $maxLength;
         }
 
+        // html link replace pairs
+        $linkReplaces = [
+            'locators'   => '(see {@link doc_Element_Locators})',       // <a href="#locators">element locator</a>
+            'patterns'   => '(see {@link doc_String_match_Patterns})',  // <a href="#patterns">pattern</a>
+            'storedVars' => '(see {@link doc_Stored_Variables})',       // <a href="#storedVars">variable</a>
+        ];
+
         // add formatted description for arguments (aligned for all arguments)
         $descriptionLength = self::DOC_BLOCK_WIDTH - $maxLength;
         $firstSpaces       = str_repeat(' ', $maxLength);
@@ -120,9 +127,18 @@ class CodeGenerator
                 ? Helper::value($this->manualArgumentDescription, $argument->name, '')
                 : $argument->description;
 
-            if (!trim($argDescription)) { // trace empty description
+            // trace, if empty description
+            if (!trim($argDescription)) {
                 echo 'Warning [method = ' . $method->name . ']: argument has no description. Problem argument:'
                     . $argument->name . Helper::EOL;
+            }
+
+            // replace html link tags
+            foreach ($linkReplaces as $linkHash => $linkPhpDoc) {
+                $regExp = '/<a href="#' . $linkHash . '">([\w ]+)<\/a>/';
+                if (preg_match($regExp, $argDescription)) {
+                    $argDescription = preg_replace($regExp, '$1', $argDescription) . ' ' . $linkPhpDoc;
+                }
             }
 
             $argDescription          = Helper::formatAsHtml($argDescription);
