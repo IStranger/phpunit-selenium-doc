@@ -132,6 +132,7 @@ class CodeGenerator
                 case Method::SUBTYPE_ASSERT_NOT:
                     $derivativeMethod = $newMethod->getDerivativeMethodByName($newMethodName, true);
                     $newMethod->setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
+                    $relatedVerifyMethodName = $newMethod->makeNameForSubtype(Method::SUBTYPE_VERIFY);
 
                     $newMethod->description =
                         '<b>Assertion:</b> ' .
@@ -139,7 +140,8 @@ class CodeGenerator
                         '<h3>Value to verify:</h3> ' .
                         '<p>' . $newMethod->returnValue->description . '</p>' .
                         '<h3>Notes:</h3> ' .
-                        '<p>If assertion will fail the test, it will abort the current test case (in contrast to the verify*).</p>'; // todo add related verify* link
+                        '<p>If assertion will fail the test, it will abort the current test case ' .
+                        '(in contrast to the {@link ' . $relatedVerifyMethodName . '}).</p>';
 
                     $newMethod->returnValue->description = ''; // assert* methods has no return value todo to check this
                     return $newMethod;
@@ -148,6 +150,7 @@ class CodeGenerator
                 case Method::SUBTYPE_VERIFY_NOT:
                     $derivativeMethod = $newMethod->getDerivativeMethodByName($newMethodName, true);
                     $newMethod->setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
+                    $relatedAssertMethodName = $newMethod->makeNameForSubtype(Method::SUBTYPE_ASSERT);
 
                     $newMethod->description =
                         '<b>Assertion:</b> ' .
@@ -155,7 +158,8 @@ class CodeGenerator
                         '<h3>Value to verify:</h3> ' .
                         '<p>' . $newMethod->returnValue->description . '</p>' .
                         '<h3>Notes:</h3> ' .
-                        '<p>If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).</p>'; // todo add related assert* link
+                        '<p>If assertion will fail the test, it will continue to run the test case ' .
+                        '(in contrast to the {@link ' . $relatedAssertMethodName . '}).</p>';
 
                     $newMethod->returnValue->description = ''; // verify* methods has no return value todo to check this
                     return $newMethod;

@@ -404,7 +404,7 @@ class Method extends Base
      *
      * @return $this
      */
-    public function setArgumentsAndKeepOldDescription(array $arguments)
+    function setArgumentsAndKeepOldDescription(array $arguments)
     {
         // prepare new argument list
         $newArgumentList = [];
@@ -427,5 +427,44 @@ class Method extends Base
         }
 
         return $this;
+    }
+
+    /**
+     * Returns name of new method, which can be created from current through
+     * {@link CodeGenerator::createNewMethodWithName}.
+     *
+     * @param string $newSubtype
+     *
+     * @return string               Name of new method
+     */
+    function makeNameForSubtype($newSubtype)
+    {
+        // ---- Source method has Accessor type
+        switch ($this->subtype) {
+            case Method::SUBTYPE_ASSERT:
+            case Method::SUBTYPE_ASSERT_NOT:
+
+                if (in_array($newSubtype, [Method::SUBTYPE_VERIFY, Method::SUBTYPE_VERIFY_NOT])) {
+                    return 'verify' . Helper::cutPrefix('assert', $this->name);
+                } else {
+                    self::throwException("Incorrect subtype: some cases (may be) not handled.");
+                }
+                break;
+
+            case Method::SUBTYPE_VERIFY:
+            case Method::SUBTYPE_VERIFY_NOT:
+
+                if (in_array($newSubtype, [Method::SUBTYPE_ASSERT, Method::SUBTYPE_ASSERT_NOT])) {
+                    return 'assert' . Helper::cutPrefix('verify', $this->name);
+                } else {
+                    self::throwException("Incorrect subtype: some cases (may be) not handled.");
+                }
+                break;
+
+            default:
+                self::throwException("Incorrect subtype: some cases (may be) not handled.");
+        }
+
+        // todo implement and test other cases (other subtypes)
     }
 }
