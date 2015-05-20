@@ -236,7 +236,9 @@ class Parser
         // Derivative methods
         $xmlRelatedAssertions = $dd->xpath("p[normalize-space(text())='Related Assertions, automatically generated:']/following-sibling::ul[1]/li");
         foreach ($xmlRelatedAssertions as $xmlRelatedAssertion) {
-            $method->addDerivativeMethod($this->_createDerivativeMethodFromXML($xmlRelatedAssertion));
+            $derivativeMethod = $this->_createDerivativeMethodFromXML($xmlRelatedAssertion);
+            $method->addDerivativeMethod($derivativeMethod);
+            $method->seeLinks[$derivativeMethod->name] = 'Related Assertion';
         }
 
         return $method;

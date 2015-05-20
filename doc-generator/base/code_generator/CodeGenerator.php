@@ -72,7 +72,8 @@ class CodeGenerator
         $docBlock =
             $this->_wrapAroundIfExist($this->phpDocDescription($method)) .
             $this->_wrapAroundIfExist($this->phpDocArguments($method), Helper::EOL) . // the blank lines around
-            $this->_wrapAroundIfExist($this->phpDocReturnValue($method), Helper::EOL);
+            $this->_wrapAroundIfExist($this->phpDocReturnValue($method), Helper::EOL) .
+            $this->_wrapAroundIfExist($this->phpDocSeeAlso($method), Helper::EOL);
 
         return $this->_addInLineBeginning(trim($docBlock));
     }
@@ -108,8 +109,7 @@ class CodeGenerator
         $maxLength = 0;
         foreach ($method->arguments as $argument) {
             $phpDoc[$argument->name] = '@param ' . $argument->type . '   $' . $argument->name . '  ';
-            $length                  = strlen($phpDoc[$argument->name]);
-            $maxLength               = ($length > $maxLength) ? $length : $maxLength;
+            $maxLength               = max($maxLength, strlen($phpDoc[$argument->name]));
         }
 
         // html link replace pairs
@@ -189,6 +189,33 @@ class CodeGenerator
         $phpDoc      = trim($this->_addInLineBeginning($phpDoc, $firstSpaces));
 
         return $phpDoc;
+    }
+
+    /**
+     * Returns description of "See also" of specified method for DocBlock
+     *
+     * @param Method $method
+     *
+     * @return string   Parts of DocBlock of specified method
+     */
+    protected function phpDocSeeAlso(Method $method)
+    {
+        $phpDoc    = [];
+        $maxLength = 0;
+        foreach ($method->seeLinks as $seeLink => $seeLinkDescr) {
+            $phpDoc[$seeLink] = '@see  ' . $seeLink . '  ';
+            $maxLength        = max($maxLength, strlen($phpDoc[$seeLink]));
+        }
+
+        $descrLength = self::DOC_BLOCK_WIDTH - $maxLength;
+        $firstSpaces = str_repeat(' ', $maxLength);
+        foreach ($method->seeLinks as $seeLink => $seeLinkDescr) {
+            $descr            = $this->_wordWrap($seeLinkDescr, $descrLength);
+            $descr            = trim($this->_addInLineBeginning($descr, $firstSpaces));
+            $phpDoc[$seeLink] = str_pad($phpDoc[$seeLink], $maxLength) . $descr;
+        }
+
+        return join(Helper::EOL, $phpDoc);
     }
 
     /**

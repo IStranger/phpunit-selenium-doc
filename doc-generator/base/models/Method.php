@@ -159,6 +159,11 @@ class Method extends Base
     public $returnValue;
 
     /**
+     * @var array "See also" links in format: [URL] => 'description'
+     */
+    public $seeLinks = [];
+
+    /**
      * @var array|Method[]  Derivative methods (only for store*: automatically generated related Assertions),
      *                      indexed by their names
      */

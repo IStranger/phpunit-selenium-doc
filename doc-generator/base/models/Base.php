@@ -30,14 +30,21 @@ class Base
     /**
      * Creates clone of current instance (recursive!)
      *
+     * @param string[]|null $propertyNamesToCopy   List of property names, whose values will be copied to clone of
+     *                                             model. If =null, mean all properties.
+     *
      * @return static New instance of current class with the same property values
      */
-    function createClone()
+    function createClone($propertyNamesToCopy = null)
     {
-        $cloneModel = $this::createNew()
-            ->setProperties($this->getProperties());
+        $copyPropertyNames = ($propertyNamesToCopy === null)
+            ? $this->getPropertyNames()
+            : $propertyNamesToCopy;
 
-        foreach ($cloneModel->getPropertyNames() as $propertyName) {
+        $cloneModel = $this::createNew()
+            ->setProperties($this->getProperties($copyPropertyNames));
+
+        foreach ($copyPropertyNames as $propertyName) {
             $cloneModel->{$propertyName} = $this->_recursiveCloneIfNecessary($cloneModel->{$propertyName});
         }
         return $cloneModel;
@@ -64,16 +71,23 @@ class Base
         }
         return $this;
     }
-
+    
     /**
      * Gets property values.
      *
+     * @param string[]|null $propertyNames   List of property names, whose values will be returned.
+     *                                       If =null, mean all properties.
+     *
      * @return array $propValues Array of property values in format: ['propName' => 'propValue'].
      */
-    function getProperties()
+    function getProperties($propertyNames = null)
     {
+        $propertyNameList = ($propertyNames === null)
+            ? $this->getPropertyNames()
+            : $propertyNames;
+
         $propValues = [];
-        foreach ($this->getPropertyNames() as $propName) {
+        foreach ($propertyNameList as $propName) {
             $propValues[$propName] = $this->{$propName};
         }
         return $propValues;
