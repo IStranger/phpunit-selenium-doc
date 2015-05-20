@@ -105,9 +105,9 @@ abstract class Helper
      * @param array $keysInc keys of items, that should be included
      * @param array $keysExc keys of items, that should be excluded
      *
-     * @return array|mixed|null    filtered array
+     * @return array|mixed|null    Filtered array
      */
-    public static function filterByKeys($array, array $keysInc = null, array $keysExc = null)
+    public static function filterByKeys(array $array, array $keysInc = null, array $keysExc = null)
     {
         if ($keysInc !== null) {
             $array = array_intersect_key($array, array_flip($keysInc));
@@ -116,6 +116,24 @@ abstract class Helper
             $array = array_diff_key($array, array_flip($keysExc));
         }
         return $array;
+    }
+
+    /**
+     * Prepends one or more element (key-value pairs) in to beginning of specified assoc array
+     *
+     * @param array $array       source assoc array
+     * @param array $keyValPairs key-value pairs to add
+     *
+     * @return array             Updated array with new elements
+     */
+    public static function prependAssoc(array $array, array $keyValPairs)
+    {
+        $array = static::filterByKeys($array, null, array_keys($keyValPairs)); // delete elements with the same keys
+        $array = array_reverse($array, true);
+        foreach ($keyValPairs as $key => $val) {
+            $array[$key] = $val;                    // append new element
+        }
+        return array_reverse($array, true);
     }
 
     /**

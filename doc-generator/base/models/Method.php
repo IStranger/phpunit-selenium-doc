@@ -408,9 +408,14 @@ class Method extends Base
      */
     function createNewMethodWithName($newMethodName)
     {
-        $newSubtype   = $this::determineSubtypeByName($newMethodName);
-        $method       = $this->createClone();
-        $method->name = $newMethodName;
+        $newSubtype       = $this::determineSubtypeByName($newMethodName);
+        $method           = $this->createClone();
+        $method->name     = $newMethodName;
+
+        // see also links
+        $method->seeLinks = Helper::prependAssoc($method->seeLinks, [
+            $this->name => 'Base method, from which has been automatically generated current method'
+        ]);
 
         if ($this->subtype === self::SUBTYPE_BASE) {
 
@@ -461,8 +466,7 @@ class Method extends Base
                         '<h3>Value to verify:</h3> ' .
                         '<p>' . $method->returnValue->description . '</p>' .
                         '<h3>Notes:</h3> ' .
-                        '<p>If assertion will fail the test, it will abort the current test case (in contrast to the verify*).</p>' . // todo add related verify* link
-                        "<p>Assertion, automatically generated from accessor {@link {$this->name}} </p>";
+                        '<p>If assertion will fail the test, it will abort the current test case (in contrast to the verify*).</p>'; // todo add related verify* link
 
                     $method->returnValue->description = ''; // store* methods has no return value todo to check this
                     return $method;
@@ -478,8 +482,7 @@ class Method extends Base
                         '<h3>Value to verify:</h3> ' .
                         '<p>' . $method->returnValue->description . '</p>' .
                         '<h3>Notes:</h3> ' .
-                        '<p>If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).</p>' . // todo add related assert* link
-                        "<p>Assertion, automatically generated from accessor {@link {$this->name}} </p>";
+                        '<p>If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).</p>'; // todo add related assert* link
 
                     $method->returnValue->description = ''; // store* methods has no return value todo to check this
                     return $method;
@@ -496,8 +499,7 @@ class Method extends Base
                         '<p>' . $method->returnValue->description . '</p>' .
                         '<h3>Notes:</h3> ' .
                         "<p>This command wait for some condition to become true (or returned value is equal specified value).</p>" .
-                        '<p><b>Note:</b> This command will succeed immediately if the condition is already true.</p>' .
-                        "<p>Assertion, automatically generated from accessor {@link {$this->name}} </p>";
+                        '<p><b>Note:</b> This command will succeed immediately if the condition is already true.</p>';
 
                     $method->returnValue->description = ''; // store* methods has no return value todo to check this
                     return $method;

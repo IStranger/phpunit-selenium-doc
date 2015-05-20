@@ -238,7 +238,6 @@ class Parser
         foreach ($xmlRelatedAssertions as $xmlRelatedAssertion) {
             $derivativeMethod = $this->_createDerivativeMethodFromXML($xmlRelatedAssertion);
             $method->addDerivativeMethod($derivativeMethod);
-            $method->seeLinks[$derivativeMethod->name] = 'Related Assertion';
         }
 
         return $method;

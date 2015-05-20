@@ -21,7 +21,9 @@ use \phpdocSeleniumGenerator\Helper;
 use \phpdocSeleniumGenerator\code_generator\CodeGenerator;
 
 /**
- * @var models\Method[] $manualMethodsDescription Array of models, indexed by method name
+ * @var models\Method[]|array $manualMethodsDescription Array of models, indexed by method name
+ * @var models\Method[]|array $methodsByBaseName        Array of models, indexed by method name
+ * @var models\Method[]       $methodsGroup
  */
 
 // HTML documentation (local file can be changed to http://release.seleniumhq.org/selenium-core/1.0.1/reference.html)
@@ -35,11 +37,12 @@ $parser = new Parser(file_get_contents(SELENIUM_DOC_REFERENCE));
 
 
 // Search description for available selenium commands (methods of phpunit-selenium-driver)
-$driver     = new phpunitSeleniumDriver();
-$methods    = [];
-$notFounded = [];
+$driver            = new phpunitSeleniumDriver();
+$seleniumCommands  = $driver->getAvailableSeleniumCommands();
+$methodsByBaseName = [];
+$notFounded        = [];
 
-foreach ($driver->getAvailableSeleniumCommands() as $methodFullName => $returnType) {
+foreach ($seleniumCommands as $methodFullName => $returnType) {
     // Create model of available method
     $method                    = models\Method::createNew();
     $method->name              = $methodFullName;
@@ -49,102 +52,51 @@ foreach ($driver->getAvailableSeleniumCommands() as $methodFullName => $returnTy
     $method->returnValue->type = $returnType;
 
     // Search of description in manual/parsed docs
+    $documentedMethod = null;
     if (array_key_exists($methodFullName, $manualMethodsDescription)) {
-        $methods[] = $manualMethodsDescription[$methodFullName];
+        $documentedMethod = $manualMethodsDescription[$methodFullName];
     } elseif ($foundMethod = $parser->getMethodByBaseName($method->getBaseName(true))) {
         $documentedMethod                    = $foundMethod->createNewMethodWithName($method->name); // convert to target method
         $documentedMethod->returnValue->type = $returnType;  // selenium documentation has no info about php variable type
+    }
 
-        $methods[] = $documentedMethod;
+    if ($documentedMethod) {
+        $methodsByBaseName[$method->getBaseName()][] = $documentedMethod;
     } else {
         $notFounded[$method->getBaseName()][] = $method->name;
-        /*
-         * // todo for this commands need manual description
-        array (
-          0 => 'CssCount',
-          1 => 'LogMessages',
-          2 => 'attachFile',
-          3 => 'captureEntirePageScreenshotToString',
-          4 => 'captureScreenshot',
-          5 => 'captureScreenshotToString',
-          6 => 'keyDownNative',
-          7 => 'keyPressNative',
-          8 => 'keyUpNative',
-          9 => 'retrieveLastRemoteControlLogs',
-          10 => 'setContext',
-          11 => 'shutDownSeleniumServer',
-        )
-        array (
-          'CssCount' =>
-          array (
-            0 => 'assertCssCount',
-            1 => 'assertNotCssCount',
-            2 => 'getCssCount',
-            3 => 'storeCssCount',
-            4 => 'verifyCssCount',
-            5 => 'verifyNotCssCount',
-            6 => 'waitForCssCount',
-            7 => 'waitForNotCssCount',
-          ),
-          'LogMessages' =>
-          array (
-            0 => 'assertLogMessages',
-            1 => 'assertNotLogMessages',
-            2 => 'getLogMessages',
-            3 => 'storeLogMessages',
-            4 => 'verifyLogMessages',
-            5 => 'verifyNotLogMessages',
-            6 => 'waitForLogMessages',
-            7 => 'waitForNotLogMessages',
-          ),
-          'attachFile' =>
-          array (
-            0 => 'attachFile',
-          ),
-          'captureEntirePageScreenshotToString' =>
-          array (
-            0 => 'captureEntirePageScreenshotToString',
-            1 => 'captureEntirePageScreenshotToStringAndWait',
-          ),
-          'captureScreenshot' =>
-          array (
-            0 => 'captureScreenshot',
-            1 => 'captureScreenshotAndWait',
-          ),
-          'captureScreenshotToString' =>
-          array (
-            0 => 'captureScreenshotToString',
-            1 => 'captureScreenshotToStringAndWait',
-          ),
-          'keyDownNative' =>
-          array (
-            0 => 'keyDownNative',
-            1 => 'keyDownNativeAndWait',
-          ),
-          'keyPressNative' =>
-          array (
-            0 => 'keyPressNative',
-            1 => 'keyPressNativeAndWait',
-          ),
-          'keyUpNative' =>
-          array (
-            0 => 'keyUpNative',
-            1 => 'keyUpNativeAndWait',
-          ),
-          'retrieveLastRemoteControlLogs' =>
-          array (
-            0 => 'retrieveLastRemoteControlLogs',
-          ),
-          'setContext' =>
-          array (
-            0 => 'setContext',
-          ),
-          'shutDownSeleniumServer' =>
-          array (
-            0 => 'shutDownSeleniumServer',
-          ),
-        )
-        */
+    }
+}
+
+// Add "see also" cross links (between methods of same group)
+foreach ($methodsByBaseName as $methodBaseName => $methodsGroup) {
+    $seeLinks = [];
+    foreach ($methodsGroup as $method) {
+        $linkDescription = '';
+        switch ($method->type) {
+            case models\Method::TYPE_ACTION:
+                $linkDescription = 'Related Action';
+                break;
+            case models\Method::TYPE_ACCESSOR:
+                $linkDescription = 'Related Accessor';
+                break;
+            case models\Method::TYPE_ASSERTION:
+                $linkDescription = 'Related Assertion';
+                break;
+        }
+        $seeLinks[$method->name] = $linkDescription;
+    }
+
+    foreach ($methodsGroup as $method) {
+        $method->seeLinks += $seeLinks;
+        $method->seeLinks = Helper::filterByKeys($method->seeLinks, null, [$method->name]); // delete link to self
+    }
+}
+
+// Make plain array of methods
+$methods = [];
+foreach ($methodsByBaseName as $methodBaseName => $methodsGroup) {
+    foreach ($methodsGroup as $method) {
+        $methods[] = $method;
     }
 }
 
