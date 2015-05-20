@@ -469,7 +469,7 @@ class Method extends Base
                         '<h3>Notes:</h3> ' .
                         '<p>If assertion will fail the test, it will abort the current test case (in contrast to the verify*).</p>'; // todo add related verify* link
 
-                    $newMethod->returnValue->description = ''; // store* methods has no return value todo to check this
+                    $newMethod->returnValue->description = ''; // assert* methods has no return value todo to check this
                     return $newMethod;
 
                 case self::SUBTYPE_VERIFY:                  // Accessor --> Assertion
@@ -485,7 +485,7 @@ class Method extends Base
                         '<h3>Notes:</h3> ' .
                         '<p>If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).</p>'; // todo add related assert* link
 
-                    $newMethod->returnValue->description = ''; // store* methods has no return value todo to check this
+                    $newMethod->returnValue->description = ''; // verify* methods has no return value todo to check this
                     return $newMethod;
 
                 case self::SUBTYPE_WAIT_FOR:                  // Accessor --> Assertion
@@ -502,7 +502,7 @@ class Method extends Base
                         "<p>This command wait for some condition to become true (or returned value is equal specified value).</p>" .
                         '<p><b>Note:</b> This command will succeed immediately if the condition is already true.</p>';
 
-                    $newMethod->returnValue->description = ''; // store* methods has no return value todo to check this
+                    $newMethod->returnValue->description = ''; // waitFor* methods has no return value todo to check this
                     return $newMethod;
 
                 default:
