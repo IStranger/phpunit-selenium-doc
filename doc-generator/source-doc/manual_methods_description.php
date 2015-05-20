@@ -127,7 +127,6 @@ Selenium RC may need to transfer the file to the local machine before attaching 
 This is common in selenium grid configurations where the RC server driving the browser is not the same machine 
 that started the test. Supported Browsers: Firefox ("*chrome") only.
 TEXT;
-
 $mAttachFile->addArgument($argument);
 
 // return value
@@ -138,7 +137,91 @@ $mAttachFile->returnValue->type = ReturnValue::TYPE_VOID;
 $methods[] = $mAttachFile;
 
 
-// .... other methods place here
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// ---- captureEntirePageScreenshotToString
+$mCaptureEntirePageScreenshotToString              = Method::createNew();
+$mCaptureEntirePageScreenshotToString->name        = 'captureEntirePageScreenshotToString';
+$mCaptureEntirePageScreenshotToString->type        = Method::determineTypeByName($mCaptureEntirePageScreenshotToString->name);
+$mCaptureEntirePageScreenshotToString->subtype     = Method::determineSubtypeByName($mCaptureEntirePageScreenshotToString->name);
+$mCaptureEntirePageScreenshotToString->description = <<<TEXT
+Downloads a screenshot of the browser current window canvas to a based 64 encoded PNG file.
+The <b>entire</b> windows canvas is captured, including parts rendered outside of the current view port.
+<p><b>Note:</b> Currently this only works in Mozilla and when running in chrome mode.</p>
+TEXT;
+
+// first argument
+$argument              = Argument::createNew();
+$argument->name        = 'kwargs';
+$argument->type        = Argument::DEFAULT_TYPE;
+$argument->description = <<<TEXT
+A kwargs string that modifies the way the screenshot is captured. Example: "background=#CCFFDD". This may be useful
+to set for capturing screenshots of less-than-ideal layouts, for example where absolute positioning causes
+the calculation of the canvas dimension to fail and a black background is exposed (possibly obscuring black text).
+TEXT;
+$mCaptureEntirePageScreenshotToString->addArgument($argument);
+
+// return value
+$mCaptureEntirePageScreenshotToString->returnValue              = ReturnValue::createNew();
+$mCaptureEntirePageScreenshotToString->returnValue->type        = ReturnValue::TYPE_STRING;
+$mCaptureEntirePageScreenshotToString->returnValue->description = 'The base 64 encoded string of the page screenshot (PNG file)';
+
+// add to common method list (method and its derivative methods)
+$methods[] = $mCaptureEntirePageScreenshotToString;
+$methods[] = $mCaptureEntirePageScreenshotToString->createNewMethodWithName('captureEntirePageScreenshotToStringAndWait');
+
+
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// ---- captureScreenshot
+$mCaptureScreenshot              = Method::createNew();
+$mCaptureScreenshot->name        = 'captureScreenshot';
+$mCaptureScreenshot->type        = Method::determineTypeByName($mCaptureScreenshot->name);
+$mCaptureScreenshot->subtype     = Method::determineSubtypeByName($mCaptureScreenshot->name);
+$mCaptureScreenshot->description = 'Captures a PNG screenshot to the specified file.';
+
+// first argument
+$argument              = Argument::createNew();
+$argument->name        = 'filename';
+$argument->type        = Argument::DEFAULT_TYPE;
+$argument->description = 'the absolute path to the file to be written, e.g. "c:\blah\screenshot.png"';
+$mCaptureScreenshot->addArgument($argument);
+
+// return value
+$mCaptureScreenshot->returnValue       = ReturnValue::createNew();
+$mCaptureScreenshot->returnValue->type = ReturnValue::TYPE_VOID;
+
+// add to common method list (method and its derivative methods)
+$methods[] = $mCaptureScreenshot;
+$methods[] = $mCaptureScreenshot->createNewMethodWithName('captureScreenshotAndWait');
+
+
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// ---- captureScreenshotToString
+$mCaptureScreenshotToString              = Method::createNew();
+$mCaptureScreenshotToString->name        = 'captureScreenshotToString';
+$mCaptureScreenshotToString->type        = Method::determineTypeByName($mCaptureScreenshotToString->name);
+$mCaptureScreenshotToString->subtype     = Method::determineSubtypeByName($mCaptureScreenshotToString->name);
+$mCaptureScreenshotToString->description = 'Capture a PNG screenshot. It then returns the file as a base 64 encoded string.';
+
+// return value
+$mCaptureScreenshotToString->returnValue              = ReturnValue::createNew();
+$mCaptureScreenshotToString->returnValue->type        = ReturnValue::TYPE_STRING;
+$mCaptureScreenshotToString->returnValue->description = 'The base 64 encoded string of the screen shot (PNG file)';
+
+// add to common method list (method and its derivative methods)
+$methods[] = $mCaptureScreenshotToString;
+$methods[] = $mCaptureScreenshotToString->createNewMethodWithName('captureScreenshotToStringAndWait');
+
+
+// .... other methods place here. Should be added:
+// keyDownNative
+// keyPressNative
+// keyUpNative
+// retrieveLastRemoteControlLogs
+// setContext
+// shutDownSeleniumServer
 
 // index by method name
 $methodsByName = [];

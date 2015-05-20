@@ -37,6 +37,26 @@ class phpunitSeleniumDriver extends \PHPUnit_Extensions_SeleniumTestCase_Driver
         // cannot use reserved keywords as function or method names: http://php.net/manual/en/reserved.keywords.php
         'echo',
         'break',
+
+        // deprecated commands (removed from current version)
+        'assertCssCount',
+        'assertNotCssCount',
+        'getCssCount',
+        'storeCssCount',
+        'verifyCssCount',
+        'verifyNotCssCount',
+        'waitForCssCount',
+        'waitForNotCssCount',
+
+        // deprecated commands (removed already from Selenium Core 0.8.3)
+        'assertLogMessages',
+        'assertNotLogMessages',
+        'getLogMessages',
+        'storeLogMessages',
+        'verifyLogMessages',
+        'verifyNotLogMessages',
+        'waitForLogMessages',
+        'waitForNotLogMessages',
     ];
 
     /**
