@@ -408,26 +408,27 @@ class Method extends Base
      */
     function createNewMethodWithName($newMethodName)
     {
-        $newSubtype       = $this::determineSubtypeByName($newMethodName);
-        $method           = $this->createClone();
-        $method->name     = $newMethodName;
+        $newMethod          = $this->createClone();
+        $newMethod->name    = $newMethodName;
+        $newMethod->type    = $this::determineTypeByName($newMethod->name);
+        $newMethod->subtype = $this::determineSubtypeByName($newMethod->name);
 
         // see also links
-        $method->seeLinks = Helper::prependAssoc($method->seeLinks, [
-            $this->name => 'Base method, from which has been automatically generated current method'
+        $newMethod->seeLinks = Helper::prependAssoc($newMethod->seeLinks, [
+            $this->name => 'Base method, from which has been generated (automatically) current method'
         ]);
 
         if ($this->subtype === self::SUBTYPE_BASE) {
 
             // ---- Source method has Action type
-            switch ($newSubtype) {
+            switch ($newMethod->subtype) {
                 case self::SUBTYPE_BASE:                    // Action --> Action
-                    return $method;
+                    return $newMethod;
 
                 case self::SUBTYPE_AND_WAIT:                // Action --> Action
-                    $method->description .= Helper::EOL . Helper::EOL . ' <p><b>Note:</b> After execution of this action, ' .
+                    $newMethod->description .= Helper::EOL . Helper::EOL . ' <p><b>Note:</b> After execution of this action, ' .
                         'Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>';
-                    return $method;
+                    return $newMethod;
 
                 default:
                     $this::throwException("Incorrect subtype for creating of new method: '$this->subtype'. " .
@@ -437,72 +438,72 @@ class Method extends Base
         } elseif ($this->subtype === self::SUBTYPE_STORE) {
 
             // ---- Source method has Accessor type
-            switch ($newSubtype) {
+            switch ($newMethod->subtype) {
                 case self::SUBTYPE_STORE:                   // Accessor --> Accessor
-                    $method->description .=
+                    $newMethod->description .=
                         '<h3>Stored value:</h3>' .
-                        '<p>' . $method->returnValue->description . ' (see {@link doc_Stored_Variables})</p>';
+                        '<p>' . $newMethod->returnValue->description . ' (see {@link doc_Stored_Variables})</p>';
 
-                    $method->returnValue->description = ''; // store* methods has no return value todo to check this
-                    return $method;
+                    $newMethod->returnValue->description = ''; // store* methods has no return value todo to check this
+                    return $newMethod;
 
                 case self::SUBTYPE_GET:                     // Accessor --> Accessor
-                    $method->deleteArgumentByName('variableName');
-                    return $method;
+                    $newMethod->deleteArgumentByName('variableName');
+                    return $newMethod;
 
                 case self::SUBTYPE_IS:                      // Accessor --> Accessor
-                    $method->deleteArgumentByName('variableName');
-                    return $method;
+                    $newMethod->deleteArgumentByName('variableName');
+                    return $newMethod;
 
                 // todo add for each method related assertion commands
                 case self::SUBTYPE_ASSERT:                  // Accessor --> Assertion
                 case self::SUBTYPE_ASSERT_NOT:
-                    $derivativeMethod = $method->getDerivativeMethodByName($newMethodName, true);
-                    $method->_setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
+                    $derivativeMethod = $newMethod->getDerivativeMethodByName($newMethodName, true);
+                    $newMethod->_setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
 
-                    $method->description =
+                    $newMethod->description =
                         '<b>Assertion:</b> ' .
-                        $method->description .
+                        $newMethod->description .
                         '<h3>Value to verify:</h3> ' .
-                        '<p>' . $method->returnValue->description . '</p>' .
+                        '<p>' . $newMethod->returnValue->description . '</p>' .
                         '<h3>Notes:</h3> ' .
                         '<p>If assertion will fail the test, it will abort the current test case (in contrast to the verify*).</p>'; // todo add related verify* link
 
-                    $method->returnValue->description = ''; // store* methods has no return value todo to check this
-                    return $method;
+                    $newMethod->returnValue->description = ''; // store* methods has no return value todo to check this
+                    return $newMethod;
 
                 case self::SUBTYPE_VERIFY:                  // Accessor --> Assertion
                 case self::SUBTYPE_VERIFY_NOT:
-                    $derivativeMethod = $method->getDerivativeMethodByName($newMethodName, true);
-                    $method->_setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
+                    $derivativeMethod = $newMethod->getDerivativeMethodByName($newMethodName, true);
+                    $newMethod->_setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
 
-                    $method->description =
+                    $newMethod->description =
                         '<b>Assertion:</b> ' .
-                        $method->description .
+                        $newMethod->description .
                         '<h3>Value to verify:</h3> ' .
-                        '<p>' . $method->returnValue->description . '</p>' .
+                        '<p>' . $newMethod->returnValue->description . '</p>' .
                         '<h3>Notes:</h3> ' .
                         '<p>If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).</p>'; // todo add related assert* link
 
-                    $method->returnValue->description = ''; // store* methods has no return value todo to check this
-                    return $method;
+                    $newMethod->returnValue->description = ''; // store* methods has no return value todo to check this
+                    return $newMethod;
 
                 case self::SUBTYPE_WAIT_FOR:                  // Accessor --> Assertion
                 case self::SUBTYPE_WAIT_FOR_NOT:
-                    $derivativeMethod = $method->getDerivativeMethodByName($newMethodName, true);
-                    $method->_setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
+                    $derivativeMethod = $newMethod->getDerivativeMethodByName($newMethodName, true);
+                    $newMethod->_setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
 
-                    $method->description =
+                    $newMethod->description =
                         '<b>Assertion:</b> ' .
-                        $method->description .
+                        $newMethod->description .
                         '<h3>Expected value/condition:</h3> ' .
-                        '<p>' . $method->returnValue->description . '</p>' .
+                        '<p>' . $newMethod->returnValue->description . '</p>' .
                         '<h3>Notes:</h3> ' .
                         "<p>This command wait for some condition to become true (or returned value is equal specified value).</p>" .
                         '<p><b>Note:</b> This command will succeed immediately if the condition is already true.</p>';
 
-                    $method->returnValue->description = ''; // store* methods has no return value todo to check this
-                    return $method;
+                    $newMethod->returnValue->description = ''; // store* methods has no return value todo to check this
+                    return $newMethod;
 
                 default:
                     $this::throwException("Incorrect subtype for creating of new method: '{$this->subtype}'. " .
@@ -514,7 +515,7 @@ class Method extends Base
                                   "Source method support only Method::SUBTYPE_BASE and Method::SUBTYPE_STORE subtypes.");
         }
 
-        return $method;
+        return $newMethod;
     }
 
     /**
