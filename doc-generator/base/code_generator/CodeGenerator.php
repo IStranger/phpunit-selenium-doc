@@ -234,7 +234,7 @@ class CodeGenerator
     {
         // don't break special words
         $specialWordsReplaceRules = [];
-        if (preg_match_all('/\{\@link\s+.+\}/', $text, $m)) {
+        if (preg_match_all('/\{\@link\s+\w+\}/', $text, $m)) {
             $i = 0;
             foreach ($m[0] as $specialWord) {
                 $specialWordsReplaceRules[$specialWord] = $i . str_repeat('_', strlen($specialWord) - 1);
