@@ -3,8 +3,10 @@
 use phpdocSeleniumGenerator\models\Argument;
 use phpdocSeleniumGenerator\models\Method;
 use phpdocSeleniumGenerator\models\ReturnValue;
+use phpdocSeleniumGenerator\code_generator\CodeGenerator;
 
-$methods = [];
+$generator = CodeGenerator::createNew();
+$methods   = [];
 
 // --------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------
@@ -54,7 +56,7 @@ $mSelect->returnValue->type = ReturnValue::TYPE_VOID;
 
 // add to common method list (method and its derivative methods)
 $methods[] = $mSelect;
-$methods[] = $mSelect->createNewMethodWithName('selectAndWait');
+$methods[] = $generator->createNewMethodWithName($mSelect, 'selectAndWait');
 
 
 /*
@@ -91,13 +93,13 @@ $mStoreCssCount->returnValue->description = 'Number of elements found on page (c
 
 // add to common method list (method and its derivative methods)
 $methods[] = $mStoreCssCount;
-$methods[] = $mStoreCssCount->createNewMethodWithName('assertCssCount');
-$methods[] = $mStoreCssCount->createNewMethodWithName('assertNotCssCount');
-$methods[] = $mStoreCssCount->createNewMethodWithName('getCssCount');
-$methods[] = $mStoreCssCount->createNewMethodWithName('verifyCssCount');
-$methods[] = $mStoreCssCount->createNewMethodWithName('verifyNotCssCount');
-$methods[] = $mStoreCssCount->createNewMethodWithName('waitForCssCount');
-$methods[] = $mStoreCssCount->createNewMethodWithName('waitForNotCssCount');
+$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'assertCssCount');
+$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'assertNotCssCount');
+$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'getCssCount');
+$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'verifyCssCount');
+$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'verifyNotCssCount');
+$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'waitForCssCount');
+$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'waitForNotCssCount');
 */
 
 
@@ -168,7 +170,7 @@ $mCaptureEntirePageScreenshotToString->returnValue->description = 'The base 64 e
 
 // add to common method list (method and its derivative methods)
 $methods[] = $mCaptureEntirePageScreenshotToString;
-$methods[] = $mCaptureEntirePageScreenshotToString->createNewMethodWithName('captureEntirePageScreenshotToStringAndWait');
+$methods[] = $generator->createNewMethodWithName($mCaptureEntirePageScreenshotToString, 'captureEntirePageScreenshotToStringAndWait');
 
 
 // --------------------------------------------------------------------------------
@@ -193,7 +195,7 @@ $mCaptureScreenshot->returnValue->type = ReturnValue::TYPE_VOID;
 
 // add to common method list (method and its derivative methods)
 $methods[] = $mCaptureScreenshot;
-$methods[] = $mCaptureScreenshot->createNewMethodWithName('captureScreenshotAndWait');
+$methods[] = $generator->createNewMethodWithName($mCaptureScreenshot, 'captureScreenshotAndWait');
 
 
 // --------------------------------------------------------------------------------
@@ -212,7 +214,7 @@ $mCaptureScreenshotToString->returnValue->description = 'The base 64 encoded str
 
 // add to common method list (method and its derivative methods)
 $methods[] = $mCaptureScreenshotToString;
-$methods[] = $mCaptureScreenshotToString->createNewMethodWithName('captureScreenshotToStringAndWait');
+$methods[] = $generator->createNewMethodWithName($mCaptureScreenshotToString, 'captureScreenshotToStringAndWait');
 
 
 // --------------------------------------------------------------------------------
@@ -246,7 +248,7 @@ $mKeyDownNative->returnValue->type = ReturnValue::TYPE_VOID;
 
 // add to common method list (method and its derivative methods)
 $methods[] = $mKeyDownNative;
-$methods[] = $mKeyDownNative->createNewMethodWithName('keyDownNativeAndWait');
+$methods[] = $generator->createNewMethodWithName($mKeyDownNative, 'keyDownNativeAndWait');
 
 
 // --------------------------------------------------------------------------------
@@ -281,7 +283,7 @@ $mKeyPressNative->returnValue->type = ReturnValue::TYPE_VOID;
 
 // add to common method list (method and its derivative methods)
 $methods[] = $mKeyPressNative;
-$methods[] = $mKeyPressNative->createNewMethodWithName('keyPressNativeAndWait');
+$methods[] = $generator->createNewMethodWithName($mKeyPressNative, 'keyPressNativeAndWait');
 
 
 // --------------------------------------------------------------------------------
@@ -316,7 +318,7 @@ $mKeyUpNative->returnValue->type = ReturnValue::TYPE_VOID;
 
 // add to common method list (method and its derivative methods)
 $methods[] = $mKeyUpNative;
-$methods[] = $mKeyUpNative->createNewMethodWithName('keyUpNativeAndWait');
+$methods[] = $generator->createNewMethodWithName($mKeyUpNative, 'keyUpNativeAndWait');
 
 
 // --------------------------------------------------------------------------------

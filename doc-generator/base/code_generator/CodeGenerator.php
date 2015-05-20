@@ -10,6 +10,8 @@ use phpdocSeleniumGenerator\models\Method;
 
 class CodeGenerator
 {
+    use \phpdocSeleniumGenerator\CommonTrait;
+
     private $_tplClass;
     private $_tplMethod;
 
@@ -65,6 +67,127 @@ class CodeGenerator
         ]);
 
         return $code;
+    }
+
+    /**
+     * Creates new method with the specified name (converts from current method).
+     * Only {@link Method::SUBTYPE_BASE} + {@link Method::SUBTYPE_STORE} supported for current method.
+     *
+     * @param Method $oldMethod     Source method, from which created new method
+     * @param string $newMethodName Name of new method
+     *
+     * @return Method               New converted method
+     * @throws \Exception           If current method has unsupported subtype, or incorrect name for new method
+     */
+    function createNewMethodWithName(Method $oldMethod, $newMethodName)
+    {
+        $newMethod          = $oldMethod->createClone();
+        $newMethod->name    = $newMethodName;
+        $newMethod->type    = Method::determineTypeByName($newMethod->name);
+        $newMethod->subtype = Method::determineSubtypeByName($newMethod->name);
+
+        // see also links
+        $newMethod->seeLinks = Helper::prependAssoc($newMethod->seeLinks, [
+            $oldMethod->name => 'Base method, from which has been generated (automatically) current method'
+        ]);
+
+        if ($oldMethod->subtype === Method::SUBTYPE_BASE) {
+
+            // ---- Source method has Action type
+            switch ($newMethod->subtype) {
+                case Method::SUBTYPE_BASE:                    // Action --> Action
+                    return $newMethod;
+
+                case Method::SUBTYPE_AND_WAIT:                // Action --> Action
+                    $newMethod->description .= Helper::EOL . Helper::EOL . ' <p><b>Note:</b> After execution of this action, ' .
+                        'Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>';
+                    return $newMethod;
+
+                default:
+                    self::throwException("Incorrect subtype for creating of new method: '$oldMethod->subtype'. " .
+                                         "Source method (Action) should be converted only to Action.");
+            }
+
+        } elseif ($oldMethod->subtype === Method::SUBTYPE_STORE) {
+
+            // ---- Source method has Accessor type
+            switch ($newMethod->subtype) {
+                case Method::SUBTYPE_STORE:                   // Accessor --> Accessor
+                    $newMethod->description .=
+                        '<h3>Stored value:</h3>' .
+                        '<p>' . $newMethod->returnValue->description . ' (see {@link doc_Stored_Variables})</p>';
+
+                    $newMethod->returnValue->description = ''; // store* methods has no return value todo to check this
+                    return $newMethod;
+
+                case Method::SUBTYPE_GET:                     // Accessor --> Accessor
+                    $newMethod->deleteArgumentByName('variableName');
+                    return $newMethod;
+
+                case Method::SUBTYPE_IS:                      // Accessor --> Accessor
+                    $newMethod->deleteArgumentByName('variableName');
+                    return $newMethod;
+
+                case Method::SUBTYPE_ASSERT:                  // Accessor --> Assertion
+                case Method::SUBTYPE_ASSERT_NOT:
+                    $derivativeMethod = $newMethod->getDerivativeMethodByName($newMethodName, true);
+                    $newMethod->setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
+
+                    $newMethod->description =
+                        '<b>Assertion:</b> ' .
+                        $newMethod->description .
+                        '<h3>Value to verify:</h3> ' .
+                        '<p>' . $newMethod->returnValue->description . '</p>' .
+                        '<h3>Notes:</h3> ' .
+                        '<p>If assertion will fail the test, it will abort the current test case (in contrast to the verify*).</p>'; // todo add related verify* link
+
+                    $newMethod->returnValue->description = ''; // assert* methods has no return value todo to check this
+                    return $newMethod;
+
+                case Method::SUBTYPE_VERIFY:                  // Accessor --> Assertion
+                case Method::SUBTYPE_VERIFY_NOT:
+                    $derivativeMethod = $newMethod->getDerivativeMethodByName($newMethodName, true);
+                    $newMethod->setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
+
+                    $newMethod->description =
+                        '<b>Assertion:</b> ' .
+                        $newMethod->description .
+                        '<h3>Value to verify:</h3> ' .
+                        '<p>' . $newMethod->returnValue->description . '</p>' .
+                        '<h3>Notes:</h3> ' .
+                        '<p>If assertion will fail the test, it will continue to run the test case (in contrast to the assert*).</p>'; // todo add related assert* link
+
+                    $newMethod->returnValue->description = ''; // verify* methods has no return value todo to check this
+                    return $newMethod;
+
+                case Method::SUBTYPE_WAIT_FOR:                  // Accessor --> Assertion
+                case Method::SUBTYPE_WAIT_FOR_NOT:
+                    $derivativeMethod = $newMethod->getDerivativeMethodByName($newMethodName, true);
+                    $newMethod->setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
+
+                    $newMethod->description =
+                        '<b>Assertion:</b> ' .
+                        $newMethod->description .
+                        '<h3>Expected value/condition:</h3> ' .
+                        '<p>' . $newMethod->returnValue->description . '</p>' .
+                        '<h3>Notes:</h3> ' .
+                        "<p>This command wait for some condition to become true (or returned value is equal specified value).</p>" .
+                        '<p><b>Note:</b> This command will succeed immediately if the condition is already true.</p>';
+
+                    $newMethod->returnValue->description = ''; // waitFor* methods has no return value todo to check this
+                    return $newMethod;
+
+                default:
+                    self::throwException("Incorrect subtype for creating of new method: '{$oldMethod->subtype}'. " .
+                                         "Source method (Accessor) should be converted only to Accessor or Assertion.");
+            }
+
+        } else {
+            self::throwException("Incorrect subtype of source method: '{$oldMethod->subtype}'. " .
+                                 "Source method support only Method::SUBTYPE_BASE and Method::SUBTYPE_STORE subtypes.");
+        }
+
+        return $newMethod;
     }
 
     protected function getDocBlock(Method $method)

@@ -38,6 +38,7 @@ $parser = new Parser(file_get_contents(SELENIUM_DOC_REFERENCE));
 
 // Search description for available selenium commands (methods of phpunit-selenium-driver)
 $driver            = new phpunitSeleniumDriver();
+$generator         = new CodeGenerator();
 $seleniumCommands  = $driver->getAvailableSeleniumCommands();
 $methodsByBaseName = [];
 $notFounded        = [];
@@ -56,7 +57,7 @@ foreach ($seleniumCommands as $methodFullName => $returnType) {
     if (array_key_exists($methodFullName, $manualMethodsDescription)) {
         $documentedMethod = $manualMethodsDescription[$methodFullName];
     } elseif ($foundMethod = $parser->getMethodByBaseName($method->getBaseName(true))) {
-        $documentedMethod                    = $foundMethod->createNewMethodWithName($method->name); // convert to target method
+        $documentedMethod                    = $generator->createNewMethodWithName($foundMethod, $method->name); // convert to target method
         $documentedMethod->returnValue->type = $returnType;  // selenium documentation has no info about php variable type
     }
 
@@ -100,15 +101,11 @@ foreach ($methodsByBaseName as $methodBaseName => $methodsGroup) {
     }
 }
 
-$generator = new CodeGenerator();
+// Output
 if (!file_put_contents('SeleniumTestCaseDoc.generated.php', $generator->generate($methods))) {
     throw new Exception('Error at file write');
 }
 
-
-// var_export($methods);
-// var_export($driver->getAvailableSeleniumCommands());
-// var_export(array_keys($notFounded)); // todo debug
 if (!empty($notFounded)) {
     echo 'Not found description for methods:' . Helper::EOL;
     var_export($notFounded);

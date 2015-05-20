@@ -6,6 +6,7 @@ namespace phpdocSeleniumGenerator;
 
 
 require_once 'Helper.php';
+require_once 'CommonTrait.php';
 require_once 'models/Base.php';
 require_once 'models/MethodComponent.php';
 require_once 'models/Argument.php';
