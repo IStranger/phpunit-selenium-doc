@@ -176,7 +176,7 @@ class CodeGenerator
                         '<p>' . $newMethod->returnValue->description . '</p>' .
                         '<h3>Notes:</h3> ' .
                         "<p>This command wait for some condition to become true (or returned value is equal specified value).</p>" .
-                        '<p><b>Note:</b> This command will succeed immediately if the condition is already true.</p>';
+                        '<p>This command will succeed immediately if the condition is already true.</p>';
 
                     $newMethod->returnValue->description = ''; // waitFor* methods has no return value todo to check this
                     return $newMethod;
