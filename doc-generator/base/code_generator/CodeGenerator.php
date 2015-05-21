@@ -81,10 +81,11 @@ class CodeGenerator
      */
     function createNewMethodWithName(Method $oldMethod, $newMethodName)
     {
-        $newMethod          = $oldMethod->createClone();
-        $newMethod->name    = $newMethodName;
-        $newMethod->type    = Method::determineTypeByName($newMethod->name);
-        $newMethod->subtype = Method::determineSubtypeByName($newMethod->name);
+        $newMethod              = $oldMethod->createClone();
+        $newMethod->name        = $newMethodName;
+        $newMethod->type        = Method::determineTypeByName($newMethod->name);
+        $newMethod->subtype     = Method::determineSubtypeByName($newMethod->name);
+        $newMethod->description = $this->_addEndDotIfNotExist($newMethod->description); // add end of last sentence
 
         // see also links
         $newMethod->seeLinks = Helper::prependAssoc($newMethod->seeLinks, [
@@ -99,8 +100,10 @@ class CodeGenerator
                     return $newMethod;
 
                 case Method::SUBTYPE_AND_WAIT:                // Action --> Action
-                    $newMethod->description .= Helper::EOL . Helper::EOL . ' <p><b>Note:</b> After execution of this action, ' .
-                        'Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>';
+                    $newMethod->description .=
+                        '<h4>Notes:</h4>' .
+                        '<p>After execution of this action, Selenium wait for a new page to load ' .
+                        '(see {@link waitForPageToLoad})</p>';
                     return $newMethod;
 
                 default:
@@ -114,7 +117,7 @@ class CodeGenerator
             switch ($newMethod->subtype) {
                 case Method::SUBTYPE_STORE:                   // Accessor --> Accessor
                     $newMethod->description .=
-                        '<h3>Stored value:</h3>' .
+                        '<h4>Stored value:</h4>' .
                         '<p>' . $newMethod->returnValue->description . ' (see {@link doc_Stored_Variables})</p>';
 
                     $newMethod->returnValue->description = ''; // store* methods has no return value todo to check this
@@ -135,11 +138,10 @@ class CodeGenerator
                     $relatedVerifyMethodName = $newMethod->makeNameForSubtype(Method::SUBTYPE_VERIFY);
 
                     $newMethod->description =
-                        '<b>Assertion:</b> ' .
-                        $newMethod->description .
-                        '<h3>Value to verify:</h3> ' .
+                        'Assertion: ' . $newMethod->description .
+                        '<h4>Value to verify:</h4> ' .
                         '<p>' . $newMethod->returnValue->description . '</p>' .
-                        '<h3>Notes:</h3> ' .
+                        '<h4>Notes:</h4> ' .
                         '<p>If assertion will fail the test, it will abort the current test case ' .
                         '(in contrast to the {@link ' . $relatedVerifyMethodName . '}).</p>';
 
@@ -153,11 +155,10 @@ class CodeGenerator
                     $relatedAssertMethodName = $newMethod->makeNameForSubtype(Method::SUBTYPE_ASSERT);
 
                     $newMethod->description =
-                        '<b>Assertion:</b> ' .
-                        $newMethod->description .
-                        '<h3>Value to verify:</h3> ' .
+                        'Assertion: ' . $newMethod->description .
+                        '<h4>Value to verify:</h4> ' .
                         '<p>' . $newMethod->returnValue->description . '</p>' .
-                        '<h3>Notes:</h3> ' .
+                        '<h4>Notes:</h4> ' .
                         '<p>If assertion will fail the test, it will continue to run the test case ' .
                         '(in contrast to the {@link ' . $relatedAssertMethodName . '}).</p>';
 
@@ -170,11 +171,10 @@ class CodeGenerator
                     $newMethod->setArgumentsAndKeepOldDescription($derivativeMethod->arguments);
 
                     $newMethod->description =
-                        '<b>Assertion:</b> ' .
-                        $newMethod->description .
-                        '<h3>Expected value/condition:</h3> ' .
+                        'Assertion: ' . $newMethod->description .
+                        '<h4>Expected value/condition:</h4> ' .
                         '<p>' . $newMethod->returnValue->description . '</p>' .
-                        '<h3>Notes:</h3> ' .
+                        '<h4>Notes:</h4> ' .
                         "<p>This command wait for some condition to become true (or returned value is equal specified value).</p>" .
                         '<p>This command will succeed immediately if the condition is already true.</p>';
 
@@ -197,10 +197,18 @@ class CodeGenerator
     protected function getDocBlock(Method $method)
     {
         $docBlock =
-            $this->_wrapAroundIfExist($this->phpDocDescription($method)) .
-            $this->_wrapAroundIfExist($this->phpDocArguments($method), Helper::EOL) . // the blank lines around
+            $this->_wrapAroundIfExist($this->phpDocSummary($method)) .
+            $this->_wrapAroundIfExist($this->phpDocDescription($method), Helper::EOL) . // 2xEOL after Summary is required
+            $this->_wrapAroundIfExist($this->phpDocArguments($method), Helper::EOL) .   // the blank lines around
             $this->_wrapAroundIfExist($this->phpDocReturnValue($method), Helper::EOL) .
             $this->_wrapAroundIfExist($this->phpDocSeeAlso($method), Helper::EOL);
+
+        // strip excess EOLs:
+        $docBlock = strtr($docBlock, [
+            Helper::EOL . Helper::EOL . Helper::EOL . Helper::EOL . Helper::EOL => Helper::EOL . Helper::EOL,
+            Helper::EOL . Helper::EOL . Helper::EOL . Helper::EOL               => Helper::EOL . Helper::EOL,
+            Helper::EOL . Helper::EOL . Helper::EOL                             => Helper::EOL . Helper::EOL,
+        ]);
 
         return $this->_addInLineBeginning(trim($docBlock));
     }
@@ -279,7 +287,26 @@ class CodeGenerator
     }
 
     /**
-     * Returns description of specified method for DocBlock
+     * Returns "Summary" of specified method for DocBlock
+     *
+     * @param Method $method
+     *
+     * @return string       Parts of DocBlock of specified method
+     */
+    protected function phpDocSummary(Method $method)
+    {
+        $phpDocDescription = $this->_prepareMethodDescriptionForPhphDoc($method->description);
+
+        // Summary: first sentence
+        $firstSentence = Helper::extractFirstSentence($phpDocDescription);
+        $firstSentence = $this->_addEndDotIfNotExist($firstSentence);
+        $phpDocSummary = Helper::plainText($firstSentence);
+
+        return $this->_wordWrap($phpDocSummary, self::DOC_BLOCK_WIDTH);
+    }
+
+    /**
+     * Returns "Description" of specified method for DocBlock
      *
      * @param Method $method
      *
@@ -287,15 +314,14 @@ class CodeGenerator
      */
     protected function phpDocDescription(Method $method)
     {
-        // direct replaces
-        $phpDoc = strtr($method->description, [
-            '@see #doSelect' => '{@link select}',    // addSelection + removeSelection
-            '<code>'         => '[<b>',              // for inline code blocks
-            '</code>'        => '</b>]',
-        ]);
+        $phpDocDescription = $this->_prepareMethodDescriptionForPhphDoc($method->description);
+        $firstSentence     = Helper::extractFirstSentence($phpDocDescription);
 
-        $phpDoc = Helper::formatAsHtml($phpDoc);
-        return $this->_wordWrap($phpDoc, self::DOC_BLOCK_WIDTH, Helper::EOL);
+        // Description: others sentences (except first)
+        $phpDocDescription = trim(str_replace($firstSentence, '', $phpDocDescription));
+        $phpDocDescription = Helper::formatAsHtml($phpDocDescription);
+
+        return $this->_wordWrap($phpDocDescription, self::DOC_BLOCK_WIDTH, Helper::EOL);
     }
 
     /**
@@ -428,5 +454,40 @@ class CodeGenerator
             $text     = join(Helper::EOL, $lines);
         }
         return $text;
+    }
+
+    /**
+     * Adds dot (if not exist) in to end of specified text (completion of sentence).
+     *
+     * @param string $text
+     *
+     * @return string   Trimmed text with dot in the end.
+     */
+    private function _addEndDotIfNotExist($text)
+    {
+        $testedText = trim(strip_tags($text));
+        if ($testedText && !Helper::hasPostfix(Helper::$endOfSentence, $testedText)) {
+            $text = rtrim($text) . '.';
+        }
+        return $text;
+    }
+
+    /**
+     * Prepares {@link Method::description} for phpDoc: replaces some words etc.
+     *
+     * @param string $methodDescription description of method
+     *
+     * @return string
+     */
+    private function _prepareMethodDescriptionForPhphDoc($methodDescription)
+    {
+        // direct replaces
+        $phpDocDescription = strtr($methodDescription, [
+            '@see #doSelect' => 'See {@link select}',           // addSelection + removeSelection
+            '<code>'         => '[<b>',                         // for inline code blocks
+            '</code>'        => '</b>]',
+        ]);
+
+        return $phpDocDescription;
     }
 }

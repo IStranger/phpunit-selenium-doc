@@ -10,6 +10,10 @@ abstract class Helper
 {
     /** Line end symbol */
     const EOL = "\n";
+    /**
+     * @var string[] List of possible punctuation marks, that can be in the end of sentence
+     */
+    static $endOfSentence = ['.', '!', '?'];
 
     /**
      * Strip excess space symbols (spaces, EoL symbols etc.)
@@ -39,6 +43,21 @@ abstract class Helper
             '   '             => ' ',
             '  '              => ' ',
         ]);
+    }
+
+    /**
+     * Extracts first sentence from the specified text.
+     *
+     * @param string $text Text. In the end of all sentences should be punctuation marks (.|?|!)
+     *
+     * @return string First sentence with punctuation marks (in the end)
+     */
+    static function extractFirstSentence($text)
+    {
+        $regExp = '/([^s][\s\S]*?[' . join('', Helper::$endOfSentence) . '])\s*(?=\<|[A-Z])/';
+        return preg_match($regExp, $text, $m)
+            ? $m[0]
+            : $text; // pattern has no matches, if not contain punctuation marks (this is single sentence)
     }
 
     /**
@@ -140,34 +159,50 @@ abstract class Helper
      * Returns =true, if specified string has specified prefix, else =false.
      * If prefix equal source string, then method returns =false (is not a prefix).
      *
-     * @param string $prefix Prefix
-     * @param string $str    Source string to check
+     * @param string|string[] $prefix Single prefix, or list of possible of prefixes
+     * @param string          $str    Source string to check
      *
-     * @return bool          Has specified prefix
+     * @return bool          Has specified prefix (or one from list of possible of prefixes)
      */
     static function hasPrefix($prefix, $str)
     {
-        return (substr($str, 0, strlen($prefix)) === $prefix) && (strlen($str) !== strlen($prefix));
+        $has = false;
+        if (is_array($prefix)) {
+            foreach ($prefix as $singlePrefix) {
+                $has = $has || static::hasPrefix($singlePrefix, $str);
+            }
+        } else {
+            $has = (substr($str, 0, strlen($prefix)) === $prefix) && (strlen($str) !== strlen($prefix));
+        }
+        return $has;
     }
 
     /**
      * Returns =true, if specified string has specified postfix, else =false.
      * If postfix equal source string, then method returns =false (is not a postfix).
      *
-     * @param string $postfix Postfix
+     * @param string $postfix Single postfix, or list of possible of postfixes
      * @param string $str     Source string to check
      *
-     * @return bool           Has specified postfix
+     * @return bool           Has specified postfix (or one from list of possible of postfixes)
      */
     static function hasPostfix($postfix, $str)
     {
-        return (substr($str, -strlen($postfix)) === $postfix) && (strlen($str) !== strlen($postfix));
+        $has = false;
+        if (is_array($postfix)) {
+            foreach ($postfix as $singlePostfix) {
+                $has = $has || static::hasPostfix($singlePostfix, $str);
+            }
+        } else {
+            $has = (substr($str, -strlen($postfix)) === $postfix) && (strlen($str) !== strlen($postfix));
+        }
+        return $has;
     }
 
     /**
      * Cuts one or more prefixes (if present)
      *
-     * @param string|string[] $prefix Single prefix, or list possible of prefixes
+     * @param string|string[] $prefix Single prefix, or list of possible of prefixes
      * @param string          $str    Source string
      *
      * @return string

@@ -20,8 +20,7 @@ trait SeleniumTestCaseDoc
     // private variables doc_* only for separate phpDoc by section (and for links)
 
     /**
-     * Element Locators (delete space after "@" symbol below)
-     * =======================================================
+     * <h3>Element Locators</h3>
      *
      * Element Locators tell Selenium which HTML element a command refers to. The format of a locator is:
      * <b> locatorType=argument </b>
@@ -83,8 +82,8 @@ trait SeleniumTestCaseDoc
     private $doc_Element_Locators;
 
     /**
-     * Element Filters
-     * =========================
+     * <h3>Element Filters</h3>
+     *
      * Element filters can be used with a locator to refine a list of candidate elements. They are currently used only in
      * the 'name' element-locator. <br/> Filters look much like locators, ie. <b>filterType=argument</b>
      *
@@ -98,8 +97,8 @@ trait SeleniumTestCaseDoc
     private $doc_Element_Filters;
 
     /**
-     * String-match Patterns
-     * =========================
+     * <h3>String-match Patterns</h3>
+     *
      * Various Pattern syntaxes are available for matching string values:
      *      + <b>glob:pattern </b><br/>
      *              Match a string against a "glob" (aka "wildmat") pattern. "Glob" is a kind of limited regular-expression
@@ -162,10 +161,11 @@ trait SeleniumTestCaseDoc
     private $doc_Stored_Variables;
 
     /**
-     * Defines a new function for Selenium to locate elements on the page. For example, if you define the strategy
-     * "foo", and someone runs click("foo=blah"), we'll run your function, passing you the string "blah", and click on
-     * the element that your function returns, or throw an "Element not found" error if your function returns null.
-     * We'll pass three arguments to your function:
+     * Defines a new function for Selenium to locate elements on the page. 
+     * 
+     * For example, if you define the strategy "foo", and someone runs click("foo=blah"), we'll run your function,
+     * passing you the string "blah", and click on the element that your function returns, or throw an "Element not
+     * found" error if your function returns null. We'll pass three arguments to your function:
      * 
      * <ul>
      *     <li>locator: the string the user passed in</li>
@@ -190,10 +190,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Defines a new function for Selenium to locate elements on the page. For example, if you define the strategy
-     * "foo", and someone runs click("foo=blah"), we'll run your function, passing you the string "blah", and click on
-     * the element that your function returns, or throw an "Element not found" error if your function returns null.
-     * We'll pass three arguments to your function:
+     * Defines a new function for Selenium to locate elements on the page. 
+     * 
+     * For example, if you define the strategy "foo", and someone runs click("foo=blah"), we'll run your function,
+     * passing you the string "blah", and click on the element that your function returns, or throw an "Element not
+     * found" error if your function returns null. We'll pass three arguments to your function:
      * 
      * <ul>
      *     <li>locator: the string the user passed in</li>
@@ -203,8 +204,9 @@ trait SeleniumTestCaseDoc
      * 
      * The function must return null if the element can't be found.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $strategyName        the name of the strategy to define; this should use only letters [a-zA-Z]
      *                                      with no spaces  or other punctuation.
@@ -221,10 +223,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Loads script content into a new script tag in the Selenium document. This differs from the runScript command in
-     * that runScript adds the script tag to the document of the AUT, not the Selenium document. The following entities
-     * in the script content are replaced by the characters they represent: &lt; &gt; &amp; The corresponding remove
-     * command is removeScript.
+     * Loads script content into a new script tag in the Selenium document. 
+     * 
+     * This differs from the runScript command in that runScript adds the script tag to the document of the AUT, not
+     * the Selenium document. The following entities in the script content are replaced by the characters they
+     * represent: &lt; &gt; &amp; The corresponding remove command is removeScript.
      * 
      * @param string   $scriptContent  the Javascript content of the script to add
      * @param string   $scriptTagId    (optional) the id of the new script tag. If specified, and an element with this
@@ -240,13 +243,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Loads script content into a new script tag in the Selenium document. This differs from the runScript command in
-     * that runScript adds the script tag to the document of the AUT, not the Selenium document. The following entities
-     * in the script content are replaced by the characters they represent: &lt; &gt; &amp; The corresponding remove
-     * command is removeScript.
+     * Loads script content into a new script tag in the Selenium document. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * This differs from the runScript command in that runScript adds the script tag to the document of the AUT, not
+     * the Selenium document. The following entities in the script content are replaced by the characters they
+     * represent: &lt; &gt; &amp; The corresponding remove command is removeScript.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $scriptContent  the Javascript content of the script to add
      * @param string   $scriptTagId    (optional) the id of the new script tag. If specified, and an element with this
@@ -262,8 +267,8 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Add a selection to the set of selected options in a multi-select element using an option locator. {@link select}
-     * for details of option locators
+     * Add a selection to the set of selected options in a multi-select element using an option locator. @see #doSelect
+     * for details of option locators.
      * 
      * @param string   $locator        an element locator identifying a multi-select box (see
      *                                 {@link doc_Element_Locators})
@@ -279,11 +284,12 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Add a selection to the set of selected options in a multi-select element using an option locator. {@link select}
-     * for details of option locators
+     * Add a selection to the set of selected options in a multi-select element using an option locator. @see #doSelect
+     * for details of option locators.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator        an element locator identifying a multi-select box (see
      *                                 {@link doc_Element_Locators})
@@ -300,8 +306,9 @@ trait SeleniumTestCaseDoc
     
     /**
      * Specifies whether Selenium should use the native in-browser implementation of XPath (if any native version is
-     * available); if you pass "false" to this function, we will always use our pure-JavaScript xpath library. Using
-     * the pure-JS xpath library can improve the consistency of xpath element locators between different browser
+     * available); if you pass "false" to this function, we will always use our pure-JavaScript xpath library. 
+     * 
+     * Using the pure-JS xpath library can improve the consistency of xpath element locators between different browser
      * vendors, but the pure-JS version is much slower than the native implementations.
      * 
      * @param string   $allow  boolean, true means we'll prefer to use native XPath; false means we'll only use JS
@@ -318,12 +325,14 @@ trait SeleniumTestCaseDoc
     
     /**
      * Specifies whether Selenium should use the native in-browser implementation of XPath (if any native version is
-     * available); if you pass "false" to this function, we will always use our pure-JavaScript xpath library. Using
-     * the pure-JS xpath library can improve the consistency of xpath element locators between different browser
+     * available); if you pass "false" to this function, we will always use our pure-JavaScript xpath library. 
+     * 
+     * Using the pure-JS xpath library can improve the consistency of xpath element locators between different browser
      * vendors, but the pure-JS version is much slower than the native implementations.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $allow  boolean, true means we'll prefer to use native XPath; false means we'll only use JS
      *                         XPath
@@ -352,8 +361,9 @@ trait SeleniumTestCaseDoc
     /**
      * Press the alt key and hold it down until doAltUp() is called or a new page is loaded.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -379,8 +389,9 @@ trait SeleniumTestCaseDoc
     /**
      * Release the alt key.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -405,8 +416,8 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript alert generated during the previous action, or fail if
-     * there were no alerts.
+     * Assertion: Retrieves the message of a JavaScript alert generated during the previous action, or fail if there
+     * were no alerts. 
      * 
      * <p>Getting an alert has the same effect as manually clicking OK. If an alert is generated but you do not consume
      * it with getAlert, the next Selenium action will fail.</p>
@@ -416,11 +427,11 @@ trait SeleniumTestCaseDoc
      * <p>Selenium does NOT support JavaScript alerts that are generated in a page's onload() event handler. In this
      * case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>The message of the most recent JavaScript alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyAlert}).</p>
@@ -444,8 +455,8 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript alert generated during the previous action, or fail if
-     * there were no alerts.
+     * Assertion: Retrieves the message of a JavaScript alert generated during the previous action, or fail if there
+     * were no alerts. 
      * 
      * <p>Getting an alert has the same effect as manually clicking OK. If an alert is generated but you do not consume
      * it with getAlert, the next Selenium action will fail.</p>
@@ -455,11 +466,11 @@ trait SeleniumTestCaseDoc
      * <p>Selenium does NOT support JavaScript alerts that are generated in a page's onload() event handler. In this
      * case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>The message of the most recent JavaScript alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotAlert}).</p>
@@ -484,7 +495,7 @@ trait SeleniumTestCaseDoc
     
     /**
      * Retrieves the message of a JavaScript alert generated during the previous action, or fail if there were no
-     * alerts.
+     * alerts. 
      * 
      * <p>Getting an alert has the same effect as manually clicking OK. If an alert is generated but you do not consume
      * it with getAlert, the next Selenium action will fail.</p>
@@ -511,7 +522,7 @@ trait SeleniumTestCaseDoc
     
     /**
      * Retrieves the message of a JavaScript alert generated during the previous action, or fail if there were no
-     * alerts.
+     * alerts. 
      * 
      * <p>Getting an alert has the same effect as manually clicking OK. If an alert is generated but you do not consume
      * it with getAlert, the next Selenium action will fail.</p>
@@ -521,7 +532,7 @@ trait SeleniumTestCaseDoc
      * <p>Selenium does NOT support JavaScript alerts that are generated in a page's onload() event handler. In this
      * case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>The message of the most recent JavaScript alert (see {@link doc_Stored_Variables})</p>
      * 
@@ -544,8 +555,8 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript alert generated during the previous action, or fail if
-     * there were no alerts.
+     * Assertion: Retrieves the message of a JavaScript alert generated during the previous action, or fail if there
+     * were no alerts. 
      * 
      * <p>Getting an alert has the same effect as manually clicking OK. If an alert is generated but you do not consume
      * it with getAlert, the next Selenium action will fail.</p>
@@ -555,11 +566,11 @@ trait SeleniumTestCaseDoc
      * <p>Selenium does NOT support JavaScript alerts that are generated in a page's onload() event handler. In this
      * case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>The message of the most recent JavaScript alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertAlert}).</p>
@@ -583,8 +594,8 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript alert generated during the previous action, or fail if
-     * there were no alerts.
+     * Assertion: Retrieves the message of a JavaScript alert generated during the previous action, or fail if there
+     * were no alerts. 
      * 
      * <p>Getting an alert has the same effect as manually clicking OK. If an alert is generated but you do not consume
      * it with getAlert, the next Selenium action will fail.</p>
@@ -594,11 +605,11 @@ trait SeleniumTestCaseDoc
      * <p>Selenium does NOT support JavaScript alerts that are generated in a page's onload() event handler. In this
      * case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>The message of the most recent JavaScript alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotAlert}).</p>
@@ -622,8 +633,8 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript alert generated during the previous action, or fail if
-     * there were no alerts.
+     * Assertion: Retrieves the message of a JavaScript alert generated during the previous action, or fail if there
+     * were no alerts. 
      * 
      * <p>Getting an alert has the same effect as manually clicking OK. If an alert is generated but you do not consume
      * it with getAlert, the next Selenium action will fail.</p>
@@ -633,11 +644,11 @@ trait SeleniumTestCaseDoc
      * <p>Selenium does NOT support JavaScript alerts that are generated in a page's onload() event handler. In this
      * case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>The message of the most recent JavaScript alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -662,8 +673,8 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript alert generated during the previous action, or fail if
-     * there were no alerts.
+     * Assertion: Retrieves the message of a JavaScript alert generated during the previous action, or fail if there
+     * were no alerts. 
      * 
      * <p>Getting an alert has the same effect as manually clicking OK. If an alert is generated but you do not consume
      * it with getAlert, the next Selenium action will fail.</p>
@@ -673,11 +684,11 @@ trait SeleniumTestCaseDoc
      * <p>Selenium does NOT support JavaScript alerts that are generated in a page's onload() event handler. In this
      * case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>The message of the most recent JavaScript alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -702,15 +713,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has an alert occurred?
+     * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is an alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyAlertNotPresent}).</p>
@@ -731,15 +742,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has an alert occurred?
+     * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is an alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyAlertPresent}).</p>
@@ -760,9 +771,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Has an alert occurred?
+     * Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
      * @return  bool  true if there is an alert
      * 
@@ -780,11 +791,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Has an alert occurred?
+     * Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>true if there is an alert (see {@link doc_Stored_Variables})</p>
      * 
@@ -807,15 +818,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has an alert occurred?
+     * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is an alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertAlertNotPresent}).</p>
@@ -836,15 +847,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has an alert occurred?
+     * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is an alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertAlertPresent}).</p>
@@ -865,15 +876,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has an alert occurred?
+     * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if there is an alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -895,15 +906,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has an alert occurred?
+     * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if there is an alert</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -925,15 +936,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all buttons on the page.
+     * Assertion: Returns the IDs of all buttons on the page. 
      * 
      * <p>If a given button has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all buttons on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyAllButtons}).</p>
@@ -957,15 +968,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all buttons on the page.
+     * Assertion: Returns the IDs of all buttons on the page. 
      * 
      * <p>If a given button has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all buttons on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotAllButtons}).</p>
@@ -989,7 +1000,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Returns the IDs of all buttons on the page.
+     * Returns the IDs of all buttons on the page. 
      * 
      * <p>If a given button has no ID, it will appear as "" in this array.</p>
      * 
@@ -1009,11 +1020,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Returns the IDs of all buttons on the page.
+     * Returns the IDs of all buttons on the page. 
      * 
      * <p>If a given button has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the IDs of all buttons on the page (see {@link doc_Stored_Variables})</p>
      * 
@@ -1036,15 +1047,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all buttons on the page.
+     * Assertion: Returns the IDs of all buttons on the page. 
      * 
      * <p>If a given button has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all buttons on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertAllButtons}).</p>
@@ -1068,15 +1079,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all buttons on the page.
+     * Assertion: Returns the IDs of all buttons on the page. 
      * 
      * <p>If a given button has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all buttons on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotAllButtons}).</p>
@@ -1100,15 +1111,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all buttons on the page.
+     * Assertion: Returns the IDs of all buttons on the page. 
      * 
      * <p>If a given button has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the IDs of all buttons on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -1133,15 +1144,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all buttons on the page.
+     * Assertion: Returns the IDs of all buttons on the page. 
      * 
      * <p>If a given button has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the IDs of all buttons on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -1166,15 +1177,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all input fields on the page.
+     * Assertion: Returns the IDs of all input fields on the page. 
      * 
      * <p>If a given field has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all field on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyAllFields}).</p>
@@ -1198,15 +1209,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all input fields on the page.
+     * Assertion: Returns the IDs of all input fields on the page. 
      * 
      * <p>If a given field has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all field on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotAllFields}).</p>
@@ -1230,7 +1241,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Returns the IDs of all input fields on the page.
+     * Returns the IDs of all input fields on the page. 
      * 
      * <p>If a given field has no ID, it will appear as "" in this array.</p>
      * 
@@ -1250,11 +1261,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Returns the IDs of all input fields on the page.
+     * Returns the IDs of all input fields on the page. 
      * 
      * <p>If a given field has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the IDs of all field on the page (see {@link doc_Stored_Variables})</p>
      * 
@@ -1277,15 +1288,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all input fields on the page.
+     * Assertion: Returns the IDs of all input fields on the page. 
      * 
      * <p>If a given field has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all field on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertAllFields}).</p>
@@ -1309,15 +1320,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all input fields on the page.
+     * Assertion: Returns the IDs of all input fields on the page. 
      * 
      * <p>If a given field has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all field on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotAllFields}).</p>
@@ -1341,15 +1352,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all input fields on the page.
+     * Assertion: Returns the IDs of all input fields on the page. 
      * 
      * <p>If a given field has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the IDs of all field on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -1374,15 +1385,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all input fields on the page.
+     * Assertion: Returns the IDs of all input fields on the page. 
      * 
      * <p>If a given field has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the IDs of all field on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -1407,15 +1418,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all links on the page.
+     * Assertion: Returns the IDs of all links on the page. 
      * 
      * <p>If a given link has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all links on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyAllLinks}).</p>
@@ -1439,15 +1450,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all links on the page.
+     * Assertion: Returns the IDs of all links on the page. 
      * 
      * <p>If a given link has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all links on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotAllLinks}).</p>
@@ -1471,7 +1482,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Returns the IDs of all links on the page.
+     * Returns the IDs of all links on the page. 
      * 
      * <p>If a given link has no ID, it will appear as "" in this array.</p>
      * 
@@ -1491,11 +1502,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Returns the IDs of all links on the page.
+     * Returns the IDs of all links on the page. 
      * 
      * <p>If a given link has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the IDs of all links on the page (see {@link doc_Stored_Variables})</p>
      * 
@@ -1518,15 +1529,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all links on the page.
+     * Assertion: Returns the IDs of all links on the page. 
      * 
      * <p>If a given link has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all links on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertAllLinks}).</p>
@@ -1550,15 +1561,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all links on the page.
+     * Assertion: Returns the IDs of all links on the page. 
      * 
      * <p>If a given link has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the IDs of all links on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotAllLinks}).</p>
@@ -1582,15 +1593,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all links on the page.
+     * Assertion: Returns the IDs of all links on the page. 
      * 
      * <p>If a given link has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the IDs of all links on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -1615,15 +1626,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all links on the page.
+     * Assertion: Returns the IDs of all links on the page. 
      * 
      * <p>If a given link has no ID, it will appear as "" in this array.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the IDs of all links on the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -1648,13 +1659,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all windows that the browser knows about in an array.
+     * Assertion: Returns the IDs of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of identifiers of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyAllWindowIds}).</p>
@@ -1678,13 +1689,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all windows that the browser knows about in an array.
+     * Assertion: Returns the IDs of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of identifiers of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotAllWindowIds}).</p>
@@ -1728,7 +1739,7 @@ trait SeleniumTestCaseDoc
     /**
      * Returns the IDs of all windows that the browser knows about in an array.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>Array of identifiers of all windows that the browser knows about. (see {@link doc_Stored_Variables})</p>
      * 
@@ -1751,13 +1762,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all windows that the browser knows about in an array.
+     * Assertion: Returns the IDs of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of identifiers of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertAllWindowIds}).</p>
@@ -1781,13 +1792,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all windows that the browser knows about in an array.
+     * Assertion: Returns the IDs of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of identifiers of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotAllWindowIds}).</p>
@@ -1811,13 +1822,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all windows that the browser knows about in an array.
+     * Assertion: Returns the IDs of all windows that the browser knows about in an array.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>Array of identifiers of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -1842,13 +1853,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the IDs of all windows that the browser knows about in an array.
+     * Assertion: Returns the IDs of all windows that the browser knows about in an array.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>Array of identifiers of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -1873,13 +1884,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the names of all windows that the browser knows about in an array.
+     * Assertion: Returns the names of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of names of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyAllWindowNames}).</p>
@@ -1903,13 +1914,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the names of all windows that the browser knows about in an array.
+     * Assertion: Returns the names of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of names of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotAllWindowNames}).</p>
@@ -1953,7 +1964,7 @@ trait SeleniumTestCaseDoc
     /**
      * Returns the names of all windows that the browser knows about in an array.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>Array of names of all windows that the browser knows about. (see {@link doc_Stored_Variables})</p>
      * 
@@ -1976,13 +1987,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the names of all windows that the browser knows about in an array.
+     * Assertion: Returns the names of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of names of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertAllWindowNames}).</p>
@@ -2006,13 +2017,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the names of all windows that the browser knows about in an array.
+     * Assertion: Returns the names of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of names of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotAllWindowNames}).</p>
@@ -2036,13 +2047,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the names of all windows that the browser knows about in an array.
+     * Assertion: Returns the names of all windows that the browser knows about in an array.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>Array of names of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -2067,13 +2078,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the names of all windows that the browser knows about in an array.
+     * Assertion: Returns the names of all windows that the browser knows about in an array.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>Array of names of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -2098,13 +2109,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the titles of all windows that the browser knows about in an array.
+     * Assertion: Returns the titles of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of titles of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyAllWindowTitles}).</p>
@@ -2128,13 +2139,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the titles of all windows that the browser knows about in an array.
+     * Assertion: Returns the titles of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of titles of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotAllWindowTitles}).</p>
@@ -2178,7 +2189,7 @@ trait SeleniumTestCaseDoc
     /**
      * Returns the titles of all windows that the browser knows about in an array.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>Array of titles of all windows that the browser knows about. (see {@link doc_Stored_Variables})</p>
      * 
@@ -2201,13 +2212,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the titles of all windows that the browser knows about in an array.
+     * Assertion: Returns the titles of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of titles of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertAllWindowTitles}).</p>
@@ -2231,13 +2242,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the titles of all windows that the browser knows about in an array.
+     * Assertion: Returns the titles of all windows that the browser knows about in an array.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>Array of titles of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotAllWindowTitles}).</p>
@@ -2261,13 +2272,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the titles of all windows that the browser knows about in an array.
+     * Assertion: Returns the titles of all windows that the browser knows about in an array.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>Array of titles of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -2292,13 +2303,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the titles of all windows that the browser knows about in an array.
+     * Assertion: Returns the titles of all windows that the browser knows about in an array.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>Array of titles of all windows that the browser knows about.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -2323,14 +2334,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the value of an element attribute. The value of the attribute may differ across browsers
-     * (this is the case for the "style" attribute, for example).
+     * Assertion: Gets the value of an element attribute. 
      * 
-     * <h3>Value to verify:</h3>
+     * The value of the attribute may differ across browsers (this is the case for the "style" attribute, for example).
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value of the specified attribute</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyAttribute}).</p>
@@ -2356,14 +2368,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the value of an element attribute. The value of the attribute may differ across browsers
-     * (this is the case for the "style" attribute, for example).
+     * Assertion: Gets the value of an element attribute. 
      * 
-     * <h3>Value to verify:</h3>
+     * The value of the attribute may differ across browsers (this is the case for the "style" attribute, for example).
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value of the specified attribute</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotAttribute}).</p>
@@ -2389,8 +2402,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets the value of an element attribute. The value of the attribute may differ across browsers (this is the case
-     * for the "style" attribute, for example).
+     * Gets the value of an element attribute. 
+     * 
+     * The value of the attribute may differ across browsers (this is the case for the "style" attribute, for example).
      * 
      * @param string   $attributeLocator  an element locator followed by an @ sign and then the name of the attribute,
      *                                    e.g.  "foo@bar"
@@ -2411,10 +2425,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets the value of an element attribute. The value of the attribute may differ across browsers (this is the case
-     * for the "style" attribute, for example).
+     * Gets the value of an element attribute. 
      * 
-     * <h3>Stored value:</h3>
+     * The value of the attribute may differ across browsers (this is the case for the "style" attribute, for example).
+     * 
+     * <h4>Stored value:</h4>
      * 
      * <p>the value of the specified attribute (see {@link doc_Stored_Variables})</p>
      * 
@@ -2439,14 +2454,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the value of an element attribute. The value of the attribute may differ across browsers
-     * (this is the case for the "style" attribute, for example).
+     * Assertion: Gets the value of an element attribute. 
      * 
-     * <h3>Value to verify:</h3>
+     * The value of the attribute may differ across browsers (this is the case for the "style" attribute, for example).
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value of the specified attribute</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertAttribute}).</p>
@@ -2472,14 +2488,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the value of an element attribute. The value of the attribute may differ across browsers
-     * (this is the case for the "style" attribute, for example).
+     * Assertion: Gets the value of an element attribute. 
      * 
-     * <h3>Value to verify:</h3>
+     * The value of the attribute may differ across browsers (this is the case for the "style" attribute, for example).
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value of the specified attribute</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotAttribute}).</p>
@@ -2505,14 +2522,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the value of an element attribute. The value of the attribute may differ across browsers
-     * (this is the case for the "style" attribute, for example).
+     * Assertion: Gets the value of an element attribute. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * The value of the attribute may differ across browsers (this is the case for the "style" attribute, for example).
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the value of the specified attribute</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -2539,14 +2557,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the value of an element attribute. The value of the attribute may differ across browsers
-     * (this is the case for the "style" attribute, for example).
+     * Assertion: Gets the value of an element attribute. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * The value of the attribute may differ across browsers (this is the case for the "style" attribute, for example).
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the value of the specified attribute</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -2573,13 +2592,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns an array of JavaScript property values from all known windows having one.
+     * Assertion: Returns an array of JavaScript property values from all known windows having one.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the set of values of this attribute from all known windows.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyAttributeFromAllWindows}).</p>
@@ -2605,13 +2624,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns an array of JavaScript property values from all known windows having one.
+     * Assertion: Returns an array of JavaScript property values from all known windows having one.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the set of values of this attribute from all known windows.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotAttributeFromAllWindows}).</p>
@@ -2660,7 +2679,7 @@ trait SeleniumTestCaseDoc
     /**
      * Returns an array of JavaScript property values from all known windows having one.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the set of values of this attribute from all known windows. (see {@link doc_Stored_Variables})</p>
      * 
@@ -2684,13 +2703,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns an array of JavaScript property values from all known windows having one.
+     * Assertion: Returns an array of JavaScript property values from all known windows having one.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the set of values of this attribute from all known windows.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertAttributeFromAllWindows}).</p>
@@ -2716,13 +2735,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns an array of JavaScript property values from all known windows having one.
+     * Assertion: Returns an array of JavaScript property values from all known windows having one.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the set of values of this attribute from all known windows.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotAttributeFromAllWindows}).</p>
@@ -2748,13 +2767,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns an array of JavaScript property values from all known windows having one.
+     * Assertion: Returns an array of JavaScript property values from all known windows having one.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the set of values of this attribute from all known windows.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -2781,13 +2800,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns an array of JavaScript property values from all known windows having one.
+     * Assertion: Returns an array of JavaScript property values from all known windows having one.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the set of values of this attribute from all known windows.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -2814,13 +2833,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the entire text of the page.
+     * Assertion: Gets the entire text of the page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the entire text of the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyBodyText}).</p>
@@ -2844,13 +2863,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the entire text of the page.
+     * Assertion: Gets the entire text of the page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the entire text of the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotBodyText}).</p>
@@ -2894,7 +2913,7 @@ trait SeleniumTestCaseDoc
     /**
      * Gets the entire text of the page.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the entire text of the page (see {@link doc_Stored_Variables})</p>
      * 
@@ -2917,13 +2936,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the entire text of the page.
+     * Assertion: Gets the entire text of the page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the entire text of the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertBodyText}).</p>
@@ -2947,13 +2966,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the entire text of the page.
+     * Assertion: Gets the entire text of the page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the entire text of the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotBodyText}).</p>
@@ -2977,13 +2996,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the entire text of the page.
+     * Assertion: Gets the entire text of the page.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the entire text of the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -3008,13 +3027,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the entire text of the page.
+     * Assertion: Gets the entire text of the page.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the entire text of the page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -3039,14 +3058,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets whether a toggle-button (checkbox/radio) is checked. Fails if the specified element
-     * doesn't exist or isn't a toggle-button.
+     * Assertion: Gets whether a toggle-button (checkbox/radio) is checked. 
      * 
-     * <h3>Value to verify:</h3>
+     * Fails if the specified element doesn't exist or isn't a toggle-button.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the checkbox is checked, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyChecked}).</p>
@@ -3070,14 +3090,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets whether a toggle-button (checkbox/radio) is checked. Fails if the specified element
-     * doesn't exist or isn't a toggle-button.
+     * Assertion: Gets whether a toggle-button (checkbox/radio) is checked. 
      * 
-     * <h3>Value to verify:</h3>
+     * Fails if the specified element doesn't exist or isn't a toggle-button.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the checkbox is checked, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotChecked}).</p>
@@ -3101,8 +3122,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets whether a toggle-button (checkbox/radio) is checked. Fails if the specified element doesn't exist or isn't
-     * a toggle-button.
+     * Gets whether a toggle-button (checkbox/radio) is checked. 
+     * 
+     * Fails if the specified element doesn't exist or isn't a toggle-button.
      * 
      * @param string   $locator  an element locator pointing to a checkbox or radio button (see
      *                           {@link doc_Element_Locators})
@@ -3123,10 +3145,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets whether a toggle-button (checkbox/radio) is checked. Fails if the specified element doesn't exist or isn't
-     * a toggle-button.
+     * Gets whether a toggle-button (checkbox/radio) is checked. 
      * 
-     * <h3>Stored value:</h3>
+     * Fails if the specified element doesn't exist or isn't a toggle-button.
+     * 
+     * <h4>Stored value:</h4>
      * 
      * <p>true if the checkbox is checked, false otherwise (see {@link doc_Stored_Variables})</p>
      * 
@@ -3151,14 +3174,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets whether a toggle-button (checkbox/radio) is checked. Fails if the specified element
-     * doesn't exist or isn't a toggle-button.
+     * Assertion: Gets whether a toggle-button (checkbox/radio) is checked. 
      * 
-     * <h3>Value to verify:</h3>
+     * Fails if the specified element doesn't exist or isn't a toggle-button.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the checkbox is checked, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertChecked}).</p>
@@ -3182,14 +3206,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets whether a toggle-button (checkbox/radio) is checked. Fails if the specified element
-     * doesn't exist or isn't a toggle-button.
+     * Assertion: Gets whether a toggle-button (checkbox/radio) is checked. 
      * 
-     * <h3>Value to verify:</h3>
+     * Fails if the specified element doesn't exist or isn't a toggle-button.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the checkbox is checked, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotChecked}).</p>
@@ -3213,14 +3238,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets whether a toggle-button (checkbox/radio) is checked. Fails if the specified element
-     * doesn't exist or isn't a toggle-button.
+     * Assertion: Gets whether a toggle-button (checkbox/radio) is checked. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * Fails if the specified element doesn't exist or isn't a toggle-button.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the checkbox is checked, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -3245,14 +3271,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets whether a toggle-button (checkbox/radio) is checked. Fails if the specified element
-     * doesn't exist or isn't a toggle-button.
+     * Assertion: Gets whether a toggle-button (checkbox/radio) is checked. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * Fails if the specified element doesn't exist or isn't a toggle-button.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the checkbox is checked, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -3277,8 +3304,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript confirmation dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript confirmation dialog generated during the previous action. 
      * 
      * <p> By default, the confirm function will return true, having the same effect as manually clicking OK. This can
      * be changed by prior execution of the chooseCancelOnNextConfirmation command. </p>
@@ -3292,11 +3318,11 @@ trait SeleniumTestCaseDoc
      * handler. In this case a visible dialog WILL be generated and Selenium will hang until you manually click OK.
      * </p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the message of the most recent JavaScript confirmation dialog</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyConfirmation}).</p>
@@ -3320,8 +3346,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript confirmation dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript confirmation dialog generated during the previous action. 
      * 
      * <p> By default, the confirm function will return true, having the same effect as manually clicking OK. This can
      * be changed by prior execution of the chooseCancelOnNextConfirmation command. </p>
@@ -3335,11 +3360,11 @@ trait SeleniumTestCaseDoc
      * handler. In this case a visible dialog WILL be generated and Selenium will hang until you manually click OK.
      * </p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the message of the most recent JavaScript confirmation dialog</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotConfirmation}).</p>
@@ -3363,7 +3388,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the message of a JavaScript confirmation dialog generated during the previous action.
+     * Retrieves the message of a JavaScript confirmation dialog generated during the previous action. 
      * 
      * <p> By default, the confirm function will return true, having the same effect as manually clicking OK. This can
      * be changed by prior execution of the chooseCancelOnNextConfirmation command. </p>
@@ -3393,7 +3418,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the message of a JavaScript confirmation dialog generated during the previous action.
+     * Retrieves the message of a JavaScript confirmation dialog generated during the previous action. 
      * 
      * <p> By default, the confirm function will return true, having the same effect as manually clicking OK. This can
      * be changed by prior execution of the chooseCancelOnNextConfirmation command. </p>
@@ -3407,7 +3432,7 @@ trait SeleniumTestCaseDoc
      * handler. In this case a visible dialog WILL be generated and Selenium will hang until you manually click OK.
      * </p>
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the message of the most recent JavaScript confirmation dialog (see {@link doc_Stored_Variables})</p>
      * 
@@ -3430,8 +3455,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript confirmation dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript confirmation dialog generated during the previous action. 
      * 
      * <p> By default, the confirm function will return true, having the same effect as manually clicking OK. This can
      * be changed by prior execution of the chooseCancelOnNextConfirmation command. </p>
@@ -3445,11 +3469,11 @@ trait SeleniumTestCaseDoc
      * handler. In this case a visible dialog WILL be generated and Selenium will hang until you manually click OK.
      * </p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the message of the most recent JavaScript confirmation dialog</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertConfirmation}).</p>
@@ -3473,8 +3497,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript confirmation dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript confirmation dialog generated during the previous action. 
      * 
      * <p> By default, the confirm function will return true, having the same effect as manually clicking OK. This can
      * be changed by prior execution of the chooseCancelOnNextConfirmation command. </p>
@@ -3488,11 +3511,11 @@ trait SeleniumTestCaseDoc
      * handler. In this case a visible dialog WILL be generated and Selenium will hang until you manually click OK.
      * </p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the message of the most recent JavaScript confirmation dialog</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotConfirmation}).</p>
@@ -3516,8 +3539,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript confirmation dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript confirmation dialog generated during the previous action. 
      * 
      * <p> By default, the confirm function will return true, having the same effect as manually clicking OK. This can
      * be changed by prior execution of the chooseCancelOnNextConfirmation command. </p>
@@ -3531,11 +3553,11 @@ trait SeleniumTestCaseDoc
      * handler. In this case a visible dialog WILL be generated and Selenium will hang until you manually click OK.
      * </p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the message of the most recent JavaScript confirmation dialog</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -3560,8 +3582,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript confirmation dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript confirmation dialog generated during the previous action. 
      * 
      * <p> By default, the confirm function will return true, having the same effect as manually clicking OK. This can
      * be changed by prior execution of the chooseCancelOnNextConfirmation command. </p>
@@ -3575,11 +3596,11 @@ trait SeleniumTestCaseDoc
      * handler. In this case a visible dialog WILL be generated and Selenium will hang until you manually click OK.
      * </p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the message of the most recent JavaScript confirmation dialog</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -3604,15 +3625,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has confirm() been called?
+     * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is a pending confirmation</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyConfirmationNotPresent}).</p>
@@ -3633,15 +3654,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has confirm() been called?
+     * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is a pending confirmation</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyConfirmationPresent}).</p>
@@ -3662,9 +3683,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Has confirm() been called?
+     * Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
      * @return  bool  true if there is a pending confirmation
      * 
@@ -3682,11 +3703,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Has confirm() been called?
+     * Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>true if there is a pending confirmation (see {@link doc_Stored_Variables})</p>
      * 
@@ -3709,15 +3730,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has confirm() been called?
+     * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is a pending confirmation</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertConfirmationNotPresent}).</p>
@@ -3738,15 +3759,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has confirm() been called?
+     * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is a pending confirmation</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertConfirmationPresent}).</p>
@@ -3767,15 +3788,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has confirm() been called?
+     * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if there is a pending confirmation</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -3797,15 +3818,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has confirm() been called?
+     * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if there is a pending confirmation</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -3827,13 +3848,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Return all cookies of the current page under test.
+     * Assertion: Return all cookies of the current page under test.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>all cookies of the current page under test</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyCookie}).</p>
@@ -3857,13 +3878,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Return all cookies of the current page under test.
+     * Assertion: Return all cookies of the current page under test.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>all cookies of the current page under test</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotCookie}).</p>
@@ -3907,7 +3928,7 @@ trait SeleniumTestCaseDoc
     /**
      * Return all cookies of the current page under test.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>all cookies of the current page under test (see {@link doc_Stored_Variables})</p>
      * 
@@ -3930,13 +3951,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Return all cookies of the current page under test.
+     * Assertion: Return all cookies of the current page under test.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>all cookies of the current page under test</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertCookie}).</p>
@@ -3960,13 +3981,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Return all cookies of the current page under test.
+     * Assertion: Return all cookies of the current page under test.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>all cookies of the current page under test</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotCookie}).</p>
@@ -3990,13 +4011,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Return all cookies of the current page under test.
+     * Assertion: Return all cookies of the current page under test.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>all cookies of the current page under test</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -4021,13 +4042,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Return all cookies of the current page under test.
+     * Assertion: Return all cookies of the current page under test.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>all cookies of the current page under test</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -4052,14 +4073,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the value of the cookie with the specified name, or throws an error if the cookie is
-     * not present.
+     * Assertion: Returns the value of the cookie with the specified name, or throws an error if the cookie is not
+     * present.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value of the cookie</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyCookieByName}).</p>
@@ -4084,14 +4105,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the value of the cookie with the specified name, or throws an error if the cookie is
-     * not present.
+     * Assertion: Returns the value of the cookie with the specified name, or throws an error if the cookie is not
+     * present.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value of the cookie</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotCookieByName}).</p>
@@ -4138,7 +4159,7 @@ trait SeleniumTestCaseDoc
     /**
      * Returns the value of the cookie with the specified name, or throws an error if the cookie is not present.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the value of the cookie (see {@link doc_Stored_Variables})</p>
      * 
@@ -4162,14 +4183,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the value of the cookie with the specified name, or throws an error if the cookie is
-     * not present.
+     * Assertion: Returns the value of the cookie with the specified name, or throws an error if the cookie is not
+     * present.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value of the cookie</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertCookieByName}).</p>
@@ -4194,14 +4215,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the value of the cookie with the specified name, or throws an error if the cookie is
-     * not present.
+     * Assertion: Returns the value of the cookie with the specified name, or throws an error if the cookie is not
+     * present.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value of the cookie</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotCookieByName}).</p>
@@ -4226,14 +4247,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the value of the cookie with the specified name, or throws an error if the cookie is
-     * not present.
+     * Assertion: Returns the value of the cookie with the specified name, or throws an error if the cookie is not
+     * present.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the value of the cookie</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -4259,14 +4280,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the value of the cookie with the specified name, or throws an error if the cookie is
-     * not present.
+     * Assertion: Returns the value of the cookie with the specified name, or throws an error if the cookie is not
+     * present.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the value of the cookie</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -4292,13 +4313,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns true if a cookie with the specified name is present, or false otherwise.
+     * Assertion: Returns true if a cookie with the specified name is present, or false otherwise.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if a cookie with the specified name is present, or false otherwise.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyCookieNotPresent}).</p>
@@ -4321,13 +4342,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns true if a cookie with the specified name is present, or false otherwise.
+     * Assertion: Returns true if a cookie with the specified name is present, or false otherwise.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if a cookie with the specified name is present, or false otherwise.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyCookiePresent}).</p>
@@ -4372,7 +4393,7 @@ trait SeleniumTestCaseDoc
     /**
      * Returns true if a cookie with the specified name is present, or false otherwise.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>true if a cookie with the specified name is present, or false otherwise. (see
      * {@link doc_Stored_Variables})</p>
@@ -4397,13 +4418,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns true if a cookie with the specified name is present, or false otherwise.
+     * Assertion: Returns true if a cookie with the specified name is present, or false otherwise.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if a cookie with the specified name is present, or false otherwise.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertCookieNotPresent}).</p>
@@ -4426,13 +4447,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns true if a cookie with the specified name is present, or false otherwise.
+     * Assertion: Returns true if a cookie with the specified name is present, or false otherwise.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if a cookie with the specified name is present, or false otherwise.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertCookiePresent}).</p>
@@ -4455,13 +4476,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns true if a cookie with the specified name is present, or false otherwise.
+     * Assertion: Returns true if a cookie with the specified name is present, or false otherwise.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if a cookie with the specified name is present, or false otherwise.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -4485,13 +4506,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns true if a cookie with the specified name is present, or false otherwise.
+     * Assertion: Returns true if a cookie with the specified name is present, or false otherwise.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if a cookie with the specified name is present, or false otherwise.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -4515,19 +4536,19 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the text cursor position in the given input element or textarea; beware, this may
-     * not work perfectly on all browsers.
+     * Assertion: Retrieves the text cursor position in the given input element or textarea; beware, this may not work
+     * perfectly on all browsers. 
      * 
      * <p>Specifically, if the cursor/selection has been cleared by JavaScript, this command will tend to return the
      * position of the last location of the cursor, even though the cursor is now gone from the page. This is filed as
      * <a href="http://jira.openqa.org/browse/SEL-243">SEL-243</a>.</p> This method will fail if the specified element
      * isn't an input element or textarea, or there is no cursor in the element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the numerical position of the cursor in the field</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyCursorPosition}).</p>
@@ -4553,19 +4574,19 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the text cursor position in the given input element or textarea; beware, this may
-     * not work perfectly on all browsers.
+     * Assertion: Retrieves the text cursor position in the given input element or textarea; beware, this may not work
+     * perfectly on all browsers. 
      * 
      * <p>Specifically, if the cursor/selection has been cleared by JavaScript, this command will tend to return the
      * position of the last location of the cursor, even though the cursor is now gone from the page. This is filed as
      * <a href="http://jira.openqa.org/browse/SEL-243">SEL-243</a>.</p> This method will fail if the specified element
      * isn't an input element or textarea, or there is no cursor in the element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the numerical position of the cursor in the field</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotCursorPosition}).</p>
@@ -4592,7 +4613,7 @@ trait SeleniumTestCaseDoc
     
     /**
      * Retrieves the text cursor position in the given input element or textarea; beware, this may not work perfectly
-     * on all browsers.
+     * on all browsers. 
      * 
      * <p>Specifically, if the cursor/selection has been cleared by JavaScript, this command will tend to return the
      * position of the last location of the cursor, even though the cursor is now gone from the page. This is filed as
@@ -4619,14 +4640,14 @@ trait SeleniumTestCaseDoc
     
     /**
      * Retrieves the text cursor position in the given input element or textarea; beware, this may not work perfectly
-     * on all browsers.
+     * on all browsers. 
      * 
      * <p>Specifically, if the cursor/selection has been cleared by JavaScript, this command will tend to return the
      * position of the last location of the cursor, even though the cursor is now gone from the page. This is filed as
      * <a href="http://jira.openqa.org/browse/SEL-243">SEL-243</a>.</p> This method will fail if the specified element
      * isn't an input element or textarea, or there is no cursor in the element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the numerical position of the cursor in the field (see {@link doc_Stored_Variables})</p>
      * 
@@ -4651,19 +4672,19 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the text cursor position in the given input element or textarea; beware, this may
-     * not work perfectly on all browsers.
+     * Assertion: Retrieves the text cursor position in the given input element or textarea; beware, this may not work
+     * perfectly on all browsers. 
      * 
      * <p>Specifically, if the cursor/selection has been cleared by JavaScript, this command will tend to return the
      * position of the last location of the cursor, even though the cursor is now gone from the page. This is filed as
      * <a href="http://jira.openqa.org/browse/SEL-243">SEL-243</a>.</p> This method will fail if the specified element
      * isn't an input element or textarea, or there is no cursor in the element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the numerical position of the cursor in the field</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertCursorPosition}).</p>
@@ -4689,19 +4710,19 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the text cursor position in the given input element or textarea; beware, this may
-     * not work perfectly on all browsers.
+     * Assertion: Retrieves the text cursor position in the given input element or textarea; beware, this may not work
+     * perfectly on all browsers. 
      * 
      * <p>Specifically, if the cursor/selection has been cleared by JavaScript, this command will tend to return the
      * position of the last location of the cursor, even though the cursor is now gone from the page. This is filed as
      * <a href="http://jira.openqa.org/browse/SEL-243">SEL-243</a>.</p> This method will fail if the specified element
      * isn't an input element or textarea, or there is no cursor in the element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the numerical position of the cursor in the field</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotCursorPosition}).</p>
@@ -4727,19 +4748,19 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the text cursor position in the given input element or textarea; beware, this may
-     * not work perfectly on all browsers.
+     * Assertion: Retrieves the text cursor position in the given input element or textarea; beware, this may not work
+     * perfectly on all browsers. 
      * 
      * <p>Specifically, if the cursor/selection has been cleared by JavaScript, this command will tend to return the
      * position of the last location of the cursor, even though the cursor is now gone from the page. This is filed as
      * <a href="http://jira.openqa.org/browse/SEL-243">SEL-243</a>.</p> This method will fail if the specified element
      * isn't an input element or textarea, or there is no cursor in the element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the numerical position of the cursor in the field</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -4766,19 +4787,19 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the text cursor position in the given input element or textarea; beware, this may
-     * not work perfectly on all browsers.
+     * Assertion: Retrieves the text cursor position in the given input element or textarea; beware, this may not work
+     * perfectly on all browsers. 
      * 
      * <p>Specifically, if the cursor/selection has been cleared by JavaScript, this command will tend to return the
      * position of the last location of the cursor, even though the cursor is now gone from the page. This is filed as
      * <a href="http://jira.openqa.org/browse/SEL-243">SEL-243</a>.</p> This method will fail if the specified element
      * isn't an input element or textarea, or there is no cursor in the element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the numerical position of the cursor in the field</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -4805,14 +4826,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether the specified input element is editable, ie hasn't been disabled. This
-     * method will fail if the specified element isn't an input element.
+     * Assertion: Determines whether the specified input element is editable, ie hasn't been disabled. 
      * 
-     * <h3>Value to verify:</h3>
+     * This method will fail if the specified element isn't an input element.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the input element is editable, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyEditable}).</p>
@@ -4836,14 +4858,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether the specified input element is editable, ie hasn't been disabled. This
-     * method will fail if the specified element isn't an input element.
+     * Assertion: Determines whether the specified input element is editable, ie hasn't been disabled. 
      * 
-     * <h3>Value to verify:</h3>
+     * This method will fail if the specified element isn't an input element.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the input element is editable, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotEditable}).</p>
@@ -4867,8 +4890,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Determines whether the specified input element is editable, ie hasn't been disabled. This method will fail if
-     * the specified element isn't an input element.
+     * Determines whether the specified input element is editable, ie hasn't been disabled. 
+     * 
+     * This method will fail if the specified element isn't an input element.
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -4889,10 +4913,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Determines whether the specified input element is editable, ie hasn't been disabled. This method will fail if
-     * the specified element isn't an input element.
+     * Determines whether the specified input element is editable, ie hasn't been disabled. 
      * 
-     * <h3>Stored value:</h3>
+     * This method will fail if the specified element isn't an input element.
+     * 
+     * <h4>Stored value:</h4>
      * 
      * <p>true if the input element is editable, false otherwise (see {@link doc_Stored_Variables})</p>
      * 
@@ -4917,14 +4942,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether the specified input element is editable, ie hasn't been disabled. This
-     * method will fail if the specified element isn't an input element.
+     * Assertion: Determines whether the specified input element is editable, ie hasn't been disabled. 
      * 
-     * <h3>Value to verify:</h3>
+     * This method will fail if the specified element isn't an input element.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the input element is editable, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertEditable}).</p>
@@ -4948,14 +4974,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether the specified input element is editable, ie hasn't been disabled. This
-     * method will fail if the specified element isn't an input element.
+     * Assertion: Determines whether the specified input element is editable, ie hasn't been disabled. 
      * 
-     * <h3>Value to verify:</h3>
+     * This method will fail if the specified element isn't an input element.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the input element is editable, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotEditable}).</p>
@@ -4979,14 +5006,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether the specified input element is editable, ie hasn't been disabled. This
-     * method will fail if the specified element isn't an input element.
+     * Assertion: Determines whether the specified input element is editable, ie hasn't been disabled. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * This method will fail if the specified element isn't an input element.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the input element is editable, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -5011,14 +5039,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether the specified input element is editable, ie hasn't been disabled. This
-     * method will fail if the specified element isn't an input element.
+     * Assertion: Determines whether the specified input element is editable, ie hasn't been disabled. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * This method will fail if the specified element isn't an input element.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the input element is editable, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -5043,13 +5072,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the height of an element
+     * Assertion: Retrieves the height of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>height of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyElementHeight}).</p>
@@ -5075,13 +5104,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the height of an element
+     * Assertion: Retrieves the height of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>height of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotElementHeight}).</p>
@@ -5107,7 +5136,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the height of an element
+     * Retrieves the height of an element.
      * 
      * @param string   $locator  an element locator pointing to an element 
      *                           (see {@link doc_Element_Locators})
@@ -5128,9 +5157,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the height of an element
+     * Retrieves the height of an element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>height of an element in pixels (see {@link doc_Stored_Variables})</p>
      * 
@@ -5155,13 +5184,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the height of an element
+     * Assertion: Retrieves the height of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>height of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertElementHeight}).</p>
@@ -5187,13 +5216,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the height of an element
+     * Assertion: Retrieves the height of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>height of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotElementHeight}).</p>
@@ -5219,13 +5248,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the height of an element
+     * Assertion: Retrieves the height of an element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>height of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -5252,13 +5281,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the height of an element
+     * Assertion: Retrieves the height of an element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>height of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -5285,14 +5314,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get the relative index of an element to its parent (starting from 0). The comment node and
-     * empty text node will be ignored.
+     * Assertion: Get the relative index of an element to its parent (starting from 0). 
      * 
-     * <h3>Value to verify:</h3>
+     * The comment node and empty text node will be ignored.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>of relative index of the element to its parent (starting from 0)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyElementIndex}).</p>
@@ -5318,14 +5348,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get the relative index of an element to its parent (starting from 0). The comment node and
-     * empty text node will be ignored.
+     * Assertion: Get the relative index of an element to its parent (starting from 0). 
      * 
-     * <h3>Value to verify:</h3>
+     * The comment node and empty text node will be ignored.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>of relative index of the element to its parent (starting from 0)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotElementIndex}).</p>
@@ -5351,8 +5382,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Get the relative index of an element to its parent (starting from 0). The comment node and empty text node will
-     * be ignored.
+     * Get the relative index of an element to its parent (starting from 0). 
+     * 
+     * The comment node and empty text node will be ignored.
      * 
      * @param string   $locator  an element locator pointing to an element 
      *                           (see {@link doc_Element_Locators})
@@ -5373,10 +5405,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Get the relative index of an element to its parent (starting from 0). The comment node and empty text node will
-     * be ignored.
+     * Get the relative index of an element to its parent (starting from 0). 
      * 
-     * <h3>Stored value:</h3>
+     * The comment node and empty text node will be ignored.
+     * 
+     * <h4>Stored value:</h4>
      * 
      * <p>of relative index of the element to its parent (starting from 0) (see {@link doc_Stored_Variables})</p>
      * 
@@ -5401,14 +5434,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get the relative index of an element to its parent (starting from 0). The comment node and
-     * empty text node will be ignored.
+     * Assertion: Get the relative index of an element to its parent (starting from 0). 
      * 
-     * <h3>Value to verify:</h3>
+     * The comment node and empty text node will be ignored.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>of relative index of the element to its parent (starting from 0)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertElementIndex}).</p>
@@ -5434,14 +5468,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get the relative index of an element to its parent (starting from 0). The comment node and
-     * empty text node will be ignored.
+     * Assertion: Get the relative index of an element to its parent (starting from 0). 
      * 
-     * <h3>Value to verify:</h3>
+     * The comment node and empty text node will be ignored.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>of relative index of the element to its parent (starting from 0)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotElementIndex}).</p>
@@ -5467,14 +5502,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get the relative index of an element to its parent (starting from 0). The comment node and
-     * empty text node will be ignored.
+     * Assertion: Get the relative index of an element to its parent (starting from 0). 
      * 
-     * <h3>Expected value/condition:</h3>
+     * The comment node and empty text node will be ignored.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>of relative index of the element to its parent (starting from 0)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -5501,14 +5537,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get the relative index of an element to its parent (starting from 0). The comment node and
-     * empty text node will be ignored.
+     * Assertion: Get the relative index of an element to its parent (starting from 0). 
      * 
-     * <h3>Expected value/condition:</h3>
+     * The comment node and empty text node will be ignored.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>of relative index of the element to its parent (starting from 0)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -5535,13 +5572,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified element is somewhere on the page.
+     * Assertion: Verifies that the specified element is somewhere on the page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the element is present, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyElementNotPresent}).</p>
@@ -5565,13 +5602,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified element is somewhere on the page.
+     * Assertion: Verifies that the specified element is somewhere on the page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the element is present, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyElementPresent}).</p>
@@ -5618,7 +5655,7 @@ trait SeleniumTestCaseDoc
     /**
      * Verifies that the specified element is somewhere on the page.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>true if the element is present, false otherwise (see {@link doc_Stored_Variables})</p>
      * 
@@ -5643,13 +5680,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified element is somewhere on the page.
+     * Assertion: Verifies that the specified element is somewhere on the page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the element is present, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertElementNotPresent}).</p>
@@ -5673,13 +5710,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified element is somewhere on the page.
+     * Assertion: Verifies that the specified element is somewhere on the page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the element is present, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertElementPresent}).</p>
@@ -5703,13 +5740,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified element is somewhere on the page.
+     * Assertion: Verifies that the specified element is somewhere on the page.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the element is present, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -5734,13 +5771,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified element is somewhere on the page.
+     * Assertion: Verifies that the specified element is somewhere on the page.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the element is present, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -5765,13 +5802,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the horizontal position of an element
+     * Assertion: Retrieves the horizontal position of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyElementPositionLeft}).</p>
@@ -5797,13 +5834,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the horizontal position of an element
+     * Assertion: Retrieves the horizontal position of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotElementPositionLeft}).</p>
@@ -5829,7 +5866,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the horizontal position of an element
+     * Retrieves the horizontal position of an element.
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
      *                           {@link doc_Element_Locators})
@@ -5850,9 +5887,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the horizontal position of an element
+     * Retrieves the horizontal position of an element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>of pixels from the edge of the frame. (see {@link doc_Stored_Variables})</p>
      * 
@@ -5877,13 +5914,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the horizontal position of an element
+     * Assertion: Retrieves the horizontal position of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertElementPositionLeft}).</p>
@@ -5909,13 +5946,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the horizontal position of an element
+     * Assertion: Retrieves the horizontal position of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotElementPositionLeft}).</p>
@@ -5941,13 +5978,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the horizontal position of an element
+     * Assertion: Retrieves the horizontal position of an element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -5974,13 +6011,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the horizontal position of an element
+     * Assertion: Retrieves the horizontal position of an element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -6007,13 +6044,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the vertical position of an element
+     * Assertion: Retrieves the vertical position of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyElementPositionTop}).</p>
@@ -6039,13 +6076,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the vertical position of an element
+     * Assertion: Retrieves the vertical position of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotElementPositionTop}).</p>
@@ -6071,7 +6108,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the vertical position of an element
+     * Retrieves the vertical position of an element.
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
      *                           {@link doc_Element_Locators})
@@ -6092,9 +6129,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the vertical position of an element
+     * Retrieves the vertical position of an element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>of pixels from the edge of the frame. (see {@link doc_Stored_Variables})</p>
      * 
@@ -6119,13 +6156,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the vertical position of an element
+     * Assertion: Retrieves the vertical position of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertElementPositionTop}).</p>
@@ -6151,13 +6188,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the vertical position of an element
+     * Assertion: Retrieves the vertical position of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotElementPositionTop}).</p>
@@ -6183,13 +6220,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the vertical position of an element
+     * Assertion: Retrieves the vertical position of an element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -6216,13 +6253,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the vertical position of an element
+     * Assertion: Retrieves the vertical position of an element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>of pixels from the edge of the frame.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -6249,13 +6286,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the width of an element
+     * Assertion: Retrieves the width of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>width of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyElementWidth}).</p>
@@ -6281,13 +6318,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the width of an element
+     * Assertion: Retrieves the width of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>width of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotElementWidth}).</p>
@@ -6313,7 +6350,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the width of an element
+     * Retrieves the width of an element.
      * 
      * @param string   $locator  an element locator pointing to an element 
      *                           (see {@link doc_Element_Locators})
@@ -6334,9 +6371,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the width of an element
+     * Retrieves the width of an element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>width of an element in pixels (see {@link doc_Stored_Variables})</p>
      * 
@@ -6361,13 +6398,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the width of an element
+     * Assertion: Retrieves the width of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>width of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertElementWidth}).</p>
@@ -6393,13 +6430,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the width of an element
+     * Assertion: Retrieves the width of an element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>width of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotElementWidth}).</p>
@@ -6425,13 +6462,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the width of an element
+     * Assertion: Retrieves the width of an element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>width of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -6458,13 +6495,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the width of an element
+     * Assertion: Retrieves the width of an element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>width of an element in pixels</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -6491,8 +6528,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the result of evaluating the specified JavaScript snippet. The snippet may have multiple
-     * lines, but only the result of the last line will be returned.
+     * Assertion: Gets the result of evaluating the specified JavaScript snippet. 
+     * 
+     * The snippet may have multiple lines, but only the result of the last line will be returned.
      * 
      * <p>Note that, by default, the snippet will run in the context of the "selenium" object itself, so [<b>this</b>]
      * will refer to the Selenium object. Use [<b>window</b>] to refer to the window of your application, e.g.
@@ -6501,11 +6539,11 @@ trait SeleniumTestCaseDoc
      * <p>If you need to use a locator to refer to a single element in your application page, you can use
      * [<b>this.browserbot.findElement("id=foo")</b>] where "id=foo" is your locator.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the results of evaluating the snippet</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyEval}).</p>
@@ -6530,8 +6568,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the result of evaluating the specified JavaScript snippet. The snippet may have multiple
-     * lines, but only the result of the last line will be returned.
+     * Assertion: Gets the result of evaluating the specified JavaScript snippet. 
+     * 
+     * The snippet may have multiple lines, but only the result of the last line will be returned.
      * 
      * <p>Note that, by default, the snippet will run in the context of the "selenium" object itself, so [<b>this</b>]
      * will refer to the Selenium object. Use [<b>window</b>] to refer to the window of your application, e.g.
@@ -6540,11 +6579,11 @@ trait SeleniumTestCaseDoc
      * <p>If you need to use a locator to refer to a single element in your application page, you can use
      * [<b>this.browserbot.findElement("id=foo")</b>] where "id=foo" is your locator.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the results of evaluating the snippet</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotEval}).</p>
@@ -6569,8 +6608,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets the result of evaluating the specified JavaScript snippet. The snippet may have multiple lines, but only
-     * the result of the last line will be returned.
+     * Gets the result of evaluating the specified JavaScript snippet. 
+     * 
+     * The snippet may have multiple lines, but only the result of the last line will be returned.
      * 
      * <p>Note that, by default, the snippet will run in the context of the "selenium" object itself, so [<b>this</b>]
      * will refer to the Selenium object. Use [<b>window</b>] to refer to the window of your application, e.g.
@@ -6597,8 +6637,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets the result of evaluating the specified JavaScript snippet. The snippet may have multiple lines, but only
-     * the result of the last line will be returned.
+     * Gets the result of evaluating the specified JavaScript snippet. 
+     * 
+     * The snippet may have multiple lines, but only the result of the last line will be returned.
      * 
      * <p>Note that, by default, the snippet will run in the context of the "selenium" object itself, so [<b>this</b>]
      * will refer to the Selenium object. Use [<b>window</b>] to refer to the window of your application, e.g.
@@ -6607,7 +6648,7 @@ trait SeleniumTestCaseDoc
      * <p>If you need to use a locator to refer to a single element in your application page, you can use
      * [<b>this.browserbot.findElement("id=foo")</b>] where "id=foo" is your locator.</p>
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the results of evaluating the snippet (see {@link doc_Stored_Variables})</p>
      * 
@@ -6631,8 +6672,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the result of evaluating the specified JavaScript snippet. The snippet may have multiple
-     * lines, but only the result of the last line will be returned.
+     * Assertion: Gets the result of evaluating the specified JavaScript snippet. 
+     * 
+     * The snippet may have multiple lines, but only the result of the last line will be returned.
      * 
      * <p>Note that, by default, the snippet will run in the context of the "selenium" object itself, so [<b>this</b>]
      * will refer to the Selenium object. Use [<b>window</b>] to refer to the window of your application, e.g.
@@ -6641,11 +6683,11 @@ trait SeleniumTestCaseDoc
      * <p>If you need to use a locator to refer to a single element in your application page, you can use
      * [<b>this.browserbot.findElement("id=foo")</b>] where "id=foo" is your locator.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the results of evaluating the snippet</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertEval}).</p>
@@ -6670,8 +6712,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the result of evaluating the specified JavaScript snippet. The snippet may have multiple
-     * lines, but only the result of the last line will be returned.
+     * Assertion: Gets the result of evaluating the specified JavaScript snippet. 
+     * 
+     * The snippet may have multiple lines, but only the result of the last line will be returned.
      * 
      * <p>Note that, by default, the snippet will run in the context of the "selenium" object itself, so [<b>this</b>]
      * will refer to the Selenium object. Use [<b>window</b>] to refer to the window of your application, e.g.
@@ -6680,11 +6723,11 @@ trait SeleniumTestCaseDoc
      * <p>If you need to use a locator to refer to a single element in your application page, you can use
      * [<b>this.browserbot.findElement("id=foo")</b>] where "id=foo" is your locator.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the results of evaluating the snippet</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotEval}).</p>
@@ -6709,8 +6752,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the result of evaluating the specified JavaScript snippet. The snippet may have multiple
-     * lines, but only the result of the last line will be returned.
+     * Assertion: Gets the result of evaluating the specified JavaScript snippet. 
+     * 
+     * The snippet may have multiple lines, but only the result of the last line will be returned.
      * 
      * <p>Note that, by default, the snippet will run in the context of the "selenium" object itself, so [<b>this</b>]
      * will refer to the Selenium object. Use [<b>window</b>] to refer to the window of your application, e.g.
@@ -6719,11 +6763,11 @@ trait SeleniumTestCaseDoc
      * <p>If you need to use a locator to refer to a single element in your application page, you can use
      * [<b>this.browserbot.findElement("id=foo")</b>] where "id=foo" is your locator.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the results of evaluating the snippet</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -6749,8 +6793,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the result of evaluating the specified JavaScript snippet. The snippet may have multiple
-     * lines, but only the result of the last line will be returned.
+     * Assertion: Gets the result of evaluating the specified JavaScript snippet. 
+     * 
+     * The snippet may have multiple lines, but only the result of the last line will be returned.
      * 
      * <p>Note that, by default, the snippet will run in the context of the "selenium" object itself, so [<b>this</b>]
      * will refer to the Selenium object. Use [<b>window</b>] to refer to the window of your application, e.g.
@@ -6759,11 +6804,11 @@ trait SeleniumTestCaseDoc
      * <p>If you need to use a locator to refer to a single element in your application page, you can use
      * [<b>this.browserbot.findElement("id=foo")</b>] where "id=foo" is your locator.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the results of evaluating the snippet</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -6789,16 +6834,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the specified expression.
+     * Assertion: Returns the specified expression. 
      * 
      * <p>This is useful because of JavaScript preprocessing. It is used to generate commands like assertExpression and
      * waitForExpression.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value passed in</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyExpression}).</p>
@@ -6823,16 +6868,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the specified expression.
+     * Assertion: Returns the specified expression. 
      * 
      * <p>This is useful because of JavaScript preprocessing. It is used to generate commands like assertExpression and
      * waitForExpression.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value passed in</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotExpression}).</p>
@@ -6857,7 +6902,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Returns the specified expression.
+     * Returns the specified expression. 
      * 
      * <p>This is useful because of JavaScript preprocessing. It is used to generate commands like assertExpression and
      * waitForExpression.</p>
@@ -6880,12 +6925,12 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Returns the specified expression.
+     * Returns the specified expression. 
      * 
      * <p>This is useful because of JavaScript preprocessing. It is used to generate commands like assertExpression and
      * waitForExpression.</p>
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the value passed in (see {@link doc_Stored_Variables})</p>
      * 
@@ -6909,16 +6954,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the specified expression.
+     * Assertion: Returns the specified expression. 
      * 
      * <p>This is useful because of JavaScript preprocessing. It is used to generate commands like assertExpression and
      * waitForExpression.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value passed in</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertExpression}).</p>
@@ -6943,16 +6988,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the specified expression.
+     * Assertion: Returns the specified expression. 
      * 
      * <p>This is useful because of JavaScript preprocessing. It is used to generate commands like assertExpression and
      * waitForExpression.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the value passed in</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotExpression}).</p>
@@ -6977,16 +7022,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the specified expression.
+     * Assertion: Returns the specified expression. 
      * 
      * <p>This is useful because of JavaScript preprocessing. It is used to generate commands like assertExpression and
      * waitForExpression.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the value passed in</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -7012,16 +7057,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the specified expression.
+     * Assertion: Returns the specified expression. 
      * 
      * <p>This is useful because of JavaScript preprocessing. It is used to generate commands like assertExpression and
      * waitForExpression.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the value passed in</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -7047,13 +7092,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the entire HTML source between the opening and closing "html" tags.
+     * Assertion: Returns the entire HTML source between the opening and closing "html" tags.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the entire HTML source</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyHtmlSource}).</p>
@@ -7077,13 +7122,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the entire HTML source between the opening and closing "html" tags.
+     * Assertion: Returns the entire HTML source between the opening and closing "html" tags.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the entire HTML source</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotHtmlSource}).</p>
@@ -7127,7 +7172,7 @@ trait SeleniumTestCaseDoc
     /**
      * Returns the entire HTML source between the opening and closing "html" tags.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the entire HTML source (see {@link doc_Stored_Variables})</p>
      * 
@@ -7150,13 +7195,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the entire HTML source between the opening and closing "html" tags.
+     * Assertion: Returns the entire HTML source between the opening and closing "html" tags.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the entire HTML source</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertHtmlSource}).</p>
@@ -7180,13 +7225,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the entire HTML source between the opening and closing "html" tags.
+     * Assertion: Returns the entire HTML source between the opening and closing "html" tags.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the entire HTML source</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotHtmlSource}).</p>
@@ -7210,13 +7255,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the entire HTML source between the opening and closing "html" tags.
+     * Assertion: Returns the entire HTML source between the opening and closing "html" tags.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the entire HTML source</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -7241,13 +7286,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the entire HTML source between the opening and closing "html" tags.
+     * Assertion: Returns the entire HTML source between the opening and closing "html" tags.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the entire HTML source</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -7272,13 +7317,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the absolute URL of the current page.
+     * Assertion: Gets the absolute URL of the current page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the absolute URL of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyLocation}).</p>
@@ -7302,13 +7347,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the absolute URL of the current page.
+     * Assertion: Gets the absolute URL of the current page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the absolute URL of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotLocation}).</p>
@@ -7352,7 +7397,7 @@ trait SeleniumTestCaseDoc
     /**
      * Gets the absolute URL of the current page.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the absolute URL of the current page (see {@link doc_Stored_Variables})</p>
      * 
@@ -7375,13 +7420,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the absolute URL of the current page.
+     * Assertion: Gets the absolute URL of the current page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the absolute URL of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertLocation}).</p>
@@ -7405,13 +7450,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the absolute URL of the current page.
+     * Assertion: Gets the absolute URL of the current page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the absolute URL of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotLocation}).</p>
@@ -7435,13 +7480,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the absolute URL of the current page.
+     * Assertion: Gets the absolute URL of the current page.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the absolute URL of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -7466,13 +7511,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the absolute URL of the current page.
+     * Assertion: Gets the absolute URL of the current page.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the absolute URL of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -7497,14 +7542,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of pixels between "mousemove" events during dragAndDrop commands
-     * (default=10).
+     * Assertion: Returns the number of pixels between "mousemove" events during dragAndDrop commands (default=10).
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the number of pixels between "mousemove" events during dragAndDrop commands (default=10)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyMouseSpeed}).</p>
@@ -7528,14 +7572,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of pixels between "mousemove" events during dragAndDrop commands
-     * (default=10).
+     * Assertion: Returns the number of pixels between "mousemove" events during dragAndDrop commands (default=10).
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the number of pixels between "mousemove" events during dragAndDrop commands (default=10)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotMouseSpeed}).</p>
@@ -7579,7 +7622,7 @@ trait SeleniumTestCaseDoc
     /**
      * Returns the number of pixels between "mousemove" events during dragAndDrop commands (default=10).
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the number of pixels between "mousemove" events during dragAndDrop commands (default=10) (see
      * {@link doc_Stored_Variables})</p>
@@ -7603,14 +7646,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of pixels between "mousemove" events during dragAndDrop commands
-     * (default=10).
+     * Assertion: Returns the number of pixels between "mousemove" events during dragAndDrop commands (default=10).
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the number of pixels between "mousemove" events during dragAndDrop commands (default=10)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertMouseSpeed}).</p>
@@ -7634,14 +7676,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of pixels between "mousemove" events during dragAndDrop commands
-     * (default=10).
+     * Assertion: Returns the number of pixels between "mousemove" events during dragAndDrop commands (default=10).
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the number of pixels between "mousemove" events during dragAndDrop commands (default=10)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotMouseSpeed}).</p>
@@ -7665,14 +7706,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of pixels between "mousemove" events during dragAndDrop commands
-     * (default=10).
+     * Assertion: Returns the number of pixels between "mousemove" events during dragAndDrop commands (default=10).
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the number of pixels between "mousemove" events during dragAndDrop commands (default=10)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -7697,14 +7737,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of pixels between "mousemove" events during dragAndDrop commands
-     * (default=10).
+     * Assertion: Returns the number of pixels between "mousemove" events during dragAndDrop commands (default=10).
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the number of pixels between "mousemove" events during dragAndDrop commands (default=10)</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -7729,14 +7768,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Check if these two elements have same parent and are ordered siblings in the DOM. Two same
-     * elements will not be considered ordered.
+     * Assertion: Check if these two elements have same parent and are ordered siblings in the DOM. 
      * 
-     * <h3>Value to verify:</h3>
+     * Two same elements will not be considered ordered.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if element1 is the previous sibling of element2, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotOrdered}).</p>
@@ -7762,14 +7802,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Check if these two elements have same parent and are ordered siblings in the DOM. Two same
-     * elements will not be considered ordered.
+     * Assertion: Check if these two elements have same parent and are ordered siblings in the DOM. 
      * 
-     * <h3>Value to verify:</h3>
+     * Two same elements will not be considered ordered.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if element1 is the previous sibling of element2, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyOrdered}).</p>
@@ -7795,8 +7836,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Check if these two elements have same parent and are ordered siblings in the DOM. Two same elements will not be
-     * considered ordered.
+     * Check if these two elements have same parent and are ordered siblings in the DOM. 
+     * 
+     * Two same elements will not be considered ordered.
      * 
      * @param string   $locator1  an element locator pointing to the first element 
      *                            (see {@link doc_Element_Locators})
@@ -7819,10 +7861,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Check if these two elements have same parent and are ordered siblings in the DOM. Two same elements will not be
-     * considered ordered.
+     * Check if these two elements have same parent and are ordered siblings in the DOM. 
      * 
-     * <h3>Stored value:</h3>
+     * Two same elements will not be considered ordered.
+     * 
+     * <h4>Stored value:</h4>
      * 
      * <p>true if element1 is the previous sibling of element2, false otherwise (see {@link doc_Stored_Variables})</p>
      * 
@@ -7849,14 +7892,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Check if these two elements have same parent and are ordered siblings in the DOM. Two same
-     * elements will not be considered ordered.
+     * Assertion: Check if these two elements have same parent and are ordered siblings in the DOM. 
      * 
-     * <h3>Value to verify:</h3>
+     * Two same elements will not be considered ordered.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if element1 is the previous sibling of element2, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotOrdered}).</p>
@@ -7882,14 +7926,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Check if these two elements have same parent and are ordered siblings in the DOM. Two same
-     * elements will not be considered ordered.
+     * Assertion: Check if these two elements have same parent and are ordered siblings in the DOM. 
      * 
-     * <h3>Value to verify:</h3>
+     * Two same elements will not be considered ordered.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if element1 is the previous sibling of element2, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertOrdered}).</p>
@@ -7915,14 +7960,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Check if these two elements have same parent and are ordered siblings in the DOM. Two same
-     * elements will not be considered ordered.
+     * Assertion: Check if these two elements have same parent and are ordered siblings in the DOM. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * Two same elements will not be considered ordered.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if element1 is the previous sibling of element2, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -7949,14 +7995,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Check if these two elements have same parent and are ordered siblings in the DOM. Two same
-     * elements will not be considered ordered.
+     * Assertion: Check if these two elements have same parent and are ordered siblings in the DOM. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * Two same elements will not be considered ordered.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if element1 is the previous sibling of element2, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -7983,8 +8030,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript question prompt dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript question prompt dialog generated during the previous action. 
      * 
      * <p>Successful handling of the prompt requires prior execution of the answerOnNextPrompt command. If a prompt is
      * generated but you do not get/verify it, the next Selenium action will fail.</p>
@@ -7994,11 +8040,11 @@ trait SeleniumTestCaseDoc
      * <p>NOTE: Selenium does NOT support JavaScript prompts that are generated in a page's onload() event handler. In
      * this case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the message of the most recent JavaScript question prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotPrompt}).</p>
@@ -8022,8 +8068,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript question prompt dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript question prompt dialog generated during the previous action. 
      * 
      * <p>Successful handling of the prompt requires prior execution of the answerOnNextPrompt command. If a prompt is
      * generated but you do not get/verify it, the next Selenium action will fail.</p>
@@ -8033,11 +8078,11 @@ trait SeleniumTestCaseDoc
      * <p>NOTE: Selenium does NOT support JavaScript prompts that are generated in a page's onload() event handler. In
      * this case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the message of the most recent JavaScript question prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyPrompt}).</p>
@@ -8061,7 +8106,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the message of a JavaScript question prompt dialog generated during the previous action.
+     * Retrieves the message of a JavaScript question prompt dialog generated during the previous action. 
      * 
      * <p>Successful handling of the prompt requires prior execution of the answerOnNextPrompt command. If a prompt is
      * generated but you do not get/verify it, the next Selenium action will fail.</p>
@@ -8087,7 +8132,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieves the message of a JavaScript question prompt dialog generated during the previous action.
+     * Retrieves the message of a JavaScript question prompt dialog generated during the previous action. 
      * 
      * <p>Successful handling of the prompt requires prior execution of the answerOnNextPrompt command. If a prompt is
      * generated but you do not get/verify it, the next Selenium action will fail.</p>
@@ -8097,7 +8142,7 @@ trait SeleniumTestCaseDoc
      * <p>NOTE: Selenium does NOT support JavaScript prompts that are generated in a page's onload() event handler. In
      * this case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the message of the most recent JavaScript question prompt (see {@link doc_Stored_Variables})</p>
      * 
@@ -8120,8 +8165,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript question prompt dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript question prompt dialog generated during the previous action. 
      * 
      * <p>Successful handling of the prompt requires prior execution of the answerOnNextPrompt command. If a prompt is
      * generated but you do not get/verify it, the next Selenium action will fail.</p>
@@ -8131,11 +8175,11 @@ trait SeleniumTestCaseDoc
      * <p>NOTE: Selenium does NOT support JavaScript prompts that are generated in a page's onload() event handler. In
      * this case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the message of the most recent JavaScript question prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotPrompt}).</p>
@@ -8159,8 +8203,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript question prompt dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript question prompt dialog generated during the previous action. 
      * 
      * <p>Successful handling of the prompt requires prior execution of the answerOnNextPrompt command. If a prompt is
      * generated but you do not get/verify it, the next Selenium action will fail.</p>
@@ -8170,11 +8213,11 @@ trait SeleniumTestCaseDoc
      * <p>NOTE: Selenium does NOT support JavaScript prompts that are generated in a page's onload() event handler. In
      * this case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the message of the most recent JavaScript question prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertPrompt}).</p>
@@ -8198,8 +8241,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript question prompt dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript question prompt dialog generated during the previous action. 
      * 
      * <p>Successful handling of the prompt requires prior execution of the answerOnNextPrompt command. If a prompt is
      * generated but you do not get/verify it, the next Selenium action will fail.</p>
@@ -8209,11 +8251,11 @@ trait SeleniumTestCaseDoc
      * <p>NOTE: Selenium does NOT support JavaScript prompts that are generated in a page's onload() event handler. In
      * this case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the message of the most recent JavaScript question prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -8238,8 +8280,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Retrieves the message of a JavaScript question prompt dialog generated during the previous
-     * action.
+     * Assertion: Retrieves the message of a JavaScript question prompt dialog generated during the previous action. 
      * 
      * <p>Successful handling of the prompt requires prior execution of the answerOnNextPrompt command. If a prompt is
      * generated but you do not get/verify it, the next Selenium action will fail.</p>
@@ -8249,11 +8290,11 @@ trait SeleniumTestCaseDoc
      * <p>NOTE: Selenium does NOT support JavaScript prompts that are generated in a page's onload() event handler. In
      * this case a visible dialog WILL be generated and Selenium will hang until someone manually clicks OK.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the message of the most recent JavaScript question prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -8278,13 +8319,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels in the specified select drop-down.
+     * Assertion: Gets all option labels in the specified select drop-down.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotSelectOptions}).</p>
@@ -8310,13 +8351,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels in the specified select drop-down.
+     * Assertion: Gets all option labels in the specified select drop-down.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifySelectOptions}).</p>
@@ -8365,7 +8406,7 @@ trait SeleniumTestCaseDoc
     /**
      * Gets all option labels in the specified select drop-down.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>an array of all option labels in the specified select drop-down (see {@link doc_Stored_Variables})</p>
      * 
@@ -8390,13 +8431,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels in the specified select drop-down.
+     * Assertion: Gets all option labels in the specified select drop-down.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotSelectOptions}).</p>
@@ -8422,13 +8463,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels in the specified select drop-down.
+     * Assertion: Gets all option labels in the specified select drop-down.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertSelectOptions}).</p>
@@ -8454,13 +8495,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels in the specified select drop-down.
+     * Assertion: Gets all option labels in the specified select drop-down.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>an array of all option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -8487,13 +8528,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels in the specified select drop-down.
+     * Assertion: Gets all option labels in the specified select drop-down.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>an array of all option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -8520,13 +8561,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option element ID for selected option in the specified select element.
+     * Assertion: Gets option element ID for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option ID in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotSelectedId}).</p>
@@ -8552,13 +8593,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option element ID for selected option in the specified select element.
+     * Assertion: Gets option element ID for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option ID in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifySelectedId}).</p>
@@ -8607,7 +8648,7 @@ trait SeleniumTestCaseDoc
     /**
      * Gets option element ID for selected option in the specified select element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the selected option ID in the specified select drop-down (see {@link doc_Stored_Variables})</p>
      * 
@@ -8632,13 +8673,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option element ID for selected option in the specified select element.
+     * Assertion: Gets option element ID for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option ID in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotSelectedId}).</p>
@@ -8664,13 +8705,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option element ID for selected option in the specified select element.
+     * Assertion: Gets option element ID for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option ID in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertSelectedId}).</p>
@@ -8696,13 +8737,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option element ID for selected option in the specified select element.
+     * Assertion: Gets option element ID for selected option in the specified select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the selected option ID in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -8729,13 +8770,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option element ID for selected option in the specified select element.
+     * Assertion: Gets option element ID for selected option in the specified select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the selected option ID in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -8762,14 +8803,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option element IDs for selected options in the specified select or multi-select
-     * element.
+     * Assertion: Gets all option element IDs for selected options in the specified select or multi-select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option IDs in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotSelectedIds}).</p>
@@ -8795,14 +8835,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option element IDs for selected options in the specified select or multi-select
-     * element.
+     * Assertion: Gets all option element IDs for selected options in the specified select or multi-select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option IDs in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifySelectedIds}).</p>
@@ -8851,7 +8890,7 @@ trait SeleniumTestCaseDoc
     /**
      * Gets all option element IDs for selected options in the specified select or multi-select element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>an array of all selected option IDs in the specified select drop-down (see {@link doc_Stored_Variables})</p>
      * 
@@ -8876,14 +8915,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option element IDs for selected options in the specified select or multi-select
-     * element.
+     * Assertion: Gets all option element IDs for selected options in the specified select or multi-select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option IDs in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotSelectedIds}).</p>
@@ -8909,14 +8947,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option element IDs for selected options in the specified select or multi-select
-     * element.
+     * Assertion: Gets all option element IDs for selected options in the specified select or multi-select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option IDs in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertSelectedIds}).</p>
@@ -8942,14 +8979,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option element IDs for selected options in the specified select or multi-select
-     * element.
+     * Assertion: Gets all option element IDs for selected options in the specified select or multi-select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>an array of all selected option IDs in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -8976,14 +9012,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option element IDs for selected options in the specified select or multi-select
-     * element.
+     * Assertion: Gets all option element IDs for selected options in the specified select or multi-select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>an array of all selected option IDs in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -9010,14 +9045,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option index (option number, starting at 0) for selected option in the specified select
-     * element.
+     * Assertion: Gets option index (option number, starting at 0) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option index in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotSelectedIndex}).</p>
@@ -9043,14 +9077,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option index (option number, starting at 0) for selected option in the specified select
-     * element.
+     * Assertion: Gets option index (option number, starting at 0) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option index in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifySelectedIndex}).</p>
@@ -9099,7 +9132,7 @@ trait SeleniumTestCaseDoc
     /**
      * Gets option index (option number, starting at 0) for selected option in the specified select element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the selected option index in the specified select drop-down (see {@link doc_Stored_Variables})</p>
      * 
@@ -9124,14 +9157,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option index (option number, starting at 0) for selected option in the specified select
-     * element.
+     * Assertion: Gets option index (option number, starting at 0) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option index in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotSelectedIndex}).</p>
@@ -9157,14 +9189,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option index (option number, starting at 0) for selected option in the specified select
-     * element.
+     * Assertion: Gets option index (option number, starting at 0) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option index in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertSelectedIndex}).</p>
@@ -9190,14 +9221,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option index (option number, starting at 0) for selected option in the specified select
-     * element.
+     * Assertion: Gets option index (option number, starting at 0) for selected option in the specified select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the selected option index in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -9224,14 +9254,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option index (option number, starting at 0) for selected option in the specified select
-     * element.
+     * Assertion: Gets option index (option number, starting at 0) for selected option in the specified select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the selected option index in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -9258,14 +9287,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option indexes (option number, starting at 0) for selected options in the specified
-     * select or multi-select element.
+     * Assertion: Gets all option indexes (option number, starting at 0) for selected options in the specified select
+     * or multi-select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option indexes in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotSelectedIndexes}).</p>
@@ -9291,14 +9320,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option indexes (option number, starting at 0) for selected options in the specified
-     * select or multi-select element.
+     * Assertion: Gets all option indexes (option number, starting at 0) for selected options in the specified select
+     * or multi-select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option indexes in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifySelectedIndexes}).</p>
@@ -9349,7 +9378,7 @@ trait SeleniumTestCaseDoc
      * Gets all option indexes (option number, starting at 0) for selected options in the specified select or
      * multi-select element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>an array of all selected option indexes in the specified select drop-down (see
      * {@link doc_Stored_Variables})</p>
@@ -9375,14 +9404,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option indexes (option number, starting at 0) for selected options in the specified
-     * select or multi-select element.
+     * Assertion: Gets all option indexes (option number, starting at 0) for selected options in the specified select
+     * or multi-select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option indexes in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotSelectedIndexes}).</p>
@@ -9408,14 +9437,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option indexes (option number, starting at 0) for selected options in the specified
-     * select or multi-select element.
+     * Assertion: Gets all option indexes (option number, starting at 0) for selected options in the specified select
+     * or multi-select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option indexes in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertSelectedIndexes}).</p>
@@ -9441,14 +9470,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option indexes (option number, starting at 0) for selected options in the specified
-     * select or multi-select element.
+     * Assertion: Gets all option indexes (option number, starting at 0) for selected options in the specified select
+     * or multi-select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>an array of all selected option indexes in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -9475,14 +9504,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option indexes (option number, starting at 0) for selected options in the specified
-     * select or multi-select element.
+     * Assertion: Gets all option indexes (option number, starting at 0) for selected options in the specified select
+     * or multi-select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>an array of all selected option indexes in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -9509,13 +9538,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option label (visible text) for selected option in the specified select element.
+     * Assertion: Gets option label (visible text) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option label in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotSelectedLabel}).</p>
@@ -9541,13 +9570,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option label (visible text) for selected option in the specified select element.
+     * Assertion: Gets option label (visible text) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option label in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifySelectedLabel}).</p>
@@ -9596,7 +9625,7 @@ trait SeleniumTestCaseDoc
     /**
      * Gets option label (visible text) for selected option in the specified select element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the selected option label in the specified select drop-down (see {@link doc_Stored_Variables})</p>
      * 
@@ -9621,13 +9650,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option label (visible text) for selected option in the specified select element.
+     * Assertion: Gets option label (visible text) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option label in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotSelectedLabel}).</p>
@@ -9653,13 +9682,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option label (visible text) for selected option in the specified select element.
+     * Assertion: Gets option label (visible text) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option label in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertSelectedLabel}).</p>
@@ -9685,13 +9714,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option label (visible text) for selected option in the specified select element.
+     * Assertion: Gets option label (visible text) for selected option in the specified select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the selected option label in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -9718,13 +9747,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option label (visible text) for selected option in the specified select element.
+     * Assertion: Gets option label (visible text) for selected option in the specified select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the selected option label in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -9751,14 +9780,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels (visible text) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option labels (visible text) for selected options in the specified select or multi-select
+     * element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotSelectedLabels}).</p>
@@ -9784,14 +9813,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels (visible text) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option labels (visible text) for selected options in the specified select or multi-select
+     * element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifySelectedLabels}).</p>
@@ -9840,7 +9869,7 @@ trait SeleniumTestCaseDoc
     /**
      * Gets all option labels (visible text) for selected options in the specified select or multi-select element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>an array of all selected option labels in the specified select drop-down (see
      * {@link doc_Stored_Variables})</p>
@@ -9866,14 +9895,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels (visible text) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option labels (visible text) for selected options in the specified select or multi-select
+     * element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotSelectedLabels}).</p>
@@ -9899,14 +9928,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels (visible text) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option labels (visible text) for selected options in the specified select or multi-select
+     * element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertSelectedLabels}).</p>
@@ -9932,14 +9961,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels (visible text) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option labels (visible text) for selected options in the specified select or multi-select
+     * element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>an array of all selected option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -9966,14 +9995,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option labels (visible text) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option labels (visible text) for selected options in the specified select or multi-select
+     * element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>an array of all selected option labels in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -10000,13 +10029,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option value (value attribute) for selected option in the specified select element.
+     * Assertion: Gets option value (value attribute) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option value in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotSelectedValue}).</p>
@@ -10032,13 +10061,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option value (value attribute) for selected option in the specified select element.
+     * Assertion: Gets option value (value attribute) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option value in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifySelectedValue}).</p>
@@ -10087,7 +10116,7 @@ trait SeleniumTestCaseDoc
     /**
      * Gets option value (value attribute) for selected option in the specified select element.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the selected option value in the specified select drop-down (see {@link doc_Stored_Variables})</p>
      * 
@@ -10112,13 +10141,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option value (value attribute) for selected option in the specified select element.
+     * Assertion: Gets option value (value attribute) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option value in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotSelectedValue}).</p>
@@ -10144,13 +10173,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option value (value attribute) for selected option in the specified select element.
+     * Assertion: Gets option value (value attribute) for selected option in the specified select element.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the selected option value in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertSelectedValue}).</p>
@@ -10176,13 +10205,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option value (value attribute) for selected option in the specified select element.
+     * Assertion: Gets option value (value attribute) for selected option in the specified select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the selected option value in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -10209,13 +10238,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets option value (value attribute) for selected option in the specified select element.
+     * Assertion: Gets option value (value attribute) for selected option in the specified select element.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the selected option value in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -10242,14 +10271,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option values (value attributes) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option values (value attributes) for selected options in the specified select or
+     * multi-select element. 
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option values in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotSelectedValues}).</p>
@@ -10275,14 +10304,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option values (value attributes) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option values (value attributes) for selected options in the specified select or
+     * multi-select element. 
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option values in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifySelectedValues}).</p>
@@ -10308,7 +10337,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets all option values (value attributes) for selected options in the specified select or multi-select element.
+     * Gets all option values (value attributes) for selected options in the specified select or multi-select element. 
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
      *                                 {@link doc_Element_Locators})
@@ -10329,9 +10358,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets all option values (value attributes) for selected options in the specified select or multi-select element.
+     * Gets all option values (value attributes) for selected options in the specified select or multi-select element. 
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>an array of all selected option values in the specified select drop-down (see
      * {@link doc_Stored_Variables})</p>
@@ -10357,14 +10386,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option values (value attributes) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option values (value attributes) for selected options in the specified select or
+     * multi-select element. 
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option values in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotSelectedValues}).</p>
@@ -10390,14 +10419,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option values (value attributes) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option values (value attributes) for selected options in the specified select or
+     * multi-select element. 
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>an array of all selected option values in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertSelectedValues}).</p>
@@ -10423,14 +10452,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option values (value attributes) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option values (value attributes) for selected options in the specified select or
+     * multi-select element. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>an array of all selected option values in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -10457,14 +10486,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets all option values (value attributes) for selected options in the specified select or
-     * multi-select element.
+     * Assertion: Gets all option values (value attributes) for selected options in the specified select or
+     * multi-select element. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>an array of all selected option values in the specified select drop-down</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -10491,13 +10520,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether some option in a drop-down menu is selected.
+     * Assertion: Determines whether some option in a drop-down menu is selected.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if some option has been selected, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotSomethingSelected}).</p>
@@ -10521,13 +10550,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether some option in a drop-down menu is selected.
+     * Assertion: Determines whether some option in a drop-down menu is selected.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if some option has been selected, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifySomethingSelected}).</p>
@@ -10574,7 +10603,7 @@ trait SeleniumTestCaseDoc
     /**
      * Determines whether some option in a drop-down menu is selected.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>true if some option has been selected, false otherwise (see {@link doc_Stored_Variables})</p>
      * 
@@ -10599,13 +10628,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether some option in a drop-down menu is selected.
+     * Assertion: Determines whether some option in a drop-down menu is selected.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if some option has been selected, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotSomethingSelected}).</p>
@@ -10629,13 +10658,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether some option in a drop-down menu is selected.
+     * Assertion: Determines whether some option in a drop-down menu is selected.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if some option has been selected, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertSomethingSelected}).</p>
@@ -10659,13 +10688,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether some option in a drop-down menu is selected.
+     * Assertion: Determines whether some option in a drop-down menu is selected.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if some option has been selected, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -10690,13 +10719,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines whether some option in a drop-down menu is selected.
+     * Assertion: Determines whether some option in a drop-down menu is selected.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if some option has been selected, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -10721,14 +10750,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get execution speed (i.e., get the millisecond length of the delay following each selenium
-     * operation). By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * Assertion: Get execution speed (i.e., get the millisecond length of the delay following each selenium
+     * operation). 
      * 
-     * <h3>Value to verify:</h3>
+     * By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the execution speed in milliseconds.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotSpeed}).</p>
@@ -10752,14 +10783,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get execution speed (i.e., get the millisecond length of the delay following each selenium
-     * operation). By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * Assertion: Get execution speed (i.e., get the millisecond length of the delay following each selenium
+     * operation). 
      * 
-     * <h3>Value to verify:</h3>
+     * By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the execution speed in milliseconds.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifySpeed}).</p>
@@ -10783,8 +10816,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Get execution speed (i.e., get the millisecond length of the delay following each selenium operation). By
-     * default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * Get execution speed (i.e., get the millisecond length of the delay following each selenium operation). 
+     * 
+     * By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
      * 
      * @return  void  the execution speed in milliseconds.
      * 
@@ -10802,10 +10836,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Get execution speed (i.e., get the millisecond length of the delay following each selenium operation). By
-     * default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * Get execution speed (i.e., get the millisecond length of the delay following each selenium operation). 
      * 
-     * <h3>Stored value:</h3>
+     * By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * 
+     * <h4>Stored value:</h4>
      * 
      * <p>the execution speed in milliseconds. (see {@link doc_Stored_Variables})</p>
      * 
@@ -10828,14 +10863,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get execution speed (i.e., get the millisecond length of the delay following each selenium
-     * operation). By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * Assertion: Get execution speed (i.e., get the millisecond length of the delay following each selenium
+     * operation). 
      * 
-     * <h3>Value to verify:</h3>
+     * By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the execution speed in milliseconds.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotSpeed}).</p>
@@ -10859,14 +10896,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get execution speed (i.e., get the millisecond length of the delay following each selenium
-     * operation). By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * Assertion: Get execution speed (i.e., get the millisecond length of the delay following each selenium
+     * operation). 
      * 
-     * <h3>Value to verify:</h3>
+     * By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the execution speed in milliseconds.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertSpeed}).</p>
@@ -10890,14 +10929,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get execution speed (i.e., get the millisecond length of the delay following each selenium
-     * operation). By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * Assertion: Get execution speed (i.e., get the millisecond length of the delay following each selenium
+     * operation). 
      * 
-     * <h3>Expected value/condition:</h3>
+     * By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the execution speed in milliseconds.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -10922,14 +10963,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Get execution speed (i.e., get the millisecond length of the delay following each selenium
-     * operation). By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * Assertion: Get execution speed (i.e., get the millisecond length of the delay following each selenium
+     * operation). 
      * 
-     * <h3>Expected value/condition:</h3>
+     * By default, there is no such delay, i.e., the delay is 0 milliseconds. See also setSpeed.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the execution speed in milliseconds.</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -10954,14 +10997,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text from a cell of a table. The cellAddress syntax tableLocator.row.column, where
-     * row and column start at 0.
+     * Assertion: Gets the text from a cell of a table. 
      * 
-     * <h3>Value to verify:</h3>
+     * The cellAddress syntax tableLocator.row.column, where row and column start at 0.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the text from the specified cell</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotTable}).</p>
@@ -10986,14 +11030,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text from a cell of a table. The cellAddress syntax tableLocator.row.column, where
-     * row and column start at 0.
+     * Assertion: Gets the text from a cell of a table. 
      * 
-     * <h3>Value to verify:</h3>
+     * The cellAddress syntax tableLocator.row.column, where row and column start at 0.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the text from the specified cell</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyTable}).</p>
@@ -11018,8 +11063,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets the text from a cell of a table. The cellAddress syntax tableLocator.row.column, where row and column start
-     * at 0.
+     * Gets the text from a cell of a table. 
+     * 
+     * The cellAddress syntax tableLocator.row.column, where row and column start at 0.
      * 
      * @param string   $tableCellAddress  a cell address, e.g. "foo.1.4"
      * 
@@ -11039,10 +11085,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets the text from a cell of a table. The cellAddress syntax tableLocator.row.column, where row and column start
-     * at 0.
+     * Gets the text from a cell of a table. 
      * 
-     * <h3>Stored value:</h3>
+     * The cellAddress syntax tableLocator.row.column, where row and column start at 0.
+     * 
+     * <h4>Stored value:</h4>
      * 
      * <p>the text from the specified cell (see {@link doc_Stored_Variables})</p>
      * 
@@ -11066,14 +11113,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text from a cell of a table. The cellAddress syntax tableLocator.row.column, where
-     * row and column start at 0.
+     * Assertion: Gets the text from a cell of a table. 
      * 
-     * <h3>Value to verify:</h3>
+     * The cellAddress syntax tableLocator.row.column, where row and column start at 0.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the text from the specified cell</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotTable}).</p>
@@ -11098,14 +11146,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text from a cell of a table. The cellAddress syntax tableLocator.row.column, where
-     * row and column start at 0.
+     * Assertion: Gets the text from a cell of a table. 
      * 
-     * <h3>Value to verify:</h3>
+     * The cellAddress syntax tableLocator.row.column, where row and column start at 0.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the text from the specified cell</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertTable}).</p>
@@ -11130,14 +11179,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text from a cell of a table. The cellAddress syntax tableLocator.row.column, where
-     * row and column start at 0.
+     * Assertion: Gets the text from a cell of a table. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * The cellAddress syntax tableLocator.row.column, where row and column start at 0.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the text from the specified cell</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -11163,14 +11213,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text from a cell of a table. The cellAddress syntax tableLocator.row.column, where
-     * row and column start at 0.
+     * Assertion: Gets the text from a cell of a table. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * The cellAddress syntax tableLocator.row.column, where row and column start at 0.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the text from the specified cell</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -11196,15 +11247,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text of an element. This works for any element that contains text. This command uses
-     * either the textContent (Mozilla-like browsers) or the innerText (IE-like browsers) of the element, which is the
-     * rendered text shown to the user.
+     * Assertion: Gets the text of an element. 
      * 
-     * <h3>Value to verify:</h3>
+     * This works for any element that contains text. This command uses either the textContent (Mozilla-like browsers)
+     * or the innerText (IE-like browsers) of the element, which is the rendered text shown to the user.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the text of the element</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotText}).</p>
@@ -11230,15 +11282,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text of an element. This works for any element that contains text. This command uses
-     * either the textContent (Mozilla-like browsers) or the innerText (IE-like browsers) of the element, which is the
-     * rendered text shown to the user.
+     * Assertion: Gets the text of an element. 
      * 
-     * <h3>Value to verify:</h3>
+     * This works for any element that contains text. This command uses either the textContent (Mozilla-like browsers)
+     * or the innerText (IE-like browsers) of the element, which is the rendered text shown to the user.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the text of the element</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyText}).</p>
@@ -11264,9 +11317,10 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets the text of an element. This works for any element that contains text. This command uses either the
-     * textContent (Mozilla-like browsers) or the innerText (IE-like browsers) of the element, which is the rendered
-     * text shown to the user.
+     * Gets the text of an element. 
+     * 
+     * This works for any element that contains text. This command uses either the textContent (Mozilla-like browsers)
+     * or the innerText (IE-like browsers) of the element, which is the rendered text shown to the user.
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -11287,11 +11341,12 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets the text of an element. This works for any element that contains text. This command uses either the
-     * textContent (Mozilla-like browsers) or the innerText (IE-like browsers) of the element, which is the rendered
-     * text shown to the user.
+     * Gets the text of an element. 
      * 
-     * <h3>Stored value:</h3>
+     * This works for any element that contains text. This command uses either the textContent (Mozilla-like browsers)
+     * or the innerText (IE-like browsers) of the element, which is the rendered text shown to the user.
+     * 
+     * <h4>Stored value:</h4>
      * 
      * <p>the text of the element (see {@link doc_Stored_Variables})</p>
      * 
@@ -11316,15 +11371,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text of an element. This works for any element that contains text. This command uses
-     * either the textContent (Mozilla-like browsers) or the innerText (IE-like browsers) of the element, which is the
-     * rendered text shown to the user.
+     * Assertion: Gets the text of an element. 
      * 
-     * <h3>Value to verify:</h3>
+     * This works for any element that contains text. This command uses either the textContent (Mozilla-like browsers)
+     * or the innerText (IE-like browsers) of the element, which is the rendered text shown to the user.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the text of the element</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotText}).</p>
@@ -11350,15 +11406,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text of an element. This works for any element that contains text. This command uses
-     * either the textContent (Mozilla-like browsers) or the innerText (IE-like browsers) of the element, which is the
-     * rendered text shown to the user.
+     * Assertion: Gets the text of an element. 
      * 
-     * <h3>Value to verify:</h3>
+     * This works for any element that contains text. This command uses either the textContent (Mozilla-like browsers)
+     * or the innerText (IE-like browsers) of the element, which is the rendered text shown to the user.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the text of the element</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertText}).</p>
@@ -11384,15 +11441,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text of an element. This works for any element that contains text. This command uses
-     * either the textContent (Mozilla-like browsers) or the innerText (IE-like browsers) of the element, which is the
-     * rendered text shown to the user.
+     * Assertion: Gets the text of an element. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * This works for any element that contains text. This command uses either the textContent (Mozilla-like browsers)
+     * or the innerText (IE-like browsers) of the element, which is the rendered text shown to the user.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the text of the element</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -11419,15 +11477,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the text of an element. This works for any element that contains text. This command uses
-     * either the textContent (Mozilla-like browsers) or the innerText (IE-like browsers) of the element, which is the
-     * rendered text shown to the user.
+     * Assertion: Gets the text of an element. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * This works for any element that contains text. This command uses either the textContent (Mozilla-like browsers)
+     * or the innerText (IE-like browsers) of the element, which is the rendered text shown to the user.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the text of the element</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -11454,13 +11513,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the title of the current page.
+     * Assertion: Gets the title of the current page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the title of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotTitle}).</p>
@@ -11484,13 +11543,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the title of the current page.
+     * Assertion: Gets the title of the current page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the title of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyTitle}).</p>
@@ -11534,7 +11593,7 @@ trait SeleniumTestCaseDoc
     /**
      * Gets the title of the current page.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the title of the current page (see {@link doc_Stored_Variables})</p>
      * 
@@ -11557,13 +11616,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the title of the current page.
+     * Assertion: Gets the title of the current page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the title of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotTitle}).</p>
@@ -11587,13 +11646,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the title of the current page.
+     * Assertion: Gets the title of the current page.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the title of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertTitle}).</p>
@@ -11617,13 +11676,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the title of the current page.
+     * Assertion: Gets the title of the current page.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the title of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -11648,13 +11707,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the title of the current page.
+     * Assertion: Gets the title of the current page.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the title of the current page</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -11679,15 +11738,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the (whitespace-trimmed) value of an input field (or anything else with a value
-     * parameter). For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is
-     * checked or not.
+     * Assertion: Gets the (whitespace-trimmed) value of an input field (or anything else with a value parameter). 
      * 
-     * <h3>Value to verify:</h3>
+     * For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is checked or not.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the element value, or "on/off" for checkbox/radio elements</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotValue}).</p>
@@ -11713,15 +11772,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the (whitespace-trimmed) value of an input field (or anything else with a value
-     * parameter). For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is
-     * checked or not.
+     * Assertion: Gets the (whitespace-trimmed) value of an input field (or anything else with a value parameter). 
      * 
-     * <h3>Value to verify:</h3>
+     * For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is checked or not.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the element value, or "on/off" for checkbox/radio elements</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyValue}).</p>
@@ -11747,8 +11806,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets the (whitespace-trimmed) value of an input field (or anything else with a value parameter). For
-     * checkbox/radio elements, the value will be "on" or "off" depending on whether the element is checked or not.
+     * Gets the (whitespace-trimmed) value of an input field (or anything else with a value parameter). 
+     * 
+     * For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is checked or not.
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -11769,10 +11829,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gets the (whitespace-trimmed) value of an input field (or anything else with a value parameter). For
-     * checkbox/radio elements, the value will be "on" or "off" depending on whether the element is checked or not.
+     * Gets the (whitespace-trimmed) value of an input field (or anything else with a value parameter). 
      * 
-     * <h3>Stored value:</h3>
+     * For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is checked or not.
+     * 
+     * <h4>Stored value:</h4>
      * 
      * <p>the element value, or "on/off" for checkbox/radio elements (see {@link doc_Stored_Variables})</p>
      * 
@@ -11797,15 +11858,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the (whitespace-trimmed) value of an input field (or anything else with a value
-     * parameter). For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is
-     * checked or not.
+     * Assertion: Gets the (whitespace-trimmed) value of an input field (or anything else with a value parameter). 
      * 
-     * <h3>Value to verify:</h3>
+     * For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is checked or not.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the element value, or "on/off" for checkbox/radio elements</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotValue}).</p>
@@ -11831,15 +11892,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the (whitespace-trimmed) value of an input field (or anything else with a value
-     * parameter). For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is
-     * checked or not.
+     * Assertion: Gets the (whitespace-trimmed) value of an input field (or anything else with a value parameter). 
      * 
-     * <h3>Value to verify:</h3>
+     * For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is checked or not.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>the element value, or "on/off" for checkbox/radio elements</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertValue}).</p>
@@ -11865,15 +11926,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the (whitespace-trimmed) value of an input field (or anything else with a value
-     * parameter). For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is
-     * checked or not.
+     * Assertion: Gets the (whitespace-trimmed) value of an input field (or anything else with a value parameter). 
      * 
-     * <h3>Expected value/condition:</h3>
+     * For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is checked or not.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the element value, or "on/off" for checkbox/radio elements</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -11900,15 +11961,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Gets the (whitespace-trimmed) value of an input field (or anything else with a value
-     * parameter). For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is
-     * checked or not.
+     * Assertion: Gets the (whitespace-trimmed) value of an input field (or anything else with a value parameter). 
      * 
-     * <h3>Expected value/condition:</h3>
+     * For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is checked or not.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the element value, or "on/off" for checkbox/radio elements</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -11935,15 +11996,17 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines if the specified element is visible. An element can be rendered invisible by
-     * setting the CSS "visibility" property to "hidden", or the "display" property to "none", either for the element
-     * itself or one if its ancestors. This method will fail if the element is not present.
+     * Assertion: Determines if the specified element is visible. 
      * 
-     * <h3>Value to verify:</h3>
+     * An element can be rendered invisible by setting the CSS "visibility" property to "hidden", or the "display"
+     * property to "none", either for the element itself or one if its ancestors. This method will fail if the element
+     * is not present.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the specified element is visible, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotVisible}).</p>
@@ -11967,15 +12030,17 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines if the specified element is visible. An element can be rendered invisible by
-     * setting the CSS "visibility" property to "hidden", or the "display" property to "none", either for the element
-     * itself or one if its ancestors. This method will fail if the element is not present.
+     * Assertion: Determines if the specified element is visible. 
      * 
-     * <h3>Value to verify:</h3>
+     * An element can be rendered invisible by setting the CSS "visibility" property to "hidden", or the "display"
+     * property to "none", either for the element itself or one if its ancestors. This method will fail if the element
+     * is not present.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the specified element is visible, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyVisible}).</p>
@@ -11999,9 +12064,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Determines if the specified element is visible. An element can be rendered invisible by setting the CSS
-     * "visibility" property to "hidden", or the "display" property to "none", either for the element itself or one if
-     * its ancestors. This method will fail if the element is not present.
+     * Determines if the specified element is visible. 
+     * 
+     * An element can be rendered invisible by setting the CSS "visibility" property to "hidden", or the "display"
+     * property to "none", either for the element itself or one if its ancestors. This method will fail if the element
+     * is not present.
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -12022,11 +12089,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Determines if the specified element is visible. An element can be rendered invisible by setting the CSS
-     * "visibility" property to "hidden", or the "display" property to "none", either for the element itself or one if
-     * its ancestors. This method will fail if the element is not present.
+     * Determines if the specified element is visible. 
      * 
-     * <h3>Stored value:</h3>
+     * An element can be rendered invisible by setting the CSS "visibility" property to "hidden", or the "display"
+     * property to "none", either for the element itself or one if its ancestors. This method will fail if the element
+     * is not present.
+     * 
+     * <h4>Stored value:</h4>
      * 
      * <p>true if the specified element is visible, false otherwise (see {@link doc_Stored_Variables})</p>
      * 
@@ -12051,15 +12120,17 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines if the specified element is visible. An element can be rendered invisible by
-     * setting the CSS "visibility" property to "hidden", or the "display" property to "none", either for the element
-     * itself or one if its ancestors. This method will fail if the element is not present.
+     * Assertion: Determines if the specified element is visible. 
      * 
-     * <h3>Value to verify:</h3>
+     * An element can be rendered invisible by setting the CSS "visibility" property to "hidden", or the "display"
+     * property to "none", either for the element itself or one if its ancestors. This method will fail if the element
+     * is not present.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the specified element is visible, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotVisible}).</p>
@@ -12083,15 +12154,17 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines if the specified element is visible. An element can be rendered invisible by
-     * setting the CSS "visibility" property to "hidden", or the "display" property to "none", either for the element
-     * itself or one if its ancestors. This method will fail if the element is not present.
+     * Assertion: Determines if the specified element is visible. 
      * 
-     * <h3>Value to verify:</h3>
+     * An element can be rendered invisible by setting the CSS "visibility" property to "hidden", or the "display"
+     * property to "none", either for the element itself or one if its ancestors. This method will fail if the element
+     * is not present.
+     * 
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the specified element is visible, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertVisible}).</p>
@@ -12115,15 +12188,17 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines if the specified element is visible. An element can be rendered invisible by
-     * setting the CSS "visibility" property to "hidden", or the "display" property to "none", either for the element
-     * itself or one if its ancestors. This method will fail if the element is not present.
+     * Assertion: Determines if the specified element is visible. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * An element can be rendered invisible by setting the CSS "visibility" property to "hidden", or the "display"
+     * property to "none", either for the element itself or one if its ancestors. This method will fail if the element
+     * is not present.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the specified element is visible, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -12148,15 +12223,17 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determines if the specified element is visible. An element can be rendered invisible by
-     * setting the CSS "visibility" property to "hidden", or the "display" property to "none", either for the element
-     * itself or one if its ancestors. This method will fail if the element is not present.
+     * Assertion: Determines if the specified element is visible. 
      * 
-     * <h3>Expected value/condition:</h3>
+     * An element can be rendered invisible by setting the CSS "visibility" property to "hidden", or the "display"
+     * property to "none", either for the element itself or one if its ancestors. This method will fail if the element
+     * is not present.
+     * 
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the specified element is visible, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -12181,18 +12258,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether current/locator identify the frame containing this running code.
+     * Assertion: Determine whether current/locator identify the frame containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" frame. In this case, when the test calls selectFrame, this
      * routine is called for each frame to figure out which one has been selected. The selected frame will return true,
      * while all others will return false.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the new frame is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotWhetherThisFrameMatchFrameExpression}).</p>
@@ -12217,18 +12294,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether current/locator identify the frame containing this running code.
+     * Assertion: Determine whether current/locator identify the frame containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" frame. In this case, when the test calls selectFrame, this
      * routine is called for each frame to figure out which one has been selected. The selected frame will return true,
      * while all others will return false.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the new frame is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyWhetherThisFrameMatchFrameExpression}).</p>
@@ -12253,7 +12330,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Determine whether current/locator identify the frame containing this running code.
+     * Determine whether current/locator identify the frame containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" frame. In this case, when the test calls selectFrame, this
@@ -12280,14 +12357,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Determine whether current/locator identify the frame containing this running code.
+     * Determine whether current/locator identify the frame containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" frame. In this case, when the test calls selectFrame, this
      * routine is called for each frame to figure out which one has been selected. The selected frame will return true,
      * while all others will return false.</p>
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>true if the new frame is this code's window (see {@link doc_Stored_Variables})</p>
      * 
@@ -12312,18 +12389,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether current/locator identify the frame containing this running code.
+     * Assertion: Determine whether current/locator identify the frame containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" frame. In this case, when the test calls selectFrame, this
      * routine is called for each frame to figure out which one has been selected. The selected frame will return true,
      * while all others will return false.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the new frame is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotWhetherThisFrameMatchFrameExpression}).</p>
@@ -12348,18 +12425,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether current/locator identify the frame containing this running code.
+     * Assertion: Determine whether current/locator identify the frame containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" frame. In this case, when the test calls selectFrame, this
      * routine is called for each frame to figure out which one has been selected. The selected frame will return true,
      * while all others will return false.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the new frame is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertWhetherThisFrameMatchFrameExpression}).</p>
@@ -12384,18 +12461,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether current/locator identify the frame containing this running code.
+     * Assertion: Determine whether current/locator identify the frame containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" frame. In this case, when the test calls selectFrame, this
      * routine is called for each frame to figure out which one has been selected. The selected frame will return true,
      * while all others will return false.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the new frame is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -12421,18 +12498,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether current/locator identify the frame containing this running code.
+     * Assertion: Determine whether current/locator identify the frame containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" frame. In this case, when the test calls selectFrame, this
      * routine is called for each frame to figure out which one has been selected. The selected frame will return true,
      * while all others will return false.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the new frame is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -12458,19 +12535,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether currentWindowString plus target identify the window containing this running
-     * code.
+     * Assertion: Determine whether currentWindowString plus target identify the window containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" window. In this case, when the test calls selectWindow, this
      * routine is called for each window to figure out which one has been selected. The selected window will return
      * true, while all others will return false.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the new window is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotWhetherThisWindowMatchWindowExpression}).</p>
@@ -12495,19 +12571,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether currentWindowString plus target identify the window containing this running
-     * code.
+     * Assertion: Determine whether currentWindowString plus target identify the window containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" window. In this case, when the test calls selectWindow, this
      * routine is called for each window to figure out which one has been selected. The selected window will return
      * true, while all others will return false.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the new window is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyWhetherThisWindowMatchWindowExpression}).</p>
@@ -12532,7 +12607,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Determine whether currentWindowString plus target identify the window containing this running code.
+     * Determine whether currentWindowString plus target identify the window containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" window. In this case, when the test calls selectWindow, this
@@ -12559,14 +12634,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Determine whether currentWindowString plus target identify the window containing this running code.
+     * Determine whether currentWindowString plus target identify the window containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" window. In this case, when the test calls selectWindow, this
      * routine is called for each window to figure out which one has been selected. The selected window will return
      * true, while all others will return false.</p>
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>true if the new window is this code's window (see {@link doc_Stored_Variables})</p>
      * 
@@ -12591,19 +12666,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether currentWindowString plus target identify the window containing this running
-     * code.
+     * Assertion: Determine whether currentWindowString plus target identify the window containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" window. In this case, when the test calls selectWindow, this
      * routine is called for each window to figure out which one has been selected. The selected window will return
      * true, while all others will return false.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the new window is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotWhetherThisWindowMatchWindowExpression}).</p>
@@ -12628,19 +12702,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether currentWindowString plus target identify the window containing this running
-     * code.
+     * Assertion: Determine whether currentWindowString plus target identify the window containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" window. In this case, when the test calls selectWindow, this
      * routine is called for each window to figure out which one has been selected. The selected window will return
      * true, while all others will return false.</p>
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the new window is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertWhetherThisWindowMatchWindowExpression}).</p>
@@ -12665,19 +12738,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether currentWindowString plus target identify the window containing this running
-     * code.
+     * Assertion: Determine whether currentWindowString plus target identify the window containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" window. In this case, when the test calls selectWindow, this
      * routine is called for each window to figure out which one has been selected. The selected window will return
      * true, while all others will return false.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the new window is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -12703,19 +12775,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Determine whether currentWindowString plus target identify the window containing this running
-     * code.
+     * Assertion: Determine whether currentWindowString plus target identify the window containing this running code. 
      * 
      * <p>This is useful in proxy injection mode, where this code runs in every browser frame and window, and sometimes
      * the selenium server needs to identify the "current" window. In this case, when the test calls selectWindow, this
      * routine is called for each window to figure out which one has been selected. The selected window will return
      * true, while all others will return false.</p>
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the new window is this code's window</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -12741,14 +12812,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of nodes that match the specified xpath, eg. "//table" would give the
-     * number of tables.
+     * Assertion: Returns the number of nodes that match the specified xpath, eg. "//table" would give the number of
+     * tables.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the number of nodes that match the specified xpath</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyNotXpathCount}).</p>
@@ -12774,14 +12845,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of nodes that match the specified xpath, eg. "//table" would give the
-     * number of tables.
+     * Assertion: Returns the number of nodes that match the specified xpath, eg. "//table" would give the number of
+     * tables.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the number of nodes that match the specified xpath</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyXpathCount}).</p>
@@ -12830,7 +12901,7 @@ trait SeleniumTestCaseDoc
     /**
      * Returns the number of nodes that match the specified xpath, eg. "//table" would give the number of tables.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>the number of nodes that match the specified xpath (see {@link doc_Stored_Variables})</p>
      * 
@@ -12855,14 +12926,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of nodes that match the specified xpath, eg. "//table" would give the
-     * number of tables.
+     * Assertion: Returns the number of nodes that match the specified xpath, eg. "//table" would give the number of
+     * tables.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the number of nodes that match the specified xpath</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertNotXpathCount}).</p>
@@ -12888,14 +12959,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of nodes that match the specified xpath, eg. "//table" would give the
-     * number of tables.
+     * Assertion: Returns the number of nodes that match the specified xpath, eg. "//table" would give the number of
+     * tables.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>the number of nodes that match the specified xpath</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertXpathCount}).</p>
@@ -12921,14 +12992,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of nodes that match the specified xpath, eg. "//table" would give the
-     * number of tables.
+     * Assertion: Returns the number of nodes that match the specified xpath, eg. "//table" would give the number of
+     * tables.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the number of nodes that match the specified xpath</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -12955,14 +13026,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Returns the number of nodes that match the specified xpath, eg. "//table" would give the
-     * number of tables.
+     * Assertion: Returns the number of nodes that match the specified xpath, eg. "//table" would give the number of
+     * tables.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>the number of nodes that match the specified xpath</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -12989,15 +13060,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has a prompt occurred?
+     * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is a pending prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyPromptNotPresent}).</p>
@@ -13018,15 +13089,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has a prompt occurred?
+     * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is a pending prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyPromptPresent}).</p>
@@ -13047,9 +13118,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Has a prompt occurred?
+     * Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
      * @return  bool  true if there is a pending prompt
      * 
@@ -13067,11 +13138,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Has a prompt occurred?
+     * Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>true if there is a pending prompt (see {@link doc_Stored_Variables})</p>
      * 
@@ -13094,15 +13165,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has a prompt occurred?
+     * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is a pending prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertPromptNotPresent}).</p>
@@ -13123,15 +13194,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has a prompt occurred?
+     * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if there is a pending prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertPromptPresent}).</p>
@@ -13152,15 +13223,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has a prompt occurred?
+     * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if there is a pending prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -13182,15 +13253,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Has a prompt occurred?
+     * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>
+     * <p> This function never throws an exception </p>.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if there is a pending prompt</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -13212,14 +13283,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified text pattern appears somewhere on the rendered page shown to the
-     * user.
+     * Assertion: Verifies that the specified text pattern appears somewhere on the rendered page shown to the user.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the pattern matches the text, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyTextNotPresent}).</p>
@@ -13243,14 +13313,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified text pattern appears somewhere on the rendered page shown to the
-     * user.
+     * Assertion: Verifies that the specified text pattern appears somewhere on the rendered page shown to the user.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the pattern matches the text, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
      * {@link verifyTextPresent}).</p>
@@ -13297,7 +13366,7 @@ trait SeleniumTestCaseDoc
     /**
      * Verifies that the specified text pattern appears somewhere on the rendered page shown to the user.
      * 
-     * <h3>Stored value:</h3>
+     * <h4>Stored value:</h4>
      * 
      * <p>true if the pattern matches the text, false otherwise (see {@link doc_Stored_Variables})</p>
      * 
@@ -13322,14 +13391,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified text pattern appears somewhere on the rendered page shown to the
-     * user.
+     * Assertion: Verifies that the specified text pattern appears somewhere on the rendered page shown to the user.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the pattern matches the text, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertTextNotPresent}).</p>
@@ -13353,14 +13421,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified text pattern appears somewhere on the rendered page shown to the
-     * user.
+     * Assertion: Verifies that the specified text pattern appears somewhere on the rendered page shown to the user.
      * 
-     * <h3>Value to verify:</h3>
+     * <h4>Value to verify:</h4>
      * 
      * <p>true if the pattern matches the text, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
      * {@link assertTextPresent}).</p>
@@ -13384,14 +13451,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified text pattern appears somewhere on the rendered page shown to the
-     * user.
+     * Assertion: Verifies that the specified text pattern appears somewhere on the rendered page shown to the user.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the pattern matches the text, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -13416,14 +13482,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <b>Assertion:</b> Verifies that the specified text pattern appears somewhere on the rendered page shown to the
-     * user.
+     * Assertion: Verifies that the specified text pattern appears somewhere on the rendered page shown to the user.
      * 
-     * <h3>Expected value/condition:</h3>
+     * <h4>Expected value/condition:</h4>
      * 
      * <p>true if the pattern matches the text, false otherwise</p>
      * 
-     * <h3>Notes:</h3>
+     * <h4>Notes:</h4>
      * 
      * <p>This command wait for some condition to become true (or returned value is equal specified value).</p>
      * 
@@ -13449,7 +13514,9 @@ trait SeleniumTestCaseDoc
     
     /**
      * Temporarily sets the "id" attribute of the specified element, so you can locate it in the future using its ID
-     * rather than a slow/complicated XPath. This ID will disappear once the page is reloaded.
+     * rather than a slow/complicated XPath. 
+     * 
+     * This ID will disappear once the page is reloaded.
      * 
      * @param string   $locator     an element locator pointing to an element 
      *                              (see {@link doc_Element_Locators})
@@ -13466,10 +13533,13 @@ trait SeleniumTestCaseDoc
     
     /**
      * Temporarily sets the "id" attribute of the specified element, so you can locate it in the future using its ID
-     * rather than a slow/complicated XPath. This ID will disappear once the page is reloaded.
+     * rather than a slow/complicated XPath. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * This ID will disappear once the page is reloaded.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator     an element locator pointing to an element 
      *                              (see {@link doc_Element_Locators})
@@ -13503,12 +13573,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Saves the entire contents of the current window canvas to a PNG file. Contrast this with the captureScreenshot
-     * command, which captures the contents of the OS viewport (i.e. whatever is currently being displayed on the
-     * monitor), and is implemented in the RC only. Currently this only works in Firefox when running in chrome mode,
-     * and in IE non-HTA using the EXPERIMENTAL "Snapsie" utility. The Firefox implementation is mostly borrowed from
-     * the Screengrab! Firefox extension. Please see http://www.screengrab.org and http://snapsie.sourceforge.net/ for
-     * details.
+     * Saves the entire contents of the current window canvas to a PNG file. 
+     * 
+     * Contrast this with the captureScreenshot command, which captures the contents of the OS viewport (i.e. whatever
+     * is currently being displayed on the monitor), and is implemented in the RC only. Currently this only works in
+     * Firefox when running in chrome mode, and in IE non-HTA using the EXPERIMENTAL "Snapsie" utility. The Firefox
+     * implementation is mostly borrowed from the Screengrab! Firefox extension. Please see http://www.screengrab.org
+     * and http://snapsie.sourceforge.net/ for details.
      * 
      * @param string   $filename  the path to the file to persist the screenshot as. No filename extension will be
      *                            appended by  default. Directories will not be created if they do not exist, and an
@@ -13530,15 +13601,17 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Saves the entire contents of the current window canvas to a PNG file. Contrast this with the captureScreenshot
-     * command, which captures the contents of the OS viewport (i.e. whatever is currently being displayed on the
-     * monitor), and is implemented in the RC only. Currently this only works in Firefox when running in chrome mode,
-     * and in IE non-HTA using the EXPERIMENTAL "Snapsie" utility. The Firefox implementation is mostly borrowed from
-     * the Screengrab! Firefox extension. Please see http://www.screengrab.org and http://snapsie.sourceforge.net/ for
-     * details.
+     * Saves the entire contents of the current window canvas to a PNG file. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * Contrast this with the captureScreenshot command, which captures the contents of the OS viewport (i.e. whatever
+     * is currently being displayed on the monitor), and is implemented in the RC only. Currently this only works in
+     * Firefox when running in chrome mode, and in IE non-HTA using the EXPERIMENTAL "Snapsie" utility. The Firefox
+     * implementation is mostly borrowed from the Screengrab! Firefox extension. Please see http://www.screengrab.org
+     * and http://snapsie.sourceforge.net/ for details.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $filename  the path to the file to persist the screenshot as. No filename extension will be
      *                            appended by  default. Directories will not be created if they do not exist, and an
@@ -13560,8 +13633,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Downloads a screenshot of the browser current window canvas to a based 64 encoded PNG file. The <b>entire</b>
-     * windows canvas is captured, including parts rendered outside of the current view port.
+     * Downloads a screenshot of the browser current window canvas to a based 64 encoded PNG file. 
+     * 
+     * The <b>entire</b> windows canvas is captured, including parts rendered outside of the current view port.
      * 
      * <p><b>Note:</b> Currently this only works in Mozilla and when running in chrome mode.</p>
      * 
@@ -13581,13 +13655,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Downloads a screenshot of the browser current window canvas to a based 64 encoded PNG file. The <b>entire</b>
-     * windows canvas is captured, including parts rendered outside of the current view port.
+     * Downloads a screenshot of the browser current window canvas to a based 64 encoded PNG file. 
+     * 
+     * The <b>entire</b> windows canvas is captured, including parts rendered outside of the current view port.
      * 
      * <p><b>Note:</b> Currently this only works in Mozilla and when running in chrome mode.</p>
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $kwargs  A kwargs string that modifies the way the screenshot is captured. Example:
      *                          "background=#CCFFDD". This may be useful to set for capturing screenshots of
@@ -13622,8 +13698,9 @@ trait SeleniumTestCaseDoc
     /**
      * Captures a PNG screenshot to the specified file.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $filename  the absolute path to the file to be written, e.g. "c:\blah\screenshot.png"
      * 
@@ -13637,7 +13714,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Capture a PNG screenshot. It then returns the file as a base 64 encoded string.
+     * Capture a PNG screenshot. 
+     * 
+     * It then returns the file as a base 64 encoded string.
      * 
      * @return  string  The base 64 encoded string of the screen shot (PNG file)
      * 
@@ -13649,10 +13728,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Capture a PNG screenshot. It then returns the file as a base 64 encoded string.
+     * Capture a PNG screenshot. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * It then returns the file as a base 64 encoded string.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  string  The base 64 encoded string of the screen shot (PNG file)
      * 
@@ -13664,7 +13746,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Check a toggle-button (checkbox/radio)
+     * Check a toggle-button (checkbox/radio).
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -13679,10 +13761,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Check a toggle-button (checkbox/radio)
+     * Check a toggle-button (checkbox/radio).
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -13699,8 +13782,10 @@ trait SeleniumTestCaseDoc
     /**
      * <p> By default, Selenium's overridden window.confirm() function will return true, as if the user had manually
      * clicked OK; after running this command, the next call to confirm() will return false, as if the user had clicked
-     * Cancel. Selenium will then resume using the default behavior for future confirmations, automatically returning
-     * true (OK) unless/until you explicitly call this command for each confirmation. </p>
+     * Cancel. 
+     * 
+     * Selenium will then resume using the default behavior for future confirmations, automatically returning true (OK)
+     * unless/until you explicitly call this command for each confirmation. </p>
      * 
      * <p> Take note - every time a confirmation comes up, you must consume it with a corresponding getConfirmation, or
      * else the next selenium operation will fail. </p>
@@ -13717,14 +13802,17 @@ trait SeleniumTestCaseDoc
     /**
      * <p> By default, Selenium's overridden window.confirm() function will return true, as if the user had manually
      * clicked OK; after running this command, the next call to confirm() will return false, as if the user had clicked
-     * Cancel. Selenium will then resume using the default behavior for future confirmations, automatically returning
-     * true (OK) unless/until you explicitly call this command for each confirmation. </p>
+     * Cancel. 
+     * 
+     * Selenium will then resume using the default behavior for future confirmations, automatically returning true (OK)
+     * unless/until you explicitly call this command for each confirmation. </p>
      * 
      * <p> Take note - every time a confirmation comes up, you must consume it with a corresponding getConfirmation, or
      * else the next selenium operation will fail. </p>
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -13736,11 +13824,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <p> Undo the effect of calling chooseCancelOnNextConfirmation. Note that Selenium's overridden window.confirm()
-     * function will normally automatically return true, as if the user had manually clicked OK, so you shouldn't need
-     * to use this command unless for some reason you need to change your mind prior to the next confirmation. After
-     * any confirmation, Selenium will resume using the default behavior for future confirmations, automatically
-     * returning true (OK) unless/until you explicitly call chooseCancelOnNextConfirmation for each confirmation. </p>
+     * <p> Undo the effect of calling chooseCancelOnNextConfirmation. 
+     * 
+     * Note that Selenium's overridden window.confirm() function will normally automatically return true, as if the
+     * user had manually clicked OK, so you shouldn't need to use this command unless for some reason you need to
+     * change your mind prior to the next confirmation. After any confirmation, Selenium will resume using the default
+     * behavior for future confirmations, automatically returning true (OK) unless/until you explicitly call
+     * chooseCancelOnNextConfirmation for each confirmation. </p>
      * 
      * <p> Take note - every time a confirmation comes up, you must consume it with a corresponding getConfirmation, or
      * else the next selenium operation will fail. </p>
@@ -13755,17 +13845,20 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * <p> Undo the effect of calling chooseCancelOnNextConfirmation. Note that Selenium's overridden window.confirm()
-     * function will normally automatically return true, as if the user had manually clicked OK, so you shouldn't need
-     * to use this command unless for some reason you need to change your mind prior to the next confirmation. After
-     * any confirmation, Selenium will resume using the default behavior for future confirmations, automatically
-     * returning true (OK) unless/until you explicitly call chooseCancelOnNextConfirmation for each confirmation. </p>
+     * <p> Undo the effect of calling chooseCancelOnNextConfirmation. 
+     * 
+     * Note that Selenium's overridden window.confirm() function will normally automatically return true, as if the
+     * user had manually clicked OK, so you shouldn't need to use this command unless for some reason you need to
+     * change your mind prior to the next confirmation. After any confirmation, Selenium will resume using the default
+     * behavior for future confirmations, automatically returning true (OK) unless/until you explicitly call
+     * chooseCancelOnNextConfirmation for each confirmation. </p>
      * 
      * <p> Take note - every time a confirmation comes up, you must consume it with a corresponding getConfirmation, or
      * else the next selenium operation will fail. </p>
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -13777,8 +13870,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Clicks on a link, button, checkbox or radio button. If the click action causes a new page to load (like a link
-     * usually does), call waitForPageToLoad.
+     * Clicks on a link, button, checkbox or radio button. 
+     * 
+     * If the click action causes a new page to load (like a link usually does), call waitForPageToLoad.
      * 
      * @param string   $locator  an element locator
      * 
@@ -13792,11 +13886,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Clicks on a link, button, checkbox or radio button. If the click action causes a new page to load (like a link
-     * usually does), call waitForPageToLoad.
+     * Clicks on a link, button, checkbox or radio button. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * If the click action causes a new page to load (like a link usually does), call waitForPageToLoad.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator
      * 
@@ -13810,8 +13906,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Clicks on a link, button, checkbox or radio button. If the click action causes a new page to load (like a link
-     * usually does), call waitForPageToLoad.
+     * Clicks on a link, button, checkbox or radio button. 
+     * 
+     * If the click action causes a new page to load (like a link usually does), call waitForPageToLoad.
      * 
      * @param string   $locator      an element locator
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
@@ -13827,11 +13924,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Clicks on a link, button, checkbox or radio button. If the click action causes a new page to load (like a link
-     * usually does), call waitForPageToLoad.
+     * Clicks on a link, button, checkbox or radio button. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * If the click action causes a new page to load (like a link usually does), call waitForPageToLoad.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator      an element locator
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
@@ -13847,7 +13946,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Simulates the user clicking the "close" button in the titlebar of a popup window or tab.
+     * Simulates the user clicking the "close" button in the titlebar of a popup window or tab. 
      * 
      * @return  void
      */
@@ -13875,8 +13974,9 @@ trait SeleniumTestCaseDoc
      * Simulates opening the context menu for the specified element (as might happen if the user "right-clicked" on the
      * element).
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator
      * 
@@ -13910,8 +14010,9 @@ trait SeleniumTestCaseDoc
      * Simulates opening the context menu for the specified element (as might happen if the user "right-clicked" on the
      * element).
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator      an element locator
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
@@ -13941,8 +14042,9 @@ trait SeleniumTestCaseDoc
     /**
      * Press the control key and hold it down until doControlUp() is called or a new page is loaded.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -13968,8 +14070,9 @@ trait SeleniumTestCaseDoc
     /**
      * Release the control key.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -14004,8 +14107,9 @@ trait SeleniumTestCaseDoc
      * Create a new cookie whose path and domain are same with those of current page under test, unless you specified a
      * path for this cookie explicitly.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $nameValuePair  name and value of the cookie in a format "name=value"
      * @param string   $optionsString  options for the cookie. Currently supported options include 'path', 'max_age'
@@ -14024,8 +14128,10 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Calls deleteCookie with recurse=true on all cookies visible to the current page. As noted on the documentation
-     * for deleteCookie, recurse=true can be much slower than simply deleting the cookies using a known domain/path.
+     * Calls deleteCookie with recurse=true on all cookies visible to the current page. 
+     * 
+     * As noted on the documentation for deleteCookie, recurse=true can be much slower than simply deleting the cookies
+     * using a known domain/path.
      * 
      * @return  void
      * 
@@ -14037,11 +14143,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Calls deleteCookie with recurse=true on all cookies visible to the current page. As noted on the documentation
-     * for deleteCookie, recurse=true can be much slower than simply deleting the cookies using a known domain/path.
+     * Calls deleteCookie with recurse=true on all cookies visible to the current page. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * As noted on the documentation for deleteCookie, recurse=true can be much slower than simply deleting the cookies
+     * using a known domain/path.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -14053,13 +14162,15 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Delete a named cookie with specified path and domain. Be careful; to delete a cookie, you need to delete it
-     * using the exact same path and domain that were used to create the cookie. If the path is wrong, or the domain is
-     * wrong, the cookie simply won't be deleted. Also note that specifying a domain that isn't a subset of the current
-     * domain will usually fail. Since there's no way to discover at runtime the original path and domain of a given
-     * cookie, we've added an option called 'recurse' to try all sub-domains of the current domain with all paths that
-     * are a subset of the current path. Beware; this option can be slow. In big-O notation, it operates in O(n*m)
-     * time, where n is the number of dots in the domain name and m is the number of slashes in the path.
+     * Delete a named cookie with specified path and domain. 
+     * 
+     * Be careful; to delete a cookie, you need to delete it using the exact same path and domain that were used to
+     * create the cookie. If the path is wrong, or the domain is wrong, the cookie simply won't be deleted. Also note
+     * that specifying a domain that isn't a subset of the current domain will usually fail. Since there's no way to
+     * discover at runtime the original path and domain of a given cookie, we've added an option called 'recurse' to
+     * try all sub-domains of the current domain with all paths that are a subset of the current path. Beware; this
+     * option can be slow. In big-O notation, it operates in O(n*m) time, where n is the number of dots in the domain
+     * name and m is the number of slashes in the path.
      * 
      * @param string   $name           the name of the cookie to be deleted
      * @param string   $optionsString  options for the cookie. Currently supported options include 'path', 'domain' and
@@ -14077,16 +14188,19 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Delete a named cookie with specified path and domain. Be careful; to delete a cookie, you need to delete it
-     * using the exact same path and domain that were used to create the cookie. If the path is wrong, or the domain is
-     * wrong, the cookie simply won't be deleted. Also note that specifying a domain that isn't a subset of the current
-     * domain will usually fail. Since there's no way to discover at runtime the original path and domain of a given
-     * cookie, we've added an option called 'recurse' to try all sub-domains of the current domain with all paths that
-     * are a subset of the current path. Beware; this option can be slow. In big-O notation, it operates in O(n*m)
-     * time, where n is the number of dots in the domain name and m is the number of slashes in the path.
+     * Delete a named cookie with specified path and domain. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * Be careful; to delete a cookie, you need to delete it using the exact same path and domain that were used to
+     * create the cookie. If the path is wrong, or the domain is wrong, the cookie simply won't be deleted. Also note
+     * that specifying a domain that isn't a subset of the current domain will usually fail. Since there's no way to
+     * discover at runtime the original path and domain of a given cookie, we've added an option called 'recurse' to
+     * try all sub-domains of the current domain with all paths that are a subset of the current path. Beware; this
+     * option can be slow. In big-O notation, it operates in O(n*m) time, where n is the number of dots in the domain
+     * name and m is the number of slashes in the path.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $name           the name of the cookie to be deleted
      * @param string   $optionsString  options for the cookie. Currently supported options include 'path', 'domain' and
@@ -14104,8 +14218,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Selects the main window. Functionally equivalent to using [<b>selectWindow()</b>] and specifying no value for
-     * [<b>windowID</b>].
+     * Selects the main window. 
+     * 
+     * Functionally equivalent to using [<b>selectWindow()</b>] and specifying no value for [<b>windowID</b>].
      * 
      * @return  void
      * 
@@ -14117,11 +14232,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Selects the main window. Functionally equivalent to using [<b>selectWindow()</b>] and specifying no value for
-     * [<b>windowID</b>].
+     * Selects the main window. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * Functionally equivalent to using [<b>selectWindow()</b>] and specifying no value for [<b>windowID</b>].
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -14133,8 +14250,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Double clicks on a link, button, checkbox or radio button. If the double click action causes a new page to load
-     * (like a link usually does), call waitForPageToLoad.
+     * Double clicks on a link, button, checkbox or radio button. 
+     * 
+     * If the double click action causes a new page to load (like a link usually does), call waitForPageToLoad.
      * 
      * @param string   $locator  an element locator
      * 
@@ -14148,11 +14266,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Double clicks on a link, button, checkbox or radio button. If the double click action causes a new page to load
-     * (like a link usually does), call waitForPageToLoad.
+     * Double clicks on a link, button, checkbox or radio button. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * If the double click action causes a new page to load (like a link usually does), call waitForPageToLoad.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator
      * 
@@ -14166,8 +14286,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Doubleclicks on a link, button, checkbox or radio button. If the action causes a new page to load (like a link
-     * usually does), call waitForPageToLoad.
+     * Doubleclicks on a link, button, checkbox or radio button. 
+     * 
+     * If the action causes a new page to load (like a link usually does), call waitForPageToLoad.
      * 
      * @param string   $locator      an element locator
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
@@ -14183,11 +14304,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Doubleclicks on a link, button, checkbox or radio button. If the action causes a new page to load (like a link
-     * usually does), call waitForPageToLoad.
+     * Doubleclicks on a link, button, checkbox or radio button. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * If the action causes a new page to load (like a link usually does), call waitForPageToLoad.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator      an element locator
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
@@ -14203,7 +14326,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Drags an element a certain distance and then drops it
+     * Drags an element a certain distance and then drops it.
      * 
      * @param string   $locator          an element locator
      * @param string   $movementsString  offset in pixels from the current location to which the element should be
@@ -14219,10 +14342,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Drags an element a certain distance and then drops it
+     * Drags an element a certain distance and then drops it.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator          an element locator
      * @param string   $movementsString  offset in pixels from the current location to which the element should be
@@ -14238,7 +14362,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Drags an element and drops it on another element
+     * Drags an element and drops it on another element.
      * 
      * @param string   $locatorOfObjectToBeDragged      an element to be dragged
      * @param string   $locatorOfDragDestinationObject  an element whose location (i.e., whose center-most pixel) will
@@ -14254,10 +14378,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Drags an element and drops it on another element
+     * Drags an element and drops it on another element.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locatorOfObjectToBeDragged      an element to be dragged
      * @param string   $locatorOfDragDestinationObject  an element whose location (i.e., whose center-most pixel) will
@@ -14273,7 +14398,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * deprecated - use dragAndDrop instead
+     * deprecated - use dragAndDrop instead.
      * 
      * @param string   $locator          an element locator
      * @param string   $movementsString  offset in pixels from the current location to which the element should be
@@ -14290,10 +14415,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * deprecated - use dragAndDrop instead
+     * deprecated - use dragAndDrop instead.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator          an element locator
      * @param string   $movementsString  offset in pixels from the current location to which the element should be
@@ -14328,8 +14454,9 @@ trait SeleniumTestCaseDoc
     /**
      * Explicitly simulate an event, to trigger the corresponding "on<em>event</em>" handler.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator    an element locator 
      *                             (see {@link doc_Element_Locators})
@@ -14364,8 +14491,9 @@ trait SeleniumTestCaseDoc
      * Move the focus to the specified element; for example, if the element is an input field, move the cursor to that
      * field.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -14394,8 +14522,9 @@ trait SeleniumTestCaseDoc
     /**
      * Simulates the user clicking the "back" button on their browser.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -14407,7 +14536,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Briefly changes the backgroundColor of the specified element yellow. Useful for debugging.
+     * Briefly changes the backgroundColor of the specified element yellow. 
+     * 
+     * Useful for debugging.
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -14422,10 +14553,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Briefly changes the backgroundColor of the specified element yellow. Useful for debugging.
+     * Briefly changes the backgroundColor of the specified element yellow. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * Useful for debugging.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -14441,10 +14575,12 @@ trait SeleniumTestCaseDoc
     
     /**
      * Specifies whether Selenium will ignore xpath attributes that have no value, i.e. are the empty string, when
-     * using the non-native xpath evaluation engine. You'd want to do this for performance reasons in IE. However, this
-     * could break certain xpaths, for example an xpath that looks for an attribute whose value is NOT the empty
-     * string. The hope is that such xpaths are relatively rare, but the user should have the option of using them.
-     * Note that this only influences xpath evaluation when using the ajaxslt engine (i.e. not "javascript-xpath").
+     * using the non-native xpath evaluation engine. 
+     * 
+     * You'd want to do this for performance reasons in IE. However, this could break certain xpaths, for example an
+     * xpath that looks for an attribute whose value is NOT the empty string. The hope is that such xpaths are
+     * relatively rare, but the user should have the option of using them. Note that this only influences xpath
+     * evaluation when using the ajaxslt engine (i.e. not "javascript-xpath").
      * 
      * @param string   $ignore  boolean, true means we'll ignore attributes without value at the expense of xpath 
      *                          "correctness"; false means we'll sacrifice speed for correctness.
@@ -14460,13 +14596,16 @@ trait SeleniumTestCaseDoc
     
     /**
      * Specifies whether Selenium will ignore xpath attributes that have no value, i.e. are the empty string, when
-     * using the non-native xpath evaluation engine. You'd want to do this for performance reasons in IE. However, this
-     * could break certain xpaths, for example an xpath that looks for an attribute whose value is NOT the empty
-     * string. The hope is that such xpaths are relatively rare, but the user should have the option of using them.
-     * Note that this only influences xpath evaluation when using the ajaxslt engine (i.e. not "javascript-xpath").
+     * using the non-native xpath evaluation engine. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * You'd want to do this for performance reasons in IE. However, this could break certain xpaths, for example an
+     * xpath that looks for an attribute whose value is NOT the empty string. The hope is that such xpaths are
+     * relatively rare, but the user should have the option of using them. Note that this only influences xpath
+     * evaluation when using the ajaxslt engine (i.e. not "javascript-xpath").
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $ignore  boolean, true means we'll ignore attributes without value at the expense of xpath 
      *                          "correctness"; false means we'll sacrifice speed for correctness.
@@ -14501,8 +14640,9 @@ trait SeleniumTestCaseDoc
     /**
      * Simulates a user pressing a key (without releasing it yet).
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator      an element locator 
      *                               (see {@link doc_Element_Locators})
@@ -14520,7 +14660,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Simulates a user pressing a key (without releasing it yet) by sending a native operating system keystroke.
+     * Simulates a user pressing a key (without releasing it yet) by sending a native operating system keystroke. 
      * 
      * <p>This function uses the java.awt.Robot class to send a keystroke; this more accurately simulates typing a key
      * on the keyboard. It does not honor settings from the shiftKeyDown, controlKeyDown, altKeyDown and metaKeyDown
@@ -14540,15 +14680,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Simulates a user pressing a key (without releasing it yet) by sending a native operating system keystroke.
+     * Simulates a user pressing a key (without releasing it yet) by sending a native operating system keystroke. 
      * 
      * <p>This function uses the java.awt.Robot class to send a keystroke; this more accurately simulates typing a key
      * on the keyboard. It does not honor settings from the shiftKeyDown, controlKeyDown, altKeyDown and metaKeyDown
      * commands, and does not target any particular HTML element. To send a keystroke to a particular element, focus on
      * the element first before running this command.</p>
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $keycode  an integer keycode number corresponding to a java.awt.event.KeyEvent; note that Java
      *                           keycodes are NOT the same thing as JavaScript keycodes!
@@ -14583,8 +14724,9 @@ trait SeleniumTestCaseDoc
     /**
      * Simulates a user pressing and releasing a key.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator      an element locator 
      *                               (see {@link doc_Element_Locators})
@@ -14602,7 +14744,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Simulates a user pressing and releasing a key by sending a native operating system keystroke.
+     * Simulates a user pressing and releasing a key by sending a native operating system keystroke. 
      * 
      * <p>This function uses the java.awt.Robot class to send a keystroke; this more accurately simulates typing a key
      * on the keyboard. It does not honor settings from the shiftKeyDown, controlKeyDown, altKeyDown and metaKeyDown
@@ -14622,15 +14764,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Simulates a user pressing and releasing a key by sending a native operating system keystroke.
+     * Simulates a user pressing and releasing a key by sending a native operating system keystroke. 
      * 
      * <p>This function uses the java.awt.Robot class to send a keystroke; this more accurately simulates typing a key
      * on the keyboard. It does not honor settings from the shiftKeyDown, controlKeyDown, altKeyDown and metaKeyDown
      * commands, and does not target any particular HTML element. To send a keystroke to a particular element, focus on
      * the element first before running this command.</p>
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $keycode  an integer keycode number corresponding to a java.awt.event.KeyEvent; note that Java
      *                           keycodes are NOT the same thing as JavaScript keycodes!
@@ -14665,8 +14808,9 @@ trait SeleniumTestCaseDoc
     /**
      * Simulates a user releasing a key.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator      an element locator 
      *                               (see {@link doc_Element_Locators})
@@ -14684,7 +14828,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Simulates a user releasing a key by sending a native operating system keystroke.
+     * Simulates a user releasing a key by sending a native operating system keystroke. 
      * 
      * <p>This function uses the java.awt.Robot class to send a keystroke; this more accurately simulates typing a key
      * on the keyboard. It does not honor settings from the shiftKeyDown, controlKeyDown, altKeyDown and metaKeyDown
@@ -14704,15 +14848,16 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Simulates a user releasing a key by sending a native operating system keystroke.
+     * Simulates a user releasing a key by sending a native operating system keystroke. 
      * 
      * <p>This function uses the java.awt.Robot class to send a keystroke; this more accurately simulates typing a key
      * on the keyboard. It does not honor settings from the shiftKeyDown, controlKeyDown, altKeyDown and metaKeyDown
      * commands, and does not target any particular HTML element. To send a keystroke to a particular element, focus on
      * the element first before running this command.</p>
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $keycode  an integer keycode number corresponding to a java.awt.event.KeyEvent; note that Java
      *                           keycodes are NOT the same thing as JavaScript keycodes!
@@ -14741,8 +14886,9 @@ trait SeleniumTestCaseDoc
     /**
      * Press the meta key and hold it down until doMetaUp() is called or a new page is loaded.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -14768,8 +14914,9 @@ trait SeleniumTestCaseDoc
     /**
      * Release the meta key.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -14798,8 +14945,9 @@ trait SeleniumTestCaseDoc
     /**
      * Simulates a user pressing the left mouse button (without releasing it yet) on the specified element.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -14833,8 +14981,9 @@ trait SeleniumTestCaseDoc
     /**
      * Simulates a user pressing the left mouse button (without releasing it yet) at the specified location.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator      an element locator 
      *                               (see {@link doc_Element_Locators})
@@ -14868,8 +15017,9 @@ trait SeleniumTestCaseDoc
     /**
      * Simulates a user pressing the mouse button (without releasing it yet) on the specified element.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -14903,8 +15053,9 @@ trait SeleniumTestCaseDoc
     /**
      * Simulates a user pressing the mouse button (without releasing it yet) on the specified element.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator      an element locator 
      *                               (see {@link doc_Element_Locators})
@@ -14938,8 +15089,9 @@ trait SeleniumTestCaseDoc
     /**
      * Simulates a user moving the mouse pointer away from the specified element.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -14971,8 +15123,9 @@ trait SeleniumTestCaseDoc
     /**
      * Simulates a user hovering a mouse over the specified element.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -15006,8 +15159,9 @@ trait SeleniumTestCaseDoc
      * Simulates the event that occurs when the user releases the mouse button (i.e., stops holding the button down) on
      * the specified element.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -15043,8 +15197,9 @@ trait SeleniumTestCaseDoc
      * Simulates the event that occurs when the user releases the mouse button (i.e., stops holding the button down) at
      * the specified location.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator      an element locator 
      *                               (see {@link doc_Element_Locators})
@@ -15080,8 +15235,9 @@ trait SeleniumTestCaseDoc
      * Simulates the event that occurs when the user releases the right mouse button (i.e., stops holding the button
      * down) on the specified element.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -15117,8 +15273,9 @@ trait SeleniumTestCaseDoc
      * Simulates the event that occurs when the user releases the right mouse button (i.e., stops holding the button
      * down) at the specified location.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator      an element locator 
      *                               (see {@link doc_Element_Locators})
@@ -15135,10 +15292,12 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Opens an URL in the test frame. This accepts both relative and absolute URLs. The "open" command waits for the
-     * page to load before proceeding, ie. the "AndWait" suffix is implicit. <em>Note</em>: The URL must be on the same
-     * domain as the runner HTML due to security restrictions in the browser (Same Origin Policy). If you need to open
-     * an URL on another domain, use the Selenium Server to start a new browser session on that domain.
+     * Opens an URL in the test frame. 
+     * 
+     * This accepts both relative and absolute URLs. The "open" command waits for the page to load before proceeding,
+     * ie. the "AndWait" suffix is implicit. <em>Note</em>: The URL must be on the same domain as the runner HTML due
+     * to security restrictions in the browser (Same Origin Policy). If you need to open an URL on another domain, use
+     * the Selenium Server to start a new browser session on that domain.
      * 
      * @param string   $url  the URL to open; may be relative or absolute
      * 
@@ -15150,8 +15309,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Opens a popup window (if a window with that ID isn't already open). After opening the window, you'll need to
-     * select it using the selectWindow command.
+     * Opens a popup window (if a window with that ID isn't already open). 
+     * 
+     * After opening the window, you'll need to select it using the selectWindow command.
      * 
      * <p>This command can also be a useful workaround for bug SEL-339. In some cases, Selenium will be unable to
      * intercept a call to window.open (if the call occurs during or before the "onLoad" event, for example). In those
@@ -15171,16 +15331,18 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Opens a popup window (if a window with that ID isn't already open). After opening the window, you'll need to
-     * select it using the selectWindow command.
+     * Opens a popup window (if a window with that ID isn't already open). 
+     * 
+     * After opening the window, you'll need to select it using the selectWindow command.
      * 
      * <p>This command can also be a useful workaround for bug SEL-339. In some cases, Selenium will be unable to
      * intercept a call to window.open (if the call occurs during or before the "onLoad" event, for example). In those
      * cases, you can force Selenium to notice the open window's name by using the Selenium openWindow command, using
      * an empty (blank) url, like this: openWindow("", "myFunnyWindow").</p>
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $url       the URL to open, which can be blank
      * @param string   $windowID  the JavaScript window ID of the window to select
@@ -15195,7 +15357,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Wait for the specified amount of time (in milliseconds)
+     * Wait for the specified amount of time (in milliseconds).
      * 
      * @param string   $waitTime  the amount of time to sleep (in milliseconds)
      * 
@@ -15221,8 +15383,9 @@ trait SeleniumTestCaseDoc
     /**
      * Simulates the user clicking the "Refresh" button on their browser.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -15251,8 +15414,9 @@ trait SeleniumTestCaseDoc
     /**
      * Unselects all of the selected options in a multi-select element.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator identifying a multi-select box 
      *                           (see {@link doc_Element_Locators})
@@ -15267,8 +15431,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Removes a script tag from the Selenium document identified by the given id. Does nothing if the referenced tag
-     * doesn't exist.
+     * Removes a script tag from the Selenium document identified by the given id. 
+     * 
+     * Does nothing if the referenced tag doesn't exist.
      * 
      * @param string   $scriptTagId  the id of the script element to remove.
      * 
@@ -15282,11 +15447,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Removes a script tag from the Selenium document identified by the given id. Does nothing if the referenced tag
-     * doesn't exist.
+     * Removes a script tag from the Selenium document identified by the given id. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * Does nothing if the referenced tag doesn't exist.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $scriptTagId  the id of the script element to remove.
      * 
@@ -15300,8 +15467,8 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Remove a selection from the set of selected options in a multi-select element using an option locator.
-     * {@link select} for details of option locators
+     * Remove a selection from the set of selected options in a multi-select element using an option locator. @see
+     * #doSelect for details of option locators.
      * 
      * @param string   $locator        an element locator identifying a multi-select box (see
      *                                 {@link doc_Element_Locators})
@@ -15317,11 +15484,12 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Remove a selection from the set of selected options in a multi-select element using an option locator.
-     * {@link select} for details of option locators
+     * Remove a selection from the set of selected options in a multi-select element using an option locator. @see
+     * #doSelect for details of option locators.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator        an element locator identifying a multi-select box (see
      *                                 {@link doc_Element_Locators})
@@ -15337,9 +15505,10 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Retrieve the last messages logged on a specific remote control. Useful for error reports, especially when
-     * running multiple remote controls in a distributed environment. The maximum number of log messages that can be
-     * retrieve is configured on remote control startup.
+     * Retrieve the last messages logged on a specific remote control. 
+     * 
+     * Useful for error reports, especially when running multiple remote controls in a distributed environment. The
+     * maximum number of log messages that can be retrieve is configured on remote control startup.
      * 
      * @return  string  The last N log messages as a multi-line string.
      */
@@ -15350,8 +15519,10 @@ trait SeleniumTestCaseDoc
     
     /**
      * Executes a command rollup, which is a series of commands with a unique name, and optionally arguments that
-     * control the generation of the set of commands. If any one of the rolled-up commands fails, the rollup is
-     * considered to have failed. Rollups may also contain nested rollups.
+     * control the generation of the set of commands. 
+     * 
+     * If any one of the rolled-up commands fails, the rollup is considered to have failed. Rollups may also contain
+     * nested rollups.
      * 
      * @param string   $rollupName  the name of the rollup command
      * @param string   $kwargs      keyword arguments string that influences how the rollup expands into commands
@@ -15367,11 +15538,14 @@ trait SeleniumTestCaseDoc
     
     /**
      * Executes a command rollup, which is a series of commands with a unique name, and optionally arguments that
-     * control the generation of the set of commands. If any one of the rolled-up commands fails, the rollup is
-     * considered to have failed. Rollups may also contain nested rollups.
+     * control the generation of the set of commands. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * If any one of the rolled-up commands fails, the rollup is considered to have failed. Rollups may also contain
+     * nested rollups.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $rollupName  the name of the rollup command
      * @param string   $kwargs      keyword arguments string that influences how the rollup expands into commands
@@ -15387,10 +15561,11 @@ trait SeleniumTestCaseDoc
     
     /**
      * Creates a new "script" tag in the body of the current test window, and adds the specified text into the body of
-     * the command. Scripts run in this way can often be debugged more easily than scripts executed using Selenium's
-     * "getEval" command. Beware that JS exceptions thrown in these script tags aren't managed by Selenium, so you
-     * should probably wrap your script in try/catch blocks if there is any chance that the script will throw an
-     * exception.
+     * the command. 
+     * 
+     * Scripts run in this way can often be debugged more easily than scripts executed using Selenium's "getEval"
+     * command. Beware that JS exceptions thrown in these script tags aren't managed by Selenium, so you should
+     * probably wrap your script in try/catch blocks if there is any chance that the script will throw an exception.
      * 
      * @param string   $script  the JavaScript snippet to run
      * 
@@ -15405,13 +15580,15 @@ trait SeleniumTestCaseDoc
     
     /**
      * Creates a new "script" tag in the body of the current test window, and adds the specified text into the body of
-     * the command. Scripts run in this way can often be debugged more easily than scripts executed using Selenium's
-     * "getEval" command. Beware that JS exceptions thrown in these script tags aren't managed by Selenium, so you
-     * should probably wrap your script in try/catch blocks if there is any chance that the script will throw an
-     * exception.
+     * the command. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * Scripts run in this way can often be debugged more easily than scripts executed using Selenium's "getEval"
+     * command. Beware that JS exceptions thrown in these script tags aren't managed by Selenium, so you should
+     * probably wrap your script in try/catch blocks if there is any chance that the script will throw an exception.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $script  the JavaScript snippet to run
      * 
@@ -15441,8 +15618,6 @@ trait SeleniumTestCaseDoc
      *     <li><b>index=index</b> (index=2) <br/>
      * matches an option based on its index (offset from zero). </li>
      * </ul>
-     * 
-     * 
      * 
      * <p>If no option locator prefix is provided, the default behaviour is to match on label.</p>
      * 
@@ -15477,12 +15652,11 @@ trait SeleniumTestCaseDoc
      * matches an option based on its index (offset from zero). </li>
      * </ul>
      * 
-     * 
-     * 
      * <p>If no option locator prefix is provided, the default behaviour is to match on label.</p>
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
      *                                 {@link doc_Element_Locators})
@@ -15499,12 +15673,13 @@ trait SeleniumTestCaseDoc
     
     /**
      * Selects a frame within the current window. (You may invoke this command multiple times to select nested frames.)
-     * To select the parent frame, use "relative=parent" as a locator; to select the top frame, use "relative=top". You
-     * can also select a frame by its 0-based index number; select the first frame with "index=0", or the third frame
-     * with "index=2".
+     * To select the parent frame, use "relative=parent" as a locator; to select the top frame, use "relative=top". 
+     * 
+     * You can also select a frame by its 0-based index number; select the first frame with "index=0", or the third
+     * frame with "index=2".
      * 
      * <p>You may also use a DOM expression to identify the frame you want directly, like this:
-     * [<b>dom=frames["main"].frames["subframe"]</b>] </p>
+     * [<b>dom=frames["main"].frames["subframe"]</b>] </p>.
      * 
      * @param string   $locator  an element locator identifying a frame or iframe 
      *                           (see {@link doc_Element_Locators})
@@ -15518,7 +15693,7 @@ trait SeleniumTestCaseDoc
     
     /**
      * Simplifies the process of selecting a popup window (and does not offer functionality beyond what
-     * [<b>selectWindow()</b>] already provides).
+     * <code>selectWindow()</code> already provides). 
      * 
      * <ul>
      *     <li>If [<b>windowID</b>] is either not specified, or specified as  "null", the first non-top window is
@@ -15529,8 +15704,6 @@ trait SeleniumTestCaseDoc
      * a window; and 3) the title of the  window. This is the same ordered lookup performed by  [<b>selectWindow</b>] .
      * </li>
      * </ul>
-     * 
-     * 
      * 
      * @param string   $windowID  an identifier for the popup window, which can take on a number of different meanings
      * 
@@ -15545,7 +15718,7 @@ trait SeleniumTestCaseDoc
     
     /**
      * Simplifies the process of selecting a popup window (and does not offer functionality beyond what
-     * [<b>selectWindow()</b>] already provides).
+     * <code>selectWindow()</code> already provides). 
      * 
      * <ul>
      *     <li>If [<b>windowID</b>] is either not specified, or specified as  "null", the first non-top window is
@@ -15557,10 +15730,9 @@ trait SeleniumTestCaseDoc
      * </li>
      * </ul>
      * 
+     * <h4>Notes:</h4>
      * 
-     * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $windowID  an identifier for the popup window, which can take on a number of different meanings
      * 
@@ -15575,7 +15747,9 @@ trait SeleniumTestCaseDoc
     
     /**
      * Selects a popup window using a window locator; once a popup window has been selected, all commands go to that
-     * window. To select the main window again, use null as the target.
+     * window. 
+     * 
+     * To select the main window again, use null as the target.
      * 
      * <p> Window locators provide different ways of specifying the window object: by title, by internal JavaScript
      * "name," or by JavaScript variable. </p>
@@ -15591,8 +15765,6 @@ trait SeleniumTestCaseDoc
      * associated with a JavaScript variable name in the  current  application window, e.g. "window.foo =
      * window.open(url);". In those cases, you can open the window using  "var=foo". </li>
      * </ul>
-     * 
-     * 
      * 
      * <p> If no window locator prefix is provided, we'll try to guess what you mean like this:</p>
      * 
@@ -15630,7 +15802,8 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Sets the threshold for browser-side logging messages; log messages beneath this threshold will be discarded.
+     * Sets the threshold for browser-side logging messages; log messages beneath this threshold will be discarded. 
+     * 
      * Valid logLevel strings are: "debug", "info", "warn", "error" or "off". To see the browser logs, you need to
      * either show the log window in GUI mode, or enable browser-side logging in Selenium RC.
      * 
@@ -15646,12 +15819,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Sets the threshold for browser-side logging messages; log messages beneath this threshold will be discarded.
+     * Sets the threshold for browser-side logging messages; log messages beneath this threshold will be discarded. 
+     * 
      * Valid logLevel strings are: "debug", "info", "warn", "error" or "off". To see the browser logs, you need to
      * either show the log window in GUI mode, or enable browser-side logging in Selenium RC.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $logLevel  one of the following: "debug", "info", "warn", "error" or "off"
      * 
@@ -15677,8 +15852,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Moves the text cursor to the specified position in the given input element or textarea. This method will fail if
-     * the specified element isn't an input element or textarea.
+     * Moves the text cursor to the specified position in the given input element or textarea. 
+     * 
+     * This method will fail if the specified element isn't an input element or textarea.
      * 
      * @param string   $locator   an element locator pointing to an input element or textarea (see
      *                            {@link doc_Element_Locators})
@@ -15696,11 +15872,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Moves the text cursor to the specified position in the given input element or textarea. This method will fail if
-     * the specified element isn't an input element or textarea.
+     * Moves the text cursor to the specified position in the given input element or textarea. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * This method will fail if the specified element isn't an input element or textarea.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator   an element locator pointing to an input element or textarea (see
      *                            {@link doc_Element_Locators})
@@ -15718,7 +15896,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Configure the number of pixels between "mousemove" events during dragAndDrop commands (default=10).
+     * Configure the number of pixels between "mousemove" events during dragAndDrop commands (default=10). 
      * 
      * <p>Setting this value to 0 means that we'll send a "mousemove" event to every single pixel in between the start
      * location and the end location; that can be very slow, and may cause some browsers to force the JavaScript to
@@ -15739,7 +15917,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Configure the number of pixels between "mousemove" events during dragAndDrop commands (default=10).
+     * Configure the number of pixels between "mousemove" events during dragAndDrop commands (default=10). 
      * 
      * <p>Setting this value to 0 means that we'll send a "mousemove" event to every single pixel in between the start
      * location and the end location; that can be very slow, and may cause some browsers to force the JavaScript to
@@ -15748,8 +15926,9 @@ trait SeleniumTestCaseDoc
      * <p>If the mouse speed is greater than the distance between the two dragged objects, we'll just send one
      * "mousemove" at the start location and then one final one at the end location.</p>
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $pixels  the number of pixels between "mousemove" events
      * 
@@ -15763,8 +15942,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Set execution speed (i.e., set the millisecond length of a delay which will follow each selenium operation). By
-     * default, there is no such delay, i.e., the delay is 0 milliseconds.
+     * Set execution speed (i.e., set the millisecond length of a delay which will follow each selenium operation). 
+     * 
+     * By default, there is no such delay, i.e., the delay is 0 milliseconds.
      * 
      * @param string   $value  the number of milliseconds to pause after operation
      * 
@@ -15778,11 +15958,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Set execution speed (i.e., set the millisecond length of a delay which will follow each selenium operation). By
-     * default, there is no such delay, i.e., the delay is 0 milliseconds.
+     * Set execution speed (i.e., set the millisecond length of a delay which will follow each selenium operation). 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * By default, there is no such delay, i.e., the delay is 0 milliseconds.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $value  the number of milliseconds to pause after operation
      * 
@@ -15810,8 +15992,9 @@ trait SeleniumTestCaseDoc
     /**
      * Press the shift key and hold it down until doShiftUp() is called or a new page is loaded.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -15837,8 +16020,9 @@ trait SeleniumTestCaseDoc
     /**
      * Release the shift key.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @return  void
      * 
@@ -15850,10 +16034,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Kills the running Selenium Server and all browser sessions. After you run this command, you will no longer be
-     * able to send commands to the server; you can't remotely start the server once it has been stopped. Normally you
-     * should prefer to run the "stop" command, which terminates the current browser session, rather than shutting down
-     * the entire server.
+     * Kills the running Selenium Server and all browser sessions. 
+     * 
+     * After you run this command, you will no longer be able to send commands to the server; you can't remotely start
+     * the server once it has been stopped. Normally you should prefer to run the "stop" command, which terminates the
+     * current browser session, rather than shutting down the entire server.
      * 
      * @return  void
      */
@@ -15877,8 +16062,9 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Submit the specified form. This is particularly useful for forms without submit buttons, e.g. single-input
-     * "Search" forms.
+     * Submit the specified form. 
+     * 
+     * This is particularly useful for forms without submit buttons, e.g. single-input "Search" forms.
      * 
      * @param string   $formLocator  an element locator for the form you want to submit (see
      *                               {@link doc_Element_Locators})
@@ -15893,11 +16079,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Submit the specified form. This is particularly useful for forms without submit buttons, e.g. single-input
-     * "Search" forms.
+     * Submit the specified form. 
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * This is particularly useful for forms without submit buttons, e.g. single-input "Search" forms.
+     * 
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $formLocator  an element locator for the form you want to submit (see
      *                               {@link doc_Element_Locators})
@@ -15912,7 +16100,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Sets the value of an input field, as though you typed it in.
+     * Sets the value of an input field, as though you typed it in. 
      * 
      * <p>Can also be used to set the value of combo boxes, check boxes, etc. In these cases, value should be the value
      * of the option selected, not the visible text.</p>
@@ -15931,13 +16119,14 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Sets the value of an input field, as though you typed it in.
+     * Sets the value of an input field, as though you typed it in. 
      * 
      * <p>Can also be used to set the value of combo boxes, check boxes, etc. In these cases, value should be the value
      * of the option selected, not the visible text.</p>
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -15953,7 +16142,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Simulates keystroke events on the specified element, as though you typed the value key-by-key.
+     * Simulates keystroke events on the specified element, as though you typed the value key-by-key. 
      * 
      * <p>This is a convenience method for calling keyDown, keyUp, keyPress for every character in the specified
      * string; this is useful for dynamic UI widgets (like auto-completing combo boxes) that require explicit key
@@ -15981,7 +16170,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Simulates keystroke events on the specified element, as though you typed the value key-by-key.
+     * Simulates keystroke events on the specified element, as though you typed the value key-by-key. 
      * 
      * <p>This is a convenience method for calling keyDown, keyUp, keyPress for every character in the specified
      * string; this is useful for dynamic UI widgets (like auto-completing combo boxes) that require explicit key
@@ -15995,8 +16184,9 @@ trait SeleniumTestCaseDoc
      * <p>In some cases, you may need to use the simple "type" command to set the value of the field and then the
      * "typeKeys" command to send the keystroke events corresponding to what you just typed.</p>
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -16012,7 +16202,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Uncheck a toggle-button (checkbox/radio)
+     * Uncheck a toggle-button (checkbox/radio).
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -16027,10 +16217,11 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Uncheck a toggle-button (checkbox/radio)
+     * Uncheck a toggle-button (checkbox/radio).
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $locator  an element locator 
      *                           (see {@link doc_Element_Locators})
@@ -16070,8 +16261,9 @@ trait SeleniumTestCaseDoc
     /**
      * Allows choice of one of the available libraries.
      * 
-     * <p><b>Note:</b> After execution of this action, Selenium wait for a new page to load (see
-     * {@link waitForPageToLoad})</p>
+     * <h4>Notes:</h4>
+     * 
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
      * 
      * @param string   $libraryName  name of the desired library Only the following three can be chosen:
      *                               
@@ -16094,12 +16286,13 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Runs the specified JavaScript snippet repeatedly until it evaluates to "true". The snippet may have multiple
-     * lines, but only the result of the last line will be considered.
+     * Runs the specified JavaScript snippet repeatedly until it evaluates to "true". 
+     * 
+     * The snippet may have multiple lines, but only the result of the last line will be considered.
      * 
      * <p>Note that, by default, the snippet will be run in the runner's test window, not in the window of your
      * application. To get the window of your application, you can use the JavaScript snippet
-     * [<b>selenium.browserbot.getCurrentWindow()</b>], and then run your JavaScript in there</p>
+     * [<b>selenium.browserbot.getCurrentWindow()</b>], and then run your JavaScript in there</p>.
      * 
      * @param string   $script   the JavaScript snippet to run
      * @param string   $timeout  a timeout in milliseconds, after which this command will return with an error
@@ -16112,7 +16305,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Waits for a new frame to load.
+     * Waits for a new frame to load. 
      * 
      * <p>Selenium constantly keeps track of new pages and frames loading, and sets a "newPageLoaded" flag when it
      * first notices a page load.</p> See waitForPageToLoad for more information.
@@ -16128,7 +16321,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Waits for a new page to load.
+     * Waits for a new page to load. 
      * 
      * <p>You can use this command instead of the "AndWait" suffixes, "clickAndWait", "selectAndWait", "typeAndWait"
      * etc. (which are only available in the JS API).</p>
@@ -16165,7 +16358,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Gives focus to the currently selected window
+     * Gives focus to the currently selected window.
      * 
      * @return  void
      */
@@ -16175,7 +16368,7 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Resize currently selected window to take up the entire screen
+     * Resize currently selected window to take up the entire screen.
      * 
      * @return  void
      */
