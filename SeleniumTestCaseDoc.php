@@ -717,7 +717,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -746,7 +746,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -775,7 +775,7 @@ trait SeleniumTestCaseDoc
     /**
      * Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * @return  bool  true if there is an alert
      * 
@@ -795,7 +795,7 @@ trait SeleniumTestCaseDoc
     /**
      * Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Stored value:</h4>
      * 
@@ -822,7 +822,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -851,7 +851,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -880,7 +880,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Expected value/condition:</h4>
      * 
@@ -910,7 +910,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has an alert occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Expected value/condition:</h4>
      * 
@@ -3634,7 +3634,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -3663,7 +3663,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -3692,7 +3692,7 @@ trait SeleniumTestCaseDoc
     /**
      * Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * @return  bool  true if there is a pending confirmation
      * 
@@ -3712,7 +3712,7 @@ trait SeleniumTestCaseDoc
     /**
      * Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Stored value:</h4>
      * 
@@ -3739,7 +3739,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -3768,7 +3768,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -3797,7 +3797,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Expected value/condition:</h4>
      * 
@@ -3827,7 +3827,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has confirm() been called? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Expected value/condition:</h4>
      * 
@@ -13082,7 +13082,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -13111,7 +13111,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -13140,7 +13140,7 @@ trait SeleniumTestCaseDoc
     /**
      * Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * @return  bool  true if there is a pending prompt
      * 
@@ -13160,7 +13160,7 @@ trait SeleniumTestCaseDoc
     /**
      * Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Stored value:</h4>
      * 
@@ -13187,7 +13187,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -13216,7 +13216,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Value to verify:</h4>
      * 
@@ -13245,7 +13245,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Expected value/condition:</h4>
      * 
@@ -13275,7 +13275,7 @@ trait SeleniumTestCaseDoc
     /**
      * Assertion: Has a prompt occurred? 
      * 
-     * <p> This function never throws an exception </p>.
+     * <p> This function never throws an exception .</p>
      * 
      * <h4>Expected value/condition:</h4>
      * 
@@ -15703,7 +15703,7 @@ trait SeleniumTestCaseDoc
      * frame with "index=2".
      * 
      * <p>You may also use a DOM expression to identify the frame you want directly, like this:
-     * [<b>dom=frames["main"].frames["subframe"]</b>] </p>.
+     * [<b>dom=frames["main"].frames["subframe"]</b>] .</p>
      * 
      * @param string   $locator  an element locator identifying a frame or iframe (see
      *                           {@link $doc_Element_Locators Element Locators})
@@ -16316,7 +16316,7 @@ trait SeleniumTestCaseDoc
      * 
      * <p>Note that, by default, the snippet will be run in the runner's test window, not in the window of your
      * application. To get the window of your application, you can use the JavaScript snippet
-     * [<b>selenium.browserbot.getCurrentWindow()</b>], and then run your JavaScript in there</p>.
+     * [<b>selenium.browserbot.getCurrentWindow()</b>], and then run your JavaScript in there.</p>
      * 
      * @param string   $script   the JavaScript snippet to run
      * @param string   $timeout  a timeout in milliseconds, after which this command will return with an error

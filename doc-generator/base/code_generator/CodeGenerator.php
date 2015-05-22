@@ -575,9 +575,16 @@ class CodeGenerator
      */
     private function _addEndDotIfNotExist($text)
     {
+        $endSymbols = '[' . join('', Helper::$endOfSentence) . ']'; // symbol class like: [.!?]
+        // find text like: "end</p>", "end </p>", "end  </p>"
+        $regExpDotBeforeClosingTag = '/(?<!' . $endSymbols . '|' . $endSymbols . '\s|' . $endSymbols . '\s\s)(?P<tag><\/\w+>)\s*\Z/';
+
         $testedText = trim(strip_tags($text));
         if ($testedText && !Helper::hasPostfix(Helper::$endOfSentence, $testedText)) {
-            $text = rtrim($text) . '.';
+            $postfix = preg_match($regExpDotBeforeClosingTag, $text, $m)
+                ? $m['tag']
+                : '';
+            $text    = Helper::cutPostfix($postfix, rtrim($text)) . '.' . $postfix;
         }
         return $text;
     }
