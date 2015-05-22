@@ -17,7 +17,7 @@
  */
 trait SeleniumTestCaseDoc
 {
-    // private variables doc_* only for separate phpDoc by section (and for links)
+    private $dummy; //variables doc_* only for separate phpDoc by section (and for links)
 
     /**
      * <h3>Element Locators</h3>
