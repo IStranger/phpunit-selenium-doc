@@ -84,12 +84,12 @@ foreach ($methodsByBaseName as $methodBaseName => $methodsGroup) {
                 $linkDescription = 'Related Assertion';
                 break;
         }
-        $seeLinks[$method->name] = $linkDescription;
+        $seeLinks[$method->getNameFQSEN()] = $linkDescription;
     }
 
     foreach ($methodsGroup as $method) {
         $method->seeLinks += $seeLinks;
-        $method->seeLinks = Helper::filterByKeys($method->seeLinks, null, [$method->name]); // delete link to self
+        $method->seeLinks = Helper::filterByKeys($method->seeLinks, null, [$method->getNameFQSEN()]); // delete link to self
     }
 }
 

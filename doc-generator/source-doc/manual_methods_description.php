@@ -40,7 +40,8 @@ TEXT;
 $argument              = Argument::createNew();
 $argument->name        = 'selectLocator';
 $argument->type        = Argument::DEFAULT_TYPE;
-$argument->description = 'an element locator identifying a drop-down menu (see {@link doc_Element_Locators})';
+$argument->description = 'an element locator identifying a drop-down menu (see ' .
+    CodeGenerator::linkToProperty('doc_Element_Locators', '', 'Element Locators') . ')';
 $mSelect->addArgument($argument);
 
 // second argument
@@ -59,50 +60,6 @@ $methods[] = $mSelect;
 $methods[] = $generator->createNewMethodWithName($mSelect, 'selectAndWait');
 
 
-/*
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// ---- storeCssCount           - DEPRECATED!
-// ---- http://software-testing-tutorials-automation.blogspot.ru/2013/07/selenium-storecsscount-and.html
-$mStoreCssCount              = Method::createNew();
-$mStoreCssCount->name        = 'storeCssCount';
-$mStoreCssCount->type        = Method::determineTypeByName($mStoreCssCount->name);
-$mStoreCssCount->subtype     = Method::determineSubtypeByName($mStoreCssCount->name);
-$mStoreCssCount->description = <<<TEXT
-Gets number of CSS count for specified elements.
-TEXT;
-
-// first argument
-$argument              = Argument::createNew();
-$argument->name        = 'locator';
-$argument->type        = Argument::DEFAULT_TYPE;
-$argument->description = 'an element locator identifying a targeted node (see {@link doc_Element_Locators})';
-$mStoreCssCount->addArgument($argument);
-
-// second argument
-$argument              = Argument::createNew();
-$argument->name        = 'variableName';
-$argument->type        = Argument::DEFAULT_TYPE;
-$argument->description = 'the name of a variable in which the result is to be stored (see {@link doc_Stored_Variables})';
-$mStoreCssCount->addArgument($argument);
-
-// return value
-$mStoreCssCount->returnValue              = ReturnValue::createNew();
-$mStoreCssCount->returnValue->type        = ReturnValue::TYPE_VOID;
-$mStoreCssCount->returnValue->description = 'Number of elements found on page (corresponding to the specified locator)';
-
-// add to common method list (method and its derivative methods)
-$methods[] = $mStoreCssCount;
-$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'assertCssCount');
-$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'assertNotCssCount');
-$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'getCssCount');
-$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'verifyCssCount');
-$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'verifyNotCssCount');
-$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'waitForCssCount');
-$methods[] = $generator->createNewMethodWithName($mStoreCssCount, 'waitForNotCssCount');
-*/
-
-
 // --------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------
 // ---- attachFile
@@ -116,7 +73,8 @@ $mAttachFile->description = 'Sets a file input (upload) field to the file listed
 $argument              = Argument::createNew();
 $argument->name        = 'fieldLocator';
 $argument->type        = Argument::DEFAULT_TYPE;
-$argument->description = 'an element locator (see {@link doc_Element_Locators})';
+$argument->description = 'an element locator (see ' .
+    CodeGenerator::linkToProperty('doc_Element_Locators', '', 'Element Locators') . ')';
 $mAttachFile->addArgument($argument);
 
 // second argument
