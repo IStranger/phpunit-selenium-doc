@@ -25,4 +25,5 @@ class WebTestCase extends CWebTestCase // CWebTestCase extends PHPUnit_Extension
 # Resources
 
 + Original phpunit class with minimal documentation: [SeleniumTestCase.php](https://github.com/giorgiosironi/phpunit-selenium/blob/master/PHPUnit/Extensions/SeleniumTestCase.php#L46)
++ HTML documentation(generated from this class): [SeleniumTestCaseDoc.html](http://istranger.github.io/phpunit-selenium-doc/a00001.html)
 + Description of [selenium core commands](http://release.seleniumhq.org/selenium-core/1.0.1/reference.html)
