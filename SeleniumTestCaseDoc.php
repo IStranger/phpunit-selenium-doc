@@ -11,7 +11,7 @@
  *
  *
  * @author  G.Azamat <m@fx4web.com>
- * @date    2015-05-21
+ * @date    2015-05-22
  * @link    http://fx4.ru/
  * @link    https://github.com/IStranger/phpunit-selenium-doc
  */
@@ -182,7 +182,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  addLocationStrategyAndWait  Related Action
+     * @see  addLocationStrategyAndWait()  Related Action
      */
     public function addLocationStrategy($strategyName, $functionDefinition)
     {
@@ -206,7 +206,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $strategyName        the name of the strategy to define; this should use only letters [a-zA-Z]
      *                                      with no spaces  or other punctuation.
@@ -215,7 +215,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  addLocationStrategy  Base method, from which has been generated (automatically) current method
+     * @see  addLocationStrategy()  Base method, from which has been generated (automatically) current method
      */
     public function addLocationStrategyAndWait($strategyName, $functionDefinition)
     {
@@ -235,7 +235,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  addScriptAndWait  Related Action
+     * @see  addScriptAndWait()  Related Action
      */
     public function addScript($scriptContent, $scriptTagId)
     {
@@ -251,7 +251,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $scriptContent  the Javascript content of the script to add
      * @param string   $scriptTagId    (optional) the id of the new script tag. If specified, and an element with this
@@ -259,7 +259,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  addScript  Base method, from which has been generated (automatically) current method
+     * @see  addScript()  Base method, from which has been generated (automatically) current method
      */
     public function addScriptAndWait($scriptContent, $scriptTagId)
     {
@@ -267,16 +267,17 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Add a selection to the set of selected options in a multi-select element using an option locator. @see #doSelect
-     * for details of option locators.
+     * Add a selection to the set of selected options in a multi-select element using an option locator. 
+     * 
+     * See {@link select()} for details of option locators.
      * 
      * @param string   $locator        an element locator identifying a multi-select box (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $optionLocator  an option locator (a label by default)
      * 
      * @return  void
      * 
-     * @see  addSelectionAndWait  Related Action
+     * @see  addSelectionAndWait()  Related Action
      */
     public function addSelection($locator, $optionLocator)
     {
@@ -284,20 +285,21 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Add a selection to the set of selected options in a multi-select element using an option locator. @see #doSelect
-     * for details of option locators.
+     * Add a selection to the set of selected options in a multi-select element using an option locator. 
+     * 
+     * See {@link select()} for details of option locators.
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator        an element locator identifying a multi-select box (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $optionLocator  an option locator (a label by default)
      * 
      * @return  void
      * 
-     * @see  addSelection  Base method, from which has been generated (automatically) current method
+     * @see  addSelection()  Base method, from which has been generated (automatically) current method
      */
     public function addSelectionAndWait($locator, $optionLocator)
     {
@@ -316,7 +318,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  allowNativeXpathAndWait  Related Action
+     * @see  allowNativeXpathAndWait()  Related Action
      */
     public function allowNativeXpath($allow)
     {
@@ -332,14 +334,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $allow  boolean, true means we'll prefer to use native XPath; false means we'll only use JS
      *                         XPath
      * 
      * @return  void
      * 
-     * @see  allowNativeXpath  Base method, from which has been generated (automatically) current method
+     * @see  allowNativeXpath()  Base method, from which has been generated (automatically) current method
      */
     public function allowNativeXpathAndWait($allow)
     {
@@ -351,7 +353,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  altKeyDownAndWait  Related Action
+     * @see  altKeyDownAndWait()  Related Action
      */
     public function altKeyDown()
     {
@@ -363,11 +365,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  altKeyDown  Base method, from which has been generated (automatically) current method
+     * @see  altKeyDown()  Base method, from which has been generated (automatically) current method
      */
     public function altKeyDownAndWait()
     {
@@ -379,7 +381,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  altKeyUpAndWait  Related Action
+     * @see  altKeyUpAndWait()  Related Action
      */
     public function altKeyUp()
     {
@@ -391,11 +393,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  altKeyUp  Base method, from which has been generated (automatically) current method
+     * @see  altKeyUp()  Base method, from which has been generated (automatically) current method
      */
     public function altKeyUpAndWait()
     {
@@ -434,20 +436,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyAlert}).</p>
+     * {@link verifyAlert()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAlert       Base method, from which has been generated (automatically) current method
-     * @see  assertNotAlert   Related Assertion
-     * @see  getAlert         Related Accessor
-     * @see  verifyAlert      Related Assertion
-     * @see  verifyNotAlert   Related Assertion
-     * @see  waitForAlert     Related Assertion
-     * @see  waitForNotAlert  Related Assertion
+     * @see  storeAlert()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotAlert()   Related Assertion
+     * @see  getAlert()         Related Accessor
+     * @see  verifyAlert()      Related Assertion
+     * @see  verifyNotAlert()   Related Assertion
+     * @see  waitForAlert()     Related Assertion
+     * @see  waitForNotAlert()  Related Assertion
      */
     public function assertAlert($pattern)
     {
@@ -473,20 +475,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotAlert}).</p>
+     * {@link verifyNotAlert()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAlert       Base method, from which has been generated (automatically) current method
-     * @see  assertAlert      Related Assertion
-     * @see  getAlert         Related Accessor
-     * @see  verifyAlert      Related Assertion
-     * @see  verifyNotAlert   Related Assertion
-     * @see  waitForAlert     Related Assertion
-     * @see  waitForNotAlert  Related Assertion
+     * @see  storeAlert()       Base method, from which has been generated (automatically) current method
+     * @see  assertAlert()      Related Assertion
+     * @see  getAlert()         Related Accessor
+     * @see  verifyAlert()      Related Assertion
+     * @see  verifyNotAlert()   Related Assertion
+     * @see  waitForAlert()     Related Assertion
+     * @see  waitForNotAlert()  Related Assertion
      */
     public function assertNotAlert($pattern)
     {
@@ -507,13 +509,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  The message of the most recent JavaScript alert
      * 
-     * @see  storeAlert       Base method, from which has been generated (automatically) current method
-     * @see  assertAlert      Related Assertion
-     * @see  assertNotAlert   Related Assertion
-     * @see  verifyAlert      Related Assertion
-     * @see  verifyNotAlert   Related Assertion
-     * @see  waitForAlert     Related Assertion
-     * @see  waitForNotAlert  Related Assertion
+     * @see  storeAlert()       Base method, from which has been generated (automatically) current method
+     * @see  assertAlert()      Related Assertion
+     * @see  assertNotAlert()   Related Assertion
+     * @see  verifyAlert()      Related Assertion
+     * @see  verifyNotAlert()   Related Assertion
+     * @see  waitForAlert()     Related Assertion
+     * @see  waitForNotAlert()  Related Assertion
      */
     public function getAlert()
     {
@@ -534,20 +536,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>The message of the most recent JavaScript alert (see {@link doc_Stored_Variables})</p>
+     * <p>The message of the most recent JavaScript alert (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertAlert      Related Assertion
-     * @see  assertNotAlert   Related Assertion
-     * @see  getAlert         Related Accessor
-     * @see  verifyAlert      Related Assertion
-     * @see  verifyNotAlert   Related Assertion
-     * @see  waitForAlert     Related Assertion
-     * @see  waitForNotAlert  Related Assertion
+     * @see  assertAlert()      Related Assertion
+     * @see  assertNotAlert()   Related Assertion
+     * @see  getAlert()         Related Accessor
+     * @see  verifyAlert()      Related Assertion
+     * @see  verifyNotAlert()   Related Assertion
+     * @see  waitForAlert()     Related Assertion
+     * @see  waitForNotAlert()  Related Assertion
      */
     public function storeAlert($variableName)
     {
@@ -573,20 +575,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertAlert}).</p>
+     * {@link assertAlert()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAlert       Base method, from which has been generated (automatically) current method
-     * @see  assertAlert      Related Assertion
-     * @see  assertNotAlert   Related Assertion
-     * @see  getAlert         Related Accessor
-     * @see  verifyNotAlert   Related Assertion
-     * @see  waitForAlert     Related Assertion
-     * @see  waitForNotAlert  Related Assertion
+     * @see  storeAlert()       Base method, from which has been generated (automatically) current method
+     * @see  assertAlert()      Related Assertion
+     * @see  assertNotAlert()   Related Assertion
+     * @see  getAlert()         Related Accessor
+     * @see  verifyNotAlert()   Related Assertion
+     * @see  waitForAlert()     Related Assertion
+     * @see  waitForNotAlert()  Related Assertion
      */
     public function verifyAlert($pattern)
     {
@@ -612,20 +614,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotAlert}).</p>
+     * {@link assertNotAlert()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAlert       Base method, from which has been generated (automatically) current method
-     * @see  assertAlert      Related Assertion
-     * @see  assertNotAlert   Related Assertion
-     * @see  getAlert         Related Accessor
-     * @see  verifyAlert      Related Assertion
-     * @see  waitForAlert     Related Assertion
-     * @see  waitForNotAlert  Related Assertion
+     * @see  storeAlert()       Base method, from which has been generated (automatically) current method
+     * @see  assertAlert()      Related Assertion
+     * @see  assertNotAlert()   Related Assertion
+     * @see  getAlert()         Related Accessor
+     * @see  verifyAlert()      Related Assertion
+     * @see  waitForAlert()     Related Assertion
+     * @see  waitForNotAlert()  Related Assertion
      */
     public function verifyNotAlert($pattern)
     {
@@ -654,18 +656,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAlert       Base method, from which has been generated (automatically) current method
-     * @see  assertAlert      Related Assertion
-     * @see  assertNotAlert   Related Assertion
-     * @see  getAlert         Related Accessor
-     * @see  verifyAlert      Related Assertion
-     * @see  verifyNotAlert   Related Assertion
-     * @see  waitForNotAlert  Related Assertion
+     * @see  storeAlert()       Base method, from which has been generated (automatically) current method
+     * @see  assertAlert()      Related Assertion
+     * @see  assertNotAlert()   Related Assertion
+     * @see  getAlert()         Related Accessor
+     * @see  verifyAlert()      Related Assertion
+     * @see  verifyNotAlert()   Related Assertion
+     * @see  waitForNotAlert()  Related Assertion
      */
     public function waitForAlert($pattern)
     {
@@ -694,18 +696,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAlert      Base method, from which has been generated (automatically) current method
-     * @see  assertAlert     Related Assertion
-     * @see  assertNotAlert  Related Assertion
-     * @see  getAlert        Related Accessor
-     * @see  verifyAlert     Related Assertion
-     * @see  verifyNotAlert  Related Assertion
-     * @see  waitForAlert    Related Assertion
+     * @see  storeAlert()      Base method, from which has been generated (automatically) current method
+     * @see  assertAlert()     Related Assertion
+     * @see  assertNotAlert()  Related Assertion
+     * @see  getAlert()        Related Accessor
+     * @see  verifyAlert()     Related Assertion
+     * @see  verifyNotAlert()  Related Assertion
+     * @see  waitForAlert()    Related Assertion
      */
     public function waitForNotAlert($pattern)
     {
@@ -724,17 +726,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyAlertNotPresent}).</p>
+     * {@link verifyAlertNotPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storeAlertPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertAlertPresent      Related Assertion
-     * @see  isAlertPresent          Related Accessor
-     * @see  verifyAlertNotPresent   Related Assertion
-     * @see  verifyAlertPresent      Related Assertion
-     * @see  waitForAlertNotPresent  Related Assertion
-     * @see  waitForAlertPresent     Related Assertion
+     * @see  storeAlertPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertAlertPresent()      Related Assertion
+     * @see  isAlertPresent()          Related Accessor
+     * @see  verifyAlertNotPresent()   Related Assertion
+     * @see  verifyAlertPresent()      Related Assertion
+     * @see  waitForAlertNotPresent()  Related Assertion
+     * @see  waitForAlertPresent()     Related Assertion
      */
     public function assertAlertNotPresent()
     {
@@ -753,17 +755,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyAlertPresent}).</p>
+     * {@link verifyAlertPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storeAlertPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertAlertNotPresent   Related Assertion
-     * @see  isAlertPresent          Related Accessor
-     * @see  verifyAlertNotPresent   Related Assertion
-     * @see  verifyAlertPresent      Related Assertion
-     * @see  waitForAlertNotPresent  Related Assertion
-     * @see  waitForAlertPresent     Related Assertion
+     * @see  storeAlertPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertAlertNotPresent()   Related Assertion
+     * @see  isAlertPresent()          Related Accessor
+     * @see  verifyAlertNotPresent()   Related Assertion
+     * @see  verifyAlertPresent()      Related Assertion
+     * @see  waitForAlertNotPresent()  Related Assertion
+     * @see  waitForAlertPresent()     Related Assertion
      */
     public function assertAlertPresent()
     {
@@ -777,13 +779,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  bool  true if there is an alert
      * 
-     * @see  storeAlertPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertAlertNotPresent   Related Assertion
-     * @see  assertAlertPresent      Related Assertion
-     * @see  verifyAlertNotPresent   Related Assertion
-     * @see  verifyAlertPresent      Related Assertion
-     * @see  waitForAlertNotPresent  Related Assertion
-     * @see  waitForAlertPresent     Related Assertion
+     * @see  storeAlertPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertAlertNotPresent()   Related Assertion
+     * @see  assertAlertPresent()      Related Assertion
+     * @see  verifyAlertNotPresent()   Related Assertion
+     * @see  verifyAlertPresent()      Related Assertion
+     * @see  waitForAlertNotPresent()  Related Assertion
+     * @see  waitForAlertPresent()     Related Assertion
      */
     public function isAlertPresent()
     {
@@ -797,20 +799,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if there is an alert (see {@link doc_Stored_Variables})</p>
+     * <p>true if there is an alert (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertAlertNotPresent   Related Assertion
-     * @see  assertAlertPresent      Related Assertion
-     * @see  isAlertPresent          Related Accessor
-     * @see  verifyAlertNotPresent   Related Assertion
-     * @see  verifyAlertPresent      Related Assertion
-     * @see  waitForAlertNotPresent  Related Assertion
-     * @see  waitForAlertPresent     Related Assertion
+     * @see  assertAlertNotPresent()   Related Assertion
+     * @see  assertAlertPresent()      Related Assertion
+     * @see  isAlertPresent()          Related Accessor
+     * @see  verifyAlertNotPresent()   Related Assertion
+     * @see  verifyAlertPresent()      Related Assertion
+     * @see  waitForAlertNotPresent()  Related Assertion
+     * @see  waitForAlertPresent()     Related Assertion
      */
     public function storeAlertPresent($variableName)
     {
@@ -829,17 +831,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertAlertNotPresent}).</p>
+     * {@link assertAlertNotPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storeAlertPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertAlertNotPresent   Related Assertion
-     * @see  assertAlertPresent      Related Assertion
-     * @see  isAlertPresent          Related Accessor
-     * @see  verifyAlertPresent      Related Assertion
-     * @see  waitForAlertNotPresent  Related Assertion
-     * @see  waitForAlertPresent     Related Assertion
+     * @see  storeAlertPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertAlertNotPresent()   Related Assertion
+     * @see  assertAlertPresent()      Related Assertion
+     * @see  isAlertPresent()          Related Accessor
+     * @see  verifyAlertPresent()      Related Assertion
+     * @see  waitForAlertNotPresent()  Related Assertion
+     * @see  waitForAlertPresent()     Related Assertion
      */
     public function verifyAlertNotPresent()
     {
@@ -858,17 +860,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertAlertPresent}).</p>
+     * {@link assertAlertPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storeAlertPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertAlertNotPresent   Related Assertion
-     * @see  assertAlertPresent      Related Assertion
-     * @see  isAlertPresent          Related Accessor
-     * @see  verifyAlertNotPresent   Related Assertion
-     * @see  waitForAlertNotPresent  Related Assertion
-     * @see  waitForAlertPresent     Related Assertion
+     * @see  storeAlertPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertAlertNotPresent()   Related Assertion
+     * @see  assertAlertPresent()      Related Assertion
+     * @see  isAlertPresent()          Related Accessor
+     * @see  verifyAlertNotPresent()   Related Assertion
+     * @see  waitForAlertNotPresent()  Related Assertion
+     * @see  waitForAlertPresent()     Related Assertion
      */
     public function verifyAlertPresent()
     {
@@ -892,13 +894,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storeAlertPresent      Base method, from which has been generated (automatically) current method
-     * @see  assertAlertNotPresent  Related Assertion
-     * @see  assertAlertPresent     Related Assertion
-     * @see  isAlertPresent         Related Accessor
-     * @see  verifyAlertNotPresent  Related Assertion
-     * @see  verifyAlertPresent     Related Assertion
-     * @see  waitForAlertPresent    Related Assertion
+     * @see  storeAlertPresent()      Base method, from which has been generated (automatically) current method
+     * @see  assertAlertNotPresent()  Related Assertion
+     * @see  assertAlertPresent()     Related Assertion
+     * @see  isAlertPresent()         Related Accessor
+     * @see  verifyAlertNotPresent()  Related Assertion
+     * @see  verifyAlertPresent()     Related Assertion
+     * @see  waitForAlertPresent()    Related Assertion
      */
     public function waitForAlertNotPresent()
     {
@@ -922,13 +924,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storeAlertPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertAlertNotPresent   Related Assertion
-     * @see  assertAlertPresent      Related Assertion
-     * @see  isAlertPresent          Related Accessor
-     * @see  verifyAlertNotPresent   Related Assertion
-     * @see  verifyAlertPresent      Related Assertion
-     * @see  waitForAlertNotPresent  Related Assertion
+     * @see  storeAlertPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertAlertNotPresent()   Related Assertion
+     * @see  assertAlertPresent()      Related Assertion
+     * @see  isAlertPresent()          Related Accessor
+     * @see  verifyAlertNotPresent()   Related Assertion
+     * @see  verifyAlertPresent()      Related Assertion
+     * @see  waitForAlertNotPresent()  Related Assertion
      */
     public function waitForAlertPresent()
     {
@@ -947,20 +949,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyAllButtons}).</p>
+     * {@link verifyAllButtons()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllButtons       Base method, from which has been generated (automatically) current method
-     * @see  assertNotAllButtons   Related Assertion
-     * @see  getAllButtons         Related Accessor
-     * @see  verifyAllButtons      Related Assertion
-     * @see  verifyNotAllButtons   Related Assertion
-     * @see  waitForAllButtons     Related Assertion
-     * @see  waitForNotAllButtons  Related Assertion
+     * @see  storeAllButtons()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotAllButtons()   Related Assertion
+     * @see  getAllButtons()         Related Accessor
+     * @see  verifyAllButtons()      Related Assertion
+     * @see  verifyNotAllButtons()   Related Assertion
+     * @see  waitForAllButtons()     Related Assertion
+     * @see  waitForNotAllButtons()  Related Assertion
      */
     public function assertAllButtons($pattern)
     {
@@ -979,20 +981,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotAllButtons}).</p>
+     * {@link verifyNotAllButtons()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllButtons       Base method, from which has been generated (automatically) current method
-     * @see  assertAllButtons      Related Assertion
-     * @see  getAllButtons         Related Accessor
-     * @see  verifyAllButtons      Related Assertion
-     * @see  verifyNotAllButtons   Related Assertion
-     * @see  waitForAllButtons     Related Assertion
-     * @see  waitForNotAllButtons  Related Assertion
+     * @see  storeAllButtons()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllButtons()      Related Assertion
+     * @see  getAllButtons()         Related Accessor
+     * @see  verifyAllButtons()      Related Assertion
+     * @see  verifyNotAllButtons()   Related Assertion
+     * @see  waitForAllButtons()     Related Assertion
+     * @see  waitForNotAllButtons()  Related Assertion
      */
     public function assertNotAllButtons($pattern)
     {
@@ -1006,13 +1008,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string[]  the IDs of all buttons on the page
      * 
-     * @see  storeAllButtons       Base method, from which has been generated (automatically) current method
-     * @see  assertAllButtons      Related Assertion
-     * @see  assertNotAllButtons   Related Assertion
-     * @see  verifyAllButtons      Related Assertion
-     * @see  verifyNotAllButtons   Related Assertion
-     * @see  waitForAllButtons     Related Assertion
-     * @see  waitForNotAllButtons  Related Assertion
+     * @see  storeAllButtons()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllButtons()      Related Assertion
+     * @see  assertNotAllButtons()   Related Assertion
+     * @see  verifyAllButtons()      Related Assertion
+     * @see  verifyNotAllButtons()   Related Assertion
+     * @see  waitForAllButtons()     Related Assertion
+     * @see  waitForNotAllButtons()  Related Assertion
      */
     public function getAllButtons()
     {
@@ -1026,20 +1028,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the IDs of all buttons on the page (see {@link doc_Stored_Variables})</p>
+     * <p>the IDs of all buttons on the page (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertAllButtons      Related Assertion
-     * @see  assertNotAllButtons   Related Assertion
-     * @see  getAllButtons         Related Accessor
-     * @see  verifyAllButtons      Related Assertion
-     * @see  verifyNotAllButtons   Related Assertion
-     * @see  waitForAllButtons     Related Assertion
-     * @see  waitForNotAllButtons  Related Assertion
+     * @see  assertAllButtons()      Related Assertion
+     * @see  assertNotAllButtons()   Related Assertion
+     * @see  getAllButtons()         Related Accessor
+     * @see  verifyAllButtons()      Related Assertion
+     * @see  verifyNotAllButtons()   Related Assertion
+     * @see  waitForAllButtons()     Related Assertion
+     * @see  waitForNotAllButtons()  Related Assertion
      */
     public function storeAllButtons($variableName)
     {
@@ -1058,20 +1060,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertAllButtons}).</p>
+     * {@link assertAllButtons()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllButtons       Base method, from which has been generated (automatically) current method
-     * @see  assertAllButtons      Related Assertion
-     * @see  assertNotAllButtons   Related Assertion
-     * @see  getAllButtons         Related Accessor
-     * @see  verifyNotAllButtons   Related Assertion
-     * @see  waitForAllButtons     Related Assertion
-     * @see  waitForNotAllButtons  Related Assertion
+     * @see  storeAllButtons()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllButtons()      Related Assertion
+     * @see  assertNotAllButtons()   Related Assertion
+     * @see  getAllButtons()         Related Accessor
+     * @see  verifyNotAllButtons()   Related Assertion
+     * @see  waitForAllButtons()     Related Assertion
+     * @see  waitForNotAllButtons()  Related Assertion
      */
     public function verifyAllButtons($pattern)
     {
@@ -1090,20 +1092,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotAllButtons}).</p>
+     * {@link assertNotAllButtons()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllButtons       Base method, from which has been generated (automatically) current method
-     * @see  assertAllButtons      Related Assertion
-     * @see  assertNotAllButtons   Related Assertion
-     * @see  getAllButtons         Related Accessor
-     * @see  verifyAllButtons      Related Assertion
-     * @see  waitForAllButtons     Related Assertion
-     * @see  waitForNotAllButtons  Related Assertion
+     * @see  storeAllButtons()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllButtons()      Related Assertion
+     * @see  assertNotAllButtons()   Related Assertion
+     * @see  getAllButtons()         Related Accessor
+     * @see  verifyAllButtons()      Related Assertion
+     * @see  waitForAllButtons()     Related Assertion
+     * @see  waitForNotAllButtons()  Related Assertion
      */
     public function verifyNotAllButtons($pattern)
     {
@@ -1125,18 +1127,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllButtons       Base method, from which has been generated (automatically) current method
-     * @see  assertAllButtons      Related Assertion
-     * @see  assertNotAllButtons   Related Assertion
-     * @see  getAllButtons         Related Accessor
-     * @see  verifyAllButtons      Related Assertion
-     * @see  verifyNotAllButtons   Related Assertion
-     * @see  waitForNotAllButtons  Related Assertion
+     * @see  storeAllButtons()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllButtons()      Related Assertion
+     * @see  assertNotAllButtons()   Related Assertion
+     * @see  getAllButtons()         Related Accessor
+     * @see  verifyAllButtons()      Related Assertion
+     * @see  verifyNotAllButtons()   Related Assertion
+     * @see  waitForNotAllButtons()  Related Assertion
      */
     public function waitForAllButtons($pattern)
     {
@@ -1158,18 +1160,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllButtons      Base method, from which has been generated (automatically) current method
-     * @see  assertAllButtons     Related Assertion
-     * @see  assertNotAllButtons  Related Assertion
-     * @see  getAllButtons        Related Accessor
-     * @see  verifyAllButtons     Related Assertion
-     * @see  verifyNotAllButtons  Related Assertion
-     * @see  waitForAllButtons    Related Assertion
+     * @see  storeAllButtons()      Base method, from which has been generated (automatically) current method
+     * @see  assertAllButtons()     Related Assertion
+     * @see  assertNotAllButtons()  Related Assertion
+     * @see  getAllButtons()        Related Accessor
+     * @see  verifyAllButtons()     Related Assertion
+     * @see  verifyNotAllButtons()  Related Assertion
+     * @see  waitForAllButtons()    Related Assertion
      */
     public function waitForNotAllButtons($pattern)
     {
@@ -1188,20 +1190,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyAllFields}).</p>
+     * {@link verifyAllFields()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllFields       Base method, from which has been generated (automatically) current method
-     * @see  assertNotAllFields   Related Assertion
-     * @see  getAllFields         Related Accessor
-     * @see  verifyAllFields      Related Assertion
-     * @see  verifyNotAllFields   Related Assertion
-     * @see  waitForAllFields     Related Assertion
-     * @see  waitForNotAllFields  Related Assertion
+     * @see  storeAllFields()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotAllFields()   Related Assertion
+     * @see  getAllFields()         Related Accessor
+     * @see  verifyAllFields()      Related Assertion
+     * @see  verifyNotAllFields()   Related Assertion
+     * @see  waitForAllFields()     Related Assertion
+     * @see  waitForNotAllFields()  Related Assertion
      */
     public function assertAllFields($pattern)
     {
@@ -1220,20 +1222,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotAllFields}).</p>
+     * {@link verifyNotAllFields()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllFields       Base method, from which has been generated (automatically) current method
-     * @see  assertAllFields      Related Assertion
-     * @see  getAllFields         Related Accessor
-     * @see  verifyAllFields      Related Assertion
-     * @see  verifyNotAllFields   Related Assertion
-     * @see  waitForAllFields     Related Assertion
-     * @see  waitForNotAllFields  Related Assertion
+     * @see  storeAllFields()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllFields()      Related Assertion
+     * @see  getAllFields()         Related Accessor
+     * @see  verifyAllFields()      Related Assertion
+     * @see  verifyNotAllFields()   Related Assertion
+     * @see  waitForAllFields()     Related Assertion
+     * @see  waitForNotAllFields()  Related Assertion
      */
     public function assertNotAllFields($pattern)
     {
@@ -1247,13 +1249,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string[]  the IDs of all field on the page
      * 
-     * @see  storeAllFields       Base method, from which has been generated (automatically) current method
-     * @see  assertAllFields      Related Assertion
-     * @see  assertNotAllFields   Related Assertion
-     * @see  verifyAllFields      Related Assertion
-     * @see  verifyNotAllFields   Related Assertion
-     * @see  waitForAllFields     Related Assertion
-     * @see  waitForNotAllFields  Related Assertion
+     * @see  storeAllFields()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllFields()      Related Assertion
+     * @see  assertNotAllFields()   Related Assertion
+     * @see  verifyAllFields()      Related Assertion
+     * @see  verifyNotAllFields()   Related Assertion
+     * @see  waitForAllFields()     Related Assertion
+     * @see  waitForNotAllFields()  Related Assertion
      */
     public function getAllFields()
     {
@@ -1267,20 +1269,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the IDs of all field on the page (see {@link doc_Stored_Variables})</p>
+     * <p>the IDs of all field on the page (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertAllFields      Related Assertion
-     * @see  assertNotAllFields   Related Assertion
-     * @see  getAllFields         Related Accessor
-     * @see  verifyAllFields      Related Assertion
-     * @see  verifyNotAllFields   Related Assertion
-     * @see  waitForAllFields     Related Assertion
-     * @see  waitForNotAllFields  Related Assertion
+     * @see  assertAllFields()      Related Assertion
+     * @see  assertNotAllFields()   Related Assertion
+     * @see  getAllFields()         Related Accessor
+     * @see  verifyAllFields()      Related Assertion
+     * @see  verifyNotAllFields()   Related Assertion
+     * @see  waitForAllFields()     Related Assertion
+     * @see  waitForNotAllFields()  Related Assertion
      */
     public function storeAllFields($variableName)
     {
@@ -1299,20 +1301,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertAllFields}).</p>
+     * {@link assertAllFields()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllFields       Base method, from which has been generated (automatically) current method
-     * @see  assertAllFields      Related Assertion
-     * @see  assertNotAllFields   Related Assertion
-     * @see  getAllFields         Related Accessor
-     * @see  verifyNotAllFields   Related Assertion
-     * @see  waitForAllFields     Related Assertion
-     * @see  waitForNotAllFields  Related Assertion
+     * @see  storeAllFields()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllFields()      Related Assertion
+     * @see  assertNotAllFields()   Related Assertion
+     * @see  getAllFields()         Related Accessor
+     * @see  verifyNotAllFields()   Related Assertion
+     * @see  waitForAllFields()     Related Assertion
+     * @see  waitForNotAllFields()  Related Assertion
      */
     public function verifyAllFields($pattern)
     {
@@ -1331,20 +1333,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotAllFields}).</p>
+     * {@link assertNotAllFields()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllFields       Base method, from which has been generated (automatically) current method
-     * @see  assertAllFields      Related Assertion
-     * @see  assertNotAllFields   Related Assertion
-     * @see  getAllFields         Related Accessor
-     * @see  verifyAllFields      Related Assertion
-     * @see  waitForAllFields     Related Assertion
-     * @see  waitForNotAllFields  Related Assertion
+     * @see  storeAllFields()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllFields()      Related Assertion
+     * @see  assertNotAllFields()   Related Assertion
+     * @see  getAllFields()         Related Accessor
+     * @see  verifyAllFields()      Related Assertion
+     * @see  waitForAllFields()     Related Assertion
+     * @see  waitForNotAllFields()  Related Assertion
      */
     public function verifyNotAllFields($pattern)
     {
@@ -1366,18 +1368,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllFields       Base method, from which has been generated (automatically) current method
-     * @see  assertAllFields      Related Assertion
-     * @see  assertNotAllFields   Related Assertion
-     * @see  getAllFields         Related Accessor
-     * @see  verifyAllFields      Related Assertion
-     * @see  verifyNotAllFields   Related Assertion
-     * @see  waitForNotAllFields  Related Assertion
+     * @see  storeAllFields()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllFields()      Related Assertion
+     * @see  assertNotAllFields()   Related Assertion
+     * @see  getAllFields()         Related Accessor
+     * @see  verifyAllFields()      Related Assertion
+     * @see  verifyNotAllFields()   Related Assertion
+     * @see  waitForNotAllFields()  Related Assertion
      */
     public function waitForAllFields($pattern)
     {
@@ -1399,18 +1401,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllFields      Base method, from which has been generated (automatically) current method
-     * @see  assertAllFields     Related Assertion
-     * @see  assertNotAllFields  Related Assertion
-     * @see  getAllFields        Related Accessor
-     * @see  verifyAllFields     Related Assertion
-     * @see  verifyNotAllFields  Related Assertion
-     * @see  waitForAllFields    Related Assertion
+     * @see  storeAllFields()      Base method, from which has been generated (automatically) current method
+     * @see  assertAllFields()     Related Assertion
+     * @see  assertNotAllFields()  Related Assertion
+     * @see  getAllFields()        Related Accessor
+     * @see  verifyAllFields()     Related Assertion
+     * @see  verifyNotAllFields()  Related Assertion
+     * @see  waitForAllFields()    Related Assertion
      */
     public function waitForNotAllFields($pattern)
     {
@@ -1429,20 +1431,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyAllLinks}).</p>
+     * {@link verifyAllLinks()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllLinks       Base method, from which has been generated (automatically) current method
-     * @see  assertNotAllLinks   Related Assertion
-     * @see  getAllLinks         Related Accessor
-     * @see  verifyAllLinks      Related Assertion
-     * @see  verifyNotAllLinks   Related Assertion
-     * @see  waitForAllLinks     Related Assertion
-     * @see  waitForNotAllLinks  Related Assertion
+     * @see  storeAllLinks()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotAllLinks()   Related Assertion
+     * @see  getAllLinks()         Related Accessor
+     * @see  verifyAllLinks()      Related Assertion
+     * @see  verifyNotAllLinks()   Related Assertion
+     * @see  waitForAllLinks()     Related Assertion
+     * @see  waitForNotAllLinks()  Related Assertion
      */
     public function assertAllLinks($pattern)
     {
@@ -1461,20 +1463,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotAllLinks}).</p>
+     * {@link verifyNotAllLinks()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllLinks       Base method, from which has been generated (automatically) current method
-     * @see  assertAllLinks      Related Assertion
-     * @see  getAllLinks         Related Accessor
-     * @see  verifyAllLinks      Related Assertion
-     * @see  verifyNotAllLinks   Related Assertion
-     * @see  waitForAllLinks     Related Assertion
-     * @see  waitForNotAllLinks  Related Assertion
+     * @see  storeAllLinks()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllLinks()      Related Assertion
+     * @see  getAllLinks()         Related Accessor
+     * @see  verifyAllLinks()      Related Assertion
+     * @see  verifyNotAllLinks()   Related Assertion
+     * @see  waitForAllLinks()     Related Assertion
+     * @see  waitForNotAllLinks()  Related Assertion
      */
     public function assertNotAllLinks($pattern)
     {
@@ -1488,13 +1490,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string[]  the IDs of all links on the page
      * 
-     * @see  storeAllLinks       Base method, from which has been generated (automatically) current method
-     * @see  assertAllLinks      Related Assertion
-     * @see  assertNotAllLinks   Related Assertion
-     * @see  verifyAllLinks      Related Assertion
-     * @see  verifyNotAllLinks   Related Assertion
-     * @see  waitForAllLinks     Related Assertion
-     * @see  waitForNotAllLinks  Related Assertion
+     * @see  storeAllLinks()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllLinks()      Related Assertion
+     * @see  assertNotAllLinks()   Related Assertion
+     * @see  verifyAllLinks()      Related Assertion
+     * @see  verifyNotAllLinks()   Related Assertion
+     * @see  waitForAllLinks()     Related Assertion
+     * @see  waitForNotAllLinks()  Related Assertion
      */
     public function getAllLinks()
     {
@@ -1508,20 +1510,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the IDs of all links on the page (see {@link doc_Stored_Variables})</p>
+     * <p>the IDs of all links on the page (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertAllLinks      Related Assertion
-     * @see  assertNotAllLinks   Related Assertion
-     * @see  getAllLinks         Related Accessor
-     * @see  verifyAllLinks      Related Assertion
-     * @see  verifyNotAllLinks   Related Assertion
-     * @see  waitForAllLinks     Related Assertion
-     * @see  waitForNotAllLinks  Related Assertion
+     * @see  assertAllLinks()      Related Assertion
+     * @see  assertNotAllLinks()   Related Assertion
+     * @see  getAllLinks()         Related Accessor
+     * @see  verifyAllLinks()      Related Assertion
+     * @see  verifyNotAllLinks()   Related Assertion
+     * @see  waitForAllLinks()     Related Assertion
+     * @see  waitForNotAllLinks()  Related Assertion
      */
     public function storeAllLinks($variableName)
     {
@@ -1540,20 +1542,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertAllLinks}).</p>
+     * {@link assertAllLinks()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllLinks       Base method, from which has been generated (automatically) current method
-     * @see  assertAllLinks      Related Assertion
-     * @see  assertNotAllLinks   Related Assertion
-     * @see  getAllLinks         Related Accessor
-     * @see  verifyNotAllLinks   Related Assertion
-     * @see  waitForAllLinks     Related Assertion
-     * @see  waitForNotAllLinks  Related Assertion
+     * @see  storeAllLinks()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllLinks()      Related Assertion
+     * @see  assertNotAllLinks()   Related Assertion
+     * @see  getAllLinks()         Related Accessor
+     * @see  verifyNotAllLinks()   Related Assertion
+     * @see  waitForAllLinks()     Related Assertion
+     * @see  waitForNotAllLinks()  Related Assertion
      */
     public function verifyAllLinks($pattern)
     {
@@ -1572,20 +1574,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotAllLinks}).</p>
+     * {@link assertNotAllLinks()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllLinks       Base method, from which has been generated (automatically) current method
-     * @see  assertAllLinks      Related Assertion
-     * @see  assertNotAllLinks   Related Assertion
-     * @see  getAllLinks         Related Accessor
-     * @see  verifyAllLinks      Related Assertion
-     * @see  waitForAllLinks     Related Assertion
-     * @see  waitForNotAllLinks  Related Assertion
+     * @see  storeAllLinks()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllLinks()      Related Assertion
+     * @see  assertNotAllLinks()   Related Assertion
+     * @see  getAllLinks()         Related Accessor
+     * @see  verifyAllLinks()      Related Assertion
+     * @see  waitForAllLinks()     Related Assertion
+     * @see  waitForNotAllLinks()  Related Assertion
      */
     public function verifyNotAllLinks($pattern)
     {
@@ -1607,18 +1609,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllLinks       Base method, from which has been generated (automatically) current method
-     * @see  assertAllLinks      Related Assertion
-     * @see  assertNotAllLinks   Related Assertion
-     * @see  getAllLinks         Related Accessor
-     * @see  verifyAllLinks      Related Assertion
-     * @see  verifyNotAllLinks   Related Assertion
-     * @see  waitForNotAllLinks  Related Assertion
+     * @see  storeAllLinks()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllLinks()      Related Assertion
+     * @see  assertNotAllLinks()   Related Assertion
+     * @see  getAllLinks()         Related Accessor
+     * @see  verifyAllLinks()      Related Assertion
+     * @see  verifyNotAllLinks()   Related Assertion
+     * @see  waitForNotAllLinks()  Related Assertion
      */
     public function waitForAllLinks($pattern)
     {
@@ -1640,18 +1642,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllLinks      Base method, from which has been generated (automatically) current method
-     * @see  assertAllLinks     Related Assertion
-     * @see  assertNotAllLinks  Related Assertion
-     * @see  getAllLinks        Related Accessor
-     * @see  verifyAllLinks     Related Assertion
-     * @see  verifyNotAllLinks  Related Assertion
-     * @see  waitForAllLinks    Related Assertion
+     * @see  storeAllLinks()      Base method, from which has been generated (automatically) current method
+     * @see  assertAllLinks()     Related Assertion
+     * @see  assertNotAllLinks()  Related Assertion
+     * @see  getAllLinks()        Related Accessor
+     * @see  verifyAllLinks()     Related Assertion
+     * @see  verifyNotAllLinks()  Related Assertion
+     * @see  waitForAllLinks()    Related Assertion
      */
     public function waitForNotAllLinks($pattern)
     {
@@ -1668,20 +1670,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyAllWindowIds}).</p>
+     * {@link verifyAllWindowIds()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowIds       Base method, from which has been generated (automatically) current method
-     * @see  assertNotAllWindowIds   Related Assertion
-     * @see  getAllWindowIds         Related Accessor
-     * @see  verifyAllWindowIds      Related Assertion
-     * @see  verifyNotAllWindowIds   Related Assertion
-     * @see  waitForAllWindowIds     Related Assertion
-     * @see  waitForNotAllWindowIds  Related Assertion
+     * @see  storeAllWindowIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotAllWindowIds()   Related Assertion
+     * @see  getAllWindowIds()         Related Accessor
+     * @see  verifyAllWindowIds()      Related Assertion
+     * @see  verifyNotAllWindowIds()   Related Assertion
+     * @see  waitForAllWindowIds()     Related Assertion
+     * @see  waitForNotAllWindowIds()  Related Assertion
      */
     public function assertAllWindowIds($pattern)
     {
@@ -1698,20 +1700,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotAllWindowIds}).</p>
+     * {@link verifyNotAllWindowIds()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowIds       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowIds      Related Assertion
-     * @see  getAllWindowIds         Related Accessor
-     * @see  verifyAllWindowIds      Related Assertion
-     * @see  verifyNotAllWindowIds   Related Assertion
-     * @see  waitForAllWindowIds     Related Assertion
-     * @see  waitForNotAllWindowIds  Related Assertion
+     * @see  storeAllWindowIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowIds()      Related Assertion
+     * @see  getAllWindowIds()         Related Accessor
+     * @see  verifyAllWindowIds()      Related Assertion
+     * @see  verifyNotAllWindowIds()   Related Assertion
+     * @see  waitForAllWindowIds()     Related Assertion
+     * @see  waitForNotAllWindowIds()  Related Assertion
      */
     public function assertNotAllWindowIds($pattern)
     {
@@ -1723,13 +1725,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string[]  Array of identifiers of all windows that the browser knows about.
      * 
-     * @see  storeAllWindowIds       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowIds      Related Assertion
-     * @see  assertNotAllWindowIds   Related Assertion
-     * @see  verifyAllWindowIds      Related Assertion
-     * @see  verifyNotAllWindowIds   Related Assertion
-     * @see  waitForAllWindowIds     Related Assertion
-     * @see  waitForNotAllWindowIds  Related Assertion
+     * @see  storeAllWindowIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowIds()      Related Assertion
+     * @see  assertNotAllWindowIds()   Related Assertion
+     * @see  verifyAllWindowIds()      Related Assertion
+     * @see  verifyNotAllWindowIds()   Related Assertion
+     * @see  waitForAllWindowIds()     Related Assertion
+     * @see  waitForNotAllWindowIds()  Related Assertion
      */
     public function getAllWindowIds()
     {
@@ -1741,20 +1743,21 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>Array of identifiers of all windows that the browser knows about. (see {@link doc_Stored_Variables})</p>
+     * <p>Array of identifiers of all windows that the browser knows about. (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertAllWindowIds      Related Assertion
-     * @see  assertNotAllWindowIds   Related Assertion
-     * @see  getAllWindowIds         Related Accessor
-     * @see  verifyAllWindowIds      Related Assertion
-     * @see  verifyNotAllWindowIds   Related Assertion
-     * @see  waitForAllWindowIds     Related Assertion
-     * @see  waitForNotAllWindowIds  Related Assertion
+     * @see  assertAllWindowIds()      Related Assertion
+     * @see  assertNotAllWindowIds()   Related Assertion
+     * @see  getAllWindowIds()         Related Accessor
+     * @see  verifyAllWindowIds()      Related Assertion
+     * @see  verifyNotAllWindowIds()   Related Assertion
+     * @see  waitForAllWindowIds()     Related Assertion
+     * @see  waitForNotAllWindowIds()  Related Assertion
      */
     public function storeAllWindowIds($variableName)
     {
@@ -1771,20 +1774,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertAllWindowIds}).</p>
+     * {@link assertAllWindowIds()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowIds       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowIds      Related Assertion
-     * @see  assertNotAllWindowIds   Related Assertion
-     * @see  getAllWindowIds         Related Accessor
-     * @see  verifyNotAllWindowIds   Related Assertion
-     * @see  waitForAllWindowIds     Related Assertion
-     * @see  waitForNotAllWindowIds  Related Assertion
+     * @see  storeAllWindowIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowIds()      Related Assertion
+     * @see  assertNotAllWindowIds()   Related Assertion
+     * @see  getAllWindowIds()         Related Accessor
+     * @see  verifyNotAllWindowIds()   Related Assertion
+     * @see  waitForAllWindowIds()     Related Assertion
+     * @see  waitForNotAllWindowIds()  Related Assertion
      */
     public function verifyAllWindowIds($pattern)
     {
@@ -1801,20 +1804,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotAllWindowIds}).</p>
+     * {@link assertNotAllWindowIds()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowIds       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowIds      Related Assertion
-     * @see  assertNotAllWindowIds   Related Assertion
-     * @see  getAllWindowIds         Related Accessor
-     * @see  verifyAllWindowIds      Related Assertion
-     * @see  waitForAllWindowIds     Related Assertion
-     * @see  waitForNotAllWindowIds  Related Assertion
+     * @see  storeAllWindowIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowIds()      Related Assertion
+     * @see  assertNotAllWindowIds()   Related Assertion
+     * @see  getAllWindowIds()         Related Accessor
+     * @see  verifyAllWindowIds()      Related Assertion
+     * @see  waitForAllWindowIds()     Related Assertion
+     * @see  waitForNotAllWindowIds()  Related Assertion
      */
     public function verifyNotAllWindowIds($pattern)
     {
@@ -1834,18 +1837,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowIds       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowIds      Related Assertion
-     * @see  assertNotAllWindowIds   Related Assertion
-     * @see  getAllWindowIds         Related Accessor
-     * @see  verifyAllWindowIds      Related Assertion
-     * @see  verifyNotAllWindowIds   Related Assertion
-     * @see  waitForNotAllWindowIds  Related Assertion
+     * @see  storeAllWindowIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowIds()      Related Assertion
+     * @see  assertNotAllWindowIds()   Related Assertion
+     * @see  getAllWindowIds()         Related Accessor
+     * @see  verifyAllWindowIds()      Related Assertion
+     * @see  verifyNotAllWindowIds()   Related Assertion
+     * @see  waitForNotAllWindowIds()  Related Assertion
      */
     public function waitForAllWindowIds($pattern)
     {
@@ -1865,18 +1868,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowIds      Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowIds     Related Assertion
-     * @see  assertNotAllWindowIds  Related Assertion
-     * @see  getAllWindowIds        Related Accessor
-     * @see  verifyAllWindowIds     Related Assertion
-     * @see  verifyNotAllWindowIds  Related Assertion
-     * @see  waitForAllWindowIds    Related Assertion
+     * @see  storeAllWindowIds()      Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowIds()     Related Assertion
+     * @see  assertNotAllWindowIds()  Related Assertion
+     * @see  getAllWindowIds()        Related Accessor
+     * @see  verifyAllWindowIds()     Related Assertion
+     * @see  verifyNotAllWindowIds()  Related Assertion
+     * @see  waitForAllWindowIds()    Related Assertion
      */
     public function waitForNotAllWindowIds($pattern)
     {
@@ -1893,20 +1896,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyAllWindowNames}).</p>
+     * {@link verifyAllWindowNames()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowNames       Base method, from which has been generated (automatically) current method
-     * @see  assertNotAllWindowNames   Related Assertion
-     * @see  getAllWindowNames         Related Accessor
-     * @see  verifyAllWindowNames      Related Assertion
-     * @see  verifyNotAllWindowNames   Related Assertion
-     * @see  waitForAllWindowNames     Related Assertion
-     * @see  waitForNotAllWindowNames  Related Assertion
+     * @see  storeAllWindowNames()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotAllWindowNames()   Related Assertion
+     * @see  getAllWindowNames()         Related Accessor
+     * @see  verifyAllWindowNames()      Related Assertion
+     * @see  verifyNotAllWindowNames()   Related Assertion
+     * @see  waitForAllWindowNames()     Related Assertion
+     * @see  waitForNotAllWindowNames()  Related Assertion
      */
     public function assertAllWindowNames($pattern)
     {
@@ -1923,20 +1926,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotAllWindowNames}).</p>
+     * {@link verifyNotAllWindowNames()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowNames       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowNames      Related Assertion
-     * @see  getAllWindowNames         Related Accessor
-     * @see  verifyAllWindowNames      Related Assertion
-     * @see  verifyNotAllWindowNames   Related Assertion
-     * @see  waitForAllWindowNames     Related Assertion
-     * @see  waitForNotAllWindowNames  Related Assertion
+     * @see  storeAllWindowNames()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowNames()      Related Assertion
+     * @see  getAllWindowNames()         Related Accessor
+     * @see  verifyAllWindowNames()      Related Assertion
+     * @see  verifyNotAllWindowNames()   Related Assertion
+     * @see  waitForAllWindowNames()     Related Assertion
+     * @see  waitForNotAllWindowNames()  Related Assertion
      */
     public function assertNotAllWindowNames($pattern)
     {
@@ -1948,13 +1951,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string[]  Array of names of all windows that the browser knows about.
      * 
-     * @see  storeAllWindowNames       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowNames      Related Assertion
-     * @see  assertNotAllWindowNames   Related Assertion
-     * @see  verifyAllWindowNames      Related Assertion
-     * @see  verifyNotAllWindowNames   Related Assertion
-     * @see  waitForAllWindowNames     Related Assertion
-     * @see  waitForNotAllWindowNames  Related Assertion
+     * @see  storeAllWindowNames()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowNames()      Related Assertion
+     * @see  assertNotAllWindowNames()   Related Assertion
+     * @see  verifyAllWindowNames()      Related Assertion
+     * @see  verifyNotAllWindowNames()   Related Assertion
+     * @see  waitForAllWindowNames()     Related Assertion
+     * @see  waitForNotAllWindowNames()  Related Assertion
      */
     public function getAllWindowNames()
     {
@@ -1966,20 +1969,21 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>Array of names of all windows that the browser knows about. (see {@link doc_Stored_Variables})</p>
+     * <p>Array of names of all windows that the browser knows about. (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertAllWindowNames      Related Assertion
-     * @see  assertNotAllWindowNames   Related Assertion
-     * @see  getAllWindowNames         Related Accessor
-     * @see  verifyAllWindowNames      Related Assertion
-     * @see  verifyNotAllWindowNames   Related Assertion
-     * @see  waitForAllWindowNames     Related Assertion
-     * @see  waitForNotAllWindowNames  Related Assertion
+     * @see  assertAllWindowNames()      Related Assertion
+     * @see  assertNotAllWindowNames()   Related Assertion
+     * @see  getAllWindowNames()         Related Accessor
+     * @see  verifyAllWindowNames()      Related Assertion
+     * @see  verifyNotAllWindowNames()   Related Assertion
+     * @see  waitForAllWindowNames()     Related Assertion
+     * @see  waitForNotAllWindowNames()  Related Assertion
      */
     public function storeAllWindowNames($variableName)
     {
@@ -1996,20 +2000,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertAllWindowNames}).</p>
+     * {@link assertAllWindowNames()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowNames       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowNames      Related Assertion
-     * @see  assertNotAllWindowNames   Related Assertion
-     * @see  getAllWindowNames         Related Accessor
-     * @see  verifyNotAllWindowNames   Related Assertion
-     * @see  waitForAllWindowNames     Related Assertion
-     * @see  waitForNotAllWindowNames  Related Assertion
+     * @see  storeAllWindowNames()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowNames()      Related Assertion
+     * @see  assertNotAllWindowNames()   Related Assertion
+     * @see  getAllWindowNames()         Related Accessor
+     * @see  verifyNotAllWindowNames()   Related Assertion
+     * @see  waitForAllWindowNames()     Related Assertion
+     * @see  waitForNotAllWindowNames()  Related Assertion
      */
     public function verifyAllWindowNames($pattern)
     {
@@ -2026,20 +2030,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotAllWindowNames}).</p>
+     * {@link assertNotAllWindowNames()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowNames       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowNames      Related Assertion
-     * @see  assertNotAllWindowNames   Related Assertion
-     * @see  getAllWindowNames         Related Accessor
-     * @see  verifyAllWindowNames      Related Assertion
-     * @see  waitForAllWindowNames     Related Assertion
-     * @see  waitForNotAllWindowNames  Related Assertion
+     * @see  storeAllWindowNames()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowNames()      Related Assertion
+     * @see  assertNotAllWindowNames()   Related Assertion
+     * @see  getAllWindowNames()         Related Accessor
+     * @see  verifyAllWindowNames()      Related Assertion
+     * @see  waitForAllWindowNames()     Related Assertion
+     * @see  waitForNotAllWindowNames()  Related Assertion
      */
     public function verifyNotAllWindowNames($pattern)
     {
@@ -2059,18 +2063,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowNames       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowNames      Related Assertion
-     * @see  assertNotAllWindowNames   Related Assertion
-     * @see  getAllWindowNames         Related Accessor
-     * @see  verifyAllWindowNames      Related Assertion
-     * @see  verifyNotAllWindowNames   Related Assertion
-     * @see  waitForNotAllWindowNames  Related Assertion
+     * @see  storeAllWindowNames()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowNames()      Related Assertion
+     * @see  assertNotAllWindowNames()   Related Assertion
+     * @see  getAllWindowNames()         Related Accessor
+     * @see  verifyAllWindowNames()      Related Assertion
+     * @see  verifyNotAllWindowNames()   Related Assertion
+     * @see  waitForNotAllWindowNames()  Related Assertion
      */
     public function waitForAllWindowNames($pattern)
     {
@@ -2090,18 +2094,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowNames      Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowNames     Related Assertion
-     * @see  assertNotAllWindowNames  Related Assertion
-     * @see  getAllWindowNames        Related Accessor
-     * @see  verifyAllWindowNames     Related Assertion
-     * @see  verifyNotAllWindowNames  Related Assertion
-     * @see  waitForAllWindowNames    Related Assertion
+     * @see  storeAllWindowNames()      Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowNames()     Related Assertion
+     * @see  assertNotAllWindowNames()  Related Assertion
+     * @see  getAllWindowNames()        Related Accessor
+     * @see  verifyAllWindowNames()     Related Assertion
+     * @see  verifyNotAllWindowNames()  Related Assertion
+     * @see  waitForAllWindowNames()    Related Assertion
      */
     public function waitForNotAllWindowNames($pattern)
     {
@@ -2118,20 +2122,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyAllWindowTitles}).</p>
+     * {@link verifyAllWindowTitles()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowTitles       Base method, from which has been generated (automatically) current method
-     * @see  assertNotAllWindowTitles   Related Assertion
-     * @see  getAllWindowTitles         Related Accessor
-     * @see  verifyAllWindowTitles      Related Assertion
-     * @see  verifyNotAllWindowTitles   Related Assertion
-     * @see  waitForAllWindowTitles     Related Assertion
-     * @see  waitForNotAllWindowTitles  Related Assertion
+     * @see  storeAllWindowTitles()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotAllWindowTitles()   Related Assertion
+     * @see  getAllWindowTitles()         Related Accessor
+     * @see  verifyAllWindowTitles()      Related Assertion
+     * @see  verifyNotAllWindowTitles()   Related Assertion
+     * @see  waitForAllWindowTitles()     Related Assertion
+     * @see  waitForNotAllWindowTitles()  Related Assertion
      */
     public function assertAllWindowTitles($pattern)
     {
@@ -2148,20 +2152,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotAllWindowTitles}).</p>
+     * {@link verifyNotAllWindowTitles()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowTitles       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowTitles      Related Assertion
-     * @see  getAllWindowTitles         Related Accessor
-     * @see  verifyAllWindowTitles      Related Assertion
-     * @see  verifyNotAllWindowTitles   Related Assertion
-     * @see  waitForAllWindowTitles     Related Assertion
-     * @see  waitForNotAllWindowTitles  Related Assertion
+     * @see  storeAllWindowTitles()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowTitles()      Related Assertion
+     * @see  getAllWindowTitles()         Related Accessor
+     * @see  verifyAllWindowTitles()      Related Assertion
+     * @see  verifyNotAllWindowTitles()   Related Assertion
+     * @see  waitForAllWindowTitles()     Related Assertion
+     * @see  waitForNotAllWindowTitles()  Related Assertion
      */
     public function assertNotAllWindowTitles($pattern)
     {
@@ -2173,13 +2177,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string[]  Array of titles of all windows that the browser knows about.
      * 
-     * @see  storeAllWindowTitles       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowTitles      Related Assertion
-     * @see  assertNotAllWindowTitles   Related Assertion
-     * @see  verifyAllWindowTitles      Related Assertion
-     * @see  verifyNotAllWindowTitles   Related Assertion
-     * @see  waitForAllWindowTitles     Related Assertion
-     * @see  waitForNotAllWindowTitles  Related Assertion
+     * @see  storeAllWindowTitles()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowTitles()      Related Assertion
+     * @see  assertNotAllWindowTitles()   Related Assertion
+     * @see  verifyAllWindowTitles()      Related Assertion
+     * @see  verifyNotAllWindowTitles()   Related Assertion
+     * @see  waitForAllWindowTitles()     Related Assertion
+     * @see  waitForNotAllWindowTitles()  Related Assertion
      */
     public function getAllWindowTitles()
     {
@@ -2191,20 +2195,21 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>Array of titles of all windows that the browser knows about. (see {@link doc_Stored_Variables})</p>
+     * <p>Array of titles of all windows that the browser knows about. (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertAllWindowTitles      Related Assertion
-     * @see  assertNotAllWindowTitles   Related Assertion
-     * @see  getAllWindowTitles         Related Accessor
-     * @see  verifyAllWindowTitles      Related Assertion
-     * @see  verifyNotAllWindowTitles   Related Assertion
-     * @see  waitForAllWindowTitles     Related Assertion
-     * @see  waitForNotAllWindowTitles  Related Assertion
+     * @see  assertAllWindowTitles()      Related Assertion
+     * @see  assertNotAllWindowTitles()   Related Assertion
+     * @see  getAllWindowTitles()         Related Accessor
+     * @see  verifyAllWindowTitles()      Related Assertion
+     * @see  verifyNotAllWindowTitles()   Related Assertion
+     * @see  waitForAllWindowTitles()     Related Assertion
+     * @see  waitForNotAllWindowTitles()  Related Assertion
      */
     public function storeAllWindowTitles($variableName)
     {
@@ -2221,20 +2226,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertAllWindowTitles}).</p>
+     * {@link assertAllWindowTitles()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowTitles       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowTitles      Related Assertion
-     * @see  assertNotAllWindowTitles   Related Assertion
-     * @see  getAllWindowTitles         Related Accessor
-     * @see  verifyNotAllWindowTitles   Related Assertion
-     * @see  waitForAllWindowTitles     Related Assertion
-     * @see  waitForNotAllWindowTitles  Related Assertion
+     * @see  storeAllWindowTitles()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowTitles()      Related Assertion
+     * @see  assertNotAllWindowTitles()   Related Assertion
+     * @see  getAllWindowTitles()         Related Accessor
+     * @see  verifyNotAllWindowTitles()   Related Assertion
+     * @see  waitForAllWindowTitles()     Related Assertion
+     * @see  waitForNotAllWindowTitles()  Related Assertion
      */
     public function verifyAllWindowTitles($pattern)
     {
@@ -2251,20 +2256,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotAllWindowTitles}).</p>
+     * {@link assertNotAllWindowTitles()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowTitles       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowTitles      Related Assertion
-     * @see  assertNotAllWindowTitles   Related Assertion
-     * @see  getAllWindowTitles         Related Accessor
-     * @see  verifyAllWindowTitles      Related Assertion
-     * @see  waitForAllWindowTitles     Related Assertion
-     * @see  waitForNotAllWindowTitles  Related Assertion
+     * @see  storeAllWindowTitles()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowTitles()      Related Assertion
+     * @see  assertNotAllWindowTitles()   Related Assertion
+     * @see  getAllWindowTitles()         Related Accessor
+     * @see  verifyAllWindowTitles()      Related Assertion
+     * @see  waitForAllWindowTitles()     Related Assertion
+     * @see  waitForNotAllWindowTitles()  Related Assertion
      */
     public function verifyNotAllWindowTitles($pattern)
     {
@@ -2284,18 +2289,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowTitles       Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowTitles      Related Assertion
-     * @see  assertNotAllWindowTitles   Related Assertion
-     * @see  getAllWindowTitles         Related Accessor
-     * @see  verifyAllWindowTitles      Related Assertion
-     * @see  verifyNotAllWindowTitles   Related Assertion
-     * @see  waitForNotAllWindowTitles  Related Assertion
+     * @see  storeAllWindowTitles()       Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowTitles()      Related Assertion
+     * @see  assertNotAllWindowTitles()   Related Assertion
+     * @see  getAllWindowTitles()         Related Accessor
+     * @see  verifyAllWindowTitles()      Related Assertion
+     * @see  verifyNotAllWindowTitles()   Related Assertion
+     * @see  waitForNotAllWindowTitles()  Related Assertion
      */
     public function waitForAllWindowTitles($pattern)
     {
@@ -2315,18 +2320,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAllWindowTitles      Base method, from which has been generated (automatically) current method
-     * @see  assertAllWindowTitles     Related Assertion
-     * @see  assertNotAllWindowTitles  Related Assertion
-     * @see  getAllWindowTitles        Related Accessor
-     * @see  verifyAllWindowTitles     Related Assertion
-     * @see  verifyNotAllWindowTitles  Related Assertion
-     * @see  waitForAllWindowTitles    Related Assertion
+     * @see  storeAllWindowTitles()      Base method, from which has been generated (automatically) current method
+     * @see  assertAllWindowTitles()     Related Assertion
+     * @see  assertNotAllWindowTitles()  Related Assertion
+     * @see  getAllWindowTitles()        Related Accessor
+     * @see  verifyAllWindowTitles()     Related Assertion
+     * @see  verifyNotAllWindowTitles()  Related Assertion
+     * @see  waitForAllWindowTitles()    Related Assertion
      */
     public function waitForNotAllWindowTitles($pattern)
     {
@@ -2345,22 +2350,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyAttribute}).</p>
+     * {@link verifyAttribute()}).</p>
      * 
      * @param string   $attributeLocator  an element locator followed by an @ sign and then the name of the attribute,
      *                                    e.g.  "foo@bar"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttribute       Base method, from which has been generated (automatically) current method
-     * @see  assertNotAttribute   Related Assertion
-     * @see  getAttribute         Related Accessor
-     * @see  verifyAttribute      Related Assertion
-     * @see  verifyNotAttribute   Related Assertion
-     * @see  waitForAttribute     Related Assertion
-     * @see  waitForNotAttribute  Related Assertion
+     * @see  storeAttribute()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotAttribute()   Related Assertion
+     * @see  getAttribute()         Related Accessor
+     * @see  verifyAttribute()      Related Assertion
+     * @see  verifyNotAttribute()   Related Assertion
+     * @see  waitForAttribute()     Related Assertion
+     * @see  waitForNotAttribute()  Related Assertion
      */
     public function assertAttribute($attributeLocator, $pattern)
     {
@@ -2379,22 +2384,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotAttribute}).</p>
+     * {@link verifyNotAttribute()}).</p>
      * 
      * @param string   $attributeLocator  an element locator followed by an @ sign and then the name of the attribute,
      *                                    e.g.  "foo@bar"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttribute       Base method, from which has been generated (automatically) current method
-     * @see  assertAttribute      Related Assertion
-     * @see  getAttribute         Related Accessor
-     * @see  verifyAttribute      Related Assertion
-     * @see  verifyNotAttribute   Related Assertion
-     * @see  waitForAttribute     Related Assertion
-     * @see  waitForNotAttribute  Related Assertion
+     * @see  storeAttribute()       Base method, from which has been generated (automatically) current method
+     * @see  assertAttribute()      Related Assertion
+     * @see  getAttribute()         Related Accessor
+     * @see  verifyAttribute()      Related Assertion
+     * @see  verifyNotAttribute()   Related Assertion
+     * @see  waitForAttribute()     Related Assertion
+     * @see  waitForNotAttribute()  Related Assertion
      */
     public function assertNotAttribute($attributeLocator, $pattern)
     {
@@ -2411,13 +2416,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  the value of the specified attribute
      * 
-     * @see  storeAttribute       Base method, from which has been generated (automatically) current method
-     * @see  assertAttribute      Related Assertion
-     * @see  assertNotAttribute   Related Assertion
-     * @see  verifyAttribute      Related Assertion
-     * @see  verifyNotAttribute   Related Assertion
-     * @see  waitForAttribute     Related Assertion
-     * @see  waitForNotAttribute  Related Assertion
+     * @see  storeAttribute()       Base method, from which has been generated (automatically) current method
+     * @see  assertAttribute()      Related Assertion
+     * @see  assertNotAttribute()   Related Assertion
+     * @see  verifyAttribute()      Related Assertion
+     * @see  verifyNotAttribute()   Related Assertion
+     * @see  waitForAttribute()     Related Assertion
+     * @see  waitForNotAttribute()  Related Assertion
      */
     public function getAttribute($attributeLocator)
     {
@@ -2431,22 +2436,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the value of the specified attribute (see {@link doc_Stored_Variables})</p>
+     * <p>the value of the specified attribute (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $attributeLocator  an element locator followed by an @ sign and then the name of the attribute,
      *                                    e.g.  "foo@bar"
      * @param string   $variableName      the name of a variable in which the result is to be stored. (see
-     *                                    {@link doc_Stored_Variables})
+     *                                    {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertAttribute      Related Assertion
-     * @see  assertNotAttribute   Related Assertion
-     * @see  getAttribute         Related Accessor
-     * @see  verifyAttribute      Related Assertion
-     * @see  verifyNotAttribute   Related Assertion
-     * @see  waitForAttribute     Related Assertion
-     * @see  waitForNotAttribute  Related Assertion
+     * @see  assertAttribute()      Related Assertion
+     * @see  assertNotAttribute()   Related Assertion
+     * @see  getAttribute()         Related Accessor
+     * @see  verifyAttribute()      Related Assertion
+     * @see  verifyNotAttribute()   Related Assertion
+     * @see  waitForAttribute()     Related Assertion
+     * @see  waitForNotAttribute()  Related Assertion
      */
     public function storeAttribute($attributeLocator, $variableName)
     {
@@ -2465,22 +2470,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertAttribute}).</p>
+     * {@link assertAttribute()}).</p>
      * 
      * @param string   $attributeLocator  an element locator followed by an @ sign and then the name of the attribute,
      *                                    e.g.  "foo@bar"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttribute       Base method, from which has been generated (automatically) current method
-     * @see  assertAttribute      Related Assertion
-     * @see  assertNotAttribute   Related Assertion
-     * @see  getAttribute         Related Accessor
-     * @see  verifyNotAttribute   Related Assertion
-     * @see  waitForAttribute     Related Assertion
-     * @see  waitForNotAttribute  Related Assertion
+     * @see  storeAttribute()       Base method, from which has been generated (automatically) current method
+     * @see  assertAttribute()      Related Assertion
+     * @see  assertNotAttribute()   Related Assertion
+     * @see  getAttribute()         Related Accessor
+     * @see  verifyNotAttribute()   Related Assertion
+     * @see  waitForAttribute()     Related Assertion
+     * @see  waitForNotAttribute()  Related Assertion
      */
     public function verifyAttribute($attributeLocator, $pattern)
     {
@@ -2499,22 +2504,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotAttribute}).</p>
+     * {@link assertNotAttribute()}).</p>
      * 
      * @param string   $attributeLocator  an element locator followed by an @ sign and then the name of the attribute,
      *                                    e.g.  "foo@bar"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttribute       Base method, from which has been generated (automatically) current method
-     * @see  assertAttribute      Related Assertion
-     * @see  assertNotAttribute   Related Assertion
-     * @see  getAttribute         Related Accessor
-     * @see  verifyAttribute      Related Assertion
-     * @see  waitForAttribute     Related Assertion
-     * @see  waitForNotAttribute  Related Assertion
+     * @see  storeAttribute()       Base method, from which has been generated (automatically) current method
+     * @see  assertAttribute()      Related Assertion
+     * @see  assertNotAttribute()   Related Assertion
+     * @see  getAttribute()         Related Accessor
+     * @see  verifyAttribute()      Related Assertion
+     * @see  waitForAttribute()     Related Assertion
+     * @see  waitForNotAttribute()  Related Assertion
      */
     public function verifyNotAttribute($attributeLocator, $pattern)
     {
@@ -2538,18 +2543,18 @@ trait SeleniumTestCaseDoc
      * 
      * @param string   $attributeLocator  an element locator followed by an @ sign and then the name of the attribute,
      *                                    e.g.  "foo@bar"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttribute       Base method, from which has been generated (automatically) current method
-     * @see  assertAttribute      Related Assertion
-     * @see  assertNotAttribute   Related Assertion
-     * @see  getAttribute         Related Accessor
-     * @see  verifyAttribute      Related Assertion
-     * @see  verifyNotAttribute   Related Assertion
-     * @see  waitForNotAttribute  Related Assertion
+     * @see  storeAttribute()       Base method, from which has been generated (automatically) current method
+     * @see  assertAttribute()      Related Assertion
+     * @see  assertNotAttribute()   Related Assertion
+     * @see  getAttribute()         Related Accessor
+     * @see  verifyAttribute()      Related Assertion
+     * @see  verifyNotAttribute()   Related Assertion
+     * @see  waitForNotAttribute()  Related Assertion
      */
     public function waitForAttribute($attributeLocator, $pattern)
     {
@@ -2573,18 +2578,18 @@ trait SeleniumTestCaseDoc
      * 
      * @param string   $attributeLocator  an element locator followed by an @ sign and then the name of the attribute,
      *                                    e.g.  "foo@bar"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttribute      Base method, from which has been generated (automatically) current method
-     * @see  assertAttribute     Related Assertion
-     * @see  assertNotAttribute  Related Assertion
-     * @see  getAttribute        Related Accessor
-     * @see  verifyAttribute     Related Assertion
-     * @see  verifyNotAttribute  Related Assertion
-     * @see  waitForAttribute    Related Assertion
+     * @see  storeAttribute()      Base method, from which has been generated (automatically) current method
+     * @see  assertAttribute()     Related Assertion
+     * @see  assertNotAttribute()  Related Assertion
+     * @see  getAttribute()        Related Accessor
+     * @see  verifyAttribute()     Related Assertion
+     * @see  verifyNotAttribute()  Related Assertion
+     * @see  waitForAttribute()    Related Assertion
      */
     public function waitForNotAttribute($attributeLocator, $pattern)
     {
@@ -2601,22 +2606,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyAttributeFromAllWindows}).</p>
+     * {@link verifyAttributeFromAllWindows()}).</p>
      * 
      * @param string   $attributeName  name of an attribute on the windows
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttributeFromAllWindows       Base method, from which has been generated (automatically) current
-     *                                          method
-     * @see  assertNotAttributeFromAllWindows   Related Assertion
-     * @see  getAttributeFromAllWindows         Related Accessor
-     * @see  verifyAttributeFromAllWindows      Related Assertion
-     * @see  verifyNotAttributeFromAllWindows   Related Assertion
-     * @see  waitForAttributeFromAllWindows     Related Assertion
-     * @see  waitForNotAttributeFromAllWindows  Related Assertion
+     * @see  storeAttributeFromAllWindows()       Base method, from which has been generated (automatically) current
+     *                                            method
+     * @see  assertNotAttributeFromAllWindows()   Related Assertion
+     * @see  getAttributeFromAllWindows()         Related Accessor
+     * @see  verifyAttributeFromAllWindows()      Related Assertion
+     * @see  verifyNotAttributeFromAllWindows()   Related Assertion
+     * @see  waitForAttributeFromAllWindows()     Related Assertion
+     * @see  waitForNotAttributeFromAllWindows()  Related Assertion
      */
     public function assertAttributeFromAllWindows($attributeName, $pattern)
     {
@@ -2633,22 +2638,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotAttributeFromAllWindows}).</p>
+     * {@link verifyNotAttributeFromAllWindows()}).</p>
      * 
      * @param string   $attributeName  name of an attribute on the windows
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttributeFromAllWindows       Base method, from which has been generated (automatically) current
-     *                                          method
-     * @see  assertAttributeFromAllWindows      Related Assertion
-     * @see  getAttributeFromAllWindows         Related Accessor
-     * @see  verifyAttributeFromAllWindows      Related Assertion
-     * @see  verifyNotAttributeFromAllWindows   Related Assertion
-     * @see  waitForAttributeFromAllWindows     Related Assertion
-     * @see  waitForNotAttributeFromAllWindows  Related Assertion
+     * @see  storeAttributeFromAllWindows()       Base method, from which has been generated (automatically) current
+     *                                            method
+     * @see  assertAttributeFromAllWindows()      Related Assertion
+     * @see  getAttributeFromAllWindows()         Related Accessor
+     * @see  verifyAttributeFromAllWindows()      Related Assertion
+     * @see  verifyNotAttributeFromAllWindows()   Related Assertion
+     * @see  waitForAttributeFromAllWindows()     Related Assertion
+     * @see  waitForNotAttributeFromAllWindows()  Related Assertion
      */
     public function assertNotAttributeFromAllWindows($attributeName, $pattern)
     {
@@ -2662,14 +2667,14 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string[]  the set of values of this attribute from all known windows.
      * 
-     * @see  storeAttributeFromAllWindows       Base method, from which has been generated (automatically) current
-     *                                          method
-     * @see  assertAttributeFromAllWindows      Related Assertion
-     * @see  assertNotAttributeFromAllWindows   Related Assertion
-     * @see  verifyAttributeFromAllWindows      Related Assertion
-     * @see  verifyNotAttributeFromAllWindows   Related Assertion
-     * @see  waitForAttributeFromAllWindows     Related Assertion
-     * @see  waitForNotAttributeFromAllWindows  Related Assertion
+     * @see  storeAttributeFromAllWindows()       Base method, from which has been generated (automatically) current
+     *                                            method
+     * @see  assertAttributeFromAllWindows()      Related Assertion
+     * @see  assertNotAttributeFromAllWindows()   Related Assertion
+     * @see  verifyAttributeFromAllWindows()      Related Assertion
+     * @see  verifyNotAttributeFromAllWindows()   Related Assertion
+     * @see  waitForAttributeFromAllWindows()     Related Assertion
+     * @see  waitForNotAttributeFromAllWindows()  Related Assertion
      */
     public function getAttributeFromAllWindows($attributeName)
     {
@@ -2681,21 +2686,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the set of values of this attribute from all known windows. (see {@link doc_Stored_Variables})</p>
+     * <p>the set of values of this attribute from all known windows. (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $attributeName  name of an attribute on the windows
      * @param string   $variableName   the name of a variable in which the result is to be stored. (see
-     *                                 {@link doc_Stored_Variables})
+     *                                 {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertAttributeFromAllWindows      Related Assertion
-     * @see  assertNotAttributeFromAllWindows   Related Assertion
-     * @see  getAttributeFromAllWindows         Related Accessor
-     * @see  verifyAttributeFromAllWindows      Related Assertion
-     * @see  verifyNotAttributeFromAllWindows   Related Assertion
-     * @see  waitForAttributeFromAllWindows     Related Assertion
-     * @see  waitForNotAttributeFromAllWindows  Related Assertion
+     * @see  assertAttributeFromAllWindows()      Related Assertion
+     * @see  assertNotAttributeFromAllWindows()   Related Assertion
+     * @see  getAttributeFromAllWindows()         Related Accessor
+     * @see  verifyAttributeFromAllWindows()      Related Assertion
+     * @see  verifyNotAttributeFromAllWindows()   Related Assertion
+     * @see  waitForAttributeFromAllWindows()     Related Assertion
+     * @see  waitForNotAttributeFromAllWindows()  Related Assertion
      */
     public function storeAttributeFromAllWindows($attributeName, $variableName)
     {
@@ -2712,22 +2718,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertAttributeFromAllWindows}).</p>
+     * {@link assertAttributeFromAllWindows()}).</p>
      * 
      * @param string   $attributeName  name of an attribute on the windows
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttributeFromAllWindows       Base method, from which has been generated (automatically) current
-     *                                          method
-     * @see  assertAttributeFromAllWindows      Related Assertion
-     * @see  assertNotAttributeFromAllWindows   Related Assertion
-     * @see  getAttributeFromAllWindows         Related Accessor
-     * @see  verifyNotAttributeFromAllWindows   Related Assertion
-     * @see  waitForAttributeFromAllWindows     Related Assertion
-     * @see  waitForNotAttributeFromAllWindows  Related Assertion
+     * @see  storeAttributeFromAllWindows()       Base method, from which has been generated (automatically) current
+     *                                            method
+     * @see  assertAttributeFromAllWindows()      Related Assertion
+     * @see  assertNotAttributeFromAllWindows()   Related Assertion
+     * @see  getAttributeFromAllWindows()         Related Accessor
+     * @see  verifyNotAttributeFromAllWindows()   Related Assertion
+     * @see  waitForAttributeFromAllWindows()     Related Assertion
+     * @see  waitForNotAttributeFromAllWindows()  Related Assertion
      */
     public function verifyAttributeFromAllWindows($attributeName, $pattern)
     {
@@ -2744,22 +2750,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotAttributeFromAllWindows}).</p>
+     * {@link assertNotAttributeFromAllWindows()}).</p>
      * 
      * @param string   $attributeName  name of an attribute on the windows
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttributeFromAllWindows       Base method, from which has been generated (automatically) current
-     *                                          method
-     * @see  assertAttributeFromAllWindows      Related Assertion
-     * @see  assertNotAttributeFromAllWindows   Related Assertion
-     * @see  getAttributeFromAllWindows         Related Accessor
-     * @see  verifyAttributeFromAllWindows      Related Assertion
-     * @see  waitForAttributeFromAllWindows     Related Assertion
-     * @see  waitForNotAttributeFromAllWindows  Related Assertion
+     * @see  storeAttributeFromAllWindows()       Base method, from which has been generated (automatically) current
+     *                                            method
+     * @see  assertAttributeFromAllWindows()      Related Assertion
+     * @see  assertNotAttributeFromAllWindows()   Related Assertion
+     * @see  getAttributeFromAllWindows()         Related Accessor
+     * @see  verifyAttributeFromAllWindows()      Related Assertion
+     * @see  waitForAttributeFromAllWindows()     Related Assertion
+     * @see  waitForNotAttributeFromAllWindows()  Related Assertion
      */
     public function verifyNotAttributeFromAllWindows($attributeName, $pattern)
     {
@@ -2780,19 +2786,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $attributeName  name of an attribute on the windows
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttributeFromAllWindows       Base method, from which has been generated (automatically) current
-     *                                          method
-     * @see  assertAttributeFromAllWindows      Related Assertion
-     * @see  assertNotAttributeFromAllWindows   Related Assertion
-     * @see  getAttributeFromAllWindows         Related Accessor
-     * @see  verifyAttributeFromAllWindows      Related Assertion
-     * @see  verifyNotAttributeFromAllWindows   Related Assertion
-     * @see  waitForNotAttributeFromAllWindows  Related Assertion
+     * @see  storeAttributeFromAllWindows()       Base method, from which has been generated (automatically) current
+     *                                            method
+     * @see  assertAttributeFromAllWindows()      Related Assertion
+     * @see  assertNotAttributeFromAllWindows()   Related Assertion
+     * @see  getAttributeFromAllWindows()         Related Accessor
+     * @see  verifyAttributeFromAllWindows()      Related Assertion
+     * @see  verifyNotAttributeFromAllWindows()   Related Assertion
+     * @see  waitForNotAttributeFromAllWindows()  Related Assertion
      */
     public function waitForAttributeFromAllWindows($attributeName, $pattern)
     {
@@ -2813,19 +2819,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $attributeName  name of an attribute on the windows
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeAttributeFromAllWindows      Base method, from which has been generated (automatically) current
-     *                                         method
-     * @see  assertAttributeFromAllWindows     Related Assertion
-     * @see  assertNotAttributeFromAllWindows  Related Assertion
-     * @see  getAttributeFromAllWindows        Related Accessor
-     * @see  verifyAttributeFromAllWindows     Related Assertion
-     * @see  verifyNotAttributeFromAllWindows  Related Assertion
-     * @see  waitForAttributeFromAllWindows    Related Assertion
+     * @see  storeAttributeFromAllWindows()      Base method, from which has been generated (automatically) current
+     *                                           method
+     * @see  assertAttributeFromAllWindows()     Related Assertion
+     * @see  assertNotAttributeFromAllWindows()  Related Assertion
+     * @see  getAttributeFromAllWindows()        Related Accessor
+     * @see  verifyAttributeFromAllWindows()     Related Assertion
+     * @see  verifyNotAttributeFromAllWindows()  Related Assertion
+     * @see  waitForAttributeFromAllWindows()    Related Assertion
      */
     public function waitForNotAttributeFromAllWindows($attributeName, $pattern)
     {
@@ -2842,20 +2848,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyBodyText}).</p>
+     * {@link verifyBodyText()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeBodyText       Base method, from which has been generated (automatically) current method
-     * @see  assertNotBodyText   Related Assertion
-     * @see  getBodyText         Related Accessor
-     * @see  verifyBodyText      Related Assertion
-     * @see  verifyNotBodyText   Related Assertion
-     * @see  waitForBodyText     Related Assertion
-     * @see  waitForNotBodyText  Related Assertion
+     * @see  storeBodyText()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotBodyText()   Related Assertion
+     * @see  getBodyText()         Related Accessor
+     * @see  verifyBodyText()      Related Assertion
+     * @see  verifyNotBodyText()   Related Assertion
+     * @see  waitForBodyText()     Related Assertion
+     * @see  waitForNotBodyText()  Related Assertion
      */
     public function assertBodyText($pattern)
     {
@@ -2872,20 +2878,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotBodyText}).</p>
+     * {@link verifyNotBodyText()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeBodyText       Base method, from which has been generated (automatically) current method
-     * @see  assertBodyText      Related Assertion
-     * @see  getBodyText         Related Accessor
-     * @see  verifyBodyText      Related Assertion
-     * @see  verifyNotBodyText   Related Assertion
-     * @see  waitForBodyText     Related Assertion
-     * @see  waitForNotBodyText  Related Assertion
+     * @see  storeBodyText()       Base method, from which has been generated (automatically) current method
+     * @see  assertBodyText()      Related Assertion
+     * @see  getBodyText()         Related Accessor
+     * @see  verifyBodyText()      Related Assertion
+     * @see  verifyNotBodyText()   Related Assertion
+     * @see  waitForBodyText()     Related Assertion
+     * @see  waitForNotBodyText()  Related Assertion
      */
     public function assertNotBodyText($pattern)
     {
@@ -2897,13 +2903,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  the entire text of the page
      * 
-     * @see  storeBodyText       Base method, from which has been generated (automatically) current method
-     * @see  assertBodyText      Related Assertion
-     * @see  assertNotBodyText   Related Assertion
-     * @see  verifyBodyText      Related Assertion
-     * @see  verifyNotBodyText   Related Assertion
-     * @see  waitForBodyText     Related Assertion
-     * @see  waitForNotBodyText  Related Assertion
+     * @see  storeBodyText()       Base method, from which has been generated (automatically) current method
+     * @see  assertBodyText()      Related Assertion
+     * @see  assertNotBodyText()   Related Assertion
+     * @see  verifyBodyText()      Related Assertion
+     * @see  verifyNotBodyText()   Related Assertion
+     * @see  waitForBodyText()     Related Assertion
+     * @see  waitForNotBodyText()  Related Assertion
      */
     public function getBodyText()
     {
@@ -2915,20 +2921,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the entire text of the page (see {@link doc_Stored_Variables})</p>
+     * <p>the entire text of the page (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertBodyText      Related Assertion
-     * @see  assertNotBodyText   Related Assertion
-     * @see  getBodyText         Related Accessor
-     * @see  verifyBodyText      Related Assertion
-     * @see  verifyNotBodyText   Related Assertion
-     * @see  waitForBodyText     Related Assertion
-     * @see  waitForNotBodyText  Related Assertion
+     * @see  assertBodyText()      Related Assertion
+     * @see  assertNotBodyText()   Related Assertion
+     * @see  getBodyText()         Related Accessor
+     * @see  verifyBodyText()      Related Assertion
+     * @see  verifyNotBodyText()   Related Assertion
+     * @see  waitForBodyText()     Related Assertion
+     * @see  waitForNotBodyText()  Related Assertion
      */
     public function storeBodyText($variableName)
     {
@@ -2945,20 +2951,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertBodyText}).</p>
+     * {@link assertBodyText()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeBodyText       Base method, from which has been generated (automatically) current method
-     * @see  assertBodyText      Related Assertion
-     * @see  assertNotBodyText   Related Assertion
-     * @see  getBodyText         Related Accessor
-     * @see  verifyNotBodyText   Related Assertion
-     * @see  waitForBodyText     Related Assertion
-     * @see  waitForNotBodyText  Related Assertion
+     * @see  storeBodyText()       Base method, from which has been generated (automatically) current method
+     * @see  assertBodyText()      Related Assertion
+     * @see  assertNotBodyText()   Related Assertion
+     * @see  getBodyText()         Related Accessor
+     * @see  verifyNotBodyText()   Related Assertion
+     * @see  waitForBodyText()     Related Assertion
+     * @see  waitForNotBodyText()  Related Assertion
      */
     public function verifyBodyText($pattern)
     {
@@ -2975,20 +2981,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotBodyText}).</p>
+     * {@link assertNotBodyText()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeBodyText       Base method, from which has been generated (automatically) current method
-     * @see  assertBodyText      Related Assertion
-     * @see  assertNotBodyText   Related Assertion
-     * @see  getBodyText         Related Accessor
-     * @see  verifyBodyText      Related Assertion
-     * @see  waitForBodyText     Related Assertion
-     * @see  waitForNotBodyText  Related Assertion
+     * @see  storeBodyText()       Base method, from which has been generated (automatically) current method
+     * @see  assertBodyText()      Related Assertion
+     * @see  assertNotBodyText()   Related Assertion
+     * @see  getBodyText()         Related Accessor
+     * @see  verifyBodyText()      Related Assertion
+     * @see  waitForBodyText()     Related Assertion
+     * @see  waitForNotBodyText()  Related Assertion
      */
     public function verifyNotBodyText($pattern)
     {
@@ -3008,18 +3014,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeBodyText       Base method, from which has been generated (automatically) current method
-     * @see  assertBodyText      Related Assertion
-     * @see  assertNotBodyText   Related Assertion
-     * @see  getBodyText         Related Accessor
-     * @see  verifyBodyText      Related Assertion
-     * @see  verifyNotBodyText   Related Assertion
-     * @see  waitForNotBodyText  Related Assertion
+     * @see  storeBodyText()       Base method, from which has been generated (automatically) current method
+     * @see  assertBodyText()      Related Assertion
+     * @see  assertNotBodyText()   Related Assertion
+     * @see  getBodyText()         Related Accessor
+     * @see  verifyBodyText()      Related Assertion
+     * @see  verifyNotBodyText()   Related Assertion
+     * @see  waitForNotBodyText()  Related Assertion
      */
     public function waitForBodyText($pattern)
     {
@@ -3039,18 +3045,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeBodyText      Base method, from which has been generated (automatically) current method
-     * @see  assertBodyText     Related Assertion
-     * @see  assertNotBodyText  Related Assertion
-     * @see  getBodyText        Related Accessor
-     * @see  verifyBodyText     Related Assertion
-     * @see  verifyNotBodyText  Related Assertion
-     * @see  waitForBodyText    Related Assertion
+     * @see  storeBodyText()      Base method, from which has been generated (automatically) current method
+     * @see  assertBodyText()     Related Assertion
+     * @see  assertNotBodyText()  Related Assertion
+     * @see  getBodyText()        Related Accessor
+     * @see  verifyBodyText()     Related Assertion
+     * @see  verifyNotBodyText()  Related Assertion
+     * @see  waitForBodyText()    Related Assertion
      */
     public function waitForNotBodyText($pattern)
     {
@@ -3069,20 +3075,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyChecked}).</p>
+     * {@link verifyChecked()}).</p>
      * 
      * @param string   $locator  an element locator pointing to a checkbox or radio button (see
-     *                           {@link doc_Element_Locators})
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeChecked       Base method, from which has been generated (automatically) current method
-     * @see  assertNotChecked   Related Assertion
-     * @see  isChecked          Related Accessor
-     * @see  verifyChecked      Related Assertion
-     * @see  verifyNotChecked   Related Assertion
-     * @see  waitForChecked     Related Assertion
-     * @see  waitForNotChecked  Related Assertion
+     * @see  storeChecked()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotChecked()   Related Assertion
+     * @see  isChecked()          Related Accessor
+     * @see  verifyChecked()      Related Assertion
+     * @see  verifyNotChecked()   Related Assertion
+     * @see  waitForChecked()     Related Assertion
+     * @see  waitForNotChecked()  Related Assertion
      */
     public function assertChecked($locator)
     {
@@ -3101,20 +3107,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotChecked}).</p>
+     * {@link verifyNotChecked()}).</p>
      * 
      * @param string   $locator  an element locator pointing to a checkbox or radio button (see
-     *                           {@link doc_Element_Locators})
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeChecked       Base method, from which has been generated (automatically) current method
-     * @see  assertChecked      Related Assertion
-     * @see  isChecked          Related Accessor
-     * @see  verifyChecked      Related Assertion
-     * @see  verifyNotChecked   Related Assertion
-     * @see  waitForChecked     Related Assertion
-     * @see  waitForNotChecked  Related Assertion
+     * @see  storeChecked()       Base method, from which has been generated (automatically) current method
+     * @see  assertChecked()      Related Assertion
+     * @see  isChecked()          Related Accessor
+     * @see  verifyChecked()      Related Assertion
+     * @see  verifyNotChecked()   Related Assertion
+     * @see  waitForChecked()     Related Assertion
+     * @see  waitForNotChecked()  Related Assertion
      */
     public function assertNotChecked($locator)
     {
@@ -3127,17 +3133,17 @@ trait SeleniumTestCaseDoc
      * Fails if the specified element doesn't exist or isn't a toggle-button.
      * 
      * @param string   $locator  an element locator pointing to a checkbox or radio button (see
-     *                           {@link doc_Element_Locators})
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  bool  true if the checkbox is checked, false otherwise
      * 
-     * @see  storeChecked       Base method, from which has been generated (automatically) current method
-     * @see  assertChecked      Related Assertion
-     * @see  assertNotChecked   Related Assertion
-     * @see  verifyChecked      Related Assertion
-     * @see  verifyNotChecked   Related Assertion
-     * @see  waitForChecked     Related Assertion
-     * @see  waitForNotChecked  Related Assertion
+     * @see  storeChecked()       Base method, from which has been generated (automatically) current method
+     * @see  assertChecked()      Related Assertion
+     * @see  assertNotChecked()   Related Assertion
+     * @see  verifyChecked()      Related Assertion
+     * @see  verifyNotChecked()   Related Assertion
+     * @see  waitForChecked()     Related Assertion
+     * @see  waitForNotChecked()  Related Assertion
      */
     public function isChecked($locator)
     {
@@ -3151,22 +3157,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if the checkbox is checked, false otherwise (see {@link doc_Stored_Variables})</p>
+     * <p>true if the checkbox is checked, false otherwise (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $locator       an element locator pointing to a checkbox or radio button (see
-     *                                {@link doc_Element_Locators})
+     *                                {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertChecked      Related Assertion
-     * @see  assertNotChecked   Related Assertion
-     * @see  isChecked          Related Accessor
-     * @see  verifyChecked      Related Assertion
-     * @see  verifyNotChecked   Related Assertion
-     * @see  waitForChecked     Related Assertion
-     * @see  waitForNotChecked  Related Assertion
+     * @see  assertChecked()      Related Assertion
+     * @see  assertNotChecked()   Related Assertion
+     * @see  isChecked()          Related Accessor
+     * @see  verifyChecked()      Related Assertion
+     * @see  verifyNotChecked()   Related Assertion
+     * @see  waitForChecked()     Related Assertion
+     * @see  waitForNotChecked()  Related Assertion
      */
     public function storeChecked($locator, $variableName)
     {
@@ -3185,20 +3191,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertChecked}).</p>
+     * {@link assertChecked()}).</p>
      * 
      * @param string   $locator  an element locator pointing to a checkbox or radio button (see
-     *                           {@link doc_Element_Locators})
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeChecked       Base method, from which has been generated (automatically) current method
-     * @see  assertChecked      Related Assertion
-     * @see  assertNotChecked   Related Assertion
-     * @see  isChecked          Related Accessor
-     * @see  verifyNotChecked   Related Assertion
-     * @see  waitForChecked     Related Assertion
-     * @see  waitForNotChecked  Related Assertion
+     * @see  storeChecked()       Base method, from which has been generated (automatically) current method
+     * @see  assertChecked()      Related Assertion
+     * @see  assertNotChecked()   Related Assertion
+     * @see  isChecked()          Related Accessor
+     * @see  verifyNotChecked()   Related Assertion
+     * @see  waitForChecked()     Related Assertion
+     * @see  waitForNotChecked()  Related Assertion
      */
     public function verifyChecked($locator)
     {
@@ -3217,20 +3223,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotChecked}).</p>
+     * {@link assertNotChecked()}).</p>
      * 
      * @param string   $locator  an element locator pointing to a checkbox or radio button (see
-     *                           {@link doc_Element_Locators})
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeChecked       Base method, from which has been generated (automatically) current method
-     * @see  assertChecked      Related Assertion
-     * @see  assertNotChecked   Related Assertion
-     * @see  isChecked          Related Accessor
-     * @see  verifyChecked      Related Assertion
-     * @see  waitForChecked     Related Assertion
-     * @see  waitForNotChecked  Related Assertion
+     * @see  storeChecked()       Base method, from which has been generated (automatically) current method
+     * @see  assertChecked()      Related Assertion
+     * @see  assertNotChecked()   Related Assertion
+     * @see  isChecked()          Related Accessor
+     * @see  verifyChecked()      Related Assertion
+     * @see  waitForChecked()     Related Assertion
+     * @see  waitForNotChecked()  Related Assertion
      */
     public function verifyNotChecked($locator)
     {
@@ -3253,17 +3259,17 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator pointing to a checkbox or radio button (see
-     *                           {@link doc_Element_Locators})
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeChecked       Base method, from which has been generated (automatically) current method
-     * @see  assertChecked      Related Assertion
-     * @see  assertNotChecked   Related Assertion
-     * @see  isChecked          Related Accessor
-     * @see  verifyChecked      Related Assertion
-     * @see  verifyNotChecked   Related Assertion
-     * @see  waitForNotChecked  Related Assertion
+     * @see  storeChecked()       Base method, from which has been generated (automatically) current method
+     * @see  assertChecked()      Related Assertion
+     * @see  assertNotChecked()   Related Assertion
+     * @see  isChecked()          Related Accessor
+     * @see  verifyChecked()      Related Assertion
+     * @see  verifyNotChecked()   Related Assertion
+     * @see  waitForNotChecked()  Related Assertion
      */
     public function waitForChecked($locator)
     {
@@ -3286,17 +3292,17 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator pointing to a checkbox or radio button (see
-     *                           {@link doc_Element_Locators})
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeChecked      Base method, from which has been generated (automatically) current method
-     * @see  assertChecked     Related Assertion
-     * @see  assertNotChecked  Related Assertion
-     * @see  isChecked         Related Accessor
-     * @see  verifyChecked     Related Assertion
-     * @see  verifyNotChecked  Related Assertion
-     * @see  waitForChecked    Related Assertion
+     * @see  storeChecked()      Base method, from which has been generated (automatically) current method
+     * @see  assertChecked()     Related Assertion
+     * @see  assertNotChecked()  Related Assertion
+     * @see  isChecked()         Related Accessor
+     * @see  verifyChecked()     Related Assertion
+     * @see  verifyNotChecked()  Related Assertion
+     * @see  waitForChecked()    Related Assertion
      */
     public function waitForNotChecked($locator)
     {
@@ -3325,20 +3331,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyConfirmation}).</p>
+     * {@link verifyConfirmation()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeConfirmation       Base method, from which has been generated (automatically) current method
-     * @see  assertNotConfirmation   Related Assertion
-     * @see  getConfirmation         Related Accessor
-     * @see  verifyConfirmation      Related Assertion
-     * @see  verifyNotConfirmation   Related Assertion
-     * @see  waitForConfirmation     Related Assertion
-     * @see  waitForNotConfirmation  Related Assertion
+     * @see  storeConfirmation()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotConfirmation()   Related Assertion
+     * @see  getConfirmation()         Related Accessor
+     * @see  verifyConfirmation()      Related Assertion
+     * @see  verifyNotConfirmation()   Related Assertion
+     * @see  waitForConfirmation()     Related Assertion
+     * @see  waitForNotConfirmation()  Related Assertion
      */
     public function assertConfirmation($pattern)
     {
@@ -3367,20 +3373,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotConfirmation}).</p>
+     * {@link verifyNotConfirmation()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeConfirmation       Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmation      Related Assertion
-     * @see  getConfirmation         Related Accessor
-     * @see  verifyConfirmation      Related Assertion
-     * @see  verifyNotConfirmation   Related Assertion
-     * @see  waitForConfirmation     Related Assertion
-     * @see  waitForNotConfirmation  Related Assertion
+     * @see  storeConfirmation()       Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmation()      Related Assertion
+     * @see  getConfirmation()         Related Accessor
+     * @see  verifyConfirmation()      Related Assertion
+     * @see  verifyNotConfirmation()   Related Assertion
+     * @see  waitForConfirmation()     Related Assertion
+     * @see  waitForNotConfirmation()  Related Assertion
      */
     public function assertNotConfirmation($pattern)
     {
@@ -3404,13 +3410,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  the message of the most recent JavaScript confirmation dialog
      * 
-     * @see  storeConfirmation       Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmation      Related Assertion
-     * @see  assertNotConfirmation   Related Assertion
-     * @see  verifyConfirmation      Related Assertion
-     * @see  verifyNotConfirmation   Related Assertion
-     * @see  waitForConfirmation     Related Assertion
-     * @see  waitForNotConfirmation  Related Assertion
+     * @see  storeConfirmation()       Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmation()      Related Assertion
+     * @see  assertNotConfirmation()   Related Assertion
+     * @see  verifyConfirmation()      Related Assertion
+     * @see  verifyNotConfirmation()   Related Assertion
+     * @see  waitForConfirmation()     Related Assertion
+     * @see  waitForNotConfirmation()  Related Assertion
      */
     public function getConfirmation()
     {
@@ -3434,20 +3440,21 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the message of the most recent JavaScript confirmation dialog (see {@link doc_Stored_Variables})</p>
+     * <p>the message of the most recent JavaScript confirmation dialog (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertConfirmation      Related Assertion
-     * @see  assertNotConfirmation   Related Assertion
-     * @see  getConfirmation         Related Accessor
-     * @see  verifyConfirmation      Related Assertion
-     * @see  verifyNotConfirmation   Related Assertion
-     * @see  waitForConfirmation     Related Assertion
-     * @see  waitForNotConfirmation  Related Assertion
+     * @see  assertConfirmation()      Related Assertion
+     * @see  assertNotConfirmation()   Related Assertion
+     * @see  getConfirmation()         Related Accessor
+     * @see  verifyConfirmation()      Related Assertion
+     * @see  verifyNotConfirmation()   Related Assertion
+     * @see  waitForConfirmation()     Related Assertion
+     * @see  waitForNotConfirmation()  Related Assertion
      */
     public function storeConfirmation($variableName)
     {
@@ -3476,20 +3483,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertConfirmation}).</p>
+     * {@link assertConfirmation()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeConfirmation       Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmation      Related Assertion
-     * @see  assertNotConfirmation   Related Assertion
-     * @see  getConfirmation         Related Accessor
-     * @see  verifyNotConfirmation   Related Assertion
-     * @see  waitForConfirmation     Related Assertion
-     * @see  waitForNotConfirmation  Related Assertion
+     * @see  storeConfirmation()       Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmation()      Related Assertion
+     * @see  assertNotConfirmation()   Related Assertion
+     * @see  getConfirmation()         Related Accessor
+     * @see  verifyNotConfirmation()   Related Assertion
+     * @see  waitForConfirmation()     Related Assertion
+     * @see  waitForNotConfirmation()  Related Assertion
      */
     public function verifyConfirmation($pattern)
     {
@@ -3518,20 +3525,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotConfirmation}).</p>
+     * {@link assertNotConfirmation()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeConfirmation       Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmation      Related Assertion
-     * @see  assertNotConfirmation   Related Assertion
-     * @see  getConfirmation         Related Accessor
-     * @see  verifyConfirmation      Related Assertion
-     * @see  waitForConfirmation     Related Assertion
-     * @see  waitForNotConfirmation  Related Assertion
+     * @see  storeConfirmation()       Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmation()      Related Assertion
+     * @see  assertNotConfirmation()   Related Assertion
+     * @see  getConfirmation()         Related Accessor
+     * @see  verifyConfirmation()      Related Assertion
+     * @see  waitForConfirmation()     Related Assertion
+     * @see  waitForNotConfirmation()  Related Assertion
      */
     public function verifyNotConfirmation($pattern)
     {
@@ -3563,18 +3570,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeConfirmation       Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmation      Related Assertion
-     * @see  assertNotConfirmation   Related Assertion
-     * @see  getConfirmation         Related Accessor
-     * @see  verifyConfirmation      Related Assertion
-     * @see  verifyNotConfirmation   Related Assertion
-     * @see  waitForNotConfirmation  Related Assertion
+     * @see  storeConfirmation()       Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmation()      Related Assertion
+     * @see  assertNotConfirmation()   Related Assertion
+     * @see  getConfirmation()         Related Accessor
+     * @see  verifyConfirmation()      Related Assertion
+     * @see  verifyNotConfirmation()   Related Assertion
+     * @see  waitForNotConfirmation()  Related Assertion
      */
     public function waitForConfirmation($pattern)
     {
@@ -3606,18 +3613,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeConfirmation      Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmation     Related Assertion
-     * @see  assertNotConfirmation  Related Assertion
-     * @see  getConfirmation        Related Accessor
-     * @see  verifyConfirmation     Related Assertion
-     * @see  verifyNotConfirmation  Related Assertion
-     * @see  waitForConfirmation    Related Assertion
+     * @see  storeConfirmation()      Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmation()     Related Assertion
+     * @see  assertNotConfirmation()  Related Assertion
+     * @see  getConfirmation()        Related Accessor
+     * @see  verifyConfirmation()     Related Assertion
+     * @see  verifyNotConfirmation()  Related Assertion
+     * @see  waitForConfirmation()    Related Assertion
      */
     public function waitForNotConfirmation($pattern)
     {
@@ -3636,17 +3643,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyConfirmationNotPresent}).</p>
+     * {@link verifyConfirmationNotPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storeConfirmationPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmationPresent      Related Assertion
-     * @see  isConfirmationPresent          Related Accessor
-     * @see  verifyConfirmationNotPresent   Related Assertion
-     * @see  verifyConfirmationPresent      Related Assertion
-     * @see  waitForConfirmationNotPresent  Related Assertion
-     * @see  waitForConfirmationPresent     Related Assertion
+     * @see  storeConfirmationPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmationPresent()      Related Assertion
+     * @see  isConfirmationPresent()          Related Accessor
+     * @see  verifyConfirmationNotPresent()   Related Assertion
+     * @see  verifyConfirmationPresent()      Related Assertion
+     * @see  waitForConfirmationNotPresent()  Related Assertion
+     * @see  waitForConfirmationPresent()     Related Assertion
      */
     public function assertConfirmationNotPresent()
     {
@@ -3665,17 +3672,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyConfirmationPresent}).</p>
+     * {@link verifyConfirmationPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storeConfirmationPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmationNotPresent   Related Assertion
-     * @see  isConfirmationPresent          Related Accessor
-     * @see  verifyConfirmationNotPresent   Related Assertion
-     * @see  verifyConfirmationPresent      Related Assertion
-     * @see  waitForConfirmationNotPresent  Related Assertion
-     * @see  waitForConfirmationPresent     Related Assertion
+     * @see  storeConfirmationPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmationNotPresent()   Related Assertion
+     * @see  isConfirmationPresent()          Related Accessor
+     * @see  verifyConfirmationNotPresent()   Related Assertion
+     * @see  verifyConfirmationPresent()      Related Assertion
+     * @see  waitForConfirmationNotPresent()  Related Assertion
+     * @see  waitForConfirmationPresent()     Related Assertion
      */
     public function assertConfirmationPresent()
     {
@@ -3689,13 +3696,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  bool  true if there is a pending confirmation
      * 
-     * @see  storeConfirmationPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmationNotPresent   Related Assertion
-     * @see  assertConfirmationPresent      Related Assertion
-     * @see  verifyConfirmationNotPresent   Related Assertion
-     * @see  verifyConfirmationPresent      Related Assertion
-     * @see  waitForConfirmationNotPresent  Related Assertion
-     * @see  waitForConfirmationPresent     Related Assertion
+     * @see  storeConfirmationPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmationNotPresent()   Related Assertion
+     * @see  assertConfirmationPresent()      Related Assertion
+     * @see  verifyConfirmationNotPresent()   Related Assertion
+     * @see  verifyConfirmationPresent()      Related Assertion
+     * @see  waitForConfirmationNotPresent()  Related Assertion
+     * @see  waitForConfirmationPresent()     Related Assertion
      */
     public function isConfirmationPresent()
     {
@@ -3709,20 +3716,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if there is a pending confirmation (see {@link doc_Stored_Variables})</p>
+     * <p>true if there is a pending confirmation (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertConfirmationNotPresent   Related Assertion
-     * @see  assertConfirmationPresent      Related Assertion
-     * @see  isConfirmationPresent          Related Accessor
-     * @see  verifyConfirmationNotPresent   Related Assertion
-     * @see  verifyConfirmationPresent      Related Assertion
-     * @see  waitForConfirmationNotPresent  Related Assertion
-     * @see  waitForConfirmationPresent     Related Assertion
+     * @see  assertConfirmationNotPresent()   Related Assertion
+     * @see  assertConfirmationPresent()      Related Assertion
+     * @see  isConfirmationPresent()          Related Accessor
+     * @see  verifyConfirmationNotPresent()   Related Assertion
+     * @see  verifyConfirmationPresent()      Related Assertion
+     * @see  waitForConfirmationNotPresent()  Related Assertion
+     * @see  waitForConfirmationPresent()     Related Assertion
      */
     public function storeConfirmationPresent($variableName)
     {
@@ -3741,17 +3748,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertConfirmationNotPresent}).</p>
+     * {@link assertConfirmationNotPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storeConfirmationPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmationNotPresent   Related Assertion
-     * @see  assertConfirmationPresent      Related Assertion
-     * @see  isConfirmationPresent          Related Accessor
-     * @see  verifyConfirmationPresent      Related Assertion
-     * @see  waitForConfirmationNotPresent  Related Assertion
-     * @see  waitForConfirmationPresent     Related Assertion
+     * @see  storeConfirmationPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmationNotPresent()   Related Assertion
+     * @see  assertConfirmationPresent()      Related Assertion
+     * @see  isConfirmationPresent()          Related Accessor
+     * @see  verifyConfirmationPresent()      Related Assertion
+     * @see  waitForConfirmationNotPresent()  Related Assertion
+     * @see  waitForConfirmationPresent()     Related Assertion
      */
     public function verifyConfirmationNotPresent()
     {
@@ -3770,17 +3777,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertConfirmationPresent}).</p>
+     * {@link assertConfirmationPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storeConfirmationPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmationNotPresent   Related Assertion
-     * @see  assertConfirmationPresent      Related Assertion
-     * @see  isConfirmationPresent          Related Accessor
-     * @see  verifyConfirmationNotPresent   Related Assertion
-     * @see  waitForConfirmationNotPresent  Related Assertion
-     * @see  waitForConfirmationPresent     Related Assertion
+     * @see  storeConfirmationPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmationNotPresent()   Related Assertion
+     * @see  assertConfirmationPresent()      Related Assertion
+     * @see  isConfirmationPresent()          Related Accessor
+     * @see  verifyConfirmationNotPresent()   Related Assertion
+     * @see  waitForConfirmationNotPresent()  Related Assertion
+     * @see  waitForConfirmationPresent()     Related Assertion
      */
     public function verifyConfirmationPresent()
     {
@@ -3804,13 +3811,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storeConfirmationPresent      Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmationNotPresent  Related Assertion
-     * @see  assertConfirmationPresent     Related Assertion
-     * @see  isConfirmationPresent         Related Accessor
-     * @see  verifyConfirmationNotPresent  Related Assertion
-     * @see  verifyConfirmationPresent     Related Assertion
-     * @see  waitForConfirmationPresent    Related Assertion
+     * @see  storeConfirmationPresent()      Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmationNotPresent()  Related Assertion
+     * @see  assertConfirmationPresent()     Related Assertion
+     * @see  isConfirmationPresent()         Related Accessor
+     * @see  verifyConfirmationNotPresent()  Related Assertion
+     * @see  verifyConfirmationPresent()     Related Assertion
+     * @see  waitForConfirmationPresent()    Related Assertion
      */
     public function waitForConfirmationNotPresent()
     {
@@ -3834,13 +3841,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storeConfirmationPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertConfirmationNotPresent   Related Assertion
-     * @see  assertConfirmationPresent      Related Assertion
-     * @see  isConfirmationPresent          Related Accessor
-     * @see  verifyConfirmationNotPresent   Related Assertion
-     * @see  verifyConfirmationPresent      Related Assertion
-     * @see  waitForConfirmationNotPresent  Related Assertion
+     * @see  storeConfirmationPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertConfirmationNotPresent()   Related Assertion
+     * @see  assertConfirmationPresent()      Related Assertion
+     * @see  isConfirmationPresent()          Related Accessor
+     * @see  verifyConfirmationNotPresent()   Related Assertion
+     * @see  verifyConfirmationPresent()      Related Assertion
+     * @see  waitForConfirmationNotPresent()  Related Assertion
      */
     public function waitForConfirmationPresent()
     {
@@ -3857,20 +3864,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyCookie}).</p>
+     * {@link verifyCookie()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookie       Base method, from which has been generated (automatically) current method
-     * @see  assertNotCookie   Related Assertion
-     * @see  getCookie         Related Accessor
-     * @see  verifyCookie      Related Assertion
-     * @see  verifyNotCookie   Related Assertion
-     * @see  waitForCookie     Related Assertion
-     * @see  waitForNotCookie  Related Assertion
+     * @see  storeCookie()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotCookie()   Related Assertion
+     * @see  getCookie()         Related Accessor
+     * @see  verifyCookie()      Related Assertion
+     * @see  verifyNotCookie()   Related Assertion
+     * @see  waitForCookie()     Related Assertion
+     * @see  waitForNotCookie()  Related Assertion
      */
     public function assertCookie($pattern)
     {
@@ -3887,20 +3894,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotCookie}).</p>
+     * {@link verifyNotCookie()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookie       Base method, from which has been generated (automatically) current method
-     * @see  assertCookie      Related Assertion
-     * @see  getCookie         Related Accessor
-     * @see  verifyCookie      Related Assertion
-     * @see  verifyNotCookie   Related Assertion
-     * @see  waitForCookie     Related Assertion
-     * @see  waitForNotCookie  Related Assertion
+     * @see  storeCookie()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookie()      Related Assertion
+     * @see  getCookie()         Related Accessor
+     * @see  verifyCookie()      Related Assertion
+     * @see  verifyNotCookie()   Related Assertion
+     * @see  waitForCookie()     Related Assertion
+     * @see  waitForNotCookie()  Related Assertion
      */
     public function assertNotCookie($pattern)
     {
@@ -3912,13 +3919,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  all cookies of the current page under test
      * 
-     * @see  storeCookie       Base method, from which has been generated (automatically) current method
-     * @see  assertCookie      Related Assertion
-     * @see  assertNotCookie   Related Assertion
-     * @see  verifyCookie      Related Assertion
-     * @see  verifyNotCookie   Related Assertion
-     * @see  waitForCookie     Related Assertion
-     * @see  waitForNotCookie  Related Assertion
+     * @see  storeCookie()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookie()      Related Assertion
+     * @see  assertNotCookie()   Related Assertion
+     * @see  verifyCookie()      Related Assertion
+     * @see  verifyNotCookie()   Related Assertion
+     * @see  waitForCookie()     Related Assertion
+     * @see  waitForNotCookie()  Related Assertion
      */
     public function getCookie()
     {
@@ -3930,20 +3937,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>all cookies of the current page under test (see {@link doc_Stored_Variables})</p>
+     * <p>all cookies of the current page under test (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertCookie      Related Assertion
-     * @see  assertNotCookie   Related Assertion
-     * @see  getCookie         Related Accessor
-     * @see  verifyCookie      Related Assertion
-     * @see  verifyNotCookie   Related Assertion
-     * @see  waitForCookie     Related Assertion
-     * @see  waitForNotCookie  Related Assertion
+     * @see  assertCookie()      Related Assertion
+     * @see  assertNotCookie()   Related Assertion
+     * @see  getCookie()         Related Accessor
+     * @see  verifyCookie()      Related Assertion
+     * @see  verifyNotCookie()   Related Assertion
+     * @see  waitForCookie()     Related Assertion
+     * @see  waitForNotCookie()  Related Assertion
      */
     public function storeCookie($variableName)
     {
@@ -3960,20 +3967,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertCookie}).</p>
+     * {@link assertCookie()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookie       Base method, from which has been generated (automatically) current method
-     * @see  assertCookie      Related Assertion
-     * @see  assertNotCookie   Related Assertion
-     * @see  getCookie         Related Accessor
-     * @see  verifyNotCookie   Related Assertion
-     * @see  waitForCookie     Related Assertion
-     * @see  waitForNotCookie  Related Assertion
+     * @see  storeCookie()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookie()      Related Assertion
+     * @see  assertNotCookie()   Related Assertion
+     * @see  getCookie()         Related Accessor
+     * @see  verifyNotCookie()   Related Assertion
+     * @see  waitForCookie()     Related Assertion
+     * @see  waitForNotCookie()  Related Assertion
      */
     public function verifyCookie($pattern)
     {
@@ -3990,20 +3997,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotCookie}).</p>
+     * {@link assertNotCookie()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookie       Base method, from which has been generated (automatically) current method
-     * @see  assertCookie      Related Assertion
-     * @see  assertNotCookie   Related Assertion
-     * @see  getCookie         Related Accessor
-     * @see  verifyCookie      Related Assertion
-     * @see  waitForCookie     Related Assertion
-     * @see  waitForNotCookie  Related Assertion
+     * @see  storeCookie()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookie()      Related Assertion
+     * @see  assertNotCookie()   Related Assertion
+     * @see  getCookie()         Related Accessor
+     * @see  verifyCookie()      Related Assertion
+     * @see  waitForCookie()     Related Assertion
+     * @see  waitForNotCookie()  Related Assertion
      */
     public function verifyNotCookie($pattern)
     {
@@ -4023,18 +4030,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookie       Base method, from which has been generated (automatically) current method
-     * @see  assertCookie      Related Assertion
-     * @see  assertNotCookie   Related Assertion
-     * @see  getCookie         Related Accessor
-     * @see  verifyCookie      Related Assertion
-     * @see  verifyNotCookie   Related Assertion
-     * @see  waitForNotCookie  Related Assertion
+     * @see  storeCookie()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookie()      Related Assertion
+     * @see  assertNotCookie()   Related Assertion
+     * @see  getCookie()         Related Accessor
+     * @see  verifyCookie()      Related Assertion
+     * @see  verifyNotCookie()   Related Assertion
+     * @see  waitForNotCookie()  Related Assertion
      */
     public function waitForCookie($pattern)
     {
@@ -4054,18 +4061,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookie      Base method, from which has been generated (automatically) current method
-     * @see  assertCookie     Related Assertion
-     * @see  assertNotCookie  Related Assertion
-     * @see  getCookie        Related Accessor
-     * @see  verifyCookie     Related Assertion
-     * @see  verifyNotCookie  Related Assertion
-     * @see  waitForCookie    Related Assertion
+     * @see  storeCookie()      Base method, from which has been generated (automatically) current method
+     * @see  assertCookie()     Related Assertion
+     * @see  assertNotCookie()  Related Assertion
+     * @see  getCookie()        Related Accessor
+     * @see  verifyCookie()     Related Assertion
+     * @see  verifyNotCookie()  Related Assertion
+     * @see  waitForCookie()    Related Assertion
      */
     public function waitForNotCookie($pattern)
     {
@@ -4083,21 +4090,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyCookieByName}).</p>
+     * {@link verifyCookieByName()}).</p>
      * 
      * @param string   $name     the name of the cookie
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookieByName       Base method, from which has been generated (automatically) current method
-     * @see  assertNotCookieByName   Related Assertion
-     * @see  getCookieByName         Related Accessor
-     * @see  verifyCookieByName      Related Assertion
-     * @see  verifyNotCookieByName   Related Assertion
-     * @see  waitForCookieByName     Related Assertion
-     * @see  waitForNotCookieByName  Related Assertion
+     * @see  storeCookieByName()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotCookieByName()   Related Assertion
+     * @see  getCookieByName()         Related Accessor
+     * @see  verifyCookieByName()      Related Assertion
+     * @see  verifyNotCookieByName()   Related Assertion
+     * @see  waitForCookieByName()     Related Assertion
+     * @see  waitForNotCookieByName()  Related Assertion
      */
     public function assertCookieByName($name, $pattern)
     {
@@ -4115,21 +4122,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotCookieByName}).</p>
+     * {@link verifyNotCookieByName()}).</p>
      * 
      * @param string   $name     the name of the cookie
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookieByName       Base method, from which has been generated (automatically) current method
-     * @see  assertCookieByName      Related Assertion
-     * @see  getCookieByName         Related Accessor
-     * @see  verifyCookieByName      Related Assertion
-     * @see  verifyNotCookieByName   Related Assertion
-     * @see  waitForCookieByName     Related Assertion
-     * @see  waitForNotCookieByName  Related Assertion
+     * @see  storeCookieByName()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookieByName()      Related Assertion
+     * @see  getCookieByName()         Related Accessor
+     * @see  verifyCookieByName()      Related Assertion
+     * @see  verifyNotCookieByName()   Related Assertion
+     * @see  waitForCookieByName()     Related Assertion
+     * @see  waitForNotCookieByName()  Related Assertion
      */
     public function assertNotCookieByName($name, $pattern)
     {
@@ -4143,13 +4150,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  the value of the cookie
      * 
-     * @see  storeCookieByName       Base method, from which has been generated (automatically) current method
-     * @see  assertCookieByName      Related Assertion
-     * @see  assertNotCookieByName   Related Assertion
-     * @see  verifyCookieByName      Related Assertion
-     * @see  verifyNotCookieByName   Related Assertion
-     * @see  waitForCookieByName     Related Assertion
-     * @see  waitForNotCookieByName  Related Assertion
+     * @see  storeCookieByName()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookieByName()      Related Assertion
+     * @see  assertNotCookieByName()   Related Assertion
+     * @see  verifyCookieByName()      Related Assertion
+     * @see  verifyNotCookieByName()   Related Assertion
+     * @see  waitForCookieByName()     Related Assertion
+     * @see  waitForNotCookieByName()  Related Assertion
      */
     public function getCookieByName($name)
     {
@@ -4161,21 +4168,21 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the value of the cookie (see {@link doc_Stored_Variables})</p>
+     * <p>the value of the cookie (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $name          the name of the cookie
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertCookieByName      Related Assertion
-     * @see  assertNotCookieByName   Related Assertion
-     * @see  getCookieByName         Related Accessor
-     * @see  verifyCookieByName      Related Assertion
-     * @see  verifyNotCookieByName   Related Assertion
-     * @see  waitForCookieByName     Related Assertion
-     * @see  waitForNotCookieByName  Related Assertion
+     * @see  assertCookieByName()      Related Assertion
+     * @see  assertNotCookieByName()   Related Assertion
+     * @see  getCookieByName()         Related Accessor
+     * @see  verifyCookieByName()      Related Assertion
+     * @see  verifyNotCookieByName()   Related Assertion
+     * @see  waitForCookieByName()     Related Assertion
+     * @see  waitForNotCookieByName()  Related Assertion
      */
     public function storeCookieByName($name, $variableName)
     {
@@ -4193,21 +4200,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertCookieByName}).</p>
+     * {@link assertCookieByName()}).</p>
      * 
      * @param string   $name     the name of the cookie
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookieByName       Base method, from which has been generated (automatically) current method
-     * @see  assertCookieByName      Related Assertion
-     * @see  assertNotCookieByName   Related Assertion
-     * @see  getCookieByName         Related Accessor
-     * @see  verifyNotCookieByName   Related Assertion
-     * @see  waitForCookieByName     Related Assertion
-     * @see  waitForNotCookieByName  Related Assertion
+     * @see  storeCookieByName()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookieByName()      Related Assertion
+     * @see  assertNotCookieByName()   Related Assertion
+     * @see  getCookieByName()         Related Accessor
+     * @see  verifyNotCookieByName()   Related Assertion
+     * @see  waitForCookieByName()     Related Assertion
+     * @see  waitForNotCookieByName()  Related Assertion
      */
     public function verifyCookieByName($name, $pattern)
     {
@@ -4225,21 +4232,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotCookieByName}).</p>
+     * {@link assertNotCookieByName()}).</p>
      * 
      * @param string   $name     the name of the cookie
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookieByName       Base method, from which has been generated (automatically) current method
-     * @see  assertCookieByName      Related Assertion
-     * @see  assertNotCookieByName   Related Assertion
-     * @see  getCookieByName         Related Accessor
-     * @see  verifyCookieByName      Related Assertion
-     * @see  waitForCookieByName     Related Assertion
-     * @see  waitForNotCookieByName  Related Assertion
+     * @see  storeCookieByName()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookieByName()      Related Assertion
+     * @see  assertNotCookieByName()   Related Assertion
+     * @see  getCookieByName()         Related Accessor
+     * @see  verifyCookieByName()      Related Assertion
+     * @see  waitForCookieByName()     Related Assertion
+     * @see  waitForNotCookieByName()  Related Assertion
      */
     public function verifyNotCookieByName($name, $pattern)
     {
@@ -4261,18 +4268,18 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $name     the name of the cookie
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookieByName       Base method, from which has been generated (automatically) current method
-     * @see  assertCookieByName      Related Assertion
-     * @see  assertNotCookieByName   Related Assertion
-     * @see  getCookieByName         Related Accessor
-     * @see  verifyCookieByName      Related Assertion
-     * @see  verifyNotCookieByName   Related Assertion
-     * @see  waitForNotCookieByName  Related Assertion
+     * @see  storeCookieByName()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookieByName()      Related Assertion
+     * @see  assertNotCookieByName()   Related Assertion
+     * @see  getCookieByName()         Related Accessor
+     * @see  verifyCookieByName()      Related Assertion
+     * @see  verifyNotCookieByName()   Related Assertion
+     * @see  waitForNotCookieByName()  Related Assertion
      */
     public function waitForCookieByName($name, $pattern)
     {
@@ -4294,18 +4301,18 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $name     the name of the cookie
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCookieByName      Base method, from which has been generated (automatically) current method
-     * @see  assertCookieByName     Related Assertion
-     * @see  assertNotCookieByName  Related Assertion
-     * @see  getCookieByName        Related Accessor
-     * @see  verifyCookieByName     Related Assertion
-     * @see  verifyNotCookieByName  Related Assertion
-     * @see  waitForCookieByName    Related Assertion
+     * @see  storeCookieByName()      Base method, from which has been generated (automatically) current method
+     * @see  assertCookieByName()     Related Assertion
+     * @see  assertNotCookieByName()  Related Assertion
+     * @see  getCookieByName()        Related Accessor
+     * @see  verifyCookieByName()     Related Assertion
+     * @see  verifyNotCookieByName()  Related Assertion
+     * @see  waitForCookieByName()    Related Assertion
      */
     public function waitForNotCookieByName($name, $pattern)
     {
@@ -4322,19 +4329,19 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyCookieNotPresent}).</p>
+     * {@link verifyCookieNotPresent()}).</p>
      * 
      * @param string   $name  the name of the cookie
      * 
      * @return  void
      * 
-     * @see  storeCookiePresent       Base method, from which has been generated (automatically) current method
-     * @see  assertCookiePresent      Related Assertion
-     * @see  isCookiePresent          Related Accessor
-     * @see  verifyCookieNotPresent   Related Assertion
-     * @see  verifyCookiePresent      Related Assertion
-     * @see  waitForCookieNotPresent  Related Assertion
-     * @see  waitForCookiePresent     Related Assertion
+     * @see  storeCookiePresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookiePresent()      Related Assertion
+     * @see  isCookiePresent()          Related Accessor
+     * @see  verifyCookieNotPresent()   Related Assertion
+     * @see  verifyCookiePresent()      Related Assertion
+     * @see  waitForCookieNotPresent()  Related Assertion
+     * @see  waitForCookiePresent()     Related Assertion
      */
     public function assertCookieNotPresent($name)
     {
@@ -4351,19 +4358,19 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyCookiePresent}).</p>
+     * {@link verifyCookiePresent()}).</p>
      * 
      * @param string   $name  the name of the cookie
      * 
      * @return  void
      * 
-     * @see  storeCookiePresent       Base method, from which has been generated (automatically) current method
-     * @see  assertCookieNotPresent   Related Assertion
-     * @see  isCookiePresent          Related Accessor
-     * @see  verifyCookieNotPresent   Related Assertion
-     * @see  verifyCookiePresent      Related Assertion
-     * @see  waitForCookieNotPresent  Related Assertion
-     * @see  waitForCookiePresent     Related Assertion
+     * @see  storeCookiePresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookieNotPresent()   Related Assertion
+     * @see  isCookiePresent()          Related Accessor
+     * @see  verifyCookieNotPresent()   Related Assertion
+     * @see  verifyCookiePresent()      Related Assertion
+     * @see  waitForCookieNotPresent()  Related Assertion
+     * @see  waitForCookiePresent()     Related Assertion
      */
     public function assertCookiePresent($name)
     {
@@ -4377,13 +4384,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  bool  true if a cookie with the specified name is present, or false otherwise.
      * 
-     * @see  storeCookiePresent       Base method, from which has been generated (automatically) current method
-     * @see  assertCookieNotPresent   Related Assertion
-     * @see  assertCookiePresent      Related Assertion
-     * @see  verifyCookieNotPresent   Related Assertion
-     * @see  verifyCookiePresent      Related Assertion
-     * @see  waitForCookieNotPresent  Related Assertion
-     * @see  waitForCookiePresent     Related Assertion
+     * @see  storeCookiePresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookieNotPresent()   Related Assertion
+     * @see  assertCookiePresent()      Related Assertion
+     * @see  verifyCookieNotPresent()   Related Assertion
+     * @see  verifyCookiePresent()      Related Assertion
+     * @see  waitForCookieNotPresent()  Related Assertion
+     * @see  waitForCookiePresent()     Related Assertion
      */
     public function isCookiePresent($name)
     {
@@ -4396,21 +4403,21 @@ trait SeleniumTestCaseDoc
      * <h4>Stored value:</h4>
      * 
      * <p>true if a cookie with the specified name is present, or false otherwise. (see
-     * {@link doc_Stored_Variables})</p>
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $name          the name of the cookie
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertCookieNotPresent   Related Assertion
-     * @see  assertCookiePresent      Related Assertion
-     * @see  isCookiePresent          Related Accessor
-     * @see  verifyCookieNotPresent   Related Assertion
-     * @see  verifyCookiePresent      Related Assertion
-     * @see  waitForCookieNotPresent  Related Assertion
-     * @see  waitForCookiePresent     Related Assertion
+     * @see  assertCookieNotPresent()   Related Assertion
+     * @see  assertCookiePresent()      Related Assertion
+     * @see  isCookiePresent()          Related Accessor
+     * @see  verifyCookieNotPresent()   Related Assertion
+     * @see  verifyCookiePresent()      Related Assertion
+     * @see  waitForCookieNotPresent()  Related Assertion
+     * @see  waitForCookiePresent()     Related Assertion
      */
     public function storeCookiePresent($name, $variableName)
     {
@@ -4427,19 +4434,19 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertCookieNotPresent}).</p>
+     * {@link assertCookieNotPresent()}).</p>
      * 
      * @param string   $name  the name of the cookie
      * 
      * @return  void
      * 
-     * @see  storeCookiePresent       Base method, from which has been generated (automatically) current method
-     * @see  assertCookieNotPresent   Related Assertion
-     * @see  assertCookiePresent      Related Assertion
-     * @see  isCookiePresent          Related Accessor
-     * @see  verifyCookiePresent      Related Assertion
-     * @see  waitForCookieNotPresent  Related Assertion
-     * @see  waitForCookiePresent     Related Assertion
+     * @see  storeCookiePresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookieNotPresent()   Related Assertion
+     * @see  assertCookiePresent()      Related Assertion
+     * @see  isCookiePresent()          Related Accessor
+     * @see  verifyCookiePresent()      Related Assertion
+     * @see  waitForCookieNotPresent()  Related Assertion
+     * @see  waitForCookiePresent()     Related Assertion
      */
     public function verifyCookieNotPresent($name)
     {
@@ -4456,19 +4463,19 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertCookiePresent}).</p>
+     * {@link assertCookiePresent()}).</p>
      * 
      * @param string   $name  the name of the cookie
      * 
      * @return  void
      * 
-     * @see  storeCookiePresent       Base method, from which has been generated (automatically) current method
-     * @see  assertCookieNotPresent   Related Assertion
-     * @see  assertCookiePresent      Related Assertion
-     * @see  isCookiePresent          Related Accessor
-     * @see  verifyCookieNotPresent   Related Assertion
-     * @see  waitForCookieNotPresent  Related Assertion
-     * @see  waitForCookiePresent     Related Assertion
+     * @see  storeCookiePresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookieNotPresent()   Related Assertion
+     * @see  assertCookiePresent()      Related Assertion
+     * @see  isCookiePresent()          Related Accessor
+     * @see  verifyCookieNotPresent()   Related Assertion
+     * @see  waitForCookieNotPresent()  Related Assertion
+     * @see  waitForCookiePresent()     Related Assertion
      */
     public function verifyCookiePresent($name)
     {
@@ -4492,13 +4499,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storeCookiePresent      Base method, from which has been generated (automatically) current method
-     * @see  assertCookieNotPresent  Related Assertion
-     * @see  assertCookiePresent     Related Assertion
-     * @see  isCookiePresent         Related Accessor
-     * @see  verifyCookieNotPresent  Related Assertion
-     * @see  verifyCookiePresent     Related Assertion
-     * @see  waitForCookiePresent    Related Assertion
+     * @see  storeCookiePresent()      Base method, from which has been generated (automatically) current method
+     * @see  assertCookieNotPresent()  Related Assertion
+     * @see  assertCookiePresent()     Related Assertion
+     * @see  isCookiePresent()         Related Accessor
+     * @see  verifyCookieNotPresent()  Related Assertion
+     * @see  verifyCookiePresent()     Related Assertion
+     * @see  waitForCookiePresent()    Related Assertion
      */
     public function waitForCookieNotPresent($name)
     {
@@ -4522,13 +4529,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storeCookiePresent       Base method, from which has been generated (automatically) current method
-     * @see  assertCookieNotPresent   Related Assertion
-     * @see  assertCookiePresent      Related Assertion
-     * @see  isCookiePresent          Related Accessor
-     * @see  verifyCookieNotPresent   Related Assertion
-     * @see  verifyCookiePresent      Related Assertion
-     * @see  waitForCookieNotPresent  Related Assertion
+     * @see  storeCookiePresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertCookieNotPresent()   Related Assertion
+     * @see  assertCookiePresent()      Related Assertion
+     * @see  isCookiePresent()          Related Accessor
+     * @see  verifyCookieNotPresent()   Related Assertion
+     * @see  verifyCookiePresent()      Related Assertion
+     * @see  waitForCookieNotPresent()  Related Assertion
      */
     public function waitForCookiePresent($name)
     {
@@ -4551,22 +4558,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyCursorPosition}).</p>
+     * {@link verifyCursorPosition()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an input element or textarea (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCursorPosition       Base method, from which has been generated (automatically) current method
-     * @see  assertNotCursorPosition   Related Assertion
-     * @see  getCursorPosition         Related Accessor
-     * @see  verifyCursorPosition      Related Assertion
-     * @see  verifyNotCursorPosition   Related Assertion
-     * @see  waitForCursorPosition     Related Assertion
-     * @see  waitForNotCursorPosition  Related Assertion
+     * @see  storeCursorPosition()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotCursorPosition()   Related Assertion
+     * @see  getCursorPosition()         Related Accessor
+     * @see  verifyCursorPosition()      Related Assertion
+     * @see  verifyNotCursorPosition()   Related Assertion
+     * @see  waitForCursorPosition()     Related Assertion
+     * @see  waitForNotCursorPosition()  Related Assertion
      */
     public function assertCursorPosition($locator, $pattern)
     {
@@ -4589,22 +4596,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotCursorPosition}).</p>
+     * {@link verifyNotCursorPosition()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an input element or textarea (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCursorPosition       Base method, from which has been generated (automatically) current method
-     * @see  assertCursorPosition      Related Assertion
-     * @see  getCursorPosition         Related Accessor
-     * @see  verifyCursorPosition      Related Assertion
-     * @see  verifyNotCursorPosition   Related Assertion
-     * @see  waitForCursorPosition     Related Assertion
-     * @see  waitForNotCursorPosition  Related Assertion
+     * @see  storeCursorPosition()       Base method, from which has been generated (automatically) current method
+     * @see  assertCursorPosition()      Related Assertion
+     * @see  getCursorPosition()         Related Accessor
+     * @see  verifyCursorPosition()      Related Assertion
+     * @see  verifyNotCursorPosition()   Related Assertion
+     * @see  waitForCursorPosition()     Related Assertion
+     * @see  waitForNotCursorPosition()  Related Assertion
      */
     public function assertNotCursorPosition($locator, $pattern)
     {
@@ -4621,17 +4628,17 @@ trait SeleniumTestCaseDoc
      * isn't an input element or textarea, or there is no cursor in the element.
      * 
      * @param string   $locator  an element locator pointing to an input element or textarea (see
-     *                           {@link doc_Element_Locators})
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  int  the numerical position of the cursor in the field
      * 
-     * @see  storeCursorPosition       Base method, from which has been generated (automatically) current method
-     * @see  assertCursorPosition      Related Assertion
-     * @see  assertNotCursorPosition   Related Assertion
-     * @see  verifyCursorPosition      Related Assertion
-     * @see  verifyNotCursorPosition   Related Assertion
-     * @see  waitForCursorPosition     Related Assertion
-     * @see  waitForNotCursorPosition  Related Assertion
+     * @see  storeCursorPosition()       Base method, from which has been generated (automatically) current method
+     * @see  assertCursorPosition()      Related Assertion
+     * @see  assertNotCursorPosition()   Related Assertion
+     * @see  verifyCursorPosition()      Related Assertion
+     * @see  verifyNotCursorPosition()   Related Assertion
+     * @see  waitForCursorPosition()     Related Assertion
+     * @see  waitForNotCursorPosition()  Related Assertion
      */
     public function getCursorPosition($locator)
     {
@@ -4649,22 +4656,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the numerical position of the cursor in the field (see {@link doc_Stored_Variables})</p>
+     * <p>the numerical position of the cursor in the field (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $locator       an element locator pointing to an input element or textarea (see
-     *                                {@link doc_Element_Locators})
+     *                                {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertCursorPosition      Related Assertion
-     * @see  assertNotCursorPosition   Related Assertion
-     * @see  getCursorPosition         Related Accessor
-     * @see  verifyCursorPosition      Related Assertion
-     * @see  verifyNotCursorPosition   Related Assertion
-     * @see  waitForCursorPosition     Related Assertion
-     * @see  waitForNotCursorPosition  Related Assertion
+     * @see  assertCursorPosition()      Related Assertion
+     * @see  assertNotCursorPosition()   Related Assertion
+     * @see  getCursorPosition()         Related Accessor
+     * @see  verifyCursorPosition()      Related Assertion
+     * @see  verifyNotCursorPosition()   Related Assertion
+     * @see  waitForCursorPosition()     Related Assertion
+     * @see  waitForNotCursorPosition()  Related Assertion
      */
     public function storeCursorPosition($locator, $variableName)
     {
@@ -4687,22 +4694,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertCursorPosition}).</p>
+     * {@link assertCursorPosition()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an input element or textarea (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCursorPosition       Base method, from which has been generated (automatically) current method
-     * @see  assertCursorPosition      Related Assertion
-     * @see  assertNotCursorPosition   Related Assertion
-     * @see  getCursorPosition         Related Accessor
-     * @see  verifyNotCursorPosition   Related Assertion
-     * @see  waitForCursorPosition     Related Assertion
-     * @see  waitForNotCursorPosition  Related Assertion
+     * @see  storeCursorPosition()       Base method, from which has been generated (automatically) current method
+     * @see  assertCursorPosition()      Related Assertion
+     * @see  assertNotCursorPosition()   Related Assertion
+     * @see  getCursorPosition()         Related Accessor
+     * @see  verifyNotCursorPosition()   Related Assertion
+     * @see  waitForCursorPosition()     Related Assertion
+     * @see  waitForNotCursorPosition()  Related Assertion
      */
     public function verifyCursorPosition($locator, $pattern)
     {
@@ -4725,22 +4732,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotCursorPosition}).</p>
+     * {@link assertNotCursorPosition()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an input element or textarea (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCursorPosition       Base method, from which has been generated (automatically) current method
-     * @see  assertCursorPosition      Related Assertion
-     * @see  assertNotCursorPosition   Related Assertion
-     * @see  getCursorPosition         Related Accessor
-     * @see  verifyCursorPosition      Related Assertion
-     * @see  waitForCursorPosition     Related Assertion
-     * @see  waitForNotCursorPosition  Related Assertion
+     * @see  storeCursorPosition()       Base method, from which has been generated (automatically) current method
+     * @see  assertCursorPosition()      Related Assertion
+     * @see  assertNotCursorPosition()   Related Assertion
+     * @see  getCursorPosition()         Related Accessor
+     * @see  verifyCursorPosition()      Related Assertion
+     * @see  waitForCursorPosition()     Related Assertion
+     * @see  waitForNotCursorPosition()  Related Assertion
      */
     public function verifyNotCursorPosition($locator, $pattern)
     {
@@ -4767,19 +4774,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator pointing to an input element or textarea (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCursorPosition       Base method, from which has been generated (automatically) current method
-     * @see  assertCursorPosition      Related Assertion
-     * @see  assertNotCursorPosition   Related Assertion
-     * @see  getCursorPosition         Related Accessor
-     * @see  verifyCursorPosition      Related Assertion
-     * @see  verifyNotCursorPosition   Related Assertion
-     * @see  waitForNotCursorPosition  Related Assertion
+     * @see  storeCursorPosition()       Base method, from which has been generated (automatically) current method
+     * @see  assertCursorPosition()      Related Assertion
+     * @see  assertNotCursorPosition()   Related Assertion
+     * @see  getCursorPosition()         Related Accessor
+     * @see  verifyCursorPosition()      Related Assertion
+     * @see  verifyNotCursorPosition()   Related Assertion
+     * @see  waitForNotCursorPosition()  Related Assertion
      */
     public function waitForCursorPosition($locator, $pattern)
     {
@@ -4806,19 +4813,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator pointing to an input element or textarea (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeCursorPosition      Base method, from which has been generated (automatically) current method
-     * @see  assertCursorPosition     Related Assertion
-     * @see  assertNotCursorPosition  Related Assertion
-     * @see  getCursorPosition        Related Accessor
-     * @see  verifyCursorPosition     Related Assertion
-     * @see  verifyNotCursorPosition  Related Assertion
-     * @see  waitForCursorPosition    Related Assertion
+     * @see  storeCursorPosition()      Base method, from which has been generated (automatically) current method
+     * @see  assertCursorPosition()     Related Assertion
+     * @see  assertNotCursorPosition()  Related Assertion
+     * @see  getCursorPosition()        Related Accessor
+     * @see  verifyCursorPosition()     Related Assertion
+     * @see  verifyNotCursorPosition()  Related Assertion
+     * @see  waitForCursorPosition()    Related Assertion
      */
     public function waitForNotCursorPosition($locator, $pattern)
     {
@@ -4837,20 +4844,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyEditable}).</p>
+     * {@link verifyEditable()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeEditable       Base method, from which has been generated (automatically) current method
-     * @see  assertNotEditable   Related Assertion
-     * @see  isEditable          Related Accessor
-     * @see  verifyEditable      Related Assertion
-     * @see  verifyNotEditable   Related Assertion
-     * @see  waitForEditable     Related Assertion
-     * @see  waitForNotEditable  Related Assertion
+     * @see  storeEditable()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotEditable()   Related Assertion
+     * @see  isEditable()          Related Accessor
+     * @see  verifyEditable()      Related Assertion
+     * @see  verifyNotEditable()   Related Assertion
+     * @see  waitForEditable()     Related Assertion
+     * @see  waitForNotEditable()  Related Assertion
      */
     public function assertEditable($locator)
     {
@@ -4869,20 +4876,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotEditable}).</p>
+     * {@link verifyNotEditable()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeEditable       Base method, from which has been generated (automatically) current method
-     * @see  assertEditable      Related Assertion
-     * @see  isEditable          Related Accessor
-     * @see  verifyEditable      Related Assertion
-     * @see  verifyNotEditable   Related Assertion
-     * @see  waitForEditable     Related Assertion
-     * @see  waitForNotEditable  Related Assertion
+     * @see  storeEditable()       Base method, from which has been generated (automatically) current method
+     * @see  assertEditable()      Related Assertion
+     * @see  isEditable()          Related Accessor
+     * @see  verifyEditable()      Related Assertion
+     * @see  verifyNotEditable()   Related Assertion
+     * @see  waitForEditable()     Related Assertion
+     * @see  waitForNotEditable()  Related Assertion
      */
     public function assertNotEditable($locator)
     {
@@ -4895,17 +4902,17 @@ trait SeleniumTestCaseDoc
      * This method will fail if the specified element isn't an input element.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  bool  true if the input element is editable, false otherwise
      * 
-     * @see  storeEditable       Base method, from which has been generated (automatically) current method
-     * @see  assertEditable      Related Assertion
-     * @see  assertNotEditable   Related Assertion
-     * @see  verifyEditable      Related Assertion
-     * @see  verifyNotEditable   Related Assertion
-     * @see  waitForEditable     Related Assertion
-     * @see  waitForNotEditable  Related Assertion
+     * @see  storeEditable()       Base method, from which has been generated (automatically) current method
+     * @see  assertEditable()      Related Assertion
+     * @see  assertNotEditable()   Related Assertion
+     * @see  verifyEditable()      Related Assertion
+     * @see  verifyNotEditable()   Related Assertion
+     * @see  waitForEditable()     Related Assertion
+     * @see  waitForNotEditable()  Related Assertion
      */
     public function isEditable($locator)
     {
@@ -4919,22 +4926,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if the input element is editable, false otherwise (see {@link doc_Stored_Variables})</p>
+     * <p>true if the input element is editable, false otherwise (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $locator       an element locator 
-     *                                (see {@link doc_Element_Locators})
+     *                                (see {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertEditable      Related Assertion
-     * @see  assertNotEditable   Related Assertion
-     * @see  isEditable          Related Accessor
-     * @see  verifyEditable      Related Assertion
-     * @see  verifyNotEditable   Related Assertion
-     * @see  waitForEditable     Related Assertion
-     * @see  waitForNotEditable  Related Assertion
+     * @see  assertEditable()      Related Assertion
+     * @see  assertNotEditable()   Related Assertion
+     * @see  isEditable()          Related Accessor
+     * @see  verifyEditable()      Related Assertion
+     * @see  verifyNotEditable()   Related Assertion
+     * @see  waitForEditable()     Related Assertion
+     * @see  waitForNotEditable()  Related Assertion
      */
     public function storeEditable($locator, $variableName)
     {
@@ -4953,20 +4961,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertEditable}).</p>
+     * {@link assertEditable()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeEditable       Base method, from which has been generated (automatically) current method
-     * @see  assertEditable      Related Assertion
-     * @see  assertNotEditable   Related Assertion
-     * @see  isEditable          Related Accessor
-     * @see  verifyNotEditable   Related Assertion
-     * @see  waitForEditable     Related Assertion
-     * @see  waitForNotEditable  Related Assertion
+     * @see  storeEditable()       Base method, from which has been generated (automatically) current method
+     * @see  assertEditable()      Related Assertion
+     * @see  assertNotEditable()   Related Assertion
+     * @see  isEditable()          Related Accessor
+     * @see  verifyNotEditable()   Related Assertion
+     * @see  waitForEditable()     Related Assertion
+     * @see  waitForNotEditable()  Related Assertion
      */
     public function verifyEditable($locator)
     {
@@ -4985,20 +4993,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotEditable}).</p>
+     * {@link assertNotEditable()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeEditable       Base method, from which has been generated (automatically) current method
-     * @see  assertEditable      Related Assertion
-     * @see  assertNotEditable   Related Assertion
-     * @see  isEditable          Related Accessor
-     * @see  verifyEditable      Related Assertion
-     * @see  waitForEditable     Related Assertion
-     * @see  waitForNotEditable  Related Assertion
+     * @see  storeEditable()       Base method, from which has been generated (automatically) current method
+     * @see  assertEditable()      Related Assertion
+     * @see  assertNotEditable()   Related Assertion
+     * @see  isEditable()          Related Accessor
+     * @see  verifyEditable()      Related Assertion
+     * @see  waitForEditable()     Related Assertion
+     * @see  waitForNotEditable()  Related Assertion
      */
     public function verifyNotEditable($locator)
     {
@@ -5021,17 +5029,17 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeEditable       Base method, from which has been generated (automatically) current method
-     * @see  assertEditable      Related Assertion
-     * @see  assertNotEditable   Related Assertion
-     * @see  isEditable          Related Accessor
-     * @see  verifyEditable      Related Assertion
-     * @see  verifyNotEditable   Related Assertion
-     * @see  waitForNotEditable  Related Assertion
+     * @see  storeEditable()       Base method, from which has been generated (automatically) current method
+     * @see  assertEditable()      Related Assertion
+     * @see  assertNotEditable()   Related Assertion
+     * @see  isEditable()          Related Accessor
+     * @see  verifyEditable()      Related Assertion
+     * @see  verifyNotEditable()   Related Assertion
+     * @see  waitForNotEditable()  Related Assertion
      */
     public function waitForEditable($locator)
     {
@@ -5054,17 +5062,17 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeEditable      Base method, from which has been generated (automatically) current method
-     * @see  assertEditable     Related Assertion
-     * @see  assertNotEditable  Related Assertion
-     * @see  isEditable         Related Accessor
-     * @see  verifyEditable     Related Assertion
-     * @see  verifyNotEditable  Related Assertion
-     * @see  waitForEditable    Related Assertion
+     * @see  storeEditable()      Base method, from which has been generated (automatically) current method
+     * @see  assertEditable()     Related Assertion
+     * @see  assertNotEditable()  Related Assertion
+     * @see  isEditable()         Related Accessor
+     * @see  verifyEditable()     Related Assertion
+     * @see  verifyNotEditable()  Related Assertion
+     * @see  waitForEditable()    Related Assertion
      */
     public function waitForNotEditable($locator)
     {
@@ -5081,22 +5089,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyElementHeight}).</p>
+     * {@link verifyElementHeight()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementHeight       Base method, from which has been generated (automatically) current method
-     * @see  assertNotElementHeight   Related Assertion
-     * @see  getElementHeight         Related Accessor
-     * @see  verifyElementHeight      Related Assertion
-     * @see  verifyNotElementHeight   Related Assertion
-     * @see  waitForElementHeight     Related Assertion
-     * @see  waitForNotElementHeight  Related Assertion
+     * @see  storeElementHeight()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotElementHeight()   Related Assertion
+     * @see  getElementHeight()         Related Accessor
+     * @see  verifyElementHeight()      Related Assertion
+     * @see  verifyNotElementHeight()   Related Assertion
+     * @see  waitForElementHeight()     Related Assertion
+     * @see  waitForNotElementHeight()  Related Assertion
      */
     public function assertElementHeight($locator, $pattern)
     {
@@ -5113,22 +5121,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotElementHeight}).</p>
+     * {@link verifyNotElementHeight()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementHeight       Base method, from which has been generated (automatically) current method
-     * @see  assertElementHeight      Related Assertion
-     * @see  getElementHeight         Related Accessor
-     * @see  verifyElementHeight      Related Assertion
-     * @see  verifyNotElementHeight   Related Assertion
-     * @see  waitForElementHeight     Related Assertion
-     * @see  waitForNotElementHeight  Related Assertion
+     * @see  storeElementHeight()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementHeight()      Related Assertion
+     * @see  getElementHeight()         Related Accessor
+     * @see  verifyElementHeight()      Related Assertion
+     * @see  verifyNotElementHeight()   Related Assertion
+     * @see  waitForElementHeight()     Related Assertion
+     * @see  waitForNotElementHeight()  Related Assertion
      */
     public function assertNotElementHeight($locator, $pattern)
     {
@@ -5138,18 +5146,18 @@ trait SeleniumTestCaseDoc
     /**
      * Retrieves the height of an element.
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  int  height of an element in pixels
      * 
-     * @see  storeElementHeight       Base method, from which has been generated (automatically) current method
-     * @see  assertElementHeight      Related Assertion
-     * @see  assertNotElementHeight   Related Assertion
-     * @see  verifyElementHeight      Related Assertion
-     * @see  verifyNotElementHeight   Related Assertion
-     * @see  waitForElementHeight     Related Assertion
-     * @see  waitForNotElementHeight  Related Assertion
+     * @see  storeElementHeight()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementHeight()      Related Assertion
+     * @see  assertNotElementHeight()   Related Assertion
+     * @see  verifyElementHeight()      Related Assertion
+     * @see  verifyNotElementHeight()   Related Assertion
+     * @see  waitForElementHeight()     Related Assertion
+     * @see  waitForNotElementHeight()  Related Assertion
      */
     public function getElementHeight($locator)
     {
@@ -5161,22 +5169,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>height of an element in pixels (see {@link doc_Stored_Variables})</p>
+     * <p>height of an element in pixels (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
-     * @param string   $locator       an element locator pointing to an element 
-     *                                (see {@link doc_Element_Locators})
+     * @param string   $locator       an element locator pointing to an element (see
+     *                                {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertElementHeight      Related Assertion
-     * @see  assertNotElementHeight   Related Assertion
-     * @see  getElementHeight         Related Accessor
-     * @see  verifyElementHeight      Related Assertion
-     * @see  verifyNotElementHeight   Related Assertion
-     * @see  waitForElementHeight     Related Assertion
-     * @see  waitForNotElementHeight  Related Assertion
+     * @see  assertElementHeight()      Related Assertion
+     * @see  assertNotElementHeight()   Related Assertion
+     * @see  getElementHeight()         Related Accessor
+     * @see  verifyElementHeight()      Related Assertion
+     * @see  verifyNotElementHeight()   Related Assertion
+     * @see  waitForElementHeight()     Related Assertion
+     * @see  waitForNotElementHeight()  Related Assertion
      */
     public function storeElementHeight($locator, $variableName)
     {
@@ -5193,22 +5201,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertElementHeight}).</p>
+     * {@link assertElementHeight()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementHeight       Base method, from which has been generated (automatically) current method
-     * @see  assertElementHeight      Related Assertion
-     * @see  assertNotElementHeight   Related Assertion
-     * @see  getElementHeight         Related Accessor
-     * @see  verifyNotElementHeight   Related Assertion
-     * @see  waitForElementHeight     Related Assertion
-     * @see  waitForNotElementHeight  Related Assertion
+     * @see  storeElementHeight()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementHeight()      Related Assertion
+     * @see  assertNotElementHeight()   Related Assertion
+     * @see  getElementHeight()         Related Accessor
+     * @see  verifyNotElementHeight()   Related Assertion
+     * @see  waitForElementHeight()     Related Assertion
+     * @see  waitForNotElementHeight()  Related Assertion
      */
     public function verifyElementHeight($locator, $pattern)
     {
@@ -5225,22 +5233,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotElementHeight}).</p>
+     * {@link assertNotElementHeight()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementHeight       Base method, from which has been generated (automatically) current method
-     * @see  assertElementHeight      Related Assertion
-     * @see  assertNotElementHeight   Related Assertion
-     * @see  getElementHeight         Related Accessor
-     * @see  verifyElementHeight      Related Assertion
-     * @see  waitForElementHeight     Related Assertion
-     * @see  waitForNotElementHeight  Related Assertion
+     * @see  storeElementHeight()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementHeight()      Related Assertion
+     * @see  assertNotElementHeight()   Related Assertion
+     * @see  getElementHeight()         Related Accessor
+     * @see  verifyElementHeight()      Related Assertion
+     * @see  waitForElementHeight()     Related Assertion
+     * @see  waitForNotElementHeight()  Related Assertion
      */
     public function verifyNotElementHeight($locator, $pattern)
     {
@@ -5260,20 +5268,20 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementHeight       Base method, from which has been generated (automatically) current method
-     * @see  assertElementHeight      Related Assertion
-     * @see  assertNotElementHeight   Related Assertion
-     * @see  getElementHeight         Related Accessor
-     * @see  verifyElementHeight      Related Assertion
-     * @see  verifyNotElementHeight   Related Assertion
-     * @see  waitForNotElementHeight  Related Assertion
+     * @see  storeElementHeight()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementHeight()      Related Assertion
+     * @see  assertNotElementHeight()   Related Assertion
+     * @see  getElementHeight()         Related Accessor
+     * @see  verifyElementHeight()      Related Assertion
+     * @see  verifyNotElementHeight()   Related Assertion
+     * @see  waitForNotElementHeight()  Related Assertion
      */
     public function waitForElementHeight($locator, $pattern)
     {
@@ -5293,20 +5301,20 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementHeight      Base method, from which has been generated (automatically) current method
-     * @see  assertElementHeight     Related Assertion
-     * @see  assertNotElementHeight  Related Assertion
-     * @see  getElementHeight        Related Accessor
-     * @see  verifyElementHeight     Related Assertion
-     * @see  verifyNotElementHeight  Related Assertion
-     * @see  waitForElementHeight    Related Assertion
+     * @see  storeElementHeight()      Base method, from which has been generated (automatically) current method
+     * @see  assertElementHeight()     Related Assertion
+     * @see  assertNotElementHeight()  Related Assertion
+     * @see  getElementHeight()        Related Accessor
+     * @see  verifyElementHeight()     Related Assertion
+     * @see  verifyNotElementHeight()  Related Assertion
+     * @see  waitForElementHeight()    Related Assertion
      */
     public function waitForNotElementHeight($locator, $pattern)
     {
@@ -5325,22 +5333,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyElementIndex}).</p>
+     * {@link verifyElementIndex()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertNotElementIndex   Related Assertion
-     * @see  getElementIndex         Related Accessor
-     * @see  verifyElementIndex      Related Assertion
-     * @see  verifyNotElementIndex   Related Assertion
-     * @see  waitForElementIndex     Related Assertion
-     * @see  waitForNotElementIndex  Related Assertion
+     * @see  storeElementIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotElementIndex()   Related Assertion
+     * @see  getElementIndex()         Related Accessor
+     * @see  verifyElementIndex()      Related Assertion
+     * @see  verifyNotElementIndex()   Related Assertion
+     * @see  waitForElementIndex()     Related Assertion
+     * @see  waitForNotElementIndex()  Related Assertion
      */
     public function assertElementIndex($locator, $pattern)
     {
@@ -5359,22 +5367,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotElementIndex}).</p>
+     * {@link verifyNotElementIndex()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertElementIndex      Related Assertion
-     * @see  getElementIndex         Related Accessor
-     * @see  verifyElementIndex      Related Assertion
-     * @see  verifyNotElementIndex   Related Assertion
-     * @see  waitForElementIndex     Related Assertion
-     * @see  waitForNotElementIndex  Related Assertion
+     * @see  storeElementIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementIndex()      Related Assertion
+     * @see  getElementIndex()         Related Accessor
+     * @see  verifyElementIndex()      Related Assertion
+     * @see  verifyNotElementIndex()   Related Assertion
+     * @see  waitForElementIndex()     Related Assertion
+     * @see  waitForNotElementIndex()  Related Assertion
      */
     public function assertNotElementIndex($locator, $pattern)
     {
@@ -5386,18 +5394,18 @@ trait SeleniumTestCaseDoc
      * 
      * The comment node and empty text node will be ignored.
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  int  of relative index of the element to its parent (starting from 0)
      * 
-     * @see  storeElementIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertElementIndex      Related Assertion
-     * @see  assertNotElementIndex   Related Assertion
-     * @see  verifyElementIndex      Related Assertion
-     * @see  verifyNotElementIndex   Related Assertion
-     * @see  waitForElementIndex     Related Assertion
-     * @see  waitForNotElementIndex  Related Assertion
+     * @see  storeElementIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementIndex()      Related Assertion
+     * @see  assertNotElementIndex()   Related Assertion
+     * @see  verifyElementIndex()      Related Assertion
+     * @see  verifyNotElementIndex()   Related Assertion
+     * @see  waitForElementIndex()     Related Assertion
+     * @see  waitForNotElementIndex()  Related Assertion
      */
     public function getElementIndex($locator)
     {
@@ -5411,22 +5419,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>of relative index of the element to its parent (starting from 0) (see {@link doc_Stored_Variables})</p>
+     * <p>of relative index of the element to its parent (starting from 0) (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
-     * @param string   $locator       an element locator pointing to an element 
-     *                                (see {@link doc_Element_Locators})
+     * @param string   $locator       an element locator pointing to an element (see
+     *                                {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertElementIndex      Related Assertion
-     * @see  assertNotElementIndex   Related Assertion
-     * @see  getElementIndex         Related Accessor
-     * @see  verifyElementIndex      Related Assertion
-     * @see  verifyNotElementIndex   Related Assertion
-     * @see  waitForElementIndex     Related Assertion
-     * @see  waitForNotElementIndex  Related Assertion
+     * @see  assertElementIndex()      Related Assertion
+     * @see  assertNotElementIndex()   Related Assertion
+     * @see  getElementIndex()         Related Accessor
+     * @see  verifyElementIndex()      Related Assertion
+     * @see  verifyNotElementIndex()   Related Assertion
+     * @see  waitForElementIndex()     Related Assertion
+     * @see  waitForNotElementIndex()  Related Assertion
      */
     public function storeElementIndex($locator, $variableName)
     {
@@ -5445,22 +5454,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertElementIndex}).</p>
+     * {@link assertElementIndex()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertElementIndex      Related Assertion
-     * @see  assertNotElementIndex   Related Assertion
-     * @see  getElementIndex         Related Accessor
-     * @see  verifyNotElementIndex   Related Assertion
-     * @see  waitForElementIndex     Related Assertion
-     * @see  waitForNotElementIndex  Related Assertion
+     * @see  storeElementIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementIndex()      Related Assertion
+     * @see  assertNotElementIndex()   Related Assertion
+     * @see  getElementIndex()         Related Accessor
+     * @see  verifyNotElementIndex()   Related Assertion
+     * @see  waitForElementIndex()     Related Assertion
+     * @see  waitForNotElementIndex()  Related Assertion
      */
     public function verifyElementIndex($locator, $pattern)
     {
@@ -5479,22 +5488,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotElementIndex}).</p>
+     * {@link assertNotElementIndex()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertElementIndex      Related Assertion
-     * @see  assertNotElementIndex   Related Assertion
-     * @see  getElementIndex         Related Accessor
-     * @see  verifyElementIndex      Related Assertion
-     * @see  waitForElementIndex     Related Assertion
-     * @see  waitForNotElementIndex  Related Assertion
+     * @see  storeElementIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementIndex()      Related Assertion
+     * @see  assertNotElementIndex()   Related Assertion
+     * @see  getElementIndex()         Related Accessor
+     * @see  verifyElementIndex()      Related Assertion
+     * @see  waitForElementIndex()     Related Assertion
+     * @see  waitForNotElementIndex()  Related Assertion
      */
     public function verifyNotElementIndex($locator, $pattern)
     {
@@ -5516,20 +5525,20 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertElementIndex      Related Assertion
-     * @see  assertNotElementIndex   Related Assertion
-     * @see  getElementIndex         Related Accessor
-     * @see  verifyElementIndex      Related Assertion
-     * @see  verifyNotElementIndex   Related Assertion
-     * @see  waitForNotElementIndex  Related Assertion
+     * @see  storeElementIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementIndex()      Related Assertion
+     * @see  assertNotElementIndex()   Related Assertion
+     * @see  getElementIndex()         Related Accessor
+     * @see  verifyElementIndex()      Related Assertion
+     * @see  verifyNotElementIndex()   Related Assertion
+     * @see  waitForNotElementIndex()  Related Assertion
      */
     public function waitForElementIndex($locator, $pattern)
     {
@@ -5551,20 +5560,20 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementIndex      Base method, from which has been generated (automatically) current method
-     * @see  assertElementIndex     Related Assertion
-     * @see  assertNotElementIndex  Related Assertion
-     * @see  getElementIndex        Related Accessor
-     * @see  verifyElementIndex     Related Assertion
-     * @see  verifyNotElementIndex  Related Assertion
-     * @see  waitForElementIndex    Related Assertion
+     * @see  storeElementIndex()      Base method, from which has been generated (automatically) current method
+     * @see  assertElementIndex()     Related Assertion
+     * @see  assertNotElementIndex()  Related Assertion
+     * @see  getElementIndex()        Related Accessor
+     * @see  verifyElementIndex()     Related Assertion
+     * @see  verifyNotElementIndex()  Related Assertion
+     * @see  waitForElementIndex()    Related Assertion
      */
     public function waitForNotElementIndex($locator, $pattern)
     {
@@ -5581,20 +5590,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyElementNotPresent}).</p>
+     * {@link verifyElementNotPresent()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeElementPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertElementPresent      Related Assertion
-     * @see  isElementPresent          Related Accessor
-     * @see  verifyElementNotPresent   Related Assertion
-     * @see  verifyElementPresent      Related Assertion
-     * @see  waitForElementNotPresent  Related Assertion
-     * @see  waitForElementPresent     Related Assertion
+     * @see  storeElementPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementPresent()      Related Assertion
+     * @see  isElementPresent()          Related Accessor
+     * @see  verifyElementNotPresent()   Related Assertion
+     * @see  verifyElementPresent()      Related Assertion
+     * @see  waitForElementNotPresent()  Related Assertion
+     * @see  waitForElementPresent()     Related Assertion
      */
     public function assertElementNotPresent($locator)
     {
@@ -5611,20 +5620,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyElementPresent}).</p>
+     * {@link verifyElementPresent()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeElementPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertElementNotPresent   Related Assertion
-     * @see  isElementPresent          Related Accessor
-     * @see  verifyElementNotPresent   Related Assertion
-     * @see  verifyElementPresent      Related Assertion
-     * @see  waitForElementNotPresent  Related Assertion
-     * @see  waitForElementPresent     Related Assertion
+     * @see  storeElementPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementNotPresent()   Related Assertion
+     * @see  isElementPresent()          Related Accessor
+     * @see  verifyElementNotPresent()   Related Assertion
+     * @see  verifyElementPresent()      Related Assertion
+     * @see  waitForElementNotPresent()  Related Assertion
+     * @see  waitForElementPresent()     Related Assertion
      */
     public function assertElementPresent($locator)
     {
@@ -5635,17 +5644,17 @@ trait SeleniumTestCaseDoc
      * Verifies that the specified element is somewhere on the page.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  bool  true if the element is present, false otherwise
      * 
-     * @see  storeElementPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertElementNotPresent   Related Assertion
-     * @see  assertElementPresent      Related Assertion
-     * @see  verifyElementNotPresent   Related Assertion
-     * @see  verifyElementPresent      Related Assertion
-     * @see  waitForElementNotPresent  Related Assertion
-     * @see  waitForElementPresent     Related Assertion
+     * @see  storeElementPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementNotPresent()   Related Assertion
+     * @see  assertElementPresent()      Related Assertion
+     * @see  verifyElementNotPresent()   Related Assertion
+     * @see  verifyElementPresent()      Related Assertion
+     * @see  waitForElementNotPresent()  Related Assertion
+     * @see  waitForElementPresent()     Related Assertion
      */
     public function isElementPresent($locator)
     {
@@ -5657,22 +5666,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if the element is present, false otherwise (see {@link doc_Stored_Variables})</p>
+     * <p>true if the element is present, false otherwise (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $locator       an element locator 
-     *                                (see {@link doc_Element_Locators})
+     *                                (see {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertElementNotPresent   Related Assertion
-     * @see  assertElementPresent      Related Assertion
-     * @see  isElementPresent          Related Accessor
-     * @see  verifyElementNotPresent   Related Assertion
-     * @see  verifyElementPresent      Related Assertion
-     * @see  waitForElementNotPresent  Related Assertion
-     * @see  waitForElementPresent     Related Assertion
+     * @see  assertElementNotPresent()   Related Assertion
+     * @see  assertElementPresent()      Related Assertion
+     * @see  isElementPresent()          Related Accessor
+     * @see  verifyElementNotPresent()   Related Assertion
+     * @see  verifyElementPresent()      Related Assertion
+     * @see  waitForElementNotPresent()  Related Assertion
+     * @see  waitForElementPresent()     Related Assertion
      */
     public function storeElementPresent($locator, $variableName)
     {
@@ -5689,20 +5698,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertElementNotPresent}).</p>
+     * {@link assertElementNotPresent()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeElementPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertElementNotPresent   Related Assertion
-     * @see  assertElementPresent      Related Assertion
-     * @see  isElementPresent          Related Accessor
-     * @see  verifyElementPresent      Related Assertion
-     * @see  waitForElementNotPresent  Related Assertion
-     * @see  waitForElementPresent     Related Assertion
+     * @see  storeElementPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementNotPresent()   Related Assertion
+     * @see  assertElementPresent()      Related Assertion
+     * @see  isElementPresent()          Related Accessor
+     * @see  verifyElementPresent()      Related Assertion
+     * @see  waitForElementNotPresent()  Related Assertion
+     * @see  waitForElementPresent()     Related Assertion
      */
     public function verifyElementNotPresent($locator)
     {
@@ -5719,20 +5728,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertElementPresent}).</p>
+     * {@link assertElementPresent()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeElementPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertElementNotPresent   Related Assertion
-     * @see  assertElementPresent      Related Assertion
-     * @see  isElementPresent          Related Accessor
-     * @see  verifyElementNotPresent   Related Assertion
-     * @see  waitForElementNotPresent  Related Assertion
-     * @see  waitForElementPresent     Related Assertion
+     * @see  storeElementPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementNotPresent()   Related Assertion
+     * @see  assertElementPresent()      Related Assertion
+     * @see  isElementPresent()          Related Accessor
+     * @see  verifyElementNotPresent()   Related Assertion
+     * @see  waitForElementNotPresent()  Related Assertion
+     * @see  waitForElementPresent()     Related Assertion
      */
     public function verifyElementPresent($locator)
     {
@@ -5753,17 +5762,17 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeElementPresent      Base method, from which has been generated (automatically) current method
-     * @see  assertElementNotPresent  Related Assertion
-     * @see  assertElementPresent     Related Assertion
-     * @see  isElementPresent         Related Accessor
-     * @see  verifyElementNotPresent  Related Assertion
-     * @see  verifyElementPresent     Related Assertion
-     * @see  waitForElementPresent    Related Assertion
+     * @see  storeElementPresent()      Base method, from which has been generated (automatically) current method
+     * @see  assertElementNotPresent()  Related Assertion
+     * @see  assertElementPresent()     Related Assertion
+     * @see  isElementPresent()         Related Accessor
+     * @see  verifyElementNotPresent()  Related Assertion
+     * @see  verifyElementPresent()     Related Assertion
+     * @see  waitForElementPresent()    Related Assertion
      */
     public function waitForElementNotPresent($locator)
     {
@@ -5784,17 +5793,17 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeElementPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertElementNotPresent   Related Assertion
-     * @see  assertElementPresent      Related Assertion
-     * @see  isElementPresent          Related Accessor
-     * @see  verifyElementNotPresent   Related Assertion
-     * @see  verifyElementPresent      Related Assertion
-     * @see  waitForElementNotPresent  Related Assertion
+     * @see  storeElementPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementNotPresent()   Related Assertion
+     * @see  assertElementPresent()      Related Assertion
+     * @see  isElementPresent()          Related Accessor
+     * @see  verifyElementNotPresent()   Related Assertion
+     * @see  verifyElementPresent()      Related Assertion
+     * @see  waitForElementNotPresent()  Related Assertion
      */
     public function waitForElementPresent($locator)
     {
@@ -5811,22 +5820,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyElementPositionLeft}).</p>
+     * {@link verifyElementPositionLeft()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionLeft       Base method, from which has been generated (automatically) current method
-     * @see  assertNotElementPositionLeft   Related Assertion
-     * @see  getElementPositionLeft         Related Accessor
-     * @see  verifyElementPositionLeft      Related Assertion
-     * @see  verifyNotElementPositionLeft   Related Assertion
-     * @see  waitForElementPositionLeft     Related Assertion
-     * @see  waitForNotElementPositionLeft  Related Assertion
+     * @see  storeElementPositionLeft()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotElementPositionLeft()   Related Assertion
+     * @see  getElementPositionLeft()         Related Accessor
+     * @see  verifyElementPositionLeft()      Related Assertion
+     * @see  verifyNotElementPositionLeft()   Related Assertion
+     * @see  waitForElementPositionLeft()     Related Assertion
+     * @see  waitForNotElementPositionLeft()  Related Assertion
      */
     public function assertElementPositionLeft($locator, $pattern)
     {
@@ -5843,22 +5852,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotElementPositionLeft}).</p>
+     * {@link verifyNotElementPositionLeft()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionLeft       Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionLeft      Related Assertion
-     * @see  getElementPositionLeft         Related Accessor
-     * @see  verifyElementPositionLeft      Related Assertion
-     * @see  verifyNotElementPositionLeft   Related Assertion
-     * @see  waitForElementPositionLeft     Related Assertion
-     * @see  waitForNotElementPositionLeft  Related Assertion
+     * @see  storeElementPositionLeft()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionLeft()      Related Assertion
+     * @see  getElementPositionLeft()         Related Accessor
+     * @see  verifyElementPositionLeft()      Related Assertion
+     * @see  verifyNotElementPositionLeft()   Related Assertion
+     * @see  waitForElementPositionLeft()     Related Assertion
+     * @see  waitForNotElementPositionLeft()  Related Assertion
      */
     public function assertNotElementPositionLeft($locator, $pattern)
     {
@@ -5869,17 +5878,17 @@ trait SeleniumTestCaseDoc
      * Retrieves the horizontal position of an element.
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  int  of pixels from the edge of the frame.
      * 
-     * @see  storeElementPositionLeft       Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionLeft      Related Assertion
-     * @see  assertNotElementPositionLeft   Related Assertion
-     * @see  verifyElementPositionLeft      Related Assertion
-     * @see  verifyNotElementPositionLeft   Related Assertion
-     * @see  waitForElementPositionLeft     Related Assertion
-     * @see  waitForNotElementPositionLeft  Related Assertion
+     * @see  storeElementPositionLeft()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionLeft()      Related Assertion
+     * @see  assertNotElementPositionLeft()   Related Assertion
+     * @see  verifyElementPositionLeft()      Related Assertion
+     * @see  verifyNotElementPositionLeft()   Related Assertion
+     * @see  waitForElementPositionLeft()     Related Assertion
+     * @see  waitForNotElementPositionLeft()  Related Assertion
      */
     public function getElementPositionLeft($locator)
     {
@@ -5891,22 +5900,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>of pixels from the edge of the frame. (see {@link doc_Stored_Variables})</p>
+     * <p>of pixels from the edge of the frame. (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $locator       an element locator pointing to an element OR an element itself (see
-     *                                {@link doc_Element_Locators})
+     *                                {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertElementPositionLeft      Related Assertion
-     * @see  assertNotElementPositionLeft   Related Assertion
-     * @see  getElementPositionLeft         Related Accessor
-     * @see  verifyElementPositionLeft      Related Assertion
-     * @see  verifyNotElementPositionLeft   Related Assertion
-     * @see  waitForElementPositionLeft     Related Assertion
-     * @see  waitForNotElementPositionLeft  Related Assertion
+     * @see  assertElementPositionLeft()      Related Assertion
+     * @see  assertNotElementPositionLeft()   Related Assertion
+     * @see  getElementPositionLeft()         Related Accessor
+     * @see  verifyElementPositionLeft()      Related Assertion
+     * @see  verifyNotElementPositionLeft()   Related Assertion
+     * @see  waitForElementPositionLeft()     Related Assertion
+     * @see  waitForNotElementPositionLeft()  Related Assertion
      */
     public function storeElementPositionLeft($locator, $variableName)
     {
@@ -5923,22 +5932,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertElementPositionLeft}).</p>
+     * {@link assertElementPositionLeft()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionLeft       Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionLeft      Related Assertion
-     * @see  assertNotElementPositionLeft   Related Assertion
-     * @see  getElementPositionLeft         Related Accessor
-     * @see  verifyNotElementPositionLeft   Related Assertion
-     * @see  waitForElementPositionLeft     Related Assertion
-     * @see  waitForNotElementPositionLeft  Related Assertion
+     * @see  storeElementPositionLeft()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionLeft()      Related Assertion
+     * @see  assertNotElementPositionLeft()   Related Assertion
+     * @see  getElementPositionLeft()         Related Accessor
+     * @see  verifyNotElementPositionLeft()   Related Assertion
+     * @see  waitForElementPositionLeft()     Related Assertion
+     * @see  waitForNotElementPositionLeft()  Related Assertion
      */
     public function verifyElementPositionLeft($locator, $pattern)
     {
@@ -5955,22 +5964,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotElementPositionLeft}).</p>
+     * {@link assertNotElementPositionLeft()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionLeft       Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionLeft      Related Assertion
-     * @see  assertNotElementPositionLeft   Related Assertion
-     * @see  getElementPositionLeft         Related Accessor
-     * @see  verifyElementPositionLeft      Related Assertion
-     * @see  waitForElementPositionLeft     Related Assertion
-     * @see  waitForNotElementPositionLeft  Related Assertion
+     * @see  storeElementPositionLeft()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionLeft()      Related Assertion
+     * @see  assertNotElementPositionLeft()   Related Assertion
+     * @see  getElementPositionLeft()         Related Accessor
+     * @see  verifyElementPositionLeft()      Related Assertion
+     * @see  waitForElementPositionLeft()     Related Assertion
+     * @see  waitForNotElementPositionLeft()  Related Assertion
      */
     public function verifyNotElementPositionLeft($locator, $pattern)
     {
@@ -5991,19 +6000,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionLeft       Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionLeft      Related Assertion
-     * @see  assertNotElementPositionLeft   Related Assertion
-     * @see  getElementPositionLeft         Related Accessor
-     * @see  verifyElementPositionLeft      Related Assertion
-     * @see  verifyNotElementPositionLeft   Related Assertion
-     * @see  waitForNotElementPositionLeft  Related Assertion
+     * @see  storeElementPositionLeft()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionLeft()      Related Assertion
+     * @see  assertNotElementPositionLeft()   Related Assertion
+     * @see  getElementPositionLeft()         Related Accessor
+     * @see  verifyElementPositionLeft()      Related Assertion
+     * @see  verifyNotElementPositionLeft()   Related Assertion
+     * @see  waitForNotElementPositionLeft()  Related Assertion
      */
     public function waitForElementPositionLeft($locator, $pattern)
     {
@@ -6024,19 +6033,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionLeft      Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionLeft     Related Assertion
-     * @see  assertNotElementPositionLeft  Related Assertion
-     * @see  getElementPositionLeft        Related Accessor
-     * @see  verifyElementPositionLeft     Related Assertion
-     * @see  verifyNotElementPositionLeft  Related Assertion
-     * @see  waitForElementPositionLeft    Related Assertion
+     * @see  storeElementPositionLeft()      Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionLeft()     Related Assertion
+     * @see  assertNotElementPositionLeft()  Related Assertion
+     * @see  getElementPositionLeft()        Related Accessor
+     * @see  verifyElementPositionLeft()     Related Assertion
+     * @see  verifyNotElementPositionLeft()  Related Assertion
+     * @see  waitForElementPositionLeft()    Related Assertion
      */
     public function waitForNotElementPositionLeft($locator, $pattern)
     {
@@ -6053,22 +6062,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyElementPositionTop}).</p>
+     * {@link verifyElementPositionTop()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionTop       Base method, from which has been generated (automatically) current method
-     * @see  assertNotElementPositionTop   Related Assertion
-     * @see  getElementPositionTop         Related Accessor
-     * @see  verifyElementPositionTop      Related Assertion
-     * @see  verifyNotElementPositionTop   Related Assertion
-     * @see  waitForElementPositionTop     Related Assertion
-     * @see  waitForNotElementPositionTop  Related Assertion
+     * @see  storeElementPositionTop()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotElementPositionTop()   Related Assertion
+     * @see  getElementPositionTop()         Related Accessor
+     * @see  verifyElementPositionTop()      Related Assertion
+     * @see  verifyNotElementPositionTop()   Related Assertion
+     * @see  waitForElementPositionTop()     Related Assertion
+     * @see  waitForNotElementPositionTop()  Related Assertion
      */
     public function assertElementPositionTop($locator, $pattern)
     {
@@ -6085,22 +6094,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotElementPositionTop}).</p>
+     * {@link verifyNotElementPositionTop()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionTop       Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionTop      Related Assertion
-     * @see  getElementPositionTop         Related Accessor
-     * @see  verifyElementPositionTop      Related Assertion
-     * @see  verifyNotElementPositionTop   Related Assertion
-     * @see  waitForElementPositionTop     Related Assertion
-     * @see  waitForNotElementPositionTop  Related Assertion
+     * @see  storeElementPositionTop()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionTop()      Related Assertion
+     * @see  getElementPositionTop()         Related Accessor
+     * @see  verifyElementPositionTop()      Related Assertion
+     * @see  verifyNotElementPositionTop()   Related Assertion
+     * @see  waitForElementPositionTop()     Related Assertion
+     * @see  waitForNotElementPositionTop()  Related Assertion
      */
     public function assertNotElementPositionTop($locator, $pattern)
     {
@@ -6111,17 +6120,17 @@ trait SeleniumTestCaseDoc
      * Retrieves the vertical position of an element.
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  int  of pixels from the edge of the frame.
      * 
-     * @see  storeElementPositionTop       Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionTop      Related Assertion
-     * @see  assertNotElementPositionTop   Related Assertion
-     * @see  verifyElementPositionTop      Related Assertion
-     * @see  verifyNotElementPositionTop   Related Assertion
-     * @see  waitForElementPositionTop     Related Assertion
-     * @see  waitForNotElementPositionTop  Related Assertion
+     * @see  storeElementPositionTop()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionTop()      Related Assertion
+     * @see  assertNotElementPositionTop()   Related Assertion
+     * @see  verifyElementPositionTop()      Related Assertion
+     * @see  verifyNotElementPositionTop()   Related Assertion
+     * @see  waitForElementPositionTop()     Related Assertion
+     * @see  waitForNotElementPositionTop()  Related Assertion
      */
     public function getElementPositionTop($locator)
     {
@@ -6133,22 +6142,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>of pixels from the edge of the frame. (see {@link doc_Stored_Variables})</p>
+     * <p>of pixels from the edge of the frame. (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $locator       an element locator pointing to an element OR an element itself (see
-     *                                {@link doc_Element_Locators})
+     *                                {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertElementPositionTop      Related Assertion
-     * @see  assertNotElementPositionTop   Related Assertion
-     * @see  getElementPositionTop         Related Accessor
-     * @see  verifyElementPositionTop      Related Assertion
-     * @see  verifyNotElementPositionTop   Related Assertion
-     * @see  waitForElementPositionTop     Related Assertion
-     * @see  waitForNotElementPositionTop  Related Assertion
+     * @see  assertElementPositionTop()      Related Assertion
+     * @see  assertNotElementPositionTop()   Related Assertion
+     * @see  getElementPositionTop()         Related Accessor
+     * @see  verifyElementPositionTop()      Related Assertion
+     * @see  verifyNotElementPositionTop()   Related Assertion
+     * @see  waitForElementPositionTop()     Related Assertion
+     * @see  waitForNotElementPositionTop()  Related Assertion
      */
     public function storeElementPositionTop($locator, $variableName)
     {
@@ -6165,22 +6174,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertElementPositionTop}).</p>
+     * {@link assertElementPositionTop()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionTop       Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionTop      Related Assertion
-     * @see  assertNotElementPositionTop   Related Assertion
-     * @see  getElementPositionTop         Related Accessor
-     * @see  verifyNotElementPositionTop   Related Assertion
-     * @see  waitForElementPositionTop     Related Assertion
-     * @see  waitForNotElementPositionTop  Related Assertion
+     * @see  storeElementPositionTop()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionTop()      Related Assertion
+     * @see  assertNotElementPositionTop()   Related Assertion
+     * @see  getElementPositionTop()         Related Accessor
+     * @see  verifyNotElementPositionTop()   Related Assertion
+     * @see  waitForElementPositionTop()     Related Assertion
+     * @see  waitForNotElementPositionTop()  Related Assertion
      */
     public function verifyElementPositionTop($locator, $pattern)
     {
@@ -6197,22 +6206,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotElementPositionTop}).</p>
+     * {@link assertNotElementPositionTop()}).</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionTop       Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionTop      Related Assertion
-     * @see  assertNotElementPositionTop   Related Assertion
-     * @see  getElementPositionTop         Related Accessor
-     * @see  verifyElementPositionTop      Related Assertion
-     * @see  waitForElementPositionTop     Related Assertion
-     * @see  waitForNotElementPositionTop  Related Assertion
+     * @see  storeElementPositionTop()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionTop()      Related Assertion
+     * @see  assertNotElementPositionTop()   Related Assertion
+     * @see  getElementPositionTop()         Related Accessor
+     * @see  verifyElementPositionTop()      Related Assertion
+     * @see  waitForElementPositionTop()     Related Assertion
+     * @see  waitForNotElementPositionTop()  Related Assertion
      */
     public function verifyNotElementPositionTop($locator, $pattern)
     {
@@ -6233,19 +6242,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionTop       Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionTop      Related Assertion
-     * @see  assertNotElementPositionTop   Related Assertion
-     * @see  getElementPositionTop         Related Accessor
-     * @see  verifyElementPositionTop      Related Assertion
-     * @see  verifyNotElementPositionTop   Related Assertion
-     * @see  waitForNotElementPositionTop  Related Assertion
+     * @see  storeElementPositionTop()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionTop()      Related Assertion
+     * @see  assertNotElementPositionTop()   Related Assertion
+     * @see  getElementPositionTop()         Related Accessor
+     * @see  verifyElementPositionTop()      Related Assertion
+     * @see  verifyNotElementPositionTop()   Related Assertion
+     * @see  waitForNotElementPositionTop()  Related Assertion
      */
     public function waitForElementPositionTop($locator, $pattern)
     {
@@ -6266,19 +6275,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator pointing to an element OR an element itself (see
-     *                           {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementPositionTop      Base method, from which has been generated (automatically) current method
-     * @see  assertElementPositionTop     Related Assertion
-     * @see  assertNotElementPositionTop  Related Assertion
-     * @see  getElementPositionTop        Related Accessor
-     * @see  verifyElementPositionTop     Related Assertion
-     * @see  verifyNotElementPositionTop  Related Assertion
-     * @see  waitForElementPositionTop    Related Assertion
+     * @see  storeElementPositionTop()      Base method, from which has been generated (automatically) current method
+     * @see  assertElementPositionTop()     Related Assertion
+     * @see  assertNotElementPositionTop()  Related Assertion
+     * @see  getElementPositionTop()        Related Accessor
+     * @see  verifyElementPositionTop()     Related Assertion
+     * @see  verifyNotElementPositionTop()  Related Assertion
+     * @see  waitForElementPositionTop()    Related Assertion
      */
     public function waitForNotElementPositionTop($locator, $pattern)
     {
@@ -6295,22 +6304,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyElementWidth}).</p>
+     * {@link verifyElementWidth()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementWidth       Base method, from which has been generated (automatically) current method
-     * @see  assertNotElementWidth   Related Assertion
-     * @see  getElementWidth         Related Accessor
-     * @see  verifyElementWidth      Related Assertion
-     * @see  verifyNotElementWidth   Related Assertion
-     * @see  waitForElementWidth     Related Assertion
-     * @see  waitForNotElementWidth  Related Assertion
+     * @see  storeElementWidth()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotElementWidth()   Related Assertion
+     * @see  getElementWidth()         Related Accessor
+     * @see  verifyElementWidth()      Related Assertion
+     * @see  verifyNotElementWidth()   Related Assertion
+     * @see  waitForElementWidth()     Related Assertion
+     * @see  waitForNotElementWidth()  Related Assertion
      */
     public function assertElementWidth($locator, $pattern)
     {
@@ -6327,22 +6336,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotElementWidth}).</p>
+     * {@link verifyNotElementWidth()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementWidth       Base method, from which has been generated (automatically) current method
-     * @see  assertElementWidth      Related Assertion
-     * @see  getElementWidth         Related Accessor
-     * @see  verifyElementWidth      Related Assertion
-     * @see  verifyNotElementWidth   Related Assertion
-     * @see  waitForElementWidth     Related Assertion
-     * @see  waitForNotElementWidth  Related Assertion
+     * @see  storeElementWidth()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementWidth()      Related Assertion
+     * @see  getElementWidth()         Related Accessor
+     * @see  verifyElementWidth()      Related Assertion
+     * @see  verifyNotElementWidth()   Related Assertion
+     * @see  waitForElementWidth()     Related Assertion
+     * @see  waitForNotElementWidth()  Related Assertion
      */
     public function assertNotElementWidth($locator, $pattern)
     {
@@ -6352,18 +6361,18 @@ trait SeleniumTestCaseDoc
     /**
      * Retrieves the width of an element.
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  int  width of an element in pixels
      * 
-     * @see  storeElementWidth       Base method, from which has been generated (automatically) current method
-     * @see  assertElementWidth      Related Assertion
-     * @see  assertNotElementWidth   Related Assertion
-     * @see  verifyElementWidth      Related Assertion
-     * @see  verifyNotElementWidth   Related Assertion
-     * @see  waitForElementWidth     Related Assertion
-     * @see  waitForNotElementWidth  Related Assertion
+     * @see  storeElementWidth()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementWidth()      Related Assertion
+     * @see  assertNotElementWidth()   Related Assertion
+     * @see  verifyElementWidth()      Related Assertion
+     * @see  verifyNotElementWidth()   Related Assertion
+     * @see  waitForElementWidth()     Related Assertion
+     * @see  waitForNotElementWidth()  Related Assertion
      */
     public function getElementWidth($locator)
     {
@@ -6375,22 +6384,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>width of an element in pixels (see {@link doc_Stored_Variables})</p>
+     * <p>width of an element in pixels (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
-     * @param string   $locator       an element locator pointing to an element 
-     *                                (see {@link doc_Element_Locators})
+     * @param string   $locator       an element locator pointing to an element (see
+     *                                {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertElementWidth      Related Assertion
-     * @see  assertNotElementWidth   Related Assertion
-     * @see  getElementWidth         Related Accessor
-     * @see  verifyElementWidth      Related Assertion
-     * @see  verifyNotElementWidth   Related Assertion
-     * @see  waitForElementWidth     Related Assertion
-     * @see  waitForNotElementWidth  Related Assertion
+     * @see  assertElementWidth()      Related Assertion
+     * @see  assertNotElementWidth()   Related Assertion
+     * @see  getElementWidth()         Related Accessor
+     * @see  verifyElementWidth()      Related Assertion
+     * @see  verifyNotElementWidth()   Related Assertion
+     * @see  waitForElementWidth()     Related Assertion
+     * @see  waitForNotElementWidth()  Related Assertion
      */
     public function storeElementWidth($locator, $variableName)
     {
@@ -6407,22 +6416,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertElementWidth}).</p>
+     * {@link assertElementWidth()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementWidth       Base method, from which has been generated (automatically) current method
-     * @see  assertElementWidth      Related Assertion
-     * @see  assertNotElementWidth   Related Assertion
-     * @see  getElementWidth         Related Accessor
-     * @see  verifyNotElementWidth   Related Assertion
-     * @see  waitForElementWidth     Related Assertion
-     * @see  waitForNotElementWidth  Related Assertion
+     * @see  storeElementWidth()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementWidth()      Related Assertion
+     * @see  assertNotElementWidth()   Related Assertion
+     * @see  getElementWidth()         Related Accessor
+     * @see  verifyNotElementWidth()   Related Assertion
+     * @see  waitForElementWidth()     Related Assertion
+     * @see  waitForNotElementWidth()  Related Assertion
      */
     public function verifyElementWidth($locator, $pattern)
     {
@@ -6439,22 +6448,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotElementWidth}).</p>
+     * {@link assertNotElementWidth()}).</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementWidth       Base method, from which has been generated (automatically) current method
-     * @see  assertElementWidth      Related Assertion
-     * @see  assertNotElementWidth   Related Assertion
-     * @see  getElementWidth         Related Accessor
-     * @see  verifyElementWidth      Related Assertion
-     * @see  waitForElementWidth     Related Assertion
-     * @see  waitForNotElementWidth  Related Assertion
+     * @see  storeElementWidth()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementWidth()      Related Assertion
+     * @see  assertNotElementWidth()   Related Assertion
+     * @see  getElementWidth()         Related Accessor
+     * @see  verifyElementWidth()      Related Assertion
+     * @see  waitForElementWidth()     Related Assertion
+     * @see  waitForNotElementWidth()  Related Assertion
      */
     public function verifyNotElementWidth($locator, $pattern)
     {
@@ -6474,20 +6483,20 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementWidth       Base method, from which has been generated (automatically) current method
-     * @see  assertElementWidth      Related Assertion
-     * @see  assertNotElementWidth   Related Assertion
-     * @see  getElementWidth         Related Accessor
-     * @see  verifyElementWidth      Related Assertion
-     * @see  verifyNotElementWidth   Related Assertion
-     * @see  waitForNotElementWidth  Related Assertion
+     * @see  storeElementWidth()       Base method, from which has been generated (automatically) current method
+     * @see  assertElementWidth()      Related Assertion
+     * @see  assertNotElementWidth()   Related Assertion
+     * @see  getElementWidth()         Related Accessor
+     * @see  verifyElementWidth()      Related Assertion
+     * @see  verifyNotElementWidth()   Related Assertion
+     * @see  waitForNotElementWidth()  Related Assertion
      */
     public function waitForElementWidth($locator, $pattern)
     {
@@ -6507,20 +6516,20 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $locator  an element locator pointing to an element 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $locator  an element locator pointing to an element (see
+     *                           {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeElementWidth      Base method, from which has been generated (automatically) current method
-     * @see  assertElementWidth     Related Assertion
-     * @see  assertNotElementWidth  Related Assertion
-     * @see  getElementWidth        Related Accessor
-     * @see  verifyElementWidth     Related Assertion
-     * @see  verifyNotElementWidth  Related Assertion
-     * @see  waitForElementWidth    Related Assertion
+     * @see  storeElementWidth()      Base method, from which has been generated (automatically) current method
+     * @see  assertElementWidth()     Related Assertion
+     * @see  assertNotElementWidth()  Related Assertion
+     * @see  getElementWidth()        Related Accessor
+     * @see  verifyElementWidth()     Related Assertion
+     * @see  verifyNotElementWidth()  Related Assertion
+     * @see  waitForElementWidth()    Related Assertion
      */
     public function waitForNotElementWidth($locator, $pattern)
     {
@@ -6546,21 +6555,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyEval}).</p>
+     * {@link verifyEval()}).</p>
      * 
      * @param string   $script   the JavaScript snippet to run
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeEval       Base method, from which has been generated (automatically) current method
-     * @see  assertNotEval   Related Assertion
-     * @see  getEval         Related Accessor
-     * @see  verifyEval      Related Assertion
-     * @see  verifyNotEval   Related Assertion
-     * @see  waitForEval     Related Assertion
-     * @see  waitForNotEval  Related Assertion
+     * @see  storeEval()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotEval()   Related Assertion
+     * @see  getEval()         Related Accessor
+     * @see  verifyEval()      Related Assertion
+     * @see  verifyNotEval()   Related Assertion
+     * @see  waitForEval()     Related Assertion
+     * @see  waitForNotEval()  Related Assertion
      */
     public function assertEval($script, $pattern)
     {
@@ -6586,21 +6595,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotEval}).</p>
+     * {@link verifyNotEval()}).</p>
      * 
      * @param string   $script   the JavaScript snippet to run
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeEval       Base method, from which has been generated (automatically) current method
-     * @see  assertEval      Related Assertion
-     * @see  getEval         Related Accessor
-     * @see  verifyEval      Related Assertion
-     * @see  verifyNotEval   Related Assertion
-     * @see  waitForEval     Related Assertion
-     * @see  waitForNotEval  Related Assertion
+     * @see  storeEval()       Base method, from which has been generated (automatically) current method
+     * @see  assertEval()      Related Assertion
+     * @see  getEval()         Related Accessor
+     * @see  verifyEval()      Related Assertion
+     * @see  verifyNotEval()   Related Assertion
+     * @see  waitForEval()     Related Assertion
+     * @see  waitForNotEval()  Related Assertion
      */
     public function assertNotEval($script, $pattern)
     {
@@ -6623,13 +6632,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  the results of evaluating the snippet
      * 
-     * @see  storeEval       Base method, from which has been generated (automatically) current method
-     * @see  assertEval      Related Assertion
-     * @see  assertNotEval   Related Assertion
-     * @see  verifyEval      Related Assertion
-     * @see  verifyNotEval   Related Assertion
-     * @see  waitForEval     Related Assertion
-     * @see  waitForNotEval  Related Assertion
+     * @see  storeEval()       Base method, from which has been generated (automatically) current method
+     * @see  assertEval()      Related Assertion
+     * @see  assertNotEval()   Related Assertion
+     * @see  verifyEval()      Related Assertion
+     * @see  verifyNotEval()   Related Assertion
+     * @see  waitForEval()     Related Assertion
+     * @see  waitForNotEval()  Related Assertion
      */
     public function getEval($script)
     {
@@ -6650,21 +6659,21 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the results of evaluating the snippet (see {@link doc_Stored_Variables})</p>
+     * <p>the results of evaluating the snippet (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $script        the JavaScript snippet to run
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertEval      Related Assertion
-     * @see  assertNotEval   Related Assertion
-     * @see  getEval         Related Accessor
-     * @see  verifyEval      Related Assertion
-     * @see  verifyNotEval   Related Assertion
-     * @see  waitForEval     Related Assertion
-     * @see  waitForNotEval  Related Assertion
+     * @see  assertEval()      Related Assertion
+     * @see  assertNotEval()   Related Assertion
+     * @see  getEval()         Related Accessor
+     * @see  verifyEval()      Related Assertion
+     * @see  verifyNotEval()   Related Assertion
+     * @see  waitForEval()     Related Assertion
+     * @see  waitForNotEval()  Related Assertion
      */
     public function storeEval($script, $variableName)
     {
@@ -6690,21 +6699,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertEval}).</p>
+     * {@link assertEval()}).</p>
      * 
      * @param string   $script   the JavaScript snippet to run
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeEval       Base method, from which has been generated (automatically) current method
-     * @see  assertEval      Related Assertion
-     * @see  assertNotEval   Related Assertion
-     * @see  getEval         Related Accessor
-     * @see  verifyNotEval   Related Assertion
-     * @see  waitForEval     Related Assertion
-     * @see  waitForNotEval  Related Assertion
+     * @see  storeEval()       Base method, from which has been generated (automatically) current method
+     * @see  assertEval()      Related Assertion
+     * @see  assertNotEval()   Related Assertion
+     * @see  getEval()         Related Accessor
+     * @see  verifyNotEval()   Related Assertion
+     * @see  waitForEval()     Related Assertion
+     * @see  waitForNotEval()  Related Assertion
      */
     public function verifyEval($script, $pattern)
     {
@@ -6730,21 +6739,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotEval}).</p>
+     * {@link assertNotEval()}).</p>
      * 
      * @param string   $script   the JavaScript snippet to run
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeEval       Base method, from which has been generated (automatically) current method
-     * @see  assertEval      Related Assertion
-     * @see  assertNotEval   Related Assertion
-     * @see  getEval         Related Accessor
-     * @see  verifyEval      Related Assertion
-     * @see  waitForEval     Related Assertion
-     * @see  waitForNotEval  Related Assertion
+     * @see  storeEval()       Base method, from which has been generated (automatically) current method
+     * @see  assertEval()      Related Assertion
+     * @see  assertNotEval()   Related Assertion
+     * @see  getEval()         Related Accessor
+     * @see  verifyEval()      Related Assertion
+     * @see  waitForEval()     Related Assertion
+     * @see  waitForNotEval()  Related Assertion
      */
     public function verifyNotEval($script, $pattern)
     {
@@ -6774,18 +6783,18 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $script   the JavaScript snippet to run
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeEval       Base method, from which has been generated (automatically) current method
-     * @see  assertEval      Related Assertion
-     * @see  assertNotEval   Related Assertion
-     * @see  getEval         Related Accessor
-     * @see  verifyEval      Related Assertion
-     * @see  verifyNotEval   Related Assertion
-     * @see  waitForNotEval  Related Assertion
+     * @see  storeEval()       Base method, from which has been generated (automatically) current method
+     * @see  assertEval()      Related Assertion
+     * @see  assertNotEval()   Related Assertion
+     * @see  getEval()         Related Accessor
+     * @see  verifyEval()      Related Assertion
+     * @see  verifyNotEval()   Related Assertion
+     * @see  waitForNotEval()  Related Assertion
      */
     public function waitForEval($script, $pattern)
     {
@@ -6815,18 +6824,18 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $script   the JavaScript snippet to run
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeEval      Base method, from which has been generated (automatically) current method
-     * @see  assertEval     Related Assertion
-     * @see  assertNotEval  Related Assertion
-     * @see  getEval        Related Accessor
-     * @see  verifyEval     Related Assertion
-     * @see  verifyNotEval  Related Assertion
-     * @see  waitForEval    Related Assertion
+     * @see  storeEval()      Base method, from which has been generated (automatically) current method
+     * @see  assertEval()     Related Assertion
+     * @see  assertNotEval()  Related Assertion
+     * @see  getEval()        Related Accessor
+     * @see  verifyEval()     Related Assertion
+     * @see  verifyNotEval()  Related Assertion
+     * @see  waitForEval()    Related Assertion
      */
     public function waitForNotEval($script, $pattern)
     {
@@ -6846,21 +6855,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyExpression}).</p>
+     * {@link verifyExpression()}).</p>
      * 
      * @param string   $expression  the value to return
-     * @param string   $pattern     the String-match Patterns 
-     *                              (see {@link doc_String_match_Patterns})
+     * @param string   $pattern     the String-match Patterns (see
+     *                              {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeExpression       Base method, from which has been generated (automatically) current method
-     * @see  assertNotExpression   Related Assertion
-     * @see  getExpression         Related Accessor
-     * @see  verifyExpression      Related Assertion
-     * @see  verifyNotExpression   Related Assertion
-     * @see  waitForExpression     Related Assertion
-     * @see  waitForNotExpression  Related Assertion
+     * @see  storeExpression()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotExpression()   Related Assertion
+     * @see  getExpression()         Related Accessor
+     * @see  verifyExpression()      Related Assertion
+     * @see  verifyNotExpression()   Related Assertion
+     * @see  waitForExpression()     Related Assertion
+     * @see  waitForNotExpression()  Related Assertion
      */
     public function assertExpression($expression, $pattern)
     {
@@ -6880,21 +6889,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotExpression}).</p>
+     * {@link verifyNotExpression()}).</p>
      * 
      * @param string   $expression  the value to return
-     * @param string   $pattern     the String-match Patterns 
-     *                              (see {@link doc_String_match_Patterns})
+     * @param string   $pattern     the String-match Patterns (see
+     *                              {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeExpression       Base method, from which has been generated (automatically) current method
-     * @see  assertExpression      Related Assertion
-     * @see  getExpression         Related Accessor
-     * @see  verifyExpression      Related Assertion
-     * @see  verifyNotExpression   Related Assertion
-     * @see  waitForExpression     Related Assertion
-     * @see  waitForNotExpression  Related Assertion
+     * @see  storeExpression()       Base method, from which has been generated (automatically) current method
+     * @see  assertExpression()      Related Assertion
+     * @see  getExpression()         Related Accessor
+     * @see  verifyExpression()      Related Assertion
+     * @see  verifyNotExpression()   Related Assertion
+     * @see  waitForExpression()     Related Assertion
+     * @see  waitForNotExpression()  Related Assertion
      */
     public function assertNotExpression($expression, $pattern)
     {
@@ -6911,13 +6920,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  the value passed in
      * 
-     * @see  storeExpression       Base method, from which has been generated (automatically) current method
-     * @see  assertExpression      Related Assertion
-     * @see  assertNotExpression   Related Assertion
-     * @see  verifyExpression      Related Assertion
-     * @see  verifyNotExpression   Related Assertion
-     * @see  waitForExpression     Related Assertion
-     * @see  waitForNotExpression  Related Assertion
+     * @see  storeExpression()       Base method, from which has been generated (automatically) current method
+     * @see  assertExpression()      Related Assertion
+     * @see  assertNotExpression()   Related Assertion
+     * @see  verifyExpression()      Related Assertion
+     * @see  verifyNotExpression()   Related Assertion
+     * @see  waitForExpression()     Related Assertion
+     * @see  waitForNotExpression()  Related Assertion
      */
     public function getExpression($expression)
     {
@@ -6932,21 +6941,21 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the value passed in (see {@link doc_Stored_Variables})</p>
+     * <p>the value passed in (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $expression    the value to return
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertExpression      Related Assertion
-     * @see  assertNotExpression   Related Assertion
-     * @see  getExpression         Related Accessor
-     * @see  verifyExpression      Related Assertion
-     * @see  verifyNotExpression   Related Assertion
-     * @see  waitForExpression     Related Assertion
-     * @see  waitForNotExpression  Related Assertion
+     * @see  assertExpression()      Related Assertion
+     * @see  assertNotExpression()   Related Assertion
+     * @see  getExpression()         Related Accessor
+     * @see  verifyExpression()      Related Assertion
+     * @see  verifyNotExpression()   Related Assertion
+     * @see  waitForExpression()     Related Assertion
+     * @see  waitForNotExpression()  Related Assertion
      */
     public function storeExpression($expression, $variableName)
     {
@@ -6966,21 +6975,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertExpression}).</p>
+     * {@link assertExpression()}).</p>
      * 
      * @param string   $expression  the value to return
-     * @param string   $pattern     the String-match Patterns 
-     *                              (see {@link doc_String_match_Patterns})
+     * @param string   $pattern     the String-match Patterns (see
+     *                              {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeExpression       Base method, from which has been generated (automatically) current method
-     * @see  assertExpression      Related Assertion
-     * @see  assertNotExpression   Related Assertion
-     * @see  getExpression         Related Accessor
-     * @see  verifyNotExpression   Related Assertion
-     * @see  waitForExpression     Related Assertion
-     * @see  waitForNotExpression  Related Assertion
+     * @see  storeExpression()       Base method, from which has been generated (automatically) current method
+     * @see  assertExpression()      Related Assertion
+     * @see  assertNotExpression()   Related Assertion
+     * @see  getExpression()         Related Accessor
+     * @see  verifyNotExpression()   Related Assertion
+     * @see  waitForExpression()     Related Assertion
+     * @see  waitForNotExpression()  Related Assertion
      */
     public function verifyExpression($expression, $pattern)
     {
@@ -7000,21 +7009,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotExpression}).</p>
+     * {@link assertNotExpression()}).</p>
      * 
      * @param string   $expression  the value to return
-     * @param string   $pattern     the String-match Patterns 
-     *                              (see {@link doc_String_match_Patterns})
+     * @param string   $pattern     the String-match Patterns (see
+     *                              {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeExpression       Base method, from which has been generated (automatically) current method
-     * @see  assertExpression      Related Assertion
-     * @see  assertNotExpression   Related Assertion
-     * @see  getExpression         Related Accessor
-     * @see  verifyExpression      Related Assertion
-     * @see  waitForExpression     Related Assertion
-     * @see  waitForNotExpression  Related Assertion
+     * @see  storeExpression()       Base method, from which has been generated (automatically) current method
+     * @see  assertExpression()      Related Assertion
+     * @see  assertNotExpression()   Related Assertion
+     * @see  getExpression()         Related Accessor
+     * @see  verifyExpression()      Related Assertion
+     * @see  waitForExpression()     Related Assertion
+     * @see  waitForNotExpression()  Related Assertion
      */
     public function verifyNotExpression($expression, $pattern)
     {
@@ -7038,18 +7047,18 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $expression  the value to return
-     * @param string   $pattern     the String-match Patterns 
-     *                              (see {@link doc_String_match_Patterns})
+     * @param string   $pattern     the String-match Patterns (see
+     *                              {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeExpression       Base method, from which has been generated (automatically) current method
-     * @see  assertExpression      Related Assertion
-     * @see  assertNotExpression   Related Assertion
-     * @see  getExpression         Related Accessor
-     * @see  verifyExpression      Related Assertion
-     * @see  verifyNotExpression   Related Assertion
-     * @see  waitForNotExpression  Related Assertion
+     * @see  storeExpression()       Base method, from which has been generated (automatically) current method
+     * @see  assertExpression()      Related Assertion
+     * @see  assertNotExpression()   Related Assertion
+     * @see  getExpression()         Related Accessor
+     * @see  verifyExpression()      Related Assertion
+     * @see  verifyNotExpression()   Related Assertion
+     * @see  waitForNotExpression()  Related Assertion
      */
     public function waitForExpression($expression, $pattern)
     {
@@ -7073,18 +7082,18 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $expression  the value to return
-     * @param string   $pattern     the String-match Patterns 
-     *                              (see {@link doc_String_match_Patterns})
+     * @param string   $pattern     the String-match Patterns (see
+     *                              {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeExpression      Base method, from which has been generated (automatically) current method
-     * @see  assertExpression     Related Assertion
-     * @see  assertNotExpression  Related Assertion
-     * @see  getExpression        Related Accessor
-     * @see  verifyExpression     Related Assertion
-     * @see  verifyNotExpression  Related Assertion
-     * @see  waitForExpression    Related Assertion
+     * @see  storeExpression()      Base method, from which has been generated (automatically) current method
+     * @see  assertExpression()     Related Assertion
+     * @see  assertNotExpression()  Related Assertion
+     * @see  getExpression()        Related Accessor
+     * @see  verifyExpression()     Related Assertion
+     * @see  verifyNotExpression()  Related Assertion
+     * @see  waitForExpression()    Related Assertion
      */
     public function waitForNotExpression($expression, $pattern)
     {
@@ -7101,20 +7110,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyHtmlSource}).</p>
+     * {@link verifyHtmlSource()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeHtmlSource       Base method, from which has been generated (automatically) current method
-     * @see  assertNotHtmlSource   Related Assertion
-     * @see  getHtmlSource         Related Accessor
-     * @see  verifyHtmlSource      Related Assertion
-     * @see  verifyNotHtmlSource   Related Assertion
-     * @see  waitForHtmlSource     Related Assertion
-     * @see  waitForNotHtmlSource  Related Assertion
+     * @see  storeHtmlSource()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotHtmlSource()   Related Assertion
+     * @see  getHtmlSource()         Related Accessor
+     * @see  verifyHtmlSource()      Related Assertion
+     * @see  verifyNotHtmlSource()   Related Assertion
+     * @see  waitForHtmlSource()     Related Assertion
+     * @see  waitForNotHtmlSource()  Related Assertion
      */
     public function assertHtmlSource($pattern)
     {
@@ -7131,20 +7140,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotHtmlSource}).</p>
+     * {@link verifyNotHtmlSource()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeHtmlSource       Base method, from which has been generated (automatically) current method
-     * @see  assertHtmlSource      Related Assertion
-     * @see  getHtmlSource         Related Accessor
-     * @see  verifyHtmlSource      Related Assertion
-     * @see  verifyNotHtmlSource   Related Assertion
-     * @see  waitForHtmlSource     Related Assertion
-     * @see  waitForNotHtmlSource  Related Assertion
+     * @see  storeHtmlSource()       Base method, from which has been generated (automatically) current method
+     * @see  assertHtmlSource()      Related Assertion
+     * @see  getHtmlSource()         Related Accessor
+     * @see  verifyHtmlSource()      Related Assertion
+     * @see  verifyNotHtmlSource()   Related Assertion
+     * @see  waitForHtmlSource()     Related Assertion
+     * @see  waitForNotHtmlSource()  Related Assertion
      */
     public function assertNotHtmlSource($pattern)
     {
@@ -7156,13 +7165,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  the entire HTML source
      * 
-     * @see  storeHtmlSource       Base method, from which has been generated (automatically) current method
-     * @see  assertHtmlSource      Related Assertion
-     * @see  assertNotHtmlSource   Related Assertion
-     * @see  verifyHtmlSource      Related Assertion
-     * @see  verifyNotHtmlSource   Related Assertion
-     * @see  waitForHtmlSource     Related Assertion
-     * @see  waitForNotHtmlSource  Related Assertion
+     * @see  storeHtmlSource()       Base method, from which has been generated (automatically) current method
+     * @see  assertHtmlSource()      Related Assertion
+     * @see  assertNotHtmlSource()   Related Assertion
+     * @see  verifyHtmlSource()      Related Assertion
+     * @see  verifyNotHtmlSource()   Related Assertion
+     * @see  waitForHtmlSource()     Related Assertion
+     * @see  waitForNotHtmlSource()  Related Assertion
      */
     public function getHtmlSource()
     {
@@ -7174,20 +7183,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the entire HTML source (see {@link doc_Stored_Variables})</p>
+     * <p>the entire HTML source (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertHtmlSource      Related Assertion
-     * @see  assertNotHtmlSource   Related Assertion
-     * @see  getHtmlSource         Related Accessor
-     * @see  verifyHtmlSource      Related Assertion
-     * @see  verifyNotHtmlSource   Related Assertion
-     * @see  waitForHtmlSource     Related Assertion
-     * @see  waitForNotHtmlSource  Related Assertion
+     * @see  assertHtmlSource()      Related Assertion
+     * @see  assertNotHtmlSource()   Related Assertion
+     * @see  getHtmlSource()         Related Accessor
+     * @see  verifyHtmlSource()      Related Assertion
+     * @see  verifyNotHtmlSource()   Related Assertion
+     * @see  waitForHtmlSource()     Related Assertion
+     * @see  waitForNotHtmlSource()  Related Assertion
      */
     public function storeHtmlSource($variableName)
     {
@@ -7204,20 +7213,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertHtmlSource}).</p>
+     * {@link assertHtmlSource()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeHtmlSource       Base method, from which has been generated (automatically) current method
-     * @see  assertHtmlSource      Related Assertion
-     * @see  assertNotHtmlSource   Related Assertion
-     * @see  getHtmlSource         Related Accessor
-     * @see  verifyNotHtmlSource   Related Assertion
-     * @see  waitForHtmlSource     Related Assertion
-     * @see  waitForNotHtmlSource  Related Assertion
+     * @see  storeHtmlSource()       Base method, from which has been generated (automatically) current method
+     * @see  assertHtmlSource()      Related Assertion
+     * @see  assertNotHtmlSource()   Related Assertion
+     * @see  getHtmlSource()         Related Accessor
+     * @see  verifyNotHtmlSource()   Related Assertion
+     * @see  waitForHtmlSource()     Related Assertion
+     * @see  waitForNotHtmlSource()  Related Assertion
      */
     public function verifyHtmlSource($pattern)
     {
@@ -7234,20 +7243,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotHtmlSource}).</p>
+     * {@link assertNotHtmlSource()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeHtmlSource       Base method, from which has been generated (automatically) current method
-     * @see  assertHtmlSource      Related Assertion
-     * @see  assertNotHtmlSource   Related Assertion
-     * @see  getHtmlSource         Related Accessor
-     * @see  verifyHtmlSource      Related Assertion
-     * @see  waitForHtmlSource     Related Assertion
-     * @see  waitForNotHtmlSource  Related Assertion
+     * @see  storeHtmlSource()       Base method, from which has been generated (automatically) current method
+     * @see  assertHtmlSource()      Related Assertion
+     * @see  assertNotHtmlSource()   Related Assertion
+     * @see  getHtmlSource()         Related Accessor
+     * @see  verifyHtmlSource()      Related Assertion
+     * @see  waitForHtmlSource()     Related Assertion
+     * @see  waitForNotHtmlSource()  Related Assertion
      */
     public function verifyNotHtmlSource($pattern)
     {
@@ -7267,18 +7276,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeHtmlSource       Base method, from which has been generated (automatically) current method
-     * @see  assertHtmlSource      Related Assertion
-     * @see  assertNotHtmlSource   Related Assertion
-     * @see  getHtmlSource         Related Accessor
-     * @see  verifyHtmlSource      Related Assertion
-     * @see  verifyNotHtmlSource   Related Assertion
-     * @see  waitForNotHtmlSource  Related Assertion
+     * @see  storeHtmlSource()       Base method, from which has been generated (automatically) current method
+     * @see  assertHtmlSource()      Related Assertion
+     * @see  assertNotHtmlSource()   Related Assertion
+     * @see  getHtmlSource()         Related Accessor
+     * @see  verifyHtmlSource()      Related Assertion
+     * @see  verifyNotHtmlSource()   Related Assertion
+     * @see  waitForNotHtmlSource()  Related Assertion
      */
     public function waitForHtmlSource($pattern)
     {
@@ -7298,18 +7307,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeHtmlSource      Base method, from which has been generated (automatically) current method
-     * @see  assertHtmlSource     Related Assertion
-     * @see  assertNotHtmlSource  Related Assertion
-     * @see  getHtmlSource        Related Accessor
-     * @see  verifyHtmlSource     Related Assertion
-     * @see  verifyNotHtmlSource  Related Assertion
-     * @see  waitForHtmlSource    Related Assertion
+     * @see  storeHtmlSource()      Base method, from which has been generated (automatically) current method
+     * @see  assertHtmlSource()     Related Assertion
+     * @see  assertNotHtmlSource()  Related Assertion
+     * @see  getHtmlSource()        Related Accessor
+     * @see  verifyHtmlSource()     Related Assertion
+     * @see  verifyNotHtmlSource()  Related Assertion
+     * @see  waitForHtmlSource()    Related Assertion
      */
     public function waitForNotHtmlSource($pattern)
     {
@@ -7326,20 +7335,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyLocation}).</p>
+     * {@link verifyLocation()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeLocation       Base method, from which has been generated (automatically) current method
-     * @see  assertNotLocation   Related Assertion
-     * @see  getLocation         Related Accessor
-     * @see  verifyLocation      Related Assertion
-     * @see  verifyNotLocation   Related Assertion
-     * @see  waitForLocation     Related Assertion
-     * @see  waitForNotLocation  Related Assertion
+     * @see  storeLocation()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotLocation()   Related Assertion
+     * @see  getLocation()         Related Accessor
+     * @see  verifyLocation()      Related Assertion
+     * @see  verifyNotLocation()   Related Assertion
+     * @see  waitForLocation()     Related Assertion
+     * @see  waitForNotLocation()  Related Assertion
      */
     public function assertLocation($pattern)
     {
@@ -7356,20 +7365,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotLocation}).</p>
+     * {@link verifyNotLocation()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeLocation       Base method, from which has been generated (automatically) current method
-     * @see  assertLocation      Related Assertion
-     * @see  getLocation         Related Accessor
-     * @see  verifyLocation      Related Assertion
-     * @see  verifyNotLocation   Related Assertion
-     * @see  waitForLocation     Related Assertion
-     * @see  waitForNotLocation  Related Assertion
+     * @see  storeLocation()       Base method, from which has been generated (automatically) current method
+     * @see  assertLocation()      Related Assertion
+     * @see  getLocation()         Related Accessor
+     * @see  verifyLocation()      Related Assertion
+     * @see  verifyNotLocation()   Related Assertion
+     * @see  waitForLocation()     Related Assertion
+     * @see  waitForNotLocation()  Related Assertion
      */
     public function assertNotLocation($pattern)
     {
@@ -7381,13 +7390,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  the absolute URL of the current page
      * 
-     * @see  storeLocation       Base method, from which has been generated (automatically) current method
-     * @see  assertLocation      Related Assertion
-     * @see  assertNotLocation   Related Assertion
-     * @see  verifyLocation      Related Assertion
-     * @see  verifyNotLocation   Related Assertion
-     * @see  waitForLocation     Related Assertion
-     * @see  waitForNotLocation  Related Assertion
+     * @see  storeLocation()       Base method, from which has been generated (automatically) current method
+     * @see  assertLocation()      Related Assertion
+     * @see  assertNotLocation()   Related Assertion
+     * @see  verifyLocation()      Related Assertion
+     * @see  verifyNotLocation()   Related Assertion
+     * @see  waitForLocation()     Related Assertion
+     * @see  waitForNotLocation()  Related Assertion
      */
     public function getLocation()
     {
@@ -7399,20 +7408,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the absolute URL of the current page (see {@link doc_Stored_Variables})</p>
+     * <p>the absolute URL of the current page (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertLocation      Related Assertion
-     * @see  assertNotLocation   Related Assertion
-     * @see  getLocation         Related Accessor
-     * @see  verifyLocation      Related Assertion
-     * @see  verifyNotLocation   Related Assertion
-     * @see  waitForLocation     Related Assertion
-     * @see  waitForNotLocation  Related Assertion
+     * @see  assertLocation()      Related Assertion
+     * @see  assertNotLocation()   Related Assertion
+     * @see  getLocation()         Related Accessor
+     * @see  verifyLocation()      Related Assertion
+     * @see  verifyNotLocation()   Related Assertion
+     * @see  waitForLocation()     Related Assertion
+     * @see  waitForNotLocation()  Related Assertion
      */
     public function storeLocation($variableName)
     {
@@ -7429,20 +7438,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertLocation}).</p>
+     * {@link assertLocation()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeLocation       Base method, from which has been generated (automatically) current method
-     * @see  assertLocation      Related Assertion
-     * @see  assertNotLocation   Related Assertion
-     * @see  getLocation         Related Accessor
-     * @see  verifyNotLocation   Related Assertion
-     * @see  waitForLocation     Related Assertion
-     * @see  waitForNotLocation  Related Assertion
+     * @see  storeLocation()       Base method, from which has been generated (automatically) current method
+     * @see  assertLocation()      Related Assertion
+     * @see  assertNotLocation()   Related Assertion
+     * @see  getLocation()         Related Accessor
+     * @see  verifyNotLocation()   Related Assertion
+     * @see  waitForLocation()     Related Assertion
+     * @see  waitForNotLocation()  Related Assertion
      */
     public function verifyLocation($pattern)
     {
@@ -7459,20 +7468,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotLocation}).</p>
+     * {@link assertNotLocation()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeLocation       Base method, from which has been generated (automatically) current method
-     * @see  assertLocation      Related Assertion
-     * @see  assertNotLocation   Related Assertion
-     * @see  getLocation         Related Accessor
-     * @see  verifyLocation      Related Assertion
-     * @see  waitForLocation     Related Assertion
-     * @see  waitForNotLocation  Related Assertion
+     * @see  storeLocation()       Base method, from which has been generated (automatically) current method
+     * @see  assertLocation()      Related Assertion
+     * @see  assertNotLocation()   Related Assertion
+     * @see  getLocation()         Related Accessor
+     * @see  verifyLocation()      Related Assertion
+     * @see  waitForLocation()     Related Assertion
+     * @see  waitForNotLocation()  Related Assertion
      */
     public function verifyNotLocation($pattern)
     {
@@ -7492,18 +7501,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeLocation       Base method, from which has been generated (automatically) current method
-     * @see  assertLocation      Related Assertion
-     * @see  assertNotLocation   Related Assertion
-     * @see  getLocation         Related Accessor
-     * @see  verifyLocation      Related Assertion
-     * @see  verifyNotLocation   Related Assertion
-     * @see  waitForNotLocation  Related Assertion
+     * @see  storeLocation()       Base method, from which has been generated (automatically) current method
+     * @see  assertLocation()      Related Assertion
+     * @see  assertNotLocation()   Related Assertion
+     * @see  getLocation()         Related Accessor
+     * @see  verifyLocation()      Related Assertion
+     * @see  verifyNotLocation()   Related Assertion
+     * @see  waitForNotLocation()  Related Assertion
      */
     public function waitForLocation($pattern)
     {
@@ -7523,18 +7532,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeLocation      Base method, from which has been generated (automatically) current method
-     * @see  assertLocation     Related Assertion
-     * @see  assertNotLocation  Related Assertion
-     * @see  getLocation        Related Accessor
-     * @see  verifyLocation     Related Assertion
-     * @see  verifyNotLocation  Related Assertion
-     * @see  waitForLocation    Related Assertion
+     * @see  storeLocation()      Base method, from which has been generated (automatically) current method
+     * @see  assertLocation()     Related Assertion
+     * @see  assertNotLocation()  Related Assertion
+     * @see  getLocation()        Related Accessor
+     * @see  verifyLocation()     Related Assertion
+     * @see  verifyNotLocation()  Related Assertion
+     * @see  waitForLocation()    Related Assertion
      */
     public function waitForNotLocation($pattern)
     {
@@ -7551,20 +7560,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyMouseSpeed}).</p>
+     * {@link verifyMouseSpeed()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeMouseSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertNotMouseSpeed   Related Assertion
-     * @see  getMouseSpeed         Related Accessor
-     * @see  verifyMouseSpeed      Related Assertion
-     * @see  verifyNotMouseSpeed   Related Assertion
-     * @see  waitForMouseSpeed     Related Assertion
-     * @see  waitForNotMouseSpeed  Related Assertion
+     * @see  storeMouseSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotMouseSpeed()   Related Assertion
+     * @see  getMouseSpeed()         Related Accessor
+     * @see  verifyMouseSpeed()      Related Assertion
+     * @see  verifyNotMouseSpeed()   Related Assertion
+     * @see  waitForMouseSpeed()     Related Assertion
+     * @see  waitForNotMouseSpeed()  Related Assertion
      */
     public function assertMouseSpeed($pattern)
     {
@@ -7581,20 +7590,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotMouseSpeed}).</p>
+     * {@link verifyNotMouseSpeed()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeMouseSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertMouseSpeed      Related Assertion
-     * @see  getMouseSpeed         Related Accessor
-     * @see  verifyMouseSpeed      Related Assertion
-     * @see  verifyNotMouseSpeed   Related Assertion
-     * @see  waitForMouseSpeed     Related Assertion
-     * @see  waitForNotMouseSpeed  Related Assertion
+     * @see  storeMouseSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertMouseSpeed()      Related Assertion
+     * @see  getMouseSpeed()         Related Accessor
+     * @see  verifyMouseSpeed()      Related Assertion
+     * @see  verifyNotMouseSpeed()   Related Assertion
+     * @see  waitForMouseSpeed()     Related Assertion
+     * @see  waitForNotMouseSpeed()  Related Assertion
      */
     public function assertNotMouseSpeed($pattern)
     {
@@ -7606,13 +7615,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  int  the number of pixels between "mousemove" events during dragAndDrop commands (default=10)
      * 
-     * @see  storeMouseSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertMouseSpeed      Related Assertion
-     * @see  assertNotMouseSpeed   Related Assertion
-     * @see  verifyMouseSpeed      Related Assertion
-     * @see  verifyNotMouseSpeed   Related Assertion
-     * @see  waitForMouseSpeed     Related Assertion
-     * @see  waitForNotMouseSpeed  Related Assertion
+     * @see  storeMouseSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertMouseSpeed()      Related Assertion
+     * @see  assertNotMouseSpeed()   Related Assertion
+     * @see  verifyMouseSpeed()      Related Assertion
+     * @see  verifyNotMouseSpeed()   Related Assertion
+     * @see  waitForMouseSpeed()     Related Assertion
+     * @see  waitForNotMouseSpeed()  Related Assertion
      */
     public function getMouseSpeed()
     {
@@ -7625,20 +7634,20 @@ trait SeleniumTestCaseDoc
      * <h4>Stored value:</h4>
      * 
      * <p>the number of pixels between "mousemove" events during dragAndDrop commands (default=10) (see
-     * {@link doc_Stored_Variables})</p>
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertMouseSpeed      Related Assertion
-     * @see  assertNotMouseSpeed   Related Assertion
-     * @see  getMouseSpeed         Related Accessor
-     * @see  verifyMouseSpeed      Related Assertion
-     * @see  verifyNotMouseSpeed   Related Assertion
-     * @see  waitForMouseSpeed     Related Assertion
-     * @see  waitForNotMouseSpeed  Related Assertion
+     * @see  assertMouseSpeed()      Related Assertion
+     * @see  assertNotMouseSpeed()   Related Assertion
+     * @see  getMouseSpeed()         Related Accessor
+     * @see  verifyMouseSpeed()      Related Assertion
+     * @see  verifyNotMouseSpeed()   Related Assertion
+     * @see  waitForMouseSpeed()     Related Assertion
+     * @see  waitForNotMouseSpeed()  Related Assertion
      */
     public function storeMouseSpeed($variableName)
     {
@@ -7655,20 +7664,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertMouseSpeed}).</p>
+     * {@link assertMouseSpeed()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeMouseSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertMouseSpeed      Related Assertion
-     * @see  assertNotMouseSpeed   Related Assertion
-     * @see  getMouseSpeed         Related Accessor
-     * @see  verifyNotMouseSpeed   Related Assertion
-     * @see  waitForMouseSpeed     Related Assertion
-     * @see  waitForNotMouseSpeed  Related Assertion
+     * @see  storeMouseSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertMouseSpeed()      Related Assertion
+     * @see  assertNotMouseSpeed()   Related Assertion
+     * @see  getMouseSpeed()         Related Accessor
+     * @see  verifyNotMouseSpeed()   Related Assertion
+     * @see  waitForMouseSpeed()     Related Assertion
+     * @see  waitForNotMouseSpeed()  Related Assertion
      */
     public function verifyMouseSpeed($pattern)
     {
@@ -7685,20 +7694,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotMouseSpeed}).</p>
+     * {@link assertNotMouseSpeed()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeMouseSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertMouseSpeed      Related Assertion
-     * @see  assertNotMouseSpeed   Related Assertion
-     * @see  getMouseSpeed         Related Accessor
-     * @see  verifyMouseSpeed      Related Assertion
-     * @see  waitForMouseSpeed     Related Assertion
-     * @see  waitForNotMouseSpeed  Related Assertion
+     * @see  storeMouseSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertMouseSpeed()      Related Assertion
+     * @see  assertNotMouseSpeed()   Related Assertion
+     * @see  getMouseSpeed()         Related Accessor
+     * @see  verifyMouseSpeed()      Related Assertion
+     * @see  waitForMouseSpeed()     Related Assertion
+     * @see  waitForNotMouseSpeed()  Related Assertion
      */
     public function verifyNotMouseSpeed($pattern)
     {
@@ -7718,18 +7727,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeMouseSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertMouseSpeed      Related Assertion
-     * @see  assertNotMouseSpeed   Related Assertion
-     * @see  getMouseSpeed         Related Accessor
-     * @see  verifyMouseSpeed      Related Assertion
-     * @see  verifyNotMouseSpeed   Related Assertion
-     * @see  waitForNotMouseSpeed  Related Assertion
+     * @see  storeMouseSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertMouseSpeed()      Related Assertion
+     * @see  assertNotMouseSpeed()   Related Assertion
+     * @see  getMouseSpeed()         Related Accessor
+     * @see  verifyMouseSpeed()      Related Assertion
+     * @see  verifyNotMouseSpeed()   Related Assertion
+     * @see  waitForNotMouseSpeed()  Related Assertion
      */
     public function waitForMouseSpeed($pattern)
     {
@@ -7749,18 +7758,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeMouseSpeed      Base method, from which has been generated (automatically) current method
-     * @see  assertMouseSpeed     Related Assertion
-     * @see  assertNotMouseSpeed  Related Assertion
-     * @see  getMouseSpeed        Related Accessor
-     * @see  verifyMouseSpeed     Related Assertion
-     * @see  verifyNotMouseSpeed  Related Assertion
-     * @see  waitForMouseSpeed    Related Assertion
+     * @see  storeMouseSpeed()      Base method, from which has been generated (automatically) current method
+     * @see  assertMouseSpeed()     Related Assertion
+     * @see  assertNotMouseSpeed()  Related Assertion
+     * @see  getMouseSpeed()        Related Accessor
+     * @see  verifyMouseSpeed()     Related Assertion
+     * @see  verifyNotMouseSpeed()  Related Assertion
+     * @see  waitForMouseSpeed()    Related Assertion
      */
     public function waitForNotMouseSpeed($pattern)
     {
@@ -7779,22 +7788,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotOrdered}).</p>
+     * {@link verifyNotOrdered()}).</p>
      * 
-     * @param string   $locator1  an element locator pointing to the first element 
-     *                            (see {@link doc_Element_Locators})
-     * @param string   $locator2  an element locator pointing to the second element 
-     *                            (see {@link doc_Element_Locators})
+     * @param string   $locator1  an element locator pointing to the first element (see
+     *                            {@link $doc_Element_Locators Element Locators})
+     * @param string   $locator2  an element locator pointing to the second element (see
+     *                            {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeOrdered       Base method, from which has been generated (automatically) current method
-     * @see  assertOrdered      Related Assertion
-     * @see  isOrdered          Related Accessor
-     * @see  verifyNotOrdered   Related Assertion
-     * @see  verifyOrdered      Related Assertion
-     * @see  waitForNotOrdered  Related Assertion
-     * @see  waitForOrdered     Related Assertion
+     * @see  storeOrdered()       Base method, from which has been generated (automatically) current method
+     * @see  assertOrdered()      Related Assertion
+     * @see  isOrdered()          Related Accessor
+     * @see  verifyNotOrdered()   Related Assertion
+     * @see  verifyOrdered()      Related Assertion
+     * @see  waitForNotOrdered()  Related Assertion
+     * @see  waitForOrdered()     Related Assertion
      */
     public function assertNotOrdered($locator1, $locator2)
     {
@@ -7813,22 +7822,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyOrdered}).</p>
+     * {@link verifyOrdered()}).</p>
      * 
-     * @param string   $locator1  an element locator pointing to the first element 
-     *                            (see {@link doc_Element_Locators})
-     * @param string   $locator2  an element locator pointing to the second element 
-     *                            (see {@link doc_Element_Locators})
+     * @param string   $locator1  an element locator pointing to the first element (see
+     *                            {@link $doc_Element_Locators Element Locators})
+     * @param string   $locator2  an element locator pointing to the second element (see
+     *                            {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeOrdered       Base method, from which has been generated (automatically) current method
-     * @see  assertNotOrdered   Related Assertion
-     * @see  isOrdered          Related Accessor
-     * @see  verifyNotOrdered   Related Assertion
-     * @see  verifyOrdered      Related Assertion
-     * @see  waitForNotOrdered  Related Assertion
-     * @see  waitForOrdered     Related Assertion
+     * @see  storeOrdered()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotOrdered()   Related Assertion
+     * @see  isOrdered()          Related Accessor
+     * @see  verifyNotOrdered()   Related Assertion
+     * @see  verifyOrdered()      Related Assertion
+     * @see  waitForNotOrdered()  Related Assertion
+     * @see  waitForOrdered()     Related Assertion
      */
     public function assertOrdered($locator1, $locator2)
     {
@@ -7840,20 +7849,20 @@ trait SeleniumTestCaseDoc
      * 
      * Two same elements will not be considered ordered.
      * 
-     * @param string   $locator1  an element locator pointing to the first element 
-     *                            (see {@link doc_Element_Locators})
-     * @param string   $locator2  an element locator pointing to the second element 
-     *                            (see {@link doc_Element_Locators})
+     * @param string   $locator1  an element locator pointing to the first element (see
+     *                            {@link $doc_Element_Locators Element Locators})
+     * @param string   $locator2  an element locator pointing to the second element (see
+     *                            {@link $doc_Element_Locators Element Locators})
      * 
      * @return  bool  true if element1 is the previous sibling of element2, false otherwise
      * 
-     * @see  storeOrdered       Base method, from which has been generated (automatically) current method
-     * @see  assertNotOrdered   Related Assertion
-     * @see  assertOrdered      Related Assertion
-     * @see  verifyNotOrdered   Related Assertion
-     * @see  verifyOrdered      Related Assertion
-     * @see  waitForNotOrdered  Related Assertion
-     * @see  waitForOrdered     Related Assertion
+     * @see  storeOrdered()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotOrdered()   Related Assertion
+     * @see  assertOrdered()      Related Assertion
+     * @see  verifyNotOrdered()   Related Assertion
+     * @see  verifyOrdered()      Related Assertion
+     * @see  waitForNotOrdered()  Related Assertion
+     * @see  waitForOrdered()     Related Assertion
      */
     public function isOrdered($locator1, $locator2)
     {
@@ -7867,24 +7876,25 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if element1 is the previous sibling of element2, false otherwise (see {@link doc_Stored_Variables})</p>
+     * <p>true if element1 is the previous sibling of element2, false otherwise (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $locator1      an element locator pointing to the first element (see
-     *                                {@link doc_Element_Locators})
+     *                                {@link $doc_Element_Locators Element Locators})
      * @param string   $locator2      an element locator pointing to the second element (see
-     *                                {@link doc_Element_Locators})
+     *                                {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotOrdered   Related Assertion
-     * @see  assertOrdered      Related Assertion
-     * @see  isOrdered          Related Accessor
-     * @see  verifyNotOrdered   Related Assertion
-     * @see  verifyOrdered      Related Assertion
-     * @see  waitForNotOrdered  Related Assertion
-     * @see  waitForOrdered     Related Assertion
+     * @see  assertNotOrdered()   Related Assertion
+     * @see  assertOrdered()      Related Assertion
+     * @see  isOrdered()          Related Accessor
+     * @see  verifyNotOrdered()   Related Assertion
+     * @see  verifyOrdered()      Related Assertion
+     * @see  waitForNotOrdered()  Related Assertion
+     * @see  waitForOrdered()     Related Assertion
      */
     public function storeOrdered($locator1, $locator2, $variableName)
     {
@@ -7903,22 +7913,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotOrdered}).</p>
+     * {@link assertNotOrdered()}).</p>
      * 
-     * @param string   $locator1  an element locator pointing to the first element 
-     *                            (see {@link doc_Element_Locators})
-     * @param string   $locator2  an element locator pointing to the second element 
-     *                            (see {@link doc_Element_Locators})
+     * @param string   $locator1  an element locator pointing to the first element (see
+     *                            {@link $doc_Element_Locators Element Locators})
+     * @param string   $locator2  an element locator pointing to the second element (see
+     *                            {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeOrdered       Base method, from which has been generated (automatically) current method
-     * @see  assertNotOrdered   Related Assertion
-     * @see  assertOrdered      Related Assertion
-     * @see  isOrdered          Related Accessor
-     * @see  verifyOrdered      Related Assertion
-     * @see  waitForNotOrdered  Related Assertion
-     * @see  waitForOrdered     Related Assertion
+     * @see  storeOrdered()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotOrdered()   Related Assertion
+     * @see  assertOrdered()      Related Assertion
+     * @see  isOrdered()          Related Accessor
+     * @see  verifyOrdered()      Related Assertion
+     * @see  waitForNotOrdered()  Related Assertion
+     * @see  waitForOrdered()     Related Assertion
      */
     public function verifyNotOrdered($locator1, $locator2)
     {
@@ -7937,22 +7947,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertOrdered}).</p>
+     * {@link assertOrdered()}).</p>
      * 
-     * @param string   $locator1  an element locator pointing to the first element 
-     *                            (see {@link doc_Element_Locators})
-     * @param string   $locator2  an element locator pointing to the second element 
-     *                            (see {@link doc_Element_Locators})
+     * @param string   $locator1  an element locator pointing to the first element (see
+     *                            {@link $doc_Element_Locators Element Locators})
+     * @param string   $locator2  an element locator pointing to the second element (see
+     *                            {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeOrdered       Base method, from which has been generated (automatically) current method
-     * @see  assertNotOrdered   Related Assertion
-     * @see  assertOrdered      Related Assertion
-     * @see  isOrdered          Related Accessor
-     * @see  verifyNotOrdered   Related Assertion
-     * @see  waitForNotOrdered  Related Assertion
-     * @see  waitForOrdered     Related Assertion
+     * @see  storeOrdered()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotOrdered()   Related Assertion
+     * @see  assertOrdered()      Related Assertion
+     * @see  isOrdered()          Related Accessor
+     * @see  verifyNotOrdered()   Related Assertion
+     * @see  waitForNotOrdered()  Related Assertion
+     * @see  waitForOrdered()     Related Assertion
      */
     public function verifyOrdered($locator1, $locator2)
     {
@@ -7974,20 +7984,20 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $locator1  an element locator pointing to the first element 
-     *                            (see {@link doc_Element_Locators})
-     * @param string   $locator2  an element locator pointing to the second element 
-     *                            (see {@link doc_Element_Locators})
+     * @param string   $locator1  an element locator pointing to the first element (see
+     *                            {@link $doc_Element_Locators Element Locators})
+     * @param string   $locator2  an element locator pointing to the second element (see
+     *                            {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeOrdered      Base method, from which has been generated (automatically) current method
-     * @see  assertNotOrdered  Related Assertion
-     * @see  assertOrdered     Related Assertion
-     * @see  isOrdered         Related Accessor
-     * @see  verifyNotOrdered  Related Assertion
-     * @see  verifyOrdered     Related Assertion
-     * @see  waitForOrdered    Related Assertion
+     * @see  storeOrdered()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotOrdered()  Related Assertion
+     * @see  assertOrdered()     Related Assertion
+     * @see  isOrdered()         Related Accessor
+     * @see  verifyNotOrdered()  Related Assertion
+     * @see  verifyOrdered()     Related Assertion
+     * @see  waitForOrdered()    Related Assertion
      */
     public function waitForNotOrdered($locator1, $locator2)
     {
@@ -8009,20 +8019,20 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $locator1  an element locator pointing to the first element 
-     *                            (see {@link doc_Element_Locators})
-     * @param string   $locator2  an element locator pointing to the second element 
-     *                            (see {@link doc_Element_Locators})
+     * @param string   $locator1  an element locator pointing to the first element (see
+     *                            {@link $doc_Element_Locators Element Locators})
+     * @param string   $locator2  an element locator pointing to the second element (see
+     *                            {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeOrdered       Base method, from which has been generated (automatically) current method
-     * @see  assertNotOrdered   Related Assertion
-     * @see  assertOrdered      Related Assertion
-     * @see  isOrdered          Related Accessor
-     * @see  verifyNotOrdered   Related Assertion
-     * @see  verifyOrdered      Related Assertion
-     * @see  waitForNotOrdered  Related Assertion
+     * @see  storeOrdered()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotOrdered()   Related Assertion
+     * @see  assertOrdered()      Related Assertion
+     * @see  isOrdered()          Related Accessor
+     * @see  verifyNotOrdered()   Related Assertion
+     * @see  verifyOrdered()      Related Assertion
+     * @see  waitForNotOrdered()  Related Assertion
      */
     public function waitForOrdered($locator1, $locator2)
     {
@@ -8047,20 +8057,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotPrompt}).</p>
+     * {@link verifyNotPrompt()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storePrompt       Base method, from which has been generated (automatically) current method
-     * @see  assertPrompt      Related Assertion
-     * @see  getPrompt         Related Accessor
-     * @see  verifyNotPrompt   Related Assertion
-     * @see  verifyPrompt      Related Assertion
-     * @see  waitForNotPrompt  Related Assertion
-     * @see  waitForPrompt     Related Assertion
+     * @see  storePrompt()       Base method, from which has been generated (automatically) current method
+     * @see  assertPrompt()      Related Assertion
+     * @see  getPrompt()         Related Accessor
+     * @see  verifyNotPrompt()   Related Assertion
+     * @see  verifyPrompt()      Related Assertion
+     * @see  waitForNotPrompt()  Related Assertion
+     * @see  waitForPrompt()     Related Assertion
      */
     public function assertNotPrompt($pattern)
     {
@@ -8085,20 +8095,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyPrompt}).</p>
+     * {@link verifyPrompt()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storePrompt       Base method, from which has been generated (automatically) current method
-     * @see  assertNotPrompt   Related Assertion
-     * @see  getPrompt         Related Accessor
-     * @see  verifyNotPrompt   Related Assertion
-     * @see  verifyPrompt      Related Assertion
-     * @see  waitForNotPrompt  Related Assertion
-     * @see  waitForPrompt     Related Assertion
+     * @see  storePrompt()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotPrompt()   Related Assertion
+     * @see  getPrompt()         Related Accessor
+     * @see  verifyNotPrompt()   Related Assertion
+     * @see  verifyPrompt()      Related Assertion
+     * @see  waitForNotPrompt()  Related Assertion
+     * @see  waitForPrompt()     Related Assertion
      */
     public function assertPrompt($pattern)
     {
@@ -8118,13 +8128,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  the message of the most recent JavaScript question prompt
      * 
-     * @see  storePrompt       Base method, from which has been generated (automatically) current method
-     * @see  assertNotPrompt   Related Assertion
-     * @see  assertPrompt      Related Assertion
-     * @see  verifyNotPrompt   Related Assertion
-     * @see  verifyPrompt      Related Assertion
-     * @see  waitForNotPrompt  Related Assertion
-     * @see  waitForPrompt     Related Assertion
+     * @see  storePrompt()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotPrompt()   Related Assertion
+     * @see  assertPrompt()      Related Assertion
+     * @see  verifyNotPrompt()   Related Assertion
+     * @see  verifyPrompt()      Related Assertion
+     * @see  waitForNotPrompt()  Related Assertion
+     * @see  waitForPrompt()     Related Assertion
      */
     public function getPrompt()
     {
@@ -8144,20 +8154,21 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the message of the most recent JavaScript question prompt (see {@link doc_Stored_Variables})</p>
+     * <p>the message of the most recent JavaScript question prompt (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotPrompt   Related Assertion
-     * @see  assertPrompt      Related Assertion
-     * @see  getPrompt         Related Accessor
-     * @see  verifyNotPrompt   Related Assertion
-     * @see  verifyPrompt      Related Assertion
-     * @see  waitForNotPrompt  Related Assertion
-     * @see  waitForPrompt     Related Assertion
+     * @see  assertNotPrompt()   Related Assertion
+     * @see  assertPrompt()      Related Assertion
+     * @see  getPrompt()         Related Accessor
+     * @see  verifyNotPrompt()   Related Assertion
+     * @see  verifyPrompt()      Related Assertion
+     * @see  waitForNotPrompt()  Related Assertion
+     * @see  waitForPrompt()     Related Assertion
      */
     public function storePrompt($variableName)
     {
@@ -8182,20 +8193,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotPrompt}).</p>
+     * {@link assertNotPrompt()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storePrompt       Base method, from which has been generated (automatically) current method
-     * @see  assertNotPrompt   Related Assertion
-     * @see  assertPrompt      Related Assertion
-     * @see  getPrompt         Related Accessor
-     * @see  verifyPrompt      Related Assertion
-     * @see  waitForNotPrompt  Related Assertion
-     * @see  waitForPrompt     Related Assertion
+     * @see  storePrompt()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotPrompt()   Related Assertion
+     * @see  assertPrompt()      Related Assertion
+     * @see  getPrompt()         Related Accessor
+     * @see  verifyPrompt()      Related Assertion
+     * @see  waitForNotPrompt()  Related Assertion
+     * @see  waitForPrompt()     Related Assertion
      */
     public function verifyNotPrompt($pattern)
     {
@@ -8220,20 +8231,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertPrompt}).</p>
+     * {@link assertPrompt()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storePrompt       Base method, from which has been generated (automatically) current method
-     * @see  assertNotPrompt   Related Assertion
-     * @see  assertPrompt      Related Assertion
-     * @see  getPrompt         Related Accessor
-     * @see  verifyNotPrompt   Related Assertion
-     * @see  waitForNotPrompt  Related Assertion
-     * @see  waitForPrompt     Related Assertion
+     * @see  storePrompt()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotPrompt()   Related Assertion
+     * @see  assertPrompt()      Related Assertion
+     * @see  getPrompt()         Related Accessor
+     * @see  verifyNotPrompt()   Related Assertion
+     * @see  waitForNotPrompt()  Related Assertion
+     * @see  waitForPrompt()     Related Assertion
      */
     public function verifyPrompt($pattern)
     {
@@ -8261,18 +8272,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storePrompt      Base method, from which has been generated (automatically) current method
-     * @see  assertNotPrompt  Related Assertion
-     * @see  assertPrompt     Related Assertion
-     * @see  getPrompt        Related Accessor
-     * @see  verifyNotPrompt  Related Assertion
-     * @see  verifyPrompt     Related Assertion
-     * @see  waitForPrompt    Related Assertion
+     * @see  storePrompt()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotPrompt()  Related Assertion
+     * @see  assertPrompt()     Related Assertion
+     * @see  getPrompt()        Related Accessor
+     * @see  verifyNotPrompt()  Related Assertion
+     * @see  verifyPrompt()     Related Assertion
+     * @see  waitForPrompt()    Related Assertion
      */
     public function waitForNotPrompt($pattern)
     {
@@ -8300,18 +8311,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storePrompt       Base method, from which has been generated (automatically) current method
-     * @see  assertNotPrompt   Related Assertion
-     * @see  assertPrompt      Related Assertion
-     * @see  getPrompt         Related Accessor
-     * @see  verifyNotPrompt   Related Assertion
-     * @see  verifyPrompt      Related Assertion
-     * @see  waitForNotPrompt  Related Assertion
+     * @see  storePrompt()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotPrompt()   Related Assertion
+     * @see  assertPrompt()      Related Assertion
+     * @see  getPrompt()         Related Accessor
+     * @see  verifyNotPrompt()   Related Assertion
+     * @see  verifyPrompt()      Related Assertion
+     * @see  waitForNotPrompt()  Related Assertion
      */
     public function waitForPrompt($pattern)
     {
@@ -8328,22 +8339,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotSelectOptions}).</p>
+     * {@link verifyNotSelectOptions()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectOptions       Base method, from which has been generated (automatically) current method
-     * @see  assertSelectOptions      Related Assertion
-     * @see  getSelectOptions         Related Accessor
-     * @see  verifyNotSelectOptions   Related Assertion
-     * @see  verifySelectOptions      Related Assertion
-     * @see  waitForNotSelectOptions  Related Assertion
-     * @see  waitForSelectOptions     Related Assertion
+     * @see  storeSelectOptions()       Base method, from which has been generated (automatically) current method
+     * @see  assertSelectOptions()      Related Assertion
+     * @see  getSelectOptions()         Related Accessor
+     * @see  verifyNotSelectOptions()   Related Assertion
+     * @see  verifySelectOptions()      Related Assertion
+     * @see  waitForNotSelectOptions()  Related Assertion
+     * @see  waitForSelectOptions()     Related Assertion
      */
     public function assertNotSelectOptions($selectLocator, $pattern)
     {
@@ -8360,22 +8371,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifySelectOptions}).</p>
+     * {@link verifySelectOptions()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectOptions       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectOptions   Related Assertion
-     * @see  getSelectOptions         Related Accessor
-     * @see  verifyNotSelectOptions   Related Assertion
-     * @see  verifySelectOptions      Related Assertion
-     * @see  waitForNotSelectOptions  Related Assertion
-     * @see  waitForSelectOptions     Related Assertion
+     * @see  storeSelectOptions()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectOptions()   Related Assertion
+     * @see  getSelectOptions()         Related Accessor
+     * @see  verifyNotSelectOptions()   Related Assertion
+     * @see  verifySelectOptions()      Related Assertion
+     * @see  waitForNotSelectOptions()  Related Assertion
+     * @see  waitForSelectOptions()     Related Assertion
      */
     public function assertSelectOptions($selectLocator, $pattern)
     {
@@ -8386,17 +8397,17 @@ trait SeleniumTestCaseDoc
      * Gets all option labels in the specified select drop-down.
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  string[]  an array of all option labels in the specified select drop-down
      * 
-     * @see  storeSelectOptions       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectOptions   Related Assertion
-     * @see  assertSelectOptions      Related Assertion
-     * @see  verifyNotSelectOptions   Related Assertion
-     * @see  verifySelectOptions      Related Assertion
-     * @see  waitForNotSelectOptions  Related Assertion
-     * @see  waitForSelectOptions     Related Assertion
+     * @see  storeSelectOptions()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectOptions()   Related Assertion
+     * @see  assertSelectOptions()      Related Assertion
+     * @see  verifyNotSelectOptions()   Related Assertion
+     * @see  verifySelectOptions()      Related Assertion
+     * @see  waitForNotSelectOptions()  Related Assertion
+     * @see  waitForSelectOptions()     Related Assertion
      */
     public function getSelectOptions($selectLocator)
     {
@@ -8408,22 +8419,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>an array of all option labels in the specified select drop-down (see {@link doc_Stored_Variables})</p>
+     * <p>an array of all option labels in the specified select drop-down (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName   the name of a variable in which the result is to be stored. (see
-     *                                 {@link doc_Stored_Variables})
+     *                                 {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotSelectOptions   Related Assertion
-     * @see  assertSelectOptions      Related Assertion
-     * @see  getSelectOptions         Related Accessor
-     * @see  verifyNotSelectOptions   Related Assertion
-     * @see  verifySelectOptions      Related Assertion
-     * @see  waitForNotSelectOptions  Related Assertion
-     * @see  waitForSelectOptions     Related Assertion
+     * @see  assertNotSelectOptions()   Related Assertion
+     * @see  assertSelectOptions()      Related Assertion
+     * @see  getSelectOptions()         Related Accessor
+     * @see  verifyNotSelectOptions()   Related Assertion
+     * @see  verifySelectOptions()      Related Assertion
+     * @see  waitForNotSelectOptions()  Related Assertion
+     * @see  waitForSelectOptions()     Related Assertion
      */
     public function storeSelectOptions($selectLocator, $variableName)
     {
@@ -8440,22 +8452,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotSelectOptions}).</p>
+     * {@link assertNotSelectOptions()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectOptions       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectOptions   Related Assertion
-     * @see  assertSelectOptions      Related Assertion
-     * @see  getSelectOptions         Related Accessor
-     * @see  verifySelectOptions      Related Assertion
-     * @see  waitForNotSelectOptions  Related Assertion
-     * @see  waitForSelectOptions     Related Assertion
+     * @see  storeSelectOptions()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectOptions()   Related Assertion
+     * @see  assertSelectOptions()      Related Assertion
+     * @see  getSelectOptions()         Related Accessor
+     * @see  verifySelectOptions()      Related Assertion
+     * @see  waitForNotSelectOptions()  Related Assertion
+     * @see  waitForSelectOptions()     Related Assertion
      */
     public function verifyNotSelectOptions($selectLocator, $pattern)
     {
@@ -8472,22 +8484,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertSelectOptions}).</p>
+     * {@link assertSelectOptions()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectOptions       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectOptions   Related Assertion
-     * @see  assertSelectOptions      Related Assertion
-     * @see  getSelectOptions         Related Accessor
-     * @see  verifyNotSelectOptions   Related Assertion
-     * @see  waitForNotSelectOptions  Related Assertion
-     * @see  waitForSelectOptions     Related Assertion
+     * @see  storeSelectOptions()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectOptions()   Related Assertion
+     * @see  assertSelectOptions()      Related Assertion
+     * @see  getSelectOptions()         Related Accessor
+     * @see  verifyNotSelectOptions()   Related Assertion
+     * @see  waitForNotSelectOptions()  Related Assertion
+     * @see  waitForSelectOptions()     Related Assertion
      */
     public function verifySelectOptions($selectLocator, $pattern)
     {
@@ -8508,19 +8520,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectOptions      Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectOptions  Related Assertion
-     * @see  assertSelectOptions     Related Assertion
-     * @see  getSelectOptions        Related Accessor
-     * @see  verifyNotSelectOptions  Related Assertion
-     * @see  verifySelectOptions     Related Assertion
-     * @see  waitForSelectOptions    Related Assertion
+     * @see  storeSelectOptions()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectOptions()  Related Assertion
+     * @see  assertSelectOptions()     Related Assertion
+     * @see  getSelectOptions()        Related Accessor
+     * @see  verifyNotSelectOptions()  Related Assertion
+     * @see  verifySelectOptions()     Related Assertion
+     * @see  waitForSelectOptions()    Related Assertion
      */
     public function waitForNotSelectOptions($selectLocator, $pattern)
     {
@@ -8541,19 +8553,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectOptions       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectOptions   Related Assertion
-     * @see  assertSelectOptions      Related Assertion
-     * @see  getSelectOptions         Related Accessor
-     * @see  verifyNotSelectOptions   Related Assertion
-     * @see  verifySelectOptions      Related Assertion
-     * @see  waitForNotSelectOptions  Related Assertion
+     * @see  storeSelectOptions()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectOptions()   Related Assertion
+     * @see  assertSelectOptions()      Related Assertion
+     * @see  getSelectOptions()         Related Accessor
+     * @see  verifyNotSelectOptions()   Related Assertion
+     * @see  verifySelectOptions()      Related Assertion
+     * @see  waitForNotSelectOptions()  Related Assertion
      */
     public function waitForSelectOptions($selectLocator, $pattern)
     {
@@ -8570,22 +8582,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotSelectedId}).</p>
+     * {@link verifyNotSelectedId()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedId       Base method, from which has been generated (automatically) current method
-     * @see  assertSelectedId      Related Assertion
-     * @see  getSelectedId         Related Accessor
-     * @see  verifyNotSelectedId   Related Assertion
-     * @see  verifySelectedId      Related Assertion
-     * @see  waitForNotSelectedId  Related Assertion
-     * @see  waitForSelectedId     Related Assertion
+     * @see  storeSelectedId()       Base method, from which has been generated (automatically) current method
+     * @see  assertSelectedId()      Related Assertion
+     * @see  getSelectedId()         Related Accessor
+     * @see  verifyNotSelectedId()   Related Assertion
+     * @see  verifySelectedId()      Related Assertion
+     * @see  waitForNotSelectedId()  Related Assertion
+     * @see  waitForSelectedId()     Related Assertion
      */
     public function assertNotSelectedId($selectLocator, $pattern)
     {
@@ -8602,22 +8614,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifySelectedId}).</p>
+     * {@link verifySelectedId()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedId       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedId   Related Assertion
-     * @see  getSelectedId         Related Accessor
-     * @see  verifyNotSelectedId   Related Assertion
-     * @see  verifySelectedId      Related Assertion
-     * @see  waitForNotSelectedId  Related Assertion
-     * @see  waitForSelectedId     Related Assertion
+     * @see  storeSelectedId()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedId()   Related Assertion
+     * @see  getSelectedId()         Related Accessor
+     * @see  verifyNotSelectedId()   Related Assertion
+     * @see  verifySelectedId()      Related Assertion
+     * @see  waitForNotSelectedId()  Related Assertion
+     * @see  waitForSelectedId()     Related Assertion
      */
     public function assertSelectedId($selectLocator, $pattern)
     {
@@ -8628,17 +8640,17 @@ trait SeleniumTestCaseDoc
      * Gets option element ID for selected option in the specified select element.
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  string  the selected option ID in the specified select drop-down
      * 
-     * @see  storeSelectedId       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedId   Related Assertion
-     * @see  assertSelectedId      Related Assertion
-     * @see  verifyNotSelectedId   Related Assertion
-     * @see  verifySelectedId      Related Assertion
-     * @see  waitForNotSelectedId  Related Assertion
-     * @see  waitForSelectedId     Related Assertion
+     * @see  storeSelectedId()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedId()   Related Assertion
+     * @see  assertSelectedId()      Related Assertion
+     * @see  verifyNotSelectedId()   Related Assertion
+     * @see  verifySelectedId()      Related Assertion
+     * @see  waitForNotSelectedId()  Related Assertion
+     * @see  waitForSelectedId()     Related Assertion
      */
     public function getSelectedId($selectLocator)
     {
@@ -8650,22 +8662,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the selected option ID in the specified select drop-down (see {@link doc_Stored_Variables})</p>
+     * <p>the selected option ID in the specified select drop-down (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName   the name of a variable in which the result is to be stored. (see
-     *                                 {@link doc_Stored_Variables})
+     *                                 {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotSelectedId   Related Assertion
-     * @see  assertSelectedId      Related Assertion
-     * @see  getSelectedId         Related Accessor
-     * @see  verifyNotSelectedId   Related Assertion
-     * @see  verifySelectedId      Related Assertion
-     * @see  waitForNotSelectedId  Related Assertion
-     * @see  waitForSelectedId     Related Assertion
+     * @see  assertNotSelectedId()   Related Assertion
+     * @see  assertSelectedId()      Related Assertion
+     * @see  getSelectedId()         Related Accessor
+     * @see  verifyNotSelectedId()   Related Assertion
+     * @see  verifySelectedId()      Related Assertion
+     * @see  waitForNotSelectedId()  Related Assertion
+     * @see  waitForSelectedId()     Related Assertion
      */
     public function storeSelectedId($selectLocator, $variableName)
     {
@@ -8682,22 +8695,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotSelectedId}).</p>
+     * {@link assertNotSelectedId()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedId       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedId   Related Assertion
-     * @see  assertSelectedId      Related Assertion
-     * @see  getSelectedId         Related Accessor
-     * @see  verifySelectedId      Related Assertion
-     * @see  waitForNotSelectedId  Related Assertion
-     * @see  waitForSelectedId     Related Assertion
+     * @see  storeSelectedId()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedId()   Related Assertion
+     * @see  assertSelectedId()      Related Assertion
+     * @see  getSelectedId()         Related Accessor
+     * @see  verifySelectedId()      Related Assertion
+     * @see  waitForNotSelectedId()  Related Assertion
+     * @see  waitForSelectedId()     Related Assertion
      */
     public function verifyNotSelectedId($selectLocator, $pattern)
     {
@@ -8714,22 +8727,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertSelectedId}).</p>
+     * {@link assertSelectedId()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedId       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedId   Related Assertion
-     * @see  assertSelectedId      Related Assertion
-     * @see  getSelectedId         Related Accessor
-     * @see  verifyNotSelectedId   Related Assertion
-     * @see  waitForNotSelectedId  Related Assertion
-     * @see  waitForSelectedId     Related Assertion
+     * @see  storeSelectedId()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedId()   Related Assertion
+     * @see  assertSelectedId()      Related Assertion
+     * @see  getSelectedId()         Related Accessor
+     * @see  verifyNotSelectedId()   Related Assertion
+     * @see  waitForNotSelectedId()  Related Assertion
+     * @see  waitForSelectedId()     Related Assertion
      */
     public function verifySelectedId($selectLocator, $pattern)
     {
@@ -8750,19 +8763,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedId      Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedId  Related Assertion
-     * @see  assertSelectedId     Related Assertion
-     * @see  getSelectedId        Related Accessor
-     * @see  verifyNotSelectedId  Related Assertion
-     * @see  verifySelectedId     Related Assertion
-     * @see  waitForSelectedId    Related Assertion
+     * @see  storeSelectedId()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedId()  Related Assertion
+     * @see  assertSelectedId()     Related Assertion
+     * @see  getSelectedId()        Related Accessor
+     * @see  verifyNotSelectedId()  Related Assertion
+     * @see  verifySelectedId()     Related Assertion
+     * @see  waitForSelectedId()    Related Assertion
      */
     public function waitForNotSelectedId($selectLocator, $pattern)
     {
@@ -8783,19 +8796,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedId       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedId   Related Assertion
-     * @see  assertSelectedId      Related Assertion
-     * @see  getSelectedId         Related Accessor
-     * @see  verifyNotSelectedId   Related Assertion
-     * @see  verifySelectedId      Related Assertion
-     * @see  waitForNotSelectedId  Related Assertion
+     * @see  storeSelectedId()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedId()   Related Assertion
+     * @see  assertSelectedId()      Related Assertion
+     * @see  getSelectedId()         Related Accessor
+     * @see  verifyNotSelectedId()   Related Assertion
+     * @see  verifySelectedId()      Related Assertion
+     * @see  waitForNotSelectedId()  Related Assertion
      */
     public function waitForSelectedId($selectLocator, $pattern)
     {
@@ -8812,22 +8825,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotSelectedIds}).</p>
+     * {@link verifyNotSelectedIds()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIds       Base method, from which has been generated (automatically) current method
-     * @see  assertSelectedIds      Related Assertion
-     * @see  getSelectedIds         Related Accessor
-     * @see  verifyNotSelectedIds   Related Assertion
-     * @see  verifySelectedIds      Related Assertion
-     * @see  waitForNotSelectedIds  Related Assertion
-     * @see  waitForSelectedIds     Related Assertion
+     * @see  storeSelectedIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertSelectedIds()      Related Assertion
+     * @see  getSelectedIds()         Related Accessor
+     * @see  verifyNotSelectedIds()   Related Assertion
+     * @see  verifySelectedIds()      Related Assertion
+     * @see  waitForNotSelectedIds()  Related Assertion
+     * @see  waitForSelectedIds()     Related Assertion
      */
     public function assertNotSelectedIds($selectLocator, $pattern)
     {
@@ -8844,22 +8857,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifySelectedIds}).</p>
+     * {@link verifySelectedIds()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIds       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIds   Related Assertion
-     * @see  getSelectedIds         Related Accessor
-     * @see  verifyNotSelectedIds   Related Assertion
-     * @see  verifySelectedIds      Related Assertion
-     * @see  waitForNotSelectedIds  Related Assertion
-     * @see  waitForSelectedIds     Related Assertion
+     * @see  storeSelectedIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIds()   Related Assertion
+     * @see  getSelectedIds()         Related Accessor
+     * @see  verifyNotSelectedIds()   Related Assertion
+     * @see  verifySelectedIds()      Related Assertion
+     * @see  waitForNotSelectedIds()  Related Assertion
+     * @see  waitForSelectedIds()     Related Assertion
      */
     public function assertSelectedIds($selectLocator, $pattern)
     {
@@ -8870,17 +8883,17 @@ trait SeleniumTestCaseDoc
      * Gets all option element IDs for selected options in the specified select or multi-select element.
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  string[]  an array of all selected option IDs in the specified select drop-down
      * 
-     * @see  storeSelectedIds       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIds   Related Assertion
-     * @see  assertSelectedIds      Related Assertion
-     * @see  verifyNotSelectedIds   Related Assertion
-     * @see  verifySelectedIds      Related Assertion
-     * @see  waitForNotSelectedIds  Related Assertion
-     * @see  waitForSelectedIds     Related Assertion
+     * @see  storeSelectedIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIds()   Related Assertion
+     * @see  assertSelectedIds()      Related Assertion
+     * @see  verifyNotSelectedIds()   Related Assertion
+     * @see  verifySelectedIds()      Related Assertion
+     * @see  waitForNotSelectedIds()  Related Assertion
+     * @see  waitForSelectedIds()     Related Assertion
      */
     public function getSelectedIds($selectLocator)
     {
@@ -8892,22 +8905,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>an array of all selected option IDs in the specified select drop-down (see {@link doc_Stored_Variables})</p>
+     * <p>an array of all selected option IDs in the specified select drop-down (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName   the name of a variable in which the result is to be stored. (see
-     *                                 {@link doc_Stored_Variables})
+     *                                 {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotSelectedIds   Related Assertion
-     * @see  assertSelectedIds      Related Assertion
-     * @see  getSelectedIds         Related Accessor
-     * @see  verifyNotSelectedIds   Related Assertion
-     * @see  verifySelectedIds      Related Assertion
-     * @see  waitForNotSelectedIds  Related Assertion
-     * @see  waitForSelectedIds     Related Assertion
+     * @see  assertNotSelectedIds()   Related Assertion
+     * @see  assertSelectedIds()      Related Assertion
+     * @see  getSelectedIds()         Related Accessor
+     * @see  verifyNotSelectedIds()   Related Assertion
+     * @see  verifySelectedIds()      Related Assertion
+     * @see  waitForNotSelectedIds()  Related Assertion
+     * @see  waitForSelectedIds()     Related Assertion
      */
     public function storeSelectedIds($selectLocator, $variableName)
     {
@@ -8924,22 +8938,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotSelectedIds}).</p>
+     * {@link assertNotSelectedIds()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIds       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIds   Related Assertion
-     * @see  assertSelectedIds      Related Assertion
-     * @see  getSelectedIds         Related Accessor
-     * @see  verifySelectedIds      Related Assertion
-     * @see  waitForNotSelectedIds  Related Assertion
-     * @see  waitForSelectedIds     Related Assertion
+     * @see  storeSelectedIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIds()   Related Assertion
+     * @see  assertSelectedIds()      Related Assertion
+     * @see  getSelectedIds()         Related Accessor
+     * @see  verifySelectedIds()      Related Assertion
+     * @see  waitForNotSelectedIds()  Related Assertion
+     * @see  waitForSelectedIds()     Related Assertion
      */
     public function verifyNotSelectedIds($selectLocator, $pattern)
     {
@@ -8956,22 +8970,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertSelectedIds}).</p>
+     * {@link assertSelectedIds()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIds       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIds   Related Assertion
-     * @see  assertSelectedIds      Related Assertion
-     * @see  getSelectedIds         Related Accessor
-     * @see  verifyNotSelectedIds   Related Assertion
-     * @see  waitForNotSelectedIds  Related Assertion
-     * @see  waitForSelectedIds     Related Assertion
+     * @see  storeSelectedIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIds()   Related Assertion
+     * @see  assertSelectedIds()      Related Assertion
+     * @see  getSelectedIds()         Related Accessor
+     * @see  verifyNotSelectedIds()   Related Assertion
+     * @see  waitForNotSelectedIds()  Related Assertion
+     * @see  waitForSelectedIds()     Related Assertion
      */
     public function verifySelectedIds($selectLocator, $pattern)
     {
@@ -8992,19 +9006,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIds      Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIds  Related Assertion
-     * @see  assertSelectedIds     Related Assertion
-     * @see  getSelectedIds        Related Accessor
-     * @see  verifyNotSelectedIds  Related Assertion
-     * @see  verifySelectedIds     Related Assertion
-     * @see  waitForSelectedIds    Related Assertion
+     * @see  storeSelectedIds()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIds()  Related Assertion
+     * @see  assertSelectedIds()     Related Assertion
+     * @see  getSelectedIds()        Related Accessor
+     * @see  verifyNotSelectedIds()  Related Assertion
+     * @see  verifySelectedIds()     Related Assertion
+     * @see  waitForSelectedIds()    Related Assertion
      */
     public function waitForNotSelectedIds($selectLocator, $pattern)
     {
@@ -9025,19 +9039,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIds       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIds   Related Assertion
-     * @see  assertSelectedIds      Related Assertion
-     * @see  getSelectedIds         Related Accessor
-     * @see  verifyNotSelectedIds   Related Assertion
-     * @see  verifySelectedIds      Related Assertion
-     * @see  waitForNotSelectedIds  Related Assertion
+     * @see  storeSelectedIds()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIds()   Related Assertion
+     * @see  assertSelectedIds()      Related Assertion
+     * @see  getSelectedIds()         Related Accessor
+     * @see  verifyNotSelectedIds()   Related Assertion
+     * @see  verifySelectedIds()      Related Assertion
+     * @see  waitForNotSelectedIds()  Related Assertion
      */
     public function waitForSelectedIds($selectLocator, $pattern)
     {
@@ -9054,22 +9068,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotSelectedIndex}).</p>
+     * {@link verifyNotSelectedIndex()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertSelectedIndex      Related Assertion
-     * @see  getSelectedIndex         Related Accessor
-     * @see  verifyNotSelectedIndex   Related Assertion
-     * @see  verifySelectedIndex      Related Assertion
-     * @see  waitForNotSelectedIndex  Related Assertion
-     * @see  waitForSelectedIndex     Related Assertion
+     * @see  storeSelectedIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertSelectedIndex()      Related Assertion
+     * @see  getSelectedIndex()         Related Accessor
+     * @see  verifyNotSelectedIndex()   Related Assertion
+     * @see  verifySelectedIndex()      Related Assertion
+     * @see  waitForNotSelectedIndex()  Related Assertion
+     * @see  waitForSelectedIndex()     Related Assertion
      */
     public function assertNotSelectedIndex($selectLocator, $pattern)
     {
@@ -9086,22 +9100,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifySelectedIndex}).</p>
+     * {@link verifySelectedIndex()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndex   Related Assertion
-     * @see  getSelectedIndex         Related Accessor
-     * @see  verifyNotSelectedIndex   Related Assertion
-     * @see  verifySelectedIndex      Related Assertion
-     * @see  waitForNotSelectedIndex  Related Assertion
-     * @see  waitForSelectedIndex     Related Assertion
+     * @see  storeSelectedIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndex()   Related Assertion
+     * @see  getSelectedIndex()         Related Accessor
+     * @see  verifyNotSelectedIndex()   Related Assertion
+     * @see  verifySelectedIndex()      Related Assertion
+     * @see  waitForNotSelectedIndex()  Related Assertion
+     * @see  waitForSelectedIndex()     Related Assertion
      */
     public function assertSelectedIndex($selectLocator, $pattern)
     {
@@ -9112,17 +9126,17 @@ trait SeleniumTestCaseDoc
      * Gets option index (option number, starting at 0) for selected option in the specified select element.
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  string  the selected option index in the specified select drop-down
      * 
-     * @see  storeSelectedIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndex   Related Assertion
-     * @see  assertSelectedIndex      Related Assertion
-     * @see  verifyNotSelectedIndex   Related Assertion
-     * @see  verifySelectedIndex      Related Assertion
-     * @see  waitForNotSelectedIndex  Related Assertion
-     * @see  waitForSelectedIndex     Related Assertion
+     * @see  storeSelectedIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndex()   Related Assertion
+     * @see  assertSelectedIndex()      Related Assertion
+     * @see  verifyNotSelectedIndex()   Related Assertion
+     * @see  verifySelectedIndex()      Related Assertion
+     * @see  waitForNotSelectedIndex()  Related Assertion
+     * @see  waitForSelectedIndex()     Related Assertion
      */
     public function getSelectedIndex($selectLocator)
     {
@@ -9134,22 +9148,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the selected option index in the specified select drop-down (see {@link doc_Stored_Variables})</p>
+     * <p>the selected option index in the specified select drop-down (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName   the name of a variable in which the result is to be stored. (see
-     *                                 {@link doc_Stored_Variables})
+     *                                 {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotSelectedIndex   Related Assertion
-     * @see  assertSelectedIndex      Related Assertion
-     * @see  getSelectedIndex         Related Accessor
-     * @see  verifyNotSelectedIndex   Related Assertion
-     * @see  verifySelectedIndex      Related Assertion
-     * @see  waitForNotSelectedIndex  Related Assertion
-     * @see  waitForSelectedIndex     Related Assertion
+     * @see  assertNotSelectedIndex()   Related Assertion
+     * @see  assertSelectedIndex()      Related Assertion
+     * @see  getSelectedIndex()         Related Accessor
+     * @see  verifyNotSelectedIndex()   Related Assertion
+     * @see  verifySelectedIndex()      Related Assertion
+     * @see  waitForNotSelectedIndex()  Related Assertion
+     * @see  waitForSelectedIndex()     Related Assertion
      */
     public function storeSelectedIndex($selectLocator, $variableName)
     {
@@ -9166,22 +9181,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotSelectedIndex}).</p>
+     * {@link assertNotSelectedIndex()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndex   Related Assertion
-     * @see  assertSelectedIndex      Related Assertion
-     * @see  getSelectedIndex         Related Accessor
-     * @see  verifySelectedIndex      Related Assertion
-     * @see  waitForNotSelectedIndex  Related Assertion
-     * @see  waitForSelectedIndex     Related Assertion
+     * @see  storeSelectedIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndex()   Related Assertion
+     * @see  assertSelectedIndex()      Related Assertion
+     * @see  getSelectedIndex()         Related Accessor
+     * @see  verifySelectedIndex()      Related Assertion
+     * @see  waitForNotSelectedIndex()  Related Assertion
+     * @see  waitForSelectedIndex()     Related Assertion
      */
     public function verifyNotSelectedIndex($selectLocator, $pattern)
     {
@@ -9198,22 +9213,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertSelectedIndex}).</p>
+     * {@link assertSelectedIndex()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndex   Related Assertion
-     * @see  assertSelectedIndex      Related Assertion
-     * @see  getSelectedIndex         Related Accessor
-     * @see  verifyNotSelectedIndex   Related Assertion
-     * @see  waitForNotSelectedIndex  Related Assertion
-     * @see  waitForSelectedIndex     Related Assertion
+     * @see  storeSelectedIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndex()   Related Assertion
+     * @see  assertSelectedIndex()      Related Assertion
+     * @see  getSelectedIndex()         Related Accessor
+     * @see  verifyNotSelectedIndex()   Related Assertion
+     * @see  waitForNotSelectedIndex()  Related Assertion
+     * @see  waitForSelectedIndex()     Related Assertion
      */
     public function verifySelectedIndex($selectLocator, $pattern)
     {
@@ -9234,19 +9249,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndex      Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndex  Related Assertion
-     * @see  assertSelectedIndex     Related Assertion
-     * @see  getSelectedIndex        Related Accessor
-     * @see  verifyNotSelectedIndex  Related Assertion
-     * @see  verifySelectedIndex     Related Assertion
-     * @see  waitForSelectedIndex    Related Assertion
+     * @see  storeSelectedIndex()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndex()  Related Assertion
+     * @see  assertSelectedIndex()     Related Assertion
+     * @see  getSelectedIndex()        Related Accessor
+     * @see  verifyNotSelectedIndex()  Related Assertion
+     * @see  verifySelectedIndex()     Related Assertion
+     * @see  waitForSelectedIndex()    Related Assertion
      */
     public function waitForNotSelectedIndex($selectLocator, $pattern)
     {
@@ -9267,19 +9282,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndex       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndex   Related Assertion
-     * @see  assertSelectedIndex      Related Assertion
-     * @see  getSelectedIndex         Related Accessor
-     * @see  verifyNotSelectedIndex   Related Assertion
-     * @see  verifySelectedIndex      Related Assertion
-     * @see  waitForNotSelectedIndex  Related Assertion
+     * @see  storeSelectedIndex()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndex()   Related Assertion
+     * @see  assertSelectedIndex()      Related Assertion
+     * @see  getSelectedIndex()         Related Accessor
+     * @see  verifyNotSelectedIndex()   Related Assertion
+     * @see  verifySelectedIndex()      Related Assertion
+     * @see  waitForNotSelectedIndex()  Related Assertion
      */
     public function waitForSelectedIndex($selectLocator, $pattern)
     {
@@ -9297,22 +9312,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotSelectedIndexes}).</p>
+     * {@link verifyNotSelectedIndexes()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndexes       Base method, from which has been generated (automatically) current method
-     * @see  assertSelectedIndexes      Related Assertion
-     * @see  getSelectedIndexes         Related Accessor
-     * @see  verifyNotSelectedIndexes   Related Assertion
-     * @see  verifySelectedIndexes      Related Assertion
-     * @see  waitForNotSelectedIndexes  Related Assertion
-     * @see  waitForSelectedIndexes     Related Assertion
+     * @see  storeSelectedIndexes()       Base method, from which has been generated (automatically) current method
+     * @see  assertSelectedIndexes()      Related Assertion
+     * @see  getSelectedIndexes()         Related Accessor
+     * @see  verifyNotSelectedIndexes()   Related Assertion
+     * @see  verifySelectedIndexes()      Related Assertion
+     * @see  waitForNotSelectedIndexes()  Related Assertion
+     * @see  waitForSelectedIndexes()     Related Assertion
      */
     public function assertNotSelectedIndexes($selectLocator, $pattern)
     {
@@ -9330,22 +9345,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifySelectedIndexes}).</p>
+     * {@link verifySelectedIndexes()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndexes       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndexes   Related Assertion
-     * @see  getSelectedIndexes         Related Accessor
-     * @see  verifyNotSelectedIndexes   Related Assertion
-     * @see  verifySelectedIndexes      Related Assertion
-     * @see  waitForNotSelectedIndexes  Related Assertion
-     * @see  waitForSelectedIndexes     Related Assertion
+     * @see  storeSelectedIndexes()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndexes()   Related Assertion
+     * @see  getSelectedIndexes()         Related Accessor
+     * @see  verifyNotSelectedIndexes()   Related Assertion
+     * @see  verifySelectedIndexes()      Related Assertion
+     * @see  waitForNotSelectedIndexes()  Related Assertion
+     * @see  waitForSelectedIndexes()     Related Assertion
      */
     public function assertSelectedIndexes($selectLocator, $pattern)
     {
@@ -9357,17 +9372,17 @@ trait SeleniumTestCaseDoc
      * multi-select element.
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  string[]  an array of all selected option indexes in the specified select drop-down
      * 
-     * @see  storeSelectedIndexes       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndexes   Related Assertion
-     * @see  assertSelectedIndexes      Related Assertion
-     * @see  verifyNotSelectedIndexes   Related Assertion
-     * @see  verifySelectedIndexes      Related Assertion
-     * @see  waitForNotSelectedIndexes  Related Assertion
-     * @see  waitForSelectedIndexes     Related Assertion
+     * @see  storeSelectedIndexes()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndexes()   Related Assertion
+     * @see  assertSelectedIndexes()      Related Assertion
+     * @see  verifyNotSelectedIndexes()   Related Assertion
+     * @see  verifySelectedIndexes()      Related Assertion
+     * @see  waitForNotSelectedIndexes()  Related Assertion
+     * @see  waitForSelectedIndexes()     Related Assertion
      */
     public function getSelectedIndexes($selectLocator)
     {
@@ -9381,22 +9396,22 @@ trait SeleniumTestCaseDoc
      * <h4>Stored value:</h4>
      * 
      * <p>an array of all selected option indexes in the specified select drop-down (see
-     * {@link doc_Stored_Variables})</p>
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName   the name of a variable in which the result is to be stored. (see
-     *                                 {@link doc_Stored_Variables})
+     *                                 {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotSelectedIndexes   Related Assertion
-     * @see  assertSelectedIndexes      Related Assertion
-     * @see  getSelectedIndexes         Related Accessor
-     * @see  verifyNotSelectedIndexes   Related Assertion
-     * @see  verifySelectedIndexes      Related Assertion
-     * @see  waitForNotSelectedIndexes  Related Assertion
-     * @see  waitForSelectedIndexes     Related Assertion
+     * @see  assertNotSelectedIndexes()   Related Assertion
+     * @see  assertSelectedIndexes()      Related Assertion
+     * @see  getSelectedIndexes()         Related Accessor
+     * @see  verifyNotSelectedIndexes()   Related Assertion
+     * @see  verifySelectedIndexes()      Related Assertion
+     * @see  waitForNotSelectedIndexes()  Related Assertion
+     * @see  waitForSelectedIndexes()     Related Assertion
      */
     public function storeSelectedIndexes($selectLocator, $variableName)
     {
@@ -9414,22 +9429,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotSelectedIndexes}).</p>
+     * {@link assertNotSelectedIndexes()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndexes       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndexes   Related Assertion
-     * @see  assertSelectedIndexes      Related Assertion
-     * @see  getSelectedIndexes         Related Accessor
-     * @see  verifySelectedIndexes      Related Assertion
-     * @see  waitForNotSelectedIndexes  Related Assertion
-     * @see  waitForSelectedIndexes     Related Assertion
+     * @see  storeSelectedIndexes()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndexes()   Related Assertion
+     * @see  assertSelectedIndexes()      Related Assertion
+     * @see  getSelectedIndexes()         Related Accessor
+     * @see  verifySelectedIndexes()      Related Assertion
+     * @see  waitForNotSelectedIndexes()  Related Assertion
+     * @see  waitForSelectedIndexes()     Related Assertion
      */
     public function verifyNotSelectedIndexes($selectLocator, $pattern)
     {
@@ -9447,22 +9462,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertSelectedIndexes}).</p>
+     * {@link assertSelectedIndexes()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndexes       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndexes   Related Assertion
-     * @see  assertSelectedIndexes      Related Assertion
-     * @see  getSelectedIndexes         Related Accessor
-     * @see  verifyNotSelectedIndexes   Related Assertion
-     * @see  waitForNotSelectedIndexes  Related Assertion
-     * @see  waitForSelectedIndexes     Related Assertion
+     * @see  storeSelectedIndexes()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndexes()   Related Assertion
+     * @see  assertSelectedIndexes()      Related Assertion
+     * @see  getSelectedIndexes()         Related Accessor
+     * @see  verifyNotSelectedIndexes()   Related Assertion
+     * @see  waitForNotSelectedIndexes()  Related Assertion
+     * @see  waitForSelectedIndexes()     Related Assertion
      */
     public function verifySelectedIndexes($selectLocator, $pattern)
     {
@@ -9484,19 +9499,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndexes      Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndexes  Related Assertion
-     * @see  assertSelectedIndexes     Related Assertion
-     * @see  getSelectedIndexes        Related Accessor
-     * @see  verifyNotSelectedIndexes  Related Assertion
-     * @see  verifySelectedIndexes     Related Assertion
-     * @see  waitForSelectedIndexes    Related Assertion
+     * @see  storeSelectedIndexes()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndexes()  Related Assertion
+     * @see  assertSelectedIndexes()     Related Assertion
+     * @see  getSelectedIndexes()        Related Accessor
+     * @see  verifyNotSelectedIndexes()  Related Assertion
+     * @see  verifySelectedIndexes()     Related Assertion
+     * @see  waitForSelectedIndexes()    Related Assertion
      */
     public function waitForNotSelectedIndexes($selectLocator, $pattern)
     {
@@ -9518,19 +9533,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedIndexes       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedIndexes   Related Assertion
-     * @see  assertSelectedIndexes      Related Assertion
-     * @see  getSelectedIndexes         Related Accessor
-     * @see  verifyNotSelectedIndexes   Related Assertion
-     * @see  verifySelectedIndexes      Related Assertion
-     * @see  waitForNotSelectedIndexes  Related Assertion
+     * @see  storeSelectedIndexes()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedIndexes()   Related Assertion
+     * @see  assertSelectedIndexes()      Related Assertion
+     * @see  getSelectedIndexes()         Related Accessor
+     * @see  verifyNotSelectedIndexes()   Related Assertion
+     * @see  verifySelectedIndexes()      Related Assertion
+     * @see  waitForNotSelectedIndexes()  Related Assertion
      */
     public function waitForSelectedIndexes($selectLocator, $pattern)
     {
@@ -9547,22 +9562,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotSelectedLabel}).</p>
+     * {@link verifyNotSelectedLabel()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabel       Base method, from which has been generated (automatically) current method
-     * @see  assertSelectedLabel      Related Assertion
-     * @see  getSelectedLabel         Related Accessor
-     * @see  verifyNotSelectedLabel   Related Assertion
-     * @see  verifySelectedLabel      Related Assertion
-     * @see  waitForNotSelectedLabel  Related Assertion
-     * @see  waitForSelectedLabel     Related Assertion
+     * @see  storeSelectedLabel()       Base method, from which has been generated (automatically) current method
+     * @see  assertSelectedLabel()      Related Assertion
+     * @see  getSelectedLabel()         Related Accessor
+     * @see  verifyNotSelectedLabel()   Related Assertion
+     * @see  verifySelectedLabel()      Related Assertion
+     * @see  waitForNotSelectedLabel()  Related Assertion
+     * @see  waitForSelectedLabel()     Related Assertion
      */
     public function assertNotSelectedLabel($selectLocator, $pattern)
     {
@@ -9579,22 +9594,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifySelectedLabel}).</p>
+     * {@link verifySelectedLabel()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabel       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabel   Related Assertion
-     * @see  getSelectedLabel         Related Accessor
-     * @see  verifyNotSelectedLabel   Related Assertion
-     * @see  verifySelectedLabel      Related Assertion
-     * @see  waitForNotSelectedLabel  Related Assertion
-     * @see  waitForSelectedLabel     Related Assertion
+     * @see  storeSelectedLabel()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabel()   Related Assertion
+     * @see  getSelectedLabel()         Related Accessor
+     * @see  verifyNotSelectedLabel()   Related Assertion
+     * @see  verifySelectedLabel()      Related Assertion
+     * @see  waitForNotSelectedLabel()  Related Assertion
+     * @see  waitForSelectedLabel()     Related Assertion
      */
     public function assertSelectedLabel($selectLocator, $pattern)
     {
@@ -9605,17 +9620,17 @@ trait SeleniumTestCaseDoc
      * Gets option label (visible text) for selected option in the specified select element.
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  string  the selected option label in the specified select drop-down
      * 
-     * @see  storeSelectedLabel       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabel   Related Assertion
-     * @see  assertSelectedLabel      Related Assertion
-     * @see  verifyNotSelectedLabel   Related Assertion
-     * @see  verifySelectedLabel      Related Assertion
-     * @see  waitForNotSelectedLabel  Related Assertion
-     * @see  waitForSelectedLabel     Related Assertion
+     * @see  storeSelectedLabel()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabel()   Related Assertion
+     * @see  assertSelectedLabel()      Related Assertion
+     * @see  verifyNotSelectedLabel()   Related Assertion
+     * @see  verifySelectedLabel()      Related Assertion
+     * @see  waitForNotSelectedLabel()  Related Assertion
+     * @see  waitForSelectedLabel()     Related Assertion
      */
     public function getSelectedLabel($selectLocator)
     {
@@ -9627,22 +9642,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the selected option label in the specified select drop-down (see {@link doc_Stored_Variables})</p>
+     * <p>the selected option label in the specified select drop-down (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName   the name of a variable in which the result is to be stored. (see
-     *                                 {@link doc_Stored_Variables})
+     *                                 {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotSelectedLabel   Related Assertion
-     * @see  assertSelectedLabel      Related Assertion
-     * @see  getSelectedLabel         Related Accessor
-     * @see  verifyNotSelectedLabel   Related Assertion
-     * @see  verifySelectedLabel      Related Assertion
-     * @see  waitForNotSelectedLabel  Related Assertion
-     * @see  waitForSelectedLabel     Related Assertion
+     * @see  assertNotSelectedLabel()   Related Assertion
+     * @see  assertSelectedLabel()      Related Assertion
+     * @see  getSelectedLabel()         Related Accessor
+     * @see  verifyNotSelectedLabel()   Related Assertion
+     * @see  verifySelectedLabel()      Related Assertion
+     * @see  waitForNotSelectedLabel()  Related Assertion
+     * @see  waitForSelectedLabel()     Related Assertion
      */
     public function storeSelectedLabel($selectLocator, $variableName)
     {
@@ -9659,22 +9675,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotSelectedLabel}).</p>
+     * {@link assertNotSelectedLabel()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabel       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabel   Related Assertion
-     * @see  assertSelectedLabel      Related Assertion
-     * @see  getSelectedLabel         Related Accessor
-     * @see  verifySelectedLabel      Related Assertion
-     * @see  waitForNotSelectedLabel  Related Assertion
-     * @see  waitForSelectedLabel     Related Assertion
+     * @see  storeSelectedLabel()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabel()   Related Assertion
+     * @see  assertSelectedLabel()      Related Assertion
+     * @see  getSelectedLabel()         Related Accessor
+     * @see  verifySelectedLabel()      Related Assertion
+     * @see  waitForNotSelectedLabel()  Related Assertion
+     * @see  waitForSelectedLabel()     Related Assertion
      */
     public function verifyNotSelectedLabel($selectLocator, $pattern)
     {
@@ -9691,22 +9707,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertSelectedLabel}).</p>
+     * {@link assertSelectedLabel()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabel       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabel   Related Assertion
-     * @see  assertSelectedLabel      Related Assertion
-     * @see  getSelectedLabel         Related Accessor
-     * @see  verifyNotSelectedLabel   Related Assertion
-     * @see  waitForNotSelectedLabel  Related Assertion
-     * @see  waitForSelectedLabel     Related Assertion
+     * @see  storeSelectedLabel()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabel()   Related Assertion
+     * @see  assertSelectedLabel()      Related Assertion
+     * @see  getSelectedLabel()         Related Accessor
+     * @see  verifyNotSelectedLabel()   Related Assertion
+     * @see  waitForNotSelectedLabel()  Related Assertion
+     * @see  waitForSelectedLabel()     Related Assertion
      */
     public function verifySelectedLabel($selectLocator, $pattern)
     {
@@ -9727,19 +9743,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabel      Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabel  Related Assertion
-     * @see  assertSelectedLabel     Related Assertion
-     * @see  getSelectedLabel        Related Accessor
-     * @see  verifyNotSelectedLabel  Related Assertion
-     * @see  verifySelectedLabel     Related Assertion
-     * @see  waitForSelectedLabel    Related Assertion
+     * @see  storeSelectedLabel()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabel()  Related Assertion
+     * @see  assertSelectedLabel()     Related Assertion
+     * @see  getSelectedLabel()        Related Accessor
+     * @see  verifyNotSelectedLabel()  Related Assertion
+     * @see  verifySelectedLabel()     Related Assertion
+     * @see  waitForSelectedLabel()    Related Assertion
      */
     public function waitForNotSelectedLabel($selectLocator, $pattern)
     {
@@ -9760,19 +9776,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabel       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabel   Related Assertion
-     * @see  assertSelectedLabel      Related Assertion
-     * @see  getSelectedLabel         Related Accessor
-     * @see  verifyNotSelectedLabel   Related Assertion
-     * @see  verifySelectedLabel      Related Assertion
-     * @see  waitForNotSelectedLabel  Related Assertion
+     * @see  storeSelectedLabel()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabel()   Related Assertion
+     * @see  assertSelectedLabel()      Related Assertion
+     * @see  getSelectedLabel()         Related Accessor
+     * @see  verifyNotSelectedLabel()   Related Assertion
+     * @see  verifySelectedLabel()      Related Assertion
+     * @see  waitForNotSelectedLabel()  Related Assertion
      */
     public function waitForSelectedLabel($selectLocator, $pattern)
     {
@@ -9790,22 +9806,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotSelectedLabels}).</p>
+     * {@link verifyNotSelectedLabels()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabels       Base method, from which has been generated (automatically) current method
-     * @see  assertSelectedLabels      Related Assertion
-     * @see  getSelectedLabels         Related Accessor
-     * @see  verifyNotSelectedLabels   Related Assertion
-     * @see  verifySelectedLabels      Related Assertion
-     * @see  waitForNotSelectedLabels  Related Assertion
-     * @see  waitForSelectedLabels     Related Assertion
+     * @see  storeSelectedLabels()       Base method, from which has been generated (automatically) current method
+     * @see  assertSelectedLabels()      Related Assertion
+     * @see  getSelectedLabels()         Related Accessor
+     * @see  verifyNotSelectedLabels()   Related Assertion
+     * @see  verifySelectedLabels()      Related Assertion
+     * @see  waitForNotSelectedLabels()  Related Assertion
+     * @see  waitForSelectedLabels()     Related Assertion
      */
     public function assertNotSelectedLabels($selectLocator, $pattern)
     {
@@ -9823,22 +9839,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifySelectedLabels}).</p>
+     * {@link verifySelectedLabels()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabels       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabels   Related Assertion
-     * @see  getSelectedLabels         Related Accessor
-     * @see  verifyNotSelectedLabels   Related Assertion
-     * @see  verifySelectedLabels      Related Assertion
-     * @see  waitForNotSelectedLabels  Related Assertion
-     * @see  waitForSelectedLabels     Related Assertion
+     * @see  storeSelectedLabels()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabels()   Related Assertion
+     * @see  getSelectedLabels()         Related Accessor
+     * @see  verifyNotSelectedLabels()   Related Assertion
+     * @see  verifySelectedLabels()      Related Assertion
+     * @see  waitForNotSelectedLabels()  Related Assertion
+     * @see  waitForSelectedLabels()     Related Assertion
      */
     public function assertSelectedLabels($selectLocator, $pattern)
     {
@@ -9849,17 +9865,17 @@ trait SeleniumTestCaseDoc
      * Gets all option labels (visible text) for selected options in the specified select or multi-select element.
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  string[]  an array of all selected option labels in the specified select drop-down
      * 
-     * @see  storeSelectedLabels       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabels   Related Assertion
-     * @see  assertSelectedLabels      Related Assertion
-     * @see  verifyNotSelectedLabels   Related Assertion
-     * @see  verifySelectedLabels      Related Assertion
-     * @see  waitForNotSelectedLabels  Related Assertion
-     * @see  waitForSelectedLabels     Related Assertion
+     * @see  storeSelectedLabels()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabels()   Related Assertion
+     * @see  assertSelectedLabels()      Related Assertion
+     * @see  verifyNotSelectedLabels()   Related Assertion
+     * @see  verifySelectedLabels()      Related Assertion
+     * @see  waitForNotSelectedLabels()  Related Assertion
+     * @see  waitForSelectedLabels()     Related Assertion
      */
     public function getSelectedLabels($selectLocator)
     {
@@ -9872,22 +9888,22 @@ trait SeleniumTestCaseDoc
      * <h4>Stored value:</h4>
      * 
      * <p>an array of all selected option labels in the specified select drop-down (see
-     * {@link doc_Stored_Variables})</p>
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName   the name of a variable in which the result is to be stored. (see
-     *                                 {@link doc_Stored_Variables})
+     *                                 {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotSelectedLabels   Related Assertion
-     * @see  assertSelectedLabels      Related Assertion
-     * @see  getSelectedLabels         Related Accessor
-     * @see  verifyNotSelectedLabels   Related Assertion
-     * @see  verifySelectedLabels      Related Assertion
-     * @see  waitForNotSelectedLabels  Related Assertion
-     * @see  waitForSelectedLabels     Related Assertion
+     * @see  assertNotSelectedLabels()   Related Assertion
+     * @see  assertSelectedLabels()      Related Assertion
+     * @see  getSelectedLabels()         Related Accessor
+     * @see  verifyNotSelectedLabels()   Related Assertion
+     * @see  verifySelectedLabels()      Related Assertion
+     * @see  waitForNotSelectedLabels()  Related Assertion
+     * @see  waitForSelectedLabels()     Related Assertion
      */
     public function storeSelectedLabels($selectLocator, $variableName)
     {
@@ -9905,22 +9921,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotSelectedLabels}).</p>
+     * {@link assertNotSelectedLabels()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabels       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabels   Related Assertion
-     * @see  assertSelectedLabels      Related Assertion
-     * @see  getSelectedLabels         Related Accessor
-     * @see  verifySelectedLabels      Related Assertion
-     * @see  waitForNotSelectedLabels  Related Assertion
-     * @see  waitForSelectedLabels     Related Assertion
+     * @see  storeSelectedLabels()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabels()   Related Assertion
+     * @see  assertSelectedLabels()      Related Assertion
+     * @see  getSelectedLabels()         Related Accessor
+     * @see  verifySelectedLabels()      Related Assertion
+     * @see  waitForNotSelectedLabels()  Related Assertion
+     * @see  waitForSelectedLabels()     Related Assertion
      */
     public function verifyNotSelectedLabels($selectLocator, $pattern)
     {
@@ -9938,22 +9954,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertSelectedLabels}).</p>
+     * {@link assertSelectedLabels()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabels       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabels   Related Assertion
-     * @see  assertSelectedLabels      Related Assertion
-     * @see  getSelectedLabels         Related Accessor
-     * @see  verifyNotSelectedLabels   Related Assertion
-     * @see  waitForNotSelectedLabels  Related Assertion
-     * @see  waitForSelectedLabels     Related Assertion
+     * @see  storeSelectedLabels()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabels()   Related Assertion
+     * @see  assertSelectedLabels()      Related Assertion
+     * @see  getSelectedLabels()         Related Accessor
+     * @see  verifyNotSelectedLabels()   Related Assertion
+     * @see  waitForNotSelectedLabels()  Related Assertion
+     * @see  waitForSelectedLabels()     Related Assertion
      */
     public function verifySelectedLabels($selectLocator, $pattern)
     {
@@ -9975,19 +9991,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabels      Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabels  Related Assertion
-     * @see  assertSelectedLabels     Related Assertion
-     * @see  getSelectedLabels        Related Accessor
-     * @see  verifyNotSelectedLabels  Related Assertion
-     * @see  verifySelectedLabels     Related Assertion
-     * @see  waitForSelectedLabels    Related Assertion
+     * @see  storeSelectedLabels()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabels()  Related Assertion
+     * @see  assertSelectedLabels()     Related Assertion
+     * @see  getSelectedLabels()        Related Accessor
+     * @see  verifyNotSelectedLabels()  Related Assertion
+     * @see  verifySelectedLabels()     Related Assertion
+     * @see  waitForSelectedLabels()    Related Assertion
      */
     public function waitForNotSelectedLabels($selectLocator, $pattern)
     {
@@ -10009,19 +10025,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedLabels       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedLabels   Related Assertion
-     * @see  assertSelectedLabels      Related Assertion
-     * @see  getSelectedLabels         Related Accessor
-     * @see  verifyNotSelectedLabels   Related Assertion
-     * @see  verifySelectedLabels      Related Assertion
-     * @see  waitForNotSelectedLabels  Related Assertion
+     * @see  storeSelectedLabels()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedLabels()   Related Assertion
+     * @see  assertSelectedLabels()      Related Assertion
+     * @see  getSelectedLabels()         Related Accessor
+     * @see  verifyNotSelectedLabels()   Related Assertion
+     * @see  verifySelectedLabels()      Related Assertion
+     * @see  waitForNotSelectedLabels()  Related Assertion
      */
     public function waitForSelectedLabels($selectLocator, $pattern)
     {
@@ -10038,22 +10054,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotSelectedValue}).</p>
+     * {@link verifyNotSelectedValue()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValue       Base method, from which has been generated (automatically) current method
-     * @see  assertSelectedValue      Related Assertion
-     * @see  getSelectedValue         Related Accessor
-     * @see  verifyNotSelectedValue   Related Assertion
-     * @see  verifySelectedValue      Related Assertion
-     * @see  waitForNotSelectedValue  Related Assertion
-     * @see  waitForSelectedValue     Related Assertion
+     * @see  storeSelectedValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertSelectedValue()      Related Assertion
+     * @see  getSelectedValue()         Related Accessor
+     * @see  verifyNotSelectedValue()   Related Assertion
+     * @see  verifySelectedValue()      Related Assertion
+     * @see  waitForNotSelectedValue()  Related Assertion
+     * @see  waitForSelectedValue()     Related Assertion
      */
     public function assertNotSelectedValue($selectLocator, $pattern)
     {
@@ -10070,22 +10086,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifySelectedValue}).</p>
+     * {@link verifySelectedValue()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValue       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValue   Related Assertion
-     * @see  getSelectedValue         Related Accessor
-     * @see  verifyNotSelectedValue   Related Assertion
-     * @see  verifySelectedValue      Related Assertion
-     * @see  waitForNotSelectedValue  Related Assertion
-     * @see  waitForSelectedValue     Related Assertion
+     * @see  storeSelectedValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValue()   Related Assertion
+     * @see  getSelectedValue()         Related Accessor
+     * @see  verifyNotSelectedValue()   Related Assertion
+     * @see  verifySelectedValue()      Related Assertion
+     * @see  waitForNotSelectedValue()  Related Assertion
+     * @see  waitForSelectedValue()     Related Assertion
      */
     public function assertSelectedValue($selectLocator, $pattern)
     {
@@ -10096,17 +10112,17 @@ trait SeleniumTestCaseDoc
      * Gets option value (value attribute) for selected option in the specified select element.
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  string  the selected option value in the specified select drop-down
      * 
-     * @see  storeSelectedValue       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValue   Related Assertion
-     * @see  assertSelectedValue      Related Assertion
-     * @see  verifyNotSelectedValue   Related Assertion
-     * @see  verifySelectedValue      Related Assertion
-     * @see  waitForNotSelectedValue  Related Assertion
-     * @see  waitForSelectedValue     Related Assertion
+     * @see  storeSelectedValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValue()   Related Assertion
+     * @see  assertSelectedValue()      Related Assertion
+     * @see  verifyNotSelectedValue()   Related Assertion
+     * @see  verifySelectedValue()      Related Assertion
+     * @see  waitForNotSelectedValue()  Related Assertion
+     * @see  waitForSelectedValue()     Related Assertion
      */
     public function getSelectedValue($selectLocator)
     {
@@ -10118,22 +10134,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the selected option value in the specified select drop-down (see {@link doc_Stored_Variables})</p>
+     * <p>the selected option value in the specified select drop-down (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName   the name of a variable in which the result is to be stored. (see
-     *                                 {@link doc_Stored_Variables})
+     *                                 {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotSelectedValue   Related Assertion
-     * @see  assertSelectedValue      Related Assertion
-     * @see  getSelectedValue         Related Accessor
-     * @see  verifyNotSelectedValue   Related Assertion
-     * @see  verifySelectedValue      Related Assertion
-     * @see  waitForNotSelectedValue  Related Assertion
-     * @see  waitForSelectedValue     Related Assertion
+     * @see  assertNotSelectedValue()   Related Assertion
+     * @see  assertSelectedValue()      Related Assertion
+     * @see  getSelectedValue()         Related Accessor
+     * @see  verifyNotSelectedValue()   Related Assertion
+     * @see  verifySelectedValue()      Related Assertion
+     * @see  waitForNotSelectedValue()  Related Assertion
+     * @see  waitForSelectedValue()     Related Assertion
      */
     public function storeSelectedValue($selectLocator, $variableName)
     {
@@ -10150,22 +10167,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotSelectedValue}).</p>
+     * {@link assertNotSelectedValue()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValue       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValue   Related Assertion
-     * @see  assertSelectedValue      Related Assertion
-     * @see  getSelectedValue         Related Accessor
-     * @see  verifySelectedValue      Related Assertion
-     * @see  waitForNotSelectedValue  Related Assertion
-     * @see  waitForSelectedValue     Related Assertion
+     * @see  storeSelectedValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValue()   Related Assertion
+     * @see  assertSelectedValue()      Related Assertion
+     * @see  getSelectedValue()         Related Accessor
+     * @see  verifySelectedValue()      Related Assertion
+     * @see  waitForNotSelectedValue()  Related Assertion
+     * @see  waitForSelectedValue()     Related Assertion
      */
     public function verifyNotSelectedValue($selectLocator, $pattern)
     {
@@ -10182,22 +10199,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertSelectedValue}).</p>
+     * {@link assertSelectedValue()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValue       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValue   Related Assertion
-     * @see  assertSelectedValue      Related Assertion
-     * @see  getSelectedValue         Related Accessor
-     * @see  verifyNotSelectedValue   Related Assertion
-     * @see  waitForNotSelectedValue  Related Assertion
-     * @see  waitForSelectedValue     Related Assertion
+     * @see  storeSelectedValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValue()   Related Assertion
+     * @see  assertSelectedValue()      Related Assertion
+     * @see  getSelectedValue()         Related Accessor
+     * @see  verifyNotSelectedValue()   Related Assertion
+     * @see  waitForNotSelectedValue()  Related Assertion
+     * @see  waitForSelectedValue()     Related Assertion
      */
     public function verifySelectedValue($selectLocator, $pattern)
     {
@@ -10218,19 +10235,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValue      Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValue  Related Assertion
-     * @see  assertSelectedValue     Related Assertion
-     * @see  getSelectedValue        Related Accessor
-     * @see  verifyNotSelectedValue  Related Assertion
-     * @see  verifySelectedValue     Related Assertion
-     * @see  waitForSelectedValue    Related Assertion
+     * @see  storeSelectedValue()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValue()  Related Assertion
+     * @see  assertSelectedValue()     Related Assertion
+     * @see  getSelectedValue()        Related Accessor
+     * @see  verifyNotSelectedValue()  Related Assertion
+     * @see  verifySelectedValue()     Related Assertion
+     * @see  waitForSelectedValue()    Related Assertion
      */
     public function waitForNotSelectedValue($selectLocator, $pattern)
     {
@@ -10251,19 +10268,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValue       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValue   Related Assertion
-     * @see  assertSelectedValue      Related Assertion
-     * @see  getSelectedValue         Related Accessor
-     * @see  verifyNotSelectedValue   Related Assertion
-     * @see  verifySelectedValue      Related Assertion
-     * @see  waitForNotSelectedValue  Related Assertion
+     * @see  storeSelectedValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValue()   Related Assertion
+     * @see  assertSelectedValue()      Related Assertion
+     * @see  getSelectedValue()         Related Accessor
+     * @see  verifyNotSelectedValue()   Related Assertion
+     * @see  verifySelectedValue()      Related Assertion
+     * @see  waitForNotSelectedValue()  Related Assertion
      */
     public function waitForSelectedValue($selectLocator, $pattern)
     {
@@ -10281,22 +10298,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotSelectedValues}).</p>
+     * {@link verifyNotSelectedValues()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValues       Base method, from which has been generated (automatically) current method
-     * @see  assertSelectedValues      Related Assertion
-     * @see  getSelectedValues         Related Accessor
-     * @see  verifyNotSelectedValues   Related Assertion
-     * @see  verifySelectedValues      Related Assertion
-     * @see  waitForNotSelectedValues  Related Assertion
-     * @see  waitForSelectedValues     Related Assertion
+     * @see  storeSelectedValues()       Base method, from which has been generated (automatically) current method
+     * @see  assertSelectedValues()      Related Assertion
+     * @see  getSelectedValues()         Related Accessor
+     * @see  verifyNotSelectedValues()   Related Assertion
+     * @see  verifySelectedValues()      Related Assertion
+     * @see  waitForNotSelectedValues()  Related Assertion
+     * @see  waitForSelectedValues()     Related Assertion
      */
     public function assertNotSelectedValues($selectLocator, $pattern)
     {
@@ -10314,22 +10331,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifySelectedValues}).</p>
+     * {@link verifySelectedValues()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValues       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValues   Related Assertion
-     * @see  getSelectedValues         Related Accessor
-     * @see  verifyNotSelectedValues   Related Assertion
-     * @see  verifySelectedValues      Related Assertion
-     * @see  waitForNotSelectedValues  Related Assertion
-     * @see  waitForSelectedValues     Related Assertion
+     * @see  storeSelectedValues()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValues()   Related Assertion
+     * @see  getSelectedValues()         Related Accessor
+     * @see  verifyNotSelectedValues()   Related Assertion
+     * @see  verifySelectedValues()      Related Assertion
+     * @see  waitForNotSelectedValues()  Related Assertion
+     * @see  waitForSelectedValues()     Related Assertion
      */
     public function assertSelectedValues($selectLocator, $pattern)
     {
@@ -10340,17 +10357,17 @@ trait SeleniumTestCaseDoc
      * Gets all option values (value attributes) for selected options in the specified select or multi-select element. 
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  string[]  an array of all selected option values in the specified select drop-down
      * 
-     * @see  storeSelectedValues       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValues   Related Assertion
-     * @see  assertSelectedValues      Related Assertion
-     * @see  verifyNotSelectedValues   Related Assertion
-     * @see  verifySelectedValues      Related Assertion
-     * @see  waitForNotSelectedValues  Related Assertion
-     * @see  waitForSelectedValues     Related Assertion
+     * @see  storeSelectedValues()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValues()   Related Assertion
+     * @see  assertSelectedValues()      Related Assertion
+     * @see  verifyNotSelectedValues()   Related Assertion
+     * @see  verifySelectedValues()      Related Assertion
+     * @see  waitForNotSelectedValues()  Related Assertion
+     * @see  waitForSelectedValues()     Related Assertion
      */
     public function getSelectedValues($selectLocator)
     {
@@ -10363,22 +10380,22 @@ trait SeleniumTestCaseDoc
      * <h4>Stored value:</h4>
      * 
      * <p>an array of all selected option values in the specified select drop-down (see
-     * {@link doc_Stored_Variables})</p>
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName   the name of a variable in which the result is to be stored. (see
-     *                                 {@link doc_Stored_Variables})
+     *                                 {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotSelectedValues   Related Assertion
-     * @see  assertSelectedValues      Related Assertion
-     * @see  getSelectedValues         Related Accessor
-     * @see  verifyNotSelectedValues   Related Assertion
-     * @see  verifySelectedValues      Related Assertion
-     * @see  waitForNotSelectedValues  Related Assertion
-     * @see  waitForSelectedValues     Related Assertion
+     * @see  assertNotSelectedValues()   Related Assertion
+     * @see  assertSelectedValues()      Related Assertion
+     * @see  getSelectedValues()         Related Accessor
+     * @see  verifyNotSelectedValues()   Related Assertion
+     * @see  verifySelectedValues()      Related Assertion
+     * @see  waitForNotSelectedValues()  Related Assertion
+     * @see  waitForSelectedValues()     Related Assertion
      */
     public function storeSelectedValues($selectLocator, $variableName)
     {
@@ -10396,22 +10413,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotSelectedValues}).</p>
+     * {@link assertNotSelectedValues()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValues       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValues   Related Assertion
-     * @see  assertSelectedValues      Related Assertion
-     * @see  getSelectedValues         Related Accessor
-     * @see  verifySelectedValues      Related Assertion
-     * @see  waitForNotSelectedValues  Related Assertion
-     * @see  waitForSelectedValues     Related Assertion
+     * @see  storeSelectedValues()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValues()   Related Assertion
+     * @see  assertSelectedValues()      Related Assertion
+     * @see  getSelectedValues()         Related Accessor
+     * @see  verifySelectedValues()      Related Assertion
+     * @see  waitForNotSelectedValues()  Related Assertion
+     * @see  waitForSelectedValues()     Related Assertion
      */
     public function verifyNotSelectedValues($selectLocator, $pattern)
     {
@@ -10429,22 +10446,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertSelectedValues}).</p>
+     * {@link assertSelectedValues()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValues       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValues   Related Assertion
-     * @see  assertSelectedValues      Related Assertion
-     * @see  getSelectedValues         Related Accessor
-     * @see  verifyNotSelectedValues   Related Assertion
-     * @see  waitForNotSelectedValues  Related Assertion
-     * @see  waitForSelectedValues     Related Assertion
+     * @see  storeSelectedValues()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValues()   Related Assertion
+     * @see  assertSelectedValues()      Related Assertion
+     * @see  getSelectedValues()         Related Accessor
+     * @see  verifyNotSelectedValues()   Related Assertion
+     * @see  waitForNotSelectedValues()  Related Assertion
+     * @see  waitForSelectedValues()     Related Assertion
      */
     public function verifySelectedValues($selectLocator, $pattern)
     {
@@ -10466,19 +10483,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValues      Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValues  Related Assertion
-     * @see  assertSelectedValues     Related Assertion
-     * @see  getSelectedValues        Related Accessor
-     * @see  verifyNotSelectedValues  Related Assertion
-     * @see  verifySelectedValues     Related Assertion
-     * @see  waitForSelectedValues    Related Assertion
+     * @see  storeSelectedValues()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValues()  Related Assertion
+     * @see  assertSelectedValues()     Related Assertion
+     * @see  getSelectedValues()        Related Accessor
+     * @see  verifyNotSelectedValues()  Related Assertion
+     * @see  verifySelectedValues()     Related Assertion
+     * @see  waitForSelectedValues()    Related Assertion
      */
     public function waitForNotSelectedValues($selectLocator, $pattern)
     {
@@ -10500,19 +10517,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
-     * @param string   $pattern        the String-match Patterns 
-     *                                 (see {@link doc_String_match_Patterns})
+     *                                 {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern        the String-match Patterns (see
+     *                                 {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSelectedValues       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSelectedValues   Related Assertion
-     * @see  assertSelectedValues      Related Assertion
-     * @see  getSelectedValues         Related Accessor
-     * @see  verifyNotSelectedValues   Related Assertion
-     * @see  verifySelectedValues      Related Assertion
-     * @see  waitForNotSelectedValues  Related Assertion
+     * @see  storeSelectedValues()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSelectedValues()   Related Assertion
+     * @see  assertSelectedValues()      Related Assertion
+     * @see  getSelectedValues()         Related Accessor
+     * @see  verifyNotSelectedValues()   Related Assertion
+     * @see  verifySelectedValues()      Related Assertion
+     * @see  waitForNotSelectedValues()  Related Assertion
      */
     public function waitForSelectedValues($selectLocator, $pattern)
     {
@@ -10529,20 +10546,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotSomethingSelected}).</p>
+     * {@link verifyNotSomethingSelected()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeSomethingSelected       Base method, from which has been generated (automatically) current method
-     * @see  assertSomethingSelected      Related Assertion
-     * @see  isSomethingSelected          Related Accessor
-     * @see  verifyNotSomethingSelected   Related Assertion
-     * @see  verifySomethingSelected      Related Assertion
-     * @see  waitForNotSomethingSelected  Related Assertion
-     * @see  waitForSomethingSelected     Related Assertion
+     * @see  storeSomethingSelected()       Base method, from which has been generated (automatically) current method
+     * @see  assertSomethingSelected()      Related Assertion
+     * @see  isSomethingSelected()          Related Accessor
+     * @see  verifyNotSomethingSelected()   Related Assertion
+     * @see  verifySomethingSelected()      Related Assertion
+     * @see  waitForNotSomethingSelected()  Related Assertion
+     * @see  waitForSomethingSelected()     Related Assertion
      */
     public function assertNotSomethingSelected($selectLocator)
     {
@@ -10559,20 +10576,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifySomethingSelected}).</p>
+     * {@link verifySomethingSelected()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeSomethingSelected       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSomethingSelected   Related Assertion
-     * @see  isSomethingSelected          Related Accessor
-     * @see  verifyNotSomethingSelected   Related Assertion
-     * @see  verifySomethingSelected      Related Assertion
-     * @see  waitForNotSomethingSelected  Related Assertion
-     * @see  waitForSomethingSelected     Related Assertion
+     * @see  storeSomethingSelected()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSomethingSelected()   Related Assertion
+     * @see  isSomethingSelected()          Related Accessor
+     * @see  verifyNotSomethingSelected()   Related Assertion
+     * @see  verifySomethingSelected()      Related Assertion
+     * @see  waitForNotSomethingSelected()  Related Assertion
+     * @see  waitForSomethingSelected()     Related Assertion
      */
     public function assertSomethingSelected($selectLocator)
     {
@@ -10583,17 +10600,17 @@ trait SeleniumTestCaseDoc
      * Determines whether some option in a drop-down menu is selected.
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  bool  true if some option has been selected, false otherwise
      * 
-     * @see  storeSomethingSelected       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSomethingSelected   Related Assertion
-     * @see  assertSomethingSelected      Related Assertion
-     * @see  verifyNotSomethingSelected   Related Assertion
-     * @see  verifySomethingSelected      Related Assertion
-     * @see  waitForNotSomethingSelected  Related Assertion
-     * @see  waitForSomethingSelected     Related Assertion
+     * @see  storeSomethingSelected()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSomethingSelected()   Related Assertion
+     * @see  assertSomethingSelected()      Related Assertion
+     * @see  verifyNotSomethingSelected()   Related Assertion
+     * @see  verifySomethingSelected()      Related Assertion
+     * @see  waitForNotSomethingSelected()  Related Assertion
+     * @see  waitForSomethingSelected()     Related Assertion
      */
     public function isSomethingSelected($selectLocator)
     {
@@ -10605,22 +10622,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if some option has been selected, false otherwise (see {@link doc_Stored_Variables})</p>
+     * <p>true if some option has been selected, false otherwise (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName   the name of a variable in which the result is to be stored. (see
-     *                                 {@link doc_Stored_Variables})
+     *                                 {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotSomethingSelected   Related Assertion
-     * @see  assertSomethingSelected      Related Assertion
-     * @see  isSomethingSelected          Related Accessor
-     * @see  verifyNotSomethingSelected   Related Assertion
-     * @see  verifySomethingSelected      Related Assertion
-     * @see  waitForNotSomethingSelected  Related Assertion
-     * @see  waitForSomethingSelected     Related Assertion
+     * @see  assertNotSomethingSelected()   Related Assertion
+     * @see  assertSomethingSelected()      Related Assertion
+     * @see  isSomethingSelected()          Related Accessor
+     * @see  verifyNotSomethingSelected()   Related Assertion
+     * @see  verifySomethingSelected()      Related Assertion
+     * @see  waitForNotSomethingSelected()  Related Assertion
+     * @see  waitForSomethingSelected()     Related Assertion
      */
     public function storeSomethingSelected($selectLocator, $variableName)
     {
@@ -10637,20 +10655,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotSomethingSelected}).</p>
+     * {@link assertNotSomethingSelected()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeSomethingSelected       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSomethingSelected   Related Assertion
-     * @see  assertSomethingSelected      Related Assertion
-     * @see  isSomethingSelected          Related Accessor
-     * @see  verifySomethingSelected      Related Assertion
-     * @see  waitForNotSomethingSelected  Related Assertion
-     * @see  waitForSomethingSelected     Related Assertion
+     * @see  storeSomethingSelected()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSomethingSelected()   Related Assertion
+     * @see  assertSomethingSelected()      Related Assertion
+     * @see  isSomethingSelected()          Related Accessor
+     * @see  verifySomethingSelected()      Related Assertion
+     * @see  waitForNotSomethingSelected()  Related Assertion
+     * @see  waitForSomethingSelected()     Related Assertion
      */
     public function verifyNotSomethingSelected($selectLocator)
     {
@@ -10667,20 +10685,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertSomethingSelected}).</p>
+     * {@link assertSomethingSelected()}).</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeSomethingSelected       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSomethingSelected   Related Assertion
-     * @see  assertSomethingSelected      Related Assertion
-     * @see  isSomethingSelected          Related Accessor
-     * @see  verifyNotSomethingSelected   Related Assertion
-     * @see  waitForNotSomethingSelected  Related Assertion
-     * @see  waitForSomethingSelected     Related Assertion
+     * @see  storeSomethingSelected()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSomethingSelected()   Related Assertion
+     * @see  assertSomethingSelected()      Related Assertion
+     * @see  isSomethingSelected()          Related Accessor
+     * @see  verifyNotSomethingSelected()   Related Assertion
+     * @see  waitForNotSomethingSelected()  Related Assertion
+     * @see  waitForSomethingSelected()     Related Assertion
      */
     public function verifySomethingSelected($selectLocator)
     {
@@ -10701,17 +10719,17 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeSomethingSelected      Base method, from which has been generated (automatically) current method
-     * @see  assertNotSomethingSelected  Related Assertion
-     * @see  assertSomethingSelected     Related Assertion
-     * @see  isSomethingSelected         Related Accessor
-     * @see  verifyNotSomethingSelected  Related Assertion
-     * @see  verifySomethingSelected     Related Assertion
-     * @see  waitForSomethingSelected    Related Assertion
+     * @see  storeSomethingSelected()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotSomethingSelected()  Related Assertion
+     * @see  assertSomethingSelected()     Related Assertion
+     * @see  isSomethingSelected()         Related Accessor
+     * @see  verifyNotSomethingSelected()  Related Assertion
+     * @see  verifySomethingSelected()     Related Assertion
+     * @see  waitForSomethingSelected()    Related Assertion
      */
     public function waitForNotSomethingSelected($selectLocator)
     {
@@ -10732,17 +10750,17 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeSomethingSelected       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSomethingSelected   Related Assertion
-     * @see  assertSomethingSelected      Related Assertion
-     * @see  isSomethingSelected          Related Accessor
-     * @see  verifyNotSomethingSelected   Related Assertion
-     * @see  verifySomethingSelected      Related Assertion
-     * @see  waitForNotSomethingSelected  Related Assertion
+     * @see  storeSomethingSelected()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSomethingSelected()   Related Assertion
+     * @see  assertSomethingSelected()      Related Assertion
+     * @see  isSomethingSelected()          Related Accessor
+     * @see  verifyNotSomethingSelected()   Related Assertion
+     * @see  verifySomethingSelected()      Related Assertion
+     * @see  waitForNotSomethingSelected()  Related Assertion
      */
     public function waitForSomethingSelected($selectLocator)
     {
@@ -10762,20 +10780,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotSpeed}).</p>
+     * {@link verifyNotSpeed()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertSpeed      Related Assertion
-     * @see  getSpeed         Related Accessor
-     * @see  verifyNotSpeed   Related Assertion
-     * @see  verifySpeed      Related Assertion
-     * @see  waitForNotSpeed  Related Assertion
-     * @see  waitForSpeed     Related Assertion
+     * @see  storeSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertSpeed()      Related Assertion
+     * @see  getSpeed()         Related Accessor
+     * @see  verifyNotSpeed()   Related Assertion
+     * @see  verifySpeed()      Related Assertion
+     * @see  waitForNotSpeed()  Related Assertion
+     * @see  waitForSpeed()     Related Assertion
      */
     public function assertNotSpeed($pattern)
     {
@@ -10795,20 +10813,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifySpeed}).</p>
+     * {@link verifySpeed()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSpeed   Related Assertion
-     * @see  getSpeed         Related Accessor
-     * @see  verifyNotSpeed   Related Assertion
-     * @see  verifySpeed      Related Assertion
-     * @see  waitForNotSpeed  Related Assertion
-     * @see  waitForSpeed     Related Assertion
+     * @see  storeSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSpeed()   Related Assertion
+     * @see  getSpeed()         Related Accessor
+     * @see  verifyNotSpeed()   Related Assertion
+     * @see  verifySpeed()      Related Assertion
+     * @see  waitForNotSpeed()  Related Assertion
+     * @see  waitForSpeed()     Related Assertion
      */
     public function assertSpeed($pattern)
     {
@@ -10822,13 +10840,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void  the execution speed in milliseconds.
      * 
-     * @see  storeSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSpeed   Related Assertion
-     * @see  assertSpeed      Related Assertion
-     * @see  verifyNotSpeed   Related Assertion
-     * @see  verifySpeed      Related Assertion
-     * @see  waitForNotSpeed  Related Assertion
-     * @see  waitForSpeed     Related Assertion
+     * @see  storeSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSpeed()   Related Assertion
+     * @see  assertSpeed()      Related Assertion
+     * @see  verifyNotSpeed()   Related Assertion
+     * @see  verifySpeed()      Related Assertion
+     * @see  waitForNotSpeed()  Related Assertion
+     * @see  waitForSpeed()     Related Assertion
      */
     public function getSpeed()
     {
@@ -10842,20 +10860,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the execution speed in milliseconds. (see {@link doc_Stored_Variables})</p>
+     * <p>the execution speed in milliseconds. (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotSpeed   Related Assertion
-     * @see  assertSpeed      Related Assertion
-     * @see  getSpeed         Related Accessor
-     * @see  verifyNotSpeed   Related Assertion
-     * @see  verifySpeed      Related Assertion
-     * @see  waitForNotSpeed  Related Assertion
-     * @see  waitForSpeed     Related Assertion
+     * @see  assertNotSpeed()   Related Assertion
+     * @see  assertSpeed()      Related Assertion
+     * @see  getSpeed()         Related Accessor
+     * @see  verifyNotSpeed()   Related Assertion
+     * @see  verifySpeed()      Related Assertion
+     * @see  waitForNotSpeed()  Related Assertion
+     * @see  waitForSpeed()     Related Assertion
      */
     public function storeSpeed($variableName)
     {
@@ -10875,20 +10893,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotSpeed}).</p>
+     * {@link assertNotSpeed()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSpeed   Related Assertion
-     * @see  assertSpeed      Related Assertion
-     * @see  getSpeed         Related Accessor
-     * @see  verifySpeed      Related Assertion
-     * @see  waitForNotSpeed  Related Assertion
-     * @see  waitForSpeed     Related Assertion
+     * @see  storeSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSpeed()   Related Assertion
+     * @see  assertSpeed()      Related Assertion
+     * @see  getSpeed()         Related Accessor
+     * @see  verifySpeed()      Related Assertion
+     * @see  waitForNotSpeed()  Related Assertion
+     * @see  waitForSpeed()     Related Assertion
      */
     public function verifyNotSpeed($pattern)
     {
@@ -10908,20 +10926,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertSpeed}).</p>
+     * {@link assertSpeed()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSpeed   Related Assertion
-     * @see  assertSpeed      Related Assertion
-     * @see  getSpeed         Related Accessor
-     * @see  verifyNotSpeed   Related Assertion
-     * @see  waitForNotSpeed  Related Assertion
-     * @see  waitForSpeed     Related Assertion
+     * @see  storeSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSpeed()   Related Assertion
+     * @see  assertSpeed()      Related Assertion
+     * @see  getSpeed()         Related Accessor
+     * @see  verifyNotSpeed()   Related Assertion
+     * @see  waitForNotSpeed()  Related Assertion
+     * @see  waitForSpeed()     Related Assertion
      */
     public function verifySpeed($pattern)
     {
@@ -10944,18 +10962,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSpeed      Base method, from which has been generated (automatically) current method
-     * @see  assertNotSpeed  Related Assertion
-     * @see  assertSpeed     Related Assertion
-     * @see  getSpeed        Related Accessor
-     * @see  verifyNotSpeed  Related Assertion
-     * @see  verifySpeed     Related Assertion
-     * @see  waitForSpeed    Related Assertion
+     * @see  storeSpeed()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotSpeed()  Related Assertion
+     * @see  assertSpeed()     Related Assertion
+     * @see  getSpeed()        Related Accessor
+     * @see  verifyNotSpeed()  Related Assertion
+     * @see  verifySpeed()     Related Assertion
+     * @see  waitForSpeed()    Related Assertion
      */
     public function waitForNotSpeed($pattern)
     {
@@ -10978,18 +10996,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeSpeed       Base method, from which has been generated (automatically) current method
-     * @see  assertNotSpeed   Related Assertion
-     * @see  assertSpeed      Related Assertion
-     * @see  getSpeed         Related Accessor
-     * @see  verifyNotSpeed   Related Assertion
-     * @see  verifySpeed      Related Assertion
-     * @see  waitForNotSpeed  Related Assertion
+     * @see  storeSpeed()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotSpeed()   Related Assertion
+     * @see  assertSpeed()      Related Assertion
+     * @see  getSpeed()         Related Accessor
+     * @see  verifyNotSpeed()   Related Assertion
+     * @see  verifySpeed()      Related Assertion
+     * @see  waitForNotSpeed()  Related Assertion
      */
     public function waitForSpeed($pattern)
     {
@@ -11008,21 +11026,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotTable}).</p>
+     * {@link verifyNotTable()}).</p>
      * 
      * @param string   $tableCellAddress  a cell address, e.g. "foo.1.4"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTable       Base method, from which has been generated (automatically) current method
-     * @see  assertTable      Related Assertion
-     * @see  getTable         Related Accessor
-     * @see  verifyNotTable   Related Assertion
-     * @see  verifyTable      Related Assertion
-     * @see  waitForNotTable  Related Assertion
-     * @see  waitForTable     Related Assertion
+     * @see  storeTable()       Base method, from which has been generated (automatically) current method
+     * @see  assertTable()      Related Assertion
+     * @see  getTable()         Related Accessor
+     * @see  verifyNotTable()   Related Assertion
+     * @see  verifyTable()      Related Assertion
+     * @see  waitForNotTable()  Related Assertion
+     * @see  waitForTable()     Related Assertion
      */
     public function assertNotTable($tableCellAddress, $pattern)
     {
@@ -11041,21 +11059,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyTable}).</p>
+     * {@link verifyTable()}).</p>
      * 
      * @param string   $tableCellAddress  a cell address, e.g. "foo.1.4"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTable       Base method, from which has been generated (automatically) current method
-     * @see  assertNotTable   Related Assertion
-     * @see  getTable         Related Accessor
-     * @see  verifyNotTable   Related Assertion
-     * @see  verifyTable      Related Assertion
-     * @see  waitForNotTable  Related Assertion
-     * @see  waitForTable     Related Assertion
+     * @see  storeTable()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotTable()   Related Assertion
+     * @see  getTable()         Related Accessor
+     * @see  verifyNotTable()   Related Assertion
+     * @see  verifyTable()      Related Assertion
+     * @see  waitForNotTable()  Related Assertion
+     * @see  waitForTable()     Related Assertion
      */
     public function assertTable($tableCellAddress, $pattern)
     {
@@ -11071,13 +11089,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  the text from the specified cell
      * 
-     * @see  storeTable       Base method, from which has been generated (automatically) current method
-     * @see  assertNotTable   Related Assertion
-     * @see  assertTable      Related Assertion
-     * @see  verifyNotTable   Related Assertion
-     * @see  verifyTable      Related Assertion
-     * @see  waitForNotTable  Related Assertion
-     * @see  waitForTable     Related Assertion
+     * @see  storeTable()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotTable()   Related Assertion
+     * @see  assertTable()      Related Assertion
+     * @see  verifyNotTable()   Related Assertion
+     * @see  verifyTable()      Related Assertion
+     * @see  waitForNotTable()  Related Assertion
+     * @see  waitForTable()     Related Assertion
      */
     public function getTable($tableCellAddress)
     {
@@ -11091,21 +11109,21 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the text from the specified cell (see {@link doc_Stored_Variables})</p>
+     * <p>the text from the specified cell (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $tableCellAddress  a cell address, e.g. "foo.1.4"
      * @param string   $variableName      the name of a variable in which the result is to be stored. (see
-     *                                    {@link doc_Stored_Variables})
+     *                                    {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotTable   Related Assertion
-     * @see  assertTable      Related Assertion
-     * @see  getTable         Related Accessor
-     * @see  verifyNotTable   Related Assertion
-     * @see  verifyTable      Related Assertion
-     * @see  waitForNotTable  Related Assertion
-     * @see  waitForTable     Related Assertion
+     * @see  assertNotTable()   Related Assertion
+     * @see  assertTable()      Related Assertion
+     * @see  getTable()         Related Accessor
+     * @see  verifyNotTable()   Related Assertion
+     * @see  verifyTable()      Related Assertion
+     * @see  waitForNotTable()  Related Assertion
+     * @see  waitForTable()     Related Assertion
      */
     public function storeTable($tableCellAddress, $variableName)
     {
@@ -11124,21 +11142,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotTable}).</p>
+     * {@link assertNotTable()}).</p>
      * 
      * @param string   $tableCellAddress  a cell address, e.g. "foo.1.4"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTable       Base method, from which has been generated (automatically) current method
-     * @see  assertNotTable   Related Assertion
-     * @see  assertTable      Related Assertion
-     * @see  getTable         Related Accessor
-     * @see  verifyTable      Related Assertion
-     * @see  waitForNotTable  Related Assertion
-     * @see  waitForTable     Related Assertion
+     * @see  storeTable()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotTable()   Related Assertion
+     * @see  assertTable()      Related Assertion
+     * @see  getTable()         Related Accessor
+     * @see  verifyTable()      Related Assertion
+     * @see  waitForNotTable()  Related Assertion
+     * @see  waitForTable()     Related Assertion
      */
     public function verifyNotTable($tableCellAddress, $pattern)
     {
@@ -11157,21 +11175,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertTable}).</p>
+     * {@link assertTable()}).</p>
      * 
      * @param string   $tableCellAddress  a cell address, e.g. "foo.1.4"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTable       Base method, from which has been generated (automatically) current method
-     * @see  assertNotTable   Related Assertion
-     * @see  assertTable      Related Assertion
-     * @see  getTable         Related Accessor
-     * @see  verifyNotTable   Related Assertion
-     * @see  waitForNotTable  Related Assertion
-     * @see  waitForTable     Related Assertion
+     * @see  storeTable()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotTable()   Related Assertion
+     * @see  assertTable()      Related Assertion
+     * @see  getTable()         Related Accessor
+     * @see  verifyNotTable()   Related Assertion
+     * @see  waitForNotTable()  Related Assertion
+     * @see  waitForTable()     Related Assertion
      */
     public function verifyTable($tableCellAddress, $pattern)
     {
@@ -11194,18 +11212,18 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $tableCellAddress  a cell address, e.g. "foo.1.4"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTable      Base method, from which has been generated (automatically) current method
-     * @see  assertNotTable  Related Assertion
-     * @see  assertTable     Related Assertion
-     * @see  getTable        Related Accessor
-     * @see  verifyNotTable  Related Assertion
-     * @see  verifyTable     Related Assertion
-     * @see  waitForTable    Related Assertion
+     * @see  storeTable()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotTable()  Related Assertion
+     * @see  assertTable()     Related Assertion
+     * @see  getTable()        Related Accessor
+     * @see  verifyNotTable()  Related Assertion
+     * @see  verifyTable()     Related Assertion
+     * @see  waitForTable()    Related Assertion
      */
     public function waitForNotTable($tableCellAddress, $pattern)
     {
@@ -11228,18 +11246,18 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $tableCellAddress  a cell address, e.g. "foo.1.4"
-     * @param string   $pattern           the String-match Patterns 
-     *                                    (see {@link doc_String_match_Patterns})
+     * @param string   $pattern           the String-match Patterns (see
+     *                                    {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTable       Base method, from which has been generated (automatically) current method
-     * @see  assertNotTable   Related Assertion
-     * @see  assertTable      Related Assertion
-     * @see  getTable         Related Accessor
-     * @see  verifyNotTable   Related Assertion
-     * @see  verifyTable      Related Assertion
-     * @see  waitForNotTable  Related Assertion
+     * @see  storeTable()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotTable()   Related Assertion
+     * @see  assertTable()      Related Assertion
+     * @see  getTable()         Related Accessor
+     * @see  verifyNotTable()   Related Assertion
+     * @see  verifyTable()      Related Assertion
+     * @see  waitForNotTable()  Related Assertion
      */
     public function waitForTable($tableCellAddress, $pattern)
     {
@@ -11259,22 +11277,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotText}).</p>
+     * {@link verifyNotText()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeText       Base method, from which has been generated (automatically) current method
-     * @see  assertText      Related Assertion
-     * @see  getText         Related Accessor
-     * @see  verifyNotText   Related Assertion
-     * @see  verifyText      Related Assertion
-     * @see  waitForNotText  Related Assertion
-     * @see  waitForText     Related Assertion
+     * @see  storeText()       Base method, from which has been generated (automatically) current method
+     * @see  assertText()      Related Assertion
+     * @see  getText()         Related Accessor
+     * @see  verifyNotText()   Related Assertion
+     * @see  verifyText()      Related Assertion
+     * @see  waitForNotText()  Related Assertion
+     * @see  waitForText()     Related Assertion
      */
     public function assertNotText($locator, $pattern)
     {
@@ -11294,22 +11312,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyText}).</p>
+     * {@link verifyText()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeText       Base method, from which has been generated (automatically) current method
-     * @see  assertNotText   Related Assertion
-     * @see  getText         Related Accessor
-     * @see  verifyNotText   Related Assertion
-     * @see  verifyText      Related Assertion
-     * @see  waitForNotText  Related Assertion
-     * @see  waitForText     Related Assertion
+     * @see  storeText()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotText()   Related Assertion
+     * @see  getText()         Related Accessor
+     * @see  verifyNotText()   Related Assertion
+     * @see  verifyText()      Related Assertion
+     * @see  waitForNotText()  Related Assertion
+     * @see  waitForText()     Related Assertion
      */
     public function assertText($locator, $pattern)
     {
@@ -11323,17 +11341,17 @@ trait SeleniumTestCaseDoc
      * or the innerText (IE-like browsers) of the element, which is the rendered text shown to the user.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  string  the text of the element
      * 
-     * @see  storeText       Base method, from which has been generated (automatically) current method
-     * @see  assertNotText   Related Assertion
-     * @see  assertText      Related Assertion
-     * @see  verifyNotText   Related Assertion
-     * @see  verifyText      Related Assertion
-     * @see  waitForNotText  Related Assertion
-     * @see  waitForText     Related Assertion
+     * @see  storeText()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotText()   Related Assertion
+     * @see  assertText()      Related Assertion
+     * @see  verifyNotText()   Related Assertion
+     * @see  verifyText()      Related Assertion
+     * @see  waitForNotText()  Related Assertion
+     * @see  waitForText()     Related Assertion
      */
     public function getText($locator)
     {
@@ -11348,22 +11366,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the text of the element (see {@link doc_Stored_Variables})</p>
+     * <p>the text of the element (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $locator       an element locator 
-     *                                (see {@link doc_Element_Locators})
+     *                                (see {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotText   Related Assertion
-     * @see  assertText      Related Assertion
-     * @see  getText         Related Accessor
-     * @see  verifyNotText   Related Assertion
-     * @see  verifyText      Related Assertion
-     * @see  waitForNotText  Related Assertion
-     * @see  waitForText     Related Assertion
+     * @see  assertNotText()   Related Assertion
+     * @see  assertText()      Related Assertion
+     * @see  getText()         Related Accessor
+     * @see  verifyNotText()   Related Assertion
+     * @see  verifyText()      Related Assertion
+     * @see  waitForNotText()  Related Assertion
+     * @see  waitForText()     Related Assertion
      */
     public function storeText($locator, $variableName)
     {
@@ -11383,22 +11401,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotText}).</p>
+     * {@link assertNotText()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeText       Base method, from which has been generated (automatically) current method
-     * @see  assertNotText   Related Assertion
-     * @see  assertText      Related Assertion
-     * @see  getText         Related Accessor
-     * @see  verifyText      Related Assertion
-     * @see  waitForNotText  Related Assertion
-     * @see  waitForText     Related Assertion
+     * @see  storeText()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotText()   Related Assertion
+     * @see  assertText()      Related Assertion
+     * @see  getText()         Related Accessor
+     * @see  verifyText()      Related Assertion
+     * @see  waitForNotText()  Related Assertion
+     * @see  waitForText()     Related Assertion
      */
     public function verifyNotText($locator, $pattern)
     {
@@ -11418,22 +11436,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertText}).</p>
+     * {@link assertText()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeText       Base method, from which has been generated (automatically) current method
-     * @see  assertNotText   Related Assertion
-     * @see  assertText      Related Assertion
-     * @see  getText         Related Accessor
-     * @see  verifyNotText   Related Assertion
-     * @see  waitForNotText  Related Assertion
-     * @see  waitForText     Related Assertion
+     * @see  storeText()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotText()   Related Assertion
+     * @see  assertText()      Related Assertion
+     * @see  getText()         Related Accessor
+     * @see  verifyNotText()   Related Assertion
+     * @see  waitForNotText()  Related Assertion
+     * @see  waitForText()     Related Assertion
      */
     public function verifyText($locator, $pattern)
     {
@@ -11457,19 +11475,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeText      Base method, from which has been generated (automatically) current method
-     * @see  assertNotText  Related Assertion
-     * @see  assertText     Related Assertion
-     * @see  getText        Related Accessor
-     * @see  verifyNotText  Related Assertion
-     * @see  verifyText     Related Assertion
-     * @see  waitForText    Related Assertion
+     * @see  storeText()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotText()  Related Assertion
+     * @see  assertText()     Related Assertion
+     * @see  getText()        Related Accessor
+     * @see  verifyNotText()  Related Assertion
+     * @see  verifyText()     Related Assertion
+     * @see  waitForText()    Related Assertion
      */
     public function waitForNotText($locator, $pattern)
     {
@@ -11493,19 +11511,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeText       Base method, from which has been generated (automatically) current method
-     * @see  assertNotText   Related Assertion
-     * @see  assertText      Related Assertion
-     * @see  getText         Related Accessor
-     * @see  verifyNotText   Related Assertion
-     * @see  verifyText      Related Assertion
-     * @see  waitForNotText  Related Assertion
+     * @see  storeText()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotText()   Related Assertion
+     * @see  assertText()      Related Assertion
+     * @see  getText()         Related Accessor
+     * @see  verifyNotText()   Related Assertion
+     * @see  verifyText()      Related Assertion
+     * @see  waitForNotText()  Related Assertion
      */
     public function waitForText($locator, $pattern)
     {
@@ -11522,20 +11540,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotTitle}).</p>
+     * {@link verifyNotTitle()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTitle       Base method, from which has been generated (automatically) current method
-     * @see  assertTitle      Related Assertion
-     * @see  getTitle         Related Accessor
-     * @see  verifyNotTitle   Related Assertion
-     * @see  verifyTitle      Related Assertion
-     * @see  waitForNotTitle  Related Assertion
-     * @see  waitForTitle     Related Assertion
+     * @see  storeTitle()       Base method, from which has been generated (automatically) current method
+     * @see  assertTitle()      Related Assertion
+     * @see  getTitle()         Related Accessor
+     * @see  verifyNotTitle()   Related Assertion
+     * @see  verifyTitle()      Related Assertion
+     * @see  waitForNotTitle()  Related Assertion
+     * @see  waitForTitle()     Related Assertion
      */
     public function assertNotTitle($pattern)
     {
@@ -11552,20 +11570,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyTitle}).</p>
+     * {@link verifyTitle()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTitle       Base method, from which has been generated (automatically) current method
-     * @see  assertNotTitle   Related Assertion
-     * @see  getTitle         Related Accessor
-     * @see  verifyNotTitle   Related Assertion
-     * @see  verifyTitle      Related Assertion
-     * @see  waitForNotTitle  Related Assertion
-     * @see  waitForTitle     Related Assertion
+     * @see  storeTitle()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotTitle()   Related Assertion
+     * @see  getTitle()         Related Accessor
+     * @see  verifyNotTitle()   Related Assertion
+     * @see  verifyTitle()      Related Assertion
+     * @see  waitForNotTitle()  Related Assertion
+     * @see  waitForTitle()     Related Assertion
      */
     public function assertTitle($pattern)
     {
@@ -11577,13 +11595,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  the title of the current page
      * 
-     * @see  storeTitle       Base method, from which has been generated (automatically) current method
-     * @see  assertNotTitle   Related Assertion
-     * @see  assertTitle      Related Assertion
-     * @see  verifyNotTitle   Related Assertion
-     * @see  verifyTitle      Related Assertion
-     * @see  waitForNotTitle  Related Assertion
-     * @see  waitForTitle     Related Assertion
+     * @see  storeTitle()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotTitle()   Related Assertion
+     * @see  assertTitle()      Related Assertion
+     * @see  verifyNotTitle()   Related Assertion
+     * @see  verifyTitle()      Related Assertion
+     * @see  waitForNotTitle()  Related Assertion
+     * @see  waitForTitle()     Related Assertion
      */
     public function getTitle()
     {
@@ -11595,20 +11613,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the title of the current page (see {@link doc_Stored_Variables})</p>
+     * <p>the title of the current page (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotTitle   Related Assertion
-     * @see  assertTitle      Related Assertion
-     * @see  getTitle         Related Accessor
-     * @see  verifyNotTitle   Related Assertion
-     * @see  verifyTitle      Related Assertion
-     * @see  waitForNotTitle  Related Assertion
-     * @see  waitForTitle     Related Assertion
+     * @see  assertNotTitle()   Related Assertion
+     * @see  assertTitle()      Related Assertion
+     * @see  getTitle()         Related Accessor
+     * @see  verifyNotTitle()   Related Assertion
+     * @see  verifyTitle()      Related Assertion
+     * @see  waitForNotTitle()  Related Assertion
+     * @see  waitForTitle()     Related Assertion
      */
     public function storeTitle($variableName)
     {
@@ -11625,20 +11643,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotTitle}).</p>
+     * {@link assertNotTitle()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTitle       Base method, from which has been generated (automatically) current method
-     * @see  assertNotTitle   Related Assertion
-     * @see  assertTitle      Related Assertion
-     * @see  getTitle         Related Accessor
-     * @see  verifyTitle      Related Assertion
-     * @see  waitForNotTitle  Related Assertion
-     * @see  waitForTitle     Related Assertion
+     * @see  storeTitle()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotTitle()   Related Assertion
+     * @see  assertTitle()      Related Assertion
+     * @see  getTitle()         Related Accessor
+     * @see  verifyTitle()      Related Assertion
+     * @see  waitForNotTitle()  Related Assertion
+     * @see  waitForTitle()     Related Assertion
      */
     public function verifyNotTitle($pattern)
     {
@@ -11655,20 +11673,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertTitle}).</p>
+     * {@link assertTitle()}).</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTitle       Base method, from which has been generated (automatically) current method
-     * @see  assertNotTitle   Related Assertion
-     * @see  assertTitle      Related Assertion
-     * @see  getTitle         Related Accessor
-     * @see  verifyNotTitle   Related Assertion
-     * @see  waitForNotTitle  Related Assertion
-     * @see  waitForTitle     Related Assertion
+     * @see  storeTitle()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotTitle()   Related Assertion
+     * @see  assertTitle()      Related Assertion
+     * @see  getTitle()         Related Accessor
+     * @see  verifyNotTitle()   Related Assertion
+     * @see  waitForNotTitle()  Related Assertion
+     * @see  waitForTitle()     Related Assertion
      */
     public function verifyTitle($pattern)
     {
@@ -11688,18 +11706,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTitle      Base method, from which has been generated (automatically) current method
-     * @see  assertNotTitle  Related Assertion
-     * @see  assertTitle     Related Assertion
-     * @see  getTitle        Related Accessor
-     * @see  verifyNotTitle  Related Assertion
-     * @see  verifyTitle     Related Assertion
-     * @see  waitForTitle    Related Assertion
+     * @see  storeTitle()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotTitle()  Related Assertion
+     * @see  assertTitle()     Related Assertion
+     * @see  getTitle()        Related Accessor
+     * @see  verifyNotTitle()  Related Assertion
+     * @see  verifyTitle()     Related Assertion
+     * @see  waitForTitle()    Related Assertion
      */
     public function waitForNotTitle($pattern)
     {
@@ -11719,18 +11737,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTitle       Base method, from which has been generated (automatically) current method
-     * @see  assertNotTitle   Related Assertion
-     * @see  assertTitle      Related Assertion
-     * @see  getTitle         Related Accessor
-     * @see  verifyNotTitle   Related Assertion
-     * @see  verifyTitle      Related Assertion
-     * @see  waitForNotTitle  Related Assertion
+     * @see  storeTitle()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotTitle()   Related Assertion
+     * @see  assertTitle()      Related Assertion
+     * @see  getTitle()         Related Accessor
+     * @see  verifyNotTitle()   Related Assertion
+     * @see  verifyTitle()      Related Assertion
+     * @see  waitForNotTitle()  Related Assertion
      */
     public function waitForTitle($pattern)
     {
@@ -11749,22 +11767,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotValue}).</p>
+     * {@link verifyNotValue()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeValue       Base method, from which has been generated (automatically) current method
-     * @see  assertValue      Related Assertion
-     * @see  getValue         Related Accessor
-     * @see  verifyNotValue   Related Assertion
-     * @see  verifyValue      Related Assertion
-     * @see  waitForNotValue  Related Assertion
-     * @see  waitForValue     Related Assertion
+     * @see  storeValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertValue()      Related Assertion
+     * @see  getValue()         Related Accessor
+     * @see  verifyNotValue()   Related Assertion
+     * @see  verifyValue()      Related Assertion
+     * @see  waitForNotValue()  Related Assertion
+     * @see  waitForValue()     Related Assertion
      */
     public function assertNotValue($locator, $pattern)
     {
@@ -11783,22 +11801,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyValue}).</p>
+     * {@link verifyValue()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeValue       Base method, from which has been generated (automatically) current method
-     * @see  assertNotValue   Related Assertion
-     * @see  getValue         Related Accessor
-     * @see  verifyNotValue   Related Assertion
-     * @see  verifyValue      Related Assertion
-     * @see  waitForNotValue  Related Assertion
-     * @see  waitForValue     Related Assertion
+     * @see  storeValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotValue()   Related Assertion
+     * @see  getValue()         Related Accessor
+     * @see  verifyNotValue()   Related Assertion
+     * @see  verifyValue()      Related Assertion
+     * @see  waitForNotValue()  Related Assertion
+     * @see  waitForValue()     Related Assertion
      */
     public function assertValue($locator, $pattern)
     {
@@ -11811,17 +11829,17 @@ trait SeleniumTestCaseDoc
      * For checkbox/radio elements, the value will be "on" or "off" depending on whether the element is checked or not.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  string  the element value, or "on/off" for checkbox/radio elements
      * 
-     * @see  storeValue       Base method, from which has been generated (automatically) current method
-     * @see  assertNotValue   Related Assertion
-     * @see  assertValue      Related Assertion
-     * @see  verifyNotValue   Related Assertion
-     * @see  verifyValue      Related Assertion
-     * @see  waitForNotValue  Related Assertion
-     * @see  waitForValue     Related Assertion
+     * @see  storeValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotValue()   Related Assertion
+     * @see  assertValue()      Related Assertion
+     * @see  verifyNotValue()   Related Assertion
+     * @see  verifyValue()      Related Assertion
+     * @see  waitForNotValue()  Related Assertion
+     * @see  waitForValue()     Related Assertion
      */
     public function getValue($locator)
     {
@@ -11835,22 +11853,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the element value, or "on/off" for checkbox/radio elements (see {@link doc_Stored_Variables})</p>
+     * <p>the element value, or "on/off" for checkbox/radio elements (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $locator       an element locator 
-     *                                (see {@link doc_Element_Locators})
+     *                                (see {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotValue   Related Assertion
-     * @see  assertValue      Related Assertion
-     * @see  getValue         Related Accessor
-     * @see  verifyNotValue   Related Assertion
-     * @see  verifyValue      Related Assertion
-     * @see  waitForNotValue  Related Assertion
-     * @see  waitForValue     Related Assertion
+     * @see  assertNotValue()   Related Assertion
+     * @see  assertValue()      Related Assertion
+     * @see  getValue()         Related Accessor
+     * @see  verifyNotValue()   Related Assertion
+     * @see  verifyValue()      Related Assertion
+     * @see  waitForNotValue()  Related Assertion
+     * @see  waitForValue()     Related Assertion
      */
     public function storeValue($locator, $variableName)
     {
@@ -11869,22 +11888,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotValue}).</p>
+     * {@link assertNotValue()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeValue       Base method, from which has been generated (automatically) current method
-     * @see  assertNotValue   Related Assertion
-     * @see  assertValue      Related Assertion
-     * @see  getValue         Related Accessor
-     * @see  verifyValue      Related Assertion
-     * @see  waitForNotValue  Related Assertion
-     * @see  waitForValue     Related Assertion
+     * @see  storeValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotValue()   Related Assertion
+     * @see  assertValue()      Related Assertion
+     * @see  getValue()         Related Accessor
+     * @see  verifyValue()      Related Assertion
+     * @see  waitForNotValue()  Related Assertion
+     * @see  waitForValue()     Related Assertion
      */
     public function verifyNotValue($locator, $pattern)
     {
@@ -11903,22 +11922,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertValue}).</p>
+     * {@link assertValue()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeValue       Base method, from which has been generated (automatically) current method
-     * @see  assertNotValue   Related Assertion
-     * @see  assertValue      Related Assertion
-     * @see  getValue         Related Accessor
-     * @see  verifyNotValue   Related Assertion
-     * @see  waitForNotValue  Related Assertion
-     * @see  waitForValue     Related Assertion
+     * @see  storeValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotValue()   Related Assertion
+     * @see  assertValue()      Related Assertion
+     * @see  getValue()         Related Accessor
+     * @see  verifyNotValue()   Related Assertion
+     * @see  waitForNotValue()  Related Assertion
+     * @see  waitForValue()     Related Assertion
      */
     public function verifyValue($locator, $pattern)
     {
@@ -11941,19 +11960,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeValue      Base method, from which has been generated (automatically) current method
-     * @see  assertNotValue  Related Assertion
-     * @see  assertValue     Related Assertion
-     * @see  getValue        Related Accessor
-     * @see  verifyNotValue  Related Assertion
-     * @see  verifyValue     Related Assertion
-     * @see  waitForValue    Related Assertion
+     * @see  storeValue()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotValue()  Related Assertion
+     * @see  assertValue()     Related Assertion
+     * @see  getValue()        Related Accessor
+     * @see  verifyNotValue()  Related Assertion
+     * @see  verifyValue()     Related Assertion
+     * @see  waitForValue()    Related Assertion
      */
     public function waitForNotValue($locator, $pattern)
     {
@@ -11976,19 +11995,19 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     *                           (see {@link $doc_Element_Locators Element Locators})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeValue       Base method, from which has been generated (automatically) current method
-     * @see  assertNotValue   Related Assertion
-     * @see  assertValue      Related Assertion
-     * @see  getValue         Related Accessor
-     * @see  verifyNotValue   Related Assertion
-     * @see  verifyValue      Related Assertion
-     * @see  waitForNotValue  Related Assertion
+     * @see  storeValue()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotValue()   Related Assertion
+     * @see  assertValue()      Related Assertion
+     * @see  getValue()         Related Accessor
+     * @see  verifyNotValue()   Related Assertion
+     * @see  verifyValue()      Related Assertion
+     * @see  waitForNotValue()  Related Assertion
      */
     public function waitForValue($locator, $pattern)
     {
@@ -12009,20 +12028,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotVisible}).</p>
+     * {@link verifyNotVisible()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeVisible       Base method, from which has been generated (automatically) current method
-     * @see  assertVisible      Related Assertion
-     * @see  isVisible          Related Accessor
-     * @see  verifyNotVisible   Related Assertion
-     * @see  verifyVisible      Related Assertion
-     * @see  waitForNotVisible  Related Assertion
-     * @see  waitForVisible     Related Assertion
+     * @see  storeVisible()       Base method, from which has been generated (automatically) current method
+     * @see  assertVisible()      Related Assertion
+     * @see  isVisible()          Related Accessor
+     * @see  verifyNotVisible()   Related Assertion
+     * @see  verifyVisible()      Related Assertion
+     * @see  waitForNotVisible()  Related Assertion
+     * @see  waitForVisible()     Related Assertion
      */
     public function assertNotVisible($locator)
     {
@@ -12043,20 +12062,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyVisible}).</p>
+     * {@link verifyVisible()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeVisible       Base method, from which has been generated (automatically) current method
-     * @see  assertNotVisible   Related Assertion
-     * @see  isVisible          Related Accessor
-     * @see  verifyNotVisible   Related Assertion
-     * @see  verifyVisible      Related Assertion
-     * @see  waitForNotVisible  Related Assertion
-     * @see  waitForVisible     Related Assertion
+     * @see  storeVisible()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotVisible()   Related Assertion
+     * @see  isVisible()          Related Accessor
+     * @see  verifyNotVisible()   Related Assertion
+     * @see  verifyVisible()      Related Assertion
+     * @see  waitForNotVisible()  Related Assertion
+     * @see  waitForVisible()     Related Assertion
      */
     public function assertVisible($locator)
     {
@@ -12071,17 +12090,17 @@ trait SeleniumTestCaseDoc
      * is not present.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  bool  true if the specified element is visible, false otherwise
      * 
-     * @see  storeVisible       Base method, from which has been generated (automatically) current method
-     * @see  assertNotVisible   Related Assertion
-     * @see  assertVisible      Related Assertion
-     * @see  verifyNotVisible   Related Assertion
-     * @see  verifyVisible      Related Assertion
-     * @see  waitForNotVisible  Related Assertion
-     * @see  waitForVisible     Related Assertion
+     * @see  storeVisible()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotVisible()   Related Assertion
+     * @see  assertVisible()      Related Assertion
+     * @see  verifyNotVisible()   Related Assertion
+     * @see  verifyVisible()      Related Assertion
+     * @see  waitForNotVisible()  Related Assertion
+     * @see  waitForVisible()     Related Assertion
      */
     public function isVisible($locator)
     {
@@ -12097,22 +12116,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if the specified element is visible, false otherwise (see {@link doc_Stored_Variables})</p>
+     * <p>true if the specified element is visible, false otherwise (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $locator       an element locator 
-     *                                (see {@link doc_Element_Locators})
+     *                                (see {@link $doc_Element_Locators Element Locators})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotVisible   Related Assertion
-     * @see  assertVisible      Related Assertion
-     * @see  isVisible          Related Accessor
-     * @see  verifyNotVisible   Related Assertion
-     * @see  verifyVisible      Related Assertion
-     * @see  waitForNotVisible  Related Assertion
-     * @see  waitForVisible     Related Assertion
+     * @see  assertNotVisible()   Related Assertion
+     * @see  assertVisible()      Related Assertion
+     * @see  isVisible()          Related Accessor
+     * @see  verifyNotVisible()   Related Assertion
+     * @see  verifyVisible()      Related Assertion
+     * @see  waitForNotVisible()  Related Assertion
+     * @see  waitForVisible()     Related Assertion
      */
     public function storeVisible($locator, $variableName)
     {
@@ -12133,20 +12153,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotVisible}).</p>
+     * {@link assertNotVisible()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeVisible       Base method, from which has been generated (automatically) current method
-     * @see  assertNotVisible   Related Assertion
-     * @see  assertVisible      Related Assertion
-     * @see  isVisible          Related Accessor
-     * @see  verifyVisible      Related Assertion
-     * @see  waitForNotVisible  Related Assertion
-     * @see  waitForVisible     Related Assertion
+     * @see  storeVisible()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotVisible()   Related Assertion
+     * @see  assertVisible()      Related Assertion
+     * @see  isVisible()          Related Accessor
+     * @see  verifyVisible()      Related Assertion
+     * @see  waitForNotVisible()  Related Assertion
+     * @see  waitForVisible()     Related Assertion
      */
     public function verifyNotVisible($locator)
     {
@@ -12167,20 +12187,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertVisible}).</p>
+     * {@link assertVisible()}).</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeVisible       Base method, from which has been generated (automatically) current method
-     * @see  assertNotVisible   Related Assertion
-     * @see  assertVisible      Related Assertion
-     * @see  isVisible          Related Accessor
-     * @see  verifyNotVisible   Related Assertion
-     * @see  waitForNotVisible  Related Assertion
-     * @see  waitForVisible     Related Assertion
+     * @see  storeVisible()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotVisible()   Related Assertion
+     * @see  assertVisible()      Related Assertion
+     * @see  isVisible()          Related Accessor
+     * @see  verifyNotVisible()   Related Assertion
+     * @see  waitForNotVisible()  Related Assertion
+     * @see  waitForVisible()     Related Assertion
      */
     public function verifyVisible($locator)
     {
@@ -12205,17 +12225,17 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeVisible      Base method, from which has been generated (automatically) current method
-     * @see  assertNotVisible  Related Assertion
-     * @see  assertVisible     Related Assertion
-     * @see  isVisible         Related Accessor
-     * @see  verifyNotVisible  Related Assertion
-     * @see  verifyVisible     Related Assertion
-     * @see  waitForVisible    Related Assertion
+     * @see  storeVisible()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotVisible()  Related Assertion
+     * @see  assertVisible()     Related Assertion
+     * @see  isVisible()         Related Accessor
+     * @see  verifyNotVisible()  Related Assertion
+     * @see  verifyVisible()     Related Assertion
+     * @see  waitForVisible()    Related Assertion
      */
     public function waitForNotVisible($locator)
     {
@@ -12240,17 +12260,17 @@ trait SeleniumTestCaseDoc
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  storeVisible       Base method, from which has been generated (automatically) current method
-     * @see  assertNotVisible   Related Assertion
-     * @see  assertVisible      Related Assertion
-     * @see  isVisible          Related Accessor
-     * @see  verifyNotVisible   Related Assertion
-     * @see  verifyVisible      Related Assertion
-     * @see  waitForNotVisible  Related Assertion
+     * @see  storeVisible()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotVisible()   Related Assertion
+     * @see  assertVisible()      Related Assertion
+     * @see  isVisible()          Related Accessor
+     * @see  verifyNotVisible()   Related Assertion
+     * @see  verifyVisible()      Related Assertion
+     * @see  waitForNotVisible()  Related Assertion
      */
     public function waitForVisible($locator)
     {
@@ -12272,21 +12292,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotWhetherThisFrameMatchFrameExpression}).</p>
+     * {@link verifyNotWhetherThisFrameMatchFrameExpression()}).</p>
      * 
      * @param string   $currentFrameString  starting frame
      * @param string   $target              new frame (which might be relative to the current one)
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisFrameMatchFrameExpression       Base method, from which has been generated (automatically)
-     *                                                       current method
-     * @see  assertWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  getWhetherThisFrameMatchFrameExpression         Related Accessor
-     * @see  verifyNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  verifyWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  waitForNotWhetherThisFrameMatchFrameExpression  Related Assertion
-     * @see  waitForWhetherThisFrameMatchFrameExpression     Related Assertion
+     * @see  storeWhetherThisFrameMatchFrameExpression()       Base method, from which has been generated
+     *                                                         (automatically) current method
+     * @see  assertWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  getWhetherThisFrameMatchFrameExpression()         Related Accessor
+     * @see  verifyNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  verifyWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  waitForNotWhetherThisFrameMatchFrameExpression()  Related Assertion
+     * @see  waitForWhetherThisFrameMatchFrameExpression()     Related Assertion
      */
     public function assertNotWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
@@ -12308,21 +12328,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyWhetherThisFrameMatchFrameExpression}).</p>
+     * {@link verifyWhetherThisFrameMatchFrameExpression()}).</p>
      * 
      * @param string   $currentFrameString  starting frame
      * @param string   $target              new frame (which might be relative to the current one)
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisFrameMatchFrameExpression       Base method, from which has been generated (automatically)
-     *                                                       current method
-     * @see  assertNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  getWhetherThisFrameMatchFrameExpression         Related Accessor
-     * @see  verifyNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  verifyWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  waitForNotWhetherThisFrameMatchFrameExpression  Related Assertion
-     * @see  waitForWhetherThisFrameMatchFrameExpression     Related Assertion
+     * @see  storeWhetherThisFrameMatchFrameExpression()       Base method, from which has been generated
+     *                                                         (automatically) current method
+     * @see  assertNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  getWhetherThisFrameMatchFrameExpression()         Related Accessor
+     * @see  verifyNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  verifyWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  waitForNotWhetherThisFrameMatchFrameExpression()  Related Assertion
+     * @see  waitForWhetherThisFrameMatchFrameExpression()     Related Assertion
      */
     public function assertWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
@@ -12342,14 +12362,14 @@ trait SeleniumTestCaseDoc
      * 
      * @return  bool  true if the new frame is this code's window
      * 
-     * @see  storeWhetherThisFrameMatchFrameExpression       Base method, from which has been generated (automatically)
-     *                                                       current method
-     * @see  assertNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  assertWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  verifyNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  verifyWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  waitForNotWhetherThisFrameMatchFrameExpression  Related Assertion
-     * @see  waitForWhetherThisFrameMatchFrameExpression     Related Assertion
+     * @see  storeWhetherThisFrameMatchFrameExpression()       Base method, from which has been generated
+     *                                                         (automatically) current method
+     * @see  assertNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  assertWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  verifyNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  verifyWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  waitForNotWhetherThisFrameMatchFrameExpression()  Related Assertion
+     * @see  waitForWhetherThisFrameMatchFrameExpression()     Related Assertion
      */
     public function getWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
@@ -12366,22 +12386,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if the new frame is this code's window (see {@link doc_Stored_Variables})</p>
+     * <p>true if the new frame is this code's window (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $currentFrameString  starting frame
      * @param string   $target              new frame (which might be relative to the current one)
      * @param string   $variableName        the name of a variable in which the result is to be stored. (see
-     *                                      {@link doc_Stored_Variables})
+     *                                      {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  assertWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  getWhetherThisFrameMatchFrameExpression         Related Accessor
-     * @see  verifyNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  verifyWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  waitForNotWhetherThisFrameMatchFrameExpression  Related Assertion
-     * @see  waitForWhetherThisFrameMatchFrameExpression     Related Assertion
+     * @see  assertNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  assertWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  getWhetherThisFrameMatchFrameExpression()         Related Accessor
+     * @see  verifyNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  verifyWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  waitForNotWhetherThisFrameMatchFrameExpression()  Related Assertion
+     * @see  waitForWhetherThisFrameMatchFrameExpression()     Related Assertion
      */
     public function storeWhetherThisFrameMatchFrameExpression($currentFrameString, $target, $variableName)
     {
@@ -12403,21 +12423,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotWhetherThisFrameMatchFrameExpression}).</p>
+     * {@link assertNotWhetherThisFrameMatchFrameExpression()}).</p>
      * 
      * @param string   $currentFrameString  starting frame
      * @param string   $target              new frame (which might be relative to the current one)
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisFrameMatchFrameExpression       Base method, from which has been generated (automatically)
-     *                                                       current method
-     * @see  assertNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  assertWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  getWhetherThisFrameMatchFrameExpression         Related Accessor
-     * @see  verifyWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  waitForNotWhetherThisFrameMatchFrameExpression  Related Assertion
-     * @see  waitForWhetherThisFrameMatchFrameExpression     Related Assertion
+     * @see  storeWhetherThisFrameMatchFrameExpression()       Base method, from which has been generated
+     *                                                         (automatically) current method
+     * @see  assertNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  assertWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  getWhetherThisFrameMatchFrameExpression()         Related Accessor
+     * @see  verifyWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  waitForNotWhetherThisFrameMatchFrameExpression()  Related Assertion
+     * @see  waitForWhetherThisFrameMatchFrameExpression()     Related Assertion
      */
     public function verifyNotWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
@@ -12439,21 +12459,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertWhetherThisFrameMatchFrameExpression}).</p>
+     * {@link assertWhetherThisFrameMatchFrameExpression()}).</p>
      * 
      * @param string   $currentFrameString  starting frame
      * @param string   $target              new frame (which might be relative to the current one)
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisFrameMatchFrameExpression       Base method, from which has been generated (automatically)
-     *                                                       current method
-     * @see  assertNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  assertWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  getWhetherThisFrameMatchFrameExpression         Related Accessor
-     * @see  verifyNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  waitForNotWhetherThisFrameMatchFrameExpression  Related Assertion
-     * @see  waitForWhetherThisFrameMatchFrameExpression     Related Assertion
+     * @see  storeWhetherThisFrameMatchFrameExpression()       Base method, from which has been generated
+     *                                                         (automatically) current method
+     * @see  assertNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  assertWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  getWhetherThisFrameMatchFrameExpression()         Related Accessor
+     * @see  verifyNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  waitForNotWhetherThisFrameMatchFrameExpression()  Related Assertion
+     * @see  waitForWhetherThisFrameMatchFrameExpression()     Related Assertion
      */
     public function verifyWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
@@ -12483,14 +12503,14 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisFrameMatchFrameExpression      Base method, from which has been generated (automatically)
-     *                                                      current method
-     * @see  assertNotWhetherThisFrameMatchFrameExpression  Related Assertion
-     * @see  assertWhetherThisFrameMatchFrameExpression     Related Assertion
-     * @see  getWhetherThisFrameMatchFrameExpression        Related Accessor
-     * @see  verifyNotWhetherThisFrameMatchFrameExpression  Related Assertion
-     * @see  verifyWhetherThisFrameMatchFrameExpression     Related Assertion
-     * @see  waitForWhetherThisFrameMatchFrameExpression    Related Assertion
+     * @see  storeWhetherThisFrameMatchFrameExpression()      Base method, from which has been generated
+     *                                                        (automatically) current method
+     * @see  assertNotWhetherThisFrameMatchFrameExpression()  Related Assertion
+     * @see  assertWhetherThisFrameMatchFrameExpression()     Related Assertion
+     * @see  getWhetherThisFrameMatchFrameExpression()        Related Accessor
+     * @see  verifyNotWhetherThisFrameMatchFrameExpression()  Related Assertion
+     * @see  verifyWhetherThisFrameMatchFrameExpression()     Related Assertion
+     * @see  waitForWhetherThisFrameMatchFrameExpression()    Related Assertion
      */
     public function waitForNotWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
@@ -12520,14 +12540,14 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisFrameMatchFrameExpression       Base method, from which has been generated (automatically)
-     *                                                       current method
-     * @see  assertNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  assertWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  getWhetherThisFrameMatchFrameExpression         Related Accessor
-     * @see  verifyNotWhetherThisFrameMatchFrameExpression   Related Assertion
-     * @see  verifyWhetherThisFrameMatchFrameExpression      Related Assertion
-     * @see  waitForNotWhetherThisFrameMatchFrameExpression  Related Assertion
+     * @see  storeWhetherThisFrameMatchFrameExpression()       Base method, from which has been generated
+     *                                                         (automatically) current method
+     * @see  assertNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  assertWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  getWhetherThisFrameMatchFrameExpression()         Related Accessor
+     * @see  verifyNotWhetherThisFrameMatchFrameExpression()   Related Assertion
+     * @see  verifyWhetherThisFrameMatchFrameExpression()      Related Assertion
+     * @see  waitForNotWhetherThisFrameMatchFrameExpression()  Related Assertion
      */
     public function waitForWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
@@ -12549,21 +12569,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotWhetherThisWindowMatchWindowExpression}).</p>
+     * {@link verifyNotWhetherThisWindowMatchWindowExpression()}).</p>
      * 
      * @param string   $currentWindowString  starting window
      * @param string   $target               new window (which might be relative to the current one, e.g., "_parent")
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisWindowMatchWindowExpression       Base method, from which has been generated
-     *                                                         (automatically) current method
-     * @see  assertWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  getWhetherThisWindowMatchWindowExpression         Related Accessor
-     * @see  verifyNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  verifyWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  waitForNotWhetherThisWindowMatchWindowExpression  Related Assertion
-     * @see  waitForWhetherThisWindowMatchWindowExpression     Related Assertion
+     * @see  storeWhetherThisWindowMatchWindowExpression()       Base method, from which has been generated
+     *                                                           (automatically) current method
+     * @see  assertWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  getWhetherThisWindowMatchWindowExpression()         Related Accessor
+     * @see  verifyNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  verifyWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  waitForNotWhetherThisWindowMatchWindowExpression()  Related Assertion
+     * @see  waitForWhetherThisWindowMatchWindowExpression()     Related Assertion
      */
     public function assertNotWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
@@ -12585,21 +12605,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyWhetherThisWindowMatchWindowExpression}).</p>
+     * {@link verifyWhetherThisWindowMatchWindowExpression()}).</p>
      * 
      * @param string   $currentWindowString  starting window
      * @param string   $target               new window (which might be relative to the current one, e.g., "_parent")
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisWindowMatchWindowExpression       Base method, from which has been generated
-     *                                                         (automatically) current method
-     * @see  assertNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  getWhetherThisWindowMatchWindowExpression         Related Accessor
-     * @see  verifyNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  verifyWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  waitForNotWhetherThisWindowMatchWindowExpression  Related Assertion
-     * @see  waitForWhetherThisWindowMatchWindowExpression     Related Assertion
+     * @see  storeWhetherThisWindowMatchWindowExpression()       Base method, from which has been generated
+     *                                                           (automatically) current method
+     * @see  assertNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  getWhetherThisWindowMatchWindowExpression()         Related Accessor
+     * @see  verifyNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  verifyWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  waitForNotWhetherThisWindowMatchWindowExpression()  Related Assertion
+     * @see  waitForWhetherThisWindowMatchWindowExpression()     Related Assertion
      */
     public function assertWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
@@ -12619,14 +12639,14 @@ trait SeleniumTestCaseDoc
      * 
      * @return  bool  true if the new window is this code's window
      * 
-     * @see  storeWhetherThisWindowMatchWindowExpression       Base method, from which has been generated
-     *                                                         (automatically) current method
-     * @see  assertNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  assertWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  verifyNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  verifyWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  waitForNotWhetherThisWindowMatchWindowExpression  Related Assertion
-     * @see  waitForWhetherThisWindowMatchWindowExpression     Related Assertion
+     * @see  storeWhetherThisWindowMatchWindowExpression()       Base method, from which has been generated
+     *                                                           (automatically) current method
+     * @see  assertNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  assertWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  verifyNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  verifyWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  waitForNotWhetherThisWindowMatchWindowExpression()  Related Assertion
+     * @see  waitForWhetherThisWindowMatchWindowExpression()     Related Assertion
      */
     public function getWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
@@ -12643,22 +12663,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if the new window is this code's window (see {@link doc_Stored_Variables})</p>
+     * <p>true if the new window is this code's window (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $currentWindowString  starting window
      * @param string   $target               new window (which might be relative to the current one, e.g., "_parent")
      * @param string   $variableName         the name of a variable in which the result is to be stored. (see
-     *                                       {@link doc_Stored_Variables})
+     *                                       {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  assertWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  getWhetherThisWindowMatchWindowExpression         Related Accessor
-     * @see  verifyNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  verifyWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  waitForNotWhetherThisWindowMatchWindowExpression  Related Assertion
-     * @see  waitForWhetherThisWindowMatchWindowExpression     Related Assertion
+     * @see  assertNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  assertWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  getWhetherThisWindowMatchWindowExpression()         Related Accessor
+     * @see  verifyNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  verifyWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  waitForNotWhetherThisWindowMatchWindowExpression()  Related Assertion
+     * @see  waitForWhetherThisWindowMatchWindowExpression()     Related Assertion
      */
     public function storeWhetherThisWindowMatchWindowExpression($currentWindowString, $target, $variableName)
     {
@@ -12680,21 +12700,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotWhetherThisWindowMatchWindowExpression}).</p>
+     * {@link assertNotWhetherThisWindowMatchWindowExpression()}).</p>
      * 
      * @param string   $currentWindowString  starting window
      * @param string   $target               new window (which might be relative to the current one, e.g., "_parent")
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisWindowMatchWindowExpression       Base method, from which has been generated
-     *                                                         (automatically) current method
-     * @see  assertNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  assertWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  getWhetherThisWindowMatchWindowExpression         Related Accessor
-     * @see  verifyWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  waitForNotWhetherThisWindowMatchWindowExpression  Related Assertion
-     * @see  waitForWhetherThisWindowMatchWindowExpression     Related Assertion
+     * @see  storeWhetherThisWindowMatchWindowExpression()       Base method, from which has been generated
+     *                                                           (automatically) current method
+     * @see  assertNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  assertWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  getWhetherThisWindowMatchWindowExpression()         Related Accessor
+     * @see  verifyWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  waitForNotWhetherThisWindowMatchWindowExpression()  Related Assertion
+     * @see  waitForWhetherThisWindowMatchWindowExpression()     Related Assertion
      */
     public function verifyNotWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
@@ -12716,21 +12736,21 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertWhetherThisWindowMatchWindowExpression}).</p>
+     * {@link assertWhetherThisWindowMatchWindowExpression()}).</p>
      * 
      * @param string   $currentWindowString  starting window
      * @param string   $target               new window (which might be relative to the current one, e.g., "_parent")
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisWindowMatchWindowExpression       Base method, from which has been generated
-     *                                                         (automatically) current method
-     * @see  assertNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  assertWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  getWhetherThisWindowMatchWindowExpression         Related Accessor
-     * @see  verifyNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  waitForNotWhetherThisWindowMatchWindowExpression  Related Assertion
-     * @see  waitForWhetherThisWindowMatchWindowExpression     Related Assertion
+     * @see  storeWhetherThisWindowMatchWindowExpression()       Base method, from which has been generated
+     *                                                           (automatically) current method
+     * @see  assertNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  assertWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  getWhetherThisWindowMatchWindowExpression()         Related Accessor
+     * @see  verifyNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  waitForNotWhetherThisWindowMatchWindowExpression()  Related Assertion
+     * @see  waitForWhetherThisWindowMatchWindowExpression()     Related Assertion
      */
     public function verifyWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
@@ -12760,14 +12780,14 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisWindowMatchWindowExpression      Base method, from which has been generated
-     *                                                        (automatically) current method
-     * @see  assertNotWhetherThisWindowMatchWindowExpression  Related Assertion
-     * @see  assertWhetherThisWindowMatchWindowExpression     Related Assertion
-     * @see  getWhetherThisWindowMatchWindowExpression        Related Accessor
-     * @see  verifyNotWhetherThisWindowMatchWindowExpression  Related Assertion
-     * @see  verifyWhetherThisWindowMatchWindowExpression     Related Assertion
-     * @see  waitForWhetherThisWindowMatchWindowExpression    Related Assertion
+     * @see  storeWhetherThisWindowMatchWindowExpression()      Base method, from which has been generated
+     *                                                          (automatically) current method
+     * @see  assertNotWhetherThisWindowMatchWindowExpression()  Related Assertion
+     * @see  assertWhetherThisWindowMatchWindowExpression()     Related Assertion
+     * @see  getWhetherThisWindowMatchWindowExpression()        Related Accessor
+     * @see  verifyNotWhetherThisWindowMatchWindowExpression()  Related Assertion
+     * @see  verifyWhetherThisWindowMatchWindowExpression()     Related Assertion
+     * @see  waitForWhetherThisWindowMatchWindowExpression()    Related Assertion
      */
     public function waitForNotWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
@@ -12797,14 +12817,14 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storeWhetherThisWindowMatchWindowExpression       Base method, from which has been generated
-     *                                                         (automatically) current method
-     * @see  assertNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  assertWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  getWhetherThisWindowMatchWindowExpression         Related Accessor
-     * @see  verifyNotWhetherThisWindowMatchWindowExpression   Related Assertion
-     * @see  verifyWhetherThisWindowMatchWindowExpression      Related Assertion
-     * @see  waitForNotWhetherThisWindowMatchWindowExpression  Related Assertion
+     * @see  storeWhetherThisWindowMatchWindowExpression()       Base method, from which has been generated
+     *                                                           (automatically) current method
+     * @see  assertNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  assertWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  getWhetherThisWindowMatchWindowExpression()         Related Accessor
+     * @see  verifyNotWhetherThisWindowMatchWindowExpression()   Related Assertion
+     * @see  verifyWhetherThisWindowMatchWindowExpression()      Related Assertion
+     * @see  waitForNotWhetherThisWindowMatchWindowExpression()  Related Assertion
      */
     public function waitForWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
@@ -12822,22 +12842,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyNotXpathCount}).</p>
+     * {@link verifyNotXpathCount()}).</p>
      * 
      * @param string   $xpath    the xpath expression to evaluate. do NOT wrap this expression in a 'count()' function;
      *                           we will  do that for you.
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeXpathCount       Base method, from which has been generated (automatically) current method
-     * @see  assertXpathCount      Related Assertion
-     * @see  getXpathCount         Related Accessor
-     * @see  verifyNotXpathCount   Related Assertion
-     * @see  verifyXpathCount      Related Assertion
-     * @see  waitForNotXpathCount  Related Assertion
-     * @see  waitForXpathCount     Related Assertion
+     * @see  storeXpathCount()       Base method, from which has been generated (automatically) current method
+     * @see  assertXpathCount()      Related Assertion
+     * @see  getXpathCount()         Related Accessor
+     * @see  verifyNotXpathCount()   Related Assertion
+     * @see  verifyXpathCount()      Related Assertion
+     * @see  waitForNotXpathCount()  Related Assertion
+     * @see  waitForXpathCount()     Related Assertion
      */
     public function assertNotXpathCount($xpath, $pattern)
     {
@@ -12855,22 +12875,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyXpathCount}).</p>
+     * {@link verifyXpathCount()}).</p>
      * 
      * @param string   $xpath    the xpath expression to evaluate. do NOT wrap this expression in a 'count()' function;
      *                           we will  do that for you.
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeXpathCount       Base method, from which has been generated (automatically) current method
-     * @see  assertNotXpathCount   Related Assertion
-     * @see  getXpathCount         Related Accessor
-     * @see  verifyNotXpathCount   Related Assertion
-     * @see  verifyXpathCount      Related Assertion
-     * @see  waitForNotXpathCount  Related Assertion
-     * @see  waitForXpathCount     Related Assertion
+     * @see  storeXpathCount()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotXpathCount()   Related Assertion
+     * @see  getXpathCount()         Related Accessor
+     * @see  verifyNotXpathCount()   Related Assertion
+     * @see  verifyXpathCount()      Related Assertion
+     * @see  waitForNotXpathCount()  Related Assertion
+     * @see  waitForXpathCount()     Related Assertion
      */
     public function assertXpathCount($xpath, $pattern)
     {
@@ -12885,13 +12905,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  int  the number of nodes that match the specified xpath
      * 
-     * @see  storeXpathCount       Base method, from which has been generated (automatically) current method
-     * @see  assertNotXpathCount   Related Assertion
-     * @see  assertXpathCount      Related Assertion
-     * @see  verifyNotXpathCount   Related Assertion
-     * @see  verifyXpathCount      Related Assertion
-     * @see  waitForNotXpathCount  Related Assertion
-     * @see  waitForXpathCount     Related Assertion
+     * @see  storeXpathCount()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotXpathCount()   Related Assertion
+     * @see  assertXpathCount()      Related Assertion
+     * @see  verifyNotXpathCount()   Related Assertion
+     * @see  verifyXpathCount()      Related Assertion
+     * @see  waitForNotXpathCount()  Related Assertion
+     * @see  waitForXpathCount()     Related Assertion
      */
     public function getXpathCount($xpath)
     {
@@ -12903,22 +12923,22 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>the number of nodes that match the specified xpath (see {@link doc_Stored_Variables})</p>
+     * <p>the number of nodes that match the specified xpath (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $xpath         the xpath expression to evaluate. do NOT wrap this expression in a 'count()'
      *                                function; we will  do that for you.
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertNotXpathCount   Related Assertion
-     * @see  assertXpathCount      Related Assertion
-     * @see  getXpathCount         Related Accessor
-     * @see  verifyNotXpathCount   Related Assertion
-     * @see  verifyXpathCount      Related Assertion
-     * @see  waitForNotXpathCount  Related Assertion
-     * @see  waitForXpathCount     Related Assertion
+     * @see  assertNotXpathCount()   Related Assertion
+     * @see  assertXpathCount()      Related Assertion
+     * @see  getXpathCount()         Related Accessor
+     * @see  verifyNotXpathCount()   Related Assertion
+     * @see  verifyXpathCount()      Related Assertion
+     * @see  waitForNotXpathCount()  Related Assertion
+     * @see  waitForXpathCount()     Related Assertion
      */
     public function storeXpathCount($xpath, $variableName)
     {
@@ -12936,22 +12956,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertNotXpathCount}).</p>
+     * {@link assertNotXpathCount()}).</p>
      * 
      * @param string   $xpath    the xpath expression to evaluate. do NOT wrap this expression in a 'count()' function;
      *                           we will  do that for you.
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeXpathCount       Base method, from which has been generated (automatically) current method
-     * @see  assertNotXpathCount   Related Assertion
-     * @see  assertXpathCount      Related Assertion
-     * @see  getXpathCount         Related Accessor
-     * @see  verifyXpathCount      Related Assertion
-     * @see  waitForNotXpathCount  Related Assertion
-     * @see  waitForXpathCount     Related Assertion
+     * @see  storeXpathCount()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotXpathCount()   Related Assertion
+     * @see  assertXpathCount()      Related Assertion
+     * @see  getXpathCount()         Related Accessor
+     * @see  verifyXpathCount()      Related Assertion
+     * @see  waitForNotXpathCount()  Related Assertion
+     * @see  waitForXpathCount()     Related Assertion
      */
     public function verifyNotXpathCount($xpath, $pattern)
     {
@@ -12969,22 +12989,22 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertXpathCount}).</p>
+     * {@link assertXpathCount()}).</p>
      * 
      * @param string   $xpath    the xpath expression to evaluate. do NOT wrap this expression in a 'count()' function;
      *                           we will  do that for you.
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeXpathCount       Base method, from which has been generated (automatically) current method
-     * @see  assertNotXpathCount   Related Assertion
-     * @see  assertXpathCount      Related Assertion
-     * @see  getXpathCount         Related Accessor
-     * @see  verifyNotXpathCount   Related Assertion
-     * @see  waitForNotXpathCount  Related Assertion
-     * @see  waitForXpathCount     Related Assertion
+     * @see  storeXpathCount()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotXpathCount()   Related Assertion
+     * @see  assertXpathCount()      Related Assertion
+     * @see  getXpathCount()         Related Accessor
+     * @see  verifyNotXpathCount()   Related Assertion
+     * @see  waitForNotXpathCount()  Related Assertion
+     * @see  waitForXpathCount()     Related Assertion
      */
     public function verifyXpathCount($xpath, $pattern)
     {
@@ -13007,18 +13027,18 @@ trait SeleniumTestCaseDoc
      * 
      * @param string   $xpath    the xpath expression to evaluate. do NOT wrap this expression in a 'count()' function;
      *                           we will  do that for you.
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeXpathCount      Base method, from which has been generated (automatically) current method
-     * @see  assertNotXpathCount  Related Assertion
-     * @see  assertXpathCount     Related Assertion
-     * @see  getXpathCount        Related Accessor
-     * @see  verifyNotXpathCount  Related Assertion
-     * @see  verifyXpathCount     Related Assertion
-     * @see  waitForXpathCount    Related Assertion
+     * @see  storeXpathCount()      Base method, from which has been generated (automatically) current method
+     * @see  assertNotXpathCount()  Related Assertion
+     * @see  assertXpathCount()     Related Assertion
+     * @see  getXpathCount()        Related Accessor
+     * @see  verifyNotXpathCount()  Related Assertion
+     * @see  verifyXpathCount()     Related Assertion
+     * @see  waitForXpathCount()    Related Assertion
      */
     public function waitForNotXpathCount($xpath, $pattern)
     {
@@ -13041,18 +13061,18 @@ trait SeleniumTestCaseDoc
      * 
      * @param string   $xpath    the xpath expression to evaluate. do NOT wrap this expression in a 'count()' function;
      *                           we will  do that for you.
-     * @param string   $pattern  the String-match Patterns 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  the String-match Patterns (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeXpathCount       Base method, from which has been generated (automatically) current method
-     * @see  assertNotXpathCount   Related Assertion
-     * @see  assertXpathCount      Related Assertion
-     * @see  getXpathCount         Related Accessor
-     * @see  verifyNotXpathCount   Related Assertion
-     * @see  verifyXpathCount      Related Assertion
-     * @see  waitForNotXpathCount  Related Assertion
+     * @see  storeXpathCount()       Base method, from which has been generated (automatically) current method
+     * @see  assertNotXpathCount()   Related Assertion
+     * @see  assertXpathCount()      Related Assertion
+     * @see  getXpathCount()         Related Accessor
+     * @see  verifyNotXpathCount()   Related Assertion
+     * @see  verifyXpathCount()      Related Assertion
+     * @see  waitForNotXpathCount()  Related Assertion
      */
     public function waitForXpathCount($xpath, $pattern)
     {
@@ -13071,17 +13091,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyPromptNotPresent}).</p>
+     * {@link verifyPromptNotPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storePromptPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertPromptPresent      Related Assertion
-     * @see  isPromptPresent          Related Accessor
-     * @see  verifyPromptNotPresent   Related Assertion
-     * @see  verifyPromptPresent      Related Assertion
-     * @see  waitForPromptNotPresent  Related Assertion
-     * @see  waitForPromptPresent     Related Assertion
+     * @see  storePromptPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertPromptPresent()      Related Assertion
+     * @see  isPromptPresent()          Related Accessor
+     * @see  verifyPromptNotPresent()   Related Assertion
+     * @see  verifyPromptPresent()      Related Assertion
+     * @see  waitForPromptNotPresent()  Related Assertion
+     * @see  waitForPromptPresent()     Related Assertion
      */
     public function assertPromptNotPresent()
     {
@@ -13100,17 +13120,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyPromptPresent}).</p>
+     * {@link verifyPromptPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storePromptPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertPromptNotPresent   Related Assertion
-     * @see  isPromptPresent          Related Accessor
-     * @see  verifyPromptNotPresent   Related Assertion
-     * @see  verifyPromptPresent      Related Assertion
-     * @see  waitForPromptNotPresent  Related Assertion
-     * @see  waitForPromptPresent     Related Assertion
+     * @see  storePromptPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertPromptNotPresent()   Related Assertion
+     * @see  isPromptPresent()          Related Accessor
+     * @see  verifyPromptNotPresent()   Related Assertion
+     * @see  verifyPromptPresent()      Related Assertion
+     * @see  waitForPromptNotPresent()  Related Assertion
+     * @see  waitForPromptPresent()     Related Assertion
      */
     public function assertPromptPresent()
     {
@@ -13124,13 +13144,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  bool  true if there is a pending prompt
      * 
-     * @see  storePromptPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertPromptNotPresent   Related Assertion
-     * @see  assertPromptPresent      Related Assertion
-     * @see  verifyPromptNotPresent   Related Assertion
-     * @see  verifyPromptPresent      Related Assertion
-     * @see  waitForPromptNotPresent  Related Assertion
-     * @see  waitForPromptPresent     Related Assertion
+     * @see  storePromptPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertPromptNotPresent()   Related Assertion
+     * @see  assertPromptPresent()      Related Assertion
+     * @see  verifyPromptNotPresent()   Related Assertion
+     * @see  verifyPromptPresent()      Related Assertion
+     * @see  waitForPromptNotPresent()  Related Assertion
+     * @see  waitForPromptPresent()     Related Assertion
      */
     public function isPromptPresent()
     {
@@ -13144,20 +13164,20 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if there is a pending prompt (see {@link doc_Stored_Variables})</p>
+     * <p>true if there is a pending prompt (see {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $variableName  the name of a variable in which the result is to be stored (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertPromptNotPresent   Related Assertion
-     * @see  assertPromptPresent      Related Assertion
-     * @see  isPromptPresent          Related Accessor
-     * @see  verifyPromptNotPresent   Related Assertion
-     * @see  verifyPromptPresent      Related Assertion
-     * @see  waitForPromptNotPresent  Related Assertion
-     * @see  waitForPromptPresent     Related Assertion
+     * @see  assertPromptNotPresent()   Related Assertion
+     * @see  assertPromptPresent()      Related Assertion
+     * @see  isPromptPresent()          Related Accessor
+     * @see  verifyPromptNotPresent()   Related Assertion
+     * @see  verifyPromptPresent()      Related Assertion
+     * @see  waitForPromptNotPresent()  Related Assertion
+     * @see  waitForPromptPresent()     Related Assertion
      */
     public function storePromptPresent($variableName)
     {
@@ -13176,17 +13196,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertPromptNotPresent}).</p>
+     * {@link assertPromptNotPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storePromptPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertPromptNotPresent   Related Assertion
-     * @see  assertPromptPresent      Related Assertion
-     * @see  isPromptPresent          Related Accessor
-     * @see  verifyPromptPresent      Related Assertion
-     * @see  waitForPromptNotPresent  Related Assertion
-     * @see  waitForPromptPresent     Related Assertion
+     * @see  storePromptPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertPromptNotPresent()   Related Assertion
+     * @see  assertPromptPresent()      Related Assertion
+     * @see  isPromptPresent()          Related Accessor
+     * @see  verifyPromptPresent()      Related Assertion
+     * @see  waitForPromptNotPresent()  Related Assertion
+     * @see  waitForPromptPresent()     Related Assertion
      */
     public function verifyPromptNotPresent()
     {
@@ -13205,17 +13225,17 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertPromptPresent}).</p>
+     * {@link assertPromptPresent()}).</p>
      * 
      * @return  void
      * 
-     * @see  storePromptPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertPromptNotPresent   Related Assertion
-     * @see  assertPromptPresent      Related Assertion
-     * @see  isPromptPresent          Related Accessor
-     * @see  verifyPromptNotPresent   Related Assertion
-     * @see  waitForPromptNotPresent  Related Assertion
-     * @see  waitForPromptPresent     Related Assertion
+     * @see  storePromptPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertPromptNotPresent()   Related Assertion
+     * @see  assertPromptPresent()      Related Assertion
+     * @see  isPromptPresent()          Related Accessor
+     * @see  verifyPromptNotPresent()   Related Assertion
+     * @see  waitForPromptNotPresent()  Related Assertion
+     * @see  waitForPromptPresent()     Related Assertion
      */
     public function verifyPromptPresent()
     {
@@ -13239,13 +13259,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storePromptPresent      Base method, from which has been generated (automatically) current method
-     * @see  assertPromptNotPresent  Related Assertion
-     * @see  assertPromptPresent     Related Assertion
-     * @see  isPromptPresent         Related Accessor
-     * @see  verifyPromptNotPresent  Related Assertion
-     * @see  verifyPromptPresent     Related Assertion
-     * @see  waitForPromptPresent    Related Assertion
+     * @see  storePromptPresent()      Base method, from which has been generated (automatically) current method
+     * @see  assertPromptNotPresent()  Related Assertion
+     * @see  assertPromptPresent()     Related Assertion
+     * @see  isPromptPresent()         Related Accessor
+     * @see  verifyPromptNotPresent()  Related Assertion
+     * @see  verifyPromptPresent()     Related Assertion
+     * @see  waitForPromptPresent()    Related Assertion
      */
     public function waitForPromptNotPresent()
     {
@@ -13269,13 +13289,13 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  storePromptPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertPromptNotPresent   Related Assertion
-     * @see  assertPromptPresent      Related Assertion
-     * @see  isPromptPresent          Related Accessor
-     * @see  verifyPromptNotPresent   Related Assertion
-     * @see  verifyPromptPresent      Related Assertion
-     * @see  waitForPromptNotPresent  Related Assertion
+     * @see  storePromptPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertPromptNotPresent()   Related Assertion
+     * @see  assertPromptPresent()      Related Assertion
+     * @see  isPromptPresent()          Related Accessor
+     * @see  verifyPromptNotPresent()   Related Assertion
+     * @see  verifyPromptPresent()      Related Assertion
+     * @see  waitForPromptNotPresent()  Related Assertion
      */
     public function waitForPromptPresent()
     {
@@ -13292,20 +13312,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyTextNotPresent}).</p>
+     * {@link verifyTextNotPresent()}).</p>
      * 
-     * @param string   $pattern  a pattern to match with the text of the page 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  a pattern to match with the text of the page (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTextPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertTextPresent      Related Assertion
-     * @see  isTextPresent          Related Accessor
-     * @see  verifyTextNotPresent   Related Assertion
-     * @see  verifyTextPresent      Related Assertion
-     * @see  waitForTextNotPresent  Related Assertion
-     * @see  waitForTextPresent     Related Assertion
+     * @see  storeTextPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertTextPresent()      Related Assertion
+     * @see  isTextPresent()          Related Accessor
+     * @see  verifyTextNotPresent()   Related Assertion
+     * @see  verifyTextPresent()      Related Assertion
+     * @see  waitForTextNotPresent()  Related Assertion
+     * @see  waitForTextPresent()     Related Assertion
      */
     public function assertTextNotPresent($pattern)
     {
@@ -13322,20 +13342,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will abort the current test case (in contrast to the
-     * {@link verifyTextPresent}).</p>
+     * {@link verifyTextPresent()}).</p>
      * 
-     * @param string   $pattern  a pattern to match with the text of the page 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  a pattern to match with the text of the page (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTextPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertTextNotPresent   Related Assertion
-     * @see  isTextPresent          Related Accessor
-     * @see  verifyTextNotPresent   Related Assertion
-     * @see  verifyTextPresent      Related Assertion
-     * @see  waitForTextNotPresent  Related Assertion
-     * @see  waitForTextPresent     Related Assertion
+     * @see  storeTextPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertTextNotPresent()   Related Assertion
+     * @see  isTextPresent()          Related Accessor
+     * @see  verifyTextNotPresent()   Related Assertion
+     * @see  verifyTextPresent()      Related Assertion
+     * @see  waitForTextNotPresent()  Related Assertion
+     * @see  waitForTextPresent()     Related Assertion
      */
     public function assertTextPresent($pattern)
     {
@@ -13345,18 +13365,18 @@ trait SeleniumTestCaseDoc
     /**
      * Verifies that the specified text pattern appears somewhere on the rendered page shown to the user.
      * 
-     * @param string   $pattern  a pattern to match with the text of the page 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  a pattern to match with the text of the page (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  bool  true if the pattern matches the text, false otherwise
      * 
-     * @see  storeTextPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertTextNotPresent   Related Assertion
-     * @see  assertTextPresent      Related Assertion
-     * @see  verifyTextNotPresent   Related Assertion
-     * @see  verifyTextPresent      Related Assertion
-     * @see  waitForTextNotPresent  Related Assertion
-     * @see  waitForTextPresent     Related Assertion
+     * @see  storeTextPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertTextNotPresent()   Related Assertion
+     * @see  assertTextPresent()      Related Assertion
+     * @see  verifyTextNotPresent()   Related Assertion
+     * @see  verifyTextPresent()      Related Assertion
+     * @see  waitForTextNotPresent()  Related Assertion
+     * @see  waitForTextPresent()     Related Assertion
      */
     public function isTextPresent($pattern)
     {
@@ -13368,22 +13388,23 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Stored value:</h4>
      * 
-     * <p>true if the pattern matches the text, false otherwise (see {@link doc_Stored_Variables})</p>
+     * <p>true if the pattern matches the text, false otherwise (see
+     * {@link $doc_Stored_Variables Stored Variables})</p>
      * 
      * @param string   $pattern       a pattern to match with the text of the page (see
-     *                                {@link doc_String_match_Patterns})
+     *                                {@link $doc_String_match_Patterns String match Patterns})
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      * 
-     * @see  assertTextNotPresent   Related Assertion
-     * @see  assertTextPresent      Related Assertion
-     * @see  isTextPresent          Related Accessor
-     * @see  verifyTextNotPresent   Related Assertion
-     * @see  verifyTextPresent      Related Assertion
-     * @see  waitForTextNotPresent  Related Assertion
-     * @see  waitForTextPresent     Related Assertion
+     * @see  assertTextNotPresent()   Related Assertion
+     * @see  assertTextPresent()      Related Assertion
+     * @see  isTextPresent()          Related Accessor
+     * @see  verifyTextNotPresent()   Related Assertion
+     * @see  verifyTextPresent()      Related Assertion
+     * @see  waitForTextNotPresent()  Related Assertion
+     * @see  waitForTextPresent()     Related Assertion
      */
     public function storeTextPresent($pattern, $variableName)
     {
@@ -13400,20 +13421,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertTextNotPresent}).</p>
+     * {@link assertTextNotPresent()}).</p>
      * 
-     * @param string   $pattern  a pattern to match with the text of the page 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  a pattern to match with the text of the page (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTextPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertTextNotPresent   Related Assertion
-     * @see  assertTextPresent      Related Assertion
-     * @see  isTextPresent          Related Accessor
-     * @see  verifyTextPresent      Related Assertion
-     * @see  waitForTextNotPresent  Related Assertion
-     * @see  waitForTextPresent     Related Assertion
+     * @see  storeTextPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertTextNotPresent()   Related Assertion
+     * @see  assertTextPresent()      Related Assertion
+     * @see  isTextPresent()          Related Accessor
+     * @see  verifyTextPresent()      Related Assertion
+     * @see  waitForTextNotPresent()  Related Assertion
+     * @see  waitForTextPresent()     Related Assertion
      */
     public function verifyTextNotPresent($pattern)
     {
@@ -13430,20 +13451,20 @@ trait SeleniumTestCaseDoc
      * <h4>Notes:</h4>
      * 
      * <p>If assertion will fail the test, it will continue to run the test case (in contrast to the
-     * {@link assertTextPresent}).</p>
+     * {@link assertTextPresent()}).</p>
      * 
-     * @param string   $pattern  a pattern to match with the text of the page 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  a pattern to match with the text of the page (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTextPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertTextNotPresent   Related Assertion
-     * @see  assertTextPresent      Related Assertion
-     * @see  isTextPresent          Related Accessor
-     * @see  verifyTextNotPresent   Related Assertion
-     * @see  waitForTextNotPresent  Related Assertion
-     * @see  waitForTextPresent     Related Assertion
+     * @see  storeTextPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertTextNotPresent()   Related Assertion
+     * @see  assertTextPresent()      Related Assertion
+     * @see  isTextPresent()          Related Accessor
+     * @see  verifyTextNotPresent()   Related Assertion
+     * @see  waitForTextNotPresent()  Related Assertion
+     * @see  waitForTextPresent()     Related Assertion
      */
     public function verifyTextPresent($pattern)
     {
@@ -13463,18 +13484,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  a pattern to match with the text of the page 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  a pattern to match with the text of the page (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTextPresent      Base method, from which has been generated (automatically) current method
-     * @see  assertTextNotPresent  Related Assertion
-     * @see  assertTextPresent     Related Assertion
-     * @see  isTextPresent         Related Accessor
-     * @see  verifyTextNotPresent  Related Assertion
-     * @see  verifyTextPresent     Related Assertion
-     * @see  waitForTextPresent    Related Assertion
+     * @see  storeTextPresent()      Base method, from which has been generated (automatically) current method
+     * @see  assertTextNotPresent()  Related Assertion
+     * @see  assertTextPresent()     Related Assertion
+     * @see  isTextPresent()         Related Accessor
+     * @see  verifyTextNotPresent()  Related Assertion
+     * @see  verifyTextPresent()     Related Assertion
+     * @see  waitForTextPresent()    Related Assertion
      */
     public function waitForTextNotPresent($pattern)
     {
@@ -13494,18 +13515,18 @@ trait SeleniumTestCaseDoc
      * 
      * <p>This command will succeed immediately if the condition is already true.</p>
      * 
-     * @param string   $pattern  a pattern to match with the text of the page 
-     *                           (see {@link doc_String_match_Patterns})
+     * @param string   $pattern  a pattern to match with the text of the page (see
+     *                           {@link $doc_String_match_Patterns String match Patterns})
      * 
      * @return  void
      * 
-     * @see  storeTextPresent       Base method, from which has been generated (automatically) current method
-     * @see  assertTextNotPresent   Related Assertion
-     * @see  assertTextPresent      Related Assertion
-     * @see  isTextPresent          Related Accessor
-     * @see  verifyTextNotPresent   Related Assertion
-     * @see  verifyTextPresent      Related Assertion
-     * @see  waitForTextNotPresent  Related Assertion
+     * @see  storeTextPresent()       Base method, from which has been generated (automatically) current method
+     * @see  assertTextNotPresent()   Related Assertion
+     * @see  assertTextPresent()      Related Assertion
+     * @see  isTextPresent()          Related Accessor
+     * @see  verifyTextNotPresent()   Related Assertion
+     * @see  verifyTextPresent()      Related Assertion
+     * @see  waitForTextNotPresent()  Related Assertion
      */
     public function waitForTextPresent($pattern)
     {
@@ -13518,13 +13539,13 @@ trait SeleniumTestCaseDoc
      * 
      * This ID will disappear once the page is reloaded.
      * 
-     * @param string   $locator     an element locator pointing to an element 
-     *                              (see {@link doc_Element_Locators})
+     * @param string   $locator     an element locator pointing to an element (see
+     *                              {@link $doc_Element_Locators Element Locators})
      * @param string   $identifier  a string to be used as the ID of the specified element
      * 
      * @return  void
      * 
-     * @see  assignIdAndWait  Related Action
+     * @see  assignIdAndWait()  Related Action
      */
     public function assignId($locator, $identifier)
     {
@@ -13539,15 +13560,15 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
-     * @param string   $locator     an element locator pointing to an element 
-     *                              (see {@link doc_Element_Locators})
+     * @param string   $locator     an element locator pointing to an element (see
+     *                              {@link $doc_Element_Locators Element Locators})
      * @param string   $identifier  a string to be used as the ID of the specified element
      * 
      * @return  void
      * 
-     * @see  assignId  Base method, from which has been generated (automatically) current method
+     * @see  assignId()  Base method, from which has been generated (automatically) current method
      */
     public function assignIdAndWait($locator, $identifier)
     {
@@ -13558,7 +13579,7 @@ trait SeleniumTestCaseDoc
      * Sets a file input (upload) field to the file listed in fileLocator.
      * 
      * @param string   $fieldLocator  an element locator 
-     *                                (see {@link doc_Element_Locators})
+     *                                (see {@link $doc_Element_Locators Element Locators})
      * @param string   $fileLocator   a URL pointing to the specified file. Before the file can be set in the input
      *                                field (fieldLocator), Selenium RC may need to transfer the file to the local
      *                                machine before attaching the file in a web page form. This is common in selenium
@@ -13593,7 +13614,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  captureEntirePageScreenshotAndWait  Related Action
+     * @see  captureEntirePageScreenshotAndWait()  Related Action
      */
     public function captureEntirePageScreenshot($filename, $kwargs)
     {
@@ -13611,7 +13632,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $filename  the path to the file to persist the screenshot as. No filename extension will be
      *                            appended by  default. Directories will not be created if they do not exist, and an
@@ -13625,7 +13646,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  captureEntirePageScreenshot  Base method, from which has been generated (automatically) current method
+     * @see  captureEntirePageScreenshot()  Base method, from which has been generated (automatically) current method
      */
     public function captureEntirePageScreenshotAndWait($filename, $kwargs)
     {
@@ -13647,7 +13668,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  The base 64 encoded string of the page screenshot (PNG file)
      * 
-     * @see  captureEntirePageScreenshotToStringAndWait  Related Action
+     * @see  captureEntirePageScreenshotToStringAndWait()  Related Action
      */
     public function captureEntirePageScreenshotToString($kwargs)
     {
@@ -13663,7 +13684,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $kwargs  A kwargs string that modifies the way the screenshot is captured. Example:
      *                          "background=#CCFFDD". This may be useful to set for capturing screenshots of
@@ -13673,8 +13694,8 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  The base 64 encoded string of the page screenshot (PNG file)
      * 
-     * @see  captureEntirePageScreenshotToString  Base method, from which has been generated (automatically) current
-     *                                            method
+     * @see  captureEntirePageScreenshotToString()  Base method, from which has been generated (automatically) current
+     *                                              method
      */
     public function captureEntirePageScreenshotToStringAndWait($kwargs)
     {
@@ -13688,7 +13709,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  captureScreenshotAndWait  Related Action
+     * @see  captureScreenshotAndWait()  Related Action
      */
     public function captureScreenshot($filename)
     {
@@ -13700,13 +13721,13 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $filename  the absolute path to the file to be written, e.g. "c:\blah\screenshot.png"
      * 
      * @return  void
      * 
-     * @see  captureScreenshot  Base method, from which has been generated (automatically) current method
+     * @see  captureScreenshot()  Base method, from which has been generated (automatically) current method
      */
     public function captureScreenshotAndWait($filename)
     {
@@ -13720,7 +13741,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  string  The base 64 encoded string of the screen shot (PNG file)
      * 
-     * @see  captureScreenshotToStringAndWait  Related Action
+     * @see  captureScreenshotToStringAndWait()  Related Action
      */
     public function captureScreenshotToString()
     {
@@ -13734,11 +13755,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  string  The base 64 encoded string of the screen shot (PNG file)
      * 
-     * @see  captureScreenshotToString  Base method, from which has been generated (automatically) current method
+     * @see  captureScreenshotToString()  Base method, from which has been generated (automatically) current method
      */
     public function captureScreenshotToStringAndWait()
     {
@@ -13749,11 +13770,11 @@ trait SeleniumTestCaseDoc
      * Check a toggle-button (checkbox/radio).
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  checkAndWait  Related Action
+     * @see  checkAndWait()  Related Action
      */
     public function check($locator)
     {
@@ -13765,14 +13786,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  check  Base method, from which has been generated (automatically) current method
+     * @see  check()  Base method, from which has been generated (automatically) current method
      */
     public function checkAndWait($locator)
     {
@@ -13792,7 +13813,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  chooseCancelOnNextConfirmationAndWait  Related Action
+     * @see  chooseCancelOnNextConfirmationAndWait()  Related Action
      */
     public function chooseCancelOnNextConfirmation()
     {
@@ -13812,11 +13833,12 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  chooseCancelOnNextConfirmation  Base method, from which has been generated (automatically) current method
+     * @see  chooseCancelOnNextConfirmation()  Base method, from which has been generated (automatically) current
+     *                                         method
      */
     public function chooseCancelOnNextConfirmationAndWait()
     {
@@ -13837,7 +13859,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  chooseOkOnNextConfirmationAndWait  Related Action
+     * @see  chooseOkOnNextConfirmationAndWait()  Related Action
      */
     public function chooseOkOnNextConfirmation()
     {
@@ -13858,11 +13880,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  chooseOkOnNextConfirmation  Base method, from which has been generated (automatically) current method
+     * @see  chooseOkOnNextConfirmation()  Base method, from which has been generated (automatically) current method
      */
     public function chooseOkOnNextConfirmationAndWait()
     {
@@ -13878,7 +13900,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  clickAndWait  Related Action
+     * @see  clickAndWait()  Related Action
      */
     public function click($locator)
     {
@@ -13892,13 +13914,13 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator
      * 
      * @return  void
      * 
-     * @see  click  Base method, from which has been generated (automatically) current method
+     * @see  click()  Base method, from which has been generated (automatically) current method
      */
     public function clickAndWait($locator)
     {
@@ -13916,7 +13938,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  clickAtAndWait  Related Action
+     * @see  clickAtAndWait()  Related Action
      */
     public function clickAt($locator, $coordString)
     {
@@ -13930,7 +13952,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator      an element locator
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
@@ -13938,7 +13960,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  clickAt  Base method, from which has been generated (automatically) current method
+     * @see  clickAt()  Base method, from which has been generated (automatically) current method
      */
     public function clickAtAndWait($locator, $coordString)
     {
@@ -13963,7 +13985,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  contextMenuAndWait  Related Action
+     * @see  contextMenuAndWait()  Related Action
      */
     public function contextMenu($locator)
     {
@@ -13976,13 +13998,13 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator
      * 
      * @return  void
      * 
-     * @see  contextMenu  Base method, from which has been generated (automatically) current method
+     * @see  contextMenu()  Base method, from which has been generated (automatically) current method
      */
     public function contextMenuAndWait($locator)
     {
@@ -13999,7 +14021,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  contextMenuAtAndWait  Related Action
+     * @see  contextMenuAtAndWait()  Related Action
      */
     public function contextMenuAt($locator, $coordString)
     {
@@ -14012,7 +14034,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator      an element locator
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
@@ -14020,7 +14042,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  contextMenuAt  Base method, from which has been generated (automatically) current method
+     * @see  contextMenuAt()  Base method, from which has been generated (automatically) current method
      */
     public function contextMenuAtAndWait($locator, $coordString)
     {
@@ -14032,7 +14054,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  controlKeyDownAndWait  Related Action
+     * @see  controlKeyDownAndWait()  Related Action
      */
     public function controlKeyDown()
     {
@@ -14044,11 +14066,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  controlKeyDown  Base method, from which has been generated (automatically) current method
+     * @see  controlKeyDown()  Base method, from which has been generated (automatically) current method
      */
     public function controlKeyDownAndWait()
     {
@@ -14060,7 +14082,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  controlKeyUpAndWait  Related Action
+     * @see  controlKeyUpAndWait()  Related Action
      */
     public function controlKeyUp()
     {
@@ -14072,11 +14094,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  controlKeyUp  Base method, from which has been generated (automatically) current method
+     * @see  controlKeyUp()  Base method, from which has been generated (automatically) current method
      */
     public function controlKeyUpAndWait()
     {
@@ -14096,7 +14118,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  createCookieAndWait  Related Action
+     * @see  createCookieAndWait()  Related Action
      */
     public function createCookie($nameValuePair, $optionsString)
     {
@@ -14109,7 +14131,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $nameValuePair  name and value of the cookie in a format "name=value"
      * @param string   $optionsString  options for the cookie. Currently supported options include 'path', 'max_age'
@@ -14120,7 +14142,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  createCookie  Base method, from which has been generated (automatically) current method
+     * @see  createCookie()  Base method, from which has been generated (automatically) current method
      */
     public function createCookieAndWait($nameValuePair, $optionsString)
     {
@@ -14135,7 +14157,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  deleteAllVisibleCookiesAndWait  Related Action
+     * @see  deleteAllVisibleCookiesAndWait()  Related Action
      */
     public function deleteAllVisibleCookies()
     {
@@ -14150,11 +14172,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  deleteAllVisibleCookies  Base method, from which has been generated (automatically) current method
+     * @see  deleteAllVisibleCookies()  Base method, from which has been generated (automatically) current method
      */
     public function deleteAllVisibleCookiesAndWait()
     {
@@ -14180,7 +14202,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  deleteCookieAndWait  Related Action
+     * @see  deleteCookieAndWait()  Related Action
      */
     public function deleteCookie($name, $optionsString)
     {
@@ -14200,7 +14222,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $name           the name of the cookie to be deleted
      * @param string   $optionsString  options for the cookie. Currently supported options include 'path', 'domain' and
@@ -14210,7 +14232,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  deleteCookie  Base method, from which has been generated (automatically) current method
+     * @see  deleteCookie()  Base method, from which has been generated (automatically) current method
      */
     public function deleteCookieAndWait($name, $optionsString)
     {
@@ -14224,7 +14246,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  deselectPopUpAndWait  Related Action
+     * @see  deselectPopUpAndWait()  Related Action
      */
     public function deselectPopUp()
     {
@@ -14238,11 +14260,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  deselectPopUp  Base method, from which has been generated (automatically) current method
+     * @see  deselectPopUp()  Base method, from which has been generated (automatically) current method
      */
     public function deselectPopUpAndWait()
     {
@@ -14258,7 +14280,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  doubleClickAndWait  Related Action
+     * @see  doubleClickAndWait()  Related Action
      */
     public function doubleClick($locator)
     {
@@ -14272,13 +14294,13 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator
      * 
      * @return  void
      * 
-     * @see  doubleClick  Base method, from which has been generated (automatically) current method
+     * @see  doubleClick()  Base method, from which has been generated (automatically) current method
      */
     public function doubleClickAndWait($locator)
     {
@@ -14296,7 +14318,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  doubleClickAtAndWait  Related Action
+     * @see  doubleClickAtAndWait()  Related Action
      */
     public function doubleClickAt($locator, $coordString)
     {
@@ -14310,7 +14332,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator      an element locator
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
@@ -14318,7 +14340,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  doubleClickAt  Base method, from which has been generated (automatically) current method
+     * @see  doubleClickAt()  Base method, from which has been generated (automatically) current method
      */
     public function doubleClickAtAndWait($locator, $coordString)
     {
@@ -14334,7 +14356,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  dragAndDropAndWait  Related Action
+     * @see  dragAndDropAndWait()  Related Action
      */
     public function dragAndDrop($locator, $movementsString)
     {
@@ -14346,7 +14368,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator          an element locator
      * @param string   $movementsString  offset in pixels from the current location to which the element should be
@@ -14354,7 +14376,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  dragAndDrop  Base method, from which has been generated (automatically) current method
+     * @see  dragAndDrop()  Base method, from which has been generated (automatically) current method
      */
     public function dragAndDropAndWait($locator, $movementsString)
     {
@@ -14370,7 +14392,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  dragAndDropToObjectAndWait  Related Action
+     * @see  dragAndDropToObjectAndWait()  Related Action
      */
     public function dragAndDropToObject($locatorOfObjectToBeDragged, $locatorOfDragDestinationObject)
     {
@@ -14382,7 +14404,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locatorOfObjectToBeDragged      an element to be dragged
      * @param string   $locatorOfDragDestinationObject  an element whose location (i.e., whose center-most pixel) will
@@ -14390,7 +14412,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  dragAndDropToObject  Base method, from which has been generated (automatically) current method
+     * @see  dragAndDropToObject()  Base method, from which has been generated (automatically) current method
      */
     public function dragAndDropToObjectAndWait($locatorOfObjectToBeDragged, $locatorOfDragDestinationObject)
     {
@@ -14406,8 +14428,8 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  dragdrop         Base method, from which has been generated (automatically) current method
-     * @see  dragDropAndWait  Related Action
+     * @see  dragdrop()         Base method, from which has been generated (automatically) current method
+     * @see  dragDropAndWait()  Related Action
      */
     public function dragDrop($locator, $movementsString)
     {
@@ -14419,7 +14441,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator          an element locator
      * @param string   $movementsString  offset in pixels from the current location to which the element should be
@@ -14427,8 +14449,8 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  dragdrop  Base method, from which has been generated (automatically) current method
-     * @see  dragDrop  Related Action
+     * @see  dragdrop()  Base method, from which has been generated (automatically) current method
+     * @see  dragDrop()  Related Action
      */
     public function dragDropAndWait($locator, $movementsString)
     {
@@ -14439,12 +14461,12 @@ trait SeleniumTestCaseDoc
      * Explicitly simulate an event, to trigger the corresponding "on<em>event</em>" handler.
      * 
      * @param string   $locator    an element locator 
-     *                             (see {@link doc_Element_Locators})
+     *                             (see {@link $doc_Element_Locators Element Locators})
      * @param string   $eventName  the event name, e.g. "focus" or "blur"
      * 
      * @return  void
      * 
-     * @see  fireEventAndWait  Related Action
+     * @see  fireEventAndWait()  Related Action
      */
     public function fireEvent($locator, $eventName)
     {
@@ -14456,15 +14478,15 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator    an element locator 
-     *                             (see {@link doc_Element_Locators})
+     *                             (see {@link $doc_Element_Locators Element Locators})
      * @param string   $eventName  the event name, e.g. "focus" or "blur"
      * 
      * @return  void
      * 
-     * @see  fireEvent  Base method, from which has been generated (automatically) current method
+     * @see  fireEvent()  Base method, from which has been generated (automatically) current method
      */
     public function fireEventAndWait($locator, $eventName)
     {
@@ -14476,11 +14498,11 @@ trait SeleniumTestCaseDoc
      * field.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  focusAndWait  Related Action
+     * @see  focusAndWait()  Related Action
      */
     public function focus($locator)
     {
@@ -14493,14 +14515,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  focus  Base method, from which has been generated (automatically) current method
+     * @see  focus()  Base method, from which has been generated (automatically) current method
      */
     public function focusAndWait($locator)
     {
@@ -14512,7 +14534,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  goBackAndWait  Related Action
+     * @see  goBackAndWait()  Related Action
      */
     public function goBack()
     {
@@ -14524,11 +14546,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  goBack  Base method, from which has been generated (automatically) current method
+     * @see  goBack()  Base method, from which has been generated (automatically) current method
      */
     public function goBackAndWait()
     {
@@ -14541,11 +14563,11 @@ trait SeleniumTestCaseDoc
      * Useful for debugging.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  highlightAndWait  Related Action
+     * @see  highlightAndWait()  Related Action
      */
     public function highlight($locator)
     {
@@ -14559,14 +14581,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  highlight  Base method, from which has been generated (automatically) current method
+     * @see  highlight()  Base method, from which has been generated (automatically) current method
      */
     public function highlightAndWait($locator)
     {
@@ -14587,7 +14609,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  ignoreAttributesWithoutValueAndWait  Related Action
+     * @see  ignoreAttributesWithoutValueAndWait()  Related Action
      */
     public function ignoreAttributesWithoutValue($ignore)
     {
@@ -14605,14 +14627,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $ignore  boolean, true means we'll ignore attributes without value at the expense of xpath 
      *                          "correctness"; false means we'll sacrifice speed for correctness.
      * 
      * @return  void
      * 
-     * @see  ignoreAttributesWithoutValue  Base method, from which has been generated (automatically) current method
+     * @see  ignoreAttributesWithoutValue()  Base method, from which has been generated (automatically) current method
      */
     public function ignoreAttributesWithoutValueAndWait($ignore)
     {
@@ -14623,14 +14645,14 @@ trait SeleniumTestCaseDoc
      * Simulates a user pressing a key (without releasing it yet).
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $keySequence  Either be a string("\" followed by the numeric keycode of the key to be pressed,
      *                               normally  the ASCII value of that key), or a single character. For example: "w",
      *                               "\119".
      * 
      * @return  void
      * 
-     * @see  keyDownAndWait  Related Action
+     * @see  keyDownAndWait()  Related Action
      */
     public function keyDown($locator, $keySequence)
     {
@@ -14642,17 +14664,17 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $keySequence  Either be a string("\" followed by the numeric keycode of the key to be pressed,
      *                               normally  the ASCII value of that key), or a single character. For example: "w",
      *                               "\119".
      * 
      * @return  void
      * 
-     * @see  keyDown  Base method, from which has been generated (automatically) current method
+     * @see  keyDown()  Base method, from which has been generated (automatically) current method
      */
     public function keyDownAndWait($locator, $keySequence)
     {
@@ -14672,7 +14694,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  keyDownNativeAndWait  Related Action
+     * @see  keyDownNativeAndWait()  Related Action
      */
     public function keyDownNative($keycode)
     {
@@ -14689,14 +14711,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $keycode  an integer keycode number corresponding to a java.awt.event.KeyEvent; note that Java
      *                           keycodes are NOT the same thing as JavaScript keycodes!
      * 
      * @return  void
      * 
-     * @see  keyDownNative  Base method, from which has been generated (automatically) current method
+     * @see  keyDownNative()  Base method, from which has been generated (automatically) current method
      */
     public function keyDownNativeAndWait($keycode)
     {
@@ -14707,14 +14729,14 @@ trait SeleniumTestCaseDoc
      * Simulates a user pressing and releasing a key.
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $keySequence  Either be a string("\" followed by the numeric keycode of the key to be pressed,
      *                               normally  the ASCII value of that key), or a single character. For example: "w",
      *                               "\119".
      * 
      * @return  void
      * 
-     * @see  keyPressAndWait  Related Action
+     * @see  keyPressAndWait()  Related Action
      */
     public function keyPress($locator, $keySequence)
     {
@@ -14726,17 +14748,17 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $keySequence  Either be a string("\" followed by the numeric keycode of the key to be pressed,
      *                               normally  the ASCII value of that key), or a single character. For example: "w",
      *                               "\119".
      * 
      * @return  void
      * 
-     * @see  keyPress  Base method, from which has been generated (automatically) current method
+     * @see  keyPress()  Base method, from which has been generated (automatically) current method
      */
     public function keyPressAndWait($locator, $keySequence)
     {
@@ -14756,7 +14778,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  keyPressNativeAndWait  Related Action
+     * @see  keyPressNativeAndWait()  Related Action
      */
     public function keyPressNative($keycode)
     {
@@ -14773,14 +14795,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $keycode  an integer keycode number corresponding to a java.awt.event.KeyEvent; note that Java
      *                           keycodes are NOT the same thing as JavaScript keycodes!
      * 
      * @return  void
      * 
-     * @see  keyPressNative  Base method, from which has been generated (automatically) current method
+     * @see  keyPressNative()  Base method, from which has been generated (automatically) current method
      */
     public function keyPressNativeAndWait($keycode)
     {
@@ -14791,14 +14813,14 @@ trait SeleniumTestCaseDoc
      * Simulates a user releasing a key.
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $keySequence  Either be a string("\" followed by the numeric keycode of the key to be pressed,
      *                               normally  the ASCII value of that key), or a single character. For example: "w",
      *                               "\119".
      * 
      * @return  void
      * 
-     * @see  keyUpAndWait  Related Action
+     * @see  keyUpAndWait()  Related Action
      */
     public function keyUp($locator, $keySequence)
     {
@@ -14810,17 +14832,17 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $keySequence  Either be a string("\" followed by the numeric keycode of the key to be pressed,
      *                               normally  the ASCII value of that key), or a single character. For example: "w",
      *                               "\119".
      * 
      * @return  void
      * 
-     * @see  keyUp  Base method, from which has been generated (automatically) current method
+     * @see  keyUp()  Base method, from which has been generated (automatically) current method
      */
     public function keyUpAndWait($locator, $keySequence)
     {
@@ -14840,7 +14862,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  keyUpNativeAndWait  Related Action
+     * @see  keyUpNativeAndWait()  Related Action
      */
     public function keyUpNative($keycode)
     {
@@ -14857,14 +14879,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $keycode  an integer keycode number corresponding to a java.awt.event.KeyEvent; note that Java
      *                           keycodes are NOT the same thing as JavaScript keycodes!
      * 
      * @return  void
      * 
-     * @see  keyUpNative  Base method, from which has been generated (automatically) current method
+     * @see  keyUpNative()  Base method, from which has been generated (automatically) current method
      */
     public function keyUpNativeAndWait($keycode)
     {
@@ -14876,7 +14898,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  metaKeyDownAndWait  Related Action
+     * @see  metaKeyDownAndWait()  Related Action
      */
     public function metaKeyDown()
     {
@@ -14888,11 +14910,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  metaKeyDown  Base method, from which has been generated (automatically) current method
+     * @see  metaKeyDown()  Base method, from which has been generated (automatically) current method
      */
     public function metaKeyDownAndWait()
     {
@@ -14904,7 +14926,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  metaKeyUpAndWait  Related Action
+     * @see  metaKeyUpAndWait()  Related Action
      */
     public function metaKeyUp()
     {
@@ -14916,11 +14938,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  metaKeyUp  Base method, from which has been generated (automatically) current method
+     * @see  metaKeyUp()  Base method, from which has been generated (automatically) current method
      */
     public function metaKeyUpAndWait()
     {
@@ -14931,11 +14953,11 @@ trait SeleniumTestCaseDoc
      * Simulates a user pressing the left mouse button (without releasing it yet) on the specified element.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseDownAndWait  Related Action
+     * @see  mouseDownAndWait()  Related Action
      */
     public function mouseDown($locator)
     {
@@ -14947,14 +14969,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseDown  Base method, from which has been generated (automatically) current method
+     * @see  mouseDown()  Base method, from which has been generated (automatically) current method
      */
     public function mouseDownAndWait($locator)
     {
@@ -14965,13 +14987,13 @@ trait SeleniumTestCaseDoc
      * Simulates a user pressing the left mouse button (without releasing it yet) at the specified location.
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
      * @return  void
      * 
-     * @see  mouseDownAtAndWait  Related Action
+     * @see  mouseDownAtAndWait()  Related Action
      */
     public function mouseDownAt($locator, $coordString)
     {
@@ -14983,16 +15005,16 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
      * @return  void
      * 
-     * @see  mouseDownAt  Base method, from which has been generated (automatically) current method
+     * @see  mouseDownAt()  Base method, from which has been generated (automatically) current method
      */
     public function mouseDownAtAndWait($locator, $coordString)
     {
@@ -15003,11 +15025,11 @@ trait SeleniumTestCaseDoc
      * Simulates a user pressing the mouse button (without releasing it yet) on the specified element.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseMoveAndWait  Related Action
+     * @see  mouseMoveAndWait()  Related Action
      */
     public function mouseMove($locator)
     {
@@ -15019,14 +15041,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseMove  Base method, from which has been generated (automatically) current method
+     * @see  mouseMove()  Base method, from which has been generated (automatically) current method
      */
     public function mouseMoveAndWait($locator)
     {
@@ -15037,13 +15059,13 @@ trait SeleniumTestCaseDoc
      * Simulates a user pressing the mouse button (without releasing it yet) on the specified element.
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
      * @return  void
      * 
-     * @see  mouseMoveAtAndWait  Related Action
+     * @see  mouseMoveAtAndWait()  Related Action
      */
     public function mouseMoveAt($locator, $coordString)
     {
@@ -15055,16 +15077,16 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
      * @return  void
      * 
-     * @see  mouseMoveAt  Base method, from which has been generated (automatically) current method
+     * @see  mouseMoveAt()  Base method, from which has been generated (automatically) current method
      */
     public function mouseMoveAtAndWait($locator, $coordString)
     {
@@ -15075,11 +15097,11 @@ trait SeleniumTestCaseDoc
      * Simulates a user moving the mouse pointer away from the specified element.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseOutAndWait  Related Action
+     * @see  mouseOutAndWait()  Related Action
      */
     public function mouseOut($locator)
     {
@@ -15091,14 +15113,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseOut  Base method, from which has been generated (automatically) current method
+     * @see  mouseOut()  Base method, from which has been generated (automatically) current method
      */
     public function mouseOutAndWait($locator)
     {
@@ -15109,11 +15131,11 @@ trait SeleniumTestCaseDoc
      * Simulates a user hovering a mouse over the specified element.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseOverAndWait  Related Action
+     * @see  mouseOverAndWait()  Related Action
      */
     public function mouseOver($locator)
     {
@@ -15125,14 +15147,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseOver  Base method, from which has been generated (automatically) current method
+     * @see  mouseOver()  Base method, from which has been generated (automatically) current method
      */
     public function mouseOverAndWait($locator)
     {
@@ -15144,11 +15166,11 @@ trait SeleniumTestCaseDoc
      * the specified element.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseUpAndWait  Related Action
+     * @see  mouseUpAndWait()  Related Action
      */
     public function mouseUp($locator)
     {
@@ -15161,14 +15183,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseUp  Base method, from which has been generated (automatically) current method
+     * @see  mouseUp()  Base method, from which has been generated (automatically) current method
      */
     public function mouseUpAndWait($locator)
     {
@@ -15180,13 +15202,13 @@ trait SeleniumTestCaseDoc
      * the specified location.
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
      * @return  void
      * 
-     * @see  mouseUpAtAndWait  Related Action
+     * @see  mouseUpAtAndWait()  Related Action
      */
     public function mouseUpAt($locator, $coordString)
     {
@@ -15199,16 +15221,16 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
      * @return  void
      * 
-     * @see  mouseUpAt  Base method, from which has been generated (automatically) current method
+     * @see  mouseUpAt()  Base method, from which has been generated (automatically) current method
      */
     public function mouseUpAtAndWait($locator, $coordString)
     {
@@ -15220,11 +15242,11 @@ trait SeleniumTestCaseDoc
      * down) on the specified element.
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseUpRightAndWait  Related Action
+     * @see  mouseUpRightAndWait()  Related Action
      */
     public function mouseUpRight($locator)
     {
@@ -15237,14 +15259,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  mouseUpRight  Base method, from which has been generated (automatically) current method
+     * @see  mouseUpRight()  Base method, from which has been generated (automatically) current method
      */
     public function mouseUpRightAndWait($locator)
     {
@@ -15256,13 +15278,13 @@ trait SeleniumTestCaseDoc
      * down) at the specified location.
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
      * @return  void
      * 
-     * @see  mouseUpRightAtAndWait  Related Action
+     * @see  mouseUpRightAtAndWait()  Related Action
      */
     public function mouseUpRightAt($locator, $coordString)
     {
@@ -15275,16 +15297,16 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator      an element locator 
-     *                               (see {@link doc_Element_Locators})
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
      * @return  void
      * 
-     * @see  mouseUpRightAt  Base method, from which has been generated (automatically) current method
+     * @see  mouseUpRightAt()  Base method, from which has been generated (automatically) current method
      */
     public function mouseUpRightAtAndWait($locator, $coordString)
     {
@@ -15323,7 +15345,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  openWindowAndWait  Related Action
+     * @see  openWindowAndWait()  Related Action
      */
     public function openWindow($url, $windowID)
     {
@@ -15342,14 +15364,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $url       the URL to open, which can be blank
      * @param string   $windowID  the JavaScript window ID of the window to select
      * 
      * @return  void
      * 
-     * @see  openWindow  Base method, from which has been generated (automatically) current method
+     * @see  openWindow()  Base method, from which has been generated (automatically) current method
      */
     public function openWindowAndWait($url, $windowID)
     {
@@ -15373,7 +15395,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  refreshAndWait  Related Action
+     * @see  refreshAndWait()  Related Action
      */
     public function refresh()
     {
@@ -15385,11 +15407,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  refresh  Base method, from which has been generated (automatically) current method
+     * @see  refresh()  Base method, from which has been generated (automatically) current method
      */
     public function refreshAndWait()
     {
@@ -15399,12 +15421,12 @@ trait SeleniumTestCaseDoc
     /**
      * Unselects all of the selected options in a multi-select element.
      * 
-     * @param string   $locator  an element locator identifying a multi-select box 
-     *                           (see {@link doc_Element_Locators})
+     * @param string   $locator  an element locator identifying a multi-select box (see
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  removeAllSelectionsAndWait  Related Action
+     * @see  removeAllSelectionsAndWait()  Related Action
      */
     public function removeAllSelections($locator)
     {
@@ -15416,14 +15438,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
-     * @param string   $locator  an element locator identifying a multi-select box 
-     *                           (see {@link doc_Element_Locators})
+     * @param string   $locator  an element locator identifying a multi-select box (see
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  removeAllSelections  Base method, from which has been generated (automatically) current method
+     * @see  removeAllSelections()  Base method, from which has been generated (automatically) current method
      */
     public function removeAllSelectionsAndWait($locator)
     {
@@ -15439,7 +15461,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  removeScriptAndWait  Related Action
+     * @see  removeScriptAndWait()  Related Action
      */
     public function removeScript($scriptTagId)
     {
@@ -15453,13 +15475,13 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $scriptTagId  the id of the script element to remove.
      * 
      * @return  void
      * 
-     * @see  removeScript  Base method, from which has been generated (automatically) current method
+     * @see  removeScript()  Base method, from which has been generated (automatically) current method
      */
     public function removeScriptAndWait($scriptTagId)
     {
@@ -15467,16 +15489,17 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Remove a selection from the set of selected options in a multi-select element using an option locator. @see
-     * #doSelect for details of option locators.
+     * Remove a selection from the set of selected options in a multi-select element using an option locator. 
+     * 
+     * See {@link select()} for details of option locators.
      * 
      * @param string   $locator        an element locator identifying a multi-select box (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $optionLocator  an option locator (a label by default)
      * 
      * @return  void
      * 
-     * @see  removeSelectionAndWait  Related Action
+     * @see  removeSelectionAndWait()  Related Action
      */
     public function removeSelection($locator, $optionLocator)
     {
@@ -15484,20 +15507,21 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Remove a selection from the set of selected options in a multi-select element using an option locator. @see
-     * #doSelect for details of option locators.
+     * Remove a selection from the set of selected options in a multi-select element using an option locator. 
+     * 
+     * See {@link select()} for details of option locators.
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator        an element locator identifying a multi-select box (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $optionLocator  an option locator (a label by default)
      * 
      * @return  void
      * 
-     * @see  removeSelection  Base method, from which has been generated (automatically) current method
+     * @see  removeSelection()  Base method, from which has been generated (automatically) current method
      */
     public function removeSelectionAndWait($locator, $optionLocator)
     {
@@ -15529,7 +15553,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  rollupAndWait  Related Action
+     * @see  rollupAndWait()  Related Action
      */
     public function rollup($rollupName, $kwargs)
     {
@@ -15545,14 +15569,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $rollupName  the name of the rollup command
      * @param string   $kwargs      keyword arguments string that influences how the rollup expands into commands
      * 
      * @return  void
      * 
-     * @see  rollup  Base method, from which has been generated (automatically) current method
+     * @see  rollup()  Base method, from which has been generated (automatically) current method
      */
     public function rollupAndWait($rollupName, $kwargs)
     {
@@ -15571,7 +15595,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  runScriptAndWait  Related Action
+     * @see  runScriptAndWait()  Related Action
      */
     public function runScript($script)
     {
@@ -15588,13 +15612,13 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $script  the JavaScript snippet to run
      * 
      * @return  void
      * 
-     * @see  runScript  Base method, from which has been generated (automatically) current method
+     * @see  runScript()  Base method, from which has been generated (automatically) current method
      */
     public function runScriptAndWait($script)
     {
@@ -15622,12 +15646,12 @@ trait SeleniumTestCaseDoc
      * <p>If no option locator prefix is provided, the default behaviour is to match on label.</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $optionLocator  an option locator (a label by default)
      * 
      * @return  void
      * 
-     * @see  selectAndWait  Related Action
+     * @see  selectAndWait()  Related Action
      */
     public function select($selectLocator, $optionLocator)
     {
@@ -15656,15 +15680,15 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $selectLocator  an element locator identifying a drop-down menu (see
-     *                                 {@link doc_Element_Locators})
+     *                                 {@link $doc_Element_Locators Element Locators})
      * @param string   $optionLocator  an option locator (a label by default)
      * 
      * @return  void
      * 
-     * @see  select  Base method, from which has been generated (automatically) current method
+     * @see  select()  Base method, from which has been generated (automatically) current method
      */
     public function selectAndWait($selectLocator, $optionLocator)
     {
@@ -15681,8 +15705,8 @@ trait SeleniumTestCaseDoc
      * <p>You may also use a DOM expression to identify the frame you want directly, like this:
      * [<b>dom=frames["main"].frames["subframe"]</b>] </p>.
      * 
-     * @param string   $locator  an element locator identifying a frame or iframe 
-     *                           (see {@link doc_Element_Locators})
+     * @param string   $locator  an element locator identifying a frame or iframe (see
+     *                           {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      */
@@ -15693,7 +15717,7 @@ trait SeleniumTestCaseDoc
     
     /**
      * Simplifies the process of selecting a popup window (and does not offer functionality beyond what
-     * <code>selectWindow()</code> already provides). 
+     * [<b>selectWindow()</b>] already provides). 
      * 
      * <ul>
      *     <li>If [<b>windowID</b>] is either not specified, or specified as  "null", the first non-top window is
@@ -15709,7 +15733,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  selectPopUpAndWait  Related Action
+     * @see  selectPopUpAndWait()  Related Action
      */
     public function selectPopUp($windowID)
     {
@@ -15718,7 +15742,7 @@ trait SeleniumTestCaseDoc
     
     /**
      * Simplifies the process of selecting a popup window (and does not offer functionality beyond what
-     * <code>selectWindow()</code> already provides). 
+     * [<b>selectWindow()</b>] already provides). 
      * 
      * <ul>
      *     <li>If [<b>windowID</b>] is either not specified, or specified as  "null", the first non-top window is
@@ -15732,13 +15756,13 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $windowID  an identifier for the popup window, which can take on a number of different meanings
      * 
      * @return  void
      * 
-     * @see  selectPopUp  Base method, from which has been generated (automatically) current method
+     * @see  selectPopUp()  Base method, from which has been generated (automatically) current method
      */
     public function selectPopUpAndWait($windowID)
     {
@@ -15811,7 +15835,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  setBrowserLogLevelAndWait  Related Action
+     * @see  setBrowserLogLevelAndWait()  Related Action
      */
     public function setBrowserLogLevel($logLevel)
     {
@@ -15826,13 +15850,13 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $logLevel  one of the following: "debug", "info", "warn", "error" or "off"
      * 
      * @return  void
      * 
-     * @see  setBrowserLogLevel  Base method, from which has been generated (automatically) current method
+     * @see  setBrowserLogLevel()  Base method, from which has been generated (automatically) current method
      */
     public function setBrowserLogLevelAndWait($logLevel)
     {
@@ -15857,14 +15881,14 @@ trait SeleniumTestCaseDoc
      * This method will fail if the specified element isn't an input element or textarea.
      * 
      * @param string   $locator   an element locator pointing to an input element or textarea (see
-     *                            {@link doc_Element_Locators})
+     *                            {@link $doc_Element_Locators Element Locators})
      * @param string   $position  the numerical position of the cursor in the field; position should be 0 to move the
      *                            position  to the beginning of the field. You can also set the cursor to -1 to move it
      *                            to the end of the field.
      * 
      * @return  void
      * 
-     * @see  setCursorPositionAndWait  Related Action
+     * @see  setCursorPositionAndWait()  Related Action
      */
     public function setCursorPosition($locator, $position)
     {
@@ -15878,17 +15902,17 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator   an element locator pointing to an input element or textarea (see
-     *                            {@link doc_Element_Locators})
+     *                            {@link $doc_Element_Locators Element Locators})
      * @param string   $position  the numerical position of the cursor in the field; position should be 0 to move the
      *                            position  to the beginning of the field. You can also set the cursor to -1 to move it
      *                            to the end of the field.
      * 
      * @return  void
      * 
-     * @see  setCursorPosition  Base method, from which has been generated (automatically) current method
+     * @see  setCursorPosition()  Base method, from which has been generated (automatically) current method
      */
     public function setCursorPositionAndWait($locator, $position)
     {
@@ -15909,7 +15933,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  setMouseSpeedAndWait  Related Action
+     * @see  setMouseSpeedAndWait()  Related Action
      */
     public function setMouseSpeed($pixels)
     {
@@ -15928,13 +15952,13 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $pixels  the number of pixels between "mousemove" events
      * 
      * @return  void
      * 
-     * @see  setMouseSpeed  Base method, from which has been generated (automatically) current method
+     * @see  setMouseSpeed()  Base method, from which has been generated (automatically) current method
      */
     public function setMouseSpeedAndWait($pixels)
     {
@@ -15950,7 +15974,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  setSpeedAndWait  Related Action
+     * @see  setSpeedAndWait()  Related Action
      */
     public function setSpeed($value)
     {
@@ -15964,13 +15988,13 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $value  the number of milliseconds to pause after operation
      * 
      * @return  void
      * 
-     * @see  setSpeed  Base method, from which has been generated (automatically) current method
+     * @see  setSpeed()  Base method, from which has been generated (automatically) current method
      */
     public function setSpeedAndWait($value)
     {
@@ -15982,7 +16006,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  shiftKeyDownAndWait  Related Action
+     * @see  shiftKeyDownAndWait()  Related Action
      */
     public function shiftKeyDown()
     {
@@ -15994,11 +16018,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  shiftKeyDown  Base method, from which has been generated (automatically) current method
+     * @see  shiftKeyDown()  Base method, from which has been generated (automatically) current method
      */
     public function shiftKeyDownAndWait()
     {
@@ -16010,7 +16034,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  shiftKeyUpAndWait  Related Action
+     * @see  shiftKeyUpAndWait()  Related Action
      */
     public function shiftKeyUp()
     {
@@ -16022,11 +16046,11 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @return  void
      * 
-     * @see  shiftKeyUp  Base method, from which has been generated (automatically) current method
+     * @see  shiftKeyUp()  Base method, from which has been generated (automatically) current method
      */
     public function shiftKeyUpAndWait()
     {
@@ -16052,7 +16076,7 @@ trait SeleniumTestCaseDoc
      * 
      * @param string   $expression    the value to store
      * @param string   $variableName  the name of a variable in which the result is to be stored. (see
-     *                                {@link doc_Stored_Variables})
+     *                                {@link $doc_Stored_Variables Stored Variables})
      * 
      * @return  void
      */
@@ -16067,11 +16091,11 @@ trait SeleniumTestCaseDoc
      * This is particularly useful for forms without submit buttons, e.g. single-input "Search" forms.
      * 
      * @param string   $formLocator  an element locator for the form you want to submit (see
-     *                               {@link doc_Element_Locators})
+     *                               {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  submitAndWait  Related Action
+     * @see  submitAndWait()  Related Action
      */
     public function submit($formLocator)
     {
@@ -16085,14 +16109,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $formLocator  an element locator for the form you want to submit (see
-     *                               {@link doc_Element_Locators})
+     *                               {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  submit  Base method, from which has been generated (automatically) current method
+     * @see  submit()  Base method, from which has been generated (automatically) current method
      */
     public function submitAndWait($formLocator)
     {
@@ -16106,12 +16130,12 @@ trait SeleniumTestCaseDoc
      * of the option selected, not the visible text.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * @param string   $value    the value to type
      * 
      * @return  void
      * 
-     * @see  typeAndWait  Related Action
+     * @see  typeAndWait()  Related Action
      */
     public function type($locator, $value)
     {
@@ -16126,15 +16150,15 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * @param string   $value    the value to type
      * 
      * @return  void
      * 
-     * @see  type  Base method, from which has been generated (automatically) current method
+     * @see  type()  Base method, from which has been generated (automatically) current method
      */
     public function typeAndWait($locator, $value)
     {
@@ -16157,12 +16181,12 @@ trait SeleniumTestCaseDoc
      * "typeKeys" command to send the keystroke events corresponding to what you just typed.</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * @param string   $value    the value to type
      * 
      * @return  void
      * 
-     * @see  typeKeysAndWait  Related Action
+     * @see  typeKeysAndWait()  Related Action
      */
     public function typeKeys($locator, $value)
     {
@@ -16186,15 +16210,15 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * @param string   $value    the value to type
      * 
      * @return  void
      * 
-     * @see  typeKeys  Base method, from which has been generated (automatically) current method
+     * @see  typeKeys()  Base method, from which has been generated (automatically) current method
      */
     public function typeKeysAndWait($locator, $value)
     {
@@ -16205,11 +16229,11 @@ trait SeleniumTestCaseDoc
      * Uncheck a toggle-button (checkbox/radio).
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  uncheckAndWait  Related Action
+     * @see  uncheckAndWait()  Related Action
      */
     public function uncheck($locator)
     {
@@ -16221,14 +16245,14 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $locator  an element locator 
-     *                           (see {@link doc_Element_Locators})
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
-     * @see  uncheck  Base method, from which has been generated (automatically) current method
+     * @see  uncheck()  Base method, from which has been generated (automatically) current method
      */
     public function uncheckAndWait($locator)
     {
@@ -16251,7 +16275,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  useXpathLibraryAndWait  Related Action
+     * @see  useXpathLibraryAndWait()  Related Action
      */
     public function useXpathLibrary($libraryName)
     {
@@ -16263,7 +16287,7 @@ trait SeleniumTestCaseDoc
      * 
      * <h4>Notes:</h4>
      * 
-     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad})</p>
+     * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
      * @param string   $libraryName  name of the desired library Only the following three can be chosen:
      *                               
@@ -16278,7 +16302,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      * 
-     * @see  useXpathLibrary  Base method, from which has been generated (automatically) current method
+     * @see  useXpathLibrary()  Base method, from which has been generated (automatically) current method
      */
     public function useXpathLibraryAndWait($libraryName)
     {

@@ -25,13 +25,8 @@ class CodeGenerator
     /** Useful width of DocBlock of method (symbol count) */
     const DOC_BLOCK_WIDTH = 112;
 
-    /** @var array Additional description for arguments, which has empty description, indexed by argument name.
-     * For example, description of some arguments skipped in off documentation (single variableName argument in store*,
-     * in derivative methods etc.) */
-    public $manualArgumentDescription = [
-        'variableName' => 'the name of a variable in which the result is to be stored (see {@link doc_Stored_Variables})', // store*
-        'pattern'      => 'the String-match Patterns (see {@link doc_String_match_Patterns})', // derivative
-    ];
+    const REGEXP_PHPDOC_INLINE_LINK = '\{@link\s+[\w\$\(\)\:]+(?:\s+[\w\$\(\)\:]+)*\}';
+
 
     function __construct()
     {
@@ -45,7 +40,24 @@ class CodeGenerator
     }
 
     /**
-     * Returns generated php code for specified methods list
+     * Additional description for arguments.
+     *
+     * @return array    Additional description for arguments, which has empty description, indexed by argument name.
+     *                  For example, description of some arguments skipped in off documentation (single variableName
+     *                  argument in store*, in derivative methods etc.)
+     */
+    function manualArgumentDescription()
+    {
+        return [
+            'variableName' => 'the name of a variable in which the result is to be stored (see ' .
+                CodeGenerator::linkToProperty('doc_Stored_Variables', '', 'Stored Variables') . ')', // store*
+            'pattern'      => 'the String-match Patterns (see ' .
+                CodeGenerator::linkToProperty('doc_String_match_Patterns', '', 'String match Patterns') . ')', // derivative
+        ];
+    }
+
+    /**
+     * Returns generated php code for specified methods list.
      *
      * @param Method[] $methods
      *
@@ -89,7 +101,7 @@ class CodeGenerator
 
         // see also links
         $newMethod->seeLinks = Helper::prependAssoc($newMethod->seeLinks, [
-            $oldMethod->name => 'Base method, from which has been generated (automatically) current method'
+            $oldMethod->getNameFQSEN() => 'Base method, from which has been generated (automatically) current method'
         ]);
 
         if ($oldMethod->subtype === Method::SUBTYPE_BASE) {
@@ -103,7 +115,7 @@ class CodeGenerator
                     $newMethod->description .=
                         '<h4>Notes:</h4>' .
                         '<p>After execution of this action, Selenium wait for a new page to load ' .
-                        '(see {@link waitForPageToLoad})</p>';
+                        '(see ' . CodeGenerator::linkToMethod('waitForPageToLoad') . ')</p>';
                     return $newMethod;
 
                 default:
@@ -118,7 +130,8 @@ class CodeGenerator
                 case Method::SUBTYPE_STORE:                   // Accessor --> Accessor
                     $newMethod->description .=
                         '<h4>Stored value:</h4>' .
-                        '<p>' . $newMethod->returnValue->description . ' (see {@link doc_Stored_Variables})</p>';
+                        '<p>' . $newMethod->returnValue->description . ' (see ' .
+                        CodeGenerator::linkToProperty('doc_Stored_Variables', '', 'Stored Variables') . ')</p>';
 
                     $newMethod->returnValue->description = ''; // store* methods has no return value todo to check this
                     return $newMethod;
@@ -143,7 +156,7 @@ class CodeGenerator
                         '<p>' . $newMethod->returnValue->description . '</p>' .
                         '<h4>Notes:</h4> ' .
                         '<p>If assertion will fail the test, it will abort the current test case ' .
-                        '(in contrast to the {@link ' . $relatedVerifyMethodName . '}).</p>';
+                        '(in contrast to the ' . CodeGenerator::linkToMethod($relatedVerifyMethodName) . ').</p>';
 
                     $newMethod->returnValue->description = ''; // assert* methods has no return value todo to check this
                     return $newMethod;
@@ -160,7 +173,7 @@ class CodeGenerator
                         '<p>' . $newMethod->returnValue->description . '</p>' .
                         '<h4>Notes:</h4> ' .
                         '<p>If assertion will fail the test, it will continue to run the test case ' .
-                        '(in contrast to the {@link ' . $relatedAssertMethodName . '}).</p>';
+                        '(in contrast to the ' . CodeGenerator::linkToMethod($relatedAssertMethodName) . ').</p>';
 
                     $newMethod->returnValue->description = ''; // verify* methods has no return value todo to check this
                     return $newMethod;
@@ -249,9 +262,14 @@ class CodeGenerator
 
         // html link replace pairs
         $linkReplaces = [
-            'locators'   => '(see {@link doc_Element_Locators})',       // <a href="#locators">element locator</a>
-            'patterns'   => '(see {@link doc_String_match_Patterns})',  // <a href="#patterns">pattern</a>
-            'storedVars' => '(see {@link doc_Stored_Variables})',       // <a href="#storedVars">variable</a>
+            // <a href="#locators">element locator</a>
+            'locators'   => '(see ' . static::linkToProperty('doc_Element_Locators', '', 'Element Locators') . ')',
+
+            // <a href="#patterns">pattern</a>
+            'patterns'   => '(see ' . static::linkToProperty('doc_String_match_Patterns', '', 'String match Patterns') . ')',
+
+            // <a href="#storedVars">variable</a>
+            'storedVars' => '(see ' . static::linkToProperty('doc_Stored_Variables', '', 'Stored Variables') . ')',
         ];
 
         // add formatted description for arguments (aligned for all arguments)
@@ -259,7 +277,7 @@ class CodeGenerator
         $firstSpaces       = str_repeat(' ', $maxLength);
         foreach ($method->arguments as $argument) {
             $argDescription = ($argument->description === null)
-                ? Helper::value($this->manualArgumentDescription, $argument->name, '')
+                ? Helper::value($this->manualArgumentDescription(), $argument->name, '')
                 : $argument->description;
 
             // trace, if empty description
@@ -345,10 +363,11 @@ class CodeGenerator
     }
 
     /**
-     * Returns description of "See also" of specified method for DocBlock
+     * Returns description of "See also" of specified method for DocBlock.
      *
      * @param Method $method
      *
+     * @note Notes
      * @return string   Parts of DocBlock of specified method
      */
     protected function phpDocSeeAlso(Method $method)
@@ -369,6 +388,97 @@ class CodeGenerator
         }
 
         return join(Helper::EOL, $phpDoc);
+    }
+
+    /**
+     * Returns generated inline link phpDoc-tag (for specified property).
+     *
+     * @param string $propertyName Name of property (without class name).
+     *                             Example: 'propertyName' or '$propertyName'
+     * @param string $className    Name of class, which contain specified property. Can contain namespaces.
+     *                             By default (=''), it is assumed current class.
+     *                             Example: 'ClassName', '\My\Space\MyClass'
+     * @param string $linkTitle    Title of link.
+     *
+     * @return string              Generated inline link phpDoc-tag
+     *
+     * @see fqsenForProperty()
+     */
+    public static function linkToProperty($propertyName, $className = '', $linkTitle = '')
+    {
+        $linkTitle = $linkTitle
+            ? ' ' . trim($linkTitle)
+            : '';
+        return '{@link ' . static::fqsenForProperty($propertyName, $className) . $linkTitle . '}';
+    }
+
+    /**
+     * Returns generated inline link phpDoc-tag (for specified method).
+     *
+     * @param string $methodName   Name of method (without class name).
+     *                             Example: 'methodName' or 'methodName()'
+     * @param string $className    Name of class, which contain specified property. Can contain namespaces.
+     *                             By default (=''), it is assumed current class.
+     *                             Example: 'ClassName', '\My\Space\MyClass'
+     * @param string $linkTitle    Title of link.
+     *
+     * @return string              Generated inline link phpDoc-tag
+     *
+     * @see fqsenForMethod()
+     */
+    public static function linkToMethod($methodName, $className = '', $linkTitle = '')
+    {
+        $linkTitle = $linkTitle
+            ? ' ' . trim($linkTitle)
+            : '';
+        return '{@link ' . static::fqsenForMethod($methodName, $className) . $linkTitle . '}';
+    }
+
+    /**
+     * Returns "Fully Qualified Structural Element Name" (FQSEN) for specified property.
+     *
+     * @param string $propertyName Name of property (without class name).
+     *                             Example: 'propertyName' or '$propertyName'
+     * @param string $className    Name of class, which contain specified property. Can contain namespaces.
+     *                             By default (=''), it is assumed current class.
+     *                             Example: 'ClassName', '\My\Space\MyClass'
+     *
+     * @return string              Generated FQSEN
+     *
+     * @see http://www.phpdoc.org/docs/latest/glossary.html#term-fully-qualified-structural-element-name-fqsen
+     * @see http://www.phpdoc.org/docs/latest/glossary.html#term-structural-element
+     */
+    public static function fqsenForProperty($propertyName, $className = '')
+    {
+        $className    = $className
+            ? trim($className) . '::'
+            : '';
+        $propertyName = '$' . Helper::cutPrefix('$', $propertyName);
+
+        return $className . $propertyName;
+    }
+
+    /**
+     * Returns "Fully Qualified Structural Element Name" (FQSEN) for specified method.
+     *
+     * @param string $methodName   Name of method (without class name).
+     *                             Example: 'methodName' or 'methodName()'
+     * @param string $className    Name of class, which contain specified property. Can contain namespaces.
+     *                             By default (=''), it is assumed current class.
+     *                             Example: 'ClassName', '\My\Space\MyClass'
+     *
+     * @return string              Generated FQSEN
+     *
+     * @see http://www.phpdoc.org/docs/latest/glossary.html#term-fully-qualified-structural-element-name-fqsen4e
+     * @see http://www.phpdoc.org/docs/latest/glossary.html#term-structural-element
+     */
+    public static function fqsenForMethod($methodName, $className = '')
+    {
+        $className  = $className
+            ? trim($className) . '::'
+            : '';
+        $methodName = Helper::cutPostfix('()', $methodName) . '()';
+        return $className . $methodName;
     }
 
     /**
@@ -414,7 +524,7 @@ class CodeGenerator
     {
         // don't break special words
         $specialWordsReplaceRules = [];
-        if (preg_match_all('/\{\@link\s+\w+\}/', $text, $m)) {
+        if (preg_match_all('/' . self::REGEXP_PHPDOC_INLINE_LINK . '/', $text, $m)) {
             $i = 0;
             foreach ($m[0] as $specialWord) {
                 $specialWordsReplaceRules[$specialWord] = $i . str_repeat('_', strlen($specialWord) - 1);
@@ -446,7 +556,7 @@ class CodeGenerator
             $firstLine = $lines[0];
 
             // find '{@link linkName}' or '(see {@link linkName})'
-            if (preg_match('/(\(see\s+)?\{@link\s+\w+\}\)?/', $firstLine, $m)) {
+            if (preg_match('/(\(see\s+)?' . self::REGEXP_PHPDOC_INLINE_LINK . '\)?/', $firstLine, $m)) {
                 $linkTag   = $m[0];
                 $firstLine = str_replace($linkTag, Helper::EOL . $linkTag, $firstLine); // fix: add EOL before tag
             }
@@ -483,8 +593,8 @@ class CodeGenerator
     {
         // direct replaces
         $phpDocDescription = strtr($methodDescription, [
-            '@see #doSelect' => 'See {@link select}',           // addSelection + removeSelection
-            '<code>'         => '[<b>',                         // for inline code blocks
+            '@see #doSelect' => 'See ' . CodeGenerator::linkToMethod('select'),     // addSelection + removeSelection
+            '<code>'         => '[<b>',                                             // for inline code blocks
             '</code>'        => '</b>]',
         ]);
 

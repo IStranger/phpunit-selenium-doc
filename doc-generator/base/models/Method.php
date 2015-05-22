@@ -5,6 +5,7 @@
 
 namespace phpdocSeleniumGenerator\models;
 
+use phpdocSeleniumGenerator\code_generator\CodeGenerator;
 use phpdocSeleniumGenerator\Helper;
 
 class Method extends Base
@@ -159,7 +160,9 @@ class Method extends Base
     public $returnValue;
 
     /**
-     * @var array "See also" links in format: [URL] => 'description'
+     * @var array "See also" links in format: [fqsenname|URL] => 'description'
+     * @see CodeGenerator::fqsenForProperty()
+     * @see CodeGenerator::fqsenForMethod()
      */
     public $seeLinks = [];
 
@@ -200,6 +203,18 @@ class Method extends Base
                 $this::throwException('Cannot determine base name without assigned type of method');
         }
         return $lowerCase ? strtolower($baseName) : $baseName;
+    }
+
+    /**
+     * Returns FQSEN-name of current method (without class name)
+     *
+     * @return string FQSEN of current method
+     *
+     * @see CodeGenerator::fqsenForMethod()
+     */
+    function getNameFQSEN()
+    {
+        return CodeGenerator::fqsenForMethod($this->name);
     }
 
     /**
