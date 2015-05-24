@@ -57,7 +57,23 @@ class CodeGenerator
     }
 
     /**
+     * Optional arguments (and their default values) of methods.
+     * @return array Array in format: ['methodName' => ['argumentName' => 'defaultValue']]
+     */
+    function optionalArguments()
+    {
+        return [
+            'waitForCondition'   => ['timeout' => null],
+            'waitForFrameToLoad' => ['timeout' => null],
+            'waitForPageToLoad'  => ['timeout' => null],
+            'waitForPopUp'       => ['timeout' => null],
+        ];
+    }
+
+    /**
      * Returns generated php code for specified methods list.
+     *
+     * <b>Note:</b> object list can be updated (optional arguments etc.).
      *
      * @param Method[] $methods
      *
@@ -65,6 +81,17 @@ class CodeGenerator
      */
     function generate($methods)
     {
+        // prepare methods
+        $optionalArgsMyMethodName = $this->optionalArguments();
+        foreach ($methods as $method) {
+            if ($optionalArgs = Helper::value($optionalArgsMyMethodName, $method->name)) {
+                foreach ($optionalArgs as $argName => $argDefaultValue) {
+                    $method->getArgumentByName($argName)->setAsOptional($argDefaultValue);
+                }
+            }
+        }
+
+        // generate
         $code = '';
         foreach ($methods as $method) {
             $code .= strtr($this->_tplMethod, [
@@ -237,7 +264,15 @@ class CodeGenerator
     {
         $argumentList = [];
         foreach ($method->arguments as $argument) {
-            $argumentList[] = '$' . $argument->name; // all arguments of selenium commands has simple php type
+            $str = '$' . $argument->name;   // all arguments of selenium commands has simple php type
+            if ($argument->isOptional()) {
+                $defaultValue = $argument->getDefaultValue();
+                $defaultValue = ($defaultValue === null)
+                    ? 'null'
+                    : (string)$argument->getDefaultValue();
+                $str .= ' = ' . $defaultValue;
+            }
+            $argumentList[] = $str;
         }
         return join(', ', $argumentList);
     }

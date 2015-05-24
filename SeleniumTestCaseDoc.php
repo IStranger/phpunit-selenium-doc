@@ -13,11 +13,11 @@
  * @see http://istranger.github.io/phpunit-selenium-doc/a00001.html        Html-doccumentation (generated from this class)
  *
  * @author  G.Azamat <m@fx4web.com>
- * @date    2015-05-22
+ * @date    2015-05-25
  */
 trait SeleniumTestCaseDoc
 {
-    // variables doc_* only for separate phpDoc by section (and for links)
+    // private variables doc_* only for separate phpDoc by section (and for links)
 
     /**
      * <h3>Element Locators</h3>
@@ -186,7 +186,7 @@ trait SeleniumTestCaseDoc
      */
     public function addLocationStrategy($strategyName, $functionDefinition)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -219,7 +219,7 @@ trait SeleniumTestCaseDoc
      */
     public function addLocationStrategyAndWait($strategyName, $functionDefinition)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -239,7 +239,7 @@ trait SeleniumTestCaseDoc
      */
     public function addScript($scriptContent, $scriptTagId)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -263,7 +263,7 @@ trait SeleniumTestCaseDoc
      */
     public function addScriptAndWait($scriptContent, $scriptTagId)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -281,7 +281,7 @@ trait SeleniumTestCaseDoc
      */
     public function addSelection($locator, $optionLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -303,7 +303,7 @@ trait SeleniumTestCaseDoc
      */
     public function addSelectionAndWait($locator, $optionLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -322,7 +322,7 @@ trait SeleniumTestCaseDoc
      */
     public function allowNativeXpath($allow)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -345,7 +345,7 @@ trait SeleniumTestCaseDoc
      */
     public function allowNativeXpathAndWait($allow)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -357,7 +357,7 @@ trait SeleniumTestCaseDoc
      */
     public function altKeyDown()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -373,7 +373,7 @@ trait SeleniumTestCaseDoc
      */
     public function altKeyDownAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -385,7 +385,7 @@ trait SeleniumTestCaseDoc
      */
     public function altKeyUp()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -401,7 +401,7 @@ trait SeleniumTestCaseDoc
      */
     public function altKeyUpAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -414,7 +414,7 @@ trait SeleniumTestCaseDoc
      */
     public function answerOnNextPrompt($answer)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -453,7 +453,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertAlert($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -492,7 +492,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotAlert($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -519,7 +519,7 @@ trait SeleniumTestCaseDoc
      */
     public function getAlert()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -553,7 +553,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeAlert($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -592,7 +592,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyAlert($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -631,7 +631,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotAlert($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -671,7 +671,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForAlert($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -711,7 +711,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotAlert($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -740,7 +740,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertAlertNotPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -769,7 +769,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertAlertPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -789,7 +789,7 @@ trait SeleniumTestCaseDoc
      */
     public function isAlertPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -816,7 +816,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeAlertPresent($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -845,7 +845,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyAlertNotPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -874,7 +874,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyAlertPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -904,7 +904,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForAlertNotPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -934,7 +934,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForAlertPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -966,7 +966,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertAllButtons($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -998,7 +998,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotAllButtons($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1018,7 +1018,7 @@ trait SeleniumTestCaseDoc
      */
     public function getAllButtons()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1045,7 +1045,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeAllButtons($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1077,7 +1077,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyAllButtons($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1109,7 +1109,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotAllButtons($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1142,7 +1142,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForAllButtons($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1175,7 +1175,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotAllButtons($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1207,7 +1207,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertAllFields($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1239,7 +1239,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotAllFields($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1259,7 +1259,7 @@ trait SeleniumTestCaseDoc
      */
     public function getAllFields()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1286,7 +1286,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeAllFields($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1318,7 +1318,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyAllFields($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1350,7 +1350,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotAllFields($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1383,7 +1383,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForAllFields($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1416,7 +1416,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotAllFields($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1448,7 +1448,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertAllLinks($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1480,7 +1480,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotAllLinks($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1500,7 +1500,7 @@ trait SeleniumTestCaseDoc
      */
     public function getAllLinks()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1527,7 +1527,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeAllLinks($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1559,7 +1559,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyAllLinks($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1591,7 +1591,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotAllLinks($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1624,7 +1624,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForAllLinks($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1657,7 +1657,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotAllLinks($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1687,7 +1687,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertAllWindowIds($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1717,7 +1717,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotAllWindowIds($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1735,7 +1735,7 @@ trait SeleniumTestCaseDoc
      */
     public function getAllWindowIds()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1761,7 +1761,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeAllWindowIds($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1791,7 +1791,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyAllWindowIds($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1821,7 +1821,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotAllWindowIds($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1852,7 +1852,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForAllWindowIds($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1883,7 +1883,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotAllWindowIds($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1913,7 +1913,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertAllWindowNames($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1943,7 +1943,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotAllWindowNames($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1961,7 +1961,7 @@ trait SeleniumTestCaseDoc
      */
     public function getAllWindowNames()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -1987,7 +1987,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeAllWindowNames($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2017,7 +2017,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyAllWindowNames($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2047,7 +2047,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotAllWindowNames($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2078,7 +2078,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForAllWindowNames($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2109,7 +2109,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotAllWindowNames($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2139,7 +2139,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertAllWindowTitles($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2169,7 +2169,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotAllWindowTitles($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2187,7 +2187,7 @@ trait SeleniumTestCaseDoc
      */
     public function getAllWindowTitles()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2213,7 +2213,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeAllWindowTitles($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2243,7 +2243,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyAllWindowTitles($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2273,7 +2273,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotAllWindowTitles($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2304,7 +2304,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForAllWindowTitles($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2335,7 +2335,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotAllWindowTitles($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2369,7 +2369,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertAttribute($attributeLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2403,7 +2403,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotAttribute($attributeLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2426,7 +2426,7 @@ trait SeleniumTestCaseDoc
      */
     public function getAttribute($attributeLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2455,7 +2455,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeAttribute($attributeLocator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2489,7 +2489,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyAttribute($attributeLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2523,7 +2523,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotAttribute($attributeLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2558,7 +2558,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForAttribute($attributeLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2593,7 +2593,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotAttribute($attributeLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2625,7 +2625,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertAttributeFromAllWindows($attributeName, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2657,7 +2657,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotAttributeFromAllWindows($attributeName, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2678,7 +2678,7 @@ trait SeleniumTestCaseDoc
      */
     public function getAttributeFromAllWindows($attributeName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2705,7 +2705,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeAttributeFromAllWindows($attributeName, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2737,7 +2737,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyAttributeFromAllWindows($attributeName, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2769,7 +2769,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotAttributeFromAllWindows($attributeName, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2802,7 +2802,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForAttributeFromAllWindows($attributeName, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2835,7 +2835,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotAttributeFromAllWindows($attributeName, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2865,7 +2865,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertBodyText($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2895,7 +2895,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotBodyText($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2913,7 +2913,7 @@ trait SeleniumTestCaseDoc
      */
     public function getBodyText()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2938,7 +2938,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeBodyText($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2968,7 +2968,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyBodyText($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -2998,7 +2998,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotBodyText($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3029,7 +3029,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForBodyText($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3060,7 +3060,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotBodyText($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3092,7 +3092,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertChecked($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3124,7 +3124,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotChecked($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3147,7 +3147,7 @@ trait SeleniumTestCaseDoc
      */
     public function isChecked($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3176,7 +3176,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeChecked($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3208,7 +3208,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyChecked($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3240,7 +3240,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotChecked($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3273,7 +3273,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForChecked($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3306,7 +3306,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotChecked($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3348,7 +3348,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertConfirmation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3390,7 +3390,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotConfirmation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3420,7 +3420,7 @@ trait SeleniumTestCaseDoc
      */
     public function getConfirmation()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3458,7 +3458,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeConfirmation($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3500,7 +3500,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyConfirmation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3542,7 +3542,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotConfirmation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3585,7 +3585,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForConfirmation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3628,7 +3628,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotConfirmation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3657,7 +3657,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertConfirmationNotPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3686,7 +3686,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertConfirmationPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3706,7 +3706,7 @@ trait SeleniumTestCaseDoc
      */
     public function isConfirmationPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3733,7 +3733,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeConfirmationPresent($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3762,7 +3762,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyConfirmationNotPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3791,7 +3791,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyConfirmationPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3821,7 +3821,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForConfirmationNotPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3851,7 +3851,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForConfirmationPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3881,7 +3881,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertCookie($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3911,7 +3911,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotCookie($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3929,7 +3929,7 @@ trait SeleniumTestCaseDoc
      */
     public function getCookie()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3954,7 +3954,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeCookie($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -3984,7 +3984,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyCookie($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4014,7 +4014,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotCookie($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4045,7 +4045,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForCookie($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4076,7 +4076,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotCookie($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4108,7 +4108,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertCookieByName($name, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4140,7 +4140,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotCookieByName($name, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4160,7 +4160,7 @@ trait SeleniumTestCaseDoc
      */
     public function getCookieByName($name)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4186,7 +4186,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeCookieByName($name, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4218,7 +4218,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyCookieByName($name, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4250,7 +4250,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotCookieByName($name, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4283,7 +4283,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForCookieByName($name, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4316,7 +4316,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotCookieByName($name, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4345,7 +4345,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertCookieNotPresent($name)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4374,7 +4374,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertCookiePresent($name)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4394,7 +4394,7 @@ trait SeleniumTestCaseDoc
      */
     public function isCookiePresent($name)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4421,7 +4421,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeCookiePresent($name, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4450,7 +4450,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyCookieNotPresent($name)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4479,7 +4479,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyCookiePresent($name)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4509,7 +4509,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForCookieNotPresent($name)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4539,7 +4539,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForCookiePresent($name)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4577,7 +4577,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertCursorPosition($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4615,7 +4615,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotCursorPosition($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4642,7 +4642,7 @@ trait SeleniumTestCaseDoc
      */
     public function getCursorPosition($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4675,7 +4675,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeCursorPosition($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4713,7 +4713,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyCursorPosition($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4751,7 +4751,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotCursorPosition($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4790,7 +4790,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForCursorPosition($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4829,7 +4829,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotCursorPosition($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4861,7 +4861,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertEditable($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4893,7 +4893,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotEditable($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4916,7 +4916,7 @@ trait SeleniumTestCaseDoc
      */
     public function isEditable($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4946,7 +4946,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeEditable($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -4978,7 +4978,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyEditable($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5010,7 +5010,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotEditable($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5043,7 +5043,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForEditable($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5076,7 +5076,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotEditable($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5108,7 +5108,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertElementHeight($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5140,7 +5140,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotElementHeight($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5161,7 +5161,7 @@ trait SeleniumTestCaseDoc
      */
     public function getElementHeight($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5188,7 +5188,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeElementHeight($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5220,7 +5220,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyElementHeight($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5252,7 +5252,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotElementHeight($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5285,7 +5285,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForElementHeight($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5318,7 +5318,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotElementHeight($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5352,7 +5352,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertElementIndex($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5386,7 +5386,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotElementIndex($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5409,7 +5409,7 @@ trait SeleniumTestCaseDoc
      */
     public function getElementIndex($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5439,7 +5439,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeElementIndex($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5473,7 +5473,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyElementIndex($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5507,7 +5507,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotElementIndex($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5542,7 +5542,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForElementIndex($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5577,7 +5577,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotElementIndex($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5607,7 +5607,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertElementNotPresent($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5637,7 +5637,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertElementPresent($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5658,7 +5658,7 @@ trait SeleniumTestCaseDoc
      */
     public function isElementPresent($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5685,7 +5685,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeElementPresent($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5715,7 +5715,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyElementNotPresent($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5745,7 +5745,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyElementPresent($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5776,7 +5776,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForElementNotPresent($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5807,7 +5807,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForElementPresent($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5839,7 +5839,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertElementPositionLeft($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5871,7 +5871,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotElementPositionLeft($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5892,7 +5892,7 @@ trait SeleniumTestCaseDoc
      */
     public function getElementPositionLeft($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5919,7 +5919,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeElementPositionLeft($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5951,7 +5951,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyElementPositionLeft($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -5983,7 +5983,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotElementPositionLeft($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6016,7 +6016,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForElementPositionLeft($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6049,7 +6049,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotElementPositionLeft($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6081,7 +6081,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertElementPositionTop($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6113,7 +6113,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotElementPositionTop($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6134,7 +6134,7 @@ trait SeleniumTestCaseDoc
      */
     public function getElementPositionTop($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6161,7 +6161,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeElementPositionTop($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6193,7 +6193,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyElementPositionTop($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6225,7 +6225,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotElementPositionTop($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6258,7 +6258,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForElementPositionTop($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6291,7 +6291,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotElementPositionTop($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6323,7 +6323,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertElementWidth($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6355,7 +6355,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotElementWidth($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6376,7 +6376,7 @@ trait SeleniumTestCaseDoc
      */
     public function getElementWidth($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6403,7 +6403,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeElementWidth($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6435,7 +6435,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyElementWidth($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6467,7 +6467,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotElementWidth($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6500,7 +6500,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForElementWidth($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6533,7 +6533,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotElementWidth($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6573,7 +6573,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertEval($script, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6613,7 +6613,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotEval($script, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6642,7 +6642,7 @@ trait SeleniumTestCaseDoc
      */
     public function getEval($script)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6677,7 +6677,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeEval($script, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6717,7 +6717,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyEval($script, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6757,7 +6757,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotEval($script, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6798,7 +6798,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForEval($script, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6839,7 +6839,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotEval($script, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6873,7 +6873,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertExpression($expression, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6907,7 +6907,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotExpression($expression, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6930,7 +6930,7 @@ trait SeleniumTestCaseDoc
      */
     public function getExpression($expression)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6959,7 +6959,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeExpression($expression, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -6993,7 +6993,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyExpression($expression, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7027,7 +7027,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotExpression($expression, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7062,7 +7062,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForExpression($expression, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7097,7 +7097,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotExpression($expression, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7127,7 +7127,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertHtmlSource($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7157,7 +7157,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotHtmlSource($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7175,7 +7175,7 @@ trait SeleniumTestCaseDoc
      */
     public function getHtmlSource()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7200,7 +7200,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeHtmlSource($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7230,7 +7230,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyHtmlSource($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7260,7 +7260,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotHtmlSource($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7291,7 +7291,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForHtmlSource($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7322,7 +7322,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotHtmlSource($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7352,7 +7352,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertLocation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7382,7 +7382,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotLocation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7400,7 +7400,7 @@ trait SeleniumTestCaseDoc
      */
     public function getLocation()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7425,7 +7425,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeLocation($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7455,7 +7455,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyLocation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7485,7 +7485,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotLocation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7516,7 +7516,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForLocation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7547,7 +7547,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotLocation($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7577,7 +7577,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertMouseSpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7607,7 +7607,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotMouseSpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7625,7 +7625,7 @@ trait SeleniumTestCaseDoc
      */
     public function getMouseSpeed()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7651,7 +7651,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeMouseSpeed($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7681,7 +7681,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyMouseSpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7711,7 +7711,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotMouseSpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7742,7 +7742,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForMouseSpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7773,7 +7773,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotMouseSpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7807,7 +7807,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotOrdered($locator1, $locator2)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7841,7 +7841,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertOrdered($locator1, $locator2)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7866,7 +7866,7 @@ trait SeleniumTestCaseDoc
      */
     public function isOrdered($locator1, $locator2)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7898,7 +7898,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeOrdered($locator1, $locator2, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7932,7 +7932,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotOrdered($locator1, $locator2)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -7966,7 +7966,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyOrdered($locator1, $locator2)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8001,7 +8001,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotOrdered($locator1, $locator2)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8036,7 +8036,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForOrdered($locator1, $locator2)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8074,7 +8074,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotPrompt($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8112,7 +8112,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertPrompt($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8138,7 +8138,7 @@ trait SeleniumTestCaseDoc
      */
     public function getPrompt()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8172,7 +8172,7 @@ trait SeleniumTestCaseDoc
      */
     public function storePrompt($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8210,7 +8210,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotPrompt($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8248,7 +8248,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyPrompt($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8287,7 +8287,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotPrompt($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8326,7 +8326,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForPrompt($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8358,7 +8358,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotSelectOptions($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8390,7 +8390,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertSelectOptions($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8411,7 +8411,7 @@ trait SeleniumTestCaseDoc
      */
     public function getSelectOptions($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8439,7 +8439,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeSelectOptions($selectLocator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8471,7 +8471,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotSelectOptions($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8503,7 +8503,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifySelectOptions($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8536,7 +8536,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotSelectOptions($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8569,7 +8569,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForSelectOptions($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8601,7 +8601,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotSelectedId($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8633,7 +8633,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertSelectedId($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8654,7 +8654,7 @@ trait SeleniumTestCaseDoc
      */
     public function getSelectedId($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8682,7 +8682,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeSelectedId($selectLocator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8714,7 +8714,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotSelectedId($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8746,7 +8746,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifySelectedId($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8779,7 +8779,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotSelectedId($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8812,7 +8812,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForSelectedId($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8844,7 +8844,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotSelectedIds($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8876,7 +8876,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertSelectedIds($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8897,7 +8897,7 @@ trait SeleniumTestCaseDoc
      */
     public function getSelectedIds($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8925,7 +8925,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeSelectedIds($selectLocator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8957,7 +8957,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotSelectedIds($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -8989,7 +8989,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifySelectedIds($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9022,7 +9022,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotSelectedIds($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9055,7 +9055,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForSelectedIds($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9087,7 +9087,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotSelectedIndex($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9119,7 +9119,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertSelectedIndex($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9140,7 +9140,7 @@ trait SeleniumTestCaseDoc
      */
     public function getSelectedIndex($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9168,7 +9168,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeSelectedIndex($selectLocator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9200,7 +9200,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotSelectedIndex($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9232,7 +9232,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifySelectedIndex($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9265,7 +9265,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotSelectedIndex($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9298,7 +9298,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForSelectedIndex($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9331,7 +9331,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotSelectedIndexes($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9364,7 +9364,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertSelectedIndexes($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9386,7 +9386,7 @@ trait SeleniumTestCaseDoc
      */
     public function getSelectedIndexes($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9415,7 +9415,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeSelectedIndexes($selectLocator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9448,7 +9448,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotSelectedIndexes($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9481,7 +9481,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifySelectedIndexes($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9515,7 +9515,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotSelectedIndexes($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9549,7 +9549,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForSelectedIndexes($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9581,7 +9581,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotSelectedLabel($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9613,7 +9613,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertSelectedLabel($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9634,7 +9634,7 @@ trait SeleniumTestCaseDoc
      */
     public function getSelectedLabel($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9662,7 +9662,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeSelectedLabel($selectLocator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9694,7 +9694,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotSelectedLabel($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9726,7 +9726,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifySelectedLabel($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9759,7 +9759,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotSelectedLabel($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9792,7 +9792,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForSelectedLabel($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9825,7 +9825,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotSelectedLabels($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9858,7 +9858,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertSelectedLabels($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9879,7 +9879,7 @@ trait SeleniumTestCaseDoc
      */
     public function getSelectedLabels($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9907,7 +9907,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeSelectedLabels($selectLocator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9940,7 +9940,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotSelectedLabels($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -9973,7 +9973,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifySelectedLabels($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10007,7 +10007,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotSelectedLabels($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10041,7 +10041,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForSelectedLabels($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10073,7 +10073,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotSelectedValue($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10105,7 +10105,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertSelectedValue($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10126,7 +10126,7 @@ trait SeleniumTestCaseDoc
      */
     public function getSelectedValue($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10154,7 +10154,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeSelectedValue($selectLocator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10186,7 +10186,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotSelectedValue($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10218,7 +10218,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifySelectedValue($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10251,7 +10251,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotSelectedValue($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10284,7 +10284,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForSelectedValue($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10317,7 +10317,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotSelectedValues($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10350,7 +10350,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertSelectedValues($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10371,7 +10371,7 @@ trait SeleniumTestCaseDoc
      */
     public function getSelectedValues($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10399,7 +10399,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeSelectedValues($selectLocator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10432,7 +10432,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotSelectedValues($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10465,7 +10465,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifySelectedValues($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10499,7 +10499,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotSelectedValues($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10533,7 +10533,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForSelectedValues($selectLocator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10563,7 +10563,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotSomethingSelected($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10593,7 +10593,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertSomethingSelected($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10614,7 +10614,7 @@ trait SeleniumTestCaseDoc
      */
     public function isSomethingSelected($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10642,7 +10642,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeSomethingSelected($selectLocator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10672,7 +10672,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotSomethingSelected($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10702,7 +10702,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifySomethingSelected($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10733,7 +10733,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotSomethingSelected($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10764,7 +10764,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForSomethingSelected($selectLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10797,7 +10797,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotSpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10830,7 +10830,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertSpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10850,7 +10850,7 @@ trait SeleniumTestCaseDoc
      */
     public function getSpeed()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10877,7 +10877,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeSpeed($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10910,7 +10910,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotSpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10943,7 +10943,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifySpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -10977,7 +10977,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotSpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11011,7 +11011,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForSpeed($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11044,7 +11044,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotTable($tableCellAddress, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11077,7 +11077,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertTable($tableCellAddress, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11099,7 +11099,7 @@ trait SeleniumTestCaseDoc
      */
     public function getTable($tableCellAddress)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11127,7 +11127,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeTable($tableCellAddress, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11160,7 +11160,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotTable($tableCellAddress, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11193,7 +11193,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyTable($tableCellAddress, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11227,7 +11227,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotTable($tableCellAddress, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11261,7 +11261,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForTable($tableCellAddress, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11296,7 +11296,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotText($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11331,7 +11331,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertText($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11355,7 +11355,7 @@ trait SeleniumTestCaseDoc
      */
     public function getText($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11385,7 +11385,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeText($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11420,7 +11420,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotText($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11455,7 +11455,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyText($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11491,7 +11491,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotText($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11527,7 +11527,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForText($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11557,7 +11557,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotTitle($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11587,7 +11587,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertTitle($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11605,7 +11605,7 @@ trait SeleniumTestCaseDoc
      */
     public function getTitle()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11630,7 +11630,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeTitle($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11660,7 +11660,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotTitle($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11690,7 +11690,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyTitle($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11721,7 +11721,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotTitle($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11752,7 +11752,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForTitle($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11786,7 +11786,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotValue($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11820,7 +11820,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertValue($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11843,7 +11843,7 @@ trait SeleniumTestCaseDoc
      */
     public function getValue($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11873,7 +11873,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeValue($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11907,7 +11907,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotValue($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11941,7 +11941,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyValue($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -11976,7 +11976,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotValue($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12011,7 +12011,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForValue($locator, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12045,7 +12045,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotVisible($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12079,7 +12079,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertVisible($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12104,7 +12104,7 @@ trait SeleniumTestCaseDoc
      */
     public function isVisible($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12136,7 +12136,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeVisible($locator, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12170,7 +12170,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotVisible($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12204,7 +12204,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyVisible($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12239,7 +12239,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotVisible($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12274,7 +12274,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForVisible($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12310,7 +12310,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12346,7 +12346,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12373,7 +12373,7 @@ trait SeleniumTestCaseDoc
      */
     public function getWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12405,7 +12405,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeWhetherThisFrameMatchFrameExpression($currentFrameString, $target, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12441,7 +12441,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12477,7 +12477,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12514,7 +12514,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12551,7 +12551,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForWhetherThisFrameMatchFrameExpression($currentFrameString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12587,7 +12587,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12623,7 +12623,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12650,7 +12650,7 @@ trait SeleniumTestCaseDoc
      */
     public function getWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12682,7 +12682,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeWhetherThisWindowMatchWindowExpression($currentWindowString, $target, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12718,7 +12718,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12754,7 +12754,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12791,7 +12791,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12828,7 +12828,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForWhetherThisWindowMatchWindowExpression($currentWindowString, $target)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12861,7 +12861,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertNotXpathCount($xpath, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12894,7 +12894,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertXpathCount($xpath, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12915,7 +12915,7 @@ trait SeleniumTestCaseDoc
      */
     public function getXpathCount($xpath)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12942,7 +12942,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeXpathCount($xpath, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -12975,7 +12975,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyNotXpathCount($xpath, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13008,7 +13008,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyXpathCount($xpath, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13042,7 +13042,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForNotXpathCount($xpath, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13076,7 +13076,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForXpathCount($xpath, $pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13105,7 +13105,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertPromptNotPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13134,7 +13134,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertPromptPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13154,7 +13154,7 @@ trait SeleniumTestCaseDoc
      */
     public function isPromptPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13181,7 +13181,7 @@ trait SeleniumTestCaseDoc
      */
     public function storePromptPresent($variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13210,7 +13210,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyPromptNotPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13239,7 +13239,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyPromptPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13269,7 +13269,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForPromptNotPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13299,7 +13299,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForPromptPresent()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13329,7 +13329,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertTextNotPresent($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13359,7 +13359,7 @@ trait SeleniumTestCaseDoc
      */
     public function assertTextPresent($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13380,7 +13380,7 @@ trait SeleniumTestCaseDoc
      */
     public function isTextPresent($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13408,7 +13408,7 @@ trait SeleniumTestCaseDoc
      */
     public function storeTextPresent($pattern, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13438,7 +13438,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyTextNotPresent($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13468,7 +13468,7 @@ trait SeleniumTestCaseDoc
      */
     public function verifyTextPresent($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13499,7 +13499,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForTextNotPresent($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13530,7 +13530,7 @@ trait SeleniumTestCaseDoc
      */
     public function waitForTextPresent($pattern)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13549,7 +13549,7 @@ trait SeleniumTestCaseDoc
      */
     public function assignId($locator, $identifier)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13572,7 +13572,7 @@ trait SeleniumTestCaseDoc
      */
     public function assignIdAndWait($locator, $identifier)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13590,7 +13590,7 @@ trait SeleniumTestCaseDoc
      */
     public function attachFile($fieldLocator, $fileLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13618,7 +13618,7 @@ trait SeleniumTestCaseDoc
      */
     public function captureEntirePageScreenshot($filename, $kwargs)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13650,7 +13650,7 @@ trait SeleniumTestCaseDoc
      */
     public function captureEntirePageScreenshotAndWait($filename, $kwargs)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13672,7 +13672,7 @@ trait SeleniumTestCaseDoc
      */
     public function captureEntirePageScreenshotToString($kwargs)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13699,7 +13699,7 @@ trait SeleniumTestCaseDoc
      */
     public function captureEntirePageScreenshotToStringAndWait($kwargs)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13713,7 +13713,7 @@ trait SeleniumTestCaseDoc
      */
     public function captureScreenshot($filename)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13731,7 +13731,7 @@ trait SeleniumTestCaseDoc
      */
     public function captureScreenshotAndWait($filename)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13745,7 +13745,7 @@ trait SeleniumTestCaseDoc
      */
     public function captureScreenshotToString()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13763,7 +13763,7 @@ trait SeleniumTestCaseDoc
      */
     public function captureScreenshotToStringAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13778,7 +13778,7 @@ trait SeleniumTestCaseDoc
      */
     public function check($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13797,7 +13797,7 @@ trait SeleniumTestCaseDoc
      */
     public function checkAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13817,7 +13817,7 @@ trait SeleniumTestCaseDoc
      */
     public function chooseCancelOnNextConfirmation()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13842,7 +13842,7 @@ trait SeleniumTestCaseDoc
      */
     public function chooseCancelOnNextConfirmationAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13863,7 +13863,7 @@ trait SeleniumTestCaseDoc
      */
     public function chooseOkOnNextConfirmation()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13888,7 +13888,7 @@ trait SeleniumTestCaseDoc
      */
     public function chooseOkOnNextConfirmationAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13904,7 +13904,7 @@ trait SeleniumTestCaseDoc
      */
     public function click($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13924,7 +13924,7 @@ trait SeleniumTestCaseDoc
      */
     public function clickAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13942,7 +13942,7 @@ trait SeleniumTestCaseDoc
      */
     public function clickAt($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13964,7 +13964,7 @@ trait SeleniumTestCaseDoc
      */
     public function clickAtAndWait($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13974,7 +13974,7 @@ trait SeleniumTestCaseDoc
      */
     public function close()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -13989,7 +13989,7 @@ trait SeleniumTestCaseDoc
      */
     public function contextMenu($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14008,7 +14008,7 @@ trait SeleniumTestCaseDoc
      */
     public function contextMenuAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14025,7 +14025,7 @@ trait SeleniumTestCaseDoc
      */
     public function contextMenuAt($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14046,7 +14046,7 @@ trait SeleniumTestCaseDoc
      */
     public function contextMenuAtAndWait($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14058,7 +14058,7 @@ trait SeleniumTestCaseDoc
      */
     public function controlKeyDown()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14074,7 +14074,7 @@ trait SeleniumTestCaseDoc
      */
     public function controlKeyDownAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14086,7 +14086,7 @@ trait SeleniumTestCaseDoc
      */
     public function controlKeyUp()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14102,7 +14102,7 @@ trait SeleniumTestCaseDoc
      */
     public function controlKeyUpAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14122,7 +14122,7 @@ trait SeleniumTestCaseDoc
      */
     public function createCookie($nameValuePair, $optionsString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14146,7 +14146,7 @@ trait SeleniumTestCaseDoc
      */
     public function createCookieAndWait($nameValuePair, $optionsString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14161,7 +14161,7 @@ trait SeleniumTestCaseDoc
      */
     public function deleteAllVisibleCookies()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14180,7 +14180,7 @@ trait SeleniumTestCaseDoc
      */
     public function deleteAllVisibleCookiesAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14206,7 +14206,7 @@ trait SeleniumTestCaseDoc
      */
     public function deleteCookie($name, $optionsString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14236,7 +14236,7 @@ trait SeleniumTestCaseDoc
      */
     public function deleteCookieAndWait($name, $optionsString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14250,7 +14250,7 @@ trait SeleniumTestCaseDoc
      */
     public function deselectPopUp()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14268,7 +14268,7 @@ trait SeleniumTestCaseDoc
      */
     public function deselectPopUpAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14284,7 +14284,7 @@ trait SeleniumTestCaseDoc
      */
     public function doubleClick($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14304,7 +14304,7 @@ trait SeleniumTestCaseDoc
      */
     public function doubleClickAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14322,7 +14322,7 @@ trait SeleniumTestCaseDoc
      */
     public function doubleClickAt($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14344,7 +14344,7 @@ trait SeleniumTestCaseDoc
      */
     public function doubleClickAtAndWait($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14360,7 +14360,7 @@ trait SeleniumTestCaseDoc
      */
     public function dragAndDrop($locator, $movementsString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14380,7 +14380,7 @@ trait SeleniumTestCaseDoc
      */
     public function dragAndDropAndWait($locator, $movementsString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14396,7 +14396,7 @@ trait SeleniumTestCaseDoc
      */
     public function dragAndDropToObject($locatorOfObjectToBeDragged, $locatorOfDragDestinationObject)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14416,7 +14416,7 @@ trait SeleniumTestCaseDoc
      */
     public function dragAndDropToObjectAndWait($locatorOfObjectToBeDragged, $locatorOfDragDestinationObject)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14433,7 +14433,7 @@ trait SeleniumTestCaseDoc
      */
     public function dragDrop($locator, $movementsString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14454,7 +14454,7 @@ trait SeleniumTestCaseDoc
      */
     public function dragDropAndWait($locator, $movementsString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14470,7 +14470,7 @@ trait SeleniumTestCaseDoc
      */
     public function fireEvent($locator, $eventName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14490,7 +14490,7 @@ trait SeleniumTestCaseDoc
      */
     public function fireEventAndWait($locator, $eventName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14506,7 +14506,7 @@ trait SeleniumTestCaseDoc
      */
     public function focus($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14526,7 +14526,7 @@ trait SeleniumTestCaseDoc
      */
     public function focusAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14538,7 +14538,7 @@ trait SeleniumTestCaseDoc
      */
     public function goBack()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14554,7 +14554,7 @@ trait SeleniumTestCaseDoc
      */
     public function goBackAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14571,7 +14571,7 @@ trait SeleniumTestCaseDoc
      */
     public function highlight($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14592,7 +14592,7 @@ trait SeleniumTestCaseDoc
      */
     public function highlightAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14613,7 +14613,7 @@ trait SeleniumTestCaseDoc
      */
     public function ignoreAttributesWithoutValue($ignore)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14638,7 +14638,7 @@ trait SeleniumTestCaseDoc
      */
     public function ignoreAttributesWithoutValueAndWait($ignore)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14656,7 +14656,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyDown($locator, $keySequence)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14678,7 +14678,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyDownAndWait($locator, $keySequence)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14698,7 +14698,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyDownNative($keycode)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14722,7 +14722,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyDownNativeAndWait($keycode)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14740,7 +14740,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyPress($locator, $keySequence)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14762,7 +14762,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyPressAndWait($locator, $keySequence)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14782,7 +14782,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyPressNative($keycode)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14806,7 +14806,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyPressNativeAndWait($keycode)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14824,7 +14824,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyUp($locator, $keySequence)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14846,7 +14846,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyUpAndWait($locator, $keySequence)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14866,7 +14866,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyUpNative($keycode)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14890,7 +14890,7 @@ trait SeleniumTestCaseDoc
      */
     public function keyUpNativeAndWait($keycode)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14902,7 +14902,7 @@ trait SeleniumTestCaseDoc
      */
     public function metaKeyDown()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14918,7 +14918,7 @@ trait SeleniumTestCaseDoc
      */
     public function metaKeyDownAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14930,7 +14930,7 @@ trait SeleniumTestCaseDoc
      */
     public function metaKeyUp()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14946,7 +14946,7 @@ trait SeleniumTestCaseDoc
      */
     public function metaKeyUpAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14961,7 +14961,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseDown($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14980,7 +14980,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseDownAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -14997,7 +14997,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseDownAt($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15018,7 +15018,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseDownAtAndWait($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15033,7 +15033,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseMove($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15052,7 +15052,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseMoveAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15069,7 +15069,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseMoveAt($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15090,7 +15090,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseMoveAtAndWait($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15105,7 +15105,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseOut($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15124,7 +15124,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseOutAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15139,7 +15139,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseOver($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15158,7 +15158,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseOverAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15174,7 +15174,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseUp($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15194,7 +15194,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseUpAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15212,7 +15212,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseUpAt($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15234,7 +15234,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseUpAtAndWait($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15250,7 +15250,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseUpRight($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15270,7 +15270,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseUpRightAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15288,7 +15288,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseUpRightAt($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15310,7 +15310,7 @@ trait SeleniumTestCaseDoc
      */
     public function mouseUpRightAtAndWait($locator, $coordString)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15327,7 +15327,7 @@ trait SeleniumTestCaseDoc
      */
     public function open($url)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15349,7 +15349,7 @@ trait SeleniumTestCaseDoc
      */
     public function openWindow($url, $windowID)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15375,7 +15375,7 @@ trait SeleniumTestCaseDoc
      */
     public function openWindowAndWait($url, $windowID)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15387,7 +15387,7 @@ trait SeleniumTestCaseDoc
      */
     public function pause($waitTime)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15399,7 +15399,7 @@ trait SeleniumTestCaseDoc
      */
     public function refresh()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15415,7 +15415,7 @@ trait SeleniumTestCaseDoc
      */
     public function refreshAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15430,7 +15430,7 @@ trait SeleniumTestCaseDoc
      */
     public function removeAllSelections($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15449,7 +15449,7 @@ trait SeleniumTestCaseDoc
      */
     public function removeAllSelectionsAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15465,7 +15465,7 @@ trait SeleniumTestCaseDoc
      */
     public function removeScript($scriptTagId)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15485,7 +15485,7 @@ trait SeleniumTestCaseDoc
      */
     public function removeScriptAndWait($scriptTagId)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15503,7 +15503,7 @@ trait SeleniumTestCaseDoc
      */
     public function removeSelection($locator, $optionLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15525,7 +15525,7 @@ trait SeleniumTestCaseDoc
      */
     public function removeSelectionAndWait($locator, $optionLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15538,7 +15538,7 @@ trait SeleniumTestCaseDoc
      */
     public function retrieveLastRemoteControlLogs()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15557,7 +15557,7 @@ trait SeleniumTestCaseDoc
      */
     public function rollup($rollupName, $kwargs)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15580,7 +15580,7 @@ trait SeleniumTestCaseDoc
      */
     public function rollupAndWait($rollupName, $kwargs)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15599,7 +15599,7 @@ trait SeleniumTestCaseDoc
      */
     public function runScript($script)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15622,7 +15622,7 @@ trait SeleniumTestCaseDoc
      */
     public function runScriptAndWait($script)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15655,7 +15655,7 @@ trait SeleniumTestCaseDoc
      */
     public function select($selectLocator, $optionLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15692,7 +15692,7 @@ trait SeleniumTestCaseDoc
      */
     public function selectAndWait($selectLocator, $optionLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15712,7 +15712,7 @@ trait SeleniumTestCaseDoc
      */
     public function selectFrame($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15737,7 +15737,7 @@ trait SeleniumTestCaseDoc
      */
     public function selectPopUp($windowID)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15766,7 +15766,7 @@ trait SeleniumTestCaseDoc
      */
     public function selectPopUpAndWait($windowID)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15822,7 +15822,7 @@ trait SeleniumTestCaseDoc
      */
     public function selectWindow($windowID)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15839,7 +15839,7 @@ trait SeleniumTestCaseDoc
      */
     public function setBrowserLogLevel($logLevel)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15860,7 +15860,7 @@ trait SeleniumTestCaseDoc
      */
     public function setBrowserLogLevelAndWait($logLevel)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15872,7 +15872,7 @@ trait SeleniumTestCaseDoc
      */
     public function setContext($context)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15892,7 +15892,7 @@ trait SeleniumTestCaseDoc
      */
     public function setCursorPosition($locator, $position)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15916,7 +15916,7 @@ trait SeleniumTestCaseDoc
      */
     public function setCursorPositionAndWait($locator, $position)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15937,7 +15937,7 @@ trait SeleniumTestCaseDoc
      */
     public function setMouseSpeed($pixels)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15962,7 +15962,7 @@ trait SeleniumTestCaseDoc
      */
     public function setMouseSpeedAndWait($pixels)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15978,7 +15978,7 @@ trait SeleniumTestCaseDoc
      */
     public function setSpeed($value)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -15998,7 +15998,7 @@ trait SeleniumTestCaseDoc
      */
     public function setSpeedAndWait($value)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16010,7 +16010,7 @@ trait SeleniumTestCaseDoc
      */
     public function shiftKeyDown()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16026,7 +16026,7 @@ trait SeleniumTestCaseDoc
      */
     public function shiftKeyDownAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16038,7 +16038,7 @@ trait SeleniumTestCaseDoc
      */
     public function shiftKeyUp()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16054,7 +16054,7 @@ trait SeleniumTestCaseDoc
      */
     public function shiftKeyUpAndWait()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16068,7 +16068,7 @@ trait SeleniumTestCaseDoc
      */
     public function shutDownSeleniumServer()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16082,7 +16082,7 @@ trait SeleniumTestCaseDoc
      */
     public function store($expression, $variableName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16099,7 +16099,7 @@ trait SeleniumTestCaseDoc
      */
     public function submit($formLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16120,7 +16120,7 @@ trait SeleniumTestCaseDoc
      */
     public function submitAndWait($formLocator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16139,7 +16139,7 @@ trait SeleniumTestCaseDoc
      */
     public function type($locator, $value)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16162,7 +16162,7 @@ trait SeleniumTestCaseDoc
      */
     public function typeAndWait($locator, $value)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16190,7 +16190,7 @@ trait SeleniumTestCaseDoc
      */
     public function typeKeys($locator, $value)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16222,7 +16222,7 @@ trait SeleniumTestCaseDoc
      */
     public function typeKeysAndWait($locator, $value)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16237,7 +16237,7 @@ trait SeleniumTestCaseDoc
      */
     public function uncheck($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16256,7 +16256,7 @@ trait SeleniumTestCaseDoc
      */
     public function uncheckAndWait($locator)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16279,7 +16279,7 @@ trait SeleniumTestCaseDoc
      */
     public function useXpathLibrary($libraryName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16306,7 +16306,7 @@ trait SeleniumTestCaseDoc
      */
     public function useXpathLibraryAndWait($libraryName)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16323,9 +16323,9 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      */
-    public function waitForCondition($script, $timeout)
+    public function waitForCondition($script, $timeout = null)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16339,9 +16339,9 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      */
-    public function waitForFrameToLoad($frameAddress, $timeout)
+    public function waitForFrameToLoad($frameAddress, $timeout = null)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16358,9 +16358,9 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      */
-    public function waitForPageToLoad($timeout)
+    public function waitForPageToLoad($timeout = null)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16376,9 +16376,9 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      */
-    public function waitForPopUp($windowID, $timeout)
+    public function waitForPopUp($windowID, $timeout = null)
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16388,7 +16388,7 @@ trait SeleniumTestCaseDoc
      */
     public function windowFocus()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     /**
@@ -16398,7 +16398,7 @@ trait SeleniumTestCaseDoc
      */
     public function windowMaximize()
     {
-        $this->_callParentMethod(__METHOD__, func_get_args());
+        return $this->_callParentMethod(__METHOD__, func_get_args());
     }
     
     

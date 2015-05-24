@@ -8,9 +8,9 @@
  * Class used for easy development of tests in IDE (like phpStorm or NetBeans).
  *
  *
- * @see     http://release.seleniumhq.org/selenium-core/1.0.1/reference.html
- * @see     https://github.com/IStranger/phpunit-selenium-doc
- *
+ * @see http://release.seleniumhq.org/selenium-core/1.0.1/reference.html   Selenium commands documentation
+ * @see https://github.com/IStranger/phpunit-selenium-doc
+ * @see http://istranger.github.io/phpunit-selenium-doc/a00001.html        Html-doccumentation (generated from this class)
  *
  * @author  G.Azamat <m@fx4web.com>
  * @date    %date%
