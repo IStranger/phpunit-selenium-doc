@@ -348,7 +348,7 @@ class CodeGenerator
      */
     protected function phpDocSummary(Method $method)
     {
-        $phpDocDescription = $this->_prepareMethodDescriptionForPhphDoc($method->description);
+        $phpDocDescription = $this->_prepareMethodDescriptionForPhpDoc($method->description);
 
         // Summary: first sentence
         $firstSentence = Helper::extractFirstSentence($phpDocDescription);
@@ -367,7 +367,7 @@ class CodeGenerator
      */
     protected function phpDocDescription(Method $method)
     {
-        $phpDocDescription = $this->_prepareMethodDescriptionForPhphDoc($method->description);
+        $phpDocDescription = $this->_prepareMethodDescriptionForPhpDoc($method->description);
         $firstSentence     = Helper::extractFirstSentence($phpDocDescription);
 
         // Description: others sentences (except first)
@@ -631,7 +631,7 @@ class CodeGenerator
      *
      * @return string
      */
-    private function _prepareMethodDescriptionForPhphDoc($methodDescription)
+    private function _prepareMethodDescriptionForPhpDoc($methodDescription)
     {
         // direct replaces
         $phpDocDescription = strtr($methodDescription, [
