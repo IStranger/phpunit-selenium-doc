@@ -321,6 +321,11 @@ class CodeGenerator
                     . $argument->name . Helper::EOL;
             }
 
+            // direct replaces
+            if (($argument->name === 'locator') && ($argDescription === 'an element locator')) {
+                $argDescription = 'an <a href="#locators">element locator</a>';
+            }
+
             // replace html link tags
             foreach ($linkReplaces as $linkHash => $linkPhpDoc) {
                 $regExp = '/<a href="#' . $linkHash . '">([\w ]+)<\/a>/';

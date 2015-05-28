@@ -13,7 +13,7 @@
  * @see http://istranger.github.io/phpunit-selenium-doc/a00001.html        Html-doccumentation (generated from this class)
  *
  * @author  G.Azamat <m@fx4web.com>
- * @date    2015-05-25
+ * @date    2015-05-29
  */
 trait SeleniumTestCaseDoc
 {
@@ -13896,7 +13896,8 @@ trait SeleniumTestCaseDoc
      * 
      * If the click action causes a new page to load (like a link usually does), call waitForPageToLoad.
      * 
-     * @param string   $locator  an element locator
+     * @param string   $locator  an element locator 
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
@@ -13916,7 +13917,8 @@ trait SeleniumTestCaseDoc
      * 
      * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
-     * @param string   $locator  an element locator
+     * @param string   $locator  an element locator 
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
@@ -13932,7 +13934,8 @@ trait SeleniumTestCaseDoc
      * 
      * If the click action causes a new page to load (like a link usually does), call waitForPageToLoad.
      * 
-     * @param string   $locator      an element locator
+     * @param string   $locator      an element locator 
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
@@ -13954,7 +13957,8 @@ trait SeleniumTestCaseDoc
      * 
      * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
-     * @param string   $locator      an element locator
+     * @param string   $locator      an element locator 
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
@@ -13981,7 +13985,8 @@ trait SeleniumTestCaseDoc
      * Simulates opening the context menu for the specified element (as might happen if the user "right-clicked" on the
      * element).
      * 
-     * @param string   $locator  an element locator
+     * @param string   $locator  an element locator 
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
@@ -14000,7 +14005,8 @@ trait SeleniumTestCaseDoc
      * 
      * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
-     * @param string   $locator  an element locator
+     * @param string   $locator  an element locator 
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
@@ -14015,7 +14021,8 @@ trait SeleniumTestCaseDoc
      * Simulates opening the context menu for the specified element (as might happen if the user "right-clicked" on the
      * element).
      * 
-     * @param string   $locator      an element locator
+     * @param string   $locator      an element locator 
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
@@ -14036,7 +14043,8 @@ trait SeleniumTestCaseDoc
      * 
      * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
-     * @param string   $locator      an element locator
+     * @param string   $locator      an element locator 
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
@@ -14276,7 +14284,8 @@ trait SeleniumTestCaseDoc
      * 
      * If the double click action causes a new page to load (like a link usually does), call waitForPageToLoad.
      * 
-     * @param string   $locator  an element locator
+     * @param string   $locator  an element locator 
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
@@ -14296,7 +14305,8 @@ trait SeleniumTestCaseDoc
      * 
      * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
-     * @param string   $locator  an element locator
+     * @param string   $locator  an element locator 
+     *                           (see {@link $doc_Element_Locators Element Locators})
      * 
      * @return  void
      * 
@@ -14312,7 +14322,8 @@ trait SeleniumTestCaseDoc
      * 
      * If the action causes a new page to load (like a link usually does), call waitForPageToLoad.
      * 
-     * @param string   $locator      an element locator
+     * @param string   $locator      an element locator 
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
@@ -14334,7 +14345,8 @@ trait SeleniumTestCaseDoc
      * 
      * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
-     * @param string   $locator      an element locator
+     * @param string   $locator      an element locator 
+     *                               (see {@link $doc_Element_Locators Element Locators})
      * @param string   $coordString  specifies the x,y position (i.e. - 10,20) of the mouse event relative to the
      *                               element  returned by the locator.
      * 
@@ -14350,7 +14362,8 @@ trait SeleniumTestCaseDoc
     /**
      * Drags an element a certain distance and then drops it.
      * 
-     * @param string   $locator          an element locator
+     * @param string   $locator          an element locator 
+     *                                   (see {@link $doc_Element_Locators Element Locators})
      * @param string   $movementsString  offset in pixels from the current location to which the element should be
      *                                   moved, e.g.,  "+70,-300"
      * 
@@ -14370,7 +14383,8 @@ trait SeleniumTestCaseDoc
      * 
      * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
-     * @param string   $locator          an element locator
+     * @param string   $locator          an element locator 
+     *                                   (see {@link $doc_Element_Locators Element Locators})
      * @param string   $movementsString  offset in pixels from the current location to which the element should be
      *                                   moved, e.g.,  "+70,-300"
      * 
@@ -14422,7 +14436,8 @@ trait SeleniumTestCaseDoc
     /**
      * deprecated - use dragAndDrop instead.
      * 
-     * @param string   $locator          an element locator
+     * @param string   $locator          an element locator 
+     *                                   (see {@link $doc_Element_Locators Element Locators})
      * @param string   $movementsString  offset in pixels from the current location to which the element should be
      *                                   moved, e.g.,  "+70,-300"
      * 
@@ -14443,7 +14458,8 @@ trait SeleniumTestCaseDoc
      * 
      * <p>After execution of this action, Selenium wait for a new page to load (see {@link waitForPageToLoad()})</p>
      * 
-     * @param string   $locator          an element locator
+     * @param string   $locator          an element locator 
+     *                                   (see {@link $doc_Element_Locators Element Locators})
      * @param string   $movementsString  offset in pixels from the current location to which the element should be
      *                                   moved, e.g.,  "+70,-300"
      * 
