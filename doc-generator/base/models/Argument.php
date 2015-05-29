@@ -10,6 +10,7 @@ class Argument extends MethodComponent
 {
 
     const TYPE_STRING = 'string';
+    const TYPE_INT    = 'int';
     const TYPE_ARRAY  = 'array';
 
     /**
