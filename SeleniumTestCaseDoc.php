@@ -13,7 +13,7 @@
  * @see http://istranger.github.io/phpunit-selenium-doc/a00001.html        Html-doccumentation (generated from this class)
  *
  * @author  G.Azamat <m@fx4web.com>
- * @date    2015-05-30
+ * @date    2015-05-29
  */
 trait SeleniumTestCaseDoc
 {
@@ -15842,23 +15842,6 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Set the browser to be used by the Selenium Server server.
-     * 
-     * <p><b>Note:</b> This method is used to configure the Selenium Server session in {@link setUp()} (before start of
-     * test).</p>
-     * 
-     * @param string   $browser  
-     * 
-     * @return  void
-     * 
-     * @see  https://phpunit.de/manual/current/en/selenium.html#selenium.seleniumtestcase.tables.seleniumrc-api.setup
-     */
-    public function setBrowser($browser)
-    {
-        return $this->_callParentMethod(__METHOD__, func_get_args());
-    }
-    
-    /**
      * Sets the threshold for browser-side logging messages; log messages beneath this threshold will be discarded. 
      * 
      * Valid logLevel strings are: "debug", "info", "warn", "error" or "off". To see the browser logs, you need to
@@ -15892,23 +15875,6 @@ trait SeleniumTestCaseDoc
      * @see  setBrowserLogLevel()  Base method, from which has been generated (automatically) current method
      */
     public function setBrowserLogLevelAndWait($logLevel)
-    {
-        return $this->_callParentMethod(__METHOD__, func_get_args());
-    }
-    
-    /**
-     * Set the base URL for the tests.
-     * 
-     * <p><b>Note:</b> This method is used to configure the Selenium Server session in {@link setUp()} (before start of
-     * test).</p>
-     * 
-     * @param string   $browserUrl  URL
-     * 
-     * @return  void
-     * 
-     * @see  https://phpunit.de/manual/current/en/selenium.html#selenium.seleniumtestcase.tables.seleniumrc-api.setup
-     */
-    public function setBrowserUrl($browserUrl)
     {
         return $this->_callParentMethod(__METHOD__, func_get_args());
     }
@@ -15970,23 +15936,6 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Set the hostname for the connection to the Selenium Server server.
-     * 
-     * <p><b>Note:</b> This method is used to configure the Selenium Server session in {@link setUp()} (before start of
-     * test).</p>
-     * 
-     * @param string   $host  Host
-     * 
-     * @return  void
-     * 
-     * @see  https://phpunit.de/manual/current/en/selenium.html#selenium.seleniumtestcase.tables.seleniumrc-api.setup
-     */
-    public function setHost($host)
-    {
-        return $this->_callParentMethod(__METHOD__, func_get_args());
-    }
-    
-    /**
      * Configure the number of pixels between "mousemove" events during dragAndDrop commands (default=10). 
      * 
      * <p>Setting this value to 0 means that we'll send a "mousemove" event to every single pixel in between the start
@@ -16033,41 +15982,6 @@ trait SeleniumTestCaseDoc
     }
     
     /**
-     * Set the port for the connection to the Selenium Server server.
-     * 
-     * <p><b>Note:</b> This method is used to configure the Selenium Server session in {@link setUp()} (before start of
-     * test).</p>
-     * 
-     * @param int   $port  Port
-     * 
-     * @return  void
-     * 
-     * @see  https://phpunit.de/manual/current/en/selenium.html#selenium.seleniumtestcase.tables.seleniumrc-api.setup
-     */
-    public function setPort($port)
-    {
-        return $this->_callParentMethod(__METHOD__, func_get_args());
-    }
-    
-    /**
-     * Set the number of seconds the Selenium Server client should sleep between sending action commands to the
-     * Selenium Server server.
-     * 
-     * <p><b>Note:</b> This method is used to configure the Selenium Server session in {@link setUp()} (before start of
-     * test).</p>
-     * 
-     * @param int   $seconds  
-     * 
-     * @return  void
-     * 
-     * @see  https://phpunit.de/manual/current/en/selenium.html#selenium.seleniumtestcase.tables.seleniumrc-api.setup
-     */
-    public function setSleep($seconds)
-    {
-        return $this->_callParentMethod(__METHOD__, func_get_args());
-    }
-    
-    /**
      * Set execution speed (i.e., set the millisecond length of a delay which will follow each selenium operation). 
      * 
      * By default, there is no such delay, i.e., the delay is 0 milliseconds.
@@ -16099,23 +16013,6 @@ trait SeleniumTestCaseDoc
      * @see  setSpeed()  Base method, from which has been generated (automatically) current method
      */
     public function setSpeedAndWait($value)
-    {
-        return $this->_callParentMethod(__METHOD__, func_get_args());
-    }
-    
-    /**
-     * Set the timeout for the connection to the Selenium Server server.
-     * 
-     * <p><b>Note:</b> This method is used to configure the Selenium Server session in {@link setUp()} (before start of
-     * test).</p>
-     * 
-     * @param int   $timeout  Timeout in seconds
-     * 
-     * @return  void
-     * 
-     * @see  https://phpunit.de/manual/current/en/selenium.html#selenium.seleniumtestcase.tables.seleniumrc-api.setup
-     */
-    public function setTimeout($timeout)
     {
         return $this->_callParentMethod(__METHOD__, func_get_args());
     }

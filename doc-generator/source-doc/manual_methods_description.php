@@ -1,6 +1,5 @@
 <?php
 
-use phpdocSeleniumGenerator\Helper;
 use phpdocSeleniumGenerator\models\Argument;
 use phpdocSeleniumGenerator\models\Method;
 use phpdocSeleniumGenerator\models\ReturnValue;
@@ -348,167 +347,14 @@ $mShutDownSeleniumServer->returnValue->type = ReturnValue::TYPE_VOID;
 $methods[] = $mShutDownSeleniumServer;
 
 
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// 'Selenium Server API: Setup' methods
-$setupAddDescription = Helper::EOL . '<p><b>Note:</b> This method is used to configure ' .
-    'the Selenium Server session in {@link setUp()} (before start of test).</p>';
-$setupSeeLinks       = [
-    'https://phpunit.de/manual/current/en/selenium.html#selenium.seleniumtestcase.tables.seleniumrc-api.setup' => ''
-];
-
-
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// ---- setBrowser
-$mSetBrowser              = Method::createNew();
-$mSetBrowser->name        = 'setBrowser';
-$mSetBrowser->type        = Method::determineTypeByName($mSetBrowser->name);
-$mSetBrowser->subtype     = Method::determineSubtypeByName($mSetBrowser->name);
-$mSetBrowser->description = 'Set the browser to be used by the Selenium Server server.' . $setupAddDescription;
-$mSetBrowser->seeLinks    = $setupSeeLinks;
-
-// first argument
-$argument              = Argument::createNew();
-$argument->name        = 'browser';
-$argument->type        = Argument::TYPE_STRING;
-$argument->description = '';
-$mSetBrowser->addArgument($argument);
-
-// return value
-$mSetBrowser->returnValue       = ReturnValue::createNew();
-$mSetBrowser->returnValue->type = ReturnValue::TYPE_VOID;
-
-// add to common method list (method and its derivative methods)
-$methods[] = $mSetBrowser;
-
-
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// ---- setBrowserUrl
-$mSetBrowserUrl              = Method::createNew();
-$mSetBrowserUrl->name        = 'setBrowserUrl';
-$mSetBrowserUrl->type        = Method::determineTypeByName($mSetBrowserUrl->name);
-$mSetBrowserUrl->subtype     = Method::determineSubtypeByName($mSetBrowserUrl->name);
-$mSetBrowserUrl->description = 'Set the base URL for the tests.' . $setupAddDescription;
-$mSetBrowserUrl->seeLinks    = $setupSeeLinks;
-
-// first argument
-$argument              = Argument::createNew();
-$argument->name        = 'browserUrl';
-$argument->type        = Argument::TYPE_STRING;
-$argument->description = 'URL';
-$mSetBrowserUrl->addArgument($argument);
-
-// return value
-$mSetBrowserUrl->returnValue       = ReturnValue::createNew();
-$mSetBrowserUrl->returnValue->type = ReturnValue::TYPE_VOID;
-
-// add to common method list (method and its derivative methods)
-$methods[] = $mSetBrowserUrl;
-
-
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// ---- setHost
-$mSetHost              = Method::createNew();
-$mSetHost->name        = 'setHost';
-$mSetHost->type        = Method::determineTypeByName($mSetHost->name);
-$mSetHost->subtype     = Method::determineSubtypeByName($mSetHost->name);
-$mSetHost->description = 'Set the hostname for the connection to the Selenium Server server.' . $setupAddDescription;
-$mSetHost->seeLinks    = $setupSeeLinks;
-
-// first argument
-$argument              = Argument::createNew();
-$argument->name        = 'host';
-$argument->type        = Argument::TYPE_STRING;
-$argument->description = 'Host';
-$mSetHost->addArgument($argument);
-
-// return value
-$mSetHost->returnValue       = ReturnValue::createNew();
-$mSetHost->returnValue->type = ReturnValue::TYPE_VOID;
-
-// add to common method list (method and its derivative methods)
-$methods[] = $mSetHost;
-
-
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// ---- setPort
-$mSetPort              = Method::createNew();
-$mSetPort->name        = 'setPort';
-$mSetPort->type        = Method::determineTypeByName($mSetPort->name);
-$mSetPort->subtype     = Method::determineSubtypeByName($mSetPort->name);
-$mSetPort->description = 'Set the port for the connection to the Selenium Server server.' . $setupAddDescription;
-$mSetPort->seeLinks    = $setupSeeLinks;
-
-// first argument
-$argument              = Argument::createNew();
-$argument->name        = 'port';
-$argument->type        = Argument::TYPE_INT;
-$argument->description = 'Port';
-$mSetPort->addArgument($argument);
-
-// return value
-$mSetPort->returnValue       = ReturnValue::createNew();
-$mSetPort->returnValue->type = ReturnValue::TYPE_VOID;
-
-// add to common method list (method and its derivative methods)
-$methods[] = $mSetPort;
-
-
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// ---- setTimeout
-$mSetTimeout              = Method::createNew();
-$mSetTimeout->name        = 'setTimeout';
-$mSetTimeout->type        = Method::determineTypeByName($mSetTimeout->name);
-$mSetTimeout->subtype     = Method::determineSubtypeByName($mSetTimeout->name);
-$mSetTimeout->description = 'Set the timeout for the connection to the Selenium Server server.' . $setupAddDescription;
-$mSetTimeout->seeLinks    = $setupSeeLinks;
-
-// first argument
-$argument              = Argument::createNew();
-$argument->name        = 'timeout';
-$argument->type        = Argument::TYPE_INT;
-$argument->description = 'Timeout in seconds';
-$mSetTimeout->addArgument($argument);
-
-// return value
-$mSetTimeout->returnValue       = ReturnValue::createNew();
-$mSetTimeout->returnValue->type = ReturnValue::TYPE_VOID;
-
-// add to common method list (method and its derivative methods)
-$methods[] = $mSetTimeout;
-
-
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// ---- setSleep
-$mSetSleep              = Method::createNew();
-$mSetSleep->name        = 'setSleep';
-$mSetSleep->type        = Method::determineTypeByName($mSetSleep->name);
-$mSetSleep->subtype     = Method::determineSubtypeByName($mSetSleep->name);
-$mSetSleep->description = 'Set the number of seconds the Selenium Server client should sleep between sending action commands to the Selenium Server server.' . $setupAddDescription;
-$mSetSleep->seeLinks    = $setupSeeLinks;
-
-// first argument
-$argument              = Argument::createNew();
-$argument->name        = 'seconds';
-$argument->type        = Argument::TYPE_INT;
-$argument->description = '';
-$mSetSleep->addArgument($argument);
-
-// return value
-$mSetSleep->returnValue       = ReturnValue::createNew();
-$mSetSleep->returnValue->type = ReturnValue::TYPE_VOID;
-
-// add to common method list (method and its derivative methods)
-$methods[] = $mSetSleep;
-
-
 // .... other methods place here. Should be added:
+// keyDownNative
+// keyPressNative
+// keyUpNative
+// retrieveLastRemoteControlLogs
+// setContext
+// shutDownSeleniumServer
+
 
 // index by method name
 $methodsByName = [];

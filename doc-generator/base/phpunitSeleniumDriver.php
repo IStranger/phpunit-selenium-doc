@@ -22,14 +22,6 @@ class phpunitSeleniumDriver extends \PHPUnit_Extensions_SeleniumTestCase_Driver
         'captureScreenshot'                   => ReturnValue::TYPE_VOID,  // in DocBlock only *AndWait version
         'captureScreenshotToString'           => ReturnValue::TYPE_VOID,  // in DocBlock only *AndWait version
         'waitForFrameToLoad'                  => ReturnValue::TYPE_VOID,  // in DocBlock not presented
-
-        // not selenium commands - driver methods
-        'setBrowser'                          => ReturnValue::TYPE_VOID,  // to configure the Selenium Server session in ::setUp()
-        'setBrowserUrl'                       => ReturnValue::TYPE_VOID,  // to configure the Selenium Server session in ::setUp()
-        'setHost'                             => ReturnValue::TYPE_VOID,  // to configure the Selenium Server session in ::setUp()
-        'setPort'                             => ReturnValue::TYPE_VOID,  // to configure the Selenium Server session in ::setUp()
-        'setTimeout'                          => ReturnValue::TYPE_VOID,  // to configure the Selenium Server session in ::setUp()
-        'setSleep'                            => ReturnValue::TYPE_VOID,  // to configure the Selenium Server session in ::setUp()
     ];
 
     protected $manualExcludedMethods = [
