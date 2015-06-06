@@ -13,7 +13,7 @@
  * @see http://istranger.github.io/phpunit-selenium-doc/a00001.html        Html-doccumentation (generated from this class)
  *
  * @author  G.Azamat <m@fx4web.com>
- * @date    2015-06-06
+ * @date    2015-06-07
  */
 trait SeleniumTestCaseDoc
 {
@@ -36,8 +36,8 @@ trait SeleniumTestCaseDoc
      *          -- username <br/>
      *          -- name=username  <br/>
      *          -- name=flavour value=chocolate <br/>
-     *              The name may optionally be followed by one or more element-filters, separated from the name by
-     *              whitespace. If the filterType is not specified, value is assumed. (see "Element Filters" below)
+     *              The name may optionally be followed by one or more {@link $doc_Element_Filters element-filters},
+     *              separated from the name by whitespace. If the filterType is not specified, value is assumed.
      *      + <b>dom=javascriptExpression </b><br/>
      *          Find an element by evaluating the specified string. This allows you to traverse the HTML Document Object
      *          Model using JavaScript. Note that you must not return a value in this string; simply make it the last
