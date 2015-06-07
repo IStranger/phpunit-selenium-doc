@@ -15758,7 +15758,7 @@ trait SeleniumTestCaseDoc
      * 
      * @see  selectPopUpAndWait()  Related Action
      */
-    public function selectPopUp($windowID)
+    public function selectPopUp($windowID = null)
     {
         return $this->_callParentMethod(__METHOD__, func_get_args());
     }
@@ -15787,7 +15787,7 @@ trait SeleniumTestCaseDoc
      * 
      * @see  selectPopUp()  Base method, from which has been generated (automatically) current method
      */
-    public function selectPopUpAndWait($windowID)
+    public function selectPopUpAndWait($windowID = null)
     {
         return $this->_callParentMethod(__METHOD__, func_get_args());
     }
@@ -15843,7 +15843,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      */
-    public function selectWindow($windowID)
+    public function selectWindow($windowID = null)
     {
         return $this->_callParentMethod(__METHOD__, func_get_args());
     }
@@ -16399,7 +16399,7 @@ trait SeleniumTestCaseDoc
      * 
      * @return  void
      */
-    public function waitForPopUp($windowID, $timeout = null)
+    public function waitForPopUp($windowID = null, $timeout = null)
     {
         return $this->_callParentMethod(__METHOD__, func_get_args());
     }

@@ -66,7 +66,10 @@ class CodeGenerator
             'waitForCondition'   => ['timeout' => null],
             'waitForFrameToLoad' => ['timeout' => null],
             'waitForPageToLoad'  => ['timeout' => null],
-            'waitForPopUp'       => ['timeout' => null],
+            'waitForPopUp'       => ['timeout' => null, 'windowID' => null],
+            'selectPopUp'        => ['windowID' => null],
+            'selectPopUpAndWait' => ['windowID' => null],
+            'selectWindow'       => ['windowID' => null],
         ];
     }
 
